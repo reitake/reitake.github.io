@@ -128,7 +128,7 @@ categories: Go
     if(ptr != nil)     /* ptr 不是空指针 */
     if(ptr == nil)    /* ptr 是空指针 */
 ```
-### 数组指针：
+### 数组指针
 ```go
     package main
 
@@ -159,7 +159,7 @@ a[2] = 200
 ---
 ## 结构体  
 一系列相同或不同类型的数据结构构成的集合。
-### 定义结构体：  
+### 定义结构体  
 ```go
     //定义结构体
     type struct_variable_type struct{
@@ -178,7 +178,7 @@ a[2] = 200
 
     //结构体名struct_name可以作为函数参数
 ```
-### 结构体指针：  
+### 结构体指针  
 ```go
     //定义指向结构体的指针
     var struct_pointer *struct_variable_type
@@ -224,6 +224,14 @@ a[2] = 200
 ```go
     delete(countryCapitalMap, "France")
 ```
+---
+## 指针
+```go
+    s := "Hello World!"
+    var p *string = &s
+```
+为了防止内存溢出，Go 语言不允许指针算法（如： `pointer+2`），因此 `c = *p++` 是非法的。  
+
 ---
 # 常用包  
 ## `strings` 包  
@@ -344,5 +352,154 @@ Duration 类型表示两个连续时刻所相差的**纳秒数**，类型为 int
 其他关于时间操作的文档参考 [官方文档](http://golang.org/pkg/time/) 或 [国内访问页面](http://docs.studygolang.com/pkg/time/)。  
 
 ---
+# 控制结构  
+## if-else 结构  
+```go
+    // if
+    if condition{
+        // do something
+    }
 
+    // if...else...
+    if condition {
+        // do something
+    } else {
+        // do something
+    }
+```
+一些例子：  
+1. 判断一个字符串是否为空：
+* `if str == "" {...}`
+* `if len(str) == 0 {...}`
+2. 判断运行 Go 程序的操作系统类型，这可以通过常量 `runtime.GOOS` 来判断。  
+```go
+    if runtime.GOOS == "windows" {
+        ...
+    } else {
+        ...
+    }
+```
+这段代码一般被放在 init() 函数中执行。 如以下示例演示如何根据操作系统来决定输入结束时的提示：  
+```go
+    var prompt = "Enter a digit, e.g. 3 "+ "or %s to quit."
+    func init() {
+        if runtime.GOOS == "windows" {
+            prompt = fmt.Sprintf(prompt, "Ctrl+Z, Enter")
+        } else {    // Unix-like
+            prompt = fmt.Sprintf(prompt, "Ctrl+D")
+        }
+    }
+```
+3. 函数 `Abs()` 用于返回一个整型数字的绝对值：  
+```go
+    func Abs(x int) int {
+        if x < 0 {
+            return -x
+        }
+        return x
+    }
+```
+4. `isGrater` 用来比较两个整型数字的大小：  
+```go
+    func isGreater(x,y int) bool {
+        if x > y {
+            return true
+        }
+        return false
+    }
+```
+if 可以包含一个初始化语句（如：给变量赋值），初始化语句后方必须加分号：  
+```go
+    if val := 10; val > max {
+        // do something
+    }
+```
+注意 `:=` 声明的变量作用于仅在 if 结构中。如果变量在 if 结构之前就已经存在，那么在 if 结构中该变量原来的值会被隐藏。  
+### comma,ok模式（pattern）  
+Go 语言中函数经常用两个返回值来表示是否执行成功：返回某个值以及 true 表示成功；返回零值（或 nil）和 false 表示失败。也可以使用 error 类型的变量来代替第二个返回值：成功执行的话，error 的值为 nil，否则就会包含相应的错误信息。  
+**习惯用法**  
+```go
+    value, err := pack1.Function1(param1)
+    if err != nil {
+        fmt.Println("An error occured in pack1.Function1 with parameter %v", param1)
+        return err
+    }
+    // 未发生错误，继续执行：
+    // 由于本例的函数调用者属于 main 函数，所以程序会直接停止运行。
+```
+如果要在错误发生的同时终止程序的运行，可以使用 `os` 包的 `Exit` 函数：
+```go
+    if err != nil {
+    fmt.Printf("Program stopping with error %v", err)
+    os.Exit(1)
+    // （此处的退出代码 1 可以使用外部脚本获取到）
+}
+```
+当没有错误发生时，代码继续运行就是唯一要做的事情，所以 if 语句块后面不需要使用 else 分支。  
+## switch 结构
+```go
+    switch var1 {
+    case val1:
+        ...
+    case val2:
+        ...
+    default:
+        ...
+    }
+```
+* 测试多个可能符合条件的值，使用逗号分隔，例如： `case val1, val2, val3`。  
+* 每个 `case` 分支都是唯一的，从上至下逐一测试，直到匹配为止。  
+* 一旦成功匹配某个分支，在执行完相应代码后就会退出整个 switch 代码块，所以不用 `break`。  
+* 如果执行完 `case` 后还需要继续执行后续分支的代码，要使用 `fallthrough`。  
+* 可以用 `return` 语句来提前结束代码块的执行。（还要时刻确保函数始终有返回值，switch 后再添加相应 `return`）  
+* `switch` 后也可不跟变量，`case` 后跟 condition，用起来像链式 if-else。  
+* `switch` 后也可跟一个初始化语句，需要加分号 `;`。 
+ 
+## for 结构  
+### 计数器形式
+基本形式：  
+```go
+    for 初始化语句; 条件语句; 修饰语句 {}
+```
+* 特别注意，永远不要在循环体内修改计数器！  
+
+同时使用多个计数器：  
+```go
+    for i, j := 0, N; i < j; i, j = i+1, j-1 {}
+```
+### 条件判断的迭代形式  
+基本形式：`for 条件语句 {}`  
+### 无限循环  
+基本形式：`for {}`  
+* 需要循环内用 `break` 或 `return` 退出循环体。（`break` 只是退出循环体，`return` 是提前对函数进行返回，不会执行后续代码）  
+* 无限循环的经典应用是服务器，用于**不断等待**和**接受新的请求**：
+```go
+    for t, err = p.Token(); err == nil; t, err = p.Token() {
+        ...
+    }
+```
+### for-range 结构  
+用于迭代任何一个集合（数组、map）。  
+一般形式：`for ix, val := range coll {...}`  
+* 需要注意，val始终是集合中索引的值的拷贝，对它修改不会影响集合内原值（除非 `val` 为指针）。  
+* 一个字符串是 Unicode 编码的字符（或称之为 `rune`）集合，因此可可以用它迭代字符串：  
+```go
+    for pos, char := range str {
+        ...
+    } 
+```
+## Break 与 continue  
+* 一个 break 的作用范围是该语句出现后的最内部的结构。（只会跳出最内层循环）  
+* 关键词 continue 忽略剩余循环体直接进入下一次循环过程，执行下次循环前需要判断循环条件。  
+* continue 只能用于 for 循环中。  
+
+## 标签与 goto  
+* 标签名称是大小写敏感的，一般建议全用大写字母。  
+* 配合 goto 跳出多层循环或模拟循环。  
+* 不鼓励使用标签和 goto，会导致糟糕的程序设计，可被更可读的方案替代。 
+* 一定要用的话，只使用正序的标签（先 goto，后标签），且两者间不能出现新的定义变量语句！  
+
+
+
+---
 *`to be continued...`*
