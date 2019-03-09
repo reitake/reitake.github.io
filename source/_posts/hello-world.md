@@ -19,6 +19,9 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 
 ``` bash
 $ hexo server
+
+# or:
+$ hexo s
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)
@@ -27,6 +30,9 @@ More info: [Server](https://hexo.io/docs/server.html)
 
 ``` bash
 $ hexo generate
+
+# or:
+$ hexo g
 ```
 
 More info: [Generating](https://hexo.io/docs/generating.html)
@@ -35,6 +41,9 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 
 ``` bash
 $ hexo deploy
+
+# need to install hexo-deployer-git first:
+$ npm install hexo-deployer-git --save
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)

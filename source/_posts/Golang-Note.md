@@ -499,6 +499,154 @@ Go 语言中函数经常用两个返回值来表示是否执行成功：返回�
 * 不鼓励使用标签和 goto，会导致糟糕的程序设计，可被更可读的方案替代。 
 * 一定要用的话，只使用正序的标签（先 goto，后标签），且两者间不能出现新的定义变量语句！  
 
+# 函数  
+* Go 中不允许函数重载（function overloading，指可以编写多个同名函数）。  
+* 如果需要声明一个在外部定义的函数，只要给出函数名与函数签名，不用给出函数体：  
+```go
+    func flushICache(begin, end uintptr)    // implemented externally
+```
+* 函数可以被作为类型来声明使用：  
+```go
+    type binOp func(int, int) int
+```
+
+## 传参和返回  
+* 分按值传递（call by value） 按引用传递（call by reference）。  
+* 几乎在任何情况下，传递指针的消耗比传递副本来的少。  
+* 在函数调用时，像切片（slice）、字典（map）、接口（interface）、通道（channel）这样的引用类型都是默认使用引用传递（即使没有显式的指出指针）。
+* 如果函数要返回四到五个值，可以传递一个切片给函数（如果返回值具有相同类型）或者是传递一个结构体（如果返回值具有不同的类型）。因为传递一个指针允许直接修改变量的值，消耗也更少。
+
+## 传递变长参数  
+* 变参函数：函数最有一个参数采用 `...type` 的形式。函数接受某个类型的 slice 的参数。  
+```go
+    func myFunc(a, b, arg ...int) {}
+```
+* 解决边长参数不是相同类型的方法：（1）使用结构；（2）使用空接口。  
+
+## defer 和追踪
+* 关键词 defer 让我们推迟到函数返回之前（或任意位置执行 `return` 语句之后）一刻才执行某个语句或函数。  
+* defer 一般用于释放某些已分配的资源。
+* 多个 defer 行为被注册，会逆序执行（类似栈），  
+* defer 允许我们进行一些函数执行完成后的收尾工作：（1）关闭文件流；（2）解锁一个加锁的资源；（3）打印最终报告；（4）关闭数据库连接。  
+* 用 defer 实现代码追踪。
+* 用 defer 记录函数的参数与返回值。
+
+## 内置函数  
+不需要导入就可使用。
+名称 | 说明 |
+---- | ----|
+close  | 用于管道通信|
+len、cap len |用于返回某个类型的长度或数量（字符串、数组、切片、map 和管道）；cap 是容量的意思，用于返回某个类型的最大容量（只能用于切片和 map）|
+new、make  |  new 和 make 均是用于分配内存：new 用于值类型和用户定义的类型，如自定义结构，make 用于内置引用类型（切片、map 和管道）。它们的用法就像是函数，但是将类型作为参数：new(type)、make(type)。new(T) 分配类型 T 的零值并返回其地址，也就是指向类型 T 的指针。它也可以被用于基本类型：v := new(int)。make(T) 返回类型 T 的初始化之后的值，因此它比 new 进行更多的工作,new() 是一个函数，不要忘记它的括号|
+copy、append |用于复制和连接切片|
+panic、recover | 两者均用于错误处理机制|
+print、println  | 底层打印函数，在部署环境中建议使用 fmt 包|
+complex、real imag  | 用于创建和操作复数|
+
+## 递归函数
+经常遇到的问题是栈溢出：大量递归调用导致程序栈内存分配耗尽。可通过一个名为懒惰求值的技术解决，Go 中可以使用管道（channel）和 goroutine来实现。
+
+## 函数作为参数  
+eg. 函数 `strings.IndexFunc()`  
+其函数签名是 `func IndexFunc(s string, f func(c int) bool) int`，它的返回值是在函数 `f(c)` 返回 true、-1 或从未返回时的索引值。  
+
+## 闭包  
+不想给函数起名字时，可以用匿名函数，例如： `func(x, y int) int { return x + y }`。  
+匿名函数不能独立存在，要赋值给变量（即保存函数的地址到变量中）：`fplus := func(x, y int) int { return x + y }`,然后用变量名来调用：`fplus(3,4)`，或直接对匿名函数进行调用：`func(x, y int) int { return x + y }(3, 4)`。  
+### defer语句和匿名函数
+两者经常搭配，可用于改变函数的命名返回值。  
+匿名函数还可以配合 `go` 关键字来作为 goroutine 使用。  
+匿名函数被称之为闭包：被允许调用定义在起环境下的变量。闭包可使得某个函数捕捉到一些外部状态，如：函数被创建时的状态。或者说：一个闭包继承了函数所声明时的作用域。这种状态（作用域内的变量）都被共享到闭包的环境中，因此这些变量可以在闭包中被操作，直到被销毁。  
+闭包经常被用作包装函数：会预先定义好 1 个或多个参数以用于包装。  
+另一个应用是用闭包来完成更加简洁的错误检查。  
+
+## 应用闭包：将函数作为返回值  
+* 闭包函数保存并积累其中的变量的值，不管外部函数退出与否，它都能够继续操作外部函数中的局部变量。  
+* 闭包中使用到的变量可以是在闭包函数体内声明的，也可以是在外部函数声明的。  
+
+## 使用闭包调试  
+调试时需要准确知道哪个文件中的具体哪个函数正在执行。可以使用 `runtime` 或 `log` 包中的特殊函数来实现这样的功能。包 runtime 中的函数 `Caller()` 提供了相应的信息，因此可以在需要的时候实现一个 `where()` 闭包函数来打印函数执行的位置：  
+```go
+    where := func() {
+    _, file, line, _ := runtime.Caller(1)
+    log.Printf("%s:%d", file, line)
+    }
+    where()
+    // some code
+    where()
+    // some more code
+    where()
+```
+也可以设置 `log` 包中的 flag 参数来实现：  
+```go
+    log.SetFlags(log.Llongfile)
+    log.Print("")
+```
+或使用一个更加简短版本的 `where` 函数：  
+```go
+    var where = log.Print
+    func func1() {
+    where()
+    ... some code
+    where()
+    ... some code
+    where()
+}
+```
+
+## 计算函数执行时间  
+在计算开始签设置一个起始时候，在计算结束时的结束时间，求差值。  
+可用 `time` 包中的 `Now()` 和 `Sub` 函数：  
+```go
+    start := time.Now()
+    longCalculation()
+    end := time.Now()
+    delta := end.Sub(start)
+    fmt.Printf("longCalculation took this amount of time: %s\n", delta)
+```
+
+## 通过内存缓存来提升性能  
+大量计算式，提升性能最有效的一种方式是**避免重复计算**。通过在内存中缓存和重复利用相同计算的结果，成为内存缓存。  
+eg. 求斐波那契数列：  
+```go
+    package main
+
+    import (
+        "fmt"
+        "time"
+    )
+
+    const LIM = 41
+
+    var fibs [LIM]uint64
+
+    func main() {
+        var result uint64 = 0
+        start := time.Now()
+        for i := 0; i < LIM; i++ {
+            result = fibonacci(i)
+            fmt.Printf("fibonacci(%d) is: %d\n", i, result)
+        }
+        end := time.Now()
+        delta := end.Sub(start)
+        fmt.Printf("longCalculation took this amount of time: %s\n", delta)
+    }
+
+    func fibonacci(n int) (res uint64) {
+        // memoization: check if fibonacci(n) is already known in array:
+        if fibs[n] != 0 {
+            res = fibs[n]
+            return
+        }
+        if n <= 1 {
+            res = 1
+        } else {
+            res = fibonacci(n-1) + fibonacci(n-2)
+        }
+        fibs[n] = res
+        return
+}
+```
 
 
 ---
