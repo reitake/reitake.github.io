@@ -410,14 +410,14 @@ func (_ receiver_type) methodName(parameter_list) (return_value_list) { ... }
 
 **方法没有和数据定义（结构体）混在一起：它们是正交的类型；表示（数据）和行为（方法）是独立的。**  
 
-## 方法和未导出字段  
+### 方法和未导出字段  
 [可以建立Set方法来修改未导出的字段](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1064-%E6%96%B9%E6%B3%95%E5%92%8C%E6%9C%AA%E5%AF%BC%E5%87%BA%E5%AD%97%E6%AE%B5)  
 
-## 内嵌类型的方法和继承  
+### 内嵌类型的方法和继承  
 将父类型放在子类型中来实现亚型。  
 [The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1065-%E5%86%85%E5%B5%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E7%BB%A7%E6%89%BF)  
 
-## 在类型中嵌入功能
+### 在类型中嵌入功能
 主要有两种方法来实现在类型中嵌入功能：  
 
 A：聚合（或组合）：包含一个所需功能类型的具名字段。  
@@ -426,10 +426,10 @@ B：内嵌：内嵌（匿名地）所需功能类型。
 
 [The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1066-%E5%A6%82%E4%BD%95%E5%9C%A8%E7%B1%BB%E5%9E%8B%E4%B8%AD%E5%B5%8C%E5%85%A5%E5%8A%9F%E8%83%BD)  
 
-## 多重继承  
+### 多重继承  
 [The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1067-%E5%A4%9A%E9%87%8D%E7%BB%A7%E6%89%BF)  
 
-## 和其他面向对象语言比较 Go 的类型和方法  
+### 和其他面向对象语言比较 Go 的类型和方法  
 在如 C++、Java、C# 和 Ruby 这样的面向对象语言中，方法在类的上下文中被定义和继承：在一个对象上调用方法时，运行时会检测类以及它的超类中是否有此方法的定义，如果没有会导致异常发生。  
 
 在 Go 语言中，这样的继承层次是完全没必要的：如果方法在此类型定义了，就可以调用它，和其他类型上是否存在这个方法没有关系。在这个意义上，Go 具有更大的灵活性。  
@@ -448,7 +448,7 @@ Go 不需要一个显式的类定义，如同 Java、C++、C# 等那样，相反
 
 如果真的需要更多面向对象的能力，看一下 [`goop`](https://github.com/losalamos/goop) 包（Go Object-Oriented Programming），它由 Scott Pakin 编写: 它给 Go 提供了 JavaScript 风格的对象（基于原型的对象），并且支持多重继承和类型独立分派，通过它可以实现你喜欢的其他编程语言里的一些结构。  
 
-## 类型的 String() 方法和格式化描述符  
+### 类型的 String() 方法和格式化描述符  
 如果类型定义了 `String()` 方法，它会被用在 `fmt.Printf()` 中生成默认的输出：等同于使用格式化描述符 `%v` 产生的输出。还有 `fmt.Print()` 和 `fmt.Println()` 也会自动使用 `String()` 方法。  
 
 [example](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.7.md)  
