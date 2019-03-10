@@ -11,7 +11,7 @@ categories: Go
 ```go
     //声明类型，另行赋值
     var v_name v_type
-    v_name = dfsf
+    v_name = value
 
     //声明值，自动判定类型
     var v_name = value
@@ -278,6 +278,9 @@ a[2] = 200
 ## Map(集合)  
 一种无序的键值的集合。可以迭代，不返回顺序。  
 通过key来快速检索。  
+声明时不需要知道 map 长度，map 可以动态增长。不存在固定长度或最大限制，但可以选择表明map的初始容量 `capacity`：`make(map[keytype]valuetype, cap)`  
+未初始化的 map 的值是 nil。  
+
 ```go
     //变量声明，不初始化的话，默认map是nil，nil map不能用来存放键值
     var map_variable map[key_data_type]value_data_type
@@ -306,11 +309,99 @@ a[2] = 200
     }
 ```
 ### Map的基本操作  
-**delete()函数**
-删除Map的元素，参数为key。
+* 测试键值对  
 ```go
+    _, ok := map1[key1] // 如果key1存在则ok == true，否则ok为false
+
+    if _, ok := map1[key1]; ok {
+        // ...
+    }
+```
+
+* delete()函数
+删除Map的元素，参数为key。  
+```go
+    delete(map1, key1)      // 如果 key1 不存在，该操作不会产生错误。
     delete(countryCapitalMap, "France")
 ```
+* for-range 用法
+```go
+    for key, value := range map1 {
+        ...
+    }
+```
+
+### 用切片作为 map 的值  
+```go
+    mp1 := make(map[int][]int)
+    mp1 := make(map[int]*[]int)
+```
+
+### map 类型的切片  
+必须用两次 `make()`，第一次分配切片，第二次分配切片中每个 map 元素：  
+```go
+    func main() {
+        // Version A:
+        items := make([]map[int]int, 5)
+        for i:= range items {
+            items[i] = make(map[int]int, 1)
+            items[i][1] = 2
+        }
+        fmt.Printf("Version A: Value of items: %v\n", items)
+
+        // Version B: NOT GOOD!
+        items2 := make([]map[int]int, 5)
+        for _, item := range items2 {
+            item = make(map[int]int, 1) // item is only a copy of the slice element.
+            item[1] = 2 // This 'item' will be lost on the next iteration.
+        }
+        fmt.Printf("Version B: Value of items: %v\n", items2)
+    }
+
+    // 输出结果：
+    Version A: Value of items: [map[1:2] map[1:2] map[1:2] map[1:2] map[1:2]]
+    Version B: Value of items: [map[] map[] map[] map[] map[]]
+```
+注意，应当像 A 版本那样通过索引使用切片的 map 元素。在 B 版本中获得的项只是 map 值的一个拷贝而已，所以真正的 map 元素没有得到初始化。  
+
+### map 的排序  
+map 默认是无序的。  
+如要排序，要将 key（或 value）拷贝到一个切片，在对切片排序（`sort` 包），然后用切片的 for-range 方法打印 key 和 value。  
+```go
+    var (
+        barVal = map[string]int{"alpha": 34, "bravo": 56, "charlie": 23,
+                                "delta": 87, "echo": 56, "foxtrot": 12,
+                                "golf": 34, "hotel": 16, "indio": 87,
+                                "juliet": 65, "kili": 43, "lima": 98}
+    )
+
+    func main() {
+        fmt.Println("unsorted:")
+        for k, v := range barVal {
+            fmt.Printf("Key: %v, Value: %v / ", k, v)
+        }
+        keys := make([]string, len(barVal))
+        i := 0
+        for k, _ := range barVal {
+            keys[i] = k
+            i++
+        }
+        sort.Strings(keys)
+        fmt.Println()
+        fmt.Println("sorted:")
+        for _, k := range keys {
+            fmt.Printf("Key: %v, Value: %v / ", k, barVal[k])
+        }
+    }
+```
+如果想要一个排序的列表，最好使用结构体切片，这样更有效：  
+```go
+    type name struct {
+        key string
+        value int
+    }
+```
+
 ---
 ## 指针
 ```go
@@ -620,6 +711,7 @@ Go 语言中函数经常用两个返回值来表示是否执行成功：返回�
 
 ## 内置函数  
 不需要导入就可使用。
+
 名称 | 说明 |
 ---- | ----|
 close  | 用于管道通信|
@@ -734,6 +826,163 @@ eg. 求斐波那契数列：
         return
 }
 ```
+
+# 包（package）  
+## 标准库  
+内置在 Go 语言中的，150 个以上。  
+- `unsafe`: 包含了一些打破 Go 语言“类型安全”的命令，一般的程序中不会被使用，可用在 C/C++ 程序的调用中。
+- `syscall`-`os`-`os/exec`:  
+    - `os`: 提供给我们一个平台无关性的操作系统功能接口，采用类Unix设计，隐藏了不同操作系统间差异，让不同的文件系统和操作系统对象表现一致。  
+    - `os/exec`: 提供我们运行外部操作系统命令和程序的方式。  
+    - `syscall`: 底层的外部包，提供了操作系统底层调用的基本接口。
+- `archive/tar` 和 `/zip-compress`：压缩(解压缩)文件功能。
+- `fmt`-`io`-`bufio`-`path/filepath`-`flag`:  
+    - `fmt`: 提供了格式化输入输出功能。  
+    - `io`: 提供了基本输入输出功能，大多数是围绕系统功能的封装。  
+    - `bufio`: 缓冲输入输出功能的封装。  
+    - `path/filepath`: 用来操作在当前系统中的目标文件名路径。  
+    - `flag`: 对命令行参数的操作。　　
+- `strings`-`strconv`-`unicode`-`regexp`-`bytes`:  
+    - `strings`: 提供对字符串的操作。  
+    - `strconv`: 提供将字符串转换为基础类型的功能。
+    - `unicode`: 为 unicode 型的字符串提供特殊的功能。
+    - `regexp`: 正则表达式功能。  
+    - `bytes`: 提供对字符型分片的操作。  
+    - `index/suffixarray`: 子字符串快速查询。
+- `math`-`math/cmath`-`math/big`-`math/rand`-`sort`:  
+    - `math`: 基本的数学函数。  
+    - `math/cmath`: 对复数的操作。  
+    - `math/rand`: 伪随机数生成。  
+    - `sort`: 为数组排序和自定义集合。  
+    - `math/big`: 大数的实现和计算。  　　
+- `container`-`/list-ring-heap`: 实现对集合的操作。  
+    - `list`: 双链表。
+    - `ring`: 环形链表。
+- `time`-`log`:  
+    - `time`: 日期和时间的基本操作。  
+    - `log`: 记录程序运行时产生的日志,我们将在后面的章节使用它。
+- `encoding/json`-`encoding/xml`-`text/template`:
+    - `encoding/json`: 读取并解码和写入并编码 JSON 数据。  
+    - `encoding/xml`:简单的 XML1.0 解析器。  
+    - `text/template`:生成像 HTML 一样的数据与文本混合的数据驱动模板。  
+- `net`-`net/http`-`html`
+    - `net`: 网络数据的基本操作。  
+    - `http`: 提供了一个可扩展的 HTTP 服务器和基础客户端，解析 HTTP 请求和回复。  
+    - `html`: HTML5 解析器。  
+- `runtime`: Go 程序运行时的交互操作，例如垃圾回收和协程创建。  
+- `reflect`: 实现通过程序运行时反射，让程序操作任意类型的变量。  
+
+`exp` 包中有许多将被编译为新包的实验性的包。它们将成为独立的包在下次稳定版本发布的时候。如果前一个版本已经存在了，它们将被作为过时的包被回收。然而 Go1.0 发布的时候并不包含过时或者实验性的包。
+
+## regexp 包  
+正则表达式语法和使用见 [维基百科](http://en.wikipedia.org/wiki/Regular_expression)  
+简单模式，用 `Match` 方法即可：
+```go
+    ok, _ := regexp.Match(pat, []byte(searchIn))        // ok 将返回 true 或 false
+```
+也可以用 `MatchString`：
+```go
+    ok, _ := regexp.MatchString(pat, searchIn)  
+```
+更多方法中，必须先将正则通过 `Compile` 方法返回一个 Regexp 对象。  
+`Compile` 函数也可能返回一个错误，我们在使用时忽略对错误的判断是因为我们确信自己正则表达式是有效的。当用户输入或从数据中获取正则表达式的时候，我们有必要去检验它的正确性。另外我们也可以使用 `MustCompile` 方法，它可以像 `Compile` 方法一样检验正则的有效性，但是当正则不合法时程序将 panic。  
+
+## 锁和 sync 包  
+多个线程同时操作一个变量时，可能会出错，需要锁。 这种锁的机制是通过 sync 包中 Mutex 来实现的。sync 来源于 "synchronized" 一词，这意味着线程将有序的对同一变量进行访问。  
+`sync.Mutex` 是一个互斥锁，它的作用是守护在临界区入口来确保同一时间只能有一个线程进入临界区。  
+```go
+import  "sync"
+
+type Info struct {      // 假设 info 是一个需要上锁的放在共享内存中的变量
+    mu sync.Mutex
+    // ... other fields, e.g.: Str string
+}
+
+// 如果一个函数要改变这个变量：
+func Update(info *Info) {
+    info.mu.Lock()
+    // critical section:
+    info.Str = // new value
+    // end critical section
+    info.mu.Unlock()
+}
+```
+eg. 实现一个可以上锁的共享缓冲器:  
+```go
+type SyncedBuffer struct {
+    lock    sync.Mutex
+    buffer  bytes.Buffer
+}
+```
+在 sync 包中还有一个 `RWMutex` 锁：他能通过 `RLock()` 来允许同一时间多个线程对变量进行读操作，但是只能一个线程进行写操作。如果使用 `Lock()` 将和普通的 `Mutex` 作用相同。包中还有一个方便的 `Once` 类型变量的方法 `once.Do(call)`，这个方法确保被调用函数只能被调用一次。  
+
+相对简单的情况下，通过使用 sync 包可以解决同一时间只能一个线程访问变量或 map 类型数据的问题。如果这种方式导致程序明显变慢或者引起其他问题，我们要重新思考来通过 goroutines 和 channels 来解决问题，这是在 Go 语言中所提倡用来实现并发的技术。我们将在第 14 章对其深入了解，并在第 14.7 节中对这两种方式进行比较。
+
+## 精密计算和 big 包  
+对于整数的高精度计算 Go 语言中提供了 big 包。其中包含了 math 包：有用来表示大整数的 `big.Int` 和表示大有理数的 `big.Rat` 类型（可以表示为 2/5 或 3.1416 这样的分数，而不是无理数或 π）。这些类型可以实现任意位类型的数字，只要内存足够大。缺点是更大的内存和处理开销使它们使用起来要比内置的数字类型慢很多。
+
+大的整型数字是通过 big.NewInt(n) 来构造的，其中 n 为 int64 类型整数。而大有理数是用过 big.NewRat(N,D) 方法构造。N（分子）和 D（分母）都是 int64 型整数。因为 Go 语言不支持运算符重载，所以所有大数字类型都有像是 Add() 和 Mul() 这样的方法。它们作用于作为 receiver 的整数和有理数，大多数情况下它们修改 receiver 并以 receiver 作为返回结果。因为没有必要创建 big.Int 类型的临时变量来存放中间结果，所以这样的运算可通过内存链式存储。
+
+## 自定义包和可见性  
+当写自己包的时候，要使用短小的不含有 `_`(下划线)的小写单词来为文件命名。  
+
+import 的一般格式如下：
+```go
+import "包的路径或 URL 地址"   // 路径指当前目录的相对路径
+// eg.
+import "./pack1/pack1"
+import "github.com/org1/pack1”
+```
+
+Import with _ :pack1包只导入其副作用，也就是说，只执行它的init函数并初始化其中的全局变量。  
+```go
+import _ "./pack1/pack1"
+```
+
+导入外部安装包：  
+```go
+go install codesite.ext/author/goExample/goex   // ←网址
+```
+将一个名为 `codesite.ext/author/goExample/goex` 的 map 安装在 `$GOROOT/src/` 目录下。  
+
+在 `http://golang.org/cmd/goinstall/` 的 `go install` 文档中列出了一些广泛被使用的托管在网络代码仓库的包的导入路径  
+
+**包的初始化:**
+
+程序的执行开始于导入包，初始化 main 包然后调用 main 函数。  
+
+一个没有导入的包将通过分配初始值给所有的包级变量和调用源码中定义的包级 init 函数来初始化。一个包可能有多个 init 函数甚至在一个源码文件中。它们的执行是无序的。这是最好的例子来测定包的值是否只依赖于相同包下的其他值或者函数。  
+
+init 函数是不能被调用的。  
+
+导入的包在包自身初始化前被初始化，而一个包在程序执行中只能初始化一次。  
+
+
+## 为自定义包使用 godoc
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/09.6.md)  
+
+## 使用 go install 安装自定义包  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/09.7.md)  
+
+## 自定义包的目录结构、go install 和 go test  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/09.8.md)  
+
+## 通过 Git 打包和安装  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/09.9.md)  
+
+## Go 的外部包和项目  
+着手自己 Go 项目前，最好查下是否有存在的第三方包或项目可使用。大多可通过 go install 安装。  
+
+[Go Walker](https://gowalker.org) 支持查询。  
+
+目前已经有许多非常好的外部库，如：
+
+- MySQL(GoMySQL), PostgreSQL(go-pgsql), MongoDB (mgo, gomongo), CouchDB (couch-go), ODBC (godbcl), Redis (redis.go) and SQLite3 (gosqlite) database drivers
+- SDL bindings
+- Google's Protocal Buffers(goprotobuf)
+- XML-RPC(go-xmlrpc)
+- Twitter(twitterstream)
+- OAuth libraries(GoAuth)
 
 ---
 # 常用资料  
