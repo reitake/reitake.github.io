@@ -246,22 +246,32 @@ a[2] = 200
 ---
 ## 结构体  
 一系列相同或不同类型的数据结构构成的集合。
+
+组成结构体类型的数据称为**字段（field）**。    
+
 ### 定义结构体  
 ```go
     //定义结构体
     type struct_variable_type struct{
-        key1 type;
-        key2 type;
+        filed1 type;
+        filed2 type;
         ...
-        keyN type;
+        filedN type;
     }
+
+    // 使用 new，会分配内存
+    t := new(T)
+
+    // 常用的初始化结构体方式：
+    ms := &struct1{10, 15.5, "Chris"}   //是一种简写，底层仍会调用 new()，必须按顺序赋值
 
     //用结构体声明变量
     struct_name := struct_variable_type {value1, value2...,valueN}
-    struct_name_name2 := struct_variable_type{key1: value1, key2: value2..., keyN: valueN}
+    struct_name_name2 := struct_variable_type{filed1: value1, filed2: value2..., filedN: valueN}
 
-    //访问结构体成员
+    //访问结构体成员，选择器（selector
     结构体.成员名
+    structname.fieldname
 
     //结构体名struct_name可以作为函数参数
 ```
@@ -274,7 +284,192 @@ a[2] = 200
     //使用指针访问成员
     struct_pointer.keyN
 ```
+
+### 使用工厂方法创建结构体实例  
+```go
+type File struct {                              //定义了如下的 File 结构体类型
+    fd      int     // 文件描述符
+    name    string  // 文件名
+}
+
+func NewFile(fd int, name string) *File {       // 返回一个指向结构体实例的指针
+    if fd < 0 {
+        return nil
+    }
+
+    return &File{fd, name}
+}
+
+f := NewFile(10, "./test.txt")                   // 调用工厂方法
+```
+如果想知道结构体类型T的一个实例占用了多少内存，可以使用：`size := unsafe.Sizeof(T{})`。  
+
+试图 `make()` 一个结构体变量，会引发一个编译错误，这还不是太糟糕，但是 `new()` 一个映射并试图使用数据填充它，将会引发运行时错误！ 因为 `new(Foo)` 返回的是一个指向 `nil` 的指针，它尚未被分配内存。所以在使用 `map` 时要特别谨慎。：  
+```go
+type Foo map[string]string
+type Bar struct {
+    thingOne string
+    thingTwo int
+}
+
+func main() {
+    // OK
+    y := new(Bar)
+    (*y).thingOne = "hello"
+    (*y).thingTwo = 1
+
+    // NOT OK
+    z := make(Bar) // 编译错误：cannot make type Bar
+    (*z).thingOne = "hello"
+    (*z).thingTwo = 1
+
+    // OK
+    x := make(Foo)
+    x["x"] = "goodbye"
+    x["y"] = "world"
+
+    // NOT OK
+    u := new(Foo)
+    (*u)["x"] = "goodbye" // 运行时错误!! panic: assignment to entry in nil map
+    (*u)["y"] = "world"
+}
+```
+### 带标签的结构体  
+
+结构体中的字段除了有名字和类型外，还可以有一个可选的标签（tag）：它是一个附属于字段的字符串，可以是文档或其他的重要标记。标签的内容不可以在一般的编程中使用，只有包 `reflect` 能获取它。 `reflect`包可以在运行时自省类型、属性和方法，比如：在一个变量上调用 `reflect.TypeOf()` 可以获取变量的正确类型，如果变量是一个结构体类型，就可以通过 Field 来索引结构体的字段，然后就可以使用 Tag 属性。  
+```go
+import (
+    "fmt"
+    "reflect"
+)
+
+type TagType struct { // tags
+    field1 bool   "An important answer"
+    field2 string "The name of the thing"
+    field3 int    "How much there are"
+}
+
+func main() {
+    tt := TagType{true, "Barak Obama", 1}
+    for i := 0; i < 3; i++ {
+        refTag(tt, i)
+    }
+}
+
+func refTag(tt TagType, ix int) {
+    ttType := reflect.TypeOf(tt)
+    ixField := ttType.Field(ix)
+    fmt.Printf("%v\n", ixField.Tag)
+}
+
+// 输出：
+An important answer
+The name of the thing
+How much there are
+```
+
+### 匿名字段和内嵌结构体  
+结构体可以包含一个或多个 **匿名（或内嵌）字段**，即这些字段没有显式的名字，只有字段的类型是必须的，此时类型就是字段的名字。匿名字段本身可以是一个结构体类型，即 **结构体可以包含内嵌结构体**。  
+
+- 当两个字段命名冲突时候：
+    + 外场名字会覆盖内层名字（但是两者的内存空间都保留），这提供了一种重载字段或方法的方式；  
+    + 如果相同的名字在同一级别出现了两次，如果这个名字被程序使用了，将会引发一个错误（不使用没关系）。没有办法来解决这种问题引起的二义性，必须由程序员自己修正。  
+
 ---
+
+## 方法  
+Go 方法是作用在接收者（receiver）上的一个函数，接收者是某种类型的变量。因此方法是一种特殊类型的函数。  
+
+接收者类型可以是（几乎）任何类型，不仅仅是结构体类型：任何类型都可以有方法，甚至可以是函数类型，可以是 int、bool、string 或数组的别名类型。但是接收者不能是一个接口类型，因为接口是一个抽象定义，但是方法却是具体实现；如果这样做会引发一个编译错误：invalid receiver type…。  
+
+最后接收者不能是一个指针类型，但是它可以是任何其他允许类型的指针。  
+
+一个类型加上它的方法等价于面向对象中的一个**类**。一个重要的区别是：在 Go 中，类型的代码和绑定在它上面的方法的代码可以不放置在一起，它们可以存在在不同的源文件，唯一的要求是：它们必须是同一个包的。  
+
+类型 T（或 *T）上的所有方法的集合叫做类型 T（或 *T）的**方法集**。  
+
+定义方法的一般格式：  
+```go
+func (recv receiver_type) methodName(parameter_list) (return_value_list) { ... }
+
+// 如果方法不需要使用 recv 的值，可以用 _ 替换它：
+func (_ receiver_type) methodName(parameter_list) (return_value_list) { ... }
+```
+在方法名之前，func 关键字之后的括号中指定 receiver。  
+
+如果 `recv` 是 receiver 的实例，Method1 是它的方法名，那么方法调用遵循传统的 `object.name` 选择器符号：**recv.Method1()**。  
+
+如果 `recv` 是一个指针，Go 会自动解引用。  
+
+### 函数和方法的区别  
+函数将变量作为参数：**Function1(recv)**  
+
+方法在变量上被调用：**recv.Method1()**  
+
+**receiver_type** 叫做 **（接收者）基本类型**，这个类型必须在和方法同样的包中被声明。  
+
+**方法没有和数据定义（结构体）混在一起：它们是正交的类型；表示（数据）和行为（方法）是独立的。**  
+
+## 方法和未导出字段  
+[可以建立Set方法来修改未导出的字段](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1064-%E6%96%B9%E6%B3%95%E5%92%8C%E6%9C%AA%E5%AF%BC%E5%87%BA%E5%AD%97%E6%AE%B5)  
+
+## 内嵌类型的方法和继承  
+将父类型放在子类型中来实现亚型。  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1065-%E5%86%85%E5%B5%8C%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E7%BB%A7%E6%89%BF)  
+
+## 在类型中嵌入功能
+主要有两种方法来实现在类型中嵌入功能：  
+
+A：聚合（或组合）：包含一个所需功能类型的具名字段。  
+
+B：内嵌：内嵌（匿名地）所需功能类型。  
+
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1066-%E5%A6%82%E4%BD%95%E5%9C%A8%E7%B1%BB%E5%9E%8B%E4%B8%AD%E5%B5%8C%E5%85%A5%E5%8A%9F%E8%83%BD)  
+
+## 多重继承  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.6.md#1067-%E5%A4%9A%E9%87%8D%E7%BB%A7%E6%89%BF)  
+
+## 和其他面向对象语言比较 Go 的类型和方法  
+在如 C++、Java、C# 和 Ruby 这样的面向对象语言中，方法在类的上下文中被定义和继承：在一个对象上调用方法时，运行时会检测类以及它的超类中是否有此方法的定义，如果没有会导致异常发生。  
+
+在 Go 语言中，这样的继承层次是完全没必要的：如果方法在此类型定义了，就可以调用它，和其他类型上是否存在这个方法没有关系。在这个意义上，Go 具有更大的灵活性。  
+
+Go 不需要一个显式的类定义，如同 Java、C++、C# 等那样，相反地，“类”是通过提供一组作用于一个共同类型的方法集来隐式定义的。类型可以是结构体或者任何用户自定义类型。  
+
+**总结**
+
+在 Go 中，类型就是类（数据和关联的方法）。Go 不知道类似面向对象语言的类继承的概念。继承有两个好处：代码复用和多态。  
+
+在 Go 中，代码复用通过组合和委托实现，多态通过接口的使用来实现：有时这也叫 **组件编程（Component Programming）**。  
+
+许多开发者说相比于类继承，Go 的接口提供了更强大、却更简单的多态行为。  
+
+**备注**
+
+如果真的需要更多面向对象的能力，看一下 [`goop`](https://github.com/losalamos/goop) 包（Go Object-Oriented Programming），它由 Scott Pakin 编写: 它给 Go 提供了 JavaScript 风格的对象（基于原型的对象），并且支持多重继承和类型独立分派，通过它可以实现你喜欢的其他编程语言里的一些结构。  
+
+## 类型的 String() 方法和格式化描述符  
+如果类型定义了 `String()` 方法，它会被用在 `fmt.Printf()` 中生成默认的输出：等同于使用格式化描述符 `%v` 产生的输出。还有 `fmt.Print()` 和 `fmt.Println()` 也会自动使用 `String()` 方法。  
+
+[example](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/10.7.md)  
+
+格式化描述符 `%T` 会给出类型的完全规格，`%#v` 会给出实例的完整输出，包括它的字段（在程序自动生成 `Go` 代码时也很有用）。  
+
+**备注**
+
+不要在 `String()` 方法里面调用涉及 `String()` 方法的方法，它会导致意料之外的错误，比如下面的例子，它导致了一个无限递归调用（`TT.String()` 调用 `fmt.Sprintf`，而 `fmt.Sprintf` 又会反过来调用 `TT.String()`...），很快就会导致内存溢出：
+
+```go
+type TT float64
+
+func (t TT) String() string {
+    return fmt.Sprintf("%v", t)
+}
+t.String()
+```
+
+---
+
 ## Map(集合)  
 一种无序的键值的集合。可以迭代，不返回顺序。  
 通过key来快速检索。  
@@ -983,6 +1178,10 @@ init 函数是不能被调用的。
 - XML-RPC(go-xmlrpc)
 - Twitter(twitterstream)
 - OAuth libraries(GoAuth)
+
+## 在 Go 程序中使用外部库  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/09.11.md)  
+
 
 ---
 # 常用资料  
