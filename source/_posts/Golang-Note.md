@@ -113,7 +113,15 @@ categories: Go
     var slice_name [] = make([]type, len)
     //也可简写成
     slice_name := make([]type, len, capacity)  //capacity为可选参数
+
+    // 用 new() 创建，与用 make 相同
+    new([100]int)[0:50]
+    make([]int, 50, 100)
 ```
+new() 和 make() 的区别：  
+* new(T) 为每个新的类型T分配一片内存，初始化为 0 并且返回类型为*T的内存地址：这种方法**返回一个指向类型为 T，值为 0 的地址的指针**，它适用于值类型如数组和结构体。 
+*  make(T) 返回一个类型为 T 的初始值，它只适用于3种内建的引用类型：切片、map 和 channel。  
+即 new 函数分配内存，make 函数初始化。  
 **切片初始化：**  
 ```go
     //直接:=声明+初始化
@@ -131,10 +139,55 @@ categories: Go
         ...
     }
 ```
-### 切片操作  
+### 切片的操作  
+* 切片重组（reslice）：切片达到cao上限后可扩容，改变切片长度的过程称为重组reslicing。做法：`slice1 = slice1[0:end]`  
+切片扩展 1 位： `sl = sl[0:len(sl)+1]`  
 * 切片后移 1 位：`s = s[1:]`,不可前移。
 * 注意：不要用指针指向 slice，因为切片本身已经是一个引用类型，所以它本身就是一个指针！  
-* 
+* for-range 用于切片时，第一个返回值 ix 是索引，第二个返回值 val 是该索引位置的值，val 是值拷贝。
+* `copy(sl_to, sl_form)` 切片复制  
+* `apend(sl, elem1...)` 切片追加  
+* s 是个字符串（本质是字节数组），那可通过 `c := []byte(s)` 来获得字节切片 c。或者 `copy(dst []byte, src string)`    
+* 字符串是不可被赋值修改的，要修改可以将字符串转化成字节数字，然后修改数组元素，最后把字节数组转换回字符串：  
+```go
+    s := "hello"
+    c := []byte(s)
+    c[0] = 'c'
+    s2 := string(c) // s2 == "cello"
+```
+* `sort` 包实现搜索和排序。搜索元素前必须先排序（因为搜索是二分法）。[sort 官方文档](http://golang.org/pkg/sort/)  
+```go
+    sort.Ints(arri)     // 升序排序
+    func Float64s(a []float64)
+    func Stirings(a []string)
+
+    IntsAreSorted(a []int) bool     // 检查是否已被排序
+    func SearchInts(a []int, n int) int     // 搜索
+```
+* append 函数常见操作
+```go
+    // 切片 b 追加到切片 a 之后：
+    a = append(a, b...)
+    // 复制切片 a 的元素到新的切片 b 上：
+    b = make([]T, len(a))
+    copy(b, a)
+    // 删除位于索引 i 的元素：
+    a = append(a[:i], a[i+1:]...)
+    // 切除切片 a 中从索引 i 至 j 位置的元素：
+    a = apend(a[:i], a[j:]...)
+    // 为切片 a 拓展 j 个元素长度：
+    a = append(a, make([]T, j)...)
+    // 在索引 i 的位置插入元素 x：
+    a = append(a[:i], append([]T{x}, a[i:]...)...)
+    // 在索引 i 的位置插入切片 b 的所有元素：
+    a = append(a[:i], append(b, a[i:]...)...)
+    // 取出位于切片 a 最末尾的元素 x：
+    x, a = a[len(a)-1], a[:len(a)-1]
+```
+
+### 切片和垃圾回收  
+切片的底层是数组，数组实际容量可能大于切片容量，只有没有任何切片指向数组时，底层数组的内存才会被释放，因此可能对导致过多内存被占用。  
+
 ---
 ## 指针
 ### 指针声明
@@ -681,6 +734,33 @@ eg. 求斐波那契数列：
         return
 }
 ```
+
+---
+# 常用资料  
+## Go 关键字
+* 25 个关键字  
+
+break   |default |func   | interface |  select|
+-----|-----|-----|-----|-----|
+case    |defer |  go|  map |struct|
+chan   | else   | goto  |  package |switch|
+const  | fallthrough |if|  range|   type|
+continue   | for| import|  return|  var|
+
+* 36 个预定义标识符  
+
+append | bool  |  byte  |  cap |close |  complex |complex64 |  complex128|  uint16|
+-----|-----|-----|-----|-----|-----|-----|-----|-----|
+copy   | false  | float32 |float64| imag|    int |int8   | int16 |  uint32|
+int32  | int64  | iota  |  len |make  |  new |nil |panic|   uint64|
+print  | println |real |   recover| string | true  |  uint  |  uint8 |  uintptr|
+
+
+
+
+
+
+
 
 
 ---
