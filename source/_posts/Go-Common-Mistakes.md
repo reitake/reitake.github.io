@@ -1,7 +1,7 @@
 ---
 title: Go 中常见错误
 date: 2019-03-11 21:15:27
-tags: [Go]
+tags: [Go, Note]
 categories: [Go]
 permalink: Go-Common-Mistakes
 ---
