@@ -606,6 +606,128 @@ map 默认是无序的。
 为了防止内存溢出，Go 语言不允许指针算法（如： `pointer+2`），因此 `c = *p++` 是非法的。  
 
 ---
+
+## 接口（Interfaces）与反射（reflection）  
+接口提供了一种方式来 **说明** 对象的行为：如果谁能搞定这件事，它就可以用在这儿。  
+接口定义了一组方法（方法集），但不包含（实现）代码：它们没有被实现（它们是抽象的）。接口里也不能包含变量。  
+
+定义接口的格式：  
+```go
+type Namer interface{   // namer 是一个接口类型
+    Method1(param_list) return_type
+    Method2(param_list) return_type
+}
+```
+按约定，只包含一个方法的接口的名字由方法名加 `[e]r` 后缀组成，如 `Printer`、`Reader`、`Writer`、`Logger`、`Converter` 等。  
+
+类型（如结构体）实现接口方法集中的方法，每个方法的实现说明了次方法是如何作用于该类型的： **即实现接口**，同时方法集也构成了该类型的接口。  
+
+**类型不需要显式声明它实现了某个接口：接口被隐式地实现。多个类型可以实现同一个接口**。  
+
+**实现某个接口的类型（除了实现接口方法外）可以有其他的方法**。  
+
+**一个类型可以实现多个接口**。  
+
+**接口类型可以包含一个实例的引用， 该实例的类型实现了此接口（接口是动态类型）**。  
+
+即使接口在类型之后才定义，二者处于不同的包中，被单独编译：只要类型实现了接口中的方法，它就实现了此接口。  
+
+所有这些特性使得接口具有很大的灵活性。  
+
+```go
+package main
+
+import "fmt"
+
+type Shaper interface {
+    Area() float32
+}
+
+type Square struct {
+    side float32
+}
+
+func (sq *Square) Area() float32 {
+    return sq.side * sq.side
+
+}
+
+func main() {
+    sq1 := new(Square)
+    sq1.side = 5
+    var areaIntf Shaper
+    areaIntf = sq1      // 赋值给接口类型变量
+    // or:
+    // areaIntf := Shaper(sq1)
+    // or
+    // areaIntf := sq1
+    fmt.Printf("The square has area: %f\n", areaIntf.Area())
+    var a float32 = sq1.Area()
+    fmt.Println(a)
+}
+```
+这是 **多态** 的 Go 版本，多态是面向对象编程中一个广为人知的概念：根据当前的类型选择正确的方法，或者说：同一种类型在不同的实例上似乎表现出不同的行为。  
+```go
+package main
+
+import "fmt"
+
+type Shaper interface {
+    Area() float32
+}
+
+type Square struct {
+    side float32
+}
+
+func (sq *Square) Area() float32 {
+    return sq.side * sq.side
+}
+
+type Rectangle struct {
+    length, width float32
+}
+
+func (r Rectangle) Area() float32 {
+    return r.length * r.width
+}
+
+func main() {
+
+    r := Rectangle{5, 3} // Area() of Rectangle needs a value
+    q := &Square{5}      // Area() of Square needs a pointer
+    // shapes := []Shaper{Shaper(r), Shaper(q)}
+    // or shorter
+    shapes := []Shaper{r, q}
+    fmt.Println("Looping through shapes for area ...")
+    for n, _ := range shapes {
+        fmt.Println("Shape details: ", shapes[n])
+        fmt.Println("Area of this shape is: ", shapes[n].Area())
+    }
+}
+```
+
+### 接口嵌套接口  
+一个接口可以包含一个或多个其他的接口，这相当于直接将这些内嵌接口的方法列举在外层接口中一样：  
+```go
+type ReadWrite interface {
+    Read(b Buffer) bool
+    Write(b Buffer) bool
+}
+
+type Lock interface {
+    Lock()
+    Unlock()
+}
+
+type File interface {
+    ReadWrite
+    Lock
+    Close()
+}
+```
+
+---
 # 常用包  
 ## `strings` 包  
 Go 中使用 `strings` 包对字符串进行操作。  
