@@ -726,6 +726,351 @@ type File interface {
     Close()
 }
 ```
+### 类型断言：如何检测和转换接口变量的类型  
+一个接口类型的变量 `varI` 中可以包含任何类型的值，必须有一种方式来检测它的 **动态** 类型，即运行时在变量中存储的值的实际类型。通常我们可以使用 **类型断言** 来测试在某个时刻 `varI` 是否包含类型 `T` 的值：  
+```go
+v := varI.(T)       // unchecked type assertion
+```
+**varI 必须是一个接口变量**，否则编译器会报错：`invalid type assertion: varI.(T) (non-interface type (type of varI) on left)` 。  
+
+类型断言可能是无效的，更安全的方式是使用以下形式来进行类型断言：  
+```go
+if v, ok := varI.(T); ok {  // checked type assertion
+    Process(v)
+    return
+}
+// varI is not of type T
+```
+如果转换合法，`v` 是 `varI` 转换到类型 `T` 的值，`ok` 会是 `true`；否则 `v` 是类型 `T` 的零值，`ok` 是 `false`，也没有运行时错误发生。  
+
+**应该总是使用上面的方式来进行类型断言**。  
+```go
+package main
+
+import (
+    "fmt"
+    "math"
+)
+
+type Square struct {
+    side float32
+}
+
+type Circle struct {
+    radius float32
+}
+
+type Shaper interface {
+    Area() float32
+}
+
+func main() {
+    var areaIntf Shaper
+    sq1 := new(Square)
+    sq1.side = 5
+
+    areaIntf = sq1
+    // Is Square the type of areaIntf?
+    if t, ok := areaIntf.(*Square); ok {
+        fmt.Printf("The type of areaIntf is: %T\n", t)
+    }
+    if u, ok := areaIntf.(*Circle); ok {
+        fmt.Printf("The type of areaIntf is: %T\n", u)
+    } else {
+        fmt.Println("areaIntf does not contain a variable of type Circle")
+    }
+}
+
+func (sq *Square) Area() float32 {
+    return sq.side * sq.side
+}
+
+func (ci *Circle) Area() float32 {
+    return ci.radius * ci.radius * math.Pi
+}
+```
+### 类型判断：type-switch  
+接口变量的类型也可以使用一种特殊形式的 `switch` 来检测：**type-switch** ：  
+```go
+switch t := areaIntf.(type) {
+case *Square:
+    fmt.Printf("Type Square %T with value %v\n", t, t)
+case *Circle:
+    fmt.Printf("Type Circle %T with value %v\n", t, t)
+case nil:
+    fmt.Printf("nil value: nothing to check?\n")
+default:
+    fmt.Printf("Unexpected type %T\n", t)
+}
+```
+输出：  
+```go
+Type Square *main.Square with value &{5}
+```
+变量 `t` 得到了 `areaIntf` 的值和类型， 所有 `case` 语句中列举的类型（`nil` 除外）都必须实现对应的接口（在上例中即 `Shaper`），如果被检测类型没有在 `case` 语句列举的类型中，就会执行 `default` 语句。  
+
+可以用 `type-switch` 进行运行时类型分析，但是在 `type-switch` 不允许有 `fallthrough` 。  
+
+如果仅仅是测试变量的类型，不用它的值，那么就可以不需要赋值语句，比如：  
+
+```go
+switch areaIntf.(type) {
+case *Square:
+    // TODO
+case *Circle:
+    // TODO
+...
+default:
+    // TODO
+}
+```
+
+下面的代码片段展示了一个类型分类函数，它有一个可变长度参数，可以是任意类型的数组，它会根据数组元素的实际类型执行不同的动作：  
+
+```go
+func classifier(items ...interface{}) {
+    for i, x := range items {
+        switch x.(type) {
+        case bool:
+            fmt.Printf("Param #%d is a bool\n", i)
+        case float64:
+            fmt.Printf("Param #%d is a float64\n", i)
+        case int, int64:
+            fmt.Printf("Param #%d is a int\n", i)
+        case nil:
+            fmt.Printf("Param #%d is a nil\n", i)
+        case string:
+            fmt.Printf("Param #%d is a string\n", i)
+        default:
+            fmt.Printf("Param #%d is unknown\n", i)
+        }
+    }
+}
+```
+可以这样调用此方法：`classifier(13, -14.3, "BELGIUM", complex(1, 2), nil, false)` 。  
+
+在处理来自于外部的、类型未知的数据时，比如解析诸如 JSON 或 XML 编码的数据，类型测试和转换会非常有用。  
+
+### 测试一个值是否实现了某个接口  
+假定 `v` 是一个值，然后我们想测试它是否实现了 `Stringer` 接口，可以这样做：
+
+```go
+type Stringer interface {
+    String() string
+}
+
+if sv, ok := v.(Stringer); ok {
+    fmt.Printf("v implements String(): %s\n", sv.String()) // note: sv, not v
+}
+```
+接口是一种契约，实现类型必须满足它，它描述了类型的行为，规定类型可以做什么。接口彻底将类型能做什么，以及如何做分离开来，使得相同接口的变量在不同的时刻表现出不同的行为，这就是**多态的本质**。  
+
+编写参数是接口变量的函数，这使得它们更具有一般性。  
+
+**使用接口使代码更具有普适性。**  
+
+### 使用方法集与接口  
+
+作用于变量上的方法实际上是不区分变量到底是指针还是值的。当碰到接口类型值时，这会变得有点复杂，原因是接口变量中存储的具体值是不可寻址的，幸运的是，如果使用不当编译器会给出错误。  
+
+**总结**  
+
+在接口上调用方法时，必须有和方法定义时相同的接收者类型或者是可以从具体类型 `P` 直接可以辨识的：  
+
+- 指针方法可以通过指针调用
+- 值方法可以通过值调用
+- 接收者是值的方法可以通过指针调用，因为指针会首先被解引用
+- 接收者是指针的方法不可以通过值调用，因为存储在接口中的值没有地址
+
+将一个值赋值给一个接口时，编译器会确保所有可能的接口方法都可以在此值上被调用，因此不正确的赋值在编译期就会失败。  
+
+**译注**  
+
+Go 语言规范定义了接口方法集的调用规则：  
+
+- 类型 *T 的可调用方法集包含接受者为 *T 或 T 的所有方法集
+- 类型 T 的可调用方法集包含接受者为 T 的所有方法
+- 类型 T 的可调用方法集不包含接受者为 *T 的方法  
+
+### 第一个例子：使用 Sorter 接口排序  
+[The way to go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.7.md)  
+
+### 第二个例子：读和写
+`io` 包提供了用于读和写的接口 `io.Reader` 和 `io.Writer`：  
+```go
+type Reader interface {
+    Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
+```
+一个对象要是可读的，它必须实现 `io.Reader` 接口，这个接口只有一个签名是 `Read(p []byte) (n int, err error)` 的方法，它从调用它的对象上读取数据，并把读到的数据放入参数中的字节切片中，然后返回读取的字节数和一个 `error` 对象，如果没有错误发生返回 `nil`，如果已经到达输入的尾端，会返回 `io.EOF("EOF")`，如果读取的过程中发生了错误，就会返回具体的错误信息。类似地，一个对象要是可写的，它必须实现 `io.Writer` 接口，这个接口也只有一个签名是 `Write(p []byte) (n int, err error)` 的方法，它将指定字节切片中的数据写入调用它的对象里，然后返回实际写入的字节数和一个 `error` 对象（如果没有错误发生就是 `nil`）。  
+
+`io` 包里的 `Readers` 和 `Writers` 都是不带缓冲的，`bufio` 包里提供了对应的带缓冲的操作，在读写 `UTF-8` 编码的文本文件时它们尤其有用。  
+
+[The way to go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.8.md)  
+
+### 空接口  
+**空接口或者最小接口** 不包含任何方法，它对实现不做任何要求：  
+```go
+type Any interface {}
+```
+任何其他类型都实现了空接口，`any` 或 `Any` 是空接口一个很好的别名或缩写。  
+
+可以给一个空接口类型的变量 `var val interface {}` 赋任何类型的值。  
+```go
+package main
+import "fmt"
+
+var i = 5
+var str = "ABC"
+
+type Person struct {
+    name string
+    age  int
+}
+
+type Any interface{}
+
+func main() {
+    var val Any
+    val = 5
+    fmt.Printf("val has the value: %v\n", val)
+    val = str
+    fmt.Printf("val has the value: %v\n", val)
+    pers1 := new(Person)
+    pers1.name = "Rob Pike"
+    pers1.age = 55
+    val = pers1
+    fmt.Printf("val has the value: %v\n", val)
+    switch t := val.(type) {
+    case int:
+        fmt.Printf("Type int %T\n", t)
+    case string:
+        fmt.Printf("Type string %T\n", t)
+    case bool:
+        fmt.Printf("Type boolean %T\n", t)
+    case *Person:
+        fmt.Printf("Type pointer to Person %T\n", t)
+    default:
+        fmt.Printf("Unexpected type %T", t)
+    }
+}
+
+// 输出：
+val has the value: 5
+val has the value: ABC
+val has the value: &{Rob Pike 55}
+Type pointer to Person *main.Person
+```
+空接口在 `type-switch` 中联合 `lambda` 函数的用法：  
+```go
+package main
+
+import "fmt"
+
+type specialString string
+
+var whatIsThis specialString = "hello"
+
+func TypeSwitch() {
+    testFunc := func(any interface{}) {
+        switch v := any.(type) {
+        case bool:
+            fmt.Printf("any %v is a bool type", v)
+        case int:
+            fmt.Printf("any %v is an int type", v)
+        case float32:
+            fmt.Printf("any %v is a float32 type", v)
+        case string:
+            fmt.Printf("any %v is a string type", v)
+        case specialString:
+            fmt.Printf("any %v is a special String!", v)
+        default:
+            fmt.Println("unknown type!")
+        }
+    }
+    testFunc(whatIsThis)
+}
+
+func main() {
+    TypeSwitch()
+}
+
+// 输出：
+any hello is a special String!
+```
+### 构建通用类型或包含不同类型变量的数组  
+通过使用空接口。让我们给空接口定一个别名类型 `Element`：`type Element interface{}`  
+然后定义一个容器类型的结构体 `Vector`，它包含一个 `Element` 类型元素的切片：  
+```go
+type Vector struct {
+    a []Element
+}
+```
+`Vector` 里能放任何类型的变量，因为任何类型都实现了空接口，实际上 `Vector` 里放的每个元素可以是不同类型的变量。我们为它定义一个 `At()` 方法用于返回第 `i` 个元素：  
+```go
+func (p *Vector) At(i int) Element {
+    return p.a[i]
+}
+```
+再定一个 `Set()` 方法用于设置第 `i` 个元素的值：
+```go
+func (p *Vector) Set(i int, e Element) {
+    p.a[i] = e
+}
+```
+`Vector` 中存储的所有元素都是 `Element` 类型，要得到它们的原始类型（unboxing：拆箱）需要用到类型断言。  
+
+### 复制数据切片至空接口切片  
+假设你有一个 `myType` 类型的数据切片，你想将切片中的数据复制到一个空接口切片中，必须使用 `for-range` 语句来一个一个显式地复制：  
+```go
+var dataSlice []myType = FuncReturnSlice()
+var interfaceSlice []interface{} = make([]interface{}, len(dataSlice))
+for i, d := range dataSlice {
+    interfaceSlice[i] = d
+}
+```
+
+### 通用类型的节点数据结构  
+[The way to Go 参考内容]（https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.9.md#1194-%E9%80%9A%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%8A%82%E7%82%B9%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84）  
+
+### 接口到接口  
+[The way to Go 参考内容]（https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.9.md#1195-%E6%8E%A5%E5%8F%A3%E5%88%B0%E6%8E%A5%E5%8F%A3）  
+
+### 反射包
+反射是用程序检查其所拥有的结构，尤其是类型的一种能力；这是元编程的一种形式。反射可以在运行时检查类型和变量，例如它的大小、方法和 `动态`
+的调用这些方法。这对于没有源代码的包尤其有用。这是一个强大的工具，除非真得有必要，否则应当避免使用或小心使用。  
+
+变量的最基本信息就是类型和值：反射包的 `Type` 用来表示一个 Go 类型，反射包的 `Value` 为 Go 值提供了反射接口。  
+
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.10.md)  
+
+### Printf 和反射  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.11.md)  
+
+### 接口与动态类型  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.12.md)  
+
+### 总结：Go 中的面向对象  
+
+Go 没有类，而是松耦合的类型、方法对接口的实现。  
+
+OO 语言最重要的三个方面分别是：封装，继承和多态，在 Go 中它们是怎样表现的呢？  
+
+- 封装（数据隐藏）：和别的 OO 语言有 4 个或更多的访问层次相比，Go 把它简化为了 2 层（参见 4.2 节的可见性规则）:  
+
+    1）包范围内的：通过标识符首字母小写，`对象` 只在它所在的包内可见  
+
+    2）可导出的：通过标识符首字母大写，`对象` 对所在包以外也可见  
+
+类型只拥有自己所在包中定义的方法。  
+
+- 继承：用组合实现：内嵌一个（或多个）包含想要的行为（字段和方法）的类型；多重继承可以通过内嵌多个类型实现  
+- 多态：用接口实现：某个类型的实例可以赋给它所实现的任意接口类型的变量。类型和接口是松耦合的，并且多重继承可以通过实现多个接口实现。Go 接口不是 Java 和 C# 接口的变体，而且接口间是不相关的，并且是大规模编程和可适应的演进型设计的关键。  
+
 
 ---
 # 常用包  
@@ -1324,8 +1669,6 @@ append | bool  |  byte  |  cap |close |  complex |complex64 |  complex128|  uint
 copy   | false  | float32 |float64| imag|    int |int8   | int16 |  uint32|
 int32  | int64  | iota  |  len |make  |  new |nil |panic|   uint64|
 print  | println |real |   recover| string | true  |  uint  |  uint8 |  uintptr|
-
-
 
 
 
