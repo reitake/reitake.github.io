@@ -9,7 +9,7 @@ description: Hey, you're the apple of my eye. I'm missing you. I missed you.
 keywords:
 author: rtk
 language: zh-CN
-timezone:
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

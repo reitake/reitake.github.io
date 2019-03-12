@@ -2,7 +2,7 @@
 title: Go 中常见错误
 date: 2019-03-11 21:15:27
 tags: [Go, Note]
-categories: [Go]
+categories: Go
 permalink: Go-Common-Mistakes
 ---
 
@@ -255,7 +255,7 @@ func httpRequestHandler(w http.ResponseWriter, req *http.Request) {
         doSomething() ...
 ```
 
-这种方法可以很容易分辨出错误检测、错误通知和正常的程序逻辑[更详细...](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.5.md)。
+这种方法可以很容易分辨出错误检测、错误通知和正常的程序逻辑[更详细...](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.5.md)。  
 
 # 不能使用简短声明来设置字段的值  
 struct 的变量字段不能使用 := 来赋值以使用预定义的变量来避免解决：  
