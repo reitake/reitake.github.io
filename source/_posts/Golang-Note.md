@@ -2043,7 +2043,6 @@ continue   for           import   return      var
 ```
 
 * 36 个预定义标识符  
-
 ```go
 内建常量: true false iota nil
 
