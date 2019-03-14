@@ -72,6 +72,18 @@ categories: Go
     //eg.
     var arr3[5][10][4]int
 ```
+**注意：** 如果要用变量来代表构成二维数组的长度：
+```go
+    //这是不对的！
+    s := [val1][val2]int
+
+    //要用make：
+    s := make([][]int, val1)
+    for _, row := s{
+        row := make([]int, val2)
+    }
+```
+
 **二维数组初始化：**
 ```go
     a = [3][4]int{  
