@@ -2041,6 +2041,633 @@ func main() {
 
 我们不使用缓冲区，直接将内容写入文件：`f.WriteString( )`  
 
+## 文件拷贝  
+用 `io` 包：  
+```go
+// filecopy.go
+package main
+
+import (
+    "fmt"
+    "io"
+    "os"
+)
+
+func main() {
+    CopyFile("target.txt", "source.txt")
+    fmt.Println("Copy done!")
+}
+
+func CopyFile(dstName, srcName string) (written int64, err error) {
+    src, err := os.Open(srcName)
+    if err != nil {
+        return
+    }
+    defer src.Close()
+
+    dst, err := os.Create(dstName)
+    if err != nil {
+        return
+    }
+    defer dst.Close()
+
+    return io.Copy(dst, src)
+}
+```
+注意 `defer` 的使用：当打开目标文件时发生了错误，那么 `defer` 仍然能够确保 `src.Close()` 执行。如果不这么做，文件会一直保持打开状态并占用资源。
+
+## 从命令行读参数  
+### os 包  
+os 包中有一个 string 类型的切片变量 `os.Args`，用来处理一些基本的命令行参数，它在程序启动后读取命令行输入的参数。来看下面的打招呼程序：  
+```go
+// os_args.go
+package main
+
+import (
+    "fmt"
+    "os"
+    "strings"
+)
+
+func main() {
+    who := "Alice "
+    if len(os.Args) > 1 {
+        who += strings.Join(os.Args[1:], " ")
+    }
+    fmt.Println("Good Morning", who)
+}
+```
+我们在 IDE 或编辑器中直接运行这个程序输出：`Good Morning Alice`  
+
+我们在命令行运行 `os_args or ./os_args` 会得到同样的结果。  
+
+但是我们在命令行加入参数，像这样：`os_args John Bill Marc Luke`，将得到这样的输出：`Good Morning Alice John Bill Marc Luke`  
+
+这个命令行参数会放置在切片 `os.Args[]` 中（以空格分隔），从索引1开始（`os.Args[0]` 放的是程序本身的名字，在本例中是 `os_args`）。函数 `strings.Join` 以空格为间隔连接这些参数。  
+
+### flag 包
+flag 包有一个扩展功能用来解析命令行选项。但是通常被用来替换基本常量，例如，在某些情况下我们希望在命令行给常量一些不一样的值。  
+
+在 flag 包中有一个 Flag 被定义成一个含有如下字段的结构体：  
+
+```go
+type Flag struct {
+    Name     string // name as it appears on command line
+    Usage    string // help message
+    Value    Value  // value as set
+    DefValue string // default value (as text); for usage message
+}
+```
+模拟 Unix 的 echo 功能：  
+```go
+package main
+
+import (
+    "flag" // command line option parser
+    "os"
+)
+
+var NewLine = flag.Bool("n", false, "print newline") // echo -n flag, of type *bool
+
+const (
+    Space   = " "
+    Newline = "\n"
+)
+
+func main() {
+    flag.PrintDefaults()
+    flag.Parse() // Scans the arg list and sets up flags
+    var s string = ""
+    for i := 0; i < flag.NArg(); i++ {
+        if i > 0 {
+            s += " "
+            if *NewLine { // -n is parsed, flag becomes true
+                s += Newline
+            }
+        }
+        s += flag.Arg(i)
+    }
+    os.Stdout.WriteString(s)
+}
+```
+`flag.Parse()` 扫描参数列表（或者常量列表）并设置 flag, `flag.Arg(i)` 表示第i个参数。`Parse()` 之后 `flag.Arg(i)` 全部可用，`flag.Arg(0)` 就是第一个真实的 flag，而不是像 `os.Args(0)` 放置程序的名字。  
+
+`flag.Narg()` 返回参数的数量。解析后 flag 或常量就可用了。
+`flag.Bool()` 定义了一个默认值是 `false` 的 flag：当在命令行出现了第一个参数（这里是 "n"），flag 被设置成 `true`（NewLine 是 `*bool` 类型）。flag 被解引用到 `*NewLine`，所以当值是 `true` 时将添加一个 Newline（"\n"）。  
+
+`flag.PrintDefaults()` 打印 flag 的使用帮助信息，本例中打印的是：  
+
+```go
+-n=false: print newline
+```
+
+`flag.VisitAll(fn func(*Flag))` 是另一个有用的功能：按照字典顺序遍历 flag，并且对每个标签调用 fn   
+
+当在命令行（Windows）中执行：`echo.exe A B C`，将输出：`A B C`；执行 `echo.exe -n A B C`，将输出：  
+
+```
+A
+B
+C
+```
+
+每个字符的输出都新起一行，每次都在输出的数据前面打印使用帮助信息：`-n=false: print newline`。  
+
+对于 `flag.Bool` 你可以设置布尔型 flag 来测试你的代码，例如定义一个 flag `processedFlag`:  
+
+```go
+var processedFlag = flag.Bool("proc", false, "nothing processed yet")
+```
+
+在后面用如下代码来测试：  
+
+```go
+if *processedFlag { // found flag -proc
+    r = process()
+}
+```
+
+要给 flag 定义其它类型，可以使用 `flag.Int()`，`flag.Float64()`，`flag.String()`。  
+## 用 buffer 读取文件  
+使用了缓冲读取文件和命令行 flag 解析这两项技术。如果不加参数，那么你输入什么屏幕就打印什么。  
+
+参数被认为是文件名，如果文件存在的话就打印文件内容到屏幕。命令行执行 `cat test` 测试输出。 
+
+```
+package main
+
+import (
+    "bufio"
+    "flag"
+    "fmt"
+    "io"
+    "os"
+)
+
+func cat(r *bufio.Reader) {
+    for {
+        buf, err := r.ReadBytes('\n')
+        if err == io.EOF {
+            break
+        }
+        fmt.Fprintf(os.Stdout, "%s", buf)
+    }
+    return
+}
+
+func main() {
+    flag.Parse()
+    if flag.NArg() == 0 {
+        cat(bufio.NewReader(os.Stdin))
+    }
+    for i := 0; i < flag.NArg(); i++ {
+        f, err := os.Open(flag.Arg(i))
+        if err != nil {
+            fmt.Fprintf(os.Stderr, "%s:error reading from %s: %s\n", os.Args[0], flag.Arg(i), err.Error())
+            continue
+        }
+        cat(bufio.NewReader(f))
+    }
+}
+```
+## 用切片读写文件  
+切片提供了 Go 中处理 I/O 缓冲的标准方式，下面 `cat` 函数的第二版中，在一个切片缓冲内使用无限 for 循环（直到文件尾部 EOF）读取文件，并写入到标准输出（`os.Stdout`）。  
+```go
+func cat(f *os.File) {
+    const NBUF = 512
+    var buf [NBUF]byte
+    for {
+        switch nr, err := f.Read(buf[:]); true {
+        case nr < 0:
+            fmt.Fprintf(os.Stderr, "cat: error reading: %s\n", err.Error())
+            os.Exit(1)
+        case nr == 0: // EOF
+            return
+        case nr > 0:
+            if nw, ew := os.Stdout.Write(buf[0:nr]); nw != nr {
+                fmt.Fprintf(os.Stderr, "cat: error writing: %s\n", ew.Error())
+            }
+        }
+    }
+}
+```
+上面的代码来自于 `cat2.go`，使用了 os 包中的 `os.File` 和 `Read` 方法；`cat2.go` 与 `cat.go` 具有同样的功能。  
+```go
+package main
+
+import (
+    "flag"
+    "fmt"
+    "os"
+)
+
+func cat(f *os.File) {
+    const NBUF = 512
+    var buf [NBUF]byte
+    for {
+        switch nr, err := f.Read(buf[:]); true {
+        case nr < 0:
+            fmt.Fprintf(os.Stderr, "cat: error reading: %s\n", err.Error())
+            os.Exit(1)
+        case nr == 0: // EOF
+            return
+        case nr > 0:
+            if nw, ew := os.Stdout.Write(buf[0:nr]); nw != nr {
+                fmt.Fprintf(os.Stderr, "cat: error writing: %s\n", ew.Error())
+            }
+        }
+    }
+}
+
+func main() {
+    flag.Parse() // Scans the arg list and sets up flags
+    if flag.NArg() == 0 {
+        cat(os.Stdin)
+    }
+    for i := 0; i < flag.NArg(); i++ {
+        f, err := os.Open(flag.Arg(i))
+        if f == nil {
+            fmt.Fprintf(os.Stderr, "cat: can't open %s: error %s\n", flag.Arg(i), err)
+            os.Exit(1)
+        }
+        cat(f)
+        f.Close()
+    }
+}
+```
+## 用 defer 关闭文件  
+```go
+func data(name string) string {
+    f, _ := os.OpenFile(name, os.O_RDONLY, 0)
+    defer f.Close() // idiomatic Go code!
+    contents, _ := ioutil.ReadAll(f)
+    return string(contents)
+}
+```
+在函数 return 后执行了 `f.Close()`  
+
+## 使用接口的实际例子：fmt.Fprintf  
+例子程序 `io_interfaces.go` 很好的阐述了 io 包中的接口概念:  
+```go
+// interfaces being used in the GO-package fmt
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+)
+
+func main() {
+    // unbuffered
+    fmt.Fprintf(os.Stdout, "%s\n", "hello world! - unbuffered")
+    // buffered: os.Stdout implements io.Writer
+    buf := bufio.NewWriter(os.Stdout)
+    // and now so does buf.
+    fmt.Fprintf(buf, "%s\n", "hello world! - buffered")
+    buf.Flush()
+}
+```
+输出：  
+```go
+hello world! - unbuffered
+hello world! - buffered
+```
+
+`fmt.Fprintf()` 函数的实际签名:  
+```go
+func Fprintf(w io.Writer, format string, a ...interface{}) (n int, err error)
+```
+其不是写入一个文件，而是写入一个 `io.Writer` 接口类型的变量，下面是 `Writer` 接口在 io 包中的定义：  
+```go
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
+```
+
+`fmt.Fprintf()` 依据指定的格式向第一个参数内写入字符串，第一个参数必须实现了 `io.Writer` 接口。`Fprintf()` 能够写入任何类型，只要其实现了 `Write` 方法，包括 `os.Stdout`,文件（例如 os.File），管道，网络连接，通道等等，同样的也可以使用 bufio 包中缓冲写入。bufio 包中定义了 `type Writer struct{...}`。  
+
+bufio.Writer 实现了 Write 方法：  
+```go
+func (b *Writer) Write(p []byte) (nn int, err error)
+```
+
+它还有一个工厂函数：传给它一个 `io.Writer` 类型的参数，它会返回一个带缓冲的 `bufio.Writer` 类型的 `io.Writer`:  
+
+```go
+func NewWriter(wr io.Writer) (b *Writer)
+```
+
+其适合任何形式的缓冲写入。  
+
+在缓冲写入的最后千万不要忘了使用 `Flush()`，否则最后的输出不会被写入。  
+## JSON 数据格式  
+数据结构要在网络中传输或保存到文件，就必须对其编码和解码；目前存在很多编码格式：JSON，XML，gob，Google 缓冲协议等等。Go 语言支持所有这些编码格式。  
+
+术语说明：  
+- 数据结构 --> 指定格式 = `序列化` 或 `编码`（传输之前）
+- 指定格式 --> 数据格式 = `反序列化` 或 `解码`（传输之后）
+
+序列化是在内存中把数据转换成指定格式（data -> string），反之亦然（string -> data structure）  
+
+编码也是一样的，只是输出一个数据流（实现了 io.Writer 接口）；解码是从一个数据流（实现了 io.Reader）输出到一个数据结构。  
+
+JSON 有时候是首选，由于其格式上非常简洁。通常 JSON 被用于 web 后端和浏览器之间的通讯，但是在其它场景也同样的有用。  
+
+一个简短的 JSON 片段：  
+```javascript
+{
+    "Person": {
+        "FirstName": "Laura",
+        "LastName": "Lynn"
+    }
+}
+```
+```go
+// json.go
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "log"
+    "os"
+)
+
+type Address struct {
+    Type    string
+    City    string
+    Country string
+}
+
+type VCard struct {
+    FirstName string
+    LastName  string
+    Addresses []*Address
+    Remark    string
+}
+
+func main() {
+    pa := &Address{"private", "Aartselaar", "Belgium"}
+    wa := &Address{"work", "Boom", "Belgium"}
+    vc := VCard{"Jan", "Kersschot", []*Address{pa, wa}, "none"}
+    // fmt.Printf("%v: \n", vc) // {Jan Kersschot [0x126d2b80 0x126d2be0] none}:
+    // JSON format:
+    js, _ := json.Marshal(vc)
+    fmt.Printf("JSON format: %s", js)
+    // using an encoder:
+    file, _ := os.OpenFile("vcard.json", os.O_CREATE|os.O_WRONLY, 0666)
+    defer file.Close()
+    enc := json.NewEncoder(file)
+    err := enc.Encode(vc)
+    if err != nil {
+        log.Println("Error in encoding json")
+    }
+}
+```
+`json.Marshal()` 的函数签名是 `func Marshal(v interface{}) ([]byte, error)`，下面是数据编码后的 JSON 文本（实际上是一个 []byte）：  
+
+```javascript
+{
+    "FirstName": "Jan",
+    "LastName": "Kersschot",
+    "Addresses": [{
+        "Type": "private",
+        "City": "Aartselaar",
+        "Country": "Belgium"
+    }, {
+        "Type": "work",
+        "City": "Boom",
+        "Country": "Belgium"
+    }],
+    "Remark": "none"
+}
+```
+出于安全考虑，在 web 应用中最好使用 `json.MarshalforHTML()` 函数，其对数据执行HTML转码，所以文本可以被安全地嵌在 HTML `<script>` 标签中。  
+
+`json.NewEncoder()` 的函数签名是 `func NewEncoder(w io.Writer) *Encoder`，返回的Encoder类型的指针可调用方法 `Encode(v interface{})`，将数据对象 v 的json编码写入 `io.Writer` w 中。  
+
+JSON 与 Go 类型对应如下：  
+
+- bool 对应 JSON 的 booleans
+- float64 对应 JSON 的 numbers
+- string 对应 JSON 的 strings
+- nil 对应 JSON 的 null
+
+不是所有的数据都可以编码为 JSON 类型：只有验证通过的数据结构才能被编码：  
+
+- JSON 对象只支持字符串类型的 key；要编码一个 Go map 类型，map 必须是 map[string]T（T是 `json` 包中支持的任何类型）
+- Channel，复杂类型和函数类型不能被编码
+- 不支持循环数据结构；它将引起序列化进入一个无限循环
+- 指针可以被编码，实际上是对指针指向的值进行编码（或者指针是 nil）
+
+ [反序列化、解码任意的数据、解码数据到结构、编码和解码流 参见](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.9.md)  
+
+## XML 数据格式  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.10.md)  
+
+## 用 Gob 传输数据  
+Gob 是 Go 自己的以二进制形式序列化和反序列化程序数据的格式；可以在 `encoding` 包中找到。这种格式的数据简称为 Gob （即 Go binary 的缩写）。类似于 Python 的 "pickle" 和 Java 的 "Serialization"。  
+[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/12.11.md)  
+
+## Go 中的密码学  
+Go 为加密提供了超过 30 个包：  
+- `hash` 包：实现了 `adler32`、`crc32`、`crc64` 和 `fnv` 校验；
+- `crypto` 包：实现了其它的 hash 算法，比如 `md4`、`md5`、`sha1` 等。以及完整地实现了 `aes`、`blowfish`、`rc4`、`rsa`、`xtea` 等加密算法。
+
+```go
+// hash_sha1.go
+package main
+
+import (
+    "fmt"
+    "crypto/sha1"
+    "io"
+    "log"
+)
+
+func main() {
+    hasher := sha1.New()
+    io.WriteString(hasher, "test")
+    b := []byte{}
+    fmt.Printf("Result: %x\n", hasher.Sum(b))
+    fmt.Printf("Result: %d\n", hasher.Sum(b))
+    //
+    hasher.Reset()
+    data := []byte("We shall overcome!")
+    n, err := hasher.Write(data)
+    if n!=len(data) || err!=nil {
+        log.Printf("Hash write error: %v / %v", n, err)
+    }
+    checksum := hasher.Sum(b)
+    fmt.Printf("Result: %x\n", checksum)
+}
+```
+输出：  
+```go
+Result: a94a8fe5ccb19ba61c4c0873d391e987982fbbd3
+Result: [169 74 143 229 204 177 155 166 28 76 8 115 211 145 233 135 152 47 187 211]
+Result: e2222bfc59850bbb00a722e764a555603bb59b2a
+```
+通过调用 `sha1.New()` 创建了一个新的 `hash.Hash` 对象，用来计算 SHA1 校验值。`Hash` 类型实际上是一个接口，它实现了 `io.Writer` 接口：  
+```go
+type Hash interface {
+    // Write (via the embedded io.Writer interface) adds more data to the running hash.
+    // It never returns an error.
+    io.Writer
+
+    // Sum appends the current hash to b and returns the resulting slice.
+    // It does not change the underlying hash state.
+    Sum(b []byte) []byte
+
+    // Reset resets the Hash to its initial state.
+    Reset()
+
+    // Size returns the number of bytes Sum will return.
+    Size() int
+
+    // BlockSize returns the hash's underlying block size.
+    // The Write method must be able to accept any amount
+    // of data, but it may operate more efficiently if all writes
+    // are a multiple of the block size.
+    BlockSize() int
+}
+```
+通过 io.WriteString 或 hasher.Write 将给定的 []byte 附加到当前的 `hash.Hash` 对象中。
+
+# 错误处理与测试  
+**永远不要忽略错误，否则可能会导致程序崩溃！！**  
+
+`panic and recover` 是用来处理真正的异常（无法预测的错误）而不是普通的错误。
+
+```go
+if value, err := pack1.Func1(param1); err != nil {
+    fmt.Printf("Error %s in pack1.Func1 with parameter %v", err.Error(), param1)
+    return    // or: return err
+} else {
+    // Process(value)
+}
+```
+除了 `fmt.Printf` 还可以使用 log 中对应的方法，如果程序中止也没关系的话甚至可以使用 `panic`  
+
+## 错误处理  
+Go 有一个预先定义的 error 接口类型  
+```go
+type error interface {
+    Error() string
+}
+```
+当程序处于错误状态时可以用 `os.Exit(1)` 来中止运行。  
+
+### 定义错误  
+用 `errors`（必须先 import）包的 `errors.New` 函数接收合适的错误信息来创建：  
+```go
+err := errors.New("math - square root of negative number")
+```
+```go
+package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+var errNotFound error = errors.New("Not found error")
+
+func main() {
+    fmt.Printf("error: %v", errNotFound)
+}
+// error: Not found error
+```
+用于计算平方根函数的参数测试：  
+```go
+func Sqrt(f float64) (float64, error) {
+    if f < 0 {
+        return 0, errors.New ("math - square root of negative number")
+    }
+   // implementation of Sqrt
+}
+```
+```go
+if f, err := Sqrt(-1); err != nil {
+    fmt.Printf("Error: %s\n", err)
+}
+```
+由于 fmt.Printf 会自动调用 String() 方法 （参见 10.7 节），所以错误信息 “Error: math - square root of negative number” 会打印出来。通常（错误信息）都会有像 “Error:” 这样的前缀，所以你的错误信息不要以大写字母开头。  
+
+有不同错误条件可能发生，那么对实际的错误使用类型断言或类型判断（type-switch）是很有用的，并且可以根据错误场景做一些补救和恢复操作。  
+```go
+// PathError records an error and the operation and file path that caused it.
+type PathError struct {
+    Op string    // "open", "unlink", etc.
+    Path string  // The associated file.
+    Err error  // Returned by the system call.
+}
+
+func (e *PathError) String() string {
+    return e.Op + " " + e.Path + ": "+ e.Err.Error()
+}
+
+//  err != nil
+if e, ok := err.(*os.PathError); ok {
+    // remedy situation
+}
+```
+或：  
+```go
+switch err := err.(type) {
+    case ParseError:
+        PrintParseError(err)
+    case PathError:
+        PrintPathError(err)
+    ...
+    default:
+        fmt.Printf("Not a special error, just %s\n", err)
+}
+```
+例子：当 json.Decode 在解析 JSON 文档发生语法错误时，指定返回一个 SyntaxError 类型的错误：  
+```go
+type SyntaxError struct {
+    msg    string // description of error
+// error occurred after reading Offset bytes, from which line and columnnr can be obtained
+    Offset int64
+}
+
+func (e *SyntaxError) String() string { return e.msg }
+```
+在调用代码中你可以像这样用类型断言测试错误是不是上面的类型：  
+```go
+if serr, ok := err.(*json.SyntaxError); ok {
+    line, col := findLine(f, serr.Offset)
+    return fmt.Errorf("%s:%d:%d: %v", f.Name(), line, col, err)
+}
+```
+包也可以用额外的方法（methods）定义特定的错误，比如 net.Error：  
+```go
+package net
+type Error interface {
+    Timeout() bool   // Is the error a timeout?
+    Temporary() bool // Is the error temporary?
+}
+```
+遵循同一种命名规范：错误类型以 “Error” 结尾，错误变量以 “err” 或 “Err” 开头。  
+
+### 用 fmt 创建错误对象  
+可以用 `fmt.Errorf()` 来实现：它和 `fmt.Printf()` 完全一样，接收一个或多个格式占位符的格式化字符串和相应数量的占位变量。和打印信息不同的是它用信息生成错误对象。  
+```go
+if f < 0 {
+    return 0, fmt.Errorf("math: square root of negative number %g", f)
+}
+```
+例子2：从命令行读取输入时，如果加了 help 标志，我们可以用有用的信息产生一个错误：  
+```go
+if len(os.Args) > 1 && (os.Args[1] == "-h" || os.Args[1] == "--help") {
+    err = fmt.Errorf("usage: %s infile.txt outfile.txt", filepath.Base(os.Args[0]))
+    return
+}
+```
+## 
+
 
 ---
 # 常用资料  
