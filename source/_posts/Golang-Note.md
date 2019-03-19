@@ -1,8 +1,8 @@
 ---
-title: Go语言学习笔记
-permalink: Golang-Note
+title: Go 语言学习笔记
+permalink: Golang-Notes
 date: 2019-03-07 12:26:44
-tags: [Go, Note]
+tags: [Go]
 categories: Go
 ---
 # 声明    
@@ -4109,7 +4109,487 @@ func InverseFuture(a Matrix) chan Matrix {
 go在编写web应用方面非常得力。因为目前它还没有GUI（Graphic User Interface 即图形化用户界面）的框架，通过文本或者模板展现的html界面是目前go编写应用程序的唯一方式。（**译者注：实际上在翻译的时候，已经有了一些不太成熟的GUI库例如：go ui。）  
 
 ## tcp服务器  
+这部分我们将使用TCP协议和在14章讲到的协程范式编写一个简单的客户端-服务器应用，一个（web）服务器应用需要响应众多客户端的并发请求：go会为每一个客户端产生一个协程用来处理请求。我们需要使用net包中网络通信的功能。它包含了用于TCP/IP以及UDP协议、域名解析等方法。  
 
+服务器代码，单独的一个文件：  
+
+示例 15.1 server.go
+
+```go
+package main
+
+import (
+    "fmt"
+    "net"
+)
+
+func main() {
+    fmt.Println("Starting the server ...")
+    // 创建 listener
+    listener, err := net.Listen("tcp", "localhost:50000")
+    if err != nil {
+        fmt.Println("Error listening", err.Error())
+        return //终止程序
+    }
+    // 监听并接受来自客户端的连接
+    for {
+        conn, err := listener.Accept()
+        if err != nil {
+            fmt.Println("Error accepting", err.Error())
+            return // 终止程序
+        }
+        go doServerStuff(conn)
+    }
+}
+
+func doServerStuff(conn net.Conn) {
+    for {
+        buf := make([]byte, 512)
+        len, err := conn.Read(buf)
+        if err != nil {
+            fmt.Println("Error reading", err.Error())
+            return //终止程序
+        }
+        fmt.Printf("Received data: %v", string(buf[:len]))
+    }
+}
+
+```
+
+我们在`main()`创建了一个`net.Listener`的变量，他是一个服务器的基本函数：用来监听和接收来自客户端的请求（来自localhost即IP地址为127.0.0.1端口为50000基于TCP协议）。这个`Listen()`函数可以返回一个`error`类型的错误变量。用一个无限for循环的`listener.Accept()`来等待客户端的请求。客户端的请求将产生一个`net.Conn`类型的连接变量。然后一个独立的协程使用这个连接执行`doServerStuff()`，开始使用一个512字节的缓冲`data`来读取客户端发送来的数据并且把它们打印到服务器的终端，`len`获取客户端发送的数据字节数；当客户端发送的所有数据都被读取完成时，协程就结束了。这段程序会为每一个客户端连接创建一个独立的协程。必须先运行服务器代码，再运行客户端代码。  
+
+客户端代码写在另外一个文件client.go中：  
+
+示例 15.2 client.go  
+
+```go
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "net"
+    "os"
+    "strings"
+)
+
+func main() {
+    //打开连接:
+    conn, err := net.Dial("tcp", "localhost:50000")
+    if err != nil {
+        //由于目标计算机积极拒绝而无法创建连接
+        fmt.Println("Error dialing", err.Error())
+        return // 终止程序
+    }
+
+    inputReader := bufio.NewReader(os.Stdin)
+    fmt.Println("First, what is your name?")
+    clientName, _ := inputReader.ReadString('\n')
+    // fmt.Printf("CLIENTNAME %s", clientName)
+    trimmedClient := strings.Trim(clientName, "\r\n") // Windows 平台下用 "\r\n"，Linux平台下使用 "\n"
+    // 给服务器发送信息直到程序退出：
+    for {
+        fmt.Println("What to send to the server? Type Q to quit.")
+        input, _ := inputReader.ReadString('\n')
+        trimmedInput := strings.Trim(input, "\r\n")
+        // fmt.Printf("input:--%s--", input)
+        // fmt.Printf("trimmedInput:--%s--", trimmedInput)
+        if trimmedInput == "Q" {
+            return
+        }
+        _, err = conn.Write([]byte(trimmedClient + " says: " + trimmedInput))
+    }
+}
+```
+客户端通过`net.Dial`创建了一个和服务器之间的连接  
+
+它通过无限循环中的os.Stdin接收来自键盘的输入直到输入了“Q”。注意使用`\r`和`\n`换行符分割字符串（在windows平台下使用`\r\n`）。接下来分割后的输入通过`connection`的`Write`方法被发送到服务器。  
+
+当然，服务器必须先启动好，如果服务器并未开始监听，客户端是无法成功连接的。  
+
+如果在服务器没有开始监听的情况下运行客户端程序，客户端会停止并打印出以下错误信息：`对tcp 127.0.0.1:50000发起连接时产生错误：由于目标计算机的积极拒绝而无法创建连接`。  
+
+打开控制台并转到服务器和客户端可执行程序所在的目录，Windows系统下输入server.exe（或者只输入server），Linux系统下输入./server。  
+
+接下来控制台出现以下信息：`Starting the server ...`  
+
+在Windows系统中，我们可以通过CTRL/C停止程序。  
+
+然后开启2个或者3个独立的控制台窗口，然后分别输入client回车启动客户端程序  
+
+以下是服务器的输出：  
+
+```
+Starting the Server ...
+Received data: IVO says: Hi Server, what's up ?
+Received data: CHRIS says: Are you busy server ?
+Received data: MARC says: Don't forget our appointment tomorrow !
+```
+当客户端输入 Q 并结束程序时，服务器会输出以下信息：  
+
+```
+Error reading WSARecv tcp 127.0.0.1:50000: The specified network name is no longer available.
+```
+在网络编程中`net.Dial`函数是非常重要的，一旦你连接到远程系统，就会返回一个Conn类型接口，我们可以用它发送和接收数据。`Dial`函数巧妙的抽象了网络结构及传输。所以IPv4或者IPv6，TCP或者UDP都可以使用这个公用接口。  
+
+下边这个示例先使用TCP协议连接远程80端口，然后使用UDP协议连接，最后使用TCP协议连接IPv6类型的地址：  
+
+示例 15.3 dial.go
+
+```go
+// make a connection with www.example.org:
+package main
+
+import (
+    "fmt"
+    "net"
+    "os"
+)
+
+func main() {
+    conn, err := net.Dial("tcp", "192.0.32.10:80") // tcp ipv4
+    checkConnection(conn, err)
+    conn, err = net.Dial("udp", "192.0.32.10:80") // udp
+    checkConnection(conn, err)
+    conn, err = net.Dial("tcp", "[2620:0:2d0:200::10]:80") // tcp ipv6
+    checkConnection(conn, err)
+}
+func checkConnection(conn net.Conn, err error) {
+    if err != nil {
+        fmt.Printf("error %v connecting!", err)
+        os.Exit(1)
+    }
+    fmt.Printf("Connection is made with %v\n", conn)
+}
+```
+下边也是一个使用net包从socket中打开，写入，读取数据的例子：  
+
+示例 15.4 socket.go  
+
+```go
+package main
+
+import (
+    "fmt"
+    "io"
+    "net"
+)
+
+func main() {
+    var (
+        host          = "www.apache.org"
+        port          = "80"
+        remote        = host + ":" + port
+        msg    string = "GET / \n"
+        data          = make([]uint8, 4096)
+        read          = true
+        count         = 0
+    )
+    // 创建一个socket
+    con, err := net.Dial("tcp", remote)
+    // 发送我们的消息，一个http GET请求
+    io.WriteString(con, msg)
+    // 读取服务器的响应
+    for read {
+        count, err = con.Read(data)
+        read = (err == nil)
+        fmt.Printf(string(data[0:count]))
+    }
+    con.Close()
+}
+```
+
+## 一个简单的网页服务器  
+Http是一个比tcp更高级的协议，它描述了客户端浏览器如何与网页服务器进行通信。Go有自己的`net/http`包，我们来看看它。我们从一些简单的示例开始，
+首先编写一个“Hello world!”：查看示例15.6  
+
+我们引入了`http`包并启动了网页服务器，和15.1的`net.Listen("tcp", "localhost:50000")`函数的tcp服务器是类似的，使用`http.ListenAndServe("localhost:8080", nil)`函数，如果成功会返回空，否则会返回一个错误（可以指定localhost为其他地址，8080是指定的端口号）  
+
+`http.URL`描述了web服务器的地址，内含存放了url字符串的`Path`属性；`http.Request`描述了客户端请求，内含一个`URL`属性  
+
+如果`req`请求是一个POST类型的html表单，“var1”就是html表单中一个输入属性的名称，然后用户输入的值就可以通过GO代码：`req.FormValue("var1")`获取到（请看[章节15.4](15.4.md)）。还有一种方法就是先执行`request.ParseForm()`然后再获取`request.Form["var1"]`的第一个返回参数，就像这样：  
+
+```go
+  var1, found := request.Form["var1"]
+```
+第二个参数`found`就是`true`，如果`var1`并未出现在表单中，`found`就是`false`  
+
+表单属性实际上是一个`map[string][]string`类型。网页服务器返回了一个`http.Response`，它是通过`http.ResponseWriter`对象输出的，这个对象整合了HTTP服务器的返回结果；通过对它写入内容，我们就将数据发送给了HTTP客户端。  
+
+现在我们还需要编写网页服务器必须执行的程序，它是如何处理请求的呢。这是在`http.HandleFunc`函数中完成的，就是在这个例子中当根路径“/”（url地址是http://localhost:8080 ）被请求的时候（或者这个服务器上的其他地址），`HelloServer`函数就被执行了。这个函数是`http.HandlerFunc`类型的，它们通常用使用Prehandler来命名，在前边加了一个Pref前缀。  
+
+`http.HandleFunc`注册了一个处理函数(这里是`HelloServer`)来处理对应`/`的请求。  
+
+`/`可以被替换为其他特定的url比如`/create`，`/edit`等等；你可以为每一个特定的url定义一个单独的处理函数。这个函数需要两个参数：第一个是`ReponseWriter`类型的`w`；第二个是请求`req`。程序向`w`写入了`Hello`和`r.URL.Path[1:]`组成的字符串后边的`[1:]`表示“创建一个从第一个字符到结尾的子切片”，用来丢弃掉路径开头的“/”，`fmt.Fprintf()`函数完成了本次写入（请看章节12.8）；另外一种写法是`io.WriteString(w, "hello, world!\n")`  
+
+总结：第一个参数是请求的路径，第二个参数是处理这个路径请求的函数的引用。  
+
+示例 15.6 hello_world_webserver.go  
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+    "net/http"
+)
+
+func HelloServer(w http.ResponseWriter, req *http.Request) {
+    fmt.Println("Inside HelloServer handler")
+    fmt.Fprintf(w, "Hello,"+req.URL.Path[1:])
+}
+
+func main() {
+    http.HandleFunc("/", HelloServer)
+    err := http.ListenAndServe("localhost:8080", nil)
+    if err != nil {
+        log.Fatal("ListenAndServe: ", err.Error())
+    }
+}
+```
+使用命令行启动程序，会打开一个命令窗口显示如下文字：  
+```
+Starting Process E:/Go/GoBoek/code_examples/chapter_14/hello_world_webserver.exe
+...
+```
+然后打开你的浏览器并输入url地址：`http://localhost:8080/world`，浏览器就会出现文字：`Hello, world`，网页服务器会响应你在`:8080/`后边输入的内容  
+
+使用`fmt.Println`在控制台打印状态，在每个handler被请求的时候，在他们内部打印日志会很有帮助  
+
+注：  
+1）前两行（没有错误处理代码）可以替换成以下写法：  
+```go
+http.ListenAndServe(":8080", http.HandlerFunc(HelloServer))
+```
+2）`fmt.Fprint`和`fmt.Fprintf`都是用来写入`http.ResponseWriter`的不错的函数（他们实现了`io.Writer`）。
+比如我们可以使用  
+```go
+fmt.Fprintf(w, "<h1>%s<h1><div>%s</div>", title, body)
+```
+来构建一个非常简单的网页并插入`title`和`body`的值  
+
+如果你需要更多复杂的替换，使用模板包（请看章节15.7）  
+3）如果你需要使用安全的https连接，使用`http.ListenAndServeTLS()`代替`http.ListenAndServe()`  
+4）`http.HandleFunc("/", Hfunc)`中的`HFunc`是一个处理函数，如下：  
+```go
+func HFunc(w http.ResponseWriter, req *http.Request) {
+    ...
+}
+```
+也可以使用这种方式：`http.Handle("/", http.HandlerFunc(HFunc))`  
+
+上边的`HandlerFunc`只是一个类型名称，它定义如下：  
+```go
+type HandlerFunc func(ResponseWriter, *Request)
+```
+它是一个可以把普通的函数当做HTTP处理器的适配器。如果`f`函数声明的合适，`HandlerFunc(f)`就是一个执行了`f`函数的处理器对象。  
+
+`http.Handle`的第二个参数也可以是`T`的一个obj对象：`http.Handle("/", obj)`给T提供了`ServeHTTP`方法，实现了http的`Handler`接口：  
+```go
+func (obj *Typ) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+    ...
+}
+```
+这个用法在章节15.8类型`Counter`和`Chan`上使用过。只要实现了`http.Handler`，`http`包就可以处理任何HTTP请求。  
+
+## 访问并读取页面  
+在下边这个程序中，数组中的url都将被访问：会发送一个简单的`http.Head()`请求查看返回值；它的声明如下：`func Head(url string) (r *Response, err error)`  
+
+返回状态码会被打印出来。  
+
+示例 15.7 poll_url.go：
+
+```go
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+var urls = []string{
+    "http://www.google.com/",
+    "http://golang.org/",
+    "http://blog.golang.org/",
+}
+
+func main() {
+    // Execute an HTTP HEAD request for all url's
+    // and returns the HTTP status string or an error string.
+    for _, url := range urls {
+        resp, err := http.Head(url)
+        if err != nil {
+            fmt.Println("Error:", url, err)
+        }
+        fmt.Println(url, ": ", resp.Status)
+    }
+}
+```
+输出为：  
+
+```
+http://www.google.com/ : 302 Found
+http://golang.org/ : 200 OK
+http://blog.golang.org/ : 200 OK
+```
+***译者注*** 由于国内的网络环境现状，很有可能见到如下超时错误提示：  
+
+```
+Error: http://www.google.com/ Head http://www.google.com/: dial tcp 216.58.221.100:80: connectex: A connection attempt failed because the connected pa
+rty did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+```
+在下边的程序中我们使用`http.Get()`获取网页内容； `Get`的返回值`res`中的`Body`属性包含了网页内容，然后我们用`ioutil.ReadAll`把它读出来：  
+
+示例 15.8 http_fetch.go：
+
+```go
+package main
+
+import (
+    "fmt"
+    "io/ioutil"
+    "log"
+    "net/http"
+)
+
+func main() {
+    res, err := http.Get("http://www.google.com")
+    checkError(err)
+    data, err := ioutil.ReadAll(res.Body)
+    checkError(err)
+    fmt.Printf("Got: %q", string(data))
+}
+
+func checkError(err error) {
+    if err != nil {
+        log.Fatalf("Get : %v", err)
+    }
+}
+```
+
+当访问不存在的网站时，这里有一个`CheckError`输出错误的例子：  
+```
+2011/09/30 11:24:15 Get: Get http://www.google.bex: dial tcp www.google.bex:80:GetHostByName: No such host is known.
+```
+***译者注*** 和上一个例子相似，你可以把google.com更换为一个国内可以顺畅访问的网址进行测试  
+
+在下边的程序中，我们获取一个twitter用户的状态，通过`xml`包将这个状态解析成为一个结构：  
+
+示例 15.9 twitter_status.go
+```go
+package main
+
+import (
+    "encoding/xml"
+    "fmt"
+    "net/http"
+)
+
+/*这个结构会保存解析后的返回数据。
+他们会形成有层级的XML，可以忽略一些无用的数据*/
+type Status struct {
+    Text string
+}
+
+type User struct {
+    XMLName xml.Name
+    Status  Status
+}
+
+func main() {
+    // 发起请求查询推特Goodland用户的状态
+    response, _ := http.Get("http://twitter.com/users/Googland.xml")
+    // 初始化XML返回值的结构
+    user := User{xml.Name{"", "user"}, Status{""}}
+    // 将XML解析为我们的结构
+    xml.Unmarshal(response.Body, &user)
+    fmt.Printf("status: %s", user.Status.Text)
+}
+```
+输出：  
+
+```
+status: Robot cars invade California, on orders from Google: Google has been testing self-driving cars ... http://bit.ly/cbtpUN http://retwt.me/97p<exit code="0" msg="process exited normally"/>
+```
+**译者注** 和上边的示例相似，你可能无法获取到xml数据，另外由于go版本的更新，`xml.Unmarshal`函数的第一个参数需是[]byte类型，而无法传入`Body`。  
+
+我们会在章节15.4中用到`http`包中的其他重要的函数：  
+
+*   `http.Redirect(w ResponseWriter, r *Request, url string, code int)`：这个函数会让浏览器重定向到url（是请求的url的相对路径）以及状态码。
+*   `http.NotFound(w ResponseWriter, r *Request)`：这个函数将返回网页没有找到，HTTP 404错误。
+*   `http.Error(w ResponseWriter, error string, code int)`：这个函数返回特定的错误信息和HTTP代码。
+*   另`http.Request`对象的一个重要属性`req`：`req.Method`，这是一个包含`GET`或`POST`字符串，用来描述网页是以何种方式被请求的。
+
+go为所有的HTTP状态码定义了常量，比如：  
+
+    http.StatusContinue     = 100
+    http.StatusOK           = 200
+    http.StatusFound        = 302
+    http.StatusBadRequest       = 400
+    http.StatusUnauthorized     = 401
+    http.StatusForbidden        = 403
+    http.StatusNotFound     = 404
+    http.StatusInternalServerError  = 500
+
+你可以使用`w.header().Set("Content-Type", "../..")`设置头信息  
+
+比如在网页应用发送html字符串的时候，在输出之前执行`w.Header().Set("Content-Type", "text/html")`。  
+
+## 写一个简单的网页应用  
+下边的程序在端口8088上启动了一个网页服务器；`SimpleServer`会处理`/test1`url使它在浏览器输出`hello world`。`FormServer`会处理`/test2`url：如果url最初由浏览器请求，那么它就是一个`GET`请求，并且返回一个`form`常量，包含了简单的`input`表单，这个表单里有一个文本框和一个提交按钮。当在文本框输入一些东西并点击提交按钮的时候，会发起一个`POST`请求。`FormServer`中的代码用到了`switch`来区分两种情况。在`POST`情况下，使用`request.FormValue("inp")`通过文本框的`name`属性`inp`来获取内容，并写回浏览器页面。在控制台启动程序并在浏览器中打开url`http://localhost:8088/test2`来测试这个程序：
+
+示例 15.10 simple_webserver.go
+
+```go
+package main
+
+import (
+    "io"
+    "net/http"
+)
+
+const form = `
+    <html><body>
+        <form action="#" method="post" name="bar">
+            <input type="text" name="in" />
+            <input type="submit" value="submit"/>
+        </form>
+    </body></html>
+`
+
+/* handle a simple get request */
+func SimpleServer(w http.ResponseWriter, request *http.Request) {
+    io.WriteString(w, "<h1>hello, world</h1>")
+}
+
+func FormServer(w http.ResponseWriter, request *http.Request) {
+    w.Header().Set("Content-Type", "text/html")
+    switch request.Method {
+    case "GET":
+        /* display the form to the user */
+        io.WriteString(w, form)
+    case "POST":
+        /* handle the form data, note that ParseForm must
+           be called before we can extract form data */
+        //request.ParseForm();
+        //io.WriteString(w, request.Form["in"][0])
+        io.WriteString(w, request.FormValue("in"))
+    }
+}
+
+func main() {
+    http.HandleFunc("/test1", SimpleServer)
+    http.HandleFunc("/test2", FormServer)
+    if err := http.ListenAndServe(":8088", nil); err != nil {
+        panic(err)
+    }
+}
+```
+注：当使用字符串常量表示html文本的时候，包含`<html><body></body></html>`对于让浏览器识别它收到了一个html非常重要。  
+
+更安全的做法是在处理器中使用`w.Header().Set("Content-Type", "text/html")`在写入返回之前将`header`的`content-type`设置为`text/html`  
+
+`content-type`会让浏览器认为它可以使用函数`http.DetectContentType([]byte(form))`来处理收到的数据  
 
 ---
 # 常用资料  
@@ -4136,11 +4616,3 @@ continue   for           import   return      var
           complex real imag
           panic recover
 ```
-
-
-
-
-
-
----
-*`to be continued...`*

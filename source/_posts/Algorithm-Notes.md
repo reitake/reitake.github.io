@@ -3,7 +3,7 @@ title: Algorithm 笔记
 date: 2019-03-14 15:13:54
 tags: [算法, Go, Note]
 categories: 算法
-permalink: Alg-Note
+permalink: Alg-Notes
 ---
 # 数组  
 ## 有序数组的平方  
