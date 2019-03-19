@@ -106,7 +106,7 @@ for ix, ch := range str {
 
 `Strings.Join()`（参考[章节4.7](https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md)）
     
-使用`+=`：
+使用`+=`：  
 
  ```go
  str1 := "Hello " 
@@ -178,7 +178,7 @@ for key, value := range map1 {
 （2）如何在一个映射中检测键`key1`是否存在：`val1, isPresent = map1[key1]`  
 
 返回值：键`key1`对应的值或者`0`, `true`或者`false`  
-    
+
 （3）如何在映射中删除一个键：`delete(map1, key1)`  
 
 ### 结构体  
@@ -240,9 +240,11 @@ func classifier(items ...interface{}) {
     }
 }
 ```
+
 ### 函数  
+
 如何使用内建函数`recover`终止`panic`过程（参考[章节13.3](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md)）：  
-    
+
 ```go
 func protect(g func()) {
     defer func() {
@@ -258,8 +260,8 @@ func protect(g func()) {
 ```
 
 ### 文件  
-（1）如何打开一个文件并读取：  0
- 
+（1）如何打开一个文件并读取：  
+
 ```go    
 file, err := os.Open("input.dat")
   if err != nil {
@@ -424,7 +426,7 @@ var strTempl = template.Must(template.New("TName").Parse(strTemplateHTML))
 
 在网页应用中使用HTML过滤器过滤HTML特殊字符：  
     
-`{{html .}}` 或者通过一个字段 `FieldName {{ .FieldName |html }}`  
+`{ {html .} }` 或者通过一个字段 `FieldName { { .FieldName |html } }`  
 
 使用缓存模板（参考[章节15.7](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md)）  
 
@@ -469,3 +471,6 @@ if err != nil {
 （10）尽可能在需要分配大量内存时使用缓存；  
 
 （11）使用缓存模板（参考[章节15.7](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md)）。  
+
+---
+*`to be continued...`*  

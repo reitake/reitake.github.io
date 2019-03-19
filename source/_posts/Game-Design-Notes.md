@@ -46,4 +46,4 @@ permalink: Game-Design-Notes
 *[原文：交互设计入门引导：5点原则两条规范](https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A)*  
 
 ---
-*`to be continued...`*
+*`to be continued...`*  
