@@ -2832,6 +2832,8 @@ exec 包中也有同样功能的更简单的结构体和函数；主要是 `exec
  ## 性能调试：分析并优化 Go 程序  
  时间和内存消耗、用 go test 调试、用 pprof 调试： [The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.10.md)  
 
+---
+
  # 协程（goroutine）与通道（channel）  
  **不要通过共享内存来通信，而通过通信来共享内存。**  
 
@@ -3536,7 +3538,7 @@ for input := range ch {
 
 由于容器中元素的数量通常是已知的，需要让通道有足够的容量放置所有的元素。这样，迭代器就不会阻塞（尽管消费者协程仍然可能阻塞）。然后，这样有效的加倍了迭代容器所需要的内存使用量，所以通道的容量需要限制一下最大值。记录运行时间和性能测试可以帮助你找到最小的缓存容量带来最好的性能。  
 
-## 使用 select 切换携程  
+## 使用 select 切换协程  
 从不同的并发执行的协程中获取值可以通过关键字`select`来完成，它和`switch`控制语句非常相似（章节5.3）也被称作通信开关；它的行为像是“你准备好了吗”的轮询机制；`select`监听进入通道的数据，也可以是用通道发送值的时候。  
 
 ```go
@@ -3627,6 +3629,486 @@ Received on channel 2: 47404
 Received on channel 1: 94346
 Received on channel 1: 94348
 ```
+
+## 通道、超时和计时器（Ticker）  
+
+`time` 包中包含了 `time.Ticker` 结构体，这个对象以指定的时间间隔重复的向通道 C 发送时间值：  
+```go
+type Ticker struct {
+    C <-chan Time // the channel on which the ticks are delivered.
+    // contains filtered or unexported fields
+    ...
+}
+```
+
+时间间隔的单位是 ns（纳秒，int64），在工厂函数 `time.NewTicker` 中以 `Duration` 类型的参数传入：`func Newticker(dur) *Ticker`。  
+
+在协程周期性的执行一些事情（打印状态日志，输出，计算等等）的时候非常有用。  
+
+调用 `Stop()` 使计时器停止，在 `defer` 语句中使用。这些都很好的适应 `select` 语句:  
+
+```go
+ticker := time.NewTicker(updateInterval)
+defer ticker.Stop()
+...
+select {
+case u:= <-ch1:
+    ...
+case v:= <-ch2:
+    ...
+case <-ticker.C:
+    logState(status) // call some logging function logState
+default: // no value ready to be received
+    ...
+}
+```
+
+`time.Tick()` 函数声明为 `Tick(d Duration) <-chan Time`，当你想返回一个通道而不必关闭它的时候这个函数非常有用：它以 d 为周期给返回的通道发送时间，d是纳秒数。如果需要像下边的代码一样，限制处理频率（函数 `client.Call()` 是一个 RPC 调用，这里暂不赘述：  
+
+```go
+import "time"
+
+rate_per_sec := 10
+var dur Duration = 1e9 / rate_per_sec
+chRate := time.Tick(dur) // a tick every 1/10th of a second
+for req := range requests {
+    <- chRate // rate limit our Service.Method RPC calls
+    go client.Call("Service.Method", req, ...)
+}
+```
+
+这样只会按照指定频率处理请求：`chRate` 阻塞了更高的频率。每秒处理的频率可以根据机器负载（和/或）资源的情况而增加或减少。  
+
+定时器（Timer）结构体看上去和计时器（Ticker）结构体的确很像（构造为 `NewTimer(d Duration)`），但是它只发送一次时间，在 `Dration d` 之后。  
+
+还有 `time.After(d)` 函数，声明如下：  
+
+```go
+func After(d Duration) <-chan Time
+```
+
+在 `Duration d` 之后，当前时间被发到返回的通道；所以它和 `NewTimer(d).C` 是等价的；它类似 `Tick()`，但是 `After()` 只发送一次时间。下边有个很具体的示例，很好的阐明了 `select` 中 `default` 的作用：  
+
+示例 14.11：timer_goroutine.go)：  
+
+```go
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    tick := time.Tick(1e8)
+    boom := time.After(5e8)
+    for {
+        select {
+        case <-tick:
+            fmt.Println("tick.")
+        case <-boom:
+            fmt.Println("BOOM!")
+            return
+        default:
+            fmt.Println("    .")
+            time.Sleep(5e7)
+        }
+    }
+}
+```
+
+输出：  
+
+```
+    .
+    .
+tick.
+    .
+    .
+tick.
+    .
+    .
+tick.
+    .
+    .
+tick.
+    .
+    .
+tick.
+BOOM!
+```
+
+习惯用法：简单超时模式  
+
+要从通道 `ch` 中接收数据，但是最多等待1秒。先创建一个信号通道，然后启动一个 `lambda` 协程，协程在给通道发送数据之前是休眠的：  
+
+```go
+timeout := make(chan bool, 1)
+go func() {
+        time.Sleep(1e9) // one second
+        timeout <- true
+}()
+```
+
+然后使用 `select` 语句接收 `ch` 或者 `timeout` 的数据：如果 `ch` 在 1 秒内没有收到数据，就选择到了 `time` 分支并放弃了 `ch` 的读取。  
+
+```go
+select {
+    case <-ch:
+        // a read from ch has occured
+    case <-timeout:
+        // the read from ch has timed out
+        break
+}
+```
+
+第二种形式：取消耗时很长的同步调用  
+
+也可以使用 `time.After()` 函数替换 `timeout-channel`。可以在 `select` 中通过 `time.After()` 发送的超时信号来停止协程的执行。以下代码，在 `timeoutNs` 纳秒后执行 `select` 的 `timeout` 分支后，执行`client.Call` 的协程也随之结束，不会给通道 `ch` 返回值：  
+
+```go
+ch := make(chan error, 1)
+go func() { ch <- client.Call("Service.Method", args, &reply) } ()
+select {
+case resp := <-ch
+    // use resp and reply
+case <-time.After(timeoutNs):
+    // call timed out
+    break
+}
+```
+
+注意缓冲大小设置为 1 是必要的，可以避免协程死锁以及确保超时的通道可以被垃圾回收。此外，需要注意在有多个 `case` 符合条件时， `select` 对 `case` 的选择是伪随机的，如果上面的代码稍作修改如下，则 `select` 语句可能不会在定时器超时信号到来时立刻选中 `time.After(timeoutNs)` 对应的 `case`，因此协程可能不会严格按照定时器设置的时间结束。  
+
+```go
+ch := make(chan int, 1)
+go func() { for { ch <- 1 } } ()
+L:
+for {
+    select {
+    case <-ch:
+        // do something
+    case <-time.After(timeoutNs):
+        // call timed out
+        break L
+    }
+}
+```
+
+第三种形式：假设程序从多个复制的数据库同时读取。只需要一个答案，需要接收首先到达的答案，`Query` 函数获取数据库的连接切片并请求。并行请求每一个数据库并返回收到的第一个响应：  
+
+```go
+func Query(conns []conn, query string) Result {
+    ch := make(chan Result, 1)
+    for _, conn := range conns {
+        go func(c Conn) {
+            select {
+            case ch <- c.DoQuery(query):
+            default:
+            }
+        }(conn)
+    }
+    return <- ch
+}
+```
+
+再次声明，结果通道 `ch` 必须是带缓冲的：以保证第一个发送进来的数据有地方可以存放，确保放入的首个数据总会成功，所以第一个到达的值会被获取而与执行的顺序无关。正在执行的协程可以总是可以使用 `runtime.Goexit()` 来停止。  
+
+
+在应用中缓存数据：  
+
+应用程序中用到了来自数据库（或者常见的数据存储）的数据时，经常会把数据缓存到内存中，因为从数据库中获取数据的操作代价很高；如果数据库中的值不发生变化就没有问题。但是如果值有变化，我们需要一个机制来周期性的从数据库重新读取这些值：缓存的值就不可用（过期）了，而且我们也不希望用户看到陈旧的数据。  
+
+## 协程和恢复（recover）  
+一个用到 `recover` 的程序停掉了服务器内部一个失败的协程而不影响其他协程的工作。  
+
+```go
+func server(workChan <-chan *Work) {
+    for work := range workChan {
+        go safelyDo(work)   // start the goroutine for that work
+    }
+}
+
+func safelyDo(work *Work) {
+    defer func() {
+        if err := recover(); err != nil {
+            log.Printf("Work failed with %s in %v", err, work)
+        }
+    }()
+    do(work)
+}
+```
+
+上边的代码，如果 `do(work)` 发生 panic，错误会被记录且协程会退出并释放，而其他协程不受影响。  
+
+因为 `recover` 总是返回 `nil`，除非直接在 `defer` 修饰的函数中调用，`defer` 修饰的代码可以调用那些自身可以使用 `panic` 和 `recover` 避免失败的库例程（库函数）。举例，`safelyDo()` 中 `defer` 修饰的函数可能在调用 `recover` 之前就调用了一个 `logging` 函数，`panicking` 状态不会影响 `logging` 代码的运行。因为加入了恢复模式，函数 `do`（以及它调用的任何东西）可以通过调用 `panic` 来摆脱不好的情况。但是恢复是在 `panicking` 的协程内部的：不能被另外一个协程恢复。  
+
+##  新旧模型对比：任务和worker （锁vs协程）  
+假设我们需要处理很多任务；一个worker处理一项任务。任务可以被定义为一个结构体（具体的细节在这里并不重要）：  
+
+```go
+type Task struct {
+    // some state
+}
+```
+
+旧模式：使用共享内存进行同步  
+
+由各个任务组成的任务池共享内存；为了同步各个worker以及避免资源竞争，我们需要对任务池进行加锁保护：  
+
+```go
+    type Pool struct {
+        Mu      sync.Mutex
+        Tasks   []Task
+    }
+```
+sync.Mutex(是互斥锁：它用来在代码中保护临界区资源：同一时间只有一个go协程（goroutine）可以进入该临界区。如果出现了同一时间多个go协程都进入了该临界区，则会产生竞争：Pool结构就不能保证被正确更新。在传统的模式中（经典的面向对象的语言中应用得比较多，比如C++,JAVA,C#)，worker代码可能这样写：  
+
+```go
+func Worker(pool *Pool) {
+    for {
+        pool.Mu.lock()
+        // begin critical section:
+        task := pool.Task[0]        // take the first task
+        pool.Tasks = pool.Task[1:]  // update the pool of tasks
+        // end critical section
+        pool.Mu.Unlock()
+        process(task)
+    }
+}
+```
+
+这些worker有许多都可以并发执行；他们可以在go协程中启动。一个worker先将pool锁定，从pool获取第一项任务，再解锁和处理任务。加锁保证了同一时间只有一个go协程可以进入到pool中：一项任务有且只能被赋予一个worker。如果不加锁，则工作协程可能会在`task:=pool.Task[0]`发生切换，导致`pool.Tasks=pool.Task[1:]`结果异常：一些worker获取不到任务，而一些任务可能被多个worker得到。加锁实现同步的方式在工作协程比较少时可以工作的很好，但是当工作协程数量很大，任务量也很多时，处理效率将会因为频繁的加锁/解锁开销而降低。当工作协程数增加到一个阈值时，程序效率会急剧下降，这就成为了瓶颈。  
+
+新模式：使用通道  
+
+使用通道进行同步：使用一个通道接受需要处理的任务，一个通道接受处理完成的任务（及其结果）。worker在协程中启动，其数量N应该根据任务数量进行调整。  
+
+主线程扮演着Master节点角色，可能写成如下形式：  
+
+```go
+    func main() {
+        pending, done := make(chan *Task), make(chan *Task)
+        go sendWork(pending)       // put tasks with work on the channel
+        for i := 0; i < N; i++ {   // start N goroutines to do work
+            go Worker(pending, done)
+        }
+        consumeWork(done)          // continue with the processed tasks
+    }
+```
+
+worker的逻辑比较简单：从pending通道拿任务，处理后将其放到done通道中：  
+
+```go
+    func Worker(in, out chan *Task) {
+        for {
+            t := <-in
+            process(t)
+            out <- t
+        }
+    }
+```
+
+这里并不使用锁：从通道得到新任务的过程没有任何竞争。随着任务数量增加，worker数量也应该相应增加，同时性能并不会像第一种方式那样下降明显。在pending通道中存在一份任务的拷贝，第一个worker从pending通道中获得第一个任务并进行处理，这里并不存在竞争（对一个通道读数据和写数据的整个过程是原子性的)。某一个任务会在哪一个worker中被执行是不可知的，反过来也是。worker数量的增多也会增加通信的开销，这会对性能有轻微的影响。  
+
+从这个简单的例子中可能很难看出第二种模式的优势，但含有复杂锁运用的程序不仅在编写上显得困难，也不容易编写正确，使用第二种模式的话，就无需考虑这么复杂的东西了。  
+
+因此，第二种模式对比第一种模式而言，不仅性能是一个主要优势，而且还有个更大的优势：代码显得更清晰、更优雅。一个更符合go语言习惯的worker写法：  
+
+**IDIOM: Use an in- and out-channel instead of locking**  
+
+```go
+    func Worker(in, out chan *Task) {
+        for {
+            t := <-in
+            process(t)
+            out <- t
+        }
+    }
+```
+
+对于任何可以建模为Master-Worker范例的问题，一个类似于worker使用通道进行通信和交互、Master进行整体协调的方案都能完美解决。如果系统部署在多台机器上，各个机器上执行Worker协程，Master和Worker之间使用netchan或者RPC进行通信（见下章）。  
+
+怎么选择是该使用锁还是通道？  
+
+通道是一个较新的概念，本节我们着重强调了在go协程里通道的使用，但这并不意味着经典的锁方法就不能使用。go语言让你可以根据实际问题进行选择：创建一个优雅、简单、可读性强、在大多数场景性能表现都能很好的方案。如果你的问题适合使用锁，也不要忌讳使用它。go语言注重实用，什么方式最能解决你的问题就用什么方式，而不是强迫你使用一种编码风格。下面列出一个普遍的经验法则：  
+
+* 使用锁的情景：
+    - 访问共享数据结构中的缓存信息
+    - 保存应用程序上下文和状态信息数据
+  
+* 使用通道的情景：
+    - 与异步操作的结果进行交互
+    - 分发任务
+    - 传递数据所有权
+   
+当你发现你的锁使用规则变得很复杂时，可以反省使用通道会不会使问题变得简单些。  
+
+## 惰性生成器的实现  
+生成器是指当被调用时返回一个序列中下一个值的函数，例如：  
+
+```go
+    generateInteger() => 0
+    generateInteger() => 1
+    generateInteger() => 2
+    ....
+```
+
+生成器每次返回的是序列中下一个值而非整个序列；这种特性也称之为惰性求值：只在你需要时进行求值，同时保留相关变量资源（内存和cpu）：这是一项在需要时对表达式进行求值的技术。例如，生成一个无限数量的偶数序列：要产生这样一个序列并且在一个一个的使用可能会很困难，而且内存会溢出！但是一个含有通道和go协程的函数能轻易实现这个需求。  
+
+在14.12的例子中，我们实现了一个使用 int 型通道来实现的生成器。通道被命名为`yield`和`resume`，这些词经常在协程代码中使用。  
+
+示例 14.12 lazy_evaluation.go：  
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+var resume chan int
+
+func integers() chan int {
+    yield := make(chan int)
+    count := 0
+    go func() {
+        for {
+            yield <- count
+            count++
+        }
+    }()
+    return yield
+}
+
+func generateInteger() int {
+    return <-resume
+}
+
+func main() {
+    resume = integers()
+    fmt.Println(generateInteger())  //=> 0
+    fmt.Println(generateInteger())  //=> 1
+    fmt.Println(generateInteger())  //=> 2    
+}
+```
+
+有一个细微的区别是从通道读取的值可能会是稍早前产生的，并不是在程序被调用时生成的。如果确实需要这样的行为，就得实现一个请求响应机制。当生成器生成数据的过程是计算密集型且各个结果的顺序并不重要时，那么就可以将生成器放入到go协程实现并行化。但是得小心，使用大量的go协程的开销可能会超过带来的性能增益。  
+
+这些原则可以概括为：通过巧妙地使用空接口、闭包和高阶函数，我们能实现一个通用的惰性生产器的工厂函数`BuildLazyEvaluator`（这个应该放在一个工具包中实现）。工厂函数需要一个函数和一个初始状态作为输入参数，返回一个无参、返回值是生成序列的函数。传入的函数需要计算出下一个返回值以及下一个状态参数。在工厂函数中，创建一个通道和无限循环的go协程。返回值被放到了该通道中，返回函数稍后被调用时从该通道中取得该返回值。每当取得一个值时，下一个值即被计算。在下面的例子中，定义了一个`evenFunc`函数，其是一个惰性生成函数：在main函数中，我们创建了前10个偶数，每个都是通过调用`even()`函数取得下一个值的。为此，我们需要在`BuildLazyIntEvaluator`函数中具体化我们的生成函数，然后我们能够基于此做出定义。  
+
+示例 14.13 general_lazy_evalution1.go：  
+
+```go
+package main
+
+import (
+    "fmt"
+)
+
+type Any interface{}
+type EvalFunc func(Any) (Any, Any)
+
+func main() {
+    evenFunc := func(state Any) (Any, Any) {
+        os := state.(int)
+        ns := os + 2
+        return os, ns
+    }
+    
+    even := BuildLazyIntEvaluator(evenFunc, 0)
+    
+    for i := 0; i < 10; i++ {
+        fmt.Printf("%vth even: %v\n", i, even())
+    }
+}
+
+func BuildLazyEvaluator(evalFunc EvalFunc, initState Any) func() Any {
+    retValChan := make(chan Any)
+    loopFunc := func() {
+        var actState Any = initState
+        var retVal Any
+        for {
+            retVal, actState = evalFunc(actState)
+            retValChan <- retVal
+        }
+    }
+    retFunc := func() Any {
+        return <- retValChan
+    }
+    go loopFunc()
+    return retFunc
+}
+
+func BuildLazyIntEvaluator(evalFunc EvalFunc, initState Any) func() int {
+    ef := BuildLazyEvaluator(evalFunc, initState)
+    return func() int {
+        return ef().(int)
+    }
+}
+```
+
+输出：
+```go
+0th even: 0
+1th even: 2
+2th even: 4
+3th even: 6
+4th even: 8
+5th even: 10
+6th even: 12
+7th even: 14
+8th even: 16
+9th even: 18
+```
+
+## 实现 Futures 模式  
+所谓Futures就是指：有时候在你使用某一个值之前需要先对其进行计算。这种情况下，你就可以在另一个处理器上进行该值的计算，到使用时，该值就已经计算完毕了。  
+
+Futures模式通过闭包和通道可以很容易实现，类似于生成器，不同地方在于Futures需要返回一个值。  
+
+参考条目文献给出了一个很精彩的例子：假设我们有一个矩阵类型，我们需要计算两个矩阵A和B乘积的逆，首先我们通过函数`Inverse(M)`分别对其进行求逆运算，在将结果相乘。如下函数`InverseProduct()`实现了如上过程：  
+
+```go
+func InverseProduct(a Matrix, b Matrix) {
+    a_inv := Inverse(a)
+    b_inv := Inverse(b)
+    return Product(a_inv, b_inv)
+}
+```
+
+在这个例子中，a和b的求逆矩阵需要先被计算。那么为什么在计算b的逆矩阵时，需要等待a的逆计算完成呢？显然不必要，这两个求逆运算其实可以并行执行的。换句话说，调用`Product`函数只需要等到`a_inv`和`b_inv`的计算完成。如下代码实现了并行计算方式：  
+
+```go
+func InverseProduct(a Matrix, b Matrix) {
+    a_inv_future := InverseFuture(a)   // start as a goroutine
+    b_inv_future := InverseFuture(b)   // start as a goroutine
+    a_inv := <-a_inv_future
+    b_inv := <-b_inv_future
+    return Product(a_inv, b_inv)
+}
+```
+
+`InverseFuture`函数起了一个`goroutine`协程，在其执行闭包运算，该闭包会将矩阵求逆结果放入到future通道中：  
+
+```go
+func InverseFuture(a Matrix) chan Matrix {
+    future := make(chan Matrix)
+    go func() {
+        future <- Inverse(a)
+    }()
+    return future
+}
+```
+
+当开发一个计算密集型库时，使用Futures模式设计API接口是很有意义的。在你的包使用Futures模式，且能保持友好的API接口。此外，Futures可以通过一个异步的API暴露出来。这样你可以以最小的成本将包中的并行计算移到用户代码中。（参见参考文件18：[http://www.golangpatterns.info/concurrency/futures](http://www.golangpatterns.info/concurrency/futures)）  
+
+---
+
+# 网络，模板和网页应用  
+go在编写web应用方面非常得力。因为目前它还没有GUI（Graphic User Interface 即图形化用户界面）的框架，通过文本或者模板展现的html界面是目前go编写应用程序的唯一方式。（**译者注：实际上在翻译的时候，已经有了一些不太成熟的GUI库例如：go ui。）  
+
+## tcp服务器  
 
 
 ---
