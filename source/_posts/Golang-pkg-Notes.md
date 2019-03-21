@@ -5,6 +5,144 @@ tags: Go
 categories: Go
 permalink: Golang-pkg
 ---
+# `Sort` 包
+sort包中实现了３种基本的排序算法：插入排序．快排和堆排序．和其他语言中一样，这三种方式都是不公开的，他们只在sort包内部使用．所以用户在使用sort包进行排序时无需考虑使用那种排序方式，sort.Interface定义的三个方法：获取数据集合长度的Len()方法、比较两个元素大小的Less()方法和交换两个元素位置的Swap()方法，就可以顺利对数据集合进行排序。sort包会根据实际数据自动选择高效的排序算法。  
+
+## type Interface  
+```go
+type Interface interface {
+
+    Len() int    // Len 为集合内元素的总数
+  
+    Less(i, j int) bool　//如果index为i的元素小于index为j的元素，则返回true，否则返回false
+
+    Swap(i, j int)  // Swap 交换索引为 i 和 j 的元素
+}
+```
+任何实现了 sort.Interface 的类型（一般为集合），均可使用该包中的方法进行排序。这些方法要求集合内列出元素的索引为整数。  
+
+golang自身实现的interface有三种，Float64Slice，IntSlice，StringSlice  
+
+```go
+
+package main
+ 
+import (
+    "fmt"
+    "sort"
+)
+ 
+//定义interface{},并实现sort.Interface接口的三个方法
+type IntSlice []int
+ 
+func (c IntSlice) Len() int {
+    return len(c)
+}
+func (c IntSlice) Swap(i, j int) {
+    c[i], c[j] = c[j], c[i]
+}
+func (c IntSlice) Less(i, j int) bool {
+    return c[i] < c[j]
+}
+func main() {
+    a := IntSlice{1, 3, 5, 7, 2}
+    b := []float64{1.1, 2.3, 5.3, 3.4}
+    c := []int{1, 3, 5, 4, 2}
+    fmt.Println(sort.IsSorted(a)) //false
+    if !sort.IsSorted(a) {
+        sort.Sort(a) 
+    }
+    if !sort.Float64sAreSorted(b) {
+        sort.Float64s(b)
+    }
+    if !sort.IntsAreSorted(c) {
+        sort.Ints(c)
+    }
+    fmt.Println(a)//[1 2 3 5 7]
+    fmt.Println(b)//[1.1 2.3 3.4 5.3]
+    fmt.Println(c)// [1 2 3 4 5]
+}
+```
+
+## Search 二分法查找  
+`func Search(n int, f func(int) bool) int `  
+
+使用二分法查找（常用于一个已排序、可索引的数据结构，如数组、切片），查找范围是[0:n],返回能使f(i)=true的最小i（0 <= i < n)，并且会假定，如果f(i)=true，则f(i+1)=true，即对于切片[0:n]，i之前的切片元素会使f()函数返回false，i及i之后的元素会使f()函数返回true。但是，当在切片中无法找到时f(i)=true的i时（此时切片元素都不能使f()函数返回true），Search()方法会返回n（而不是返回-1）。  
+
+为了查找某个值，而不是某一范围的值时，如果slice以升序排序，则　f func中应该使用＞＝,如果slice以降序排序，则应该使用<=。  
+
+```go
+package main
+ 
+import (
+    "fmt"
+    "sort"
+)
+ 
+func main() {
+    a := []int{1, 2, 3, 4, 5}
+    b := sort.Search(len(a), func(i int) bool { return a[i] >= 30 })
+    fmt.Println(b)　　　　　　　//5，查找不到，返回a slice的长度５，而不是-1
+    c := sort.Search(len(a), func(i int) bool { return a[i] <= 3 })
+    fmt.Println(c)                             //0，利用二分法进行查找，返回符合条件的最左边数值的index，即为０
+    d := sort.Search(len(a), func(i int) bool { return a[i] == 3 })
+    fmt.Println(d)                          //2　　　
+}
+```
+```go
+func SearchFloat64s(a []float64, x float64) int　　
+//SearchFloat64s 在float64s切片中搜索x并返回索引如Search函数所述. 返回可以插入x值的索引位置，如果x不存在，返回数组a的长度切片必须以升序排列
+func SearchInts(a []int, x int) int  
+//SearchInts 在ints切片中搜索x并返回索引如Search函数所述. 返回可以插入x值的索引位置，如果x不存在，返回数组a的长度切片必须以升序排列
+func SearchStrings(a []string, x string) int
+//SearchFloat64s 在strings切片中搜索x并返回索引如Search函数所述. 返回可以插入x值的索引位置，如果x不存在，返回数组a的长度切片必须以升序排列
+```
+其中需要注意的是，以上三种search查找方法，其对应的slice必须按照**升序**进行排序，否则会出现奇怪的结果．
+
+## Stable 排序
+`func Stable(data Interface)` ：Stable对data进行排序，不过排序过程中，如果data中存在相等的元素，则他们原来的顺序不会改变，即如果有两个相等元素num,他们的初始index分别为i和j，并且i < j，则利用Stable对data进行排序后，i依然小于ｊ．直接利用sort进行排序则不能够保证这一点．
+
+## Reverse 逆序排序  
+```go
+func Reverse(data Interface) Interface
+
+// eg.
+package main
+ 
+import (
+    "fmt"
+    "sort"
+)
+ 
+func main() {
+    a := []int{1, 2, 5, 3, 4}
+    fmt.Println(a)        // [1 2 5 3 4]
+    sort.Sort(sort.Reverse(sort.IntSlice(a)))
+    fmt.Println(a)        // [5 4 3 2 1]
+}
+```
+
+
+
+# `Strconv` 包  
+与字符串相关的类型转换。  
+包含了一些变量用于获取程序运行的操作系统平台下 int 类型所占的位数，如：`strconv.IntSize`。  
+任何类型 T 转换为字符串总是成功的。  
+数字 → 字符串：
+* `strconv.Itoa(i int) string` 返回数字 i 所表示的字符串类型的十进制数。  
+* `strconv.FormatFloat(f float64, fmt byte, prec int, bitSize int) string` 将64位浮点型数字转换为字符串，其中 `fmt` 表示格式（其值可以是 `b`、`e`、`f` 或 `g`），`prec` 表示精度，`bitSize` 则使用 32 表示 float32，用 64 表示 float64。  
+
+将字符串转换为其他类型 tp 并不总是可能的，可能会在运行时抛出错误 `parsing "…": invalid argument`。  
+字符串 → 数字类型：  
+* `strconv.Atoi(s string) (i int, err error)` 将字符串转换为 int 型。  
+* `strconv.ParseFloat(s string, bitSize int) (f float64, err error)` 将字符串转换为 float64 型。  
+
+利用多个返回值的特性（第 1 个是转换后的结果（若成功），第 2 个是可能出现的错误），一般使用如下形式进行从字符串到其它类型的转换：  
+```go
+    val, err = strconv.Atoi(s)
+```
+---
+
 # `strings` 包  
 Go 中使用 `strings` 包对字符串进行操作。[中文文档](http://docscn.studygolang.com/pkg/strings/)、 [官方文档](http://golang.org/pkg/strings/) 或 [国内访问文档](http://docs.studygolang.com/pkg/strings/)  
 
@@ -352,24 +490,6 @@ func main() {
     // 你好 世界！你好 世界！hello world！
 ```
 
----
-# `Strconv` 包  
-与字符串相关的类型转换。  
-包含了一些变量用于获取程序运行的操作系统平台下 int 类型所占的位数，如：`strconv.IntSize`。  
-任何类型 T 转换为字符串总是成功的。  
-数字 → 字符串：
-* `strconv.Itoa(i int) string` 返回数字 i 所表示的字符串类型的十进制数。  
-* `strconv.FormatFloat(f float64, fmt byte, prec int, bitSize int) string` 将64位浮点型数字转换为字符串，其中 `fmt` 表示格式（其值可以是 `b`、`e`、`f` 或 `g`），`prec` 表示精度，`bitSize` 则使用 32 表示 float32，用 64 表示 float64。  
-
-将字符串转换为其他类型 tp 并不总是可能的，可能会在运行时抛出错误 `parsing "…": invalid argument`。  
-字符串 → 数字类型：  
-* `strconv.Atoi(s string) (i int, err error)` 将字符串转换为 int 型。  
-* `strconv.ParseFloat(s string, bitSize int) (f float64, err error)` 将字符串转换为 float64 型。  
-
-利用多个返回值的特性（第 1 个是转换后的结果（若成功），第 2 个是可能出现的错误），一般使用如下形式进行从字符串到其它类型的转换：  
-```go
-    val, err = strconv.Atoi(s)
-```
 ---
 # `time` 包：时间和日期  
 `time` 包提供了一个数据类型 `time.Time`（作为值使用）以及显示和测量时间和日期的功能函数。  
