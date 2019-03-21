@@ -1160,7 +1160,7 @@ func main() {
 # `time` 包：时间和日期  
 `time` 包提供了一个数据类型 `time.Time`（作为值使用）以及显示和测量时间和日期的功能函数。  
 
-[中文文档](http://docscn.studygolang.com/pkg/time/)、 [官方文档](http://golang.org/pkg/time/) 、 [国内访问页面](http://docs.studygolang.com/pkg/time/)。   
+戳→[中文文档](http://docscn.studygolang.com/pkg/time/)、 [官方文档](http://golang.org/pkg/time/) 、 [国内访问页面](http://docs.studygolang.com/pkg/time/)   
 
 获取当前时间：`time.Now()`；  
 ```go
