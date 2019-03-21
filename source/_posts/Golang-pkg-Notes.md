@@ -1159,6 +1159,9 @@ func main() {
 ---
 # `time` 包：时间和日期  
 `time` 包提供了一个数据类型 `time.Time`（作为值使用）以及显示和测量时间和日期的功能函数。  
+
+[中文文档](http://docscn.studygolang.com/pkg/time/)、 [官方文档](http://golang.org/pkg/time/) 、 [国内访问页面](http://docs.studygolang.com/pkg/time/)。   
+
 获取当前时间：`time.Now()`；  
 ```go
     var t time.Time = time.Now()
@@ -1174,7 +1177,7 @@ Duration 类型表示两个连续时刻所相差的**纳秒数**，类型为 int
 ```
 如果需要在应用程序在经过一定时间或周期执行某项任务（事件处理的特例），则可以使用 `time.After` 或者 `time.Ticker`。  
 另外，`time.Sleep(Duration d)` 可以实现对某个进程（实质上是 goroutine）时长为 d 的暂停。  
-其他关于时间操作的文档参考 [官方文档](http://golang.org/pkg/time/) 或 [国内访问页面](http://docs.studygolang.com/pkg/time/)。 
+
 
 ---
 *`to be continued...`*  
