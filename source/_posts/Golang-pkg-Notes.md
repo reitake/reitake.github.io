@@ -1157,7 +1157,8 @@ func main() {
 ```
 
 ---
-# `time` 包：时间和日期  
+# `time` 包：时间和日期
+包中包括了两类时间：时间点（某一时刻）和时长（某一个时间段）    
 `time` 包提供了一个数据类型 `time.Time`（作为值使用）以及显示和测量时间和日期的功能函数。  
 
 戳→[中文文档](http://docscn.studygolang.com/pkg/time/)、 [官方文档](http://golang.org/pkg/time/) 、 [国内访问页面](http://docs.studygolang.com/pkg/time/)   
@@ -1178,6 +1179,418 @@ Duration 类型表示两个连续时刻所相差的**纳秒数**，类型为 int
 如果需要在应用程序在经过一定时间或周期执行某项任务（事件处理的特例），则可以使用 `time.After` 或者 `time.Ticker`。  
 另外，`time.Sleep(Duration d)` 可以实现对某个进程（实质上是 goroutine）时长为 d 的暂停。  
 
+## 时间敞亮（时间格式化）  
+```go
+const (
+    ANSIC       = "Mon Jan _2 15:04:05 2006"
+    UnixDate    = "Mon Jan _2 15:04:05 MST 2006"
+    RubyDate    = "Mon Jan 02 15:04:05 -0700 2006"
+    RFC822      = "02 Jan 06 15:04 MST"
+    RFC822Z     = "02 Jan 06 15:04 -0700" // RFC822 with numeric zone
+    RFC850      = "Monday, 02-Jan-06 15:04:05 MST"
+    RFC1123     = "Mon, 02 Jan 2006 15:04:05 MST"
+    RFC1123Z    = "Mon, 02 Jan 2006 15:04:05 -0700" // RFC1123 with numeric zone
+    RFC3339     = "2006-01-02T15:04:05Z07:00"
+    RFC3339Nano = "2006-01-02T15:04:05.999999999Z07:00"
+    Kitchen     = "3:04PM"
+    // Handy time stamps.
+    Stamp      = "Jan _2 15:04:05"
+    StampMilli = "Jan _2 15:04:05.000"
+    StampMicro = "Jan _2 15:04:05.000000"
+    StampNano  = "Jan _2 15:04:05.000000000"
+)
+```
+这些常量是在time包中进行time 格式化 和time解析而预定义的一些常量，其实他们使用的都是一个特定的时间：`Mon Jan 2 15:04:05 MST 2006`  
+
+## 函数  
+### time 组成  
+`time.Duration` 时间长度，消耗时间
+`time.Time` 时间点  
+`time.C` 放时间的通道(tine.C := make(chan time.Time))
+
+### After 函数  
+```go
+func After(d Duration) <-chan Time
+```
+表示多少时间之后，但是在去除channel内容之前不阻塞，后续程序可以继续执行。
+```go
+func Sleep(d Duration)
+```
+表示休眠多少时间，休眠时处于阻塞状态，后续程序无法执行。  
+
+鉴于After特性，其通常用来处理程序超时问题，如下所示：  
+```go
+select {
+case m := <-c:
+    handle(m)
+case <-time.After(5 * time.Minute):
+    fmt.Println("timed out")
+}
+```
+
+```go
+func Tick(d Duration) <-chan Time
+```
+time.Tick(time.Duration)用法和time.After差不多，但是它是表示每隔多少时间之后，是一个重复的过程，其他与After一致。  
+
+```go
+type Duration int64 
+//时间长度，其对应的时间单位有Nanosecond，Microsecond,Millisecond,Second,Minute,Hour
+
+func ParseDuration(s string) (Duration, error)
+//传入字符串，返回响应的时间，其中传入的字符串中的有效时间单位如下：h,m,s,ms,us,ns，其他单位均无效，如果传入无效时间单位，则会返回０ 
+
+func Since(t Time) Duration 
+//表示自从t时刻以后过了多长时间，是一个时间段，相当于time.Now().Sub(t)
+
+func (d Duration) Hours() float64 
+//将制定时间段换算为float64类型的Hour为单位进行输出
+
+func (d Duration) Minutes() float64 
+//将制定时间段换算为float64类型的Minutes为单位进行输出
+
+func (d Duration) Nanoseconds() int64 
+//将制定时间段换算为int64类型的Nanoseconds为单位进行输出
+
+func (d Duration) Seconds() float64 
+//将制定时间段换算为float64类型的Seconds为单位进行输出
+
+func(d Duration) String() string  
+//与ParseDuration函数相反，该函数是将时间段转化为字符串输出
+```
+
+```go
+type Location
+func FixedZone(name string, offset int) *Location
+func LoadLocation(name string) (*Location, error)
+func (l *Location) String() string
+```
+
+```go
+type Month // 定义了1年的12个月
+
+func (m Month) String() string  //将时间月份以字符串形式打印出来．如fmt.Println(time.June.String())则打印出June
+```
+
+```go
+type ParseError
+func (e *ParseError) Error() string
+```
+
+```go
+type Ticker  
+//主要用来按照指定的时间周期来调用函数或者计算表达式，
+//通常的使用方式是利用go新开一个协程使用，它是一个断续器
+
+func NewTicker(d Duration) *Ticker
+//新生成一个ticker,此Ticker包含一个channel，
+//此channel以给定的duration发送时间。duration d必须大于0
+
+func (t *Ticker) Stop()  
+//用于关闭相应的Ticker，但并不关闭channel
+```
+例子：  
+使用时间控制停止ticker：  
+```go
+ticker := time.NewTicker(time.Millisecond * 500)
+    go func() {
+        for t := range ticker.C {
+            fmt.Println("Tick at", t)
+        }
+    }()
+
+time.Sleep(time.Millisecond * 1500)   
+//阻塞，则执行次数为sleep的休眠时间/ticker的时间
+ticker.Stop()     
+fmt.Println("Ticker stopped")
+```
+使用channel控制停止ticker：  
+```go
+ticker := time.NewTicker(time.Millisecond * 500)
+c := make(chan int，num) //num为指定的执行次数
+go func() {
+    for t := range ticker.C {
+              c<-1
+               fmt.Println("Tick at", t)
+                
+    }
+}()
+        
+ticker.Stop()
+```
+这种情况下，在执行num次以Ticker时间为单位的函数之后，c　channel中已满，以后便不会再执行对应的函数  
+
+```go
+type Time  //包括日期和时间
+func Date(year int, month Month, day, hour, min, sec, nsec int, loc *Location) Time　
+//按照指定格式输入数据后，便会按照如下格式输出对应的时间，输出格式为
+//yyyy-mm-dd hh:mm:ss + nsec nanoseconds，　其中loc必须指定，否则便会panic
+
+//eg，
+t := time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
+fmt.Printf("Go launched at %s\n", t.Local())
+//输出为：
+Go launched at 2009-11-10 15:00:00 -0800 PST
+```
+
+```go
+func Now() Time //返回当前时间，包括日期，时间和时区
+
+func Parse(layout, value string) (Time, error)　//输入格式化layout和时间字符串，输出时间
+
+
+func ParseInLocation(layout, value string, loc *Location) (Time, error)
+
+
+func Unix(sec int64, nsec int64) Time　//返回本地时间
+
+
+func (t Time) Add(d Duration) Time　　//增加时间
+
+
+func (t Time) AddDate(years int, months int, days int) Time//增加日期
+
+
+func (t Time) After(u Time) bool　　//判断时间t是否在时间ｕ的后面
+
+
+func (t Time) Before(u Time) bool　//判断时间t是否在时间ｕ的前面
+
+
+
+func (t Time) Clock() (hour, min, sec int)　//获取时间ｔ的hour,min和second
+
+
+func (t Time) Date() (year int, month Month, day int)　//获取时间ｔ的year,month和day
+
+
+func (t Time) Day() int   //获取时间ｔ的day
+
+
+func (t Time) Equal(u Time) bool  //判断时间t和时间u是否相同
+
+
+
+func (t Time) Format(layout string) string  //时间字符串格式化
+
+
+func (t *Time) GobDecode(data []byte) error //编码为god
+
+
+
+func (t Time) GobEncode() ([]byte, error)//解码god
+
+
+func (t Time) Hour() int　//获取时间ｔ的小时
+
+
+func (t Time) ISOWeek() (year, week int)//获取时间ｔ的年份和星期
+
+
+func (t Time) In(loc *Location) Time//获取loc时区的时间ｔ的对应时间
+
+
+func (t Time) IsZero() bool　//判断是否为０时间实例January 1, year 1, 00:00:00 UTC
+
+
+func (t Time) Local() Time　//获取当地时间
+
+
+func (t Time) Location() *Location   //获取当地时区
+
+
+func (t Time) MarshalBinary() ([]byte, error)　//marshal binary序列化，将时间t序列化后存入[]byte数组中
+
+
+func (t Time) MarshalJSON() ([]byte, error)     //marshal json序列化，将时间t序列化后存入[]byte数组中
+
+
+func (t Time) MarshalText() ([]byte, error)    //marshal text序列化，将时间t序列化后存入[]byte数组中
+```
+例子：
+```go
+t := time.Date(0, 0, 0, 12, 15, 30, 918273645, time.UTC)
+round := []time.Duration{
+    time.Nanosecond,
+    time.Microsecond,
+    time.Millisecond,
+    time.Second,
+    2 * time.Second,
+    time.Minute,
+    10 * time.Minute,
+    time.Hour,
+}
+
+for _, d := range round {
+    fmt.Printf("t.Round(%6s) = %s\n", d, t.Round(d).Format("15:04:05.999999999"))
+}
+```
+```go
+func (t Time) Second() int　//获取时间ｔ的秒
+
+func (t Time) String() string　//获取时间ｔ的字符串表示
+
+
+func (t Time) Sub(u Time) Duration　//与Add相反，Sub表示从时间ｔ中减去时间ｕ
+
+
+func (t Time) Truncate(d Duration) Time　//去尾法求近似值
+```
+例子：  
+```go
+t, _ := time.Parse("2006 Jan 02 15:04:05", "2012 Dec 07 12:15:30.918273645")
+trunc := []time.Duration{
+    time.Nanosecond,
+    time.Microsecond,
+    time.Millisecond,
+    time.Second,
+    2 * time.Second,
+    time.Minute,
+    10 * time.Minute,
+    time.Hour,
+}
+
+for _, d := range trunc {
+    fmt.Printf("t.Truncate(%6s) = %s\n", d, t.Truncate(d).Format("15:04:05.999999999"))
+}
+
+输出：
+
+t.Truncate(   1ns) = 12:15:30.918273645
+t.Truncate(   1µs) = 12:15:30.918273
+t.Truncate(   1ms) = 12:15:30.918
+t.Truncate(    1s) = 12:15:30
+t.Truncate(    2s) = 12:15:30
+t.Truncate(  1m0s) = 12:15:00
+t.Truncate( 10m0s) = 12:10:00
+t.Truncate(1h0m0s) = 12:00:00
+```
+
+```go
+func (t Time) UTC() Time　//将本地时间变换为UTC时区的时间并返回
+
+
+func (t Time) Unix() int64　//返回Unix时间，该时间是从January 1, 1970 UTC这个时间开始算起的．
+
+
+func (t Time) UnixNano() int64　//以纳秒为单位返回Unix时间
+
+
+func (t *Time) UnmarshalBinary(data []byte) error　//将data数据反序列化到时间ｔ中
+
+
+func (t *Time) UnmarshalJSON(data []byte) (err error)　//将data数据反序列化到时间ｔ中
+
+
+func (t *Time) UnmarshalText(data []byte) (err error)　//将data数据反序列化到时间ｔ中
+
+
+func (t Time) Weekday() Weekday　//获取时间ｔ的Weekday
+
+
+func (t Time) Year() int　　　//获取时间ｔ的Year
+
+
+func (t Time) YearDay() int     //获取时间ｔ的YearDay，即１年中的第几天
+
+
+func (t Time) Zone() (name string, offset int)
+```
+```go
+type Timer　//用于在指定的Duration类型时间后调用函数或计算表达式，它是一个计时器
+
+
+func AfterFunc(d Duration, f func()) *Timer　//和After差不多，意思是多少时间之后执行函数f
+
+
+func NewTimer(d Duration) *Timer　//使用NewTimer(),可以返回的Timer类型在计时器到期之前,取消该计时器
+
+
+func (t *Timer) Reset(d Duration) bool　//重新设定timer t的Duration d.
+
+
+func (t *Timer) Stop() bool　//阻止timer事件发生，当该函数执行后，timer计时器停止，相应的事件不再执行
+```
+```go
+type Weekday
+func (d Weekday) String() string　//获取一周的字符串
+```
+
+### 一些例子：  
+获取年月日方法  
+```go
+    t := time.Now()
+    y := t.Year() // 年
+    m := int(t.Month()) //月
+    d := t.Day()// 日
+    h := t.Hour() //小时
+    min := t.Minute()//分钟
+    s := t.Second()//秒
+    fmt.Printf("%d-%d-%d",y,m,d)// 2017-12-26
+    fmt.Printf("%d%02d%02d",y,m,d) // 20180101
+
+```
+
+获取格式为:2017-12-29 16:58:39  
+```go
+    t := time.Now()
+    fmt.Println(t.String()[:19])
+    layout := "2006-01-02 15:04:05"
+    fmt.Println(t.Format(layout))
+```
+
+获取三个小时之前的时间  
+```go
+    du, _ := time.ParseDuration("-3h")
+    t := time.Now().Add(du)
+```
+
+获取三天之前的时间
+```go
+    t := time.Now()
+    t.AddDate(0,0,-3) 
+    fmt.Println(t)
+```
+
+t.AddDate(year,month,day) 正数向前，负数向后  
+
+时间戳转time.Time 类型  
+```go
+    timestamp := 1513580645
+    t := time.Unix(timestamp,0)
+```
+
+获取时间戳：  
+```go
+    t := time.Now()
+    timestamp := t.Unix()
+```
+
+两个时间的间隔  
+```go
+    t1 := time.Now()
+    //do some function
+    t2 := time.Now()
+    sub := t2.Since(t1)
+```
+
+字符串转时间  
+```go
+    layout := "2006-01-02 15:04:05" 
+    // 这个格式，不能改，据说是Go诞生的时间，可能有特殊含义吧
+    t , err := time.Parse(layout,"2017-12-26 17:20:21")
+    fmt.Println(t)
+```
+
+标准时间字符串转化为时间  
+使用byte读取数据库当中的timestamp字段时，会出现标准的时间格式  
+```go
+    layout := "2006-01-02T15:04:05Z07:00"
+    timeStr := "2018-01-02T11:30:21Z"
+    t , _ := time.Parse(layout,timeStr)
+    // t , _ := time.Parse(time.RFC3339,timeStr)
+    fmt.Println(t)
+```
 
 ---
 *`to be continued...`*  
