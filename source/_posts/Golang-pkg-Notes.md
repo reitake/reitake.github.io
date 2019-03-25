@@ -670,9 +670,532 @@ type Stringer interface {
 }
 ```
 
+---
+
+# `os` 包
+## 函数  
+### 获取当前目录、改变目录  
+```go
+func Getwd() (dir string, err error)    //获取当前目录
+func Chdir(dir string) error            // 修改当前目录
+
+eg.
+func main() {
+  fmt.Println(os.Getwd())
+  os.Chdir("/Users/rtk")
+  fmt.Println(os.Getwd())
+}
+```
+### 修改文件权限  
+```go
+func Chmod(name string, mode FileMode) error
+
+eg. 将文件改为不可读：
+func main() {
+  fmt.Println(os.Getwd())
+  os.Chdir("/Users/xujie/Desktop")
+  os.Chmod("file.txt",0)
+}
+```
+### 获取用户识别码uid 和 群组识别码gid  
+```go
+func Getuid()  int 
+func Getegid()  int  // 有效的用户识别码
+func Geteuid() int  // 有效的群组识别码
+func Getgid()  int 
+```
+
+### 查看用户所属组的列表  
+```go
+func Getgroups() ([]int, error)
+```
+
+### 返回底层系统的内存页面大小  
+```go
+func Getpagesize() int
+```
+
+### 获取主机名称  
+```go
+func Hostname() (name string, err error)
+```
+
+### 获取当前进程id、父进程id  
+```go
+func Getpid()       // 获取当前进程id
+func Getppid()      // 获取父进程id
+```
+
+### 获取文件的状态  
+```go
+func Stat(name string) (FileInfo, error)
+
+eg.
+func main() {
+  filename := "/Users/xujie/Desktop/file.txt"
+  file,_:=os.Stat(filename)
+  fmt.Println(file.Name())
+  fmt.Println(file.IsDir())
+  fmt.Println(file.Size())
+  fmt.Println(file.Mode())
+  fmt.Println(file.Sys())
+}
+```
+
+### 错误检测  
+```go
+func IsExist(err error) bool        // 文件存在,但是由系统产生错误
+func IsNotExist(err error) bool     // 目录或者文件不存在时返回true
+func IsPermission(err error)bool    // 检测是不是由于权限不足导致的错误
+
+eg.
+func main() {
+  filename := "file.txt"
+  _, err := os.Stat(filename);
+  fmt.Println(os.IsExist(err))
+  fmt.Println(os.IsNotExist(err))
+}
+```
+
+### 创建文件夹、删除文件或文件夹  
+```go
+func Mkdir(name string, perm FileMode) error
+
+func Remove(name string) error
+func RemoveAll(name string) error   // 删除文件夹下所有文件
+```
+
+### 修改文件夹或文件的名称  
+```go
+func Rename(oldpath, newpath string) error
+```
+
+### 移动文件夹或文件  
+```go
+func Rename(oldpath, newpath string) error
+```
+
+### 新建文件  
+```go
+func Create(name string) (*File, error)
+```
+这个方法创建文件是默认的权限为0666,如果已经存在同名的文件,则调用此方法,会覆盖掉原来的文件  
+
+### 打开文件  
+```go
+func Open(name string) (*File, error)
+```
+如果打开的文件不存在,则会返回错误 `open file1.txt: no such file or directory`  
+
+### 写入文件  
+```go
+func (f *File) Write(b []byte) (n int, err error)
+func (f *File) WriteAt(b []byte, off int64) (n int, err error)
+func (f *File) WriteString(s string) (n int, err error)
+```
+要注意的是，os.open() 打开的文件是只读的，写入不成功，需要：  
+```go
+func OpenFile(name string, flag int, perm FileMode) (*File, error)
+
+第二个参数
+O_RDONLY    打开只读文件
+O_WRONLY    打开只写文件
+O_RDWR  打开既可以读取又可以写入文件
+O_APPEND    写入文件时将数据追加到文件尾部
+O_CREATE    如果文件不存在，则创建一个新的文件
+O_EXCL  文件必须不存在，然后会创建一个新的文件
+O_SYNC  打开同步I/0
+O_TRUNC 文件打开时可以截断
+
+第三个参数就是权限模式
+```
+例子：  
+```go
+func main() {
+  // 进入桌面目录
+  os.Chdir("/Users/xujie/Desktop")
+  // 创建一个文件夹
+ file,error:= os.OpenFile("file.txt",os.O_RDWR,0666)
+ // 如果是要追加内容：
+ // file,error:= os.OpenFile("file.txt",os.O_RDWR|os.O_APPEND,0666)
+ defer file.Close()
+ if error != nil {
+   fmt.Println(error)
+ }
+ _,error = file.WriteString("你好")
+  _,error = file.WriteString("从天有一个书")
+  fmt.Println(error)
+}
+```
+
+### 读取文件  
+```go
+func main() {
+  // 进入桌面目录
+  os.Chdir("/Users/xujie/Desktop")
+ file,error:= os.Open("file.txt")
+
+ defer file.Close()
+ if error != nil {
+   fmt.Println(error)
+   return
+ }
+  fileInfo,_ := file.Stat()
+  fmt.Println(fileInfo.Size())
+  
+  // 创建缓冲区
+ data := make([]byte,fileInfo.Size())
+ // 一次性读取所有内容到缓冲区中
+ _,error = file.Read(data)
+
+ fmt.Println(error)
+ fmt.Println(string(data))
+}
+```
+
+### 关闭文件  
+```go
+func (f *File) Close() error
+
+defer file.Close()
+```
+
+### 检测文件是否是同一个  
+```go
+func SameFile(fi1, fi2 FileInfo) bool
+```
+就算是同一个文件,没在同一个路径下也会返回false，判断依据如下  
+这意味着两个基础结构的 inode 字段是相同的  
+
+### 获取文件模式相关信息  
+```go
+func (m FileMode) IsDir() bool
+func (m FileMode) IsRegular() bool
+func (m FileMode) Perm() FileMode
+func (m FileMode) String() string
+
+eg.
+func main() {
+  fileInfo1,_:= os.Stat("/Users/xujie/Desktop/DataParser.zip")
+  fmt.Println(fileInfo1.Mode().String())
+  fmt.Println(fileInfo1.Mode().IsRegular())
+  fmt.Println(fileInfo1.Mode().IsDir())
+  fmt.Println(fileInfo1.Mode().Perm())
+}
+```
+
+### 把文件所在的目录切换为当前目录  
+```go
+func (f *File) Chdir() error
+```
+
+### 查看文件名称  
+```go
+func (f *File) Name() string
+```
+
+### 如何查看所有文件夹下的所有文件和文件数量  
+```go
+func (f *File) Readdir(n int) ([]FileInfo, error)
+// n 表示读取目录下文件的最大数量,n < 0 表示全部 
+
+eg.
+func main() {
+  file,_ := os.Open("/Users/xujie/Desktop/未命名文件夹")
+  files,_ := file.Readdir(10)
+  for _,f := range  files {
+    fmt.Println(f.Name())
+  }
+}
+```
+
+### 读取文件夹的下面文件的名称  
+```go
+func (f *File) Readdirnames(n int) (names []string, err error)
+
+eg:
+func main() {
+  file,_ := os.Open("/Users/xujie/Desktop/未命名文件夹")
+  fileNames,_ := file.Readdirnames(-1)
+  for _,name := range  fileNames {
+    fmt.Println(name)
+  }
+}
+```
+
+### 获取临时陌路的文件夹路径  
+```go
+func TempDir() string
+```
+
+### 判断字符是否是支持的路径分隔符  
+```go
+func IsPathSeparator(c uint8) bool
+
+eg：
+func main() {
+ fmt.Println(os.IsPathSeparator('c'))
+  fmt.Println(os.IsPathSeparator('\\'))
+  fmt.Println(os.IsPathSeparator('/'))
+}
+```
+
+### 查看环境变量  
+```go
+func Getenv(key string) string
+
+func LookupEnv(key string) (string, bool)
+//key区分大小写
+```
+
+### 查找指定环境变量  
+```go
+func func Expand(s string, mapping func(string) string) string
+
+func ExpandEnv(s string) string
+```
+
+### 获取文件对应的unix文件描述符  
+```go
+func (f *File) Fd() uintptr
+```
+
+### Chown修改文件的用户ID和组ID  
+```go
+func Chown(name string, uid, gid int) error
+```
+
+### 修改文件权限  
+```go
+func (f *File) Chmod(mode FileMode) error
+```
+
+### 强制改变文件大小  
+两个方法：  
+```go
+func Truncate(name string, size int64) error
+
+func (f *File)Truncate(size int64) error
+```
+减小文件大小会造成内容丢失。  
+
+### 链接 硬链接  
+硬链接(hard link, 也称链接)就是一个文件的一个或多个文件名。再说白点，所谓链接无非是把文件名和计算机文件系统使用的节点号链接起来。因此我们可以用多个文件名与同一个文件进行链接，这些文件名可以在同一目录或不同目录  
+```go
+func Link(oldname, newname string) error
+```
+
+### 同步保存当前文件的内容  
+```go
+func (f *File) Sync() error
+```
+Sync递交文件的当前内容进行稳定的存储。一般来说，这表示将文件系统的最近写入的数据在内存中的拷贝刷新到硬盘中稳定保存  
+```go
+func main() {
+  file,error := os.OpenFile("/Users/xujie/Desktop/file.txt",os.O_RDWR,0777)
+  if error != nil{
+   fmt.Println(error)
+  }
+  file.WriteString("新内容")
+  file.Sync()
+}
+```
+
+### NewFile使用给出的Unix文件描述符和名称创建一个文件  
+```go
+func NewFile(fd uintptr, name string) *File
+
+```
+
+### Lstat返回一个描述name指定的文件对象的FileInfo  
+```go
+func Lstat(name string) (fi FileInfo, err error)
+```
+Lstat返回一个描述name指定的文件对象的FileInfo。如果指定的文件对象是一个符号链接，返回的FileInfo描述该符号链接的信息，本函数不会试图跳转该链接。如果出错，返回的错误值为*PathError类型   
+
+### 查看所有环境变量、清除环境变量  
+```go
+func Environ() []string
+func Clearenv() []string  //慎用！！
+```
+
+### 获取当前程序可执行的文件地址  
+```go
+func Executable() (string, error)
+```
+
+### 让程序已给定的状态码退出  
+Exit让当前程序以给出的状态码code退出。一般来说，状态码0表示成功，非0表示出错。程序会立刻终止，defer的函数不会被执行  
+```go
+func Exit(code int)
+```
+
+### 设置环和取消环境变量  
+```go
+func Unsetenv(key string) error
+
+func Setenv(key, value string) error
+
+eg：
+func main() {
+    os.Setenv("TMPDIR", "/my/tmp")
+    defer os.Unsetenv("TMPDIR")
+}
+```
+
+### 创建软链接  
+[软连接和硬链接的区别](https://www.ibm.com/developerworks/cn/linux/l-cn-hardandsymb-links/index.html)  
+```go
+func Symlink(oldname, newname string) error
+```
+
+### 获取软链接文件对应的实际文件路径地址  
+```go
+func Readlink(name string) (string, error)
+```
+
+### 更改指定文件的访问和修改时间  
+```go
+func Chtimes(name string, atime time.Time, mtime time.Time) error
+```
+第二个参数访问时间 第三个参数修改时间  
+```go
+ os.Chtimes("/Users/xujie/Desktop/file.txt",time.Now(),time.Now().Add(time.Hour * 24))
+```
+
+### 创建文件夹,并设置权限  
+```go
+func MkdirAll(path string, perm FileMode) error
+```
+规则：  
+- 如果已经存在同名文件夹,则此方法不做任何事情
+- 文件夹里面所有文件都是同样的权限
+
+### 设置文章的读写位置  
+```go
+func (f *File) Seek(offset int64, whence int) (ret int64, err error)
+```
+Seek设置下一次读/写的位置。offset为相对偏移量，而whence决定相对位置：0为相对文件开头，1为相对当前位置，2为相对文件结尾。它返回新的偏移量（相对开头）和可能的错误  
+
+```go
+eg：
+func main() {
+
+ file,error := os.Open("/Users/xujie/Desktop/file.txt")
+ defer  file.Close()
+ if error != nil {
+   fmt.Println(error)
+   return
+ }
+
+ offset := int64(0)
+ data := make([]byte,10)
+ totalData := make([]byte,0,100)
+
+ for {
+  // 设置偏移量 
+  file.Seek(offset,0)
+  offset += 10
+  // 读取数据
+  _,error = file.Read(data)
+   if error != nil{
+     fmt.Println(error)
+     break
+   }
+  // 拼接数据
+  totalData = append(totalData,data...)
+   fmt.Println(string(data))
+ }
+  fmt.Println(string(totalData))
+}
+```
+`file.Seek(offset,0) offset = 0` 从文件中读取10个数据,之后偏移量设置为offset = 10,则从文件内容第11个字节开始读取，当Read方法读取文件到结尾时,会返回EOF标识,这个时候程序退出for循环  
+
+### 修改文件权限  
+```go
+func Lchown(name string, uid, gid int) error
+```
+
+### 管道的用法  
+```go
+func Pipe() (r *File, w *File, err error)
+```
+这个方法主要在协程之间进行数据传递，r.read 方法会等待接受w文件中写数据  
+
+```go
+func main() {
+  r,w,error := os.Pipe()
+  go write(w)
+  data := make([]byte,1000)
+  // 如果数据没有写入w中,则此方法一直在等待
+  n,_ := r.Read(data)
+  if error != nil{
+    println(error)
+  }
+  fmt.Println("读取数据：")
+  fmt.Println(string(data[:n]))
+}
+
+func write(w *os.File){
+  time.AfterFunc(time.Second* 2, func() {
+     w.WriteString("ABCD")
+     w.WriteString("EFGH")
+     fmt.Println("数据已写入w")
+  })
+}
+```
+
+### 创建系统错误  
+```go
+func NewSyscallError(syscall string, err error) error
+```
+
+### 通过pid查找进行进程  
+```go
+func FindProcess(pid int) (*Process, error)
+```
+查找增加运行的进程,但是在 Unix 系统上，无论过程是否存在，FindProcess 都会成功并为给定的 PID 返回一个 Process  
+
+### 杀死进程  
+```go
+    func (p *Process) Kill() error
+```
+```go
+func main() {
+
+ pid := os.Getpid()
+ process,error := os.FindProcess(pid)
+ if error != nil{
+   fmt.Println(error)
+ }
+ process.Kill()
+ // 进行杀死 下面就不会执行了
+ fmt.Println(pid)
+ fmt.Println(process)
+}
+```
+
+### 释放与进程p关联的任何资源  
+```go
+func (p *Process) Release() error
+```
+Release释放进程p绑定的所有资源， 使它们（资源）不能再被（进程p）使用。只有没有调用Wait方法时才需要调用本方法  
+```go
+func (p *Process) Signal(sig Signal) error
+func (p Process) Wait() (ProcessState, error)
+func (p *ProcessState) Exited() bool
+func (p *ProcessState) Pid() int
+func (p *ProcessState) String() string
+func (p *ProcessState) Success() bool
+func (p *ProcessState) Sys() interface{}
+func (p *ProcessState) SysUsage() interface{}
+func (p *ProcessState) SystemTime() time.Duration
+func (p *ProcessState) UserTime() time.Duration
+func (e *SyscallError) Error() string
+```
 
 ---
-# `Sort` 包  
+# `sort` 包  
 sort包中实现了３种基本的排序算法：插入排序．快排和堆排序．和其他语言中一样，这三种方式都是不公开的，他们只在sort包内部使用．所以用户在使用sort包进行排序时无需考虑使用那种排序方式，sort.Interface定义的三个方法：获取数据集合长度的Len()方法、比较两个元素大小的Less()方法和交换两个元素位置的Swap()方法，就可以顺利对数据集合进行排序。sort包会根据实际数据自动选择高效的排序算法。  
 
 ## type Interface  
@@ -790,7 +1313,7 @@ func main() {
 ```
 ---
 
-# `Strconv` 包  
+# `strconv` 包  
 与字符串相关的类型转换。  
 包含了一些变量用于获取程序运行的操作系统平台下 int 类型所占的位数，如：`strconv.IntSize`。  
 任何类型 T 转换为字符串总是成功的。  
