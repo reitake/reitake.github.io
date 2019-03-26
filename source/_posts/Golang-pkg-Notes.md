@@ -1193,6 +1193,216 @@ func (p *ProcessState) SystemTime() time.Duration
 func (p *ProcessState) UserTime() time.Duration
 func (e *SyscallError) Error() string
 ```
+---
+
+# `runtime` 包  
+runtime 包 提供了运行时与系统的交互,比如控制协程函数，触发垃圾立即回收等等底层操作  
+
+## 函数  
+### 获取GO的信息
+```go
+func GOROOT() string    // 获取GOROOT环境变量
+func Version() string   // 获取GO的版本号
+func NumCPU() int       // 获取本机逻辑CPU个数
+func GOMAXPROCS(n int) int  // 设置最大可同时执行的最大CPU数
+// 设置可同时执行的最大CPU数，并返回先前的设置。 
+// 若 n < 1，它就不会更改当前设置。
+```
+
+### 设置cpu profile记录的速率  
+```go
+func SetCPUProfileRate(hz int)
+```
+SetCPUProfileRate设置CPU profile记录的速率为平均每秒hz次。如果hz<=0，SetCPUProfileRate会关闭profile的记录。如果记录器在执行，该速率必须在关闭之后才能修改。  
+
+绝大多数使用者应使用runtime/pprof包或testing包的-test.cpuprofile选项而非直接使用SetCPUProfileRate  
+
+### 立即执行一次垃圾回收  
+```go
+func GC()
+```
+
+### 给变量绑定方法，当垃圾回收的时候进行监听  
+```go
+func SetFinalizer(x, f interface{})
+```
+注意x必须是指针类型,f 函数的参数一定要和x保持一致,或者写interface{},不然程序会报错  
+```go
+type Student struct {
+  name string
+}
+func main() {
+  var i *Student = new(Student)
+  runtime.SetFinalizer(i, func(i *Student) {
+   println("垃圾回收了")
+  })
+  runtime.GC()
+  time.Sleep(time.Second)
+}
+```
+
+### 查看内存申请和分配统计信息  
+```go
+func ReadMemStats(m *MemStats)
+
+type MemStats struct {
+    // 一般统计
+    Alloc      uint64 // 已申请且仍在使用的字节数
+    TotalAlloc uint64 // 已申请的总字节数（已释放的部分也算在内）
+    Sys        uint64 // 从系统中获取的字节数（下面XxxSys之和）
+    Lookups    uint64 // 指针查找的次数
+    Mallocs    uint64 // 申请内存的次数
+    Frees      uint64 // 释放内存的次数
+    // 主分配堆统计
+    HeapAlloc    uint64 // 已申请且仍在使用的字节数
+    HeapSys      uint64 // 从系统中获取的字节数
+    HeapIdle     uint64 // 闲置span中的字节数
+    HeapInuse    uint64 // 非闲置span中的字节数
+    HeapReleased uint64 // 释放到系统的字节数
+    HeapObjects  uint64 // 已分配对象的总个数
+    // L低层次、大小固定的结构体分配器统计，Inuse为正在使用的字节数，Sys为从系统获取的字节数
+    StackInuse  uint64 // 引导程序的堆栈
+    StackSys    uint64
+    MSpanInuse  uint64 // mspan结构体
+    MSpanSys    uint64
+    MCacheInuse uint64 // mcache结构体
+    MCacheSys   uint64
+    BuckHashSys uint64 // profile桶散列表
+    GCSys       uint64 // GC元数据
+    OtherSys    uint64 // 其他系统申请
+    // 垃圾收集器统计
+    NextGC       uint64 // 会在HeapAlloc字段到达该值（字节数）时运行下次GC
+    LastGC       uint64 // 上次运行的绝对时间（纳秒）
+    PauseTotalNs uint64
+    PauseNs      [256]uint64 // 近期GC暂停时间的循环缓冲，最近一次在[(NumGC+255)%256]
+    NumGC        uint32
+    EnableGC     bool
+    DebugGC      bool
+    // 每次申请的字节数的统计，61是C代码中的尺寸分级数
+    BySize [61]struct {
+        Size    uint32
+        Mallocs uint64
+        Frees   uint64
+    }
+}
+```
+
+### 查看程序  
+```go
+func (r *MemProfileRecord) InUseBytes() int64   // InUseBytes返回正在使用的字节数（AllocBytes – FreeBytes）
+func (r *MemProfileRecord) InUseObjects() int64 //InUseObjects返回正在使用的对象数（AllocObjects - FreeObjects）
+func (r *MemProfileRecord) Stack() []uintptr    // Stack返回关联至此记录的调用栈踪迹，即r.Stack0的前缀。
+func MemProfile(p []MemProfileRecord, inuseZero bool) (n int, ok bool)
+// 获取内存profile记录历史
+```
+MemProfile返回当前内存profile中的记录数n。若len(p)>=n，MemProfile会将此分析报告复制到p中并返回(n, true)；如果len(p)< n，MemProfile则不会更改p，而只返回(n, false)。  
+
+如果inuseZero为真，该profile就会包含无效分配记录（其中r.AllocBytes>0，而r.AllocBytes==r.FreeBytes。这些内存都是被申请后又释放回运行时环境的）。  
+
+大多数调用者应当使用runtime/pprof包或testing包的-test.memprofile标记，而非直接调用MemProfile  
+
+### 执行一个断点  
+```go
+func Breakpoint()
+runtime.Breakpoint()
+```
+
+###  获取程序调用go协程的栈踪迹历史  
+```go
+func Stack(buf []byte, all bool) int
+```
+Stack将调用其的go程的调用栈踪迹格式化后写入到buf中并返回写入的字节数。若all为true，函数会在写入当前go程的踪迹信息后，将其它所有go程的调用栈踪迹都格式化写入到buf中。  
+### 获取当前函数或者上层函数的标识号、文件名、调用方法在当前文件中的行号  
+```go
+func Caller(skip int) (pc uintptr, file string, line int, ok bool)
+
+eg:
+func main() {
+  pc,file,line,ok := runtime.Caller(0)
+  fmt.Println(pc)
+  fmt.Println(file)
+  fmt.Println(line)
+  fmt.Println(ok)
+}
+```
+
+### 获取与当前堆栈记录相关链的调用栈踪迹  
+```go
+func Callers(skip int, pc []uintptr) int
+```
+函数把当前go程调用栈上的调用栈标识符填入切片pc中，返回写入到pc中的项数。实参skip为开始在pc中记录之前所要跳过的栈帧数，0表示Callers自身的调用栈，1表示Callers所在的调用栈。返回写入p的项数。  
+
+### 获取一个标识调用栈标识符pc对应的调用栈  
+```go
+func FuncForPC(pc uintptr) *Func
+```
+```go
+func (f *Func) Name() string    // 获取调用栈所调用的函数的名字
+func (f *Func) FileLine(pc uintptr) (file string, line int)     
+// 获取调用栈所调用的函数的所在的源文件名和行号
+func (f *Func) Entry() uintptr  // 获取该调用栈的调用栈标识符
+```
+
+### 获取当前进程执行的cgo调用次数  
+```go
+func NumCgoCall() int64
+```
+
+### 获取当前存在的go协程数  
+```go
+func NumGoroutine() int
+```
+
+### 终止掉当前的go协程  
+```go
+func Goexit()
+```
+Goexit终止调用它的go协程,其他协程不受影响,Goexit会在终止该go协程前执行所有的defer函数，前提是defer必须在它前面定义,如果在main go协程调用本方法,会终止该go协程,但不会让main返回,因为main函数没有返回,程序会继续执行其他go协程,当其他go协程执行完毕后,程序就会崩溃.  
+
+### 让其他go协程优先执行,等其他协程执行完后,在执行当前的协程  
+```go
+func Gosched()
+```
+
+### 获取活跃的go协程的堆栈profile以及记录个数  
+```go
+func GoroutineProfile(p []StackRecord) (n int, ok bool)
+```
+
+### 将调用的go协程绑定到当前所在的操作系统线程，其它go协程不能进入该线程  
+```go
+func LockOSThread()  
+```
+将调用的go程绑定到它当前所在的操作系统线程。除非调用的go程退出或调用UnlockOSThread，否则它将总是在该线程中执行，而其它go程则不能进入该线程  
+```go
+func UnlockOSThread()
+// 解除go协程与操作系统线程的绑定关系
+```
+将调用的go程解除和它绑定的操作系统线程。若调用的go程未调用LockOSThread，UnlockOSThread不做操作  
+
+### 获取线程创建profile中的记录个数  
+```go
+func ThreadCreateProfile(p []StackRecord) (n int, ok bool)
+```
+返回线程创建profile中的记录个数。如果len(p)>=n，本函数就会将profile中的记录复制到p中并返回(n, true)。若len(p)< n，则不会更改p，而只返回(n, false)。  
+
+绝大多数使用者应当使用runtime/pprof包，而非直接调用ThreadCreateProfile。  
+
+### 控制阻塞profile记录go协程阻塞事件的采样率  
+```go
+func SetBlockProfileRate(rate int)
+```
+SetBlockProfileRate控制阻塞profile记录go程阻塞事件的采样频率。对于一个阻塞事件，平均每阻塞rate纳秒，阻塞profile记录器就采集一份样本。  
+
+要在profile中包括每一个阻塞事件，需传入rate=1；要完全关闭阻塞profile的记录，需传入rate<=0。  
+
+### 返回当前阻塞profile中的记录个数  
+```go
+func BlockProfile(p []BlockProfileRecord) (n int, ok bool)
+```
+BlockProfile返回当前阻塞profile中的记录个数。如果len(p)>=n，本函数就会将此profile中的记录复制到p中并返回(n, true)。如果len(p)< ，本函数则不会修改p，而只返回(n, false)。  
+
+绝大多数使用者应当使用runtime/pprof包或testing包的-test.blockprofile标记， 而非直接调用 BlockProfile。  
 
 ---
 # `sort` 包  
