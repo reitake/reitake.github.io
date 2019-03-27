@@ -23,6 +23,7 @@
   #}</span>
   {% endif %}
 
+<!--
   {% if config.symbols_count_time.total_time %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
@@ -60,7 +61,9 @@
   #}{{ theme.footer.custom_text }}{#
 #}</div>
 {% endif %}
+--!>
 
+</br>
 <span id="sitetime"></span>
 <script language="javascript">
   function siteTime(){
