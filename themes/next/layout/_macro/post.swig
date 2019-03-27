@@ -1,4 +1,5 @@
-{% macro render(post, is_index, post_extra_class) %}
+
+{% macro render(post, is_index, is_pv, post_extra_class) %}
 
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
 
@@ -182,7 +183,7 @@
               </span>
             {% elif (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
               {{ comments() }}
-                <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+                {#<span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>#}
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
                   <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
                 </a>
@@ -212,6 +213,14 @@
             {% if theme.post_meta.item_text %} {{ __('post.views') + __('symbol.colon') }} {% endif %}
             <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
             </span>
+          {% endif %}
+
+          {% if is_pv %}
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+                <i class="fa fa-file-o"></i>
+            </span>
+            <span id="busuanzi_value_page_pv"></span>次阅读
           {% endif %}
 
           {% if config.symbols_count_time.symbols or config.symbols_count_time.time %}
