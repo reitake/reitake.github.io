@@ -358,7 +358,7 @@ valine:
 .post {
    margin-top: 0px;
    margin-bottom: 24px;
-   padding: 24px;
+   padding: 35px;
    -webkit-box-shadow: 0 0 24px rgba(202, 203, 203, .5);
    -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
 }
@@ -366,14 +366,14 @@ valine:
 
 增加了文章边框后，文章间的分割线就没必要存在了，所以干脆取消。  
 
-在`/themes/next/source/css/_common/components/post/post-eof.styl`中把分割线高度改成`0px`：  
+在`/themes/next/source/css/_common/components/post/post-eof.styl`中把分割线高度改成`0px`,并把`margin`一行注释掉：  
 
 ```css
 .posts-expand {
   .post-eof {
     display: block;
-    margin: $post-eof-margin-top auto $post-eof-margin-bottom;
-    width: 8%;
+    // margin: $post-eof-margin-top auto $post-eof-margin-bottom;
+    width: 0%;
     height: 0px;
     background: $grey-light;
     text-align: center;
