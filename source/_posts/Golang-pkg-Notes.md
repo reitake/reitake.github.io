@@ -5,6 +5,9 @@ tags: Go
 categories: Go
 permalink: Golang-pkg
 ---
+<center> <font color="#bababa">***Go 语言常用包笔记***</font><br/> </center>
+<!--more-->
+---
 # `bytes` 包
 对于传入 []byte 的函数，都不会修改传入的参数，返回值要么是参数的副本，要么是参数的切片。  
 

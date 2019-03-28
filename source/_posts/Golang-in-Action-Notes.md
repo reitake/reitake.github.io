@@ -5,7 +5,9 @@ tags: Go
 categories: Go
 permalink: Go-Action-Notes
 ---
-
+<center> <font color="#bababa">***Go 语言应用 tips***</font><br /> </center>
+<!--more-->
+---
 # Tips  
 ## `,ok` 模式  
 （1）在函数返回时检测错误  

@@ -5,6 +5,9 @@ tags: [Hexo, NexT]
 categories: [备忘]
 permalink: Hexo-NexT-Config
 ---
+<center> <font color="#bababa">***个人 Blog 配置备忘***</font><br /> </center>
+<!--more-->
+---
 # 基本信息  
 建站驱动：`Hexo` v3.8.0  
 
@@ -405,6 +408,9 @@ date: {{ date }}
 tags:           // 文章标签
 categories:     // 文章分类
 permalink:      // 文章自定义链接
+---
+<center> <font color="#bababa">***首页展示的字***</font><br/> </center>
+<!--more-->
 ---
 ```
 

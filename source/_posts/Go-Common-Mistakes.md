@@ -5,7 +5,9 @@ tags: [Go, Note]
 categories: Go
 permalink: Go-Common-Mistakes
 ---
-
+<center> <font color="#bababa">***Go 语言中的常见错误笔记***</font><br /> </center>
+<!--more-->
+---
 # Tips  
 - 永远不要使用形如 `var p*a` 声明变量，这会混淆指针声明和乘法运算（参考[4.9小节](04.9.md)）
 - 永远不要在`for`循环自身中改变计数器变量（参考[5.4小节](05.4.md)）

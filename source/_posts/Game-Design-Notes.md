@@ -5,7 +5,9 @@ tags: [Game]
 categories: Game
 permalink: Game-Design-Notes
 ---
-
+<center> <font color="#bababa">***游戏设计相关笔记***</font><br/> </center>
+<!--more-->
+---
 # 箴言（雾  
 >策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。  
 *——黄J  2019.3.19*  

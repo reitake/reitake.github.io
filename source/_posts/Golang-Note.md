@@ -5,6 +5,9 @@ date: 2019-03-07 12:26:44
 tags: [Go]
 categories: Go
 ---
+<center> <font color="#bababa">***Go 语言学习笔记***</font><br /> </center>
+<!--more-->
+---
 # 声明    
 ## 变量
 ### 单变量声明

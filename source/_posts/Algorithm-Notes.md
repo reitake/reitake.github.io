@@ -5,6 +5,9 @@ tags: [算法, Go, Note]
 categories: 算法
 permalink: Alg-Notes
 ---
+<center> <font color="#bababa">***算法学习笔记***</font><br /> </center>
+<!--more-->
+---
 # 数组  
 ## 有序数组的平方  
 [题目](https://leetcode-cn.com/problems/squares-of-a-sorted-array/):  
