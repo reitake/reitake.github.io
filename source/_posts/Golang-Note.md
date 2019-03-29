@@ -4619,3 +4619,20 @@ continue   for           import   return      var
           complex real imag
           panic recover
 ```
+
+## 文件读写参数  
+```go
+func OpenFile(name string, flag int, perm FileMode) (*File, error)
+
+第二个参数
+O_RDONLY    打开只读文件
+O_WRONLY    打开只写文件
+O_RDWR  打开既可以读取又可以写入文件
+O_APPEND    写入文件时将数据追加到文件尾部
+O_CREATE    如果文件不存在，则创建一个新的文件
+O_EXCL  文件必须不存在，然后会创建一个新的文件
+O_SYNC  打开同步I/0
+O_TRUNC 文件打开时可以截断
+
+第三个参数就是权限模式
+```

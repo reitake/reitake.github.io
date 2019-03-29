@@ -467,7 +467,7 @@ Disallow: /fancybox/
 sitemap: https://reitake.github.io/sitemap.xml
 ```
 
-# 问题  
+# 遗留问题  
 
 ## 文章边框  
 
@@ -476,3 +476,23 @@ sitemap: https://reitake.github.io/sitemap.xml
 ## 百度抓取  
 
 目前 github 屏蔽了百度的抓取，所以就先没做`baidusitemap`和`百度站长`内容，以后不屏蔽了再说吧。
+
+# 踩过的坑  
+
+## `fontawesome` icon 显示不出来  
+
+`主题配置文件中`，把这一项按 example 填上：  
+
+```yaml
+  # Internal version: 4.6.2
+  # See: https://fontawesome.com
+  # Example:
+  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
+```
+
+给了两个 example，试着 ping 了下，第一个 8 ms，第二个 280 ms，选用了第一个。  
+
+ps. 看了下其他人的 NexT v5.x 的配置文件，这一项默认是空着的，但能显示出 icon，现在用的 v7.0.1 也是默认空着，但我这只有填上才能显示出来，不知道是不是八阿哥。  
+
