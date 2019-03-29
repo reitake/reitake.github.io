@@ -61,6 +61,9 @@
 #}</div>
 {% endif %}
 
+<span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
 <span id="sitetime"></span>
 <script language="javascript">
   function siteTime(){
@@ -97,9 +100,11 @@
   }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
   siteTime();
 </script>
-
 </br>
 <!--这一段是不蒜子的访问量统计代码-->
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span class="post-meta-item-icon">
+    <i class="fa fa-paw"></i>
+</span>
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次 &nbsp;   </span>
 <span id="busuanzi_container_site_uv">访客数<span id="busuanzi_value_site_uv"></span>人次</span>
