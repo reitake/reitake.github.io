@@ -405,7 +405,7 @@ read_more_btn: true     # 改成true
 
 ## 修改新建文章模板  
 
-`/scaffolds/page.md`中修改内容：  
+`/scaffolds/post.md`中修改内容：  
 
 ```go
 ---
