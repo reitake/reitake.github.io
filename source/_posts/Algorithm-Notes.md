@@ -464,6 +464,217 @@ func merge(nums1 []int, m int, nums2 []int, n int)  {
 }
 ```
 
+## 只出现一次的数字  
+
+[题目](https://leetcode-cn.com/problems/single-number/)  
+
+```go
+给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+
+说明：
+你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
+
+示例 1:
+输入: [2,2,1]
+输出: 1
+
+示例 2:
+输入: [4,1,2,1,2]
+输出: 4
+```
+
+思路：异或，且0与任何数异或等于任何数。
+
+```go
+func singleNumber(nums []int) int {
+    res := 0
+    for _, v := range nums {
+        res ^= v
+    }
+    return res
+}
+```
+
+
+# 链表  
+
+## 删除链表中的节点  
+
+[题目](https://leetcode-cn.com/problems/delete-node-in-a-linked-list/)  
+```go
+请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。
+
+现有一个链表 -- head = [4,5,1,9]，它可以表示为:
+
+示例 1:
+输入: head = [4,5,1,9], node = 5
+输出: [4,1,9]
+解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -> 1 -> 9.
+
+示例 2:
+输入: head = [4,5,1,9], node = 1
+输出: [4,5,9]
+解释: 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -> 5 -> 9.
+ 
+
+说明:
+链表至少包含两个节点。
+链表中所有节点的值都是唯一的。
+给定的节点为非末尾节点并且一定是链表中的一个有效节点。
+不要从你的函数中返回任何结果。
+```
+
+思路：最简单的方法是把上衣节点的next指向下一节点，来跳过要删除的节点。  
+
+但是节点结构体中不包含上一节点的地址，所以只能把下一节点在val和next的拷贝到要删除的节点中：  
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func deleteNode(node *ListNode) {
+    node.Val = node.Next.Val
+    node.Next = node.Next.Next
+}
+```
+
+## 二叉树的最大深度  
+
+[题目](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)  
+
+```go
+给定一个二叉树，找出其最大深度。
+
+二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+
+说明: 叶子节点是指没有子节点的节点。
+
+示例：
+给定二叉树 [3,9,20,null,null,15,7]，
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回它的最大深度 3 。
+```
+
+思路：递归求解。或用栈迭代（？？？）  
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func maxDepth(root *TreeNode) int {
+    if root == nil {
+        return 0
+    } else {
+        left := maxDepth(root.Left)
+        right := maxDepth(root.Right)
+        if left > right {
+            return left + 1
+        } else {
+            return right + 1
+        }
+    }
+}
+```
+
+## 反转链表  
+[题目](https://leetcode-cn.com/problems/reverse-linked-list/)  
+```go
+反转一个单链表。
+
+示例:
+输入: 1->2->3->4->5->NULL
+输出: 5->4->3->2->1->NULL
+进阶:
+你可以迭代或递归地反转链表。你能否用两种方法解决这道题？
+```
+
+思路：迭代，在遍历列表时，将当前节点的 next 指针改为指向前一个元素。由于节点没有引用其上一个节点，因此必须事先存储其前一个元素。在更改引用之前，还需要另一个指针来存储下一个节点。不要忘记在最后返回新的头引用：  
+
+```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func reverseList(head *ListNode) *ListNode {
+    curr := head
+    var prev *ListNode = nil
+    for curr != nil {
+        nextTemp := curr.Next
+        curr.Next = prev
+        prev = curr
+        curr = nextTemp
+    }
+    return prev
+}
+```
+
+## 二叉搜索树的最近公共祖先  
+
+[题目]()
+```go
+给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+
+百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+
+例如，给定如下二叉搜索树:  root = [6,2,8,0,4,7,9,null,null,3,5]
+
+示例 1:
+输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+输出: 6 
+解释: 节点 2 和节点 8 的最近公共祖先是 6。
+
+示例 2:
+输入: root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+输出: 2
+解释: 节点 2 和节点 4 的最近公共祖先是 2, 因为根据定义最近公共祖先节点可以为节点本身。
+
+说明:
+所有节点的值都是唯一的。
+p、q 为不同节点且均存在于给定的二叉搜索树中。
+```
+
+思路：利用二叉搜索树的特性。一共就3种情况：
+
+要么2个值都比根节点小，那都在root的左侧；要么2个值都比跟节点大，那都在root的右侧；或者在两侧，那最近祖先就是root。
+
+```go
+/**
+ * Definition for TreeNode.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *ListNode
+ *     Right *ListNode
+ * }
+ */
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+    for {
+        if p.Val < roo.Val && q.Val < root.Val {
+            root = root.Left
+        } else if p.Val > root.Val && q.Val > root.Val {
+            root = root.Right
+        } else {
+            return root
+        }
+    }
+}
+```
 
 
 ---
