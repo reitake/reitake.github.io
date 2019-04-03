@@ -3249,4 +3249,614 @@ t.AddDate(year,month,day) 正数向前，负数向后
 ```
 
 ---
+
+# `unicode` 包  
+
+## 常量  
+```go
+const (
+    MaxRune         = '\U0010FFFF' // Unicode 码点的最大值
+    ReplacementChar = '\uFFFD'     // 表示无效的码点
+    MaxASCII        = '\u007F'     // 最大 ASCII 值
+    MaxLatin1       = '\u00FF'     // 最大 Latin-1 值
+)
+```
+
+## RangeTable   
+```go
+// 判断字符 r 是否在 rangtab 范围内。
+// 可用的 RangeTable 参见 go/src/unicode/tables.go。
+func Is(rangeTab *RangeTable, r rune) bool
+
+// RangeTable 定义一个 Unicode 码点集合，包含 16 位和 32 位两个范围列表。
+// 这两个列表必须经过排序而且不能重叠。R32 中只能包含大于 16 位的值。
+type RangeTable struct {
+    R16         []Range16
+    R32         []Range32
+    LatinOffset int // R16 中 Hi <= MaxLatin1 的条目数。
+}
+
+// Range16 表示一个 16 位的 Unicode 码点范围。范围从 Lo 到 Hi，具有指定的步长。
+type Range16 struct {
+    Lo     uint16
+    Hi     uint16
+    Stride uint16 // 步长
+}
+
+// Range32 表示一个 32 位的 Unicode 码点范围。范围从 Lo 到 Hi，具有指定的步长。
+// Lo 和 Hi 必须都大于 16 位。
+type Range32 struct {
+    Lo     uint32
+    Hi     uint32
+    Stride uint32 // 步长
+}
+```
+
+## 判断及转换字符大小写、Title  
+```go
+// 判断字符 r 是否为大写格式
+func IsUpper(r rune) bool
+
+// 判断字符 r 是否为小写格式
+func IsLower(r rune) bool
+
+// 判断字符 r 是否为 Unicode 规定的 Title 字符
+// 大部分字符的 Title 格式就是其大写格式
+// 只有少数字符的 Title 格式是特殊字符
+// 这里判断的就是特殊字符
+func IsTitle(r rune) bool
+
+// ToUpper 将字符 r 转换为大写格式
+func ToUpper(r rune) rune
+
+// ToLower 将字符 r 转换为小写格式
+func ToLower(r rune) rune
+
+// ToTitle 将字符 r 转换为 Title 格式
+// 大部分字符的 Title 格式就是其大写格式
+// 只有少数字符的 Title 格式是特殊字符
+func ToTitle(r rune) rune
+
+// To 将字符 r 转换为指定的格式
+// _case 取值：UpperCase、LowerCase、TitleCase
+func To(_case int, r rune) rune
+```
+
+示例1：判断汉字：  
+
+```go
+func main() {
+    for _, r := range "Hello 世界！" {
+        // 判断字符是否为汉字
+        if unicode.Is(unicode.Scripts["Han"], r) {
+            fmt.Printf("%c", r) // 世界
+        }
+    }
+}
+// 更多 unicode.Scripts 取值请参考：http://www.cnblogs.com/golove/p/3269099.html
+```
+
+示例2：判断大小写：  
+
+```go
+func main() {
+    for _, r := range "Hello ＡＢＣ！" {
+        // 判断字符是否为大写
+        if unicode.IsUpper(r) {
+            fmt.Printf("%c", r) // HＡＢＣ
+        }
+    }
+    for _, r := range "Hello ａｂｃ！" {
+        // 判断字符是否为小写
+        if unicode.IsLower(r) {
+            fmt.Printf("%c", r) // elloａｂｃ
+        }
+    }
+    for _, r := range "Hello ᾏᾟᾯ！" {
+        // 判断字符是否为标题
+        if unicode.IsTitle(r) {
+            fmt.Printf("%c", r) // ᾏᾟᾯ
+        }
+    }
+}
+```
+
+示例3：输出 Unicode 规定的标题字符  
+
+```go
+func main() {
+    for _, cr := range unicode.Lt.R16 {
+        for i := cr.Lo; i <= cr.Hi; i += cr.Stride {
+            fmt.Printf("%c", i)
+        }
+    } // ǅǈǋǲᾈᾉᾊᾋᾌᾍᾎᾏᾘᾙᾚᾛᾜᾝᾞᾟᾨᾩᾪᾫᾬᾭᾮᾯᾼῌῼ
+}
+```
+
+示例4：转换大小写  
+
+```go
+func main() {
+    s := "Hello 世界！"
+
+    for _, r := range s {
+        fmt.Printf("%c", unicode.ToUpper(r))
+    } // HELLO 世界！
+    for _, r := range s {
+        fmt.Printf("%c", unicode.ToLower(r))
+    } // hello 世界！
+    for _, r := range s {
+        fmt.Printf("%c", unicode.ToTitle(r))
+    } // HELLO 世界！
+
+    for _, r := range s {
+        fmt.Printf("%c", unicode.To(unicode.UpperCase, r))
+    } // HELLO 世界！
+    for _, r := range s {
+        fmt.Printf("%c", unicode.To(unicode.LowerCase, r))
+    } // hello 世界！
+    for _, r := range s {
+        fmt.Printf("%c", unicode.To(unicode.TitleCase, r))
+    } // HELLO 世界！
+}
+```
+
+## rune操作  
+```go
+// ToUpper 将 r 转换为大写格式
+// 优先使用指定的映射表 special
+// 可用的 SpecialCase 参见 go/src/unicode/casetables.go。
+func (special SpecialCase) ToUpper(r rune) rune
+
+// ToLower 将 r 转换为小写格式
+// 优先使用指定的映射表 special
+func (special SpecialCase) ToLower(r rune) rune
+
+// ToTitle 将 r 转换为 Title 格式
+// 优先使用指定的映射表 special
+func (special SpecialCase) ToTitle(r rune) rune
+
+// SpecialCase 表示特定语言的大小写映射，比如土耳其语。
+// SpecialCase 的方法可以自定义标准映射（通过重写）。
+type SpecialCase []CaseRange
+
+// CaseRange 表示一个简单的 Unicode 码点范围，用于大小写转换。
+// 在 Lo 和 Hi 范围内的码点，如果要转换成大写，只需要加上 d[0] 即可
+// 如果要转换为小写，只需要加上 d[1] 即可，如果要转换为 Title 格式，
+// 只需要加上 d[2] 即可。
+type CaseRange struct {
+    Lo    uint32
+    Hi    uint32
+    Delta d // [3]rune
+}
+
+// CaseRanges 中 Delta 数组的索引。
+const (
+    UpperCase = iota
+    LowerCase
+    TitleCase
+    MaxCase
+)
+
+// 如果一个 CaseRange 中的 Delta 元素是 UpperLower，则表示这个 CaseRange 是
+// 一个有着连续的大写小写大写小写的范围。也就是说，Lo 是大写，Lo+1 是小写，
+// Lo+2 是大写，Lo+3 是小写 ... 一直到 Hi 为止。
+const (
+    UpperLower = MaxRune + 1 // 不是一个有效的 Delta 元素
+)
+```
+
+eg.
+```go
+func main() {
+    s := "Hello 世界！"
+    for _, r := range s {
+        fmt.Printf("%c", unicode.SpecialCase(unicode.CaseRanges).ToUpper(r))
+    } // HELLO 世界！
+    for _, r := range s {
+        fmt.Printf("%c", unicode.SpecialCase(unicode.CaseRanges).ToLower(r))
+    } // hello 世界！
+    for _, r := range s {
+        fmt.Printf("%c", unicode.SpecialCase(unicode.CaseRanges).ToTitle(r))
+    } // HELLO 世界！
+}
+```
+
+## SimpleFold 环绕查找  
+
+```go
+// SimpleFold 在 Unicode 字符表中从字符 r 开始环绕查找（到尾部后再从头开始）
+// 下一个与 r 大小写相匹配的字符（一个字符的大写、小写、标题三者视为大小写相
+// 匹配），这个函数遵循 Unicode 定义的大小写环绕匹配表。
+//
+// 例如：
+// SimpleFold('A') = 'a'
+// SimpleFold('a') = 'A'
+//
+// SimpleFold('K') = 'k'
+// SimpleFold('k') = 'K' (开尔文符号)
+// SimpleFold('K') = 'K'
+//
+// SimpleFold('1') = '1'
+func SimpleFold(r rune) rune
+```
+
+eg.
+```go
+func main() {
+    s := "ΦφϕkKK"
+    // 看看 s 里面是什么
+    for _, c := range s {
+        fmt.Printf("%x  ", c)
+    }
+    fmt.Println()
+    // 大写，小写，标题 | 当前字符 -> 下一个匹配字符
+    for _, v := range s {
+        fmt.Printf("%c, %c, %c | %c -> %c\n",
+            unicode.ToUpper(v),
+            unicode.ToLower(v),
+            unicode.ToTitle(v),
+            v,
+            unicode.SimpleFold(v),
+        )
+    }
+}
+
+// 输出结果：
+// 3a6  3c6  3d5  6b  4b  212a
+// Φ, φ, Φ | Φ -> φ
+// Φ, φ, Φ | φ -> ϕ
+// Φ, ϕ, Φ | ϕ -> Φ
+// K, k, K | k -> K
+// K, k, K | K -> k
+// K, k, K | K -> K
+```
+
+## 判断  
+```go
+// IsDigit 判断 r 是否为一个十进制的数字字符
+func IsDigit(r rune) bool
+
+// IsNumber 判断 r 是否为一个数字字符 (类别 N)
+func IsNumber(r rune) bool
+
+// IsLetter 判断 r 是否为一个字母字符 (类别 L)
+// 汉字也是一个字母字符
+func IsLetter(r rune) bool
+
+// IsSpace 判断 r 是否为一个空白字符
+// 在 Latin-1 字符集中，空白字符为：\t, \n, \v, \f, \r,
+// 空格, U+0085 (NEL), U+00A0 (NBSP)
+// 其它空白字符的定义有“类别 Z”和“Pattern_White_Space 属性”
+func IsSpace(r rune) bool
+
+// IsControl 判断 r 是否为一个控制字符
+// Unicode 类别 C 包含更多字符，比如代理字符
+// 使用 Is(C, r) 来测试它们
+func IsControl(r rune) bool
+
+// IsGraphic 判断字符 r 是否为一个“图形字符”
+// “图形字符”包括字母、标记、数字、标点、符号、空格
+// 他们分别对应于 L、M、N、P、S、Zs 类别
+// 这些类别是 RangeTable 类型，存储了相应类别的字符范围
+func IsGraphic(r rune) bool
+
+// IsPrint 判断字符 r 是否为 Go 所定义的“可打印字符”
+// “可打印字符”包括字母、标记、数字、标点、符号和 ASCII 空格
+// 他们分别对应于 L, M, N, P, S 类别和 ASCII 空格
+// “可打印字符”和“图形字符”基本是相同的，不同之处在于
+// “可打印字符”只包含 Zs 类别中的 ASCII 空格（U+0020）
+func IsPrint(r rune) bool
+
+// IsPunct 判断 r 是否为一个标点字符 (类别 P)
+func IsPunct(r rune) bool
+
+// IsSymbol 判断 r 是否为一个符号字符
+func IsSymbol(r rune) bool
+
+// IsMark 判断 r 是否为一个 mark 字符 (类别 M)
+func IsMark(r rune) bool
+
+// IsOneOf 判断 r 是否在 set 范围内
+func IsOneOf(set []*RangeTable, r rune) bool
+```
+
+eg.
+```go
+func main() {
+    fmt.Println() // 数字
+    for _, r := range "Hello 123１２３一二三！" {
+        if unicode.IsDigit(r) {
+            fmt.Printf("%c", r)
+        }
+    } // 123１２３
+
+    fmt.Println() // 数字
+    for _, r := range "Hello 123１２３一二三！" {
+        if unicode.IsNumber(r) {
+            fmt.Printf("%c", r)
+        }
+    } // 123１２３
+
+    fmt.Println() // 字母
+    for _, r := range "Hello\n\t世界！" {
+        if unicode.IsLetter(r) {
+            fmt.Printf("%c", r)
+        }
+    } // Hello世界
+
+    fmt.Println() // 空白
+    for _, r := range "Hello \t世　界！\n" {
+        if unicode.IsSpace(r) {
+            fmt.Printf("%q", r)
+        }
+    } // ' ''\t''\u3000''\n'
+
+    fmt.Println() // 控制字符
+    for _, r := range "Hello\n\t世界！" {
+        if unicode.IsControl(r) {
+            fmt.Printf("%#q", r)
+        }
+    } // '\n''\t'
+
+    fmt.Println() // 可打印
+    for _, r := range "Hello　世界！\t" {
+        if unicode.IsPrint(r) {
+            fmt.Printf("%c", r)
+        }
+    } // Hello世界！
+
+    fmt.Println() // 图形
+    for _, r := range "Hello　世界！\t" {
+        if unicode.IsGraphic(r) {
+            fmt.Printf("%c", r)
+        }
+    } // Hello　世界！
+
+    fmt.Println() // 掩码
+    for _, r := range "Hello ៉៊់៌៍！" {
+        if unicode.IsMark(r) {
+            fmt.Printf("%c", r)
+        }
+    } // ៉៊់៌៍
+
+    fmt.Println() // 标点
+    for _, r := range "Hello 世界！" {
+        if unicode.IsPunct(r) {
+            fmt.Printf("%c", r)
+        }
+    } // ！
+
+    fmt.Println() // 符号
+    for _, r := range "Hello (<世=界>)" {
+        if unicode.IsSymbol(r) {
+            fmt.Printf("%c", r)
+        }
+    } // <=>
+}
+```
+
+eg.判断汉字和标点：  
+
+```go
+func main() {
+    // 将 set 设置为“汉字、标点符号”
+    set := []*unicode.RangeTable{unicode.Han, unicode.P}
+    for _, r := range "Hello 世界！" {
+        if unicode.IsOneOf(set, r) {
+            fmt.Printf("%c", r)
+        }
+    } // 世界！
+}
+```
+
+eg.输出所有 mark 字符：  
+```go
+func main() {
+    for _, cr := range unicode.M.R16 {
+        Lo, Hi, Stride := rune(cr.Lo), rune(cr.Hi), rune(cr.Stride)
+        for i := Lo; i >= Lo && i <= Hi; i += Stride {
+            if unicode.IsMark(i) {
+                fmt.Printf("%c", i)
+            }
+        }
+    }
+}
+```
+
+---
+
+# `unicode/utf16` 包  
+
+```go
+// IsSurrogate 判断 r 是否为代理区字符
+// 两个代理区字符可以用来组合成一个 utf16 编码
+func IsSurrogate(r rune) bool
+
+// EncodeRune 将字符 r 编码成 UTF-16 代理对
+// r：要编码的字符
+// 如果 r < 0x10000 ，则无需编码，其 UTF-16 序列就是其自身
+// r1：编码后的 UTF-16 代理对的高位码元
+// r2：编码后的 UTF-16 代理对的低位码元
+// 如果 r 不是有效的 Unicode 字符，或者是代理区字符，或者无需编码
+// 则返回 U+FFFD, U+FFFD
+func EncodeRune(r rune) (r1, r2 rune)
+
+// DecodeRune 将 UTF-16 代理对解码成一个 Unicode 字符
+// r1：是 UTF-16 代理对的高位码元
+// r2：是 UTF-16 代理对的低位码元
+// 返回值为解码后的 Unicode 字符
+// 如果 r1 或 r2 不是有效的 UTF-16 代理区字符，则返回 U+FFFD
+func DecodeRune(r1, r2 rune) rune
+
+// Decode 将 UTF-16 序列 s 解码成 Unicode 字符序列并返回
+func Decode(s []uint16) []rune
+
+// Encode 将 s 编码成 UTF-16 序列并返回
+func Encode(s []rune) []uint16
+```
+
+eg.
+```go
+func main() {
+    fmt.Printf("%t, ", utf16.IsSurrogate(0xD400)) // false
+    fmt.Printf("%t, ", utf16.IsSurrogate(0xDC00)) // true
+    fmt.Printf("%t\n", utf16.IsSurrogate(0xDFFF)) // true
+
+    r1, r2 := utf16.EncodeRune('𠀾')
+    fmt.Printf("%x, %x\n", r1, r2) // d840, dc3e
+
+    r := utf16.DecodeRune(0xD840, 0xDC3E)
+    fmt.Printf("%c\n", r) // d840, dc3e
+
+    u := []uint16{'不', '会', 0xD840, 0xDC3E}
+    s := utf16.Decode(u)
+    fmt.Printf("%c", s) // [不 会 𠀾]
+}
+```
+
+---
+
+# `unicode/utf8` 包  
+
+## 常量  
+```go
+// 编码所需的基本数字
+const (
+    RuneError = '\uFFFD'     // 错误的 Rune 或 Unicode 代理字符
+    RuneSelf  = 0x80         // ASCII 字符范围
+    MaxRune   = '\U0010FFFF' // Unicode 码点的最大值
+    UTFMax    = 4            // 一个字符编码的最大长度
+)
+```
+
+## 函数  
+```go
+// 将 r 转换为 UTF-8 编码写入 p 中（p 必须足够长，通常为 4 个字节）
+// 如果 r 是无效的 Unicode 字符，则写入 RuneError
+// 返回写入的字节数
+func EncodeRune(p []byte, r rune) int
+
+// 解码 p 中的第一个字符，返回解码后的字符和 p 中被解码的字节数
+// 如果 p 为空，则返回（RuneError, 0）
+// 如果 p 中的编码无效，则返回（RuneError, 1）
+// 无效编码：UTF-8 编码不正确（比如长度不够）、结果超出 Unicode 范围、编码不是最短的。
+// 关于最短编码：可以用四个字节编码一个单字节字符，但它不是最短的，比如：
+// [111100000 10000000 10000000 10111000] 不是最短的，应该使用 [00111000]
+func DecodeRune(p []byte) (r rune, size int)
+
+// 功能同上，参数为字符串
+func DecodeRuneInString(s string) (r rune, size int)
+
+// 解码 p 中的最后一个字符，返回解码后的字符，和 p 中被解码的字节数
+// 如果 p 为空，则返回（RuneError, 0）
+// 如果 p 中的编码无效，则返回（RuneError, 1）
+func DecodeLastRune(p []byte) (r rune, size int)
+
+// 功能同上，参数为字符串
+func DecodeLastRuneInString(s string) (r rune, size int)
+
+// FullRune 检测 p 中第一个字符的 UTF-8 编码是否完整（完整并不表示有效）。
+// 一个无效的编码也被认为是完整字符，因为它将被转换为一个 RuneError 字符。
+// 只有“编码有效但长度不够”的字符才被认为是不完整字符。
+// 也就是说，只有截去一个有效字符的一个或多个尾部字节，该字符才算是不完整字符。
+// 举例：
+// "好"     是完整字符
+// "好"[1:] 是完整字符（首字节无效，可转换为 RuneError 字符）
+// "好"[2:] 是完整字符（首字节无效，可转换为 RuneError 字符）
+// "好"[:2] 是不完整字符（编码有效但长度不够）
+// "好"[:1] 是不完整字符（编码有效但长度不够）
+func FullRune(p []byte) bool
+
+// 功能同上，参数为字符串
+func FullRuneInString(s string) bool
+
+// 返回 p 中的字符个数
+// 错误的 UTF8 编码和长度不足的 UTF8 编码将被当作单字节的 RuneError 处理
+func RuneCount(p []byte) int
+
+// 功能同上，参数为字符串
+func RuneCountInString(s string) (n int)
+
+// RuneLen 返回需要多少字节来编码字符 r，如果 r 是无效的字符，则返回 -1
+func RuneLen(r rune) int
+
+// 判断 b 是否为 UTF8 字符的首字节编码，最高位(bit)是不是 10 的字节就是首字节。
+func RuneStart(b byte) bool
+
+// Valid 判断 p 是否为完整有效的 UTF8 编码序列。
+func Valid(p []byte) bool
+
+// 功能同上，参数为字符串
+func ValidString(s string) bool
+
+// ValidRune 判断 r 能否被正确的转换为 UTF8 编码
+// 超出 Unicode 范围的码点或 UTF-16 代理区中的码点是不能转换的
+func ValidRune(r rune) bool
+```
+
+eg.
+
+```go
+func main() {
+    b := make([]byte, utf8.UTFMax)
+
+    n := utf8.EncodeRune(b, '好')
+    fmt.Printf("%v：%v\n", b, n) // [229 165 189 0]：3
+
+    r, n := utf8.DecodeRune(b)
+    fmt.Printf("%c：%v\n", r, n) // 好：3
+
+    s := "大家好"
+    for i := 0; i < len(s); {
+        r, n = utf8.DecodeRuneInString(s[i:])
+        fmt.Printf("%c：%v   ", r, n) // 大：3   家：3   好：3
+        i += n
+    }
+    fmt.Println()
+
+    for i := len(s); i > 0; {
+        r, n = utf8.DecodeLastRuneInString(s[:i])
+        fmt.Printf("%c：%v   ", r, n) // 好：3   家：3   大：3
+        i -= n
+    }
+    fmt.Println()
+
+    b = []byte("好")
+    fmt.Printf("%t, ", utf8.FullRune(b))     // true
+    fmt.Printf("%t, ", utf8.FullRune(b[1:])) // true
+    fmt.Printf("%t, ", utf8.FullRune(b[2:])) // true
+    fmt.Printf("%t, ", utf8.FullRune(b[:2])) // false
+    fmt.Printf("%t\n", utf8.FullRune(b[:1])) // false
+
+    b = []byte("大家好")
+    fmt.Println(utf8.RuneCount(b)) // 3
+
+    fmt.Printf("%d, ", utf8.RuneLen('A'))          // 1
+    fmt.Printf("%d, ", utf8.RuneLen('\u03A6'))     // 2
+    fmt.Printf("%d, ", utf8.RuneLen('好'))          // 3
+    fmt.Printf("%d, ", utf8.RuneLen('\U0010FFFF')) // 4
+    fmt.Printf("%d\n", utf8.RuneLen(0x1FFFFFFF))   // -1
+
+    fmt.Printf("%t, ", utf8.RuneStart("好"[0])) // true
+    fmt.Printf("%t, ", utf8.RuneStart("好"[1])) // false
+    fmt.Printf("%t\n", utf8.RuneStart("好"[2])) // false
+
+    b = []byte("你好")
+    fmt.Printf("%t, ", utf8.Valid(b))     // true
+    fmt.Printf("%t, ", utf8.Valid(b[1:])) // false
+    fmt.Printf("%t, ", utf8.Valid(b[2:])) // false
+    fmt.Printf("%t, ", utf8.Valid(b[:2])) // false
+    fmt.Printf("%t, ", utf8.Valid(b[:1])) // false
+    fmt.Printf("%t\n", utf8.Valid(b[3:])) // true
+
+    fmt.Printf("%t, ", utf8.ValidRune('好'))        // true
+    fmt.Printf("%t, ", utf8.ValidRune(0))          // true
+    fmt.Printf("%t, ", utf8.ValidRune(0xD800))     // false  代理区字符
+    fmt.Printf("%t\n", utf8.ValidRune(0x10FFFFFF)) // false  超出范围
+}
+```
+
+
+---
 *`to be continued...`*  
