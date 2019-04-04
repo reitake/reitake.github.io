@@ -1248,11 +1248,6 @@ func main() {
 t is now {77 Sunset Strip}
 ```
 
-
-
-
-[The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.10.md)  
-
 ### Printf 和反射  
 [The way to Go 参考内容](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.11.md)  
 
