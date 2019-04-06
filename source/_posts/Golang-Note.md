@@ -756,7 +756,38 @@ if v, ok := varI.(T); ok {  // checked type assertion
 }
 // varI is not of type T
 ```
-如果转换合法，`v` 是 `varI` 转换到类型 `T` 的值，`ok` 会是 `true`；否则 `v` 是类型 `T` 的零值，`ok` 是 `false`，也没有运行时错误发生。  
+如果转换合法，`v` 是 `varI` 转换到类型 `T` 的值，`ok` 会是 `true`；  
+
+否则 `v` 是类型 `T` 的零值，`ok` 是 `false`，也没有运行时错误(panic)发生。  
+
+```go
+func main() {
+    var i interface{} = "hello"
+
+    s := i.(string)
+    fmt.Println(s)
+
+    s, ok := i.(string)
+    fmt.Println(s, ok)
+
+    f, ok := i.(float64)
+    fmt.Println(f, ok)
+
+    f = i.(float64) // 报错(panic)
+    fmt.Println(f)
+}
+
+// 输出：
+hello
+hello true
+0 false
+panic: interface conversion: interface {} is string, not float64
+
+goroutine 1 [running]:
+main.main()
+    /tmp/sandbox319904390/main.go:17 +0x220
+```
+
 
 **应该总是使用上面的方式来进行类型断言**。  
 ```go
@@ -804,8 +835,11 @@ func (ci *Circle) Area() float32 {
     return ci.radius * ci.radius * math.Pi
 }
 ```
-### 类型判断：type-switch  
+### 类型判断（选择）：type-switch  
+类型选择中的声明与类型断言 `i.(T)` 的语法相同，只是具体类型 `T` 被替换成了关键字 `type。`  
+
 接口变量的类型也可以使用一种特殊形式的 `switch` 来检测：**type-switch** ：  
+eg1：  
 ```go
 switch t := areaIntf.(type) {
 case *Square:
@@ -821,6 +855,32 @@ default:
 输出：  
 ```go
 Type Square *main.Square with value &{5}
+```
+
+eg2：  
+```go
+func do(i interface{}) {
+    switch v := i.(type) {
+    case int:
+        fmt.Printf("Twice %v is %v\n", v, v*2)
+    case string:
+        fmt.Printf("%q is %v bytes long\n", v, len(v))
+    default:
+        fmt.Printf("I don't know about type %T!\n", v)
+    }
+}
+
+func main() {
+    do(21)
+    do("hello")
+    do(true)
+}
+```
+输出：  
+```go
+Twice 21 is 42
+"hello" is 5 bytes long
+I don't know about type bool!
 ```
 变量 `t` 得到了 `areaIntf` 的值和类型， 所有 `case` 语句中列举的类型（`nil` 除外）都必须实现对应的接口（在上例中即 `Shaper`），如果被检测类型没有在 `case` 语句列举的类型中，就会执行 `default` 语句。  
 
