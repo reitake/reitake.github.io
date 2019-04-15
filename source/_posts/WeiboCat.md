@@ -32,7 +32,7 @@ date: 2019-04-15 09:52:23
 ## movepic.go  
 ### 把图片改名成时间  
 
-文件名不能包含`：`这个符号，否则用`os.rename`改名不成功，提示错误：`The filename, directory name, or volume label syntax is incorrect.`。同样地，新文件名不能包含`*`、`\`、`/`等字符。  
+文件名不能包含`：`这个符号，否则用`os.Rename`改名不成功，提示错误：`The filename, directory name, or volume label syntax is incorrect.`。同样地，新文件名不能包含`*`、`\`、`/`等字符。  
 
 正确的：  
 
@@ -57,7 +57,7 @@ newpath := folderPath + PTHSEP + time.Now().Format("2006-01-02-15:04:05") + ".pn
 ```
 
 ### 判断文件夹中是否有图片  
-先用`ioutil.ReadDir(imagesFolderPath)`读取目录下文件，在根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  
+先用`ioutil.ReadDir(imagesFolderPath)`读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  
 
 此时应该用`len()`判断，而不是判断切片是否为`nil`。  
 
