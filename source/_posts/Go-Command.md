@@ -170,7 +170,7 @@ func main() {
 $ go list -json time
 ```
 
-如果只想显示指定信息，可以使用 -f 标记，如 go list -f {{.GoFiles}} net/http 可以显示 net/http 包中的 GO 源码文件列表。（所以可以理解，默认的 go list 相当于 go list -f {{.ImportPath}}）  
+如果只想显示指定信息，可以使用 -f 标记，如 go list -f { {.GoFiles} } net/http 可以显示 net/http 包中的 GO 源码文件列表。（所以可以理解，默认的 go list 相当于 go list -f { {.ImportPath} }）  
 
 # `gofix`  
 
