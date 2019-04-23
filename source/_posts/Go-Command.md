@@ -1,5 +1,5 @@
 ---
-title: Go-Command
+title: Go の Command
 tags: [Go, Note]
 categories: Go
 permalink: Go-Command
