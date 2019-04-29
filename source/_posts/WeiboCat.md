@@ -29,7 +29,9 @@ date: 2019-04-15 09:52:23
 
 # 待解决的问题  
 
-SDK for Golang 的使用？
+- SDK for Golang 的使用？
+- 写自己的SDK？
+- OAuth2.0认证什么鬼啊？
 
 ---
 
