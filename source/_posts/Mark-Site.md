@@ -1,6 +1,6 @@
 ---
 title: 网站收藏
-tags: [网站]
+tags: [网站, 工具]
 categories: [存档]
 permalink: Site-Bookmark
 date: 2019-09-26 10:13:55
@@ -16,7 +16,14 @@ date: 2019-09-26 10:13:55
 |[Slant](https://www.slant.co/)   |<https://www.slant.co/> | 最好的...是什么？ |  
 |[求字体](http://www.qiuziti.com/)   |<http://www.qiuziti.com/> | 截图识别字体 |  
 |[正版中国](https://getitfree.cn/)   |<https://getitfree.cn/> | 正版软件&免费&优惠 |  
-
+|[福昕云编辑](http://edit.foxitcloud.cn/)   |<http://edit.foxitcloud.cn/> | 在线编辑pdf |  
+|[在线文档翻译](https://www.onlinedoctranslator.com)   |<https://www.onlinedoctranslator.com> | 免费&多语言翻译 |  
+|[在线文档转换](http://www.alltoall.net/)   |<http://www.alltoall.net/> | 免费 |  
+|[PDF派](https://www.pdfpai.com/)   |<https://www.pdfpai.com/> | PDF在线工具&转换 |  
+|[10分钟邮箱](https://bccto.me/)   |<https://bccto.me/> | -  |  
+|[在线短信接收](https://www.pdflibr.com/)   |<https://www.pdflibr.com/> | -  |  
+|[在线PS](https://ps.gaoding.com)   |<https://ps.gaoding.com> |  -  |  
+|[TOOLFK](https://www.toolfk.com/)   |<https://www.toolfk.com/> |  在线工具  |  
 
 ---
 
@@ -47,3 +54,4 @@ date: 2019-09-26 10:13:55
 |  Name |  Website  |  Remarks  |  
 |-------|-----------|-----------|  
 |[RainMode](https://www.rainymood.com/)   |<https://www.rainymood.com/> | 白噪音  |  
+|[AirPano](https://www.airpano.com/)   |<https://www.airpano.com/> | 假装去旅游  |  
