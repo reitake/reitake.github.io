@@ -21,7 +21,7 @@ date: 2019-10-13 20:27:59
 | <b>あ行</b> | あ<br>ア<br>a | い<br>イ<br>i | う<br>ウ<br>u | え<br>エ<br>e | お<br>オ<br>o |
 | <b>か行</b> | か<br>カ<br>ka | き<br>キ<br>ki | く<br>ク<br>ku | け<br>ケ<br>ke | こ<br>コ<br>ko |
 | <b>さ行</b> | さ<br>サ<br>sa | し<br>シ<br>shi | す<br>ス<br>su | せ<br>セ<br>se | そ<br>ソ<br>so |
-| <b>た行</b> | た<br>タ<br>ta | ち<br>シ<br>chi | つ<br>ツ<br>tsu | て<br>テ<br>te | と<br>ト<br>to |
+| <b>た行</b> | た<br>タ<br>ta | ち<br>チ<br>chi | つ<br>ツ<br>tsu | て<br>テ<br>te | と<br>ト<br>to |
 | <b>な行</b> | な<br>ナ<br>na | に<br>ニ<br>ni | ぬ<br>ヌ<br>nu | ね<br>ネ<br>ne | の<br>ノ<br>no |
 | <b>は行</b> | は<br>ハ<br>ha、wa(助词) | ひ<br>ヒ<br>hi | ふ<br>フ<br>fu | ヘ<br>ヘ<br>he | ほ<br>ホ<br>ho |
 | <b>ま行</b> | ま<br>マ<br>ma | み<br>ミ<br>mi | む<br>ム<br>mu | め<br>メ<br>me | も<br>モ<br>mo |
