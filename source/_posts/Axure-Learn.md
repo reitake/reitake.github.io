@@ -5,7 +5,7 @@ categories: 笔记
 permalink: Axure-Notes
 date: 2019-11-25 22:49:38
 ---
-<center> <font color="#bababa">***Axure***</font><br/> </center>
+<center> <font color="#bababa">***重要的是用工具的人***</font><br/> </center>
 <!--more-->
 ---
 
@@ -39,6 +39,14 @@ date: 2019-11-25 22:49:38
 - 水平箭头、垂直箭头
 - 便签
 - 圆形标记、水滴标记
+
+## 交互  
+
+- 事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击
+- 动作（Action）：对事件的响应，如跳转页面、显示弹出层
+    + 多个动作按次序执行，除了动画
+- 情况（Case）：根据不同条件作出不同响应
+
 
 ## 操作  
 
