@@ -4,7 +4,7 @@
 
 # Site
 title: My Notes Blog
-subtitle: 【2006-01-02 15:04:05】
+subtitle: 生活不易 喵声叹气
 description: Hey, you're the apple of my eye.
 keywords:
 author: rtk
@@ -27,6 +27,7 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
+  - 'christmas/**'
 
 # Writing
 new_post_name: :title.md # File name of new posts
