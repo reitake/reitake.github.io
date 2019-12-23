@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Mission Banner Cropper</title>
+
+	<meta name="copyright" content="Giacinto Garcea 2015 - https://www.giacintogarcea.com" />
+	<meta name="author" content="info@giacintogarcea.com" />
+	<meta name="robots" content="noindex, nofollow" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/ico/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/ico/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/ico/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/ico/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/ico/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ico/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="img/ico/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="img/ico/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="img/ico/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="img/ico/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="img/ico/manifest.json">
+    <link rel="mask-icon" href="img/ico/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="img/ico/mstile-144x144.png">
+    <meta name="theme-color" content="#000000">
+
+
+	<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab" />
+	<link type="text/css" rel="stylesheet" href="script/jquery-ui.min.css" />
+	<link type="text/css" rel="stylesheet" href="script/cropper.min.css" />
+	<link type="text/css" rel="stylesheet" href="script/spectrum.min.css" />
+	<link type="text/css" rel="stylesheet" href="style.css" />
+
+	<script type="text/javascript" src="script/jquery-1.12.3.min.js"></script> 
+	<script type="text/javascript" src="script/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="script/jszip.min.js"></script>
+	<script type="text/javascript" src="script/FileSaver.min.js"></script>
+	<script type="text/javascript" src="script/spectrum.min.js"></script>
+	<script type="text/javascript" src="script/cropper.min.js"></script> 
+	<script type="text/javascript" src="script/main.min.js"></script>
+
+	<script type="text/javascript">
+		if(location.protocol === 'http:') location.protocol = 'https:';
+	</script>
+</head>
+<body class="">
+	<div id="header"></div>
+
+    <!-- Title -->
+    <h1 class="text-orange center">Mission Banner Cropper</h1>
+
+    <!-- Breadcrumbs -->
+	<div style="text-align:center;color:#aaa;margin-bottom:12px;"><a style="color:#ffae38;" href="../../items/">ingress</a> > tools > missionset</div>
+
+    <!------------------------------
+    MAIN CROPPER BOX
+    ------------------------------->
+	<div id="main">
+		<div class="container">
+            <!-- Main cropper box -->
+			<div id="superBox" class="box nobg bg-yellow">
+				<div class="loading"><div class="img"></div></div>
+				<div class="mask"></div>
+				<div class="img-container"><img id="orig" src="img/rome.jpg" alt="Picture"></div>
+			</div>
+
+            <!-- Donate Button -->
+			<div class="donate"><a href="../../items/">Donate</a></div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+    <!------------------------------
+    SIDEBAR LEFT
+    ------------------------------->
+	<div class="action-bar left">
+        <!-- ReadMe Button -->
+		<div class="">
+			<button class="box col12 cyan" type="button" id="help">READ ME</button>
+		</div>
+
+        <!-- Upload Button -->
+		<div id="upload" class="col12">
+			<button class="yellow" type="button">Choose image</button>
+			<input class="" type="file" id="file" accept="image/*" />
+		</div>
+
+		<hr/><hr/><hr/><hr/>
+
+        <!-- View Zoom Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Magnification</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-size" class="slider"></div>
+		</div>
+
+        <!-- Mask opacity Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Mask Opacity</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-mask" class="slider"></div>
+		</div>
+
+		<hr/><hr/><hr/><hr/>
+
+        <!-- Rows Config -->
+		<div class="bg-cyan">
+			<span class="text-orange box col6 first">Rows (3/25)</span>
+			<div class="box col6">
+				<button type="button" class="col6 first" id="btnLessRow">-</button>
+				<button type="button" class="col6" id="btnMoreRow">+</button>
+			</div>
+		</div>
+
+        <!-- Banner Title Input -->
+		<div class="bg-cyan inputText">
+			<span class="text-orange box col6 first">Banner Title</span>
+            <input id="bannerTitle" class="box col6" type="input" value="mission-set"/>
+		</div>
+
+        <!-- Custom Export -->
+		<div class="bg-cyan checkbox">
+			<input id="cMask" type="checkbox" onChange="circleMask();return false;" />
+			<label for="cMask" class="text-orange">Circular Cut</label>
+		</div>
+
+		<div class="bg-cyan checkbox">
+			<input id="cRing" type="checkbox" onChange="goldRing();return false;" />
+			<label for="cRing" class="text-orange">Golden Ring</label>
+		</div>
+
+        <!-- Export Outpux Size Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Output</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-output" class="slider"></div>
+		</div>
+
+        <!-- Download Button -->
+		<button class="box col12 yellow" type="button" id="exportPieces" onClick="loader.show();setTimeout(function(){downloadBadges();loader.hide();}, 100);">Download Badges</button>
+	</div>
+
+    <!------------------------------
+    SIDEBAR RIGHT
+    ------------------------------->
+	<div class="action-bar right">
+        <!-- Rotate Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Rotate Image</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-rotate" class="slider"></div>
+		</div>
+
+        <!-- Set Angle Button -->
+		<div class="bg-cyan">
+			<span class="text-orange box col6 first">Set Angle</span>
+			<div class="box col6">
+				<button type="button" class="col6 first" onClick="ruota_reset();">0°</button>
+				<button type="button" class="col6" onClick="ruota_45();">+45°</button>
+			</div>
+		</div>
+
+		<hr/><hr/><hr/>
+
+        <!-- Zoom Quantity Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Zoom Quantity</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-zoom" class="slider first"></div>
+		</div>
+
+        <!-- Zoom Button -->
+		<div class="bg-cyan">
+			<span class="text-orange box col6 first">Zoom in/out</span>
+			<div class="box col6">
+				<button type="button" class="col6 first" id="btnZoomSuperOut">-</button>
+				<button type="button" class="col6" id="btnZoomSuperIn">+</button>
+			</div>
+		</div>
+
+		<hr/><hr/><hr/>
+
+        <!-- Stretch Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Stretch (x,y)</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-stretchY" class="slider"></div>
+			<div id="slider-stretchX" class="slider second"></div>
+		</div>
+
+        <!-- Mirror Button -->
+		<div class="bg-cyan">
+			<span class="text-orange box col6 first">Mirror</span>
+			<div class="box col6">
+				<button type="button" class="col6 first" onClick="scaleX();">X</button>
+				<button type="button" class="col6" onClick="scaleY();">Y</button>
+			</div>
+		</div>
+
+        <!-- Stretch Reset Button -->
+		<div class="bg-cyan">
+			<span class="text-orange box col6 first">Stretch Reset</span>
+			<div class="box col6">
+				<button type="button" class="col6 first" onClick="resetScaleX();">X</button>
+				<button type="button" class="col6" onClick="resetScaleY();">Y</button>
+			</div>
+		</div>
+
+		<hr/><hr/><hr/>
+
+        <!-- Transparency Slider -->
+		<div class="bg-cyan">
+			<span class="box col6 first label slider">Transparency</span>
+			<div class="box col6 right value">Output</div>
+			<div id="slider-transp" class="slider"></div>
+		</div>
+
+		<hr/>
+
+        <!-- Background Color Button -->
+		<div class="bg-cyan checkbox">
+			<span class="text-orange box col6 first">Background</span>
+			<div class="box col6">
+				<div class="box col6 first">
+				</div>
+				<div class="box col6">
+					<input id="cColor" type="color" class="box col6" onChange="return false;" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <!------------------------------
+    README DIALOG
+    ------------------------------->
+	<div id="faq" class="">
+		<h3>Read Me:</h3>
+		<ul>
+			<li>The script runs entirely on the client side. It will not use any network bandwidth to upload your image or create badges;</li>
+			<li>For mission badges, Niantic recommends using 512x512px images. For a good quality mission set, I'd recommend you use a very large image (at least 2000px wide);</li>
+            <li>Niantic in the <a href="https://support.ingress.com/hc/en-us/articles/206625348-Mission-criteria" target="_BLANK">Official Mission Criteria</a> says that they will no longer accept mission series larger than 18 missions;</li>
+		</ul>
+
+        <p style="color:#ec5840;">Attention: Due to recent updates of the Chrome browser the tool may fail to generate the largest 6x7 banner. In that case either lower the output resolution or use Firefox.</p>
+	</div>
+
+    <!------------------------------
+    FOOTER
+    ------------------------------->
+	<div id="footer">
+		<div class="container center">
+			<small class="text-cyan">
+				&copy; 2015 - Missions Set Generator 0.2.4 &bull; 
+				This site is not officially affiliated with Ingress or Niantic Labs.
+			</small>
+		</div>
+	</div>
+
+    <!------------------------------
+    ANALITYCS
+    ------------------------------->
+    <!--GOOGLE ANALITYCS-->
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-31342765-1']);
+		_gaq.push(['_trackPageview']);
+		(function(){
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</body>
+</html>
