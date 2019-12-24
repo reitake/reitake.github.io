@@ -473,6 +473,56 @@ Disallow: /fancybox/
 sitemap: https://reitake.github.io/sitemap.xml
 ```
 
+## 增加一个导航页面  
+
+以目前的[tools](../../../../tools/)页面为例:  
+
+先在`主题配置文件`中的`menu`项增加需要的导航项：  
+
+```go
+menu:
+  tools: /tools/ || gears    // 图标icon去查Font-Awesome
+```
+
+去`/themes/next/languages/zh-CN.yml`汉化：  
+
+```go
+menu:
+  tools: 工具
+```
+
+再新建一个page：    
+
+```go
+hexo new page tools
+```
+
+这时，会在`source`文件夹内新建一个`tools`文件夹，其中包含了1个空的`index`文件夹（资源文件夹，可删除）和`index.md`。  
+
+`index.md`需要编辑front-matter：  
+
+```go
+title: tools
+date: 2019-12-24 00:30:28
+type: "page"   // 这里的type种类见 /themes/next/layout，目前感觉page和post没区别
+```
+
+然后像编辑post一样写内容，链接可采用相对路径形式，如：  
+
+```go
+- [Ingress任务图标分割工具 - Mission Banner Cropper](ingressmissionset/)
+- [在线给头像带上圣诞帽](christmashat/)
+```
+
+最后，如果`tools`文件夹内的文件，不需要hexo渲染成html的，需要在`站点配置文件`的`skip_render`一项中增加不需要渲染的项目：  
+
+```go
+skip_render:
+  - 'tools/christmashat/**'
+  - 'tools/ingressmissionset/**'
+```
+
+
 # 遗留问题  
 
 ## 文章边框  
