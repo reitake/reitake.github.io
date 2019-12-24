@@ -28,7 +28,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
   - 'christmas/**'
-  - 'tools/christmas/**'
+  - 'tools/christmashat/**'
   - 'tools/ingressmissionset/**'
 
 # Writing
