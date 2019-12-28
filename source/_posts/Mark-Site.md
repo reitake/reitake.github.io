@@ -50,6 +50,15 @@ date: 2019-09-26 10:13:55
 
 ---
 
+# 游戏类 
+
+|  Name |  Website  |  Remarks  |  
+|-------|-----------|-----------|  
+|[Ingress Medal Arts @trello](https://trello.com/b/LvwOjrYP/ingress-medal-arts)   |<https://trello.com/b/LvwOjrYP/ingress-medal-arts> | Ingress任务浏览  |  
+|[Ingress Mission Banner Cropper](https://www.giacintogarcea.com/ingress/tools/missionset/) | <https://www.giacintogarcea.com/ingress/tools/missionset/> | Inress任务图标切割工具，备用地址：<https://reitake.github.io/tools/ingressmissionset/> |
+
+---
+
 # 其他  
 
 |  Name |  Website  |  Remarks  |  
