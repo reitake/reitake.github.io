@@ -147,6 +147,7 @@ menu:
   categories: /categories/ || th
   archives: /archives/ || archive
   tools: /tools/ || gears
+  others: /others/ || spinner
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
