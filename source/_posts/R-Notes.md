@@ -1,7 +1,7 @@
 ---
 title: R语言基础の笔记
 tags: [R语言, Note]
-categories: [备忘]
+categories: [笔记]
 permalink: R-Notes
 date: 2019-04-01 19:52:11
 ---
