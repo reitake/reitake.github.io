@@ -5,8 +5,13 @@ categories: [笔记]
 permalink: R-Notes
 date: 2019-04-01 19:52:11
 ---
-<center> <font color="#bababa">***R语言基础の笔记***</font><br/> </center>
+<center> <font color="#bababa">
+
+***R语言基础の笔记***
+
+</font></center>
 <!--more-->
+
 ---
 
 # R 语言基础  

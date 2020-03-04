@@ -5,8 +5,13 @@ categories: 笔记
 permalink: Japanese-Notes
 date: 2019-10-13 20:27:59
 ---
-<center> <font color="#bababa">***Nihongo***</font><br/> </center>
+<center> <font color="#bababa">
+
+***Nihongo***
+
+</font></center>
 <!--more-->
+
 ---
 
 # 字  

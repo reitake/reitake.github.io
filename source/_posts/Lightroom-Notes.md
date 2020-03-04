@@ -5,8 +5,13 @@ categories: 笔记
 permalink: Lr-Notes
 date: 2020-02-26 22:26:00
 ---
-<center> <font color="#bababa">***算是查漏补缺罢***</font><br/> </center>
+<center> <font color="#bababa">
+
+***算是查漏补缺罢***
+
+</font> </center>
 <!--more-->
+
 ---
 
 # 照片管理、筛选和批量处理

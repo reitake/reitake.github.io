@@ -1,13 +1,19 @@
 ---
 title: 《经济学原理》笔记（微观经济学）
 tags: [经济学]
-categories: [读书笔记]
+categories: [笔记]
 permalink: Microeconomics-Notes
 date: 2019-04-01 23:10:11
 ---
-<center> <font color="#bababa">***曼昆笔下的经典***</font><br/> </center>
+<center> <font color="#bababa">
+
+***曼昆笔下的经典***
+
+</font></center>
 <!--more-->
+
 ---
+
 - 作者：尼可拉斯·格里高利·曼昆（N. Gregory Mankiw）  
 - 出版社：北京大学出版社 
 - [宏经笔记](/2019/04/02/Macroeconomics-Notes/)

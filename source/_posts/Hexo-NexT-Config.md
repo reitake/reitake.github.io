@@ -1,13 +1,25 @@
 ---
-title: Hexo + NexT 博客配置备忘
+title: Hexo + NexT(v7.0.1) 博客配置备忘
 date: 2019-03-27 18:59:38
 tags: [Hexo, NexT]
 categories: [备忘]
 permalink: Hexo-NexT-Config
 ---
-<center> <font color="#bababa">***个人 Blog 配置备忘***</font><br /> </center>
+<center> <font color="#bababa">
+
+***个人 Blog 配置备忘***
+
+</font> </center>
 <!--more-->
+
 ---
+
+# 配置方案更新
+
+- [Hexo + NexT(v7.7.2) 博客配置备忘](../../../../2020/03/04/Hexo-NexT-Config-7-7-2/)
+
+---
+
 # 基本信息  
 建站驱动：`Hexo` v3.8.0  
 
@@ -357,7 +369,7 @@ valine:
 
 ## 增加文章边框阴影、取消文章间分割线  
 
-在`\themes\next\source\css_custom\custom.styl`文件中写入：  
+在`\themes\next\source\css\_custom\custom.styl`文件中写入：  
 
 ```css
 // 主页文章添加阴影效果

@@ -5,8 +5,13 @@ tags: Go
 categories: Go
 permalink: Golang-pkg
 ---
-<center> <font color="#bababa">***Go 语言常用包笔记***</font><br/> </center>
+<center> <font color="#bababa">
+
+***Go 语言常用包笔记***
+
+</font></center>
 <!--more-->
+
 ---
 
 # `bufio` 包  

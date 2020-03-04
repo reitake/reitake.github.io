@@ -5,8 +5,13 @@ categories: 笔记
 permalink: Axure-Notes
 date: 2019-11-25 22:49:38
 ---
-<center> <font color="#bababa">***重要的是用工具的人，也就是工具人***</font><br/> </center>
+<center> <font color="#bababa">
+
+***重要的是用工具的人，也就是工具人***
+
+</font> </center>
 <!--more-->
+
 ---
 
 # 基本操作  

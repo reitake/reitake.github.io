@@ -5,8 +5,13 @@ categories: Go
 permalink: Go-Command
 date: 2019-04-21 22:28:25
 ---
-<center> <font color="#bababa">***GO 命令***</font><br/> </center>
+<center> <font color="#bababa">
+
+***GO 命令***
+
+</font></center>
 <!--more-->
+
 ---
 
 # 前言  

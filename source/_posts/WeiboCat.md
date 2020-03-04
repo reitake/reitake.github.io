@@ -5,8 +5,13 @@ categories: [Go]
 permalink: WeiboCat
 date: 2019-04-15 09:52:23
 ---
-<center> <font color="#bababa">***Jacky & Jason***</font><br/> </center>
+<center> <font color="#bababa">
+
+***Jacky & Jason***
+
+</font></center>
 <!--more-->
+
 ---
 
 # 说明  

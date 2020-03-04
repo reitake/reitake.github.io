@@ -1,18 +1,26 @@
 ---
 title: SEO 学习笔记
 tags: [SEO,Note]
-categories: [读书笔记]
+categories: [笔记]
 permalink: SEO-Notes
 date: 2019-04-01 20:48:28
 ---
-<center> <font color="#bababa">***搜索引擎优化***</font><br/> </center>
+<center> <font color="#bababa">
+
+***搜索引擎优化***
+
+</font> </center>
 <!--more-->
+
 ---
+
 - 书名：《SEO实战密码》（第3版）
 
 - 作者：昝辉 Zac
 
 - 出版社：电子工业出版社
+
+---
 
 
 # 1.SEO：Search Engine Optimization

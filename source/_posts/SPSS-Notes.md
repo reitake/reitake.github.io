@@ -1,12 +1,17 @@
 ---
 title: SPSS 学习笔记
 tags: [SPSS,Note]
-categories: 读书笔记
+categories: 笔记
 permalink: SPSS-Notes
 date: 2019-04-01 23:54:20
 ---
-<center> <font color="#bababa">***统计产品与服务解决方案***</font><br/> </center>
+<center> <font color="#bababa">
+
+***统计产品与服务解决方案***
+
+</font></center>
 <!--more-->
+
 ---
 
 # 引言
