@@ -206,6 +206,28 @@ font:
     family: 
 ```
 
+## 返回顶部按钮放到右侧
+
+暂时没在新版的`主题配置文件`中发现设置，目前的处理办法是在`\themes\next-7.7.2\source\css\_common\components\back-to-top.styl`中，将：  
+
+```go
+.back-to-top {
+...
+  left: $b2t-position-right;
+...
+}
+```
+
+改为：  
+
+```go
+.back-to-top {
+...
+  right: $b2t-position-right;
+...
+}
+```
+
 ---
 
 # 安装插件  
