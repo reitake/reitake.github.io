@@ -9,7 +9,7 @@ date: 2019-10-15 22:16:59
 
 ***Photography***
 
-</font><br/> </center>
+</font> </center>
 <!--more-->
 
 ---
