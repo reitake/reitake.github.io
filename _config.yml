@@ -30,8 +30,8 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - 'christmas/**'
   - 'tools/christmashat/**'
+  - 'tools/facemask/**'
   - 'tools/ingressmissionset/**'
 
 # Writing
