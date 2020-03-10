@@ -1,7 +1,7 @@
 ---
 title: Lightroom Learn Notes
 tags: [Lightroom, Note]
-categories: 笔记
+categories: 快门
 permalink: Lr-Notes
 date: 2020-02-26 22:26:00
 ---
