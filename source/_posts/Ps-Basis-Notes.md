@@ -45,9 +45,18 @@ date: 2020-03-10 23:37:50
 
 - 红绿蓝三通道：用灰度图像表达画面中三种颜色光的强度
 - 用途：
-    + 提高天空层次感：
+    + 改变画面明暗关系（如提高天空层次感）：
         * 压暗天空的蓝色，突出白云的质感
         * 红色通道用`明度`方式混合，新建突出，`图像`-`应用图像`
+        * 可以考虑用蒙版处理地面是否被红色通道影响
+    + 用通道进行选择（换天）:
+        * 挑一个对比度最高的通道，拷贝一次
+        * `Ctrl+M`，把背景（如天空）附近的对比度狂拉，变成一个黑白二色图
+        * 按住`Ctrl`点选图层，所有白色部分会被选中，黑色部分不选中，灰色半选中，建立选区
+        * 选择天空图层，按下蒙版即可应用刚建立选区的蒙版
+        * 点击链条，可以调整天空位置而不一起拉动蒙版位置
+    + 通道混合产生黑白图片
+- [范例视频](https://www.youtube.com/watch?v=f44KuDU6Jb4&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=11)
 
 ---
 
@@ -61,6 +70,7 @@ date: 2020-03-10 23:37:50
 - 快捷键：
     + `\`：显示蒙版
     + `Ctrl + I`：白色蒙版边黑色蒙版
+    + `Ctrl + Shift + I`：反选选区
     + 按住`Alt`+选择蒙版：查看蒙版
 - 生成：
     + 对图层创建调整图层时，会自动生成全白色蒙版
@@ -69,6 +79,15 @@ date: 2020-03-10 23:37:50
 - 蒙版羽化：
     + 蒙版`属性`-`羽化`
 - [范例视频](https://www.youtube.com/watch?v=MWjpZvPDYDE&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=4)
+
+## 快速蒙版
+
+- `快速蒙版（Q）`
+    + 可以双击快速蒙版的图标，设置蒙版的颜色和指示区域
+- 在蒙版上用画笔涂抹，进行增减选区
+- 再按`Q`退出快速蒙版，获得选区
+- 有选区情况下，创建蒙版，得到对应蒙版
+- [范例视频](https://www.youtube.com/watch?v=-ZdgxnUH0DQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=16)
 
 ---
 
@@ -187,6 +206,22 @@ date: 2020-03-10 23:37:50
 - 网上说的死参数都是耍流氓，要找适合自己图片的参数
 - [范例视频](https://www.youtube.com/watch?v=GhkAR6h72Hc&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=6)
 
+## 精确控制锐化产生的光晕
+
+- 光晕产生的原因：
+    + 锐化黑白信号：强化对比度
+    + 锐化彩色信号：调整了饱和度
+    + 人眼对亮光更敏感（相比暗），所以要想办法搞定变亮的光晕
+- 锐化过的图层（锐化前转换成`智能对象`），再复制一层，一个`变暗`混合，一个`变亮`混合，调整不透明度
+- `变亮`的图层调整（减小）锐化半径
+- 考虑采用蒙版，在`变亮`图层中，用黑色画笔，去除不适用锐化图层的部分（小流量涂抹）
+    + 嘴唇可以考虑对暗部蒙版，去除暗部细节唇彩效果更好
+- 不锐化女性的皮肤：
+    + `变亮`、`变暗`图层`Ctrl+G`成组
+    + 新建组蒙版，`Ctrl+I`蒙版反向（变黑，屏蔽所有锐化效果）
+    + 用白色画笔对需要锐化的地方涂抹（如眼睛、眉毛、头发、嘴唇……）
+- [范例视频](https://www.youtube.com/watch?v=1WTDKh08kj8&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=28)
+
 ---
 
 # 去污相关
@@ -202,6 +237,21 @@ date: 2020-03-10 23:37:50
 - `窗口`-`仿制源`：可以调整角度（快捷键：`Alt+Shift+<,>`)
 - 碰到有不希望被涂抹的锋利边缘时，可以先建立选区，在选区内涂抹，限制仿制作用的范围
 - [范例视频](https://www.youtube.com/watch?v=xeqW283LZeI&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=8)
+
+## 复杂边缘物体的选择
+
+- `选择并遮住`功能
+- 操作：
+    + 选任意选择工具，点击上方这个功能
+    + 快速选择、边缘选择、使用画笔、套索来选择
+    + `快速选择`工具：优先考虑使用
+        * 快速地、大概地选择，不用对边缘太考究
+        * 看边缘时，可以考虑把视图模式从`洋葱皮`改成`蚁行线`模式
+        * 按住`Alt`取消选择
+    + `边缘修饰`画笔：
+        * 沿着边缘粗线条得走一遍
+        * 看下`黑白选区`（快捷键：按`X`），非常完美
+- [范例视频](https://www.youtube.com/watch?v=amVes-pM5yk&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=13)
 
 ---
 
@@ -231,3 +281,107 @@ date: 2020-03-10 23:37:50
     + 天空和地面亮度匹配：新建一个黑白的调整图层用于观察，在组中新建一个曲线调整图层提亮天空，使得天空比地面亮
     + 天空和地面颜色匹配：复制一个天空图层，用高斯模糊抽象出天空颜色，拖到地面上，图层混合模式`柔光`，可借助蒙版框住范围
 - [范例视频](https://www.youtube.com/watch?v=3XsJ-O9muDw&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=10)
+
+快速让蓝天生动：
+
+- 本质：提高蓝天中蓝色的深度（明暗）
+- 工具：`黑白调整工具`，图层混和模式用`明度`
+- 调整通道
+    + 蓝天：蓝色、青色
+    + 地面、沙滩：红色、黄色
+- 可搭配`色相/饱和度`工具调整色相、饱和度
+- [范例视频](https://www.youtube.com/watch?v=OfzwLOorbA0&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=15)
+
+
+## 制作高对比度黑白图片（如肖像）
+
+- 用ACR亮度再分配，提高对比度，展现更多细节：人眼对黑白图片的色偏不敏感，所以调彩色图片的对比度时，不用太在意色彩失真
+- 调用`黑白调整图层`
+- 还可以再搭配其他曲线
+- 肖像照中背景通常是渐变的
+- [范例视频](https://www.youtube.com/watch?v=llWQMNBrU9Y&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=12)
+
+## 保留细节放大图片
+
+- `编辑`-`首选项`-`技术预览`-勾选`启用保留细节2.0放大`
+- `图像`-`图像大小`，`重新采样`：`保留细节2.0`，`减少杂色`看情况
+
+## 秒变秋色
+
+- `图像`-`模式`-`Lab颜色`
+- 创建曲线调整图层
+    + `L通道`：亮度
+    + `a通道`：绿色-洋红
+    + `b通道`：蓝色-黄色
+- 在`a通道`把曲线反相
+- 蒙版处理不需要调整的部分
+- [范例视频](https://www.youtube.com/watch?v=N_LgMtViJaA&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=17)
+
+## 瞬间增加风格
+
+- 建立`渐变映射`调整图层
+- 图层混合方式：叠加、柔光、强光……
+- 选择颜色带，Ps有预设的，没有的话：`齿轮按钮`-`照片色调`
+- `不透明度`调整风格的宽度
+- 批量处理：复制渐变映射图层到其它图片，可以让其它图片也相同有风格
+- [范例视频](https://www.youtube.com/watch?v=g3O_Xm3tkOI&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=18)
+
+## 智能拉直照片&内容识别裁剪
+
+- `标尺`-画直线，`图像`-`图像旋转`-`任意角度`
+    + 可能需要损失图片中的元素
+- `裁剪`工具-水平尺
+    + 可勾选`内容识别`，会自动填充一些画面
+    + 可裁剪扩大画面，确认时填充
+-[范例视频1](https://www.youtube.com/watch?v=EbsPJ_CMryQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=19)、[范例视频2](https://www.youtube.com/watch?v=eJIvZVoqXFg&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=20)
+
+## 产生移轴模糊效果
+
+- `滤镜`-`模糊画廊`-`移轴模糊...`
+- [范例视频](https://www.youtube.com/watch?v=Xb10rchpb94&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=21)
+
+## 改变任意颜色
+
+- `色相/饱和度`调整图层-`小手`按钮-吸取-调整
+
+## 添加任意形状暗角
+
+- `曲线`调整图层-压暗
+- `画笔`：硬度100%，黑色，调整大小，在蒙版上点一下
+- 选择蒙版，`Ctrl+T`自由变换蒙版，也可右键-变形，回车
+- 羽化拉上来
+- 可以搭配图层混合颜色带，调整背景的氛围
+- [范例视频](https://www.youtube.com/watch?v=yIBp_SWzDyY&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=23)
+
+## 内容识别缩放
+
+- 保证主体不变，缩放背景，调整构图
+- `裁剪`扩大画布- 
+- `编辑`-`内容识别缩放`
+- 拖动画面即可
+- 可以多次反复执行，对主体占比大的图进行调整
+- [范例视频](https://www.youtube.com/watch?v=RNOKIebcDZA&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=24)
+
+## 内容识别填充
+
+- `套索`勾选出要去掉的内容
+- `编辑`-`填充`-内容识别
+- 修饰细节
+
+## 旋转模糊
+
+- `滤镜`-`模糊画廊`-`旋转模糊`
+- 内圈：模糊大的内容
+- 外圈：不模糊
+- 搭配蒙版还原不需要模糊的部分
+
+## 添加任意滤镜效果
+
+- `色相/饱和度`调整图层
+- 图层混合模式：柔光
+- `浓度`：屏蔽部分滤镜效果
+
+## 高级灰建筑图片
+
+- 简化画面元素，突出对比度，主要是建筑物的几何形体比较好
+- [范例视频](https://www.youtube.com/watch?v=q6ORiya7dpQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=29)

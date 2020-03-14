@@ -123,7 +123,10 @@ date: 2020-03-10 23:43:58
     + 拍照时尽量曝光增加
     + 后期时蒋其调整回期望的亮度（压暗噪点）
 - 好处：提高画面信噪比，减少噪点
-- [范例视频](https://www.youtube.com/watch?v=uKDXQJR0WPY)
+- 拍摄：
+    + 参考1：评价曝光+1.3ev，白加黑减
+    + 参考2：点测最亮点测光增加10倍曝光（3.7ev）
+- [范例视频1](https://www.youtube.com/watch?v=uKDXQJR0WPY)、[范例视频2](https://www.youtube.com/watch?v=ln-JDN1mF3I)、[范例视频3](https://www.youtube.com/watch?v=syPdVOhuLak)
 
 ---
 
