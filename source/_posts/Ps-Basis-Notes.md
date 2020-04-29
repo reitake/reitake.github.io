@@ -385,3 +385,4 @@ date: 2020-03-10 23:37:50
 
 - 简化画面元素，突出对比度，主要是建筑物的几何形体比较好
 - [范例视频](https://www.youtube.com/watch?v=q6ORiya7dpQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=29)
+
