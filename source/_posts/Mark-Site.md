@@ -18,6 +18,7 @@ date: 2019-09-26 10:13:55
 
 |  Name |  Website  |  Remarks  |  
 |-------|-----------|-----------|  
+|[LaTeX公式编辑器](https://www.latexlive.com/)   |<https://www.latexlive.com/> | 在线编辑 |  
 |[Slant](https://www.slant.co/)   |<https://www.slant.co/> | 最好的...是什么？ |  
 |[求字体](http://www.qiuziti.com/)   |<http://www.qiuziti.com/> | 截图识别字体 |  
 |[正版中国](https://getitfree.cn/)   |<https://getitfree.cn/> | 正版软件&免费&优惠 |  
