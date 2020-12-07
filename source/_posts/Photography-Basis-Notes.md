@@ -153,5 +153,3 @@ date: 2020-03-10 23:43:58
     + `像素机`：高像素，ISO微小下降
     + `视频机`：Sony A7S M2为代表的，1000w像素
 - [范例视频](https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6)
-
-

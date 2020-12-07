@@ -564,3 +564,12 @@ skip_render:
 
 ps. 看了下其他人的 NexT v5.x 的配置文件，这一项默认是空着的，但能显示出 icon，现在用的 v7.0.1 也是默认空着，但我这只有填上才能显示出来，不知道是不是八阿哥。  
 
+## `npm install`没反应
+
+把镜像网站替换成淘宝的。  
+
+```js
+$ npm get registry  //显示当前的镜像网站
+$ npm config set registry http://registry.npm.taobao.org    //更改镜像网站
+```
+
