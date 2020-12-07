@@ -107,7 +107,7 @@
 <p><em><code>to be continued...</code></em></p>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>「算法」</category>
       </categories>
       <tags>
         <tag>算法</tag>
@@ -187,6 +187,231 @@
       <tags>
         <tag>Note</tag>
         <tag>Axure</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《能源互联网》笔记</title>
+    <url>/2020/06/26/Energy-Internet-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Energy Internet</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li>作者：孙宏斌  </li>
+<li>出版社：科学出版社 </li>
+</ul>
+<hr>
+<h1 id="第四部分-价值层-第3章-虚拟电厂"><a href="#第四部分-价值层-第3章-虚拟电厂" class="headerlink" title="第四部分 价值层  第3章 虚拟电厂"></a>第四部分 价值层  第3章 虚拟电厂</h1><p>分布式能源（DER）单独运行时，电源容量较小，且具有较大的随机性、波动性、间歇性，并网后难以对其进行调度。为解决单独的分布式能源介入电网造成的不利影响，学者提出了虚拟电厂（VPP）。  </p>
+<h2 id="虚拟电厂概述"><a href="#虚拟电厂概述" class="headerlink" title="虚拟电厂概述"></a>虚拟电厂概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>没有统一定义。  </p>
+<ul>
+<li>①是一系列分布式能源的集合，以传统发电厂的角色参与电力系统的运行。</li>
+<li>②是对电网中各种能源进行综合管理的软件系统。</li>
+<li>③VPP也包括效能电厂，通过减少终端用电设备和装置的用电需求的方式来产生“富余“的电能，即通过需求方提高效能，达到建实际电厂的效果。</li>
+<li>③在能源互联网建设提出之后，虚拟电厂可以看成可以广域、动态聚合多种能源的能源互联网。</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据功能，分为商业型虚拟电厂（commercial VPP，CVPP）、技术型虚拟电厂（technical VPP，TVPP）。  </p>
+<ul>
+<li>CVPP<ul>
+<li>从商业收益的角度出发，对用户需求和发电潜力进行预测，将虚拟电场中的分布式能源接入电力市场，以优化和调度用电量，是分布式能源投资组合的一中灵活表述。</li>
+<li>要实现：<ul>
+<li>①根据从市场获得的信息订立合同，并提交信息至系统运营商。</li>
+<li>②便是交易计划，确定市场价格，实现实时市场交易。</li>
+<li>③实现啊投资组合交易与服务，提供两者的平衡。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TVPP<ul>
+<li>从系统管理的角度出发，有分布式能源和可控负荷共同组成，考虑分布式能源聚合对本地网络的实时邮箱，可以看成一个带有传输系统的发电厂，具有与其他和电网项链的电厂相同的表征参数。</li>
+<li>主要为管理者和提供可视化的信息，优化分布式能源的运行，并根据当地电网的运行约束提供配套服务。</li>
+<li>要实现的功能：<ul>
+<li>①整合所有分布式能源和负荷的输入，为配电管理员（DSO）提供系统管理服务。</li>
+<li>②为输电管理员（TSO）提供系统平衡和配套服务。</li>
+<li>③提供可视化操作界面，并允许控制系统内的分布式能源，增强分布式能源的可控性，提供系统最低成本的运营方式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><p>根据信息流传输控制结构的不同，分为集中控制方式虚拟电厂（centralized controlled VPP，CCVPP）、分散控制方式虚拟电厂（distributed controlled VPP, DCVPP）、完全分散控制方式虚拟电厂（fully DCVPP，FDCVPP）。  </p>
+<ul>
+<li>集中控制方式<ul>
+<li>通过控制些调整下（CCC）完全掌握涉及分布式运行的所有单位的信息，并可以对所有发电或用电单元进行控制。</li>
+<li>具有优先的可拓展性和兼容性</li>
+</ul>
+</li>
+<li>分散控制方式<ul>
+<li>VPP分为多个层次</li>
+<li>使VPP模块化，可改善集中控制方式下的通信阻塞和兼容性差的问题</li>
+</ul>
+</li>
+<li>完全分散控制方式<ul>
+<li>控制协调中心由数据交换与处理中心代替，交换与处理中心只提供市场价格、天气预报等信息。</li>
+<li>VPP被划分为相互独立自治的只能子单元，不受数据交换与处理中心控制，只接受来自数据交换与处理中心的信息，根据信息对资深的运行状态进行优化。</li>
+<li>具有好的可拓展性和开放性，也更适合参与电力市场</li>
+</ul>
+</li>
+</ul>
+<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p>目标是将分布式能源优化组合成有机整体，提供店里辅助服务，通过协调控制使VPP运行在最优运行点，实现整体利益的最大化。  </p>
+<ul>
+<li>发电商预测，提交各自的第二日发电计划</li>
+<li>VPP需协调个发电商电价</li>
+<li>VPP根据发电商电价、输出功率、电能质量和电力储备等特性，指定第二天的发电计划</li>
+<li>VPP根据发电计划和发电商所报电价及电量，指定虚拟电厂电价，并确定电网接入点和注入功率</li>
+<li>VPP与市场运营商签订发电协议（电量、电价），校验协议是否符合潮流、阻塞等系统网络条件</li>
+<li>系统通知虚拟电厂订立发电合同，VPP与发电商协调制定第二天的发电计划</li>
+<li>VPP根据发电计划控制个发电商的输出功率，对实际网络情况进行优化调整，并将发电结果录入数据库，为之后提供数据和依据</li>
+</ul>
+<h3 id="虚拟电厂与微电网的区别"><a href="#虚拟电厂与微电网的区别" class="headerlink" title="虚拟电厂与微电网的区别"></a>虚拟电厂与微电网的区别</h3><ul>
+<li>对分布式能源聚合的有效区域不同<ul>
+<li>微网对地理位置要求高，一般处于同一区域内</li>
+<li>虚拟电厂可跨区聚合</li>
+</ul>
+</li>
+<li>与配电网的连接点不同<ul>
+<li>VPP可能有多个公共连接点</li>
+<li>微网一般只有一个</li>
+</ul>
+</li>
+<li>与电网的连接方式不同<ul>
+<li>VPP不改变聚合的风不是能源的并网形式没更侧重于通过联测、通信技术聚合</li>
+<li>微网需要对电网进行物理拓展</li>
+</ul>
+</li>
+<li>运行方式不同<ul>
+<li>微网可孤岛运行，可并网运行</li>
+<li>VPP只能并网</li>
+</ul>
+</li>
+<li>侧重功能不同<ul>
+<li>微网侧重就地平衡负荷</li>
+<li>VPP侧重实现供应主体利益最大化，具有电力市场经营能力</li>
+</ul>
+</li>
+</ul>
+<h3 id="示范项目"><a href="#示范项目" class="headerlink" title="示范项目"></a>示范项目</h3><ul>
+<li>2001<del>2005年，欧盟第5框架计划下试试的VFCPP（virtual fuel cell power plant）项目、2005</del>2009年欧盟第6框架下FENIX（flexible electricity network to integrate the expected energy solution）项目、2012<del>2015年，欧盟第7框架TWENTIES研究项目和WEB2ENERGY项目、2008</del>2013年德国E-E能源计划</li>
+<li>2016年日本关西电力、富士电机、三社电机、杰士汤浅、住友电工、优利系统等合作推出了一个虚拟电厂试验项目</li>
+<li>2016年8月澳大利亚公共事业AGL公司宣布将要大枣世界上最大的虚拟电厂，美国储能开放商Sunverge</li>
+<li>2016年8月美国Nest Labs与南加州爱迪生电力公司签订虚拟电厂资源</li>
+<li>2016年纽约公共事业公司Con Edison公示和美国储能开发商Sunverge投资1500万美元虚拟电厂试点项目</li>
+<li>国内示范工程偏向于实现能效电厂的功能。<ul>
+<li>江苏昆山</li>
+<li>上海</li>
+</ul>
+</li>
+</ul>
+<h2 id="能源互联网下虚拟电厂的模型框架"><a href="#能源互联网下虚拟电厂的模型框架" class="headerlink" title="能源互联网下虚拟电厂的模型框架"></a>能源互联网下虚拟电厂的模型框架</h2><h3 id="VPP组成结构"><a href="#VPP组成结构" class="headerlink" title="VPP组成结构"></a>VPP组成结构</h3><p>3部分，由发电系统、能量存储系统、通信系统组成。   </p>
+<ul>
+<li>发电系统主要包括家庭型分布式电源（DDG）和公用型分布式能源（PDG）</li>
+<li>能量存储系统补偿波动性和不可控性</li>
+<li>通信系统进行能量管理、数据采集与监控每一集与电力系统调度中心通信</li>
+<li>未来发展：用户侧管理，需求响应<ul>
+<li>需求响应：电力用户对市场价格信号或激励机制做出响应，主动改变自身原有电力消费模式的行为</li>
+<li>分为基于价格的需求响应（PBDR）、基于激励的需求响应（IBDR）</li>
+</ul>
+</li>
+</ul>
+<h3 id="VPP组成框架"><a href="#VPP组成框架" class="headerlink" title="VPP组成框架"></a>VPP组成框架</h3><p>一系列分布式电源的聚合：可控机组、不可控机组、储能设备、可控负荷、电动汽车、通信设备等。  </p>
+<h3 id="VPP容量配置"><a href="#VPP容量配置" class="headerlink" title="VPP容量配置"></a>VPP容量配置</h3><p>集中于局部优化和就地平衡。常用方法有多目标优化方法、博弈论方法、投资组合理论等。  </p>
+<h3 id="VPP的组合选择与利益分配"><a href="#VPP的组合选择与利益分配" class="headerlink" title="VPP的组合选择与利益分配"></a>VPP的组合选择与利益分配</h3><p>通过多种组合结构下的优先级排序，从而自适应地组合成一个虚拟电厂最佳组合结构。  </p>
+<p>考虑到虚拟电厂内部成员的多样性和多产权型，需要对其组合内部的收益分配机制进行研究。同时需要指定其与大电网以及电力交易中心之间的合作机制，以保证所有参与者的合理收益、积极性、稳定性、满意度。  </p>
+<h2 id="能源互联网下虚拟电厂的运行与控制"><a href="#能源互联网下虚拟电厂的运行与控制" class="headerlink" title="能源互联网下虚拟电厂的运行与控制"></a>能源互联网下虚拟电厂的运行与控制</h2><h3 id="VPP的内部优化调度"><a href="#VPP的内部优化调度" class="headerlink" title="VPP的内部优化调度"></a>VPP的内部优化调度</h3><p>指由虚拟电厂对自身内部的分布式能源进行出力的优化，从而定制内部分布式能源的出力计划。  </p>
+<p>常用的目标函数：  </p>
+<ul>
+<li>经济效益最大</li>
+<li>运行成本最小</li>
+<li>弃电弃负荷的惩罚成本最小</li>
+<li>环境成本最小</li>
+</ul>
+<p>常用的约束条件：  </p>
+<ul>
+<li>功率平衡约束</li>
+<li>机组出力约束</li>
+<li>机组爬坡率约束</li>
+<li>储能设备充放电约束</li>
+<li>传输功率约束</li>
+</ul>
+<h3 id="含VPP的电网优化调度"><a href="#含VPP的电网优化调度" class="headerlink" title="含VPP的电网优化调度"></a>含VPP的电网优化调度</h3><p>从电网的角度出发，将虚拟电厂看成一个传统电厂，根据电网的实际运行环境进行优化，确定虚拟电厂的处理。  </p>
+<p>常用的目标函数：  </p>
+<ul>
+<li>系统效益最大</li>
+<li>系统成本最小</li>
+<li>网络损耗最小</li>
+</ul>
+<p>常用的约束条件：  </p>
+<ul>
+<li>系统潮流约束</li>
+<li>系统电压约束</li>
+<li>虚拟电厂处理约束</li>
+<li>传输功率约束</li>
+</ul>
+<h3 id="不确定性处理"><a href="#不确定性处理" class="headerlink" title="不确定性处理"></a>不确定性处理</h3><p>存在不确定因素：风、光等不可控电源处理的不确定性、负荷的不确定性、机组随机故障、电价不确定性等。  </p>
+<p>处理方法：模糊规划、随机规划、鲁棒优化等  </p>
+<h3 id="能源互联网下虚拟电厂的多层优化调度"><a href="#能源互联网下虚拟电厂的多层优化调度" class="headerlink" title="能源互联网下虚拟电厂的多层优化调度"></a>能源互联网下虚拟电厂的多层优化调度</h3><ul>
+<li>虚拟电厂的多时间尺度优化调度，电力市场分日间市场、日内市场、实时市场。</li>
+<li>虚拟电厂的多层级优化调度</li>
+</ul>
+<h3 id="基于多代理系统的虚拟电厂运行与控制"><a href="#基于多代理系统的虚拟电厂运行与控制" class="headerlink" title="基于多代理系统的虚拟电厂运行与控制"></a>基于多代理系统的虚拟电厂运行与控制</h3><ul>
+<li>多代理系统是由多个相互独立、可以双向互通通信的智能代理组合形成的，这些代理在逻辑与物理上是分离的。各个代理具有自主性和独立性</li>
+<li>基于多代理系统的模拟电厂控制框架</li>
+</ul>
+<h2 id="能源互联网下虚拟电厂的市场竞价"><a href="#能源互联网下虚拟电厂的市场竞价" class="headerlink" title="能源互联网下虚拟电厂的市场竞价"></a>能源互联网下虚拟电厂的市场竞价</h2><h3 id="虚拟电厂市场竞价问题"><a href="#虚拟电厂市场竞价问题" class="headerlink" title="虚拟电厂市场竞价问题"></a>虚拟电厂市场竞价问题</h3><ul>
+<li>按功能，可参与的市场模式：能量市场、辅助服务市场等<ul>
+<li>能量市场：考虑电网安全约束，目标为经济效益最优</li>
+<li>辅助服务市场：考虑备用容量约束、调峰容量约束等，目标为社会支付服务成本最小</li>
+</ul>
+</li>
+<li>按时间尺度：中长期合约市场、日前市场、日内市场和实时市场<ul>
+<li>日前市场<ul>
+<li>目标函数：运行成本最小或经济效益最大</li>
+<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束；传统机组启停时间约束</li>
+</ul>
+</li>
+<li>日内市场<ul>
+<li>目标函数：运行成本最小或经济效益最大</li>
+<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
+</ul>
+</li>
+<li>实时市场<ul>
+<li>目标函数：最小调整成本</li>
+<li>约束条件：系统功率平衡约束；出力调整量约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于多代理系统的虚拟电厂市场竞价问题"><a href="#基于多代理系统的虚拟电厂市场竞价问题" class="headerlink" title="基于多代理系统的虚拟电厂市场竞价问题"></a>基于多代理系统的虚拟电厂市场竞价问题</h3><ul>
+<li>电力市场代理</li>
+<li>传统电厂代理及虚拟电厂代理</li>
+<li>分布式能源代理</li>
+</ul>
+<h3 id="多市场模式下虚拟电厂市场竞价问题"><a href="#多市场模式下虚拟电厂市场竞价问题" class="headerlink" title="多市场模式下虚拟电厂市场竞价问题"></a>多市场模式下虚拟电厂市场竞价问题</h3><p>关键在于如何制定多市场模式下的参与规则、如何确定多市场之间的耦合关系，以及如何解决多市场模式下的多目标优化问题，是的虚拟电厂具有更好的适应性。  </p>
+<h2 id="能源互联网下虚拟电厂的发展与展望"><a href="#能源互联网下虚拟电厂的发展与展望" class="headerlink" title="能源互联网下虚拟电厂的发展与展望"></a>能源互联网下虚拟电厂的发展与展望</h2><h3 id="虚拟电厂在能源互联网中的作用与地位"><a href="#虚拟电厂在能源互联网中的作用与地位" class="headerlink" title="虚拟电厂在能源互联网中的作用与地位"></a>虚拟电厂在能源互联网中的作用与地位</h3><p>构建能源互联网的重点在于智能发电、智能配电、智能用电和用户侧服务。  </p>
+<p>在能源互联网中，虚拟电厂可以利用能源互联网的先进技术实现对资深的运行优化与能量管理。  </p>
+<p>虚拟电厂在能源互联网中的作用：  </p>
+<ul>
+<li>虚拟电厂是高效利用新能源发电的有效形式</li>
+<li>是推动能源互联网建设的重要环节</li>
+<li>对于完善中国电力市场体制具有重要的促进作用和指导意义</li>
+</ul>
+<h3 id="能源互联网下虚拟电厂的前进展望"><a href="#能源互联网下虚拟电厂的前进展望" class="headerlink" title="能源互联网下虚拟电厂的前进展望"></a>能源互联网下虚拟电厂的前进展望</h3><ul>
+<li>广域合作</li>
+<li>广域消纳</li>
+<li>广域优化</li>
+<li>广域通信</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「笔记」- 读书</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>能源</tag>
+        <tag>VPP</tag>
       </tags>
   </entry>
   <entry>
@@ -497,231 +722,6 @@
       </categories>
       <tags>
         <tag>Game</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《能源互联网》笔记</title>
-    <url>/2020/06/26/Energy-Internet-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Energy Internet</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<ul>
-<li>作者：孙宏斌  </li>
-<li>出版社：科学出版社 </li>
-</ul>
-<hr>
-<h1 id="第四部分-价值层-第3章-虚拟电厂"><a href="#第四部分-价值层-第3章-虚拟电厂" class="headerlink" title="第四部分 价值层  第3章 虚拟电厂"></a>第四部分 价值层  第3章 虚拟电厂</h1><p>分布式能源（DER）单独运行时，电源容量较小，且具有较大的随机性、波动性、间歇性，并网后难以对其进行调度。为解决单独的分布式能源介入电网造成的不利影响，学者提出了虚拟电厂（VPP）。  </p>
-<h2 id="虚拟电厂概述"><a href="#虚拟电厂概述" class="headerlink" title="虚拟电厂概述"></a>虚拟电厂概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>没有统一定义。  </p>
-<ul>
-<li>①是一系列分布式能源的集合，以传统发电厂的角色参与电力系统的运行。</li>
-<li>②是对电网中各种能源进行综合管理的软件系统。</li>
-<li>③VPP也包括效能电厂，通过减少终端用电设备和装置的用电需求的方式来产生“富余“的电能，即通过需求方提高效能，达到建实际电厂的效果。</li>
-<li>③在能源互联网建设提出之后，虚拟电厂可以看成可以广域、动态聚合多种能源的能源互联网。</li>
-</ul>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据功能，分为商业型虚拟电厂（commercial VPP，CVPP）、技术型虚拟电厂（technical VPP，TVPP）。  </p>
-<ul>
-<li>CVPP<ul>
-<li>从商业收益的角度出发，对用户需求和发电潜力进行预测，将虚拟电场中的分布式能源接入电力市场，以优化和调度用电量，是分布式能源投资组合的一中灵活表述。</li>
-<li>要实现：<ul>
-<li>①根据从市场获得的信息订立合同，并提交信息至系统运营商。</li>
-<li>②便是交易计划，确定市场价格，实现实时市场交易。</li>
-<li>③实现啊投资组合交易与服务，提供两者的平衡。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>TVPP<ul>
-<li>从系统管理的角度出发，有分布式能源和可控负荷共同组成，考虑分布式能源聚合对本地网络的实时邮箱，可以看成一个带有传输系统的发电厂，具有与其他和电网项链的电厂相同的表征参数。</li>
-<li>主要为管理者和提供可视化的信息，优化分布式能源的运行，并根据当地电网的运行约束提供配套服务。</li>
-<li>要实现的功能：<ul>
-<li>①整合所有分布式能源和负荷的输入，为配电管理员（DSO）提供系统管理服务。</li>
-<li>②为输电管理员（TSO）提供系统平衡和配套服务。</li>
-<li>③提供可视化操作界面，并允许控制系统内的分布式能源，增强分布式能源的可控性，提供系统最低成本的运营方式。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><p>根据信息流传输控制结构的不同，分为集中控制方式虚拟电厂（centralized controlled VPP，CCVPP）、分散控制方式虚拟电厂（distributed controlled VPP, DCVPP）、完全分散控制方式虚拟电厂（fully DCVPP，FDCVPP）。  </p>
-<ul>
-<li>集中控制方式<ul>
-<li>通过控制些调整下（CCC）完全掌握涉及分布式运行的所有单位的信息，并可以对所有发电或用电单元进行控制。</li>
-<li>具有优先的可拓展性和兼容性</li>
-</ul>
-</li>
-<li>分散控制方式<ul>
-<li>VPP分为多个层次</li>
-<li>使VPP模块化，可改善集中控制方式下的通信阻塞和兼容性差的问题</li>
-</ul>
-</li>
-<li>完全分散控制方式<ul>
-<li>控制协调中心由数据交换与处理中心代替，交换与处理中心只提供市场价格、天气预报等信息。</li>
-<li>VPP被划分为相互独立自治的只能子单元，不受数据交换与处理中心控制，只接受来自数据交换与处理中心的信息，根据信息对资深的运行状态进行优化。</li>
-<li>具有好的可拓展性和开放性，也更适合参与电力市场</li>
-</ul>
-</li>
-</ul>
-<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p>目标是将分布式能源优化组合成有机整体，提供店里辅助服务，通过协调控制使VPP运行在最优运行点，实现整体利益的最大化。  </p>
-<ul>
-<li>发电商预测，提交各自的第二日发电计划</li>
-<li>VPP需协调个发电商电价</li>
-<li>VPP根据发电商电价、输出功率、电能质量和电力储备等特性，指定第二天的发电计划</li>
-<li>VPP根据发电计划和发电商所报电价及电量，指定虚拟电厂电价，并确定电网接入点和注入功率</li>
-<li>VPP与市场运营商签订发电协议（电量、电价），校验协议是否符合潮流、阻塞等系统网络条件</li>
-<li>系统通知虚拟电厂订立发电合同，VPP与发电商协调制定第二天的发电计划</li>
-<li>VPP根据发电计划控制个发电商的输出功率，对实际网络情况进行优化调整，并将发电结果录入数据库，为之后提供数据和依据</li>
-</ul>
-<h3 id="虚拟电厂与微电网的区别"><a href="#虚拟电厂与微电网的区别" class="headerlink" title="虚拟电厂与微电网的区别"></a>虚拟电厂与微电网的区别</h3><ul>
-<li>对分布式能源聚合的有效区域不同<ul>
-<li>微网对地理位置要求高，一般处于同一区域内</li>
-<li>虚拟电厂可跨区聚合</li>
-</ul>
-</li>
-<li>与配电网的连接点不同<ul>
-<li>VPP可能有多个公共连接点</li>
-<li>微网一般只有一个</li>
-</ul>
-</li>
-<li>与电网的连接方式不同<ul>
-<li>VPP不改变聚合的风不是能源的并网形式没更侧重于通过联测、通信技术聚合</li>
-<li>微网需要对电网进行物理拓展</li>
-</ul>
-</li>
-<li>运行方式不同<ul>
-<li>微网可孤岛运行，可并网运行</li>
-<li>VPP只能并网</li>
-</ul>
-</li>
-<li>侧重功能不同<ul>
-<li>微网侧重就地平衡负荷</li>
-<li>VPP侧重实现供应主体利益最大化，具有电力市场经营能力</li>
-</ul>
-</li>
-</ul>
-<h3 id="示范项目"><a href="#示范项目" class="headerlink" title="示范项目"></a>示范项目</h3><ul>
-<li>2001<del>2005年，欧盟第5框架计划下试试的VFCPP（virtual fuel cell power plant）项目、2005</del>2009年欧盟第6框架下FENIX（flexible electricity network to integrate the expected energy solution）项目、2012<del>2015年，欧盟第7框架TWENTIES研究项目和WEB2ENERGY项目、2008</del>2013年德国E-E能源计划</li>
-<li>2016年日本关西电力、富士电机、三社电机、杰士汤浅、住友电工、优利系统等合作推出了一个虚拟电厂试验项目</li>
-<li>2016年8月澳大利亚公共事业AGL公司宣布将要大枣世界上最大的虚拟电厂，美国储能开放商Sunverge</li>
-<li>2016年8月美国Nest Labs与南加州爱迪生电力公司签订虚拟电厂资源</li>
-<li>2016年纽约公共事业公司Con Edison公示和美国储能开发商Sunverge投资1500万美元虚拟电厂试点项目</li>
-<li>国内示范工程偏向于实现能效电厂的功能。<ul>
-<li>江苏昆山</li>
-<li>上海</li>
-</ul>
-</li>
-</ul>
-<h2 id="能源互联网下虚拟电厂的模型框架"><a href="#能源互联网下虚拟电厂的模型框架" class="headerlink" title="能源互联网下虚拟电厂的模型框架"></a>能源互联网下虚拟电厂的模型框架</h2><h3 id="VPP组成结构"><a href="#VPP组成结构" class="headerlink" title="VPP组成结构"></a>VPP组成结构</h3><p>3部分，由发电系统、能量存储系统、通信系统组成。   </p>
-<ul>
-<li>发电系统主要包括家庭型分布式电源（DDG）和公用型分布式能源（PDG）</li>
-<li>能量存储系统补偿波动性和不可控性</li>
-<li>通信系统进行能量管理、数据采集与监控每一集与电力系统调度中心通信</li>
-<li>未来发展：用户侧管理，需求响应<ul>
-<li>需求响应：电力用户对市场价格信号或激励机制做出响应，主动改变自身原有电力消费模式的行为</li>
-<li>分为基于价格的需求响应（PBDR）、基于激励的需求响应（IBDR）</li>
-</ul>
-</li>
-</ul>
-<h3 id="VPP组成框架"><a href="#VPP组成框架" class="headerlink" title="VPP组成框架"></a>VPP组成框架</h3><p>一系列分布式电源的聚合：可控机组、不可控机组、储能设备、可控负荷、电动汽车、通信设备等。  </p>
-<h3 id="VPP容量配置"><a href="#VPP容量配置" class="headerlink" title="VPP容量配置"></a>VPP容量配置</h3><p>集中于局部优化和就地平衡。常用方法有多目标优化方法、博弈论方法、投资组合理论等。  </p>
-<h3 id="VPP的组合选择与利益分配"><a href="#VPP的组合选择与利益分配" class="headerlink" title="VPP的组合选择与利益分配"></a>VPP的组合选择与利益分配</h3><p>通过多种组合结构下的优先级排序，从而自适应地组合成一个虚拟电厂最佳组合结构。  </p>
-<p>考虑到虚拟电厂内部成员的多样性和多产权型，需要对其组合内部的收益分配机制进行研究。同时需要指定其与大电网以及电力交易中心之间的合作机制，以保证所有参与者的合理收益、积极性、稳定性、满意度。  </p>
-<h2 id="能源互联网下虚拟电厂的运行与控制"><a href="#能源互联网下虚拟电厂的运行与控制" class="headerlink" title="能源互联网下虚拟电厂的运行与控制"></a>能源互联网下虚拟电厂的运行与控制</h2><h3 id="VPP的内部优化调度"><a href="#VPP的内部优化调度" class="headerlink" title="VPP的内部优化调度"></a>VPP的内部优化调度</h3><p>指由虚拟电厂对自身内部的分布式能源进行出力的优化，从而定制内部分布式能源的出力计划。  </p>
-<p>常用的目标函数：  </p>
-<ul>
-<li>经济效益最大</li>
-<li>运行成本最小</li>
-<li>弃电弃负荷的惩罚成本最小</li>
-<li>环境成本最小</li>
-</ul>
-<p>常用的约束条件：  </p>
-<ul>
-<li>功率平衡约束</li>
-<li>机组出力约束</li>
-<li>机组爬坡率约束</li>
-<li>储能设备充放电约束</li>
-<li>传输功率约束</li>
-</ul>
-<h3 id="含VPP的电网优化调度"><a href="#含VPP的电网优化调度" class="headerlink" title="含VPP的电网优化调度"></a>含VPP的电网优化调度</h3><p>从电网的角度出发，将虚拟电厂看成一个传统电厂，根据电网的实际运行环境进行优化，确定虚拟电厂的处理。  </p>
-<p>常用的目标函数：  </p>
-<ul>
-<li>系统效益最大</li>
-<li>系统成本最小</li>
-<li>网络损耗最小</li>
-</ul>
-<p>常用的约束条件：  </p>
-<ul>
-<li>系统潮流约束</li>
-<li>系统电压约束</li>
-<li>虚拟电厂处理约束</li>
-<li>传输功率约束</li>
-</ul>
-<h3 id="不确定性处理"><a href="#不确定性处理" class="headerlink" title="不确定性处理"></a>不确定性处理</h3><p>存在不确定因素：风、光等不可控电源处理的不确定性、负荷的不确定性、机组随机故障、电价不确定性等。  </p>
-<p>处理方法：模糊规划、随机规划、鲁棒优化等  </p>
-<h3 id="能源互联网下虚拟电厂的多层优化调度"><a href="#能源互联网下虚拟电厂的多层优化调度" class="headerlink" title="能源互联网下虚拟电厂的多层优化调度"></a>能源互联网下虚拟电厂的多层优化调度</h3><ul>
-<li>虚拟电厂的多时间尺度优化调度，电力市场分日间市场、日内市场、实时市场。</li>
-<li>虚拟电厂的多层级优化调度</li>
-</ul>
-<h3 id="基于多代理系统的虚拟电厂运行与控制"><a href="#基于多代理系统的虚拟电厂运行与控制" class="headerlink" title="基于多代理系统的虚拟电厂运行与控制"></a>基于多代理系统的虚拟电厂运行与控制</h3><ul>
-<li>多代理系统是由多个相互独立、可以双向互通通信的智能代理组合形成的，这些代理在逻辑与物理上是分离的。各个代理具有自主性和独立性</li>
-<li>基于多代理系统的模拟电厂控制框架</li>
-</ul>
-<h2 id="能源互联网下虚拟电厂的市场竞价"><a href="#能源互联网下虚拟电厂的市场竞价" class="headerlink" title="能源互联网下虚拟电厂的市场竞价"></a>能源互联网下虚拟电厂的市场竞价</h2><h3 id="虚拟电厂市场竞价问题"><a href="#虚拟电厂市场竞价问题" class="headerlink" title="虚拟电厂市场竞价问题"></a>虚拟电厂市场竞价问题</h3><ul>
-<li>按功能，可参与的市场模式：能量市场、辅助服务市场等<ul>
-<li>能量市场：考虑电网安全约束，目标为经济效益最优</li>
-<li>辅助服务市场：考虑备用容量约束、调峰容量约束等，目标为社会支付服务成本最小</li>
-</ul>
-</li>
-<li>按时间尺度：中长期合约市场、日前市场、日内市场和实时市场<ul>
-<li>日前市场<ul>
-<li>目标函数：运行成本最小或经济效益最大</li>
-<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束；传统机组启停时间约束</li>
-</ul>
-</li>
-<li>日内市场<ul>
-<li>目标函数：运行成本最小或经济效益最大</li>
-<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
-</ul>
-</li>
-<li>实时市场<ul>
-<li>目标函数：最小调整成本</li>
-<li>约束条件：系统功率平衡约束；出力调整量约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="基于多代理系统的虚拟电厂市场竞价问题"><a href="#基于多代理系统的虚拟电厂市场竞价问题" class="headerlink" title="基于多代理系统的虚拟电厂市场竞价问题"></a>基于多代理系统的虚拟电厂市场竞价问题</h3><ul>
-<li>电力市场代理</li>
-<li>传统电厂代理及虚拟电厂代理</li>
-<li>分布式能源代理</li>
-</ul>
-<h3 id="多市场模式下虚拟电厂市场竞价问题"><a href="#多市场模式下虚拟电厂市场竞价问题" class="headerlink" title="多市场模式下虚拟电厂市场竞价问题"></a>多市场模式下虚拟电厂市场竞价问题</h3><p>关键在于如何制定多市场模式下的参与规则、如何确定多市场之间的耦合关系，以及如何解决多市场模式下的多目标优化问题，是的虚拟电厂具有更好的适应性。  </p>
-<h2 id="能源互联网下虚拟电厂的发展与展望"><a href="#能源互联网下虚拟电厂的发展与展望" class="headerlink" title="能源互联网下虚拟电厂的发展与展望"></a>能源互联网下虚拟电厂的发展与展望</h2><h3 id="虚拟电厂在能源互联网中的作用与地位"><a href="#虚拟电厂在能源互联网中的作用与地位" class="headerlink" title="虚拟电厂在能源互联网中的作用与地位"></a>虚拟电厂在能源互联网中的作用与地位</h3><p>构建能源互联网的重点在于智能发电、智能配电、智能用电和用户侧服务。  </p>
-<p>在能源互联网中，虚拟电厂可以利用能源互联网的先进技术实现对资深的运行优化与能量管理。  </p>
-<p>虚拟电厂在能源互联网中的作用：  </p>
-<ul>
-<li>虚拟电厂是高效利用新能源发电的有效形式</li>
-<li>是推动能源互联网建设的重要环节</li>
-<li>对于完善中国电力市场体制具有重要的促进作用和指导意义</li>
-</ul>
-<h3 id="能源互联网下虚拟电厂的前进展望"><a href="#能源互联网下虚拟电厂的前进展望" class="headerlink" title="能源互联网下虚拟电厂的前进展望"></a>能源互联网下虚拟电厂的前进展望</h3><ul>
-<li>广域合作</li>
-<li>广域消纳</li>
-<li>广域优化</li>
-<li>广域通信</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「笔记」- 读书</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>能源</tag>
-        <tag>VPP</tag>
       </tags>
   </entry>
   <entry>
@@ -3103,11 +3103,204 @@
 </ul>
 ]]></content>
       <categories>
-        <category>快门</category>
+        <category>「快门」</category>
       </categories>
       <tags>
         <tag>Note</tag>
         <tag>Lightroom</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网站收藏</title>
+    <url>/2019/09/26/Site-Bookmark/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>BOOKMARK</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
+<td>在线编辑</td>
+</tr>
+<tr>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
+<td>最好的…是什么？</td>
+</tr>
+<tr>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
+<td>截图识别字体</td>
+</tr>
+<tr>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
+<td>正版软件&amp;免费&amp;优惠</td>
+</tr>
+<tr>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
+<td>在线编辑pdf</td>
+</tr>
+<tr>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
+<td>免费&amp;多语言翻译</td>
+</tr>
+<tr>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
+<td>PDF在线工具&amp;转换</td>
+</tr>
+<tr>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
+<td>在线工具</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
+<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
+<td>每日新闻图卦</td>
+</tr>
+<tr>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
+<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
+<td>热点资讯聚合</td>
+</tr>
+<tr>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
+<td>资讯、排行榜聚合</td>
+</tr>
+<tr>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
+<td>短视频了解疾病</td>
+</tr>
+<tr>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
+<td>互联网新闻</td>
+</tr>
+<tr>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
+<td>大数据X图表</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
+<td>学各种小技巧</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
+<td>Ingress任务浏览</td>
+</tr>
+<tr>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
+<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
+<td>白噪音</td>
+</tr>
+<tr>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
+<td>假装去旅游</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -3577,196 +3770,167 @@
       </tags>
   </entry>
   <entry>
-    <title>网站收藏</title>
-    <url>/2019/09/26/Site-Bookmark/</url>
+    <title>Photography Basis Notes</title>
+    <url>/2020/03/10/Photography-Basis-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>BOOKMARK</em></strong></p>
-<p></font> </center></p>
+<p><strong><em>基础知识：查漏补缺总没错</em></strong></p>
+<p></font></center></p>
 <a id="more"></a>
 
 <hr>
-<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
-<td>在线编辑</td>
-</tr>
-<tr>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
-<td>最好的…是什么？</td>
-</tr>
-<tr>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
-<td>截图识别字体</td>
-</tr>
-<tr>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
-<td>正版软件&amp;免费&amp;优惠</td>
-</tr>
-<tr>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
-<td>在线编辑pdf</td>
-</tr>
-<tr>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
-<td>免费&amp;多语言翻译</td>
-</tr>
-<tr>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
-<td>免费</td>
-</tr>
-<tr>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
-<td>PDF在线工具&amp;转换</td>
-</tr>
-<tr>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
-<td>在线工具</td>
-</tr>
-</tbody></table>
+<h1 id="色彩知识"><a href="#色彩知识" class="headerlink" title="色彩知识"></a>色彩知识</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><ul>
+<li><code>光</code>的一种特性<ul>
+<li>电磁波中的可见光波段</li>
+<li>不同颜色的本质是频率不同</li>
+</ul>
+</li>
+<li><code>物质</code>的一种特性<ul>
+<li>只反色自己颜色的光线，吸收其他颜色的光线</li>
+<li>前提是入射光包含它自己的颜色</li>
+</ul>
+</li>
+<li><code>人</code>的一种感觉<ul>
+<li>环境：通过色彩环境判断（大脑对入射光的假设可能会有错觉）</li>
+<li>时间：视觉暂留，跟上一时刻看到的颜色有关</li>
+<li>同色对比识别：历史经验有关</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=k1rB1Y4isHs&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
 <hr>
-<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
-<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
-<td>每日新闻图卦</td>
-</tr>
-<tr>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
-<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
-<td>热点资讯聚合</td>
-</tr>
-<tr>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
-<td>资讯、排行榜聚合</td>
-</tr>
-<tr>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
-<td>短视频了解疾病</td>
-</tr>
-<tr>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
-<td>互联网新闻</td>
-</tr>
-<tr>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
-<td>大数据X图表</td>
-</tr>
-</tbody></table>
+<h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><ul>
+<li>离开画面光看直方图都是耍流氓</li>
+<li>Raw格式宽容度比JPG高很多，拍摄时候不用过分在意临时预览时的高光警告</li>
+<li><a href="https://www.youtube.com/watch?v=nUPxQLde8nc&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=5" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="光圈和快门"><a href="#光圈和快门" class="headerlink" title="光圈和快门"></a>光圈和快门</h2><p>光圈和景深：</p>
+<ul>
+<li><code>光圈</code>：光通量；光圈的平方和进光量成反比</li>
+<li>光圈越大，景深越小；产生的原因是人眼的弥散半径</li>
+<li>拍摄距离越短，景深越小</li>
+<li>焦距越长，景深越小</li>
+<li>所以只有使用大光圈镜头，才能在不影响构图的情况下获得浅景深</li>
+</ul>
+<p>快门与曝光时间：</p>
+<ul>
+<li>快门结构：机械快门、电子快门</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=7bftNbx-E0k&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=7" target="_blank" rel="noopener">范例视频</a></p>
 <hr>
-<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
-<td>学各种小技巧</td>
-</tr>
-<tr>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
-<td></td>
-</tr>
-</tbody></table>
+<h1 id="构图相关"><a href="#构图相关" class="headerlink" title="构图相关"></a>构图相关</h1><h2 id="减法构图"><a href="#减法构图" class="headerlink" title="减法构图"></a>减法构图</h2><ul>
+<li>目的：<ul>
+<li>要有一个鲜明的主体</li>
+<li>要把注意力引想主体</li>
+<li>画面足够干净</li>
+</ul>
+</li>
+<li>拍照时三问吾身：<ul>
+<li>这张照片主体是什么</li>
+<li>如何把注意力集中到主体上</li>
+<li>画面中还能减去什么</li>
+</ul>
+</li>
+<li>突出主体的方法（构图）：<ul>
+<li>布局：三分法、不同的视角（如仰拍）、引入不稳定因素……</li>
+<li>大小：通过画面内元素大小的比较来突出主体</li>
+<li>搭框：二次构图</li>
+<li>光线：如逆光</li>
+<li>汇聚：用线引道</li>
+<li>焦点（景深）</li>
+<li>重复：利用重复突出不重复的内容</li>
+<li>延时（长曝光）</li>
+<li>临态：捕捉临时状态</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=YqhSoriv6-c" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="后期批判标准"><a href="#后期批判标准" class="headerlink" title="后期批判标准"></a>后期批判标准</h2><ul>
+<li>获得足够多的画面<code>细节</code><ul>
+<li><code>细节</code>：落入<code>可见</code>范围内的对比度</li>
+<li><code>亮度</code>：人对光强度的感受；弱光时，人眼对光强度变化的感知更敏感</li>
+<li><code>对比度</code>：画面的亮度差</li>
+<li><code>宽容度</code>：最大的对比度</li>
+<li><code>“层次”</code>：对比度分辨率</li>
+<li><code>“油润”</code>：对比度的致密变化</li>
+</ul>
+</li>
+<li>保持<code>自然</code>的光影结构与颜色</li>
+<li><a href="https://www.youtube.com/watch?v=uZQCa7pVsp0&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=9" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="建立后期思路"><a href="#建立后期思路" class="headerlink" title="建立后期思路"></a>建立后期思路</h2><ul>
+<li>问自己：怎样强化主体？</li>
+<li>修正错误<ul>
+<li>裁剪、拼接</li>
+<li>去除噪声</li>
+<li>调整曝光</li>
+<li>纠正色偏</li>
+<li>锐化</li>
+</ul>
+</li>
+<li>突出主题<ul>
+<li>恢复/隐藏细节</li>
+<li>亮度重新分配</li>
+<li>颜色重新分配</li>
+</ul>
+</li>
+<li>个人风格<ul>
+<li>色调</li>
+<li>影调</li>
+</ul>
+</li>
+<li>尽量还原人眼看到的真实</li>
+<li><a href="https://www.youtube.com/watch?v=yHlasyGerbg&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=10" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=4CPRwtzkFnU&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=11" target="_blank" rel="noopener">范例视频2</a></li>
+</ul>
+<h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
+<li>同时满足三个条件：<ul>
+<li>RAW格式拍摄</li>
+<li>拍照时尽量曝光增加</li>
+<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
+</ul>
+</li>
+<li>好处：提高画面信噪比，减少噪点</li>
+<li>拍摄：<ul>
+<li>参考1：评价曝光+1.3ev，白加黑减</li>
+<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
+</ul>
 <hr>
-<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
-<td>Ingress任务浏览</td>
-</tr>
-<tr>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
-<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
-<td>白噪音</td>
-</tr>
-<tr>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
-<td>假装去旅游</td>
-</tr>
-</tbody></table>
+<h1 id="器材相关"><a href="#器材相关" class="headerlink" title="器材相关"></a>器材相关</h1><h2 id="相机选择"><a href="#相机选择" class="headerlink" title="相机选择"></a>相机选择</h2><p>相机种类：</p>
+<ul>
+<li>按<code>光通路</code>来分：<ul>
+<li><code>单反</code>：单一光路、所见即所得、成熟、省电、体积大</li>
+<li><code>无反</code>（微单）：机身厚度小、耗电、现在可能画幅和镜头族规模不如微单，但应该是未来的主流</li>
+<li><code>旁轴</code>：省电、存在视差、体积小、情怀</li>
+</ul>
+</li>
+<li>按<code>传感器面积</code>来分：<ul>
+<li><code>全画幅</code>：36x24 mm，画质更好，镜头焦距不需要折算，成本高</li>
+<li><code>APS-C</code>：23.3x14.9（CANON），成本低，画质低，需要焦距折算</li>
+<li>4/3英寸：17.3x13（Olympus）</li>
+<li>1英寸：13.4x8.8（Sony Rx100）</li>
+<li>1/2.3英寸：6.17x4.55（数码卡片机）</li>
+<li>1/3英寸：6.17x4.55（iphone）</li>
+<li><code>镜头焦距等效换算</code>：x1.6</li>
+</ul>
+</li>
+<li>按<code>市场定位</code>来分：<ul>
+<li><code>平衡机</code>：主流相机</li>
+<li><code>像素机</code>：高像素，ISO微小下降</li>
+<li><code>视频机</code>：Sony A7S M2为代表的，1000w像素</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>「备忘」</category>
+        <category>「快门」</category>
       </categories>
       <tags>
-        <tag>网站</tag>
-        <tag>工具</tag>
+        <tag>Note</tag>
+        <tag>Photography</tag>
       </tags>
   </entry>
   <entry>
@@ -4286,160 +4450,199 @@
       </tags>
   </entry>
   <entry>
-    <title>Photography Basis Notes</title>
-    <url>/2020/03/10/Photography-Basis-Notes/</url>
+    <title>Photography Learn Notes</title>
+    <url>/2019/10/15/Photography-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>基础知识：查漏补缺总没错</em></strong></p>
-<p></font></center></p>
+<p><strong><em>主要是后期风格</em></strong></p>
+<p></font> </center></p>
 <a id="more"></a>
 
 <hr>
-<h1 id="色彩知识"><a href="#色彩知识" class="headerlink" title="色彩知识"></a>色彩知识</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><ul>
-<li><code>光</code>的一种特性<ul>
-<li>电磁波中的可见光波段</li>
-<li>不同颜色的本质是频率不同</li>
+<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
+<li>低饱和，又不是纯黑白</li>
+<li>分离色调：给整张图罩上冷色调<ul>
+<li>阴影+蓝色</li>
 </ul>
 </li>
-<li><code>物质</code>的一种特性<ul>
-<li>只反色自己颜色的光线，吸收其他颜色的光线</li>
-<li>前提是入射光包含它自己的颜色</li>
+<li>HSL：<ul>
+<li>明亮度：蓝色↓↓，天空变深邃</li>
+<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
 </ul>
 </li>
-<li><code>人</code>的一种感觉<ul>
-<li>环境：通过色彩环境判断（大脑对入射光的假设可能会有错觉）</li>
-<li>时间：视觉暂留，跟上一时刻看到的颜色有关</li>
-<li>同色对比识别：历史经验有关</li>
+<li>曲线：<ul>
+<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
 </ul>
 </li>
-<li><a href="https://www.youtube.com/watch?v=k1rB1Y4isHs&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4" target="_blank" rel="noopener">范例视频</a></li>
+<li>基本面板中：阴影看情况↑</li>
+<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
+<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
+<li>特点：<ul>
+<li>肌肤极致干净</li>
+<li>空气通透</li>
+</ul>
+</li>
+<li>HSL调肤色，注意不要出现洋红</li>
+<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
+<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
+<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
+</ul>
+<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
+<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
+<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
+<li>HSL：<ul>
+<li>色相：紫色0，蓝色右 呈湖蓝</li>
+<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
+<li>饱和度：皮肤↓，其他视情况</li>
+</ul>
+</li>
+<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
+<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
+<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
+<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
+<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
+<li>相机校准：蓝原色左滑→湖蓝色</li>
+<li>HSL：<ul>
+<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
+</ul>
+</li>
+<li>可不做锐化</li>
+<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
+<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
+<li>蓝色时间：日出前、日落后</li>
+<li>特点：街灯、车灯刚亮</li>
+<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
+<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
+<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
+<li>特点：<ul>
+<li>引人共鸣</li>
+<li>元素处在动态</li>
+<li>画面质量高</li>
+</ul>
+</li>
+<li>高光↓，阴影↑</li>
+<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
+<li>红色曲线：（下拉→青）阴影稍微下拉</li>
+<li>蓝色曲线：阴影稍微上拉</li>
+<li>绿色曲线：调氛围，只要一点点调整</li>
+<li>RGB通道：暗部抬一点，提亮</li>
+</ul>
+</li>
+<li>清晰度↑，鲜艳度↓一点点</li>
+<li>裁剪：16:9、2.35:1</li>
+<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
+<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
+<li>色调分离：高光-红紫色，阴影-蓝色</li>
+<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
+<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
+<li>矫正，阴影↑，饱和度↑</li>
+<li>HSL：<ul>
+<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
+<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
+</ul>
+</li>
+<li>色调分离/曲线：暗部增加蓝青色</li>
+<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
+<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>色温↓，色调看喜好</li>
+<li>清晰度↑</li>
+<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
+<li>渐变滤镜压暗前景曝光、饱和度</li>
+<li>鲜艳度↑</li>
+</ul>
+<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
+<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
+<li>照片特点：<ul>
+<li>白（曝光↑）</li>
+<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
+<li>背景选择：深色，突出雪花</li>
+</ul>
+</li>
+<li>后期<ul>
+<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
+<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
+<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
+<li>色温↑，黄昏感觉</li>
+<li>HSL：<ul>
+<li>绿色饱和度↓，变得黄一些</li>
+<li>橙色、黄色饱和度↑明亮度↑<ul>
+<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
+<li>小S曲线，对比度↑</li>
+</ul>
+</li>
+<li>进PS加光晕<ul>
+<li>可搭配插件：Alien Skin Exposure</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
+<li>特征：<ul>
+<li>金属光感：渐变塑光影</li>
+<li>拉丝效果：模糊塑动感</li>
+<li>流动天空：模糊仿流动</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
 <hr>
-<h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><ul>
-<li>离开画面光看直方图都是耍流氓</li>
-<li>Raw格式宽容度比JPG高很多，拍摄时候不用过分在意临时预览时的高光警告</li>
-<li><a href="https://www.youtube.com/watch?v=nUPxQLde8nc&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=5" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="光圈和快门"><a href="#光圈和快门" class="headerlink" title="光圈和快门"></a>光圈和快门</h2><p>光圈和景深：</p>
-<ul>
-<li><code>光圈</code>：光通量；光圈的平方和进光量成反比</li>
-<li>光圈越大，景深越小；产生的原因是人眼的弥散半径</li>
-<li>拍摄距离越短，景深越小</li>
-<li>焦距越长，景深越小</li>
-<li>所以只有使用大光圈镜头，才能在不影响构图的情况下获得浅景深</li>
-</ul>
-<p>快门与曝光时间：</p>
-<ul>
-<li>快门结构：机械快门、电子快门</li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=7bftNbx-E0k&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=7" target="_blank" rel="noopener">范例视频</a></p>
-<hr>
-<h1 id="构图相关"><a href="#构图相关" class="headerlink" title="构图相关"></a>构图相关</h1><h2 id="减法构图"><a href="#减法构图" class="headerlink" title="减法构图"></a>减法构图</h2><ul>
-<li>目的：<ul>
-<li>要有一个鲜明的主体</li>
-<li>要把注意力引想主体</li>
-<li>画面足够干净</li>
-</ul>
-</li>
-<li>拍照时三问吾身：<ul>
-<li>这张照片主体是什么</li>
-<li>如何把注意力集中到主体上</li>
-<li>画面中还能减去什么</li>
-</ul>
-</li>
-<li>突出主体的方法（构图）：<ul>
-<li>布局：三分法、不同的视角（如仰拍）、引入不稳定因素……</li>
-<li>大小：通过画面内元素大小的比较来突出主体</li>
-<li>搭框：二次构图</li>
-<li>光线：如逆光</li>
-<li>汇聚：用线引道</li>
-<li>焦点（景深）</li>
-<li>重复：利用重复突出不重复的内容</li>
-<li>延时（长曝光）</li>
-<li>临态：捕捉临时状态</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=YqhSoriv6-c" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="后期批判标准"><a href="#后期批判标准" class="headerlink" title="后期批判标准"></a>后期批判标准</h2><ul>
-<li>获得足够多的画面<code>细节</code><ul>
-<li><code>细节</code>：落入<code>可见</code>范围内的对比度</li>
-<li><code>亮度</code>：人对光强度的感受；弱光时，人眼对光强度变化的感知更敏感</li>
-<li><code>对比度</code>：画面的亮度差</li>
-<li><code>宽容度</code>：最大的对比度</li>
-<li><code>“层次”</code>：对比度分辨率</li>
-<li><code>“油润”</code>：对比度的致密变化</li>
-</ul>
-</li>
-<li>保持<code>自然</code>的光影结构与颜色</li>
-<li><a href="https://www.youtube.com/watch?v=uZQCa7pVsp0&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=9" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="建立后期思路"><a href="#建立后期思路" class="headerlink" title="建立后期思路"></a>建立后期思路</h2><ul>
-<li>问自己：怎样强化主体？</li>
-<li>修正错误<ul>
-<li>裁剪、拼接</li>
-<li>去除噪声</li>
-<li>调整曝光</li>
-<li>纠正色偏</li>
-<li>锐化</li>
-</ul>
-</li>
-<li>突出主题<ul>
-<li>恢复/隐藏细节</li>
-<li>亮度重新分配</li>
-<li>颜色重新分配</li>
-</ul>
-</li>
-<li>个人风格<ul>
-<li>色调</li>
-<li>影调</li>
-</ul>
-</li>
-<li>尽量还原人眼看到的真实</li>
-<li><a href="https://www.youtube.com/watch?v=yHlasyGerbg&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=10" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=4CPRwtzkFnU&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=11" target="_blank" rel="noopener">范例视频2</a></li>
-</ul>
-<h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
-<li>同时满足三个条件：<ul>
-<li>RAW格式拍摄</li>
-<li>拍照时尽量曝光增加</li>
-<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
-</ul>
-</li>
-<li>好处：提高画面信噪比，减少噪点</li>
-<li>拍摄：<ul>
-<li>参考1：评价曝光+1.3ev，白加黑减</li>
-<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
+<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
+<li>插件：DR4、Skinfiner</li>
+<li>图章工具：去明显瑕疵</li>
+<li>中性灰：去痘印、调光影结构</li>
+<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
+<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
 </ul>
 <hr>
-<h1 id="器材相关"><a href="#器材相关" class="headerlink" title="器材相关"></a>器材相关</h1><h2 id="相机选择"><a href="#相机选择" class="headerlink" title="相机选择"></a>相机选择</h2><p>相机种类：</p>
-<ul>
-<li>按<code>光通路</code>来分：<ul>
-<li><code>单反</code>：单一光路、所见即所得、成熟、省电、体积大</li>
-<li><code>无反</code>（微单）：机身厚度小、耗电、现在可能画幅和镜头族规模不如微单，但应该是未来的主流</li>
-<li><code>旁轴</code>：省电、存在视差、体积小、情怀</li>
+<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>时间选择：<ul>
+<li>月相查询：月亮小的时候拍摄</li>
+<li>月出、月落时间：月落后拍摄</li>
 </ul>
 </li>
-<li>按<code>传感器面积</code>来分：<ul>
-<li><code>全画幅</code>：36x24 mm，画质更好，镜头焦距不需要折算，成本高</li>
-<li><code>APS-C</code>：23.3x14.9（CANON），成本低，画质低，需要焦距折算</li>
-<li>4/3英寸：17.3x13（Olympus）</li>
-<li>1英寸：13.4x8.8（Sony Rx100）</li>
-<li>1/2.3英寸：6.17x4.55（数码卡片机）</li>
-<li>1/3英寸：6.17x4.55（iphone）</li>
-<li><code>镜头焦距等效换算</code>：x1.6</li>
+<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
+<li>银河方位：starwalk、星图</li>
+<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
+<li>参数选择：<ul>
+<li>对焦：无限远</li>
+<li>光圈：最大</li>
+<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
+<li>感光度：被动决定</li>
 </ul>
 </li>
-<li>按<code>市场定位</code>来分：<ul>
-<li><code>平衡机</code>：主流相机</li>
-<li><code>像素机</code>：高像素，ISO微小下降</li>
-<li><code>视频机</code>：Sony A7S M2为代表的，1000w像素</li>
 </ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6" target="_blank" rel="noopener">范例视频</a></li>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
+<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
+<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
+<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
 </ul>
+<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -4447,25 +4650,6 @@
       <tags>
         <tag>Note</tag>
         <tag>Photography</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Photoshop Skill Notes</title>
-    <url>/2020/03/10/Ps-Skill-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Ps拼接合成</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
       </tags>
   </entry>
   <entry>
@@ -4592,6 +4776,25 @@
 <li>无损调节：配置存放于<code>.xmp</code>文件中</li>
 <li><a href="https://www.youtube.com/watch?v=H5SBJcz2bVM&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=2" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photoshop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Photoshop Skill Notes</title>
+    <url>/2020/03/10/Ps-Skill-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Ps拼接合成</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -5103,6 +5306,88 @@
       </tags>
   </entry>
   <entry>
+    <title>Photoshop Skin Notes</title>
+    <url>/2020/03/10/Ps-Skin-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Ps人像修饰</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photoshop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SEO 学习笔记</title>
+    <url>/2019/04/01/SEO-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>搜索引擎优化</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li><p>书名：《SEO实战密码》（第3版）</p>
+</li>
+<li><p>作者：昝辉 Zac</p>
+</li>
+<li><p>出版社：电子工业出版社</p>
+</li>
+</ul>
+<hr>
+<h1 id="1-SEO：Search-Engine-Optimization"><a href="#1-SEO：Search-Engine-Optimization" class="headerlink" title="1.SEO：Search Engine Optimization"></a>1.SEO：Search Engine Optimization</h1><ul>
+<li>从自然搜索结果获得网站流量的技术和过程</li>
+</ul>
+<h1 id="2-优化："><a href="#2-优化：" class="headerlink" title="2.优化："></a>2.优化：</h1><ul>
+<li>站内优化：网站结构，页面HTML代码等</li>
+<li>站外优化：外部链接，参与互动等</li>
+</ul>
+<h1 id="3-搜索引擎工作原理"><a href="#3-搜索引擎工作原理" class="headerlink" title="3.搜索引擎工作原理"></a>3.搜索引擎工作原理</h1><p>爬行（→地址库）→抓取→预处理（索引）：提取文字；中文分词；去停止词；消除噪声；去重；正向/倒排索引；链接关系计算；特殊文件处理；质量判断→排名：搜索词处理；文件匹配；初始子集选择；相关性计算；过滤&amp;调整；排名显示；搜索缓存；查询&amp;点击日志</p>
+<ul>
+<li>高级搜索指令：“ ”；-；*；inurl:；inanchor:；intitle:；allintitle:；allinurl:；filetype:；site:；link:；related:</li>
+</ul>
+<h1 id="4-关键词选择核心原则："><a href="#4-关键词选择核心原则：" class="headerlink" title="4.关键词选择核心原则："></a>4.关键词选择核心原则：</h1><ul>
+<li>搜索次数多</li>
+<li>竞争程度小</li>
+</ul>
+<h1 id="5-核心关键词→拓展关键词"><a href="#5-核心关键词→拓展关键词" class="headerlink" title="5.核心关键词→拓展关键词"></a>5.核心关键词→拓展关键词</h1><h1 id="6-长尾关键词：较长，较具体，次数低"><a href="#6-长尾关键词：较长，较具体，次数低" class="headerlink" title="6.长尾关键词：较长，较具体，次数低"></a>6.长尾关键词：较长，较具体，次数低</h1><h1 id="7-竞争对手研究"><a href="#7-竞争对手研究" class="headerlink" title="7.竞争对手研究"></a>7.竞争对手研究</h1><ul>
+<li>域名权重相关数据</li>
+<li>网站优化情况</li>
+<li>网站流量</li>
+</ul>
+<h1 id="8-网站结构优化"><a href="#8-网站结构优化" class="headerlink" title="8.网站结构优化"></a>8.网站结构优化</h1><ul>
+<li>避免蜘蛛陷阱（Flash，Session ID，跳转，框架Frame，动态url，js链接等）</li>
+</ul>
+<h1 id="9-SEO过程："><a href="#9-SEO过程：" class="headerlink" title="9.SEO过程："></a>9.SEO过程：</h1><p>竞争对手究→SEO计划（诊断）→网站优化→外链建设→效果检测及流量分析→策略修改</p>
+<h1 id="10-Google："><a href="#10-Google：" class="headerlink" title="10.Google："></a>10.Google：</h1><ul>
+<li>熊猫算法：针对低质量内容</li>
+<li>企鹅算法：针对垃圾和作弊网站</li>
+</ul>
+<h1 id="11-百度："><a href="#11-百度：" class="headerlink" title="11.百度："></a>11.百度：</h1><ul>
+<li>绿萝算法：买卖链接、软文形式的垃圾链接</li>
+<li>石榴算法：低质量页面、妨碍用户体验的</li>
+</ul>
+<h1 id="11-搜索引擎历史趋势：相关性→权威性→实用性"><a href="#11-搜索引擎历史趋势：相关性→权威性→实用性" class="headerlink" title="11.搜索引擎历史趋势：相关性→权威性→实用性"></a>11.搜索引擎历史趋势：相关性→权威性→实用性</h1><ul>
+<li>内容为王</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「笔记」- 读书</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>SEO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>R语言基础の笔记</title>
     <url>/2019/04/01/R-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -5535,88 +5820,6 @@
       <tags>
         <tag>Note</tag>
         <tag>R语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Photoshop Skin Notes</title>
-    <url>/2020/03/10/Ps-Skin-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Ps人像修饰</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>SEO 学习笔记</title>
-    <url>/2019/04/01/SEO-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>搜索引擎优化</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<ul>
-<li><p>书名：《SEO实战密码》（第3版）</p>
-</li>
-<li><p>作者：昝辉 Zac</p>
-</li>
-<li><p>出版社：电子工业出版社</p>
-</li>
-</ul>
-<hr>
-<h1 id="1-SEO：Search-Engine-Optimization"><a href="#1-SEO：Search-Engine-Optimization" class="headerlink" title="1.SEO：Search Engine Optimization"></a>1.SEO：Search Engine Optimization</h1><ul>
-<li>从自然搜索结果获得网站流量的技术和过程</li>
-</ul>
-<h1 id="2-优化："><a href="#2-优化：" class="headerlink" title="2.优化："></a>2.优化：</h1><ul>
-<li>站内优化：网站结构，页面HTML代码等</li>
-<li>站外优化：外部链接，参与互动等</li>
-</ul>
-<h1 id="3-搜索引擎工作原理"><a href="#3-搜索引擎工作原理" class="headerlink" title="3.搜索引擎工作原理"></a>3.搜索引擎工作原理</h1><p>爬行（→地址库）→抓取→预处理（索引）：提取文字；中文分词；去停止词；消除噪声；去重；正向/倒排索引；链接关系计算；特殊文件处理；质量判断→排名：搜索词处理；文件匹配；初始子集选择；相关性计算；过滤&amp;调整；排名显示；搜索缓存；查询&amp;点击日志</p>
-<ul>
-<li>高级搜索指令：“ ”；-；*；inurl:；inanchor:；intitle:；allintitle:；allinurl:；filetype:；site:；link:；related:</li>
-</ul>
-<h1 id="4-关键词选择核心原则："><a href="#4-关键词选择核心原则：" class="headerlink" title="4.关键词选择核心原则："></a>4.关键词选择核心原则：</h1><ul>
-<li>搜索次数多</li>
-<li>竞争程度小</li>
-</ul>
-<h1 id="5-核心关键词→拓展关键词"><a href="#5-核心关键词→拓展关键词" class="headerlink" title="5.核心关键词→拓展关键词"></a>5.核心关键词→拓展关键词</h1><h1 id="6-长尾关键词：较长，较具体，次数低"><a href="#6-长尾关键词：较长，较具体，次数低" class="headerlink" title="6.长尾关键词：较长，较具体，次数低"></a>6.长尾关键词：较长，较具体，次数低</h1><h1 id="7-竞争对手研究"><a href="#7-竞争对手研究" class="headerlink" title="7.竞争对手研究"></a>7.竞争对手研究</h1><ul>
-<li>域名权重相关数据</li>
-<li>网站优化情况</li>
-<li>网站流量</li>
-</ul>
-<h1 id="8-网站结构优化"><a href="#8-网站结构优化" class="headerlink" title="8.网站结构优化"></a>8.网站结构优化</h1><ul>
-<li>避免蜘蛛陷阱（Flash，Session ID，跳转，框架Frame，动态url，js链接等）</li>
-</ul>
-<h1 id="9-SEO过程："><a href="#9-SEO过程：" class="headerlink" title="9.SEO过程："></a>9.SEO过程：</h1><p>竞争对手究→SEO计划（诊断）→网站优化→外链建设→效果检测及流量分析→策略修改</p>
-<h1 id="10-Google："><a href="#10-Google：" class="headerlink" title="10.Google："></a>10.Google：</h1><ul>
-<li>熊猫算法：针对低质量内容</li>
-<li>企鹅算法：针对垃圾和作弊网站</li>
-</ul>
-<h1 id="11-百度："><a href="#11-百度：" class="headerlink" title="11.百度："></a>11.百度：</h1><ul>
-<li>绿萝算法：买卖链接、软文形式的垃圾链接</li>
-<li>石榴算法：低质量页面、妨碍用户体验的</li>
-</ul>
-<h1 id="11-搜索引擎历史趋势：相关性→权威性→实用性"><a href="#11-搜索引擎历史趋势：相关性→权威性→实用性" class="headerlink" title="11.搜索引擎历史趋势：相关性→权威性→实用性"></a>11.搜索引擎历史趋势：相关性→权威性→实用性</h1><ul>
-<li>内容为王</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「笔记」- 读书</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>SEO</tag>
       </tags>
   </entry>
   <entry>
@@ -7030,209 +7233,6 @@
       <categories>
         <category>「备忘」- Hexo配置</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Photography Learn Notes</title>
-    <url>/2019/10/15/Photography-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>主要是后期风格</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
-<li>低饱和，又不是纯黑白</li>
-<li>分离色调：给整张图罩上冷色调<ul>
-<li>阴影+蓝色</li>
-</ul>
-</li>
-<li>HSL：<ul>
-<li>明亮度：蓝色↓↓，天空变深邃</li>
-<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
-</ul>
-</li>
-<li>基本面板中：阴影看情况↑</li>
-<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
-<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
-<li>特点：<ul>
-<li>肌肤极致干净</li>
-<li>空气通透</li>
-</ul>
-</li>
-<li>HSL调肤色，注意不要出现洋红</li>
-<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
-<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
-<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
-</ul>
-<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
-<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
-<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
-<li>HSL：<ul>
-<li>色相：紫色0，蓝色右 呈湖蓝</li>
-<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
-<li>饱和度：皮肤↓，其他视情况</li>
-</ul>
-</li>
-<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
-<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
-<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
-<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
-<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
-<li>相机校准：蓝原色左滑→湖蓝色</li>
-<li>HSL：<ul>
-<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
-</ul>
-</li>
-<li>可不做锐化</li>
-<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
-<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
-<li>蓝色时间：日出前、日落后</li>
-<li>特点：街灯、车灯刚亮</li>
-<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
-<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
-<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
-<li>特点：<ul>
-<li>引人共鸣</li>
-<li>元素处在动态</li>
-<li>画面质量高</li>
-</ul>
-</li>
-<li>高光↓，阴影↑</li>
-<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
-<li>红色曲线：（下拉→青）阴影稍微下拉</li>
-<li>蓝色曲线：阴影稍微上拉</li>
-<li>绿色曲线：调氛围，只要一点点调整</li>
-<li>RGB通道：暗部抬一点，提亮</li>
-</ul>
-</li>
-<li>清晰度↑，鲜艳度↓一点点</li>
-<li>裁剪：16:9、2.35:1</li>
-<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
-<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
-<li>色调分离：高光-红紫色，阴影-蓝色</li>
-<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
-<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
-<li>矫正，阴影↑，饱和度↑</li>
-<li>HSL：<ul>
-<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
-<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
-</ul>
-</li>
-<li>色调分离/曲线：暗部增加蓝青色</li>
-<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
-<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>色温↓，色调看喜好</li>
-<li>清晰度↑</li>
-<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
-<li>渐变滤镜压暗前景曝光、饱和度</li>
-<li>鲜艳度↑</li>
-</ul>
-<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
-<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
-<li>照片特点：<ul>
-<li>白（曝光↑）</li>
-<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
-<li>背景选择：深色，突出雪花</li>
-</ul>
-</li>
-<li>后期<ul>
-<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
-<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
-<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
-<li>色温↑，黄昏感觉</li>
-<li>HSL：<ul>
-<li>绿色饱和度↓，变得黄一些</li>
-<li>橙色、黄色饱和度↑明亮度↑<ul>
-<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
-<li>小S曲线，对比度↑</li>
-</ul>
-</li>
-<li>进PS加光晕<ul>
-<li>可搭配插件：Alien Skin Exposure</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
-<li>特征：<ul>
-<li>金属光感：渐变塑光影</li>
-<li>拉丝效果：模糊塑动感</li>
-<li>流动天空：模糊仿流动</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<hr>
-<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
-<li>插件：DR4、Skinfiner</li>
-<li>图章工具：去明显瑕疵</li>
-<li>中性灰：去痘印、调光影结构</li>
-<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
-<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
-</ul>
-<hr>
-<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>时间选择：<ul>
-<li>月相查询：月亮小的时候拍摄</li>
-<li>月出、月落时间：月落后拍摄</li>
-</ul>
-</li>
-<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
-<li>银河方位：starwalk、星图</li>
-<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
-<li>参数选择：<ul>
-<li>对焦：无限远</li>
-<li>光圈：最大</li>
-<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
-<li>感光度：被动决定</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
-<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
-<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
-<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
-</ul>
-<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photography</tag>
-      </tags>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
