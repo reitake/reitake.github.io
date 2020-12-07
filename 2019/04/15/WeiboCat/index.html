@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoeMgN9r3ZTJhZZgqjfb4tkZf3qRjujP-1gjzMb-x80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"reitake.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Jacky &amp; Jason">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WeiboCat With Golang">
+<meta property="og:url" content="https://reitake.github.io/2019/04/15/WeiboCat/index.html">
+<meta property="og:site_name" content="My Notes Blog">
+<meta property="og:description" content="Jacky &amp; Jason">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-15T01:52:23.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:34:27.274Z">
+<meta property="article:author" content="rtk">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="Go项目">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://reitake.github.io/2019/04/15/WeiboCat/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>WeiboCat With Golang | My Notes Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Notes Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">生活不易 喵声叹气</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-gears"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-others">
+
+    <a href="/others/" rel="section"><i class="fa fa-fw fa-spinner"></i>不务正业</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://reitake.github.io/2019/04/15/WeiboCat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rtk">
+      <meta itemprop="description" content="冷萃少冰不加糖">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Notes Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          WeiboCat With Golang
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-15 09:52:23" itemprop="dateCreated datePublished" datetime="2019-04-15T09:52:23+08:00">2019-04-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-07 18:34:27" itemprop="dateModified" datetime="2020-12-07T18:34:27+08:00">2020-12-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/04/15/WeiboCat/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/04/15/WeiboCat/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center> <font color="#bababa">
+
+<p><strong><em>Jacky &amp; Jason</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
+<li>项目名：<code>WeiboCat</code></li>
+<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
+<li>启动日期：2019年4月</li>
+<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
+</ul>
+<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
+<li><input disabled="" type="checkbox"> 微博登录  </li>
+<li><input disabled="" type="checkbox"> 微博发post</li>
+<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
+<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
+<li><input disabled="" type="checkbox"> 用.json作为config</li>
+</ul>
+<hr>
+<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
+<li>SDK for Golang 的使用？</li>
+<li>写自己的SDK？</li>
+<li>OAuth2.0认证什么鬼啊？</li>
+</ul>
+<hr>
+<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
+<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
+<p>正确的：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>错误的：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
+<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+              <a href="/tags/Go%E9%A1%B9%E7%9B%AE/" rel="tag"><i class="fa fa-tag"></i> Go项目</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/02/Macroeconomics-Notes/" rel="prev" title="《经济学原理》笔记（宏观经济学）">
+      <i class="fa fa-chevron-left"></i> 《经济学原理》笔记（宏观经济学）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/04/21/Go-Command/" rel="next" title="Go の Command">
+      Go の Command <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目情况"><span class="nav-number">1.1.</span> <span class="nav-text">项目情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目框架"><span class="nav-number">1.2.</span> <span class="nav-text">项目框架</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#待解决的问题"><span class="nav-number">2.</span> <span class="nav-text">待解决的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#版本-Change-Log"><span class="nav-number">3.</span> <span class="nav-text">版本 Change Log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程中踩到的坑"><span class="nav-number">4.</span> <span class="nav-text">过程中踩到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#movepic-go"><span class="nav-number">4.1.</span> <span class="nav-text">movepic.go</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把图片改名成时间"><span class="nav-number">4.1.1.</span> <span class="nav-text">把图片改名成时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断文件夹中是否有图片"><span class="nav-number">4.1.2.</span> <span class="nav-text">判断文件夹中是否有图片</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="rtk"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">rtk</p>
+  <div class="site-description" itemprop="description">冷萃少冰不加糖</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/reitake" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;reitake" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/rrrrrtk" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;rrrrrtk" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rtk</span>
+</div><span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,03,07,10,00,00); //建站时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒 ~喵~";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'FY0k4GNyVIFSqBrIxPq7yN7t-gzGzoHsz',
+      appKey     : 'FqCFfTcVczkkBx9SyMlf7myz',
+      placeholder: "喵w ヾﾉ≧w≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

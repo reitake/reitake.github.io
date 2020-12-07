@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoeMgN9r3ZTJhZZgqjfb4tkZf3qRjujP-1gjzMb-x80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"reitake.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="GO 命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go の Command">
+<meta property="og:url" content="https://reitake.github.io/2019/04/21/Go-Command/index.html">
+<meta property="og:site_name" content="My Notes Blog">
+<meta property="og:description" content="GO 命令">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-21T14:28:25.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:34:27.248Z">
+<meta property="article:author" content="rtk">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://reitake.github.io/2019/04/21/Go-Command/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Go の Command | My Notes Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Notes Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">生活不易 喵声叹气</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-gears"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-others">
+
+    <a href="/others/" rel="section"><i class="fa fa-fw fa-spinner"></i>不务正业</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://reitake.github.io/2019/04/21/Go-Command/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rtk">
+      <meta itemprop="description" content="冷萃少冰不加糖">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Notes Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Go の Command
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-21 22:28:25" itemprop="dateCreated datePublished" datetime="2019-04-21T22:28:25+08:00">2019-04-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-07 18:34:27" itemprop="dateModified" datetime="2020-12-07T18:34:27+08:00">2020-12-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/04/21/Go-Command/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/Go-Command/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center> <font color="#bababa">
+
+<p><strong><em>GO 命令</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>–&gt; <a href="https://golang.org/cmd/cgo/" target="_blank" rel="noopener">官方的命令文档</a> &lt;–  </p>
+<h2 id="查看可用命令"><a href="#查看可用命令" class="headerlink" title="查看可用命令"></a>查看可用命令</h2><p>直接在终端中输入 <code>go help</code> 即可显示所有的 go 命令以及相应命令功能的简介，主要有：  </p>
+<ul>
+<li>build: 编译包和依赖</li>
+<li>clean: 移除对象文件</li>
+<li>doc: 显示包或者符号的文档</li>
+<li>env: 打印go的环境信息</li>
+<li>bug: 启动错误报告</li>
+<li>fix: 运行go tool fix</li>
+<li>fmt: 运行gofmt进行格式化</li>
+<li>generate: 从processing source生成go文件</li>
+<li>get: 下载并安装包和依赖</li>
+<li>install: 编译并安装包和依赖</li>
+<li>list: 列出包</li>
+<li>run: 编译并运行go程序</li>
+<li>test: 运行测试</li>
+<li>tool: 运行go提供的工具</li>
+<li>version: 显示go的版本</li>
+<li>vet: 运行go tool vet</li>
+</ul>
+<h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><p>命令的使用方式：  <code>go command [args]</code> ，<code>go help &lt;command&gt;</code>  </p>
+<p>在运行<code>go help</code>时，不仅仅打印了这些命令的基本信息，还给出了一些概念的帮助信息（<code>go help &lt;topic&gt;</code>）:  </p>
+<ul>
+<li>c: Go和c的相互调用</li>
+<li>buildmode: 构建模式的描述</li>
+<li>filetype: 文件类型</li>
+<li>gopath: GOPATH环境变量</li>
+<li>environment: 环境变量</li>
+<li>importpath: 导入路径语法</li>
+<li>packages: 包列表的描述</li>
+<li>testflag: 测试符号描述</li>
+<li>testfunc: 测试函数描述</li>
+</ul>
+<hr>
+<h1 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a><code>go build</code></h1><p>类似其他静态，要执行 go 程序，需要先编译成可执行文件。  </p>
+<p><code>go build</code>：用来编译 go 程序生成可执行文件。  </p>
+<ul>
+<li>但不是所有 go 程序都可以编译生成可执行文件，要生成可执行文件，go 程序需要满足两个条件（反之则不会生成任何文件，只是做检查性编译）：<ul>
+<li>该 go 程序需要属于 main 包</li>
+<li>在 main 包中必须还得包含 main() 函数</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run hello.<span class="keyword">go</span>   # 将会生成可执行文件 hello</span><br><span class="line">$ ./hello           # 运行可执行文件</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<p>加一些标记：  </p>
+<ul>
+<li>-v 标记，可以把命令执行过程中构建的包名（包含编译过程中依赖的包）打印出来，如果 go build 的是一个源码文件，则会打印出的包名为 command-line-arguments，这是编译源码文件时生成的虚拟包名，所以看到不用觉得奇怪。</li>
+<li>-x 标记，可以打印编译期间所用到的所有 shell 命令。</li>
+<li>-o 标记，用来指定生成文件的路径和名称。</li>
+<li>-a 标记，强制重新编译。</li>
+<li>-buildmode=shared 标记，这个参数可以指定当前编译生成的结果类型，如静态库和动态库。GO语言默认使用静态编译，好处是部署时非常简单，但使用动态库，可以减少分发包的大小，大家可以根据实际情况选择。注意，目前在windows下尚不支持编译成动态库。</li>
+<li>更多参数，请使用 go build -h 或 go help build 查看。</li>
+</ul>
+<h1 id="go-run"><a href="#go-run" class="headerlink" title="go run"></a><code>go run</code></h1><p><code>go run</code>：编译并运行，但不会产生中间文件</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run hello.<span class="keyword">go</span></span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<h1 id="go-clean"><a href="#go-clean" class="headerlink" title="go clean"></a><code>go clean</code></h1><p>用于清除产生的可执行程序：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> clean    # 不加参数，可以删除当前目录下的所有可执行文件</span><br><span class="line">$ <span class="keyword">go</span> clean sourcefile.<span class="keyword">go</span>  # 会删除对应的可执行文件</span><br></pre></td></tr></table></figure>
+
+<h1 id="go-fmt"><a href="#go-fmt" class="headerlink" title="go fmt"></a><code>go fmt</code></h1><p>格式化代码。注意不包含代码包中的子代码包。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> fmt main.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息，通过 <code>gofmt -h</code> 查看。  </p>
+<h1 id="go-doc-amp-godoc"><a href="#go-doc-amp-godoc" class="headerlink" title="go doc &amp; godoc"></a><code>go doc</code> &amp; <code>godoc</code></h1><p>用于快速查看包文档，<code>go doc package</code> 命令将在中断中打印出指定 package 的文档。  </p>
+<p>另外，<code>godoc</code> 可以启动我们自己的文档服务器：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ godoc -http=:<span class="number">8080</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们就可与在浏览器 <code>localhost:8080</code> 中查看go文档了。  </p>
+<h1 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a><code>go get</code></h1><p>用来安装第三方包，格式：<code>go get src</code>，从指定源上面下载或者更新指定的代码和依赖，并对他们进行编译和安装。  </p>
+<p>eg.例如我们像使用 beego 来开发 web 应用，我们就需要获取 beego：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get github.com/astaxie/beego</span><br></pre></td></tr></table></figure>
+
+<p>这条命令将会自动下载安装 beego 以及它的依赖，然后我们就可以使用下面的方式使用:  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"github.com/astaxie/beego"</span>   # 这里需要使用 src 下的完整路径</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    beego.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a><code>go install</code></h1><p>用来编译和安装 go 程序。与 build 命令进行对比：  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>install</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生成的可执行文件路径</td>
+<td>工作目录下的bin目录下</td>
+<td>当前目录下</td>
+</tr>
+<tr>
+<td>可执行文件的名字</td>
+<td>与源码所在目录同名</td>
+<td>默认与源程序同名，可以使用-o选项指定</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>将依赖的保安放到工作目录下的pkg文件夹下</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h1 id="go-test"><a href="#go-test" class="headerlink" title="go test"></a><code>go test</code></h1><p>用来运行测试的命令，这种测试是以包围单位的。需要遵循一定的规则：</p>
+<ul>
+<li>测试源文件是名称以<code>_test.go</code>为后缀的</li>
+<li>测试源文件内包含若干测试函数的源码文件</li>
+<li>测试函数一般是以<code>Test</code>为名称前缀，并有一个类型为<code>testing.T</code>的参数</li>
+</ul>
+<h1 id="go-list"><a href="#go-list" class="headerlink" title="go list"></a><code>go list</code></h1><p>不加任何标记直接使用，是显示指定包的导入路径，如 <code>go list net/http</code> 就显示 <code>net/http</code>。  </p>
+<p>该命令加上 -json 标记可以显示完整信息。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> list -json time</span><br></pre></td></tr></table></figure>
+
+<p>如果只想显示指定信息，可以使用 -f 标记，如 go list -f { {.GoFiles} } net/http 可以显示 net/http 包中的 GO 源码文件列表。（所以可以理解，默认的 go list 相当于 go list -f { {.ImportPath} }）  </p>
+<h1 id="gofix"><a href="#gofix" class="headerlink" title="gofix"></a><code>gofix</code></h1><p>简单的说，这是一个当GO语言版本升级之后，把代码包中旧的语法更新成新版本语法的自动化工具。它是 go tool fix 的简单封装，它作用于代码包。  </p>
+<p>当需要升级自己的项目或者升级下载的第三方代码包，可以使用此方法。（下载并升级代码包可以使用 go get -fix 命令 ）  </p>
+<h1 id="go-vet"><a href="#go-vet" class="headerlink" title="go vet"></a><code>go vet</code></h1><p>静态检查工具，一般项目快完成时候进行优化时需要。  </p>
+<h1 id="go-tool-pprof"><a href="#go-tool-pprof" class="headerlink" title="go tool pprof"></a><code>go tool pprof</code></h1><p>性能检查工具…  </p>
+<h1 id="go-env"><a href="#go-env" class="headerlink" title="go env"></a><code>go env</code></h1><p>用于打印GO语言的环境信息，如 GOPATH 是工作区目录，GOROOT 是GO语言安装目录，GOBIN 是通过 go install 命令生成可执行文件的存放目录（默认是当前工作区的 bin 目录下），GOEXE 为生成可执行文件的后缀。  </p>
+<h1 id="转成汇编代码"><a href="#转成汇编代码" class="headerlink" title="转成汇编代码"></a>转成汇编代码</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">go</span> tool objdump -s <span class="string">"operate\.Login"</span> server</span><br></pre></td></tr></table></figure>
+
+<p>上面的意思是，解析可执行文件server，将其中的 operate 包的 Login 方法转成汇编代码。  </p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+              <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/15/WeiboCat/" rel="prev" title="WeiboCat With Golang">
+      <i class="fa fa-chevron-left"></i> WeiboCat With Golang
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/26/Site-Bookmark/" rel="next" title="网站收藏">
+      网站收藏 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看可用命令"><span class="nav-number">1.1.</span> <span class="nav-text">查看可用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用命令"><span class="nav-number">1.2.</span> <span class="nav-text">使用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-build"><span class="nav-number">2.</span> <span class="nav-text">go build</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-run"><span class="nav-number">3.</span> <span class="nav-text">go run</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-clean"><span class="nav-number">4.</span> <span class="nav-text">go clean</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-fmt"><span class="nav-number">5.</span> <span class="nav-text">go fmt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-doc-amp-godoc"><span class="nav-number">6.</span> <span class="nav-text">go doc &amp; godoc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-get"><span class="nav-number">7.</span> <span class="nav-text">go get</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-install"><span class="nav-number">8.</span> <span class="nav-text">go install</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-test"><span class="nav-number">9.</span> <span class="nav-text">go test</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-list"><span class="nav-number">10.</span> <span class="nav-text">go list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gofix"><span class="nav-number">11.</span> <span class="nav-text">gofix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-vet"><span class="nav-number">12.</span> <span class="nav-text">go vet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-tool-pprof"><span class="nav-number">13.</span> <span class="nav-text">go tool pprof</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-env"><span class="nav-number">14.</span> <span class="nav-text">go env</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#转成汇编代码"><span class="nav-number">15.</span> <span class="nav-text">转成汇编代码</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="rtk"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">rtk</p>
+  <div class="site-description" itemprop="description">冷萃少冰不加糖</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/reitake" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;reitake" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/rrrrrtk" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;rrrrrtk" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rtk</span>
+</div><span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,03,07,10,00,00); //建站时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒 ~喵~";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'FY0k4GNyVIFSqBrIxPq7yN7t-gzGzoHsz',
+      appKey     : 'FqCFfTcVczkkBx9SyMlf7myz',
+      placeholder: "喵w ヾﾉ≧w≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

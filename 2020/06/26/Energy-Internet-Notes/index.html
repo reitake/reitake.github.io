@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoeMgN9r3ZTJhZZgqjfb4tkZf3qRjujP-1gjzMb-x80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"reitake.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Energy Internet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《能源互联网》笔记">
+<meta property="og:url" content="https://reitake.github.io/2020/06/26/Energy-Internet-Notes/index.html">
+<meta property="og:site_name" content="My Notes Blog">
+<meta property="og:description" content="Energy Internet">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-26T04:50:30.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:34:27.240Z">
+<meta property="article:author" content="rtk">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="能源">
+<meta property="article:tag" content="VPP">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://reitake.github.io/2020/06/26/Energy-Internet-Notes/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>《能源互联网》笔记 | My Notes Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Notes Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">生活不易 喵声叹气</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-gears"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-others">
+
+    <a href="/others/" rel="section"><i class="fa fa-fw fa-spinner"></i>不务正业</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://reitake.github.io/2020/06/26/Energy-Internet-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rtk">
+      <meta itemprop="description" content="冷萃少冰不加糖">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Notes Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          《能源互联网》笔记
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-26 12:50:30" itemprop="dateCreated datePublished" datetime="2020-06-26T12:50:30+08:00">2020-06-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-07 18:34:27" itemprop="dateModified" datetime="2020-12-07T18:34:27+08:00">2020-12-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/26/Energy-Internet-Notes/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/26/Energy-Internet-Notes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center> <font color="#bababa">
+
+<p><strong><em>Energy Internet</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li>作者：孙宏斌  </li>
+<li>出版社：科学出版社 </li>
+</ul>
+<hr>
+<h1 id="第四部分-价值层-第3章-虚拟电厂"><a href="#第四部分-价值层-第3章-虚拟电厂" class="headerlink" title="第四部分 价值层  第3章 虚拟电厂"></a>第四部分 价值层  第3章 虚拟电厂</h1><p>分布式能源（DER）单独运行时，电源容量较小，且具有较大的随机性、波动性、间歇性，并网后难以对其进行调度。为解决单独的分布式能源介入电网造成的不利影响，学者提出了虚拟电厂（VPP）。  </p>
+<h2 id="虚拟电厂概述"><a href="#虚拟电厂概述" class="headerlink" title="虚拟电厂概述"></a>虚拟电厂概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>没有统一定义。  </p>
+<ul>
+<li>①是一系列分布式能源的集合，以传统发电厂的角色参与电力系统的运行。</li>
+<li>②是对电网中各种能源进行综合管理的软件系统。</li>
+<li>③VPP也包括效能电厂，通过减少终端用电设备和装置的用电需求的方式来产生“富余“的电能，即通过需求方提高效能，达到建实际电厂的效果。</li>
+<li>③在能源互联网建设提出之后，虚拟电厂可以看成可以广域、动态聚合多种能源的能源互联网。</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据功能，分为商业型虚拟电厂（commercial VPP，CVPP）、技术型虚拟电厂（technical VPP，TVPP）。  </p>
+<ul>
+<li>CVPP<ul>
+<li>从商业收益的角度出发，对用户需求和发电潜力进行预测，将虚拟电场中的分布式能源接入电力市场，以优化和调度用电量，是分布式能源投资组合的一中灵活表述。</li>
+<li>要实现：<ul>
+<li>①根据从市场获得的信息订立合同，并提交信息至系统运营商。</li>
+<li>②便是交易计划，确定市场价格，实现实时市场交易。</li>
+<li>③实现啊投资组合交易与服务，提供两者的平衡。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TVPP<ul>
+<li>从系统管理的角度出发，有分布式能源和可控负荷共同组成，考虑分布式能源聚合对本地网络的实时邮箱，可以看成一个带有传输系统的发电厂，具有与其他和电网项链的电厂相同的表征参数。</li>
+<li>主要为管理者和提供可视化的信息，优化分布式能源的运行，并根据当地电网的运行约束提供配套服务。</li>
+<li>要实现的功能：<ul>
+<li>①整合所有分布式能源和负荷的输入，为配电管理员（DSO）提供系统管理服务。</li>
+<li>②为输电管理员（TSO）提供系统平衡和配套服务。</li>
+<li>③提供可视化操作界面，并允许控制系统内的分布式能源，增强分布式能源的可控性，提供系统最低成本的运营方式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><p>根据信息流传输控制结构的不同，分为集中控制方式虚拟电厂（centralized controlled VPP，CCVPP）、分散控制方式虚拟电厂（distributed controlled VPP, DCVPP）、完全分散控制方式虚拟电厂（fully DCVPP，FDCVPP）。  </p>
+<ul>
+<li>集中控制方式<ul>
+<li>通过控制些调整下（CCC）完全掌握涉及分布式运行的所有单位的信息，并可以对所有发电或用电单元进行控制。</li>
+<li>具有优先的可拓展性和兼容性</li>
+</ul>
+</li>
+<li>分散控制方式<ul>
+<li>VPP分为多个层次</li>
+<li>使VPP模块化，可改善集中控制方式下的通信阻塞和兼容性差的问题</li>
+</ul>
+</li>
+<li>完全分散控制方式<ul>
+<li>控制协调中心由数据交换与处理中心代替，交换与处理中心只提供市场价格、天气预报等信息。</li>
+<li>VPP被划分为相互独立自治的只能子单元，不受数据交换与处理中心控制，只接受来自数据交换与处理中心的信息，根据信息对资深的运行状态进行优化。</li>
+<li>具有好的可拓展性和开放性，也更适合参与电力市场</li>
+</ul>
+</li>
+</ul>
+<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p>目标是将分布式能源优化组合成有机整体，提供店里辅助服务，通过协调控制使VPP运行在最优运行点，实现整体利益的最大化。  </p>
+<ul>
+<li>发电商预测，提交各自的第二日发电计划</li>
+<li>VPP需协调个发电商电价</li>
+<li>VPP根据发电商电价、输出功率、电能质量和电力储备等特性，指定第二天的发电计划</li>
+<li>VPP根据发电计划和发电商所报电价及电量，指定虚拟电厂电价，并确定电网接入点和注入功率</li>
+<li>VPP与市场运营商签订发电协议（电量、电价），校验协议是否符合潮流、阻塞等系统网络条件</li>
+<li>系统通知虚拟电厂订立发电合同，VPP与发电商协调制定第二天的发电计划</li>
+<li>VPP根据发电计划控制个发电商的输出功率，对实际网络情况进行优化调整，并将发电结果录入数据库，为之后提供数据和依据</li>
+</ul>
+<h3 id="虚拟电厂与微电网的区别"><a href="#虚拟电厂与微电网的区别" class="headerlink" title="虚拟电厂与微电网的区别"></a>虚拟电厂与微电网的区别</h3><ul>
+<li>对分布式能源聚合的有效区域不同<ul>
+<li>微网对地理位置要求高，一般处于同一区域内</li>
+<li>虚拟电厂可跨区聚合</li>
+</ul>
+</li>
+<li>与配电网的连接点不同<ul>
+<li>VPP可能有多个公共连接点</li>
+<li>微网一般只有一个</li>
+</ul>
+</li>
+<li>与电网的连接方式不同<ul>
+<li>VPP不改变聚合的风不是能源的并网形式没更侧重于通过联测、通信技术聚合</li>
+<li>微网需要对电网进行物理拓展</li>
+</ul>
+</li>
+<li>运行方式不同<ul>
+<li>微网可孤岛运行，可并网运行</li>
+<li>VPP只能并网</li>
+</ul>
+</li>
+<li>侧重功能不同<ul>
+<li>微网侧重就地平衡负荷</li>
+<li>VPP侧重实现供应主体利益最大化，具有电力市场经营能力</li>
+</ul>
+</li>
+</ul>
+<h3 id="示范项目"><a href="#示范项目" class="headerlink" title="示范项目"></a>示范项目</h3><ul>
+<li>2001<del>2005年，欧盟第5框架计划下试试的VFCPP（virtual fuel cell power plant）项目、2005</del>2009年欧盟第6框架下FENIX（flexible electricity network to integrate the expected energy solution）项目、2012<del>2015年，欧盟第7框架TWENTIES研究项目和WEB2ENERGY项目、2008</del>2013年德国E-E能源计划</li>
+<li>2016年日本关西电力、富士电机、三社电机、杰士汤浅、住友电工、优利系统等合作推出了一个虚拟电厂试验项目</li>
+<li>2016年8月澳大利亚公共事业AGL公司宣布将要大枣世界上最大的虚拟电厂，美国储能开放商Sunverge</li>
+<li>2016年8月美国Nest Labs与南加州爱迪生电力公司签订虚拟电厂资源</li>
+<li>2016年纽约公共事业公司Con Edison公示和美国储能开发商Sunverge投资1500万美元虚拟电厂试点项目</li>
+<li>国内示范工程偏向于实现能效电厂的功能。<ul>
+<li>江苏昆山</li>
+<li>上海</li>
+</ul>
+</li>
+</ul>
+<h2 id="能源互联网下虚拟电厂的模型框架"><a href="#能源互联网下虚拟电厂的模型框架" class="headerlink" title="能源互联网下虚拟电厂的模型框架"></a>能源互联网下虚拟电厂的模型框架</h2><h3 id="VPP组成结构"><a href="#VPP组成结构" class="headerlink" title="VPP组成结构"></a>VPP组成结构</h3><p>3部分，由发电系统、能量存储系统、通信系统组成。   </p>
+<ul>
+<li>发电系统主要包括家庭型分布式电源（DDG）和公用型分布式能源（PDG）</li>
+<li>能量存储系统补偿波动性和不可控性</li>
+<li>通信系统进行能量管理、数据采集与监控每一集与电力系统调度中心通信</li>
+<li>未来发展：用户侧管理，需求响应<ul>
+<li>需求响应：电力用户对市场价格信号或激励机制做出响应，主动改变自身原有电力消费模式的行为</li>
+<li>分为基于价格的需求响应（PBDR）、基于激励的需求响应（IBDR）</li>
+</ul>
+</li>
+</ul>
+<h3 id="VPP组成框架"><a href="#VPP组成框架" class="headerlink" title="VPP组成框架"></a>VPP组成框架</h3><p>一系列分布式电源的聚合：可控机组、不可控机组、储能设备、可控负荷、电动汽车、通信设备等。  </p>
+<h3 id="VPP容量配置"><a href="#VPP容量配置" class="headerlink" title="VPP容量配置"></a>VPP容量配置</h3><p>集中于局部优化和就地平衡。常用方法有多目标优化方法、博弈论方法、投资组合理论等。  </p>
+<h3 id="VPP的组合选择与利益分配"><a href="#VPP的组合选择与利益分配" class="headerlink" title="VPP的组合选择与利益分配"></a>VPP的组合选择与利益分配</h3><p>通过多种组合结构下的优先级排序，从而自适应地组合成一个虚拟电厂最佳组合结构。  </p>
+<p>考虑到虚拟电厂内部成员的多样性和多产权型，需要对其组合内部的收益分配机制进行研究。同时需要指定其与大电网以及电力交易中心之间的合作机制，以保证所有参与者的合理收益、积极性、稳定性、满意度。  </p>
+<h2 id="能源互联网下虚拟电厂的运行与控制"><a href="#能源互联网下虚拟电厂的运行与控制" class="headerlink" title="能源互联网下虚拟电厂的运行与控制"></a>能源互联网下虚拟电厂的运行与控制</h2><h3 id="VPP的内部优化调度"><a href="#VPP的内部优化调度" class="headerlink" title="VPP的内部优化调度"></a>VPP的内部优化调度</h3><p>指由虚拟电厂对自身内部的分布式能源进行出力的优化，从而定制内部分布式能源的出力计划。  </p>
+<p>常用的目标函数：  </p>
+<ul>
+<li>经济效益最大</li>
+<li>运行成本最小</li>
+<li>弃电弃负荷的惩罚成本最小</li>
+<li>环境成本最小</li>
+</ul>
+<p>常用的约束条件：  </p>
+<ul>
+<li>功率平衡约束</li>
+<li>机组出力约束</li>
+<li>机组爬坡率约束</li>
+<li>储能设备充放电约束</li>
+<li>传输功率约束</li>
+</ul>
+<h3 id="含VPP的电网优化调度"><a href="#含VPP的电网优化调度" class="headerlink" title="含VPP的电网优化调度"></a>含VPP的电网优化调度</h3><p>从电网的角度出发，将虚拟电厂看成一个传统电厂，根据电网的实际运行环境进行优化，确定虚拟电厂的处理。  </p>
+<p>常用的目标函数：  </p>
+<ul>
+<li>系统效益最大</li>
+<li>系统成本最小</li>
+<li>网络损耗最小</li>
+</ul>
+<p>常用的约束条件：  </p>
+<ul>
+<li>系统潮流约束</li>
+<li>系统电压约束</li>
+<li>虚拟电厂处理约束</li>
+<li>传输功率约束</li>
+</ul>
+<h3 id="不确定性处理"><a href="#不确定性处理" class="headerlink" title="不确定性处理"></a>不确定性处理</h3><p>存在不确定因素：风、光等不可控电源处理的不确定性、负荷的不确定性、机组随机故障、电价不确定性等。  </p>
+<p>处理方法：模糊规划、随机规划、鲁棒优化等  </p>
+<h3 id="能源互联网下虚拟电厂的多层优化调度"><a href="#能源互联网下虚拟电厂的多层优化调度" class="headerlink" title="能源互联网下虚拟电厂的多层优化调度"></a>能源互联网下虚拟电厂的多层优化调度</h3><ul>
+<li>虚拟电厂的多时间尺度优化调度，电力市场分日间市场、日内市场、实时市场。</li>
+<li>虚拟电厂的多层级优化调度</li>
+</ul>
+<h3 id="基于多代理系统的虚拟电厂运行与控制"><a href="#基于多代理系统的虚拟电厂运行与控制" class="headerlink" title="基于多代理系统的虚拟电厂运行与控制"></a>基于多代理系统的虚拟电厂运行与控制</h3><ul>
+<li>多代理系统是由多个相互独立、可以双向互通通信的智能代理组合形成的，这些代理在逻辑与物理上是分离的。各个代理具有自主性和独立性</li>
+<li>基于多代理系统的模拟电厂控制框架</li>
+</ul>
+<h2 id="能源互联网下虚拟电厂的市场竞价"><a href="#能源互联网下虚拟电厂的市场竞价" class="headerlink" title="能源互联网下虚拟电厂的市场竞价"></a>能源互联网下虚拟电厂的市场竞价</h2><h3 id="虚拟电厂市场竞价问题"><a href="#虚拟电厂市场竞价问题" class="headerlink" title="虚拟电厂市场竞价问题"></a>虚拟电厂市场竞价问题</h3><ul>
+<li>按功能，可参与的市场模式：能量市场、辅助服务市场等<ul>
+<li>能量市场：考虑电网安全约束，目标为经济效益最优</li>
+<li>辅助服务市场：考虑备用容量约束、调峰容量约束等，目标为社会支付服务成本最小</li>
+</ul>
+</li>
+<li>按时间尺度：中长期合约市场、日前市场、日内市场和实时市场<ul>
+<li>日前市场<ul>
+<li>目标函数：运行成本最小或经济效益最大</li>
+<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束；传统机组启停时间约束</li>
+</ul>
+</li>
+<li>日内市场<ul>
+<li>目标函数：运行成本最小或经济效益最大</li>
+<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
+</ul>
+</li>
+<li>实时市场<ul>
+<li>目标函数：最小调整成本</li>
+<li>约束条件：系统功率平衡约束；出力调整量约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于多代理系统的虚拟电厂市场竞价问题"><a href="#基于多代理系统的虚拟电厂市场竞价问题" class="headerlink" title="基于多代理系统的虚拟电厂市场竞价问题"></a>基于多代理系统的虚拟电厂市场竞价问题</h3><ul>
+<li>电力市场代理</li>
+<li>传统电厂代理及虚拟电厂代理</li>
+<li>分布式能源代理</li>
+</ul>
+<h3 id="多市场模式下虚拟电厂市场竞价问题"><a href="#多市场模式下虚拟电厂市场竞价问题" class="headerlink" title="多市场模式下虚拟电厂市场竞价问题"></a>多市场模式下虚拟电厂市场竞价问题</h3><p>关键在于如何制定多市场模式下的参与规则、如何确定多市场之间的耦合关系，以及如何解决多市场模式下的多目标优化问题，是的虚拟电厂具有更好的适应性。  </p>
+<h2 id="能源互联网下虚拟电厂的发展与展望"><a href="#能源互联网下虚拟电厂的发展与展望" class="headerlink" title="能源互联网下虚拟电厂的发展与展望"></a>能源互联网下虚拟电厂的发展与展望</h2><h3 id="虚拟电厂在能源互联网中的作用与地位"><a href="#虚拟电厂在能源互联网中的作用与地位" class="headerlink" title="虚拟电厂在能源互联网中的作用与地位"></a>虚拟电厂在能源互联网中的作用与地位</h3><p>构建能源互联网的重点在于智能发电、智能配电、智能用电和用户侧服务。  </p>
+<p>在能源互联网中，虚拟电厂可以利用能源互联网的先进技术实现对资深的运行优化与能量管理。  </p>
+<p>虚拟电厂在能源互联网中的作用：  </p>
+<ul>
+<li>虚拟电厂是高效利用新能源发电的有效形式</li>
+<li>是推动能源互联网建设的重要环节</li>
+<li>对于完善中国电力市场体制具有重要的促进作用和指导意义</li>
+</ul>
+<h3 id="能源互联网下虚拟电厂的前进展望"><a href="#能源互联网下虚拟电厂的前进展望" class="headerlink" title="能源互联网下虚拟电厂的前进展望"></a>能源互联网下虚拟电厂的前进展望</h3><ul>
+<li>广域合作</li>
+<li>广域消纳</li>
+<li>广域优化</li>
+<li>广域通信</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+              <a href="/tags/%E8%83%BD%E6%BA%90/" rel="tag"><i class="fa fa-tag"></i> 能源</a>
+              <a href="/tags/VPP/" rel="tag"><i class="fa fa-tag"></i> VPP</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/10/Photography-Basis-Notes/" rel="prev" title="Photography Basis Notes">
+      <i class="fa fa-chevron-left"></i> Photography Basis Notes
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/26/VPP-Notes/" rel="next" title="《虚拟电厂——能源互联网的终极组态》笔记">
+      《虚拟电厂——能源互联网的终极组态》笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四部分-价值层-第3章-虚拟电厂"><span class="nav-number">1.</span> <span class="nav-text">第四部分 价值层  第3章 虚拟电厂</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟电厂概述"><span class="nav-number">1.1.</span> <span class="nav-text">虚拟电厂概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.1.2.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制方式"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行流程"><span class="nav-number">1.1.4.</span> <span class="nav-text">运行流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟电厂与微电网的区别"><span class="nav-number">1.1.5.</span> <span class="nav-text">虚拟电厂与微电网的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示范项目"><span class="nav-number">1.1.6.</span> <span class="nav-text">示范项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能源互联网下虚拟电厂的模型框架"><span class="nav-number">1.2.</span> <span class="nav-text">能源互联网下虚拟电厂的模型框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPP组成结构"><span class="nav-number">1.2.1.</span> <span class="nav-text">VPP组成结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VPP组成框架"><span class="nav-number">1.2.2.</span> <span class="nav-text">VPP组成框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VPP容量配置"><span class="nav-number">1.2.3.</span> <span class="nav-text">VPP容量配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VPP的组合选择与利益分配"><span class="nav-number">1.2.4.</span> <span class="nav-text">VPP的组合选择与利益分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能源互联网下虚拟电厂的运行与控制"><span class="nav-number">1.3.</span> <span class="nav-text">能源互联网下虚拟电厂的运行与控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPP的内部优化调度"><span class="nav-number">1.3.1.</span> <span class="nav-text">VPP的内部优化调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#含VPP的电网优化调度"><span class="nav-number">1.3.2.</span> <span class="nav-text">含VPP的电网优化调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不确定性处理"><span class="nav-number">1.3.3.</span> <span class="nav-text">不确定性处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能源互联网下虚拟电厂的多层优化调度"><span class="nav-number">1.3.4.</span> <span class="nav-text">能源互联网下虚拟电厂的多层优化调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于多代理系统的虚拟电厂运行与控制"><span class="nav-number">1.3.5.</span> <span class="nav-text">基于多代理系统的虚拟电厂运行与控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能源互联网下虚拟电厂的市场竞价"><span class="nav-number">1.4.</span> <span class="nav-text">能源互联网下虚拟电厂的市场竞价</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟电厂市场竞价问题"><span class="nav-number">1.4.1.</span> <span class="nav-text">虚拟电厂市场竞价问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于多代理系统的虚拟电厂市场竞价问题"><span class="nav-number">1.4.2.</span> <span class="nav-text">基于多代理系统的虚拟电厂市场竞价问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多市场模式下虚拟电厂市场竞价问题"><span class="nav-number">1.4.3.</span> <span class="nav-text">多市场模式下虚拟电厂市场竞价问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#能源互联网下虚拟电厂的发展与展望"><span class="nav-number">1.5.</span> <span class="nav-text">能源互联网下虚拟电厂的发展与展望</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟电厂在能源互联网中的作用与地位"><span class="nav-number">1.5.1.</span> <span class="nav-text">虚拟电厂在能源互联网中的作用与地位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能源互联网下虚拟电厂的前进展望"><span class="nav-number">1.5.2.</span> <span class="nav-text">能源互联网下虚拟电厂的前进展望</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="rtk"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">rtk</p>
+  <div class="site-description" itemprop="description">冷萃少冰不加糖</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/reitake" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;reitake" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/rrrrrtk" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;rrrrrtk" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rtk</span>
+</div><span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,03,07,10,00,00); //建站时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒 ~喵~";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'FY0k4GNyVIFSqBrIxPq7yN7t-gzGzoHsz',
+      appKey     : 'FqCFfTcVczkkBx9SyMlf7myz',
+      placeholder: "喵w ヾﾉ≧w≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

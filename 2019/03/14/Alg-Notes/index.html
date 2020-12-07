@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoeMgN9r3ZTJhZZgqjfb4tkZf3qRjujP-1gjzMb-x80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"reitake.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="算法学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm 笔记">
+<meta property="og:url" content="https://reitake.github.io/2019/03/14/Alg-Notes/index.html">
+<meta property="og:site_name" content="My Notes Blog">
+<meta property="og:description" content="算法学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-14T07:13:54.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:34:27.238Z">
+<meta property="article:author" content="rtk">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="Note">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://reitake.github.io/2019/03/14/Alg-Notes/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Algorithm 笔记 | My Notes Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Notes Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">生活不易 喵声叹气</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-gears"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-others">
+
+    <a href="/others/" rel="section"><i class="fa fa-fw fa-spinner"></i>不务正业</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://reitake.github.io/2019/03/14/Alg-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rtk">
+      <meta itemprop="description" content="冷萃少冰不加糖">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Notes Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Algorithm 笔记
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-14 15:13:54" itemprop="dateCreated datePublished" datetime="2019-03-14T15:13:54+08:00">2019-03-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-07 18:34:27" itemprop="dateModified" datetime="2020-12-07T18:34:27+08:00">2020-12-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/03/14/Alg-Notes/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/03/14/Alg-Notes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center> <font color="#bababa">
+
+<p><strong><em>算法学习笔记</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="有序数组的平方"><a href="#有序数组的平方" class="headerlink" title="有序数组的平方"></a>有序数组的平方</h2><p><a href="https://leetcode-cn.com/problems/squares-of-a-sorted-array/" target="_blank" rel="noopener">题目</a>:  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">给定一个按非递减顺序排序的整数数组 A，返回每个数字的平方组成的新数组，要求也按非递减顺序排序。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>：</span><br><span class="line">输入：[<span class="number">-4</span>,<span class="number">-1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">10</span>]</span><br><span class="line">输出：[<span class="number">0</span>,<span class="number">1</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">100</span>]</span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>：</span><br><span class="line">输入：[<span class="number">-7</span>,<span class="number">-3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">11</span>]</span><br><span class="line">输出：[<span class="number">4</span>,<span class="number">9</span>,<span class="number">9</span>,<span class="number">49</span>,<span class="number">121</span>]</span><br></pre></td></tr></table></figure>
+
+<p>思路：双指针。从前、后开始算平方，比大小。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">sortedSquares</span><span class="params">(A []<span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">        result := <span class="built_in">make</span>([]<span class="keyword">int</span>, <span class="built_in">len</span>(A))</span><br><span class="line">    top := <span class="number">0</span></span><br><span class="line">    end := <span class="built_in">len</span>(A) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := <span class="built_in">len</span>(A) - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i-- &#123;</span><br><span class="line">        topVal := A[top] * A[top]</span><br><span class="line">        endVal := A[end] * A[end]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> topVal &gt; endVal &#123;</span><br><span class="line">            result[i] = topVal</span><br><span class="line">            top++</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            result[i] = endVal</span><br><span class="line">            end--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="按奇、偶顺序排序数组"><a href="#按奇、偶顺序排序数组" class="headerlink" title="按奇、偶顺序排序数组"></a>按奇、偶顺序排序数组</h2><p><a href="https://leetcode-cn.com/problems/sort-array-by-parity/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">给定一个非负整数数组 A，返回一个由 A 的所有偶数元素组成的数组，后面跟 A 的所有奇数元素。</span><br><span class="line"></span><br><span class="line">你可以返回满足此条件的任何数组作为答案。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line"></span><br><span class="line">输入：[<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>]</span><br><span class="line">输出：[<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出 [<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]，[<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">3</span>] 和 [<span class="number">4</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>] 也会被接受。</span><br></pre></td></tr></table></figure>
+<p>思路：构建两个slice，分别append奇数和偶数，然后把两个slice拼起来。</p>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><p><a href="https://leetcode-cn.com/problems/fibonacci-number/" target="_blank" rel="noopener">题目</a>:  </p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">斐波那契数，通常用 F(n) 表示，形成的序列称为斐波那契数列。该数列由 <span class="number">0</span> 和 <span class="number">1</span> 开始，后面的每一项数字都是前面两项数字的和。也就是：</span><br><span class="line"></span><br><span class="line">F(<span class="number">0</span>) = <span class="number">0</span>,   F(<span class="number">1</span>) = <span class="number">1</span></span><br><span class="line">F(N) = F(N - <span class="number">1</span>) + F(N - <span class="number">2</span>), 其中 N &gt; <span class="number">1.</span></span><br><span class="line">给定 N，计算 F(N)。</span><br></pre></td></tr></table></figure>
+<p>思路：因为提前给了N，所以可以直接构建长度为N的slice来计算数列，而不是无脑append，花时间。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">S := <span class="built_in">make</span>([]<span class="keyword">int</span>, N)</span><br></pre></td></tr></table></figure>
+<h2 id="数组拆分：求min-ai-bi-和的最大值"><a href="#数组拆分：求min-ai-bi-和的最大值" class="headerlink" title="数组拆分：求min(ai, bi)和的最大值"></a>数组拆分：求min(ai, bi)和的最大值</h2><p><a href="">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">给定长度为 <span class="number">2</span>n 的数组, 你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), ..., (an, bn) ，使得从<span class="number">1</span> 到 n 的 min(ai, bi) 总和最大。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line"></span><br><span class="line">输入: [<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">输出: <span class="number">4</span></span><br><span class="line">解释: n 等于 <span class="number">2</span>, 最大总和为 <span class="number">4</span> = min(<span class="number">1</span>, <span class="number">2</span>) + min(<span class="number">3</span>, <span class="number">4</span>).</span><br><span class="line">提示:</span><br><span class="line"></span><br><span class="line">n 是正整数,范围在 [<span class="number">1</span>, <span class="number">10000</span>].</span><br><span class="line">数组中的元素范围在 [<span class="number">-10000</span>, <span class="number">10000</span>].</span><br></pre></td></tr></table></figure>
+<p>思路：先排序，再求min的和。因为给了n的个数范围，所以可以构建2n+1容量的slice来桶排序：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">arrayPairSum</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> arr [<span class="number">20001</span>]<span class="keyword">int</span></span><br><span class="line">    <span class="keyword">for</span> _, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        arr[v+<span class="number">10000</span>]++</span><br><span class="line">    &#125;</span><br><span class="line">    sum, flag := <span class="number">0</span>, <span class="literal">true</span></span><br><span class="line">    <span class="keyword">for</span> i, v := <span class="keyword">range</span> arr &#123;</span><br><span class="line">        <span class="keyword">for</span> v &gt; <span class="number">0</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> flag &#123;</span><br><span class="line">                sum += i - <span class="number">10000</span></span><br><span class="line">            &#125;</span><br><span class="line">            v--</span><br><span class="line">            flag = !flag</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="杨辉三角形1：返回前N行"><a href="#杨辉三角形1：返回前N行" class="headerlink" title="杨辉三角形1：返回前N行"></a>杨辉三角形1：返回前N行</h2><p><a href="https://leetcode-cn.com/problems/pascals-triangle" target="_blank" rel="noopener">题目</a>  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">generate</span><span class="params">(numRows <span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">    A := <span class="built_in">make</span>([][]<span class="keyword">int</span>, numRows)</span><br><span class="line">    <span class="keyword">for</span> i := <span class="keyword">range</span> A &#123;</span><br><span class="line">        A[i] = <span class="built_in">make</span>([]<span class="keyword">int</span>, i+<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> j, _ := <span class="keyword">range</span> A[i] &#123;</span><br><span class="line">            <span class="keyword">switch</span> j &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                A[i][j] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">case</span> i:</span><br><span class="line">                A[i][j] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                A[i][j] = A[i<span class="number">-1</span>][j<span class="number">-1</span>] + A[i<span class="number">-1</span>][j]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> A</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="杨辉三角形2：-返回第N行"><a href="#杨辉三角形2：-返回第N行" class="headerlink" title="杨辉三角形2： 返回第N行"></a>杨辉三角形2： 返回第N行</h2><p><a href="https://leetcode-cn.com/problems/pascals-triangle-ii/" target="_blank" rel="noopener">题目</a>  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getRow</span><span class="params">(rowIndex <span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">    i := <span class="number">0</span></span><br><span class="line">    ret := <span class="built_in">make</span>([]<span class="keyword">int</span>,rowIndex+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span> i &lt;= rowIndex &#123;</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span> &#123;</span><br><span class="line">            ret[<span class="number">0</span>] = <span class="number">1</span></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> i == <span class="number">1</span> &#123;</span><br><span class="line">            ret[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            tmp := <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> index,v := <span class="keyword">range</span> ret &#123;</span><br><span class="line">                <span class="keyword">if</span> index &gt; <span class="number">0</span> &#123;</span><br><span class="line">                    tmp,ret[index] = ret[index],ret[index] + tmp</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    tmp = v</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        i ++</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="求众数：出现次数大于n-2的元素"><a href="#求众数：出现次数大于n-2的元素" class="headerlink" title="求众数：出现次数大于n/2的元素"></a>求众数：出现次数大于n/2的元素</h2><p><a href="https://leetcode-cn.com/problems/majority-element/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/<span class="number">2</span> ⌋ 的元素。</span><br><span class="line"></span><br><span class="line">你可以假设数组是非空的，并且给定的数组总是存在众数。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line">输入: [<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">输出: <span class="number">3</span></span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>:</span><br><span class="line">输入: [<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>]</span><br><span class="line">输出: <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>思路：从第一个数开始count=1，遇到相同的就+1，不同的就-1，减到0时候就重新换个数开始计数：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">majorityElement</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    count := <span class="number">1</span></span><br><span class="line">    res := nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">1</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> nums[i] == res &#123;</span><br><span class="line">            count++</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            count--</span><br><span class="line">            <span class="keyword">if</span> count == <span class="number">0</span> &#123;</span><br><span class="line">                res = nums[i]</span><br><span class="line">                count = <span class="number">1</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="重塑矩阵"><a href="#重塑矩阵" class="headerlink" title="重塑矩阵"></a>重塑矩阵</h2><p><a href="https://leetcode-cn.com/problems/reshape-the-matrix/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">在MATLAB中，有一个非常有用的函数 reshape，它可以将一个矩阵重塑为另一个大小不同的新矩阵，但保留其原始数据。</span><br><span class="line"></span><br><span class="line">给出一个由二维数组表示的矩阵，以及两个正整数r和c，分别表示想要的重构的矩阵的行数和列数。</span><br><span class="line"></span><br><span class="line">重构后的矩阵需要将原始矩阵的所有元素以相同的行遍历顺序填充。</span><br><span class="line"></span><br><span class="line">如果具有给定参数的reshape操作是可行且合理的，则输出新的重塑矩阵；否则，输出原始矩阵。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line">输入: </span><br><span class="line">nums = </span><br><span class="line">[[<span class="number">1</span>,<span class="number">2</span>],</span><br><span class="line"> [<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">r = <span class="number">1</span>, c = <span class="number">4</span></span><br><span class="line">输出: </span><br><span class="line">[[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">解释:</span><br><span class="line">行遍历nums的结果是 [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]。新的矩阵是 <span class="number">1</span> * <span class="number">4</span> 矩阵, 用之前的元素值一行一行填充新矩阵。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>:</span><br><span class="line">输入: </span><br><span class="line">nums = </span><br><span class="line">[[<span class="number">1</span>,<span class="number">2</span>],</span><br><span class="line"> [<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">r = <span class="number">2</span>, c = <span class="number">4</span></span><br><span class="line">输出: </span><br><span class="line">[[<span class="number">1</span>,<span class="number">2</span>],</span><br><span class="line"> [<span class="number">3</span>,<span class="number">4</span>]]</span><br><span class="line">解释:</span><br><span class="line">没有办法将 <span class="number">2</span> * <span class="number">2</span> 矩阵转化为 <span class="number">2</span> * <span class="number">4</span> 矩阵。 所以输出原矩阵。</span><br><span class="line">注意：</span><br><span class="line"></span><br><span class="line">给定矩阵的宽和高范围在 [<span class="number">1</span>, <span class="number">100</span>]。</span><br><span class="line">给定的 r 和 c 都是正数。</span><br></pre></td></tr></table></figure>
+<p>思路：用<code>A[n/c][n%c]</code>来构建矩阵：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">matrixReshape</span><span class="params">(nums [][]<span class="keyword">int</span>, r <span class="keyword">int</span>, c <span class="keyword">int</span>)</span> [][]<span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums)*<span class="built_in">len</span>(nums[<span class="number">0</span>]) != r * c&#123;</span><br><span class="line">        <span class="keyword">return</span> nums</span><br><span class="line">    &#125;</span><br><span class="line">    A := <span class="built_in">make</span>([][]<span class="keyword">int</span>,r)</span><br><span class="line">    <span class="keyword">for</span> rownum:= <span class="keyword">range</span> A&#123;</span><br><span class="line">        A[rownum]=<span class="built_in">make</span>([]<span class="keyword">int</span>,c)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> n <span class="keyword">int</span></span><br><span class="line">    <span class="keyword">for</span> rowNum := <span class="keyword">range</span> nums&#123;</span><br><span class="line">        <span class="keyword">for</span> i,_ := <span class="keyword">range</span> nums[rowNum]&#123;</span><br><span class="line">            n= rowNum*<span class="built_in">len</span>(nums[<span class="number">0</span>])+i</span><br><span class="line">            A[n/c][n%c]=nums[rowNum][i]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span> A</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h2><p><a href="https://leetcode-cn.com/problems/remove-element/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。</span><br><span class="line"></span><br><span class="line">不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(<span class="number">1</span>) 额外空间的条件下完成。</span><br><span class="line"></span><br><span class="line">元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</span><br><span class="line"></span><br><span class="line">示例见上方超链接</span><br></pre></td></tr></table></figure>
+<p>思路：双指针。发现val时，交换跟末尾的数的值。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">removeElement</span><span class="params">(nums []<span class="keyword">int</span>, val <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">var</span> i=<span class="number">0</span></span><br><span class="line">    <span class="keyword">var</span> n= <span class="built_in">len</span>(nums)</span><br><span class="line">    <span class="keyword">for</span> i&lt;n&#123;</span><br><span class="line">        <span class="keyword">if</span> nums[i]==val&#123;</span><br><span class="line">            nums[i]=nums[n<span class="number">-1</span>]</span><br><span class="line">            n--</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            i++</span><br><span class="line">             &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> n</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="移动零到数组末尾"><a href="#移动零到数组末尾" class="headerlink" title="移动零到数组末尾"></a>移动零到数组末尾</h2><p><a href="https://leetcode-cn.com/problems/move-zeroes/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">给定一个数组 nums，编写一个函数将所有 <span class="number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序。</span><br><span class="line">示例:</span><br><span class="line">输入: [<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">3</span>,<span class="number">12</span>]</span><br><span class="line">输出: [<span class="number">1</span>,<span class="number">3</span>,<span class="number">12</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">必须在原数组上操作，不能拷贝额外的数组。</span><br><span class="line">尽量减少操作次数。</span><br></pre></td></tr></table></figure>
+<p>思路：双指针。1个指针用来遍历，1个指针用来填非零值，然后把剩下的值改0。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">moveZeroes</span><span class="params">(nums []<span class="keyword">int</span>)</span></span>  &#123;</span><br><span class="line">    dist := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, num := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        <span class="keyword">if</span> num != <span class="number">0</span> &#123;</span><br><span class="line">            nums[dist] = num</span><br><span class="line">            dist++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i := dist; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">        nums[i] = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="买卖股票的最佳时机"><a href="#买卖股票的最佳时机" class="headerlink" title="买卖股票的最佳时机"></a>买卖股票的最佳时机</h2><p><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。</span><br><span class="line"></span><br><span class="line">设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</span><br><span class="line"></span><br><span class="line">注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line">输入: [<span class="number">7</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">4</span>]</span><br><span class="line">输出: <span class="number">7</span></span><br><span class="line">解释: 在第 <span class="number">2</span> 天（股票价格 = <span class="number">1</span>）的时候买入，在第 <span class="number">3</span> 天（股票价格 = <span class="number">5</span>）的时候卖出, 这笔交易所能获得利润 = <span class="number">5</span><span class="number">-1</span> = <span class="number">4</span> 。</span><br><span class="line">     随后，在第 <span class="number">4</span> 天（股票价格 = <span class="number">3</span>）的时候买入，在第 <span class="number">5</span> 天（股票价格 = <span class="number">6</span>）的时候卖出, 这笔交易所能获得利润 = <span class="number">6</span><span class="number">-3</span> = <span class="number">3</span> 。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>:</span><br><span class="line">输入: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">输出: <span class="number">4</span></span><br><span class="line">解释: 在第 <span class="number">1</span> 天（股票价格 = <span class="number">1</span>）的时候买入，在第 <span class="number">5</span> 天 （股票价格 = <span class="number">5</span>）的时候卖出, 这笔交易所能获得利润 = <span class="number">5</span><span class="number">-1</span> = <span class="number">4</span> 。</span><br><span class="line">     注意你不能在第 <span class="number">1</span> 天和第 <span class="number">2</span> 天接连购买股票，之后再将它们卖出。</span><br><span class="line">     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">3</span>:</span><br><span class="line">输入: [<span class="number">7</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出: <span class="number">0</span></span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 <span class="number">0</span>。</span><br></pre></td></tr></table></figure>
+<p>思路：最简单粗暴的方法是遍历，后一位的值大于前一位的值时候，利润就加差值累计。<br>还可以寻找峰、谷，然后求峰谷的差的和：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxProfit</span><span class="params">(prices []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(prices)==<span class="number">0</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    max, min, res, i := prices[<span class="number">0</span>], prices[<span class="number">0</span>], <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i &lt; <span class="built_in">len</span>(prices)<span class="number">-1</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i &lt; <span class="built_in">len</span>(prices)<span class="number">-1</span> &amp;&amp; prices[i] &gt;= prices[i+<span class="number">1</span>] &#123;</span><br><span class="line">            i++</span><br><span class="line">        &#125;</span><br><span class="line">        min = prices[i]</span><br><span class="line">        <span class="keyword">for</span> i &lt; <span class="built_in">len</span>(prices)<span class="number">-1</span> &amp;&amp; prices[i] &lt;= prices[i+<span class="number">1</span>] &#123;</span><br><span class="line">            i++</span><br><span class="line">        &#125;</span><br><span class="line">        max = prices[i]</span><br><span class="line">        res += max - min</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="找数组中消失的数字"><a href="#找数组中消失的数字" class="headerlink" title="找数组中消失的数字"></a>找数组中消失的数字</h2><p><a href="https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/" target="_blank" rel="noopener">题目</a>:  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">给定一个范围在  <span class="number">1</span> ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。</span><br><span class="line"></span><br><span class="line">找到所有在 [<span class="number">1</span>, n] 范围之间没有出现在数组中的数字。</span><br><span class="line"></span><br><span class="line">您能在不使用额外空间且时间复杂度为O(n)的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line">输入:</span><br><span class="line">[<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出:</span><br><span class="line">[<span class="number">5</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<p>思路：将所有正数为置为相反数。那么，出现正数的位置即为消失的数字。比如，[4,3,2,7,8,2,3,1]  </p>
+<p>重置后将为[-4,-3,-2,-7,8,2,-3,-1]  </p>
+<p>[8,2] 分别对应的index为[5,6]。  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findDisappearedNumbers</span><span class="params">(nums []<span class="keyword">int</span>)</span> []<span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">        nums[Abs(nums[i])<span class="number">-1</span>] = -Abs(nums[Abs(nums[i])<span class="number">-1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    res :=[]<span class="keyword">int</span>&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i:=<span class="number">0</span>;i&lt;<span class="built_in">len</span>(nums);i++&#123;</span><br><span class="line">        <span class="keyword">if</span> nums[i]&gt;<span class="number">0</span>&#123;</span><br><span class="line">            res=<span class="built_in">append</span>(res,i+<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Abs</span><span class="params">(x <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> x &lt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> -x</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="最大自序和"><a href="#最大自序和" class="headerlink" title="最大自序和"></a>最大自序和</h2><p><a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line">输入: [<span class="number">-2</span>,<span class="number">1</span>,<span class="number">-3</span>,<span class="number">4</span>,<span class="number">-1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">-5</span>,<span class="number">4</span>],</span><br><span class="line">输出: <span class="number">6</span></span><br><span class="line">解释: 连续子数组 [<span class="number">4</span>,<span class="number">-1</span>,<span class="number">2</span>,<span class="number">1</span>] 的和最大，为 <span class="number">6</span>。</span><br></pre></td></tr></table></figure>
+<p>思路：单指针遍历求和，如果当前的和小于等于0，就直接从下一个数开始重新求和。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxSubArray</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    maxSubSum, sum := nums[<span class="number">0</span>], <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(nums); i++ &#123;</span><br><span class="line">        <span class="keyword">if</span> sum &gt; <span class="number">0</span> &#123;</span><br><span class="line">            sum += nums[i]</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            sum = nums[i]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> sum &gt; maxSubSum &#123;</span><br><span class="line">            maxSubSum = sum</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> maxSubSum</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="合并两个有序数组"><a href="#合并两个有序数组" class="headerlink" title="合并两个有序数组"></a>合并两个有序数组</h2><p><a href="https://leetcode-cn.com/problems/merge-sorted-array/" target="_blank" rel="noopener">题目</a>：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">初始化 nums1 和 nums2 的元素数量分别为 m 和 n。</span><br><span class="line">你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。</span><br><span class="line">示例:</span><br><span class="line">输入:</span><br><span class="line">nums1 = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>], m = <span class="number">3</span></span><br><span class="line">nums2 = [<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>],       n = <span class="number">3</span></span><br><span class="line">输出: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<p>思路：短数组往大数组里填，从大数组屁股开始填，谁大先填谁。<br>如果先把nums1填完了，num2还剩一些没填完，要把这部分剩下的转移到nums1中：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">merge</span><span class="params">(nums1 []<span class="keyword">int</span>, m <span class="keyword">int</span>, nums2 []<span class="keyword">int</span>, n <span class="keyword">int</span>)</span></span>  &#123;</span><br><span class="line">    <span class="keyword">for</span> m &gt; <span class="number">0</span> &amp;&amp; n &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> nums1[m<span class="number">-1</span>] &gt; nums2[n<span class="number">-1</span>] &#123;</span><br><span class="line">            nums1[m+n<span class="number">-1</span>] = nums1[m<span class="number">-1</span>]</span><br><span class="line">            m--</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            nums1[m+n<span class="number">-1</span>] = nums2[n<span class="number">-1</span>]</span><br><span class="line">            n--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> n &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> ; n &gt; <span class="number">0</span>; n-- &#123;</span><br><span class="line">            nums1[n<span class="number">-1</span>] = nums2[n<span class="number">-1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="只出现一次的数字"><a href="#只出现一次的数字" class="headerlink" title="只出现一次的数字"></a>只出现一次的数字</h2><p><a href="https://leetcode-cn.com/problems/single-number/" target="_blank" rel="noopener">题目</a>  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</span><br><span class="line"></span><br><span class="line">说明：</span><br><span class="line">你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line">输入: [<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line">输出: <span class="number">1</span></span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>:</span><br><span class="line">输入: [<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">输出: <span class="number">4</span></span><br></pre></td></tr></table></figure>
+
+<p>思路：异或，且0与任何数异或等于任何数。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">singleNumber</span><span class="params">(nums []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    res := <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> _, v := <span class="keyword">range</span> nums &#123;</span><br><span class="line">        res ^= v</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><h2 id="删除链表中的节点"><a href="#删除链表中的节点" class="headerlink" title="删除链表中的节点"></a>删除链表中的节点</h2><p><a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener">题目</a>  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。</span><br><span class="line"></span><br><span class="line">现有一个链表 -- head = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">9</span>]，它可以表示为:</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line">输入: head = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">9</span>], node = <span class="number">5</span></span><br><span class="line">输出: [<span class="number">4</span>,<span class="number">1</span>,<span class="number">9</span>]</span><br><span class="line">解释: 给定你链表中值为 <span class="number">5</span> 的第二个节点，那么在调用了你的函数之后，该链表应变为 <span class="number">4</span> -&gt; <span class="number">1</span> -&gt; <span class="number">9.</span></span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>:</span><br><span class="line">输入: head = [<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">9</span>], node = <span class="number">1</span></span><br><span class="line">输出: [<span class="number">4</span>,<span class="number">5</span>,<span class="number">9</span>]</span><br><span class="line">解释: 给定你链表中值为 <span class="number">1</span> 的第三个节点，那么在调用了你的函数之后，该链表应变为 <span class="number">4</span> -&gt; <span class="number">5</span> -&gt; <span class="number">9.</span></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">链表至少包含两个节点。</span><br><span class="line">链表中所有节点的值都是唯一的。</span><br><span class="line">给定的节点为非末尾节点并且一定是链表中的一个有效节点。</span><br><span class="line">不要从你的函数中返回任何结果。</span><br></pre></td></tr></table></figure>
+
+<p>思路：最简单的方法是把上衣节点的next指向下一节点，来跳过要删除的节点。  </p>
+<p>但是节点结构体中不包含上一节点的地址，所以只能把下一节点在val和next的拷贝到要删除的节点中：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * type ListNode struct &#123;</span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"> *     Next *ListNode</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">deleteNode</span><span class="params">(node *ListNode)</span></span> &#123;</span><br><span class="line">    node.Val = node.Next.Val</span><br><span class="line">    node.Next = node.Next.Next</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二叉树的最大深度"><a href="#二叉树的最大深度" class="headerlink" title="二叉树的最大深度"></a>二叉树的最大深度</h2><p><a href="https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener">题目</a>  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉树，找出其最大深度。</span><br><span class="line"></span><br><span class="line">二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。</span><br><span class="line"></span><br><span class="line">说明: 叶子节点是指没有子节点的节点。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">给定二叉树 [<span class="number">3</span>,<span class="number">9</span>,<span class="number">20</span>,null,null,<span class="number">15</span>,<span class="number">7</span>]，</span><br><span class="line"></span><br><span class="line">    <span class="number">3</span></span><br><span class="line">   / \</span><br><span class="line">  <span class="number">9</span>  <span class="number">20</span></span><br><span class="line">    /  \</span><br><span class="line">   <span class="number">15</span>   <span class="number">7</span></span><br><span class="line">返回它的最大深度 <span class="number">3</span> 。</span><br></pre></td></tr></table></figure>
+
+<p>思路：递归求解。或用栈迭代（？？？）  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * type TreeNode struct &#123;</span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"> *     Left *TreeNode</span></span><br><span class="line"><span class="comment"> *     Right *TreeNode</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">maxDepth</span><span class="params">(root *TreeNode)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    <span class="keyword">if</span> root == <span class="literal">nil</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        left := maxDepth(root.Left)</span><br><span class="line">        right := maxDepth(root.Right)</span><br><span class="line">        <span class="keyword">if</span> left &gt; right &#123;</span><br><span class="line">            <span class="keyword">return</span> left + <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> right + <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反转链表"><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h2><p><a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener">题目</a>  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">反转一个单链表。</span><br><span class="line"></span><br><span class="line">示例:</span><br><span class="line">输入: <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;NULL</span><br><span class="line">输出: <span class="number">5</span>-&gt;<span class="number">4</span>-&gt;<span class="number">3</span>-&gt;<span class="number">2</span>-&gt;<span class="number">1</span>-&gt;NULL</span><br><span class="line">进阶:</span><br><span class="line">你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</span><br></pre></td></tr></table></figure>
+
+<p>思路：迭代，在遍历列表时，将当前节点的 next 指针改为指向前一个元素。由于节点没有引用其上一个节点，因此必须事先存储其前一个元素。在更改引用之前，还需要另一个指针来存储下一个节点。不要忘记在最后返回新的头引用：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * type ListNode struct &#123;</span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"> *     Next *ListNode</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverseList</span><span class="params">(head *ListNode)</span> *<span class="title">ListNode</span></span> &#123;</span><br><span class="line">    curr := head</span><br><span class="line">    <span class="keyword">var</span> prev *ListNode = <span class="literal">nil</span></span><br><span class="line">    <span class="keyword">for</span> curr != <span class="literal">nil</span> &#123;</span><br><span class="line">        nextTemp := curr.Next</span><br><span class="line">        curr.Next = prev</span><br><span class="line">        prev = curr</span><br><span class="line">        curr = nextTemp</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prev</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二叉搜索树的最近公共祖先"><a href="#二叉搜索树的最近公共祖先" class="headerlink" title="二叉搜索树的最近公共祖先"></a>二叉搜索树的最近公共祖先</h2><p><a href="">题目</a></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。</span><br><span class="line"></span><br><span class="line">百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</span><br><span class="line"></span><br><span class="line">例如，给定如下二叉搜索树:  root = [<span class="number">6</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,null,null,<span class="number">3</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">示例 <span class="number">1</span>:</span><br><span class="line">输入: root = [<span class="number">6</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,null,null,<span class="number">3</span>,<span class="number">5</span>], p = <span class="number">2</span>, q = <span class="number">8</span></span><br><span class="line">输出: <span class="number">6</span> </span><br><span class="line">解释: 节点 <span class="number">2</span> 和节点 <span class="number">8</span> 的最近公共祖先是 <span class="number">6</span>。</span><br><span class="line"></span><br><span class="line">示例 <span class="number">2</span>:</span><br><span class="line">输入: root = [<span class="number">6</span>,<span class="number">2</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">4</span>,<span class="number">7</span>,<span class="number">9</span>,null,null,<span class="number">3</span>,<span class="number">5</span>], p = <span class="number">2</span>, q = <span class="number">4</span></span><br><span class="line">输出: <span class="number">2</span></span><br><span class="line">解释: 节点 <span class="number">2</span> 和节点 <span class="number">4</span> 的最近公共祖先是 <span class="number">2</span>, 因为根据定义最近公共祖先节点可以为节点本身。</span><br><span class="line"></span><br><span class="line">说明:</span><br><span class="line">所有节点的值都是唯一的。</span><br><span class="line">p、q 为不同节点且均存在于给定的二叉搜索树中。</span><br></pre></td></tr></table></figure>
+
+<p>思路：利用二叉搜索树的特性。一共就3种情况：</p>
+<p>要么2个值都比根节点小，那都在root的左侧；要么2个值都比跟节点大，那都在root的右侧；或者在两侧，那最近祖先就是root。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for TreeNode.</span></span><br><span class="line"><span class="comment"> * type TreeNode struct &#123;</span></span><br><span class="line"><span class="comment"> *     Val int</span></span><br><span class="line"><span class="comment"> *     Left *ListNode</span></span><br><span class="line"><span class="comment"> *     Right *ListNode</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">lowestCommonAncestor</span><span class="params">(root, p, q *TreeNode)</span> *<span class="title">TreeNode</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> p.Val &lt; root.Val &amp;&amp; q.Val &lt; root.Val &#123;</span><br><span class="line">            root = root.Left</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> p.Val &gt; root.Val &amp;&amp; q.Val &gt; root.Val &#123;</span><br><span class="line">            root = root.Right</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> root</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<hr>
+<p><em><code>to be continued...</code></em></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+              <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+              <a href="/tags/Note/" rel="tag"><i class="fa fa-tag"></i> Note</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/11/Go-Common-Mistakes/" rel="prev" title="Go 中常见错误">
+      <i class="fa fa-chevron-left"></i> Go 中常见错误
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/19/Game-Design-Notes/" rel="next" title="Game Design Notes">
+      Game Design Notes <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组"><span class="nav-number">1.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#有序数组的平方"><span class="nav-number">1.1.</span> <span class="nav-text">有序数组的平方</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按奇、偶顺序排序数组"><span class="nav-number">1.2.</span> <span class="nav-text">按奇、偶顺序排序数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#斐波那契数列"><span class="nav-number">1.3.</span> <span class="nav-text">斐波那契数列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组拆分：求min-ai-bi-和的最大值"><span class="nav-number">1.4.</span> <span class="nav-text">数组拆分：求min(ai, bi)和的最大值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杨辉三角形1：返回前N行"><span class="nav-number">1.5.</span> <span class="nav-text">杨辉三角形1：返回前N行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杨辉三角形2：-返回第N行"><span class="nav-number">1.6.</span> <span class="nav-text">杨辉三角形2： 返回第N行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求众数：出现次数大于n-2的元素"><span class="nav-number">1.7.</span> <span class="nav-text">求众数：出现次数大于n&#x2F;2的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重塑矩阵"><span class="nav-number">1.8.</span> <span class="nav-text">重塑矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移除元素"><span class="nav-number">1.9.</span> <span class="nav-text">移除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动零到数组末尾"><span class="nav-number">1.10.</span> <span class="nav-text">移动零到数组末尾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#买卖股票的最佳时机"><span class="nav-number">1.11.</span> <span class="nav-text">买卖股票的最佳时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找数组中消失的数字"><span class="nav-number">1.12.</span> <span class="nav-text">找数组中消失的数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最大自序和"><span class="nav-number">1.13.</span> <span class="nav-text">最大自序和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合并两个有序数组"><span class="nav-number">1.14.</span> <span class="nav-text">合并两个有序数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#只出现一次的数字"><span class="nav-number">1.15.</span> <span class="nav-text">只出现一次的数字</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表"><span class="nav-number">2.</span> <span class="nav-text">链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#删除链表中的节点"><span class="nav-number">2.1.</span> <span class="nav-text">删除链表中的节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的最大深度"><span class="nav-number">2.2.</span> <span class="nav-text">二叉树的最大深度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反转链表"><span class="nav-number">2.3.</span> <span class="nav-text">反转链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉搜索树的最近公共祖先"><span class="nav-number">2.4.</span> <span class="nav-text">二叉搜索树的最近公共祖先</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="rtk"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">rtk</p>
+  <div class="site-description" itemprop="description">冷萃少冰不加糖</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/reitake" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;reitake" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/rrrrrtk" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;rrrrrtk" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rtk</span>
+</div><span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,03,07,10,00,00); //建站时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒 ~喵~";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'FY0k4GNyVIFSqBrIxPq7yN7t-gzGzoHsz',
+      appKey     : 'FqCFfTcVczkkBx9SyMlf7myz',
+      placeholder: "喵w ヾﾉ≧w≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

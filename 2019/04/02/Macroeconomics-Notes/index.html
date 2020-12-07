@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoeMgN9r3ZTJhZZgqjfb4tkZf3qRjujP-1gjzMb-x80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"reitake.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="曼昆笔下的经典">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《经济学原理》笔记（宏观经济学）">
+<meta property="og:url" content="https://reitake.github.io/2019/04/02/Macroeconomics-Notes/index.html">
+<meta property="og:site_name" content="My Notes Blog">
+<meta property="og:description" content="曼昆笔下的经典">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-02T00:54:55.000Z">
+<meta property="article:modified_time" content="2020-12-07T10:34:27.262Z">
+<meta property="article:author" content="rtk">
+<meta property="article:tag" content="经济学">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://reitake.github.io/2019/04/02/Macroeconomics-Notes/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>《经济学原理》笔记（宏观经济学） | My Notes Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Notes Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">生活不易 喵声叹气</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-gears"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-others">
+
+    <a href="/others/" rel="section"><i class="fa fa-fw fa-spinner"></i>不务正业</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://reitake.github.io/2019/04/02/Macroeconomics-Notes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rtk">
+      <meta itemprop="description" content="冷萃少冰不加糖">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Notes Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          《经济学原理》笔记（宏观经济学）
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-04-02 08:54:55" itemprop="dateCreated datePublished" datetime="2019-04-02T08:54:55+08:00">2019-04-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-07 18:34:27" itemprop="dateModified" datetime="2020-12-07T18:34:27+08:00">2020-12-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/04/02/Macroeconomics-Notes/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/04/02/Macroeconomics-Notes/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center> <font color="#bababa">
+
+<p><strong><em>曼昆笔下的经典</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li>作者：尼可拉斯·格里高利·曼昆（N. Gregory Mankiw）  </li>
+<li>出版社：北京大学出版社 </li>
+<li><a href="/2019/04/01/Microeconomics-Notes/">微经笔记</a></li>
+</ul>
+<hr>
+<p><strong>宏观经济学部分</strong></p>
+<h1 id="第八篇-宏观经济学的数据"><a href="#第八篇-宏观经济学的数据" class="headerlink" title="第八篇 宏观经济学的数据"></a>第八篇 宏观经济学的数据</h1><h2 id="第23章-一国收入的衡量"><a href="#第23章-一国收入的衡量" class="headerlink" title="第23章 一国收入的衡量"></a>第23章 一国收入的衡量</h2><p>1.国内生产总值（GDP），衡量一国的总收入，又衡量总支出。对一个整体经济而言，收入比定等于支出</p>
+<ul>
+<li>GDP：在某一既定时期一个国家内生产的所有最终物品与劳务市场价值（gross domestic product）</li>
+<li>GDP包括在经济中生产并在市场上合法出售的所有东西，不包括非法生产和销售的东西，不包括在家庭内生产和消费从而没有进入市场的东西</li>
+<li>GDP只包括最终物品的价值</li>
+<li>GDP既包括有形的物品，又包括无形的劳务</li>
+<li>GDP包括现期生产的物品与劳务，不包括涉及过去生产的东西的交易</li>
+<li>GDP衡量的生产价值局限于一个国家的地理范围内</li>
+<li>GDP衡量某一特定时期内发生的生产的价值。季度GDP收入乘以4（有季度调整）</li>
+</ul>
+<p>2.其他收入衡量指标</p>
+<ul>
+<li>国民生产总值（GNP）：一国永久居民（国民）所赚到的总收入，包括本国公民在国外赚到的收入，不包括外国人在本国赚到的收入</li>
+<li>国民生产净值（NNP）：一国居民的总收入（GNP）减折旧</li>
+<li>国民收入：一国居民在物品雨劳务生产中赚到的总收入，不包括简介的企业税，但包括企业补贴</li>
+<li>个人收入：家庭和非公司制企业得到的收入，不包括留存收益</li>
+<li>个人可支配收入：家庭和非公司制企业中完成它们对政府的义务后剩下的收入</li>
+</ul>
+<p>3.GDP（Y），消费（C），投资（I），政府购买（G），净出口（NX）</p>
+<ul>
+<li>恒等式：Y＝C＋I＋G＋NX</li>
+<li>消费：家庭除购买新住房之外用于物品与劳务的支出</li>
+<li>投资：用于资本设备、存货和建筑物的支出，包括家庭用于购买新住房的支出</li>
+<li>政府购买：地方、州和联邦政府用于物品与劳务的支出</li>
+<li>净出口：外国人对国内生产的物品的支出（出口）减国内居民对外国物品的支出（进口）</li>
+</ul>
+<p>4.名义GDP、真实GDP</p>
+<ul>
+<li>名义GDP：按现期价格评价的物品与劳务的生产（按当年）</li>
+<li>真实GDP：按不变价格评价物品与劳务的生产（按基年）</li>
+<li>GDP平减指数＝名义GDP／真实GDP×100%，衡量相对于基年价格的现期物价水平</li>
+<li>通货膨胀率：从一个时期到下一个时期某个物价水平衡量指标变动的百分比</li>
+<li>第二年的通货膨胀率＝（第二年的GDP平减指数-第一年的GDP平减指数）/第一年的GDP平减指数×100%</li>
+</ul>
+<p>5.GDP是经济福利的一个良好衡量指标，因为人们对高收入的偏好大于低收入。但GDP并不是衡量福利的一个完美指标</p>
+<h2 id="第24章-生活费用的衡量"><a href="#第24章-生活费用的衡量" class="headerlink" title="第24章 生活费用的衡量"></a>第24章 生活费用的衡量</h2><p>1.消费物价指数（CPI）：普通消费者所购买动物品与劳务的总费用的衡量指标</p>
+<ul>
+<li>计算CPI的五个步骤：<ul>
+<li>（1）固定篮子；</li>
+<li>（2）找出价格；</li>
+<li>（3）计算这佚篮子东西的费用；</li>
+<li>（4）选择基年并计算指数，消费物价指数＝当年一篮子物品／基年一篮子的价格×100；</li>
+<li>（5）计算通货膨胀率，第二年的通货膨胀率＝（第二年CPI-第一年CPI）／第一年CPI×100%<br>生产物价指数（PPI）：企业购买的一篮子物品与劳务的费用的衡量指标</li>
+</ul>
+</li>
+</ul>
+<p>2.三个问题</p>
+<ul>
+<li>替代偏向</li>
+<li>新产品的引进</li>
+<li>无法衡量</li>
+</ul>
+<p>3.把T年的美元换算成今天的美元的公式</p>
+<ul>
+<li>今天的美元数量＝T年的美元数量×今天的物价水平／T年的物价水平</li>
+<li>指数化：根据法律或美元数量的协议对通货膨胀的影响自动调整</li>
+</ul>
+<p>4.名义利率、真实利率</p>
+<ul>
+<li>名义利率：通常公布的，未根据通货膨胀的影响校正等利率（存款）</li>
+<li>真实利率：根据通货膨胀等利率校正过的利率（购买力）</li>
+<li>真实利率＝名义利率-通货膨胀率</li>
+</ul>
+<hr>
+<h1 id="第九篇-长期中的真实经济"><a href="#第九篇-长期中的真实经济" class="headerlink" title="第九篇 长期中的真实经济"></a>第九篇 长期中的真实经济</h1><h2 id="第25章-生产与增长"><a href="#第25章-生产与增长" class="headerlink" title="第25章 生产与增长"></a>第25章 生产与增长</h2><p>1.生产率：每单位劳动投入所生产的物品和劳务的数量。生产率的决定因素：</p>
+<ul>
+<li>物质资本：用于生产物品与劳务的设备和建筑物存量</li>
+<li>人力资本：工人通过教育、培训和经验而获得动知识雨技能</li>
+<li>自然资源：由自然界提供的用于生产物品与劳务的投入</li>
+<li>技术知识：社会对生产物品与劳务的最好方法的了解</li>
+</ul>
+<p>2.资本要收到受益递减的制约：随着资本存量的增加，由增加的一单位资本生产的额外产量减少</p>
+<ul>
+<li>在长期中，高储蓄率引起高水平的生产率和收入，但在这些变量中并没有高增长</li>
+<li>追赶效益：开始时贫穷的国家倾向于比开始时富裕的国家增长更快的特征</li>
+</ul>
+<p>3.来自国外的投资：外国直接投资，外国有价证券投资</p>
+<ul>
+<li>经济增长和公共政策：储蓄和投资，来自国外的投资，教育，健康与营养，产权和政治稳定，自由贸易，研究与开发，人口增长</li>
+<li>人口增长对经济增长有多种影响。一方面，更加迅速的人口增长会通过使自然资源供给紧张和减少每个工人可以得到的资本量而降低生产率。另一方面，更多的人口也可以提高技术进步的进度，因为会有更多的科学家和工程师。</li>
+</ul>
+<h2 id="第26章-储蓄、投资和金融体系"><a href="#第26章-储蓄、投资和金融体系" class="headerlink" title="第26章 储蓄、投资和金融体系"></a>第26章 储蓄、投资和金融体系</h2><p>1.金融体系：经济中促使一个人的储蓄与另一个人的投资相匹配大一组机构</p>
+<ul>
+<li>金融机构可以分两类：金融市场和金融中介机构</li>
+</ul>
+<p>2.金融市场：储蓄者可以借以直接向借款者提供资金的金融机构</p>
+<ul>
+<li>债券市场，债务筹资。债券（bond）：一种债务证明书。特点：<ul>
+<li>（1）期限：短期、永久债券；</li>
+<li>（2）信用风险：不能支付称为拖欠；</li>
+<li>（3）税收待遇：市政债券不为利息纳税，利率低</li>
+</ul>
+</li>
+<li>股票市场，股本筹资。股票（stock）：企业部分所有权的索取权。股票指数：计算出来的一组股票价格的平均数。</li>
+</ul>
+<p>3.金融中介机构：储蓄者可以借以间接地向借款者提供资金的金融机构</p>
+<ul>
+<li>银行</li>
+<li>共同基金，向公众出售股份，并用收入来购买股票与债券组合的机构（资产组合）</li>
+</ul>
+<p>4.一些重要的恒等式</p>
+<ul>
+<li>Y＝C＋I＋G＋NX</li>
+<li>封闭经济：不与其他经济相互家里的经济，NX＝0，Y＝C+I+G</li>
+<li>国民储蓄（储蓄）：在用语消费和政府购买后剩下的一个经济中的总收入，用S表示，S＝Y-C-G=I</li>
+<li>T：政府以税收对形式从家庭得到到数量减去以转移支付形式（例如社会保障和福利）返还给家庭的数量。S＝（Y-T-C）＋（T-G）</li>
+<li>私人储蓄（Y-T-C）：家庭在支付了税收和消费之后剩下来的收入</li>
+<li>公共储蓄（T-G）：政府在支付其支出后剩下来的税收收入。T大于G，预算盈余：税收收入大于政府支出的余额；T小于G，预算赤字：政府支出引起的税收收入短缺</li>
+<li>S＝I：对整个经济而言，储蓄必定等于投资</li>
+</ul>
+<p>5.可贷资金市场：向储蓄的人借以提供资金，向借钱投资的人借以借贷资金的市场</p>
+<ul>
+<li>可贷资金：人们选择储蓄并贷出二不用于自己消费的所有收入，以及投资者选择为新投资项目筹集资金要借的数量</li>
+<li>储蓄是可贷资金的来源，投资时可贷资金需求的来源，（真实）利率时借贷的价格</li>
+<li>影响经济中储蓄与投资的各种政府政策：<ul>
+<li>（1）储蓄激励：如果税法改革鼓励更多储蓄，则利率下降且投资增加；</li>
+<li>（2）投资激励：如果税法改革鼓励更多投资，则利率上升且投资增加；</li>
+<li>（3）政府预算赤字与盈余。挤出：政府借款所引起的投资减少。当政府通过预算赤字而减少国民储蓄时，利率就会上升且投资减少。预算盈余增加了可贷资金的供给，降低了利率，并刺激了投资。</li>
+</ul>
+</li>
+</ul>
+<h2 id="第27章-基本金融工具"><a href="#第27章-基本金融工具" class="headerlink" title="第27章 基本金融工具"></a>第27章 基本金融工具</h2><p>1.现值、未来值、复利</p>
+<ul>
+<li>现值：用现行利率产生一定量未来货币所需要的现在货币量</li>
+<li>未来值：在现行利率既定时，现在货币量将带来到未来货币</li>
+<li>复利：货币量的累积</li>
+<li>如果r是利率，那么在N年后将得到的X量的现值时X/(1+r)^N，贴现</li>
+<li>70规则：如果某个变量每年按x％增长，那么大约在70/x年后，该变量翻一番</li>
+</ul>
+<p>2.风险管理</p>
+<ul>
+<li>风险厌恶：不喜欢不确定性</li>
+<li>保险市场受到制约其分摊风险能力的两类问题的困扰：<ul>
+<li>（1）逆向选择：高风险的人比低风险的人更可能申请保险，因为高风险的人从保险到保护中获益更大；</li>
+<li>（2）道德风险：人们在购买保险之后，对他们谨慎从事以避免风险对激励小了，因为保险公司将会补偿损失的大部分</li>
+</ul>
+</li>
+<li>多元化：通过用大量不相关的小风险代替一种风险来降低风险</li>
+<li>多元化可以消除企业特有风险（只影响一个公司的风险），但是不能消除市场风险（影响股市上所有公司的风险）</li>
+</ul>
+<p>3.资产评估</p>
+<ul>
+<li>基本面分析：为决定一家公司的价值而对其会计报表和未来前景进行对研究</li>
+<li>三种方法：（1）自己阅读年报进行所有必要的研究；（2）依靠华尔街分析师的建议；（3）购买共同基金，它有进行基本面分析并提你做决策的基金经理</li>
+</ul>
+<p>4.有效市场假说：认为资产价格反应了关于一种资产价值的所有公开的，可获得但信息的理论</p>
+<ul>
+<li>信息有效：以理性方式反映所有可获得的信息的有关资产价格的描述</li>
+<li>随机行走：一种变量变动的路径是不可预期的</li>
+</ul>
+<h2 id="第28章-失业"><a href="#第28章-失业" class="headerlink" title="第28章 失业"></a>第28章 失业</h2><p>1.失业问题分两类：长期失业问题，短期失业问题</p>
+<ul>
+<li>自然失业率：经济中正常情况下存在的失业量</li>
+<li>周期性失业：失业量围绕自然失业率逐年波动，与经济活动的短期上升与下降密切相关</li>
+</ul>
+<p>2.劳动力：既包括就业者又包括失业者的工人总数</p>
+<ul>
+<li>劳动力＝就业者人数＋失业者人数</li>
+<li>失业量：劳动力中失业者所占的百分比，失业率＝失业者人数／劳动力×100%</li>
+<li>劳动力参工率：劳动力占成年人口到百分比，劳动力參工率＝劳动力／成年人口×100%</li>
+</ul>
+<p>3.大多数失业时短期的，而在任何一个既定时间所观察到动大多数失业又是长期的</p>
+<p>4.摩擦性失业、结构性失业</p>
+<ul>
+<li>摩擦性失业：由于工人寻找最适合自己嗜好和技能的工作需要时间而引起的失业</li>
+<li>结构性失业：由于某些劳动市场上可提供的工作岗位数量不足以为每个想工作的人提供工作而引起的失业</li>
+<li>寻找工作：在工人的嗜好与技能既定时工人寻找适当工作的过程</li>
+<li>失业保险：当工人失业时为他们提供部分收入保障的政府计划</li>
+</ul>
+<p>5.如果工资犹豫任何一个原因高于均衡水平，就会导致失业</p>
+<p>6.失业原因：</p>
+<ul>
+<li>摩擦性</li>
+<li>最低工资法</li>
+<li>工会</li>
+<li>效率工资理论</li>
+</ul>
+<hr>
+<h1 id="第十篇-长期中的货币与物价"><a href="#第十篇-长期中的货币与物价" class="headerlink" title="第十篇 长期中的货币与物价"></a>第十篇 长期中的货币与物价</h1><h2 id="第29章-货币制度"><a href="#第29章-货币制度" class="headerlink" title="第29章 货币制度"></a>第29章 货币制度</h2><p>1.货币：经济中人们经常用于向其他人购买物品与劳务的一组资产</p>
+<ul>
+<li>货币在经济中的三种职能：<ul>
+<li>（1）交换媒介：买者在购买物品与劳务时给予卖着的东西</li>
+<li>（2）计价单位：人们用来表示价格和记录债务的标准</li>
+<li>（3）价值储藏手段：人们可以用来把现在的购买力转化为未来的购买力的东西</li>
+</ul>
+</li>
+<li>流动性：一种资产兑换为经济中交换媒介的容易程度</li>
+</ul>
+<p>2.商品货币：以有内在价值的商品为形式的货币</p>
+<ul>
+<li>内在价值：即使不做为货币，东西本身也具有价值</li>
+<li>法定货币：没有内在价值，由政府法令确定作为通货使用的货币</li>
+</ul>
+<p>3.通货：公众手中持有的纸币钞票和铸币</p>
+<ul>
+<li>活期存款：储户可以通过开支票而随时支取都银行账户余额</li>
+</ul>
+<p>4.联邦储备、中央银行</p>
+<ul>
+<li>联邦储备（Fed）：美国中央银行</li>
+<li>中央银行：为了监管银行体系和调节经济中的货币量而设计的机构</li>
+<li>美联储两项工作：<ul>
+<li>（1）管制银行并确保银行体系的正常运行；</li>
+<li>（2）控制经济中可以得到的货币量，这种货币量称为货币供给</li>
+</ul>
+</li>
+<li>货币政策：中央银行的决策者对货币供给的安排</li>
+<li>美联储公开市场操作——买卖美国政府债券</li>
+</ul>
+<p>5.银行与货币供给</p>
+<ul>
+<li>准备金：银行得到但没有贷出去的存款</li>
+<li>如果银行以准备金形式持有所有存款，银行就不影响货币供给</li>
+<li>部分准备金银行：只把部分存款作为准备金的银行制度</li>
+<li>准备金率：银行作为准备金持有的存款比例</li>
+<li>当银行只把部分存款作为准备金时，银行就创造了货币</li>
+<li>货币乘数：银行体系用1美元准备金所产生动货币量，是准备金率的倒数</li>
+<li>因此，准备金率越高，每个存款银行贷出的款越少，货币乘数越小</li>
+</ul>
+<p>6.美联储控制货币的三种工具：</p>
+<ul>
+<li>公开市场操作：美联储买卖美国政府债券</li>
+<li>法定准备金：关于银行必须根据起存款持有的最低准备金量点规定</li>
+<li>贴现率：美联储向银行发放贷款的利率</li>
+</ul>
+<p>7.联邦基金利率：银行向另一家银行进行隔夜贷款时的利率</p>
+<h2 id="第30章-货币增长与通货膨胀"><a href="#第30章-货币增长与通货膨胀" class="headerlink" title="第30章 货币增长与通货膨胀"></a>第30章 货币增长与通货膨胀</h2><p>1.在长期中，物价总水平调整到使货币需求等于货币供给的水平</p>
+<p>2.货币数量论：一和认可得到的货币量决定物价水平，可得到的货币量多增长率决定通货膨胀率的理论</p>
+<p>3.名义变量、真实变量</p>
+<ul>
+<li>名义变量：按货币单位衡量的变量</li>
+<li>真实变量：按实物单位衡量的变量</li>
+<li>古典二分法：名义变量和真实变量的理论比例</li>
+<li>货币中性：认为货币供给变动并不影响真实变量的观点</li>
+</ul>
+<p>4.货币流通速度：货币易手的速度</p>
+<ul>
+<li>P：物价水平（GDP平减指数），Y：产量（真实GDP），M：货币量</li>
+<li>货币流通速度：V＝（P×Y）/M</li>
+<li>数量方程式：M×V＝P×Y</li>
+<li>解释均衡物价水平和通货膨胀所需的所有因素：<ul>
+<li>（1）货币流通速度一直是较为稳定的</li>
+<li>（2）由于货币流通速度，所以当中央银行改变M时，它就引起名义产出值（P×V）当同比例变动</li>
+<li>（3）一个经济的物品与劳务产量（Y）主要是由要素供给（劳动、物质资本、人力资本和自然资源）和可以得到的生产技术决定的，特别是，由于货币时中性的，所以它并不影响产量</li>
+<li>（4）在产量（Y）由要素供给和技术决定的情况下，当中央银行改变货币供给（M），当引起P×V发生同比例变动时，这些变动反应在物价水平（P）当变动上</li>
+</ul>
+</li>
+<li>因此，当中央银行迅速增加货币供给时，结果就是高通货膨胀率</li>
+</ul>
+<p>5.通货膨胀税：政府通过创造货币而筹集的收入</p>
+<ul>
+<li>就像是一种向每个持有货币的人征收的税</li>
+</ul>
+<p>6.费雪效应：名义利率对通货膨胀率所进行的一对一调整</p>
+<ul>
+<li>在长期中正确，短期中不成立，因通货膨胀不可预测</li>
+<li>名义利率＝真实利率＋通货膨胀率</li>
+</ul>
+<p>7.通货膨胀的成本：</p>
+<ul>
+<li>皮鞋成本：当通货膨胀鼓励人们减少货币持有量时浪费的资源</li>
+<li>菜单成本：改变价格的成本</li>
+<li>相对价格变动与资源配置不当</li>
+<li>通货膨胀引起的税收扭曲</li>
+<li>混乱与不方便</li>
+<li>未预期到的通货膨胀的特殊成本：任意的财富再分配</li>
+</ul>
+<hr>
+<h1 id="第十一篇-开放经济的宏观经济学"><a href="#第十一篇-开放经济的宏观经济学" class="headerlink" title="第十一篇 开放经济的宏观经济学"></a>第十一篇 开放经济的宏观经济学</h1><h2 id="第31章-开放经济的宏观经济学：基本概念"><a href="#第31章-开放经济的宏观经济学：基本概念" class="headerlink" title="第31章 开放经济的宏观经济学：基本概念"></a>第31章 开放经济的宏观经济学：基本概念</h2><p>1.开放经济：与世界上其他经济自由交易的经济</p>
+<ul>
+<li>出口，进口，净出口（贸易余额），贸易盈余，贸易赤字，贸易平衡</li>
+<li>净出口＝一国的出口值-一国的进口值</li>
+<li>影响一国出口、进口和净出口的因素：<ul>
+<li>（1）消费者对国内与国外物品的嗜好</li>
+<li>（2）国内与国外物品的价格</li>
+<li>（3）人们可以用国内通货购买国外通过的汇率</li>
+<li>（4）国内与国外消费者的收入</li>
+<li>（5）从一国向另一国运送物品到成本</li>
+<li>（6）政府对国际贸易的政策</li>
+</ul>
+</li>
+</ul>
+<p>2.资本净流出：本国居民购买的外国资产减外国人购买的国内资产</p>
+<ul>
+<li>影响资本净流出的因素：<ul>
+<li>（1）国外资产得到的真实利率</li>
+<li>（2）国内资产得到的真实利率</li>
+<li>（3）持有国外资产可以觉察到的经济与政治风险</li>
+<li>（4）影响国外对国内资产所有权的政府政策</li>
+</ul>
+</li>
+<li>资本净流出：NCO，净出口：NX</li>
+<li>恒等式：NCO＝NX</li>
+<li>对整个经济概括两个结论：<ul>
+<li>（1）当异国游贸易盈余时（NX大于0），它出售给外国人的物品与劳务多余外国人购买的。用它从国外的物品与劳务的净销售中得到的外国通货做什么呢？它必定用它购买国外资产。因此，资本从一国流出（NCO大于0）</li>
+<li>（2）当一国游贸易赤字时（NX小于0），它从国外人那里购买的物品与劳务多余外国人出售的。在世界市场上它如何为这些物品与劳务的净购买筹资呢？它必定在国外出售资产。因此，资本流入国内（NCO小于0）</li>
+</ul>
+</li>
+</ul>
+<p>3.Y＝C＋I＋G＋NX</p>
+<ul>
+<li>国民储蓄：S＝Y-C-G＝I＋NX（国内投资＋资本净流出）</li>
+</ul>
+<p>4.名义利率：一个人可以用一国通货交换另一国通货的比率</p>
+<ul>
+<li>升值：按所能购买到的外国通货衡量的一国通货的价值增加/坚挺</li>
+<li>贬值：按所能购买到到外国通货衡量的一国通货的价值减少/疲软</li>
+</ul>
+<p>5.真实汇率：一个人可以用一国物品与劳务交换另一国物品与劳务的比率</p>
+<ul>
+<li>真实汇率＝名义汇率×国内价格／国外价格＝(e×p)/P^*<ul>
+<li>e：美元和外国通货之间的名义汇率</li>
+<li>P：美国一篮子物品与劳务的消费物价指数</li>
+<li>P^*：国外一篮子物品与劳务的消费物价指数</li>
+</ul>
+</li>
+<li>一国的真实汇率是其物品与劳务净出口的关键决定因素</li>
+</ul>
+<p>6.第一种汇率决定理论：购买力平价</p>
+<ul>
+<li>购买力平价：一种认为任何一单位通货应该在所有国家买到等量物品的汇率理论</li>
+<li>告诉我们，两国通货之间的名义汇率取决于这两个国家的物价水平</li>
+<li>如果1美元的购买力在国内和国外总是相同的，那么，真实汇率——国内物品和国外物品的相对价格——就不会改变</li>
+<li>根据购买力平价理论，两国通货之间的名义汇率必然反映这两个国家的物价水平。（货币量）<br>购买力平价理论不总成立的两个原因：<ul>
+<li>（1）许多物品是不容易进行贸易的</li>
+<li>（2）即使是可贸易物品，当它们在不同国家生产时，也并不总能完成全替代</li>
+</ul>
+</li>
+</ul>
+<h2 id="第32章-开放经济的宏观经济理论"><a href="#第32章-开放经济的宏观经济理论" class="headerlink" title="第32章 开放经济的宏观经济理论"></a>第32章 开放经济的宏观经济理论</h2><p>1.在均衡利益时，人们想储蓄的量正好与合意的国内投资和资本净流出量平衡（可贷资金市场）</p>
+<ul>
+<li>在均衡的真实汇率时，由美国物品与劳务净出口所引起的外国人对美元的需求正好与美国资本净流出所引起的来自美国人的美元供给相平衡（外汇市场）</li>
+<li>S＝I＋NCO</li>
+<li>NCO＝NX</li>
+</ul>
+<p>2.在一个开放经济中，政府预算赤字提高了真实利率，挤出来国内投资，引起美元升值，并使贸易余额倾向于赤字</p>
+<p>3.贸易政策并不影响贸易余额</p>
+<ul>
+<li>因此，贸易政策的微观经济影响大于宏观经济影响</li>
+</ul>
+<p>4.资本外逃：一国资产需求大量且突然减少</p>
+<ul>
+<li>导致利率上升，而通货贬值</li>
+</ul>
+<hr>
+<h1 id="第十二篇-短期经济波动"><a href="#第十二篇-短期经济波动" class="headerlink" title="第十二篇 短期经济波动"></a>第十二篇 短期经济波动</h1><h2 id="第33章-总需求与总供给"><a href="#第33章-总需求与总供给" class="headerlink" title="第33章 总需求与总供给"></a>第33章 总需求与总供给</h2><p>1.衰退、萧条</p>
+<ul>
+<li>衰退：真实收入下降和失业增加的时期</li>
+<li>萧条：严重的衰退</li>
+</ul>
+<p>2.关于经济波动的三个关键事实</p>
+<ul>
+<li>经济波动时无规律的且不可预测的</li>
+<li>大多数宏观经济变量同时波动</li>
+<li>随着产量减少，失业增加</li>
+</ul>
+<p>3.总需求与总供给模型：大多数经济学家用来解释经济活动围绕其长期趋势的短期波动大模型</p>
+<ul>
+<li>总需求曲线：表示在每一种物价水平时，家庭、企业、政府和外国客户想要购买的物品与劳务数量的曲线</li>
+<li>总供给曲线：表示在每一种物价水平时，企业选择生产并销售的物品与劳务数量的曲线</li>
+</ul>
+<p>4.总需求曲线</p>
+<ul>
+<li>向右下方倾斜的原因：<ul>
+<li>（1）物价水平与消费：财富效应。物价水平下降提高了货币的真实价值，并使消费者富有，这又鼓励他们更多地支出。消费者支出增加意味着物品与劳务需求量更大，反之亦然</li>
+<li>（2）（重要）物价水平与投资：利率效应。物价水平下降降低了利率，鼓励更多的用于投资品的支出，从而增加了物品与劳务的需求量，反之亦然</li>
+<li>（3）物价水平与净出口：汇率效应。当美国物价水平下降引起美国利率下降时，美元在外汇市场上的真实价值下降了。这种贬值刺激了美国净出口，从而增加了物品雨劳务的需求量，反之亦然</li>
+</ul>
+</li>
+<li>总需求曲线移动原因：（1）消费；（2）投资；（3）政府购买；（4）净出口引起</li>
+</ul>
+<p>5.总供给曲线：在长期中，总供给曲线是垂直的；而在短期中，总供给曲线向右上方倾斜</p>
+<ul>
+<li>长期垂直：在长期，一个经济的物品与劳务生产（真实GDP）取决于它的劳动、资本和自然资源的供给，以及可得到的用语把这些生产要素变为物品与劳务的生产技术</li>
+<li>自然产量率：一个经济在长期中当失业处于其正常率时达到的物品与劳务的生产</li>
+<li>长期总供给曲线移动的原因：（1）劳动变动；（2）资本变动；（3）自然资源变动；（4）技术知识变动</li>
+<li>短期总供给曲线向右上方倾斜解释：（1）黏性工资；（2）黏性价格；（3）对相对价格对错觉</li>
+<li>预期物价水平上升减少了物品与劳务的供给量，并使短期总供给曲线向左移动，预期物价水平下降的增加了物品与劳务的供给量，并使短期总供给曲线向右移动</li>
+</ul>
+<p>6.关于总需求移动的情形有三个重要结论：</p>
+<ul>
+<li>（1）在短期中，总需求移动引起经济中物品与劳务产量的波动</li>
+<li>（2）在长期中，总需求移动影物价总水平，但不影响产量</li>
+<li>（3）影响总需求的决策者可以潜在地减缓经济波动的严重性</li>
+</ul>
+<p>7.关于总供给曲线移动的情形有两个重要结论：</p>
+<ul>
+<li>（1）总供给移动会引起滞涨——衰退（产量减少）与通货膨胀（物价上升）的结合</li>
+<li>（2）那些能影响总需求的决策可以潜在地减缓对产量的不利影响，但是只能是以加剧通货膨胀问题为代价</li>
+</ul>
+<h2 id="第34章-货币政策和财政政策对总需求的影响"><a href="#第34章-货币政策和财政政策对总需求的影响" class="headerlink" title="第34章 货币政策和财政政策对总需求的影响"></a>第34章 货币政策和财政政策对总需求的影响</h2><p>1.流动性偏好理论：凯恩斯的理论，认为利率的调整使货币供给与货币需求平衡</p>
+<ul>
+<li>当美联储增加货币供给时，它降低了利率，增加了既定物价水平时的物品与劳务需求量，使总需求曲线向右移动。反之亦然</li>
+<li>既可以根据货币供给，也可以根据利率来描述货币政策</li>
+<li>旨在扩大总需求的货币政策变动既可以被描述为货币供给增加，也可以被描述为利率降低。反之亦然</li>
+</ul>
+<p>2.财政政策：政府决策者对政府支出和税收水平的确定</p>
+<ul>
+<li>乘数效应：当扩张性财政政策增加了收入，从而增加了消费支出时一切的总需求的额外变动</li>
+<li>边际消费倾向（MPC）：家庭额外收入中用于消费的比例</li>
+<li>乘数＝1＋MPC＋MPC^2＋……＝1/(1-MPC)</li>
+<li>挤出效应：当扩张性财政政策引起利率上升，从而减少了投资支出时所引起的总需求减少</li>
+<li>自动稳定器：当经济进入衰退时，决策者不必采取任何有意的行动就可以刺激总需求的财政政策变动</li>
+</ul>
+<h2 id="第35章-通货膨胀与失业之间的短期权衡取舍"><a href="#第35章-通货膨胀与失业之间的短期权衡取舍" class="headerlink" title="第35章 通货膨胀与失业之间的短期权衡取舍"></a>第35章 通货膨胀与失业之间的短期权衡取舍</h2><p>1.菲利普斯曲线：一条表示通货膨胀与失业之间短期权衡取舍的曲线</p>
+<ul>
+<li>菲利普斯曲线说明了，短期中出现的通货膨胀与失业的组合是犹豫总需求曲线的移动使经济沿着短期总供给曲线变动</li>
+</ul>
+<p>2.自然率假说：认为无论通货膨胀率如何，失业最重要回到其正常率或自然率的观点</p>
+<p>3.供给冲击：直接改变企业的成本和价格，使经济中的总供给曲线移动，进而使菲利普斯曲线移动的事件</p>
+<p>4.牺牲率：在通货膨胀减少一个百分点的过程中每年产量损失的百分点数，一半为5</p>
+<ul>
+<li>理性预期：当人们在预测未来时，可以充分运用它们所拥有的全部信息，包括有关政府政策的信息理论</li>
+<li>反通货膨胀的时代取决于通货膨胀预期下降的速度。一些经济学家认为，可信任的第通货膨胀承诺可以通过引起预期的迅速调整而降低反通货膨胀的代价</li>
+</ul>
+<hr>
+<h1 id="第十三篇-最后的思考"><a href="#第十三篇-最后的思考" class="headerlink" title="第十三篇 最后的思考"></a>第十三篇 最后的思考</h1><h2 id="第36章-宏观经济政策的五个争论问题"><a href="#第36章-宏观经济政策的五个争论问题" class="headerlink" title="第36章 宏观经济政策的五个争论问题"></a>第36章 宏观经济政策的五个争论问题</h2><p>1.货币政策与财政政策决策者应该试图稳定经济吗</p>
+<ul>
+<li>支持：认为经济本 hi 上时不稳的，并相信政府可以管理总需求，以便抵消内在掉不稳定性</li>
+<li>批评：政策对经济的影响存在时滞，而且我们预期未来经济状况的能力是很差的，因此，稳定经济的努力可能以使经济不稳定而告终</li>
+</ul>
+<p>2.货币政策应该按规则制定二不是相机抉择</p>
+<ul>
+<li>支持：相机抉择的政策会饱受缺乏能力、滥用权力和政策前后不一致之苦</li>
+<li>批评：相机抉择的政策在变化着的季节环境做出反应时较为灵活</li>
+</ul>
+<p>3.中央银行应该把零通货膨胀作为目标吗</p>
+<ul>
+<li>支出：通货膨胀有许多成本，而且即使有好处也很少。此外，消除通货膨胀的代价——压低产量和就业——知识暂时的。如果中央银行宣布一项可信的降低通货膨胀的计划，从而直接降低通货膨胀的预期，那么甚至连这种代价也可以减少</li>
+<li>批评：温和的通货膨胀给社会带来很小的成本，而降低通货膨胀所必需的衰退则代价高昂</li>
+</ul>
+<p>4.政府应该平衡其预算吗</p>
+<ul>
+<li>支持：预算赤字通过增加子孙后代的税收并减少他们的收入而把不公正的负担加在他们身上</li>
+<li>批评：赤字只是财政政策的一小部分</li>
+</ul>
+<p>5.应该为了鼓励储蓄而修改税法吗</p>
+<ul>
+<li>支持：我们的社会用许多方法抑制储蓄，例如对资本收入征收重税和减少那些积累了财富的人享有的补助</li>
+<li>批评：许多刺激储蓄的变动主要是使富人受益，而这些富人并不需要减税。这种变化对私人储蓄只有微小的影响。通过降低政府预算赤字来增加公共储蓄可以提供更直接，更平等地增加国民储蓄的方法</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 经济学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/01/SPSS-Notes/" rel="prev" title="SPSS 学习笔记">
+      <i class="fa fa-chevron-left"></i> SPSS 学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/04/15/WeiboCat/" rel="next" title="WeiboCat With Golang">
+      WeiboCat With Golang <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第八篇-宏观经济学的数据"><span class="nav-number">1.</span> <span class="nav-text">第八篇 宏观经济学的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第23章-一国收入的衡量"><span class="nav-number">1.1.</span> <span class="nav-text">第23章 一国收入的衡量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第24章-生活费用的衡量"><span class="nav-number">1.2.</span> <span class="nav-text">第24章 生活费用的衡量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第九篇-长期中的真实经济"><span class="nav-number">2.</span> <span class="nav-text">第九篇 长期中的真实经济</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第25章-生产与增长"><span class="nav-number">2.1.</span> <span class="nav-text">第25章 生产与增长</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第26章-储蓄、投资和金融体系"><span class="nav-number">2.2.</span> <span class="nav-text">第26章 储蓄、投资和金融体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第27章-基本金融工具"><span class="nav-number">2.3.</span> <span class="nav-text">第27章 基本金融工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第28章-失业"><span class="nav-number">2.4.</span> <span class="nav-text">第28章 失业</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第十篇-长期中的货币与物价"><span class="nav-number">3.</span> <span class="nav-text">第十篇 长期中的货币与物价</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第29章-货币制度"><span class="nav-number">3.1.</span> <span class="nav-text">第29章 货币制度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第30章-货币增长与通货膨胀"><span class="nav-number">3.2.</span> <span class="nav-text">第30章 货币增长与通货膨胀</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第十一篇-开放经济的宏观经济学"><span class="nav-number">4.</span> <span class="nav-text">第十一篇 开放经济的宏观经济学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第31章-开放经济的宏观经济学：基本概念"><span class="nav-number">4.1.</span> <span class="nav-text">第31章 开放经济的宏观经济学：基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第32章-开放经济的宏观经济理论"><span class="nav-number">4.2.</span> <span class="nav-text">第32章 开放经济的宏观经济理论</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第十二篇-短期经济波动"><span class="nav-number">5.</span> <span class="nav-text">第十二篇 短期经济波动</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第33章-总需求与总供给"><span class="nav-number">5.1.</span> <span class="nav-text">第33章 总需求与总供给</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第34章-货币政策和财政政策对总需求的影响"><span class="nav-number">5.2.</span> <span class="nav-text">第34章 货币政策和财政政策对总需求的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第35章-通货膨胀与失业之间的短期权衡取舍"><span class="nav-number">5.3.</span> <span class="nav-text">第35章 通货膨胀与失业之间的短期权衡取舍</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第十三篇-最后的思考"><span class="nav-number">6.</span> <span class="nav-text">第十三篇 最后的思考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第36章-宏观经济政策的五个争论问题"><span class="nav-number">6.1.</span> <span class="nav-text">第36章 宏观经济政策的五个争论问题</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="rtk"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">rtk</p>
+  <div class="site-description" itemprop="description">冷萃少冰不加糖</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/reitake" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;reitake" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/rrrrrtk" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;rrrrrtk" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rtk</span>
+</div><span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,03,07,10,00,00); //建站时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒 ~喵~";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'FY0k4GNyVIFSqBrIxPq7yN7t-gzGzoHsz',
+      appKey     : 'FqCFfTcVczkkBx9SyMlf7myz',
+      placeholder: "喵w ヾﾉ≧w≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

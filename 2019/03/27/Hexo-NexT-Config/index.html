@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="AoeMgN9r3ZTJhZZgqjfb4tkZf3qRjujP-1gjzMb-x80">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"reitake.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="个人 Blog 配置备忘">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo + NexT(v7.0.1) 博客配置备忘">
+<meta property="og:url" content="https://reitake.github.io/2019/03/27/Hexo-NexT-Config/index.html">
+<meta property="og:site_name" content="My Notes Blog">
+<meta property="og:description" content="个人 Blog 配置备忘">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-27T10:59:38.000Z">
+<meta property="article:modified_time" content="2020-12-07T12:07:22.758Z">
+<meta property="article:author" content="rtk">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://reitake.github.io/2019/03/27/Hexo-NexT-Config/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Hexo + NexT(v7.0.1) 博客配置备忘 | My Notes Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">My Notes Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <h1 class="site-subtitle" itemprop="description">生活不易 喵声叹气</h1>
+      
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-fw fa-gears"></i>工具</a>
+
+  </li>
+        <li class="menu-item menu-item-others">
+
+    <a href="/others/" rel="section"><i class="fa fa-fw fa-spinner"></i>不务正业</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://reitake.github.io/2019/03/27/Hexo-NexT-Config/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="rtk">
+      <meta itemprop="description" content="冷萃少冰不加糖">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="My Notes Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          Hexo + NexT(v7.0.1) 博客配置备忘
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-27 18:59:38" itemprop="dateCreated datePublished" datetime="2019-03-27T18:59:38+08:00">2019-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-07 20:07:22" itemprop="dateModified" datetime="2020-12-07T20:07:22+08:00">2020-12-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%87%E5%BF%98/" itemprop="url" rel="index"><span itemprop="name">备忘</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/03/27/Hexo-NexT-Config/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/03/27/Hexo-NexT-Config/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center> <font color="#bababa">
+
+<p><strong><em>个人 Blog 配置备忘</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="配置方案更新"><a href="#配置方案更新" class="headerlink" title="配置方案更新"></a>配置方案更新</h1><ul>
+<li><a href="../../../../2020/03/04/Hexo-NexT-Config-7-7-2/">Hexo + NexT(v7.7.2) 博客配置备忘</a></li>
+</ul>
+<hr>
+<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>建站驱动：<code>Hexo</code> v3.8.0  </p>
+<p>主题： <code>NexT</code>.<code>Pisces</code> v7.0.1  </p>
+<p>站点配置文件：<code>/_config.yml</code>  </p>
+<p>主题配置文件：<code>/themes/next/_config.yml</code>  </p>
+<h1 id="我的配置"><a href="#我的配置" class="headerlink" title="我的配置"></a>我的配置</h1><h2 id="选用主题"><a href="#选用主题" class="headerlink" title="选用主题"></a>选用主题</h2><p><code>站点配置文件</code>：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span>     <span class="comment"># 这项改成这个</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文章按更新时间排序"><a href="#文章按更新时间排序" class="headerlink" title="文章按更新时间排序"></a>文章按更新时间排序</h2><p>默认是按文章创建时间排序。要改成更新时间，去<code>站点配置文件</code>：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">''</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">order_by:</span> <span class="string">-updated</span>    <span class="comment"># 这项改成这个</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="选用主题皮肤"><a href="#选用主题皮肤" class="headerlink" title="选用主题皮肤"></a>选用主题皮肤</h2><p><code>主题配置文件</code>：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span>      <span class="comment"># 要哪个就取消注释哪个</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="隐藏页脚-Hexo-和-NexT-的声明和版本"><a href="#隐藏页脚-Hexo-和-NexT-的声明和版本" class="headerlink" title="隐藏页脚 Hexo 和 NexT 的声明和版本"></a>隐藏页脚 Hexo 和 NexT 的声明和版本</h2><p><code>主题配置文件</code>：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">copyright:</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------</span></span><br><span class="line"><span class="attr">powered:</span></span><br><span class="line">  <span class="comment"># Hexo link (Powered by Hexo).</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>                        <span class="comment"># 这项改成false</span></span><br><span class="line">  <span class="comment"># Version info of Hexo after Hexo link (vX.X.X).</span></span><br><span class="line">  <span class="attr">version:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">theme:</span></span><br><span class="line">  <span class="comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span>                        <span class="comment"># 这项改成false</span></span><br><span class="line">  <span class="comment"># Version info of NexT after scheme info (vX.X.X).</span></span><br><span class="line">  <span class="attr">version:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># -------------------------------------------------------------</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="sidebar-放到右侧"><a href="#sidebar-放到右侧" class="headerlink" title="sidebar 放到右侧"></a>sidebar 放到右侧</h2><p><code>主题配置文件</code>：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span></span><br><span class="line">  <span class="comment"># Sidebar Position, available values: left | right (only for Pisces | Gemini).</span></span><br><span class="line">  <span class="comment">#position: left</span></span><br><span class="line">  <span class="attr">position:</span> <span class="string">right</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加返回顶部按钮、样式"><a href="#增加返回顶部按钮、样式" class="headerlink" title="增加返回顶部按钮、样式"></a>增加返回顶部按钮、样式</h2><p><code>主题配置文件</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar.</span></span><br><span class="line"><span class="attr">b2t:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># Enable sidebar on narrow view (only for Muse | Mist).</span></span><br><span class="line"><span class="attr">onmobile:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># Click any blank part of the page to close sidebar (only for Muse | Mist).</span></span><br><span class="line"><span class="attr">dimmer:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="配置侧边栏菜单内容"><a href="#配置侧边栏菜单内容" class="headerlink" title="配置侧边栏菜单内容"></a>配置侧边栏菜单内容</h2><p><code>主题配置文件</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>目前启用主页、标签、分类、归档。<code>||</code>后面是<code>FontAwesome</code>样式的 icon 名字。</p>
+<h2 id="增加站内搜索"><a href="#增加站内搜索" class="headerlink" title="增加站内搜索"></a>增加站内搜索</h2><p>在<code>hexo init</code>目录下安装插件：  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-<span class="keyword">search</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+<p><code>站点配置文件</code>中末尾增加内容：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rtk: local search setting</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<p><code>主题配置文件</code>中启用本地搜索：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>      <span class="comment"># 这项改成true来启用</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="主页侧边栏增加社交信息"><a href="#主页侧边栏增加社交信息" class="headerlink" title="主页侧边栏增加社交信息"></a>主页侧边栏增加社交信息</h2><p><code>主题配置文件</code>：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line">  <span class="attr">GitHub:</span> <span class="string">https://github.com/xxx</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line">  <span class="comment">#E-Mail: mailto:yourname@gmail.com || envelope</span></span><br><span class="line">  <span class="comment">#Weibo: https://weibo.com/yourname || weibo</span></span><br><span class="line">  <span class="comment">#Google: https://plus.google.com/yourname || google</span></span><br><span class="line">  <span class="comment">#Twitter: https://twitter.com/yourname || twitter</span></span><br><span class="line">  <span class="comment">#FB Page: https://www.facebook.com/yourname || facebook</span></span><br><span class="line">  <span class="comment">#VK Group: https://vk.com/yourname || vk</span></span><br><span class="line">  <span class="comment">#StackOverflow: https://stackoverflow.com/yourname || stack-overflow</span></span><br><span class="line">  <span class="comment">#YouTube: https://youtube.com/yourname || youtube</span></span><br><span class="line">  <span class="attr">Instagram:</span> <span class="string">https://instagram.com/xxx</span> <span class="string">||</span> <span class="string">instagram</span></span><br><span class="line">  <span class="comment">#Skype: skype:yourname?call|chat || skype</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">social_icons:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">icons_only:</span> <span class="literal">true</span>    <span class="comment"># 只显示图标</span></span><br><span class="line">  <span class="attr">transition:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>同样的，<code>||</code>后面是<code>FontAwesome</code>样式的 icon 名字。</p>
+<h2 id="增加-Valine-评论功能"><a href="#增加-Valine-评论功能" class="headerlink" title="增加 Valine 评论功能"></a>增加 Valine 评论功能</h2><p>去 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> 注册并创建一个免费应用，获得应用的<code>App ID</code>、<code>App Key</code>。在 <code>LeanCloud - 设置 - 安全中心 - Web 安全域名</code>中填上自己博客的地址。  </p>
+<p>然后去<code>主题配置文件</code>内搜<code>Valine</code>，<code>enable</code>改成<code>true</code>，填上<code>App ID</code>和<code>App Key</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Valine</span></span><br><span class="line"><span class="comment"># You can get your appid and appkey from https://leancloud.cn</span></span><br><span class="line"><span class="comment"># More info available at https://valine.js.org</span></span><br><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span> <span class="comment"># When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.</span></span><br><span class="line">  <span class="attr">appid:</span> <span class="string">xxx</span> <span class="comment"># your leancloud application appid</span></span><br><span class="line">  <span class="attr">appkey:</span> <span class="string">xxx</span> <span class="comment"># your leancloud application appkey</span></span><br><span class="line">  <span class="attr">notify:</span> <span class="literal">false</span> <span class="comment"># mail notifier, See: https://github.com/xCss/Valine/wiki</span></span><br><span class="line">  <span class="attr">verify:</span> <span class="literal">false</span> <span class="comment"># Verification code</span></span><br><span class="line">  <span class="attr">placeholder:</span> <span class="string">ヾﾉ≧∀≦)o</span> <span class="comment"># comment box placeholder</span></span><br><span class="line">  <span class="attr">avatar:</span> <span class="string">mm</span> <span class="comment"># gravatar style</span></span><br><span class="line">  <span class="attr">guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># custom comment header</span></span><br><span class="line">  <span class="attr">pageSize:</span> <span class="number">10</span> <span class="comment"># pagination size</span></span><br><span class="line">  <span class="attr">visitor:</span> <span class="literal">false</span> <span class="comment"># leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html</span></span><br><span class="line">  <span class="attr">comment_count:</span> <span class="literal">true</span> <span class="comment"># if false, comment count will only be displayed in post page, not in home page</span></span><br></pre></td></tr></table></figure>
+
+<p>为了加快打开速度，去<code>/theme/next/layout/_third-party/comments/valine.swig</code>把：<br><code>//unpkg.com/valine/dist/Valine.min.js</code> 改成：<br><code>//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js</code>  </p>
+<p><a href="https://www.jianshu.com/p/728a9594bb6c" target="_blank" rel="noopener">Valine 详细配置过程还可参见这里</a></p>
+<h2 id="不显示文章信息中“评论数”三个字"><a href="#不显示文章信息中“评论数”三个字" class="headerlink" title="不显示文章信息中“评论数”三个字"></a>不显示文章信息中“评论数”三个字</h2><p>在<code>/themes/next/layout/_macro/post.swig</code>里，用注释符号把下面的第三行注释掉：  </p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">elif</span></span> (is_post() or theme.valine.comment_count) and theme.valine.enable and theme.valine.appid and theme.valine.appkey %&#125;</span></span><br><span class="line"><span class="xml">    </span><span class="template-variable">&#123;&#123; comments() &#125;&#125;</span></span><br><span class="line"><span class="xml">         </span><span class="comment">&#123;#&lt;span class="post-meta-item-text"&gt;&#123;&#123; __('post.comments_count') + __('symbol.colon') &#125;&#125;&lt;/span&gt;#&#125;</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; url_for(post.path) &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">#comments"</span> <span class="attr">itemprop</span>=<span class="string">"discussionUrl"</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-comments-count valine-comment-count"</span> <span class="attr">data-xid</span>=<span class="string">"</span></span></span><span class="template-variable">&#123;&#123; url_for(post.path) &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span> <span class="attr">itemprop</span>=<span class="string">"commentCount"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加页脚显示网站运营时间功能"><a href="#增加页脚显示网站运营时间功能" class="headerlink" title="增加页脚显示网站运营时间功能"></a>增加页脚显示网站运营时间功能</h2><p>在<code>/themes/next/layout/_parrials/footer.swig</code>末尾增加内容：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-meta-item-icon"</span>&gt;</span><br><span class="line">    &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-clock-o"</span>&gt;&lt;<span class="regexp">/i&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>span&gt;</span><br><span class="line">&lt;span id=<span class="string">"sitetime"</span>&gt;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;script language="javascript"&gt;</span></span><br><span class="line"><span class="regexp">  function siteTime()&#123;</span></span><br><span class="line"><span class="regexp">    window.setTimeout("siteTime()", 1000);</span></span><br><span class="line"><span class="regexp">    var seconds = 1000;</span></span><br><span class="line"><span class="regexp">    var minutes = seconds * 60;</span></span><br><span class="line"><span class="regexp">    var hours = minutes * 60;</span></span><br><span class="line"><span class="regexp">    var days = hours * 24;</span></span><br><span class="line"><span class="regexp">    var years = days * 365;</span></span><br><span class="line"><span class="regexp">    var today = new Date();</span></span><br><span class="line"><span class="regexp">    var todayYear = today.getFullYear();</span></span><br><span class="line"><span class="regexp">    var todayMonth = today.getMonth()+1;</span></span><br><span class="line"><span class="regexp">    var todayDate = today.getDate();</span></span><br><span class="line"><span class="regexp">    var todayHour = today.getHours();</span></span><br><span class="line"><span class="regexp">    var todayMinute = today.getMinutes();</span></span><br><span class="line"><span class="regexp">    var todaySecond = today.getSeconds();</span></span><br><span class="line"><span class="regexp">    /</span>* <span class="built_in">Date</span>.UTC() -- 返回date对象距世界标准时间(UTC)<span class="number">1970</span>年<span class="number">1</span>月<span class="number">1</span>日午夜之间的毫秒数(时间戳)</span><br><span class="line">    year - 作为date对象的年份，为<span class="number">4</span>位年份值</span><br><span class="line">    month - <span class="number">0</span><span class="number">-11</span>之间的整数，做为date对象的月份</span><br><span class="line">    day - <span class="number">1</span><span class="number">-31</span>之间的整数，做为date对象的天数</span><br><span class="line">    hours - <span class="number">0</span>(午夜<span class="number">24</span>点)<span class="number">-23</span>之间的整数，做为date对象的小时数</span><br><span class="line">    minutes - <span class="number">0</span><span class="number">-59</span>之间的整数，做为date对象的分钟数</span><br><span class="line">    seconds - <span class="number">0</span><span class="number">-59</span>之间的整数，做为date对象的秒数</span><br><span class="line">    microseconds - <span class="number">0</span><span class="number">-999</span>之间的整数，做为date对象的毫秒数 *<span class="regexp">/</span></span><br><span class="line"><span class="regexp">    var t1 = Date.UTC(2019,03,07,10,00,00); /</span><span class="regexp">/建站时间</span></span><br><span class="line"><span class="regexp">    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span></span><br><span class="line"><span class="regexp">    var diff = t2-t1;</span></span><br><span class="line"><span class="regexp">    var diffYears = Math.floor(diff/y</span>ears);</span><br><span class="line">    <span class="keyword">var</span> diffDays = <span class="built_in">Math</span>.floor((diff/days)-diffYears*<span class="number">365</span>);</span><br><span class="line">    <span class="keyword">var</span> diffHours = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days)/hours);</span><br><span class="line">    <span class="keyword">var</span> diffMinutes = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days-diffHours*hours)/minutes);</span><br><span class="line">    <span class="keyword">var</span> diffSeconds = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"sitetime"</span>).innerHTML=<span class="string">" 已运行"</span>+<span class="comment">/*diffYears+" 年 "+*/</span>diffDays+<span class="string">" 天 "</span>+diffHours+<span class="string">" 小时 "</span>+diffMinutes+<span class="string">" 分钟 "</span>+diffSeconds+<span class="string">" 秒 ~喵~"</span>;</span><br><span class="line">  &#125;<span class="comment">/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/</span></span><br><span class="line">  siteTime();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加页脚不蒜子的站点访问人次统计"><a href="#增加页脚不蒜子的站点访问人次统计" class="headerlink" title="增加页脚不蒜子的站点访问人次统计"></a>增加页脚不蒜子的站点访问人次统计</h2><p>（接上小节代码）在<code>/themes/next/layout/_parrials/footer.swig</code>末尾增加内容：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="regexp">/br&gt;</span></span><br><span class="line"><span class="regexp">&lt;!--这一段是不蒜子的访问量统计代码--&gt;</span></span><br><span class="line"><span class="regexp">&lt;script async src="/</span><span class="regexp">/busuanzi.ibruce.info/</span>busuanzi/<span class="number">2.3</span>/busuanzi.pure.mini.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;span class="</span>post-meta-item-icon<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    &lt;i class="</span>fa fa-paw<span class="string">"&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="string">&lt;/span&gt;   // 猫爪图标</span></span><br><span class="line"><span class="string">&lt;span id="</span>busuanzi_container_site_pv<span class="string">"&gt;本站总访问量&lt;span id="</span>busuanzi_value_site_pv<span class="string">"&gt;&lt;/span&gt;次 &amp;nbsp;   &lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;span id="</span>busuanzi_container_site_uv<span class="string">"&gt;访客数&lt;span id="</span>busuanzi_value_site_uv<span class="string">"&gt;&lt;/span&gt;人次&lt;/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加文章阅读次数显示"><a href="#增加文章阅读次数显示" class="headerlink" title="增加文章阅读次数显示"></a>增加文章阅读次数显示</h2><p>在<code>/themes/next/layout/_macro/post.swig</code>的第一行中，增加一个<code>is_pv</code>字段：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% macro render(post, is_index, is_pv, post_extra_class) %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>/themes/next/layout/_macro/post.swig</code>中增加一段代码：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> is_pv %&#125;</span><br><span class="line">  &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-meta-divider"</span>&gt;|&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">  &lt;span class="post-meta-item-icon"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;i class="fa fa-file-o"&gt;&lt;/i</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">  &lt;span id="busuanzi_value_page_pv"&gt;&lt;/</span>span&gt;次阅读</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码塞的位置是：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> not is_index and theme.busuanzi_count.enable and theme.busuanzi_count.post_views %&#125;</span><br><span class="line">  &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-meta-divider"</span>&gt;|&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">  &lt;span class="post-meta-item-icon"</span></span><br><span class="line"><span class="regexp">  &#123;% if not theme.post_meta.item_text %&#125; title="&#123;&#123; __('post.views') &#125;&#125;" &#123;% endif %&#125;&gt;</span></span><br><span class="line"><span class="regexp">  &lt;i class="fa fa-&#123;&#123; theme.busuanzi_count.post_views_icon &#125;&#125;"&gt;&lt;/i</span>&gt;</span><br><span class="line">  &#123;% <span class="keyword">if</span> theme.post_meta.item_text %&#125; &#123;&#123; __(<span class="string">'post.views'</span>) + __(<span class="string">'symbol.colon'</span>) &#125;&#125; &#123;% endif %&#125;</span><br><span class="line">  &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"busuanzi-value"</span> id=<span class="string">"busuanzi_value_page_pv"</span>&gt;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% <span class="keyword">if</span> is_pv %&#125;</span><br><span class="line">  &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-meta-divider"</span>&gt;|&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">  &lt;span class="post-meta-item-icon"&gt;</span></span><br><span class="line"><span class="regexp">      &lt;i class="fa fa-file-o"&gt;&lt;/i</span>&gt;</span><br><span class="line">  &lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">  &lt;span id="busuanzi_value_page_pv"&gt;&lt;/</span>span&gt;次阅读</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% <span class="keyword">if</span> config.symbols_count_time.symbols or config.symbols_count_time.time %&#125;</span><br><span class="line">  &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-symbolscount"</span>&gt;</span><br><span class="line">    &#123;% <span class="keyword">if</span> not theme.symbols_count_time.separated_meta %&#125;</span><br><span class="line">      &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"post-meta-divider"</span>&gt;|&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    &#123;% endif %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后去<code>themes/next/layout/post.swig</code>（文章模板），给<code>render</code>方法放入参数<code>false</code>和<code>true</code>（分别对应<code>is_index</code>和<code>is_pv</code>：  </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line"></span><br><span class="line">  &lt;div id=<span class="string">"posts"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"posts-expand"</span>&gt;</span><br><span class="line">    &#123;&#123; post_template.render(page, <span class="literal">false</span>, <span class="literal">true</span>) &#125;&#125;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#123;% endblock %&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>再去<code>/themes/next/layout/index.swig</code>（首页模板），给<code>render</code>传入参数<code>true</code>和<code>false</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;section id=<span class="string">"posts"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"posts-expand"</span>&gt;</span><br><span class="line">    &#123;% <span class="keyword">for</span> post <span class="keyword">in</span> page.posts %&#125;</span><br><span class="line">      &#123;&#123; post_template.render(post, <span class="literal">true</span>,<span class="literal">false</span>) &#125;&#125;</span><br><span class="line">    &#123;% endfor %&#125;</span><br><span class="line">  &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加文章边框阴影、取消文章间分割线"><a href="#增加文章边框阴影、取消文章间分割线" class="headerlink" title="增加文章边框阴影、取消文章间分割线"></a>增加文章边框阴影、取消文章间分割线</h2><p>在<code>\themes\next\source\css\_custom\custom.styl</code>文件中写入：  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"><span class="selector-class">.post</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">24px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">35px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">24px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">203</span>, .<span class="number">5</span>);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">204</span>, .<span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>增加了文章边框后，文章间的分割线就没必要存在了，所以干脆取消。  </p>
+<p>在<code>/themes/next/source/css/_common/components/post/post-eof.styl</code>中把分割线高度改成<code>0px</code>,并把<code>margin</code>一行注释掉：  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.posts-expand</span> &#123;</span><br><span class="line">  .post-eof &#123;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">block</span>;</span><br><span class="line">    // margin: $post-eof-margin-top auto $post-eof-margin-bottom;</span><br><span class="line">    <span class="selector-tag">width</span>: 0%;</span><br><span class="line">    <span class="selector-tag">height</span>: 0<span class="selector-tag">px</span>;</span><br><span class="line">    background: $grey-light;</span><br><span class="line">    <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="首页展示文章开头，增加阅读全文按钮"><a href="#首页展示文章开头，增加阅读全文按钮" class="headerlink" title="首页展示文章开头，增加阅读全文按钮"></a>首页展示文章开头，增加<code>阅读全文</code>按钮</h2><p><code>主题配置文件</code>中：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Automatically Excerpt. Not recommend.</span></span><br><span class="line"><span class="comment"># Use &lt;!-- more --&gt; in the post to control excerpt accurately.</span></span><br><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span>          <span class="comment"># 改成true</span></span><br><span class="line">  <span class="attr">length:</span> <span class="number">150</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read more button</span></span><br><span class="line"><span class="comment"># If true, the read more button would be displayed in excerpt section.</span></span><br><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span>     <span class="comment"># 改成true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改新建文章模板"><a href="#修改新建文章模板" class="headerlink" title="修改新建文章模板"></a>修改新建文章模板</h2><p><code>/scaffolds/post.md</code>中修改内容：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:           <span class="comment">// 文章标签</span></span><br><span class="line">categories:     <span class="comment">// 文章分类</span></span><br><span class="line">permalink:      <span class="comment">// 文章自定义链接</span></span><br><span class="line">---</span><br><span class="line">&lt;center&gt; &lt;font color="#bababa"&gt;***首页展示的字***&lt;/font&gt;&lt;br/&gt; &lt;/center&gt;</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改文章末尾-tags-的符号（-改成图标）"><a href="#修改文章末尾-tags-的符号（-改成图标）" class="headerlink" title="修改文章末尾 tags 的符号（#改成图标）"></a>修改文章末尾 tags 的符号（<code>#</code>改成图标）</h2><p>在<code>/themes/next/layout/_macro/post.swig中</code>，搜索<code>rel=&quot;tag&quot;&gt;#</code>，将<code>#</code>换成<code>&lt;i class=&quot;fa fa-tag&quot;&gt;&lt;/i&gt;</code>。  </p>
+<h2 id="SEO-相关"><a href="#SEO-相关" class="headerlink" title="SEO 相关"></a>SEO 相关</h2><h3 id="主题自带的-SEO-选项"><a href="#主题自带的-SEO-选项" class="headerlink" title="主题自带的 SEO 选项"></a>主题自带的 SEO 选项</h3><p>在<code>主题配置文件中</code>修改项：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">seo:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h3><p>安装：  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>站点配置文件</code>末尾加入内容：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># rtk: sitemap setting</span></span><br><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line"><span class="attr">baidusitemap:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
+
+<p>在<code>/source</code>中建一个<code>robots.txt</code>：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">User-<span class="string">agent:</span> *</span><br><span class="line"><span class="string">Allow:</span> /</span><br><span class="line"><span class="string">Allow:</span> <span class="regexp">/archives/</span></span><br><span class="line"><span class="string">Allow:</span> <span class="regexp">/categories/</span></span><br><span class="line"><span class="string">Allow:</span> <span class="regexp">/tags/</span> </span><br><span class="line"><span class="string">Disallow:</span> <span class="regexp">/vendors/</span></span><br><span class="line"><span class="string">Disallow:</span> <span class="regexp">/js/</span></span><br><span class="line"><span class="string">Disallow:</span> <span class="regexp">/css/</span></span><br><span class="line"><span class="string">Disallow:</span> <span class="regexp">/fonts/</span></span><br><span class="line"><span class="string">Disallow:</span> <span class="regexp">/vendors/</span></span><br><span class="line"><span class="string">Disallow:</span> <span class="regexp">/fancybox/</span></span><br><span class="line"></span><br><span class="line"><span class="string">sitemap:</span> <span class="string">https:</span><span class="comment">//reitake.github.io/sitemap.xml</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加一个导航页面"><a href="#增加一个导航页面" class="headerlink" title="增加一个导航页面"></a>增加一个导航页面</h2><p>以目前的<a href="../../../../tools/">tools</a>页面为例:  </p>
+<p>先在<code>主题配置文件</code>中的<code>menu</code>项增加需要的导航项：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  tools: /tools/ || gears    <span class="comment">// 图标icon去查Font-Awesome</span></span><br></pre></td></tr></table></figure>
+
+<p>去<code>/themes/next/languages/zh-CN.yml</code>汉化：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  tools: 工具</span><br></pre></td></tr></table></figure>
+
+<p>再新建一个page：    </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="built_in">new</span> page tools</span><br></pre></td></tr></table></figure>
+
+<p>这时，会在<code>source</code>文件夹内新建一个<code>tools</code>文件夹，其中包含了1个空的<code>index</code>文件夹（资源文件夹，可删除）和<code>index.md</code>。  </p>
+<p><code>index.md</code>需要编辑front-matter：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: tools</span><br><span class="line">date: <span class="number">2019</span><span class="number">-12</span><span class="number">-24</span> <span class="number">00</span>:<span class="number">30</span>:<span class="number">28</span></span><br><span class="line"><span class="keyword">type</span>: <span class="string">"page"</span>   <span class="comment">// 这里的type种类见 /themes/next/layout，目前感觉page和post没区别</span></span><br></pre></td></tr></table></figure>
+
+<p>然后像编辑post一样写内容，链接可采用相对路径形式，如：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [Ingress任务图标分割工具 - Mission Banner Cropper](ingressmissionset/)</span><br><span class="line">- [在线给头像带上圣诞帽](christmashat/)</span><br></pre></td></tr></table></figure>
+
+<p>最后，如果<code>tools</code>文件夹内的文件，不需要hexo渲染成html的，需要在<code>站点配置文件</code>的<code>skip_render</code>一项中增加不需要渲染的项目：  </p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">skip_render:</span><br><span class="line">  - <span class="string">'tools/christmashat/**'</span></span><br><span class="line">  - <span class="string">'tools/ingressmissionset/**'</span></span><br></pre></td></tr></table></figure>
+
+
+<h1 id="遗留问题"><a href="#遗留问题" class="headerlink" title="遗留问题"></a>遗留问题</h1><h2 id="文章边框"><a href="#文章边框" class="headerlink" title="文章边框"></a>文章边框</h2><p>加了文章边框后，首页看起来是不会干巴巴的了，但是在竖屏手机上看，可展示文章区域就窄了，体验不佳。（所以需要pad？</p>
+<h2 id="百度抓取"><a href="#百度抓取" class="headerlink" title="百度抓取"></a>百度抓取</h2><p>目前 github 屏蔽了百度的抓取，所以就先没做<code>baidusitemap</code>和<code>百度站长</code>内容，以后不屏蔽了再说吧。</p>
+<h1 id="踩过的坑"><a href="#踩过的坑" class="headerlink" title="踩过的坑"></a>踩过的坑</h1><h2 id="fontawesome-icon-显示不出来"><a href="#fontawesome-icon-显示不出来" class="headerlink" title="fontawesome icon 显示不出来"></a><code>fontawesome</code> icon 显示不出来</h2><p><code>主题配置文件中</code>，把这一项按 example 填上：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Internal version: 4.6.2</span></span><br><span class="line"><span class="comment"># See: https://fontawesome.com</span></span><br><span class="line"><span class="comment"># Example:</span></span><br><span class="line"><span class="comment"># fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css</span></span><br><span class="line"><span class="comment"># fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css</span></span><br><span class="line"><span class="attr">fontawesome:</span> <span class="string">//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css</span></span><br></pre></td></tr></table></figure>
+
+<p>给了两个 example，试着 ping 了下，第一个 8 ms，第二个 280 ms，选用了第一个。  </p>
+<p>ps. 看了下其他人的 NexT v5.x 的配置文件，这一项默认是空着的，但能显示出 icon，现在用的 v7.0.1 也是默认空着，但我这只有填上才能显示出来，不知道是不是八阿哥。  </p>
+<h2 id="npm-install没反应"><a href="#npm-install没反应" class="headerlink" title="npm install没反应"></a><code>npm install</code>没反应</h2><p>把镜像网站替换成淘宝的。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">get</span> registry  //显示当前的镜像网站</span><br><span class="line">$ npm config <span class="keyword">set</span> registry http://registry.npm.taobao.org    //更改镜像网站</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/20/Golang-pkg/" rel="prev" title="Golang pkg Notes">
+      <i class="fa fa-chevron-left"></i> Golang pkg Notes
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/04/01/R-Notes/" rel="next" title="R语言基础の笔记">
+      R语言基础の笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置方案更新"><span class="nav-number">1.</span> <span class="nav-text">配置方案更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本信息"><span class="nav-number">2.</span> <span class="nav-text">基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我的配置"><span class="nav-number">3.</span> <span class="nav-text">我的配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选用主题"><span class="nav-number">3.1.</span> <span class="nav-text">选用主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章按更新时间排序"><span class="nav-number">3.2.</span> <span class="nav-text">文章按更新时间排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选用主题皮肤"><span class="nav-number">3.3.</span> <span class="nav-text">选用主题皮肤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#隐藏页脚-Hexo-和-NexT-的声明和版本"><span class="nav-number">3.4.</span> <span class="nav-text">隐藏页脚 Hexo 和 NexT 的声明和版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sidebar-放到右侧"><span class="nav-number">3.5.</span> <span class="nav-text">sidebar 放到右侧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加返回顶部按钮、样式"><span class="nav-number">3.6.</span> <span class="nav-text">增加返回顶部按钮、样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置侧边栏菜单内容"><span class="nav-number">3.7.</span> <span class="nav-text">配置侧边栏菜单内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加站内搜索"><span class="nav-number">3.8.</span> <span class="nav-text">增加站内搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主页侧边栏增加社交信息"><span class="nav-number">3.9.</span> <span class="nav-text">主页侧边栏增加社交信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加-Valine-评论功能"><span class="nav-number">3.10.</span> <span class="nav-text">增加 Valine 评论功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不显示文章信息中“评论数”三个字"><span class="nav-number">3.11.</span> <span class="nav-text">不显示文章信息中“评论数”三个字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加页脚显示网站运营时间功能"><span class="nav-number">3.12.</span> <span class="nav-text">增加页脚显示网站运营时间功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加页脚不蒜子的站点访问人次统计"><span class="nav-number">3.13.</span> <span class="nav-text">增加页脚不蒜子的站点访问人次统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加文章阅读次数显示"><span class="nav-number">3.14.</span> <span class="nav-text">增加文章阅读次数显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加文章边框阴影、取消文章间分割线"><span class="nav-number">3.15.</span> <span class="nav-text">增加文章边框阴影、取消文章间分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#首页展示文章开头，增加阅读全文按钮"><span class="nav-number">3.16.</span> <span class="nav-text">首页展示文章开头，增加阅读全文按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改新建文章模板"><span class="nav-number">3.17.</span> <span class="nav-text">修改新建文章模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文章末尾-tags-的符号（-改成图标）"><span class="nav-number">3.18.</span> <span class="nav-text">修改文章末尾 tags 的符号（#改成图标）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO-相关"><span class="nav-number">3.19.</span> <span class="nav-text">SEO 相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主题自带的-SEO-选项"><span class="nav-number">3.19.1.</span> <span class="nav-text">主题自带的 SEO 选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站点地图"><span class="nav-number">3.19.2.</span> <span class="nav-text">站点地图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加一个导航页面"><span class="nav-number">3.20.</span> <span class="nav-text">增加一个导航页面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遗留问题"><span class="nav-number">4.</span> <span class="nav-text">遗留问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章边框"><span class="nav-number">4.1.</span> <span class="nav-text">文章边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度抓取"><span class="nav-number">4.2.</span> <span class="nav-text">百度抓取</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#踩过的坑"><span class="nav-number">5.</span> <span class="nav-text">踩过的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fontawesome-icon-显示不出来"><span class="nav-number">5.1.</span> <span class="nav-text">fontawesome icon 显示不出来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-install没反应"><span class="nav-number">5.2.</span> <span class="nav-text">npm install没反应</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="rtk"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">rtk</p>
+  <div class="site-description" itemprop="description">冷萃少冰不加糖</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/reitake" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;reitake" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/rrrrrtk" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;rrrrrtk" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">rtk</span>
+</div><span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+</span>
+<span id="sitetime"></span>
+<script language="javascript">
+  function siteTime(){
+    window.setTimeout("siteTime()", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+    var today = new Date();
+    var todayYear = today.getFullYear();
+    var todayMonth = today.getMonth()+1;
+    var todayDate = today.getDate();
+    var todayHour = today.getHours();
+    var todayMinute = today.getMinutes();
+    var todaySecond = today.getSeconds();
+    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+    year - 作为date对象的年份，为4位年份值
+    month - 0-11之间的整数，做为date对象的月份
+    day - 1-31之间的整数，做为date对象的天数
+    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+    minutes - 0-59之间的整数，做为date对象的分钟数
+    seconds - 0-59之间的整数，做为date对象的秒数
+    microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+    var t1 = Date.UTC(2019,03,07,10,00,00); //建站时间
+    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+    var diff = t2-t1;
+    var diffYears = Math.floor(diff/years);
+    var diffDays = Math.floor((diff/days)-diffYears*365);
+    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+    document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒 ~喵~";
+  }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+  siteTime();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'FY0k4GNyVIFSqBrIxPq7yN7t-gzGzoHsz',
+      appKey     : 'FqCFfTcVczkkBx9SyMlf7myz',
+      placeholder: "喵w ヾﾉ≧w≦)o",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
