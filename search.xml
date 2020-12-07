@@ -182,236 +182,11 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「笔记」- 软件</category>
       </categories>
       <tags>
         <tag>Note</tag>
         <tag>Axure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《能源互联网》笔记</title>
-    <url>/2020/06/26/Energy-Internet-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Energy Internet</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<ul>
-<li>作者：孙宏斌  </li>
-<li>出版社：科学出版社 </li>
-</ul>
-<hr>
-<h1 id="第四部分-价值层-第3章-虚拟电厂"><a href="#第四部分-价值层-第3章-虚拟电厂" class="headerlink" title="第四部分 价值层  第3章 虚拟电厂"></a>第四部分 价值层  第3章 虚拟电厂</h1><p>分布式能源（DER）单独运行时，电源容量较小，且具有较大的随机性、波动性、间歇性，并网后难以对其进行调度。为解决单独的分布式能源介入电网造成的不利影响，学者提出了虚拟电厂（VPP）。  </p>
-<h2 id="虚拟电厂概述"><a href="#虚拟电厂概述" class="headerlink" title="虚拟电厂概述"></a>虚拟电厂概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>没有统一定义。  </p>
-<ul>
-<li>①是一系列分布式能源的集合，以传统发电厂的角色参与电力系统的运行。</li>
-<li>②是对电网中各种能源进行综合管理的软件系统。</li>
-<li>③VPP也包括效能电厂，通过减少终端用电设备和装置的用电需求的方式来产生“富余“的电能，即通过需求方提高效能，达到建实际电厂的效果。</li>
-<li>③在能源互联网建设提出之后，虚拟电厂可以看成可以广域、动态聚合多种能源的能源互联网。</li>
-</ul>
-<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据功能，分为商业型虚拟电厂（commercial VPP，CVPP）、技术型虚拟电厂（technical VPP，TVPP）。  </p>
-<ul>
-<li>CVPP<ul>
-<li>从商业收益的角度出发，对用户需求和发电潜力进行预测，将虚拟电场中的分布式能源接入电力市场，以优化和调度用电量，是分布式能源投资组合的一中灵活表述。</li>
-<li>要实现：<ul>
-<li>①根据从市场获得的信息订立合同，并提交信息至系统运营商。</li>
-<li>②便是交易计划，确定市场价格，实现实时市场交易。</li>
-<li>③实现啊投资组合交易与服务，提供两者的平衡。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>TVPP<ul>
-<li>从系统管理的角度出发，有分布式能源和可控负荷共同组成，考虑分布式能源聚合对本地网络的实时邮箱，可以看成一个带有传输系统的发电厂，具有与其他和电网项链的电厂相同的表征参数。</li>
-<li>主要为管理者和提供可视化的信息，优化分布式能源的运行，并根据当地电网的运行约束提供配套服务。</li>
-<li>要实现的功能：<ul>
-<li>①整合所有分布式能源和负荷的输入，为配电管理员（DSO）提供系统管理服务。</li>
-<li>②为输电管理员（TSO）提供系统平衡和配套服务。</li>
-<li>③提供可视化操作界面，并允许控制系统内的分布式能源，增强分布式能源的可控性，提供系统最低成本的运营方式。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><p>根据信息流传输控制结构的不同，分为集中控制方式虚拟电厂（centralized controlled VPP，CCVPP）、分散控制方式虚拟电厂（distributed controlled VPP, DCVPP）、完全分散控制方式虚拟电厂（fully DCVPP，FDCVPP）。  </p>
-<ul>
-<li>集中控制方式<ul>
-<li>通过控制些调整下（CCC）完全掌握涉及分布式运行的所有单位的信息，并可以对所有发电或用电单元进行控制。</li>
-<li>具有优先的可拓展性和兼容性</li>
-</ul>
-</li>
-<li>分散控制方式<ul>
-<li>VPP分为多个层次</li>
-<li>使VPP模块化，可改善集中控制方式下的通信阻塞和兼容性差的问题</li>
-</ul>
-</li>
-<li>完全分散控制方式<ul>
-<li>控制协调中心由数据交换与处理中心代替，交换与处理中心只提供市场价格、天气预报等信息。</li>
-<li>VPP被划分为相互独立自治的只能子单元，不受数据交换与处理中心控制，只接受来自数据交换与处理中心的信息，根据信息对资深的运行状态进行优化。</li>
-<li>具有好的可拓展性和开放性，也更适合参与电力市场</li>
-</ul>
-</li>
-</ul>
-<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p>目标是将分布式能源优化组合成有机整体，提供店里辅助服务，通过协调控制使VPP运行在最优运行点，实现整体利益的最大化。  </p>
-<ul>
-<li>发电商预测，提交各自的第二日发电计划</li>
-<li>VPP需协调个发电商电价</li>
-<li>VPP根据发电商电价、输出功率、电能质量和电力储备等特性，指定第二天的发电计划</li>
-<li>VPP根据发电计划和发电商所报电价及电量，指定虚拟电厂电价，并确定电网接入点和注入功率</li>
-<li>VPP与市场运营商签订发电协议（电量、电价），校验协议是否符合潮流、阻塞等系统网络条件</li>
-<li>系统通知虚拟电厂订立发电合同，VPP与发电商协调制定第二天的发电计划</li>
-<li>VPP根据发电计划控制个发电商的输出功率，对实际网络情况进行优化调整，并将发电结果录入数据库，为之后提供数据和依据</li>
-</ul>
-<h3 id="虚拟电厂与微电网的区别"><a href="#虚拟电厂与微电网的区别" class="headerlink" title="虚拟电厂与微电网的区别"></a>虚拟电厂与微电网的区别</h3><ul>
-<li>对分布式能源聚合的有效区域不同<ul>
-<li>微网对地理位置要求高，一般处于同一区域内</li>
-<li>虚拟电厂可跨区聚合</li>
-</ul>
-</li>
-<li>与配电网的连接点不同<ul>
-<li>VPP可能有多个公共连接点</li>
-<li>微网一般只有一个</li>
-</ul>
-</li>
-<li>与电网的连接方式不同<ul>
-<li>VPP不改变聚合的风不是能源的并网形式没更侧重于通过联测、通信技术聚合</li>
-<li>微网需要对电网进行物理拓展</li>
-</ul>
-</li>
-<li>运行方式不同<ul>
-<li>微网可孤岛运行，可并网运行</li>
-<li>VPP只能并网</li>
-</ul>
-</li>
-<li>侧重功能不同<ul>
-<li>微网侧重就地平衡负荷</li>
-<li>VPP侧重实现供应主体利益最大化，具有电力市场经营能力</li>
-</ul>
-</li>
-</ul>
-<h3 id="示范项目"><a href="#示范项目" class="headerlink" title="示范项目"></a>示范项目</h3><ul>
-<li>2001<del>2005年，欧盟第5框架计划下试试的VFCPP（virtual fuel cell power plant）项目、2005</del>2009年欧盟第6框架下FENIX（flexible electricity network to integrate the expected energy solution）项目、2012<del>2015年，欧盟第7框架TWENTIES研究项目和WEB2ENERGY项目、2008</del>2013年德国E-E能源计划</li>
-<li>2016年日本关西电力、富士电机、三社电机、杰士汤浅、住友电工、优利系统等合作推出了一个虚拟电厂试验项目</li>
-<li>2016年8月澳大利亚公共事业AGL公司宣布将要大枣世界上最大的虚拟电厂，美国储能开放商Sunverge</li>
-<li>2016年8月美国Nest Labs与南加州爱迪生电力公司签订虚拟电厂资源</li>
-<li>2016年纽约公共事业公司Con Edison公示和美国储能开发商Sunverge投资1500万美元虚拟电厂试点项目</li>
-<li>国内示范工程偏向于实现能效电厂的功能。<ul>
-<li>江苏昆山</li>
-<li>上海</li>
-</ul>
-</li>
-</ul>
-<h2 id="能源互联网下虚拟电厂的模型框架"><a href="#能源互联网下虚拟电厂的模型框架" class="headerlink" title="能源互联网下虚拟电厂的模型框架"></a>能源互联网下虚拟电厂的模型框架</h2><h3 id="VPP组成结构"><a href="#VPP组成结构" class="headerlink" title="VPP组成结构"></a>VPP组成结构</h3><p>3部分，由发电系统、能量存储系统、通信系统组成。   </p>
-<ul>
-<li>发电系统主要包括家庭型分布式电源（DDG）和公用型分布式能源（PDG）</li>
-<li>能量存储系统补偿波动性和不可控性</li>
-<li>通信系统进行能量管理、数据采集与监控每一集与电力系统调度中心通信</li>
-<li>未来发展：用户侧管理，需求响应<ul>
-<li>需求响应：电力用户对市场价格信号或激励机制做出响应，主动改变自身原有电力消费模式的行为</li>
-<li>分为基于价格的需求响应（PBDR）、基于激励的需求响应（IBDR）</li>
-</ul>
-</li>
-</ul>
-<h3 id="VPP组成框架"><a href="#VPP组成框架" class="headerlink" title="VPP组成框架"></a>VPP组成框架</h3><p>一系列分布式电源的聚合：可控机组、不可控机组、储能设备、可控负荷、电动汽车、通信设备等。  </p>
-<h3 id="VPP容量配置"><a href="#VPP容量配置" class="headerlink" title="VPP容量配置"></a>VPP容量配置</h3><p>集中于局部优化和就地平衡。常用方法有多目标优化方法、博弈论方法、投资组合理论等。  </p>
-<h3 id="VPP的组合选择与利益分配"><a href="#VPP的组合选择与利益分配" class="headerlink" title="VPP的组合选择与利益分配"></a>VPP的组合选择与利益分配</h3><p>通过多种组合结构下的优先级排序，从而自适应地组合成一个虚拟电厂最佳组合结构。  </p>
-<p>考虑到虚拟电厂内部成员的多样性和多产权型，需要对其组合内部的收益分配机制进行研究。同时需要指定其与大电网以及电力交易中心之间的合作机制，以保证所有参与者的合理收益、积极性、稳定性、满意度。  </p>
-<h2 id="能源互联网下虚拟电厂的运行与控制"><a href="#能源互联网下虚拟电厂的运行与控制" class="headerlink" title="能源互联网下虚拟电厂的运行与控制"></a>能源互联网下虚拟电厂的运行与控制</h2><h3 id="VPP的内部优化调度"><a href="#VPP的内部优化调度" class="headerlink" title="VPP的内部优化调度"></a>VPP的内部优化调度</h3><p>指由虚拟电厂对自身内部的分布式能源进行出力的优化，从而定制内部分布式能源的出力计划。  </p>
-<p>常用的目标函数：  </p>
-<ul>
-<li>经济效益最大</li>
-<li>运行成本最小</li>
-<li>弃电弃负荷的惩罚成本最小</li>
-<li>环境成本最小</li>
-</ul>
-<p>常用的约束条件：  </p>
-<ul>
-<li>功率平衡约束</li>
-<li>机组出力约束</li>
-<li>机组爬坡率约束</li>
-<li>储能设备充放电约束</li>
-<li>传输功率约束</li>
-</ul>
-<h3 id="含VPP的电网优化调度"><a href="#含VPP的电网优化调度" class="headerlink" title="含VPP的电网优化调度"></a>含VPP的电网优化调度</h3><p>从电网的角度出发，将虚拟电厂看成一个传统电厂，根据电网的实际运行环境进行优化，确定虚拟电厂的处理。  </p>
-<p>常用的目标函数：  </p>
-<ul>
-<li>系统效益最大</li>
-<li>系统成本最小</li>
-<li>网络损耗最小</li>
-</ul>
-<p>常用的约束条件：  </p>
-<ul>
-<li>系统潮流约束</li>
-<li>系统电压约束</li>
-<li>虚拟电厂处理约束</li>
-<li>传输功率约束</li>
-</ul>
-<h3 id="不确定性处理"><a href="#不确定性处理" class="headerlink" title="不确定性处理"></a>不确定性处理</h3><p>存在不确定因素：风、光等不可控电源处理的不确定性、负荷的不确定性、机组随机故障、电价不确定性等。  </p>
-<p>处理方法：模糊规划、随机规划、鲁棒优化等  </p>
-<h3 id="能源互联网下虚拟电厂的多层优化调度"><a href="#能源互联网下虚拟电厂的多层优化调度" class="headerlink" title="能源互联网下虚拟电厂的多层优化调度"></a>能源互联网下虚拟电厂的多层优化调度</h3><ul>
-<li>虚拟电厂的多时间尺度优化调度，电力市场分日间市场、日内市场、实时市场。</li>
-<li>虚拟电厂的多层级优化调度</li>
-</ul>
-<h3 id="基于多代理系统的虚拟电厂运行与控制"><a href="#基于多代理系统的虚拟电厂运行与控制" class="headerlink" title="基于多代理系统的虚拟电厂运行与控制"></a>基于多代理系统的虚拟电厂运行与控制</h3><ul>
-<li>多代理系统是由多个相互独立、可以双向互通通信的智能代理组合形成的，这些代理在逻辑与物理上是分离的。各个代理具有自主性和独立性</li>
-<li>基于多代理系统的模拟电厂控制框架</li>
-</ul>
-<h2 id="能源互联网下虚拟电厂的市场竞价"><a href="#能源互联网下虚拟电厂的市场竞价" class="headerlink" title="能源互联网下虚拟电厂的市场竞价"></a>能源互联网下虚拟电厂的市场竞价</h2><h3 id="虚拟电厂市场竞价问题"><a href="#虚拟电厂市场竞价问题" class="headerlink" title="虚拟电厂市场竞价问题"></a>虚拟电厂市场竞价问题</h3><ul>
-<li>按功能，可参与的市场模式：能量市场、辅助服务市场等<ul>
-<li>能量市场：考虑电网安全约束，目标为经济效益最优</li>
-<li>辅助服务市场：考虑备用容量约束、调峰容量约束等，目标为社会支付服务成本最小</li>
-</ul>
-</li>
-<li>按时间尺度：中长期合约市场、日前市场、日内市场和实时市场<ul>
-<li>日前市场<ul>
-<li>目标函数：运行成本最小或经济效益最大</li>
-<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束；传统机组启停时间约束</li>
-</ul>
-</li>
-<li>日内市场<ul>
-<li>目标函数：运行成本最小或经济效益最大</li>
-<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
-</ul>
-</li>
-<li>实时市场<ul>
-<li>目标函数：最小调整成本</li>
-<li>约束条件：系统功率平衡约束；出力调整量约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="基于多代理系统的虚拟电厂市场竞价问题"><a href="#基于多代理系统的虚拟电厂市场竞价问题" class="headerlink" title="基于多代理系统的虚拟电厂市场竞价问题"></a>基于多代理系统的虚拟电厂市场竞价问题</h3><ul>
-<li>电力市场代理</li>
-<li>传统电厂代理及虚拟电厂代理</li>
-<li>分布式能源代理</li>
-</ul>
-<h3 id="多市场模式下虚拟电厂市场竞价问题"><a href="#多市场模式下虚拟电厂市场竞价问题" class="headerlink" title="多市场模式下虚拟电厂市场竞价问题"></a>多市场模式下虚拟电厂市场竞价问题</h3><p>关键在于如何制定多市场模式下的参与规则、如何确定多市场之间的耦合关系，以及如何解决多市场模式下的多目标优化问题，是的虚拟电厂具有更好的适应性。  </p>
-<h2 id="能源互联网下虚拟电厂的发展与展望"><a href="#能源互联网下虚拟电厂的发展与展望" class="headerlink" title="能源互联网下虚拟电厂的发展与展望"></a>能源互联网下虚拟电厂的发展与展望</h2><h3 id="虚拟电厂在能源互联网中的作用与地位"><a href="#虚拟电厂在能源互联网中的作用与地位" class="headerlink" title="虚拟电厂在能源互联网中的作用与地位"></a>虚拟电厂在能源互联网中的作用与地位</h3><p>构建能源互联网的重点在于智能发电、智能配电、智能用电和用户侧服务。  </p>
-<p>在能源互联网中，虚拟电厂可以利用能源互联网的先进技术实现对资深的运行优化与能量管理。  </p>
-<p>虚拟电厂在能源互联网中的作用：  </p>
-<ul>
-<li>虚拟电厂是高效利用新能源发电的有效形式</li>
-<li>是推动能源互联网建设的重要环节</li>
-<li>对于完善中国电力市场体制具有重要的促进作用和指导意义</li>
-</ul>
-<h3 id="能源互联网下虚拟电厂的前进展望"><a href="#能源互联网下虚拟电厂的前进展望" class="headerlink" title="能源互联网下虚拟电厂的前进展望"></a>能源互联网下虚拟电厂的前进展望</h3><ul>
-<li>广域合作</li>
-<li>广域消纳</li>
-<li>广域优化</li>
-<li>广域通信</li>
-</ul>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>能源</tag>
-        <tag>VPP</tag>
       </tags>
   </entry>
   <entry>
@@ -718,10 +493,235 @@
 <p><em><code>to be continued...</code></em>  </p>
 ]]></content>
       <categories>
-        <category>Game</category>
+        <category>「Game」</category>
       </categories>
       <tags>
         <tag>Game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《能源互联网》笔记</title>
+    <url>/2020/06/26/Energy-Internet-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Energy Internet</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li>作者：孙宏斌  </li>
+<li>出版社：科学出版社 </li>
+</ul>
+<hr>
+<h1 id="第四部分-价值层-第3章-虚拟电厂"><a href="#第四部分-价值层-第3章-虚拟电厂" class="headerlink" title="第四部分 价值层  第3章 虚拟电厂"></a>第四部分 价值层  第3章 虚拟电厂</h1><p>分布式能源（DER）单独运行时，电源容量较小，且具有较大的随机性、波动性、间歇性，并网后难以对其进行调度。为解决单独的分布式能源介入电网造成的不利影响，学者提出了虚拟电厂（VPP）。  </p>
+<h2 id="虚拟电厂概述"><a href="#虚拟电厂概述" class="headerlink" title="虚拟电厂概述"></a>虚拟电厂概述</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>没有统一定义。  </p>
+<ul>
+<li>①是一系列分布式能源的集合，以传统发电厂的角色参与电力系统的运行。</li>
+<li>②是对电网中各种能源进行综合管理的软件系统。</li>
+<li>③VPP也包括效能电厂，通过减少终端用电设备和装置的用电需求的方式来产生“富余“的电能，即通过需求方提高效能，达到建实际电厂的效果。</li>
+<li>③在能源互联网建设提出之后，虚拟电厂可以看成可以广域、动态聚合多种能源的能源互联网。</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>根据功能，分为商业型虚拟电厂（commercial VPP，CVPP）、技术型虚拟电厂（technical VPP，TVPP）。  </p>
+<ul>
+<li>CVPP<ul>
+<li>从商业收益的角度出发，对用户需求和发电潜力进行预测，将虚拟电场中的分布式能源接入电力市场，以优化和调度用电量，是分布式能源投资组合的一中灵活表述。</li>
+<li>要实现：<ul>
+<li>①根据从市场获得的信息订立合同，并提交信息至系统运营商。</li>
+<li>②便是交易计划，确定市场价格，实现实时市场交易。</li>
+<li>③实现啊投资组合交易与服务，提供两者的平衡。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TVPP<ul>
+<li>从系统管理的角度出发，有分布式能源和可控负荷共同组成，考虑分布式能源聚合对本地网络的实时邮箱，可以看成一个带有传输系统的发电厂，具有与其他和电网项链的电厂相同的表征参数。</li>
+<li>主要为管理者和提供可视化的信息，优化分布式能源的运行，并根据当地电网的运行约束提供配套服务。</li>
+<li>要实现的功能：<ul>
+<li>①整合所有分布式能源和负荷的输入，为配电管理员（DSO）提供系统管理服务。</li>
+<li>②为输电管理员（TSO）提供系统平衡和配套服务。</li>
+<li>③提供可视化操作界面，并允许控制系统内的分布式能源，增强分布式能源的可控性，提供系统最低成本的运营方式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h3><p>根据信息流传输控制结构的不同，分为集中控制方式虚拟电厂（centralized controlled VPP，CCVPP）、分散控制方式虚拟电厂（distributed controlled VPP, DCVPP）、完全分散控制方式虚拟电厂（fully DCVPP，FDCVPP）。  </p>
+<ul>
+<li>集中控制方式<ul>
+<li>通过控制些调整下（CCC）完全掌握涉及分布式运行的所有单位的信息，并可以对所有发电或用电单元进行控制。</li>
+<li>具有优先的可拓展性和兼容性</li>
+</ul>
+</li>
+<li>分散控制方式<ul>
+<li>VPP分为多个层次</li>
+<li>使VPP模块化，可改善集中控制方式下的通信阻塞和兼容性差的问题</li>
+</ul>
+</li>
+<li>完全分散控制方式<ul>
+<li>控制协调中心由数据交换与处理中心代替，交换与处理中心只提供市场价格、天气预报等信息。</li>
+<li>VPP被划分为相互独立自治的只能子单元，不受数据交换与处理中心控制，只接受来自数据交换与处理中心的信息，根据信息对资深的运行状态进行优化。</li>
+<li>具有好的可拓展性和开放性，也更适合参与电力市场</li>
+</ul>
+</li>
+</ul>
+<h3 id="运行流程"><a href="#运行流程" class="headerlink" title="运行流程"></a>运行流程</h3><p>目标是将分布式能源优化组合成有机整体，提供店里辅助服务，通过协调控制使VPP运行在最优运行点，实现整体利益的最大化。  </p>
+<ul>
+<li>发电商预测，提交各自的第二日发电计划</li>
+<li>VPP需协调个发电商电价</li>
+<li>VPP根据发电商电价、输出功率、电能质量和电力储备等特性，指定第二天的发电计划</li>
+<li>VPP根据发电计划和发电商所报电价及电量，指定虚拟电厂电价，并确定电网接入点和注入功率</li>
+<li>VPP与市场运营商签订发电协议（电量、电价），校验协议是否符合潮流、阻塞等系统网络条件</li>
+<li>系统通知虚拟电厂订立发电合同，VPP与发电商协调制定第二天的发电计划</li>
+<li>VPP根据发电计划控制个发电商的输出功率，对实际网络情况进行优化调整，并将发电结果录入数据库，为之后提供数据和依据</li>
+</ul>
+<h3 id="虚拟电厂与微电网的区别"><a href="#虚拟电厂与微电网的区别" class="headerlink" title="虚拟电厂与微电网的区别"></a>虚拟电厂与微电网的区别</h3><ul>
+<li>对分布式能源聚合的有效区域不同<ul>
+<li>微网对地理位置要求高，一般处于同一区域内</li>
+<li>虚拟电厂可跨区聚合</li>
+</ul>
+</li>
+<li>与配电网的连接点不同<ul>
+<li>VPP可能有多个公共连接点</li>
+<li>微网一般只有一个</li>
+</ul>
+</li>
+<li>与电网的连接方式不同<ul>
+<li>VPP不改变聚合的风不是能源的并网形式没更侧重于通过联测、通信技术聚合</li>
+<li>微网需要对电网进行物理拓展</li>
+</ul>
+</li>
+<li>运行方式不同<ul>
+<li>微网可孤岛运行，可并网运行</li>
+<li>VPP只能并网</li>
+</ul>
+</li>
+<li>侧重功能不同<ul>
+<li>微网侧重就地平衡负荷</li>
+<li>VPP侧重实现供应主体利益最大化，具有电力市场经营能力</li>
+</ul>
+</li>
+</ul>
+<h3 id="示范项目"><a href="#示范项目" class="headerlink" title="示范项目"></a>示范项目</h3><ul>
+<li>2001<del>2005年，欧盟第5框架计划下试试的VFCPP（virtual fuel cell power plant）项目、2005</del>2009年欧盟第6框架下FENIX（flexible electricity network to integrate the expected energy solution）项目、2012<del>2015年，欧盟第7框架TWENTIES研究项目和WEB2ENERGY项目、2008</del>2013年德国E-E能源计划</li>
+<li>2016年日本关西电力、富士电机、三社电机、杰士汤浅、住友电工、优利系统等合作推出了一个虚拟电厂试验项目</li>
+<li>2016年8月澳大利亚公共事业AGL公司宣布将要大枣世界上最大的虚拟电厂，美国储能开放商Sunverge</li>
+<li>2016年8月美国Nest Labs与南加州爱迪生电力公司签订虚拟电厂资源</li>
+<li>2016年纽约公共事业公司Con Edison公示和美国储能开发商Sunverge投资1500万美元虚拟电厂试点项目</li>
+<li>国内示范工程偏向于实现能效电厂的功能。<ul>
+<li>江苏昆山</li>
+<li>上海</li>
+</ul>
+</li>
+</ul>
+<h2 id="能源互联网下虚拟电厂的模型框架"><a href="#能源互联网下虚拟电厂的模型框架" class="headerlink" title="能源互联网下虚拟电厂的模型框架"></a>能源互联网下虚拟电厂的模型框架</h2><h3 id="VPP组成结构"><a href="#VPP组成结构" class="headerlink" title="VPP组成结构"></a>VPP组成结构</h3><p>3部分，由发电系统、能量存储系统、通信系统组成。   </p>
+<ul>
+<li>发电系统主要包括家庭型分布式电源（DDG）和公用型分布式能源（PDG）</li>
+<li>能量存储系统补偿波动性和不可控性</li>
+<li>通信系统进行能量管理、数据采集与监控每一集与电力系统调度中心通信</li>
+<li>未来发展：用户侧管理，需求响应<ul>
+<li>需求响应：电力用户对市场价格信号或激励机制做出响应，主动改变自身原有电力消费模式的行为</li>
+<li>分为基于价格的需求响应（PBDR）、基于激励的需求响应（IBDR）</li>
+</ul>
+</li>
+</ul>
+<h3 id="VPP组成框架"><a href="#VPP组成框架" class="headerlink" title="VPP组成框架"></a>VPP组成框架</h3><p>一系列分布式电源的聚合：可控机组、不可控机组、储能设备、可控负荷、电动汽车、通信设备等。  </p>
+<h3 id="VPP容量配置"><a href="#VPP容量配置" class="headerlink" title="VPP容量配置"></a>VPP容量配置</h3><p>集中于局部优化和就地平衡。常用方法有多目标优化方法、博弈论方法、投资组合理论等。  </p>
+<h3 id="VPP的组合选择与利益分配"><a href="#VPP的组合选择与利益分配" class="headerlink" title="VPP的组合选择与利益分配"></a>VPP的组合选择与利益分配</h3><p>通过多种组合结构下的优先级排序，从而自适应地组合成一个虚拟电厂最佳组合结构。  </p>
+<p>考虑到虚拟电厂内部成员的多样性和多产权型，需要对其组合内部的收益分配机制进行研究。同时需要指定其与大电网以及电力交易中心之间的合作机制，以保证所有参与者的合理收益、积极性、稳定性、满意度。  </p>
+<h2 id="能源互联网下虚拟电厂的运行与控制"><a href="#能源互联网下虚拟电厂的运行与控制" class="headerlink" title="能源互联网下虚拟电厂的运行与控制"></a>能源互联网下虚拟电厂的运行与控制</h2><h3 id="VPP的内部优化调度"><a href="#VPP的内部优化调度" class="headerlink" title="VPP的内部优化调度"></a>VPP的内部优化调度</h3><p>指由虚拟电厂对自身内部的分布式能源进行出力的优化，从而定制内部分布式能源的出力计划。  </p>
+<p>常用的目标函数：  </p>
+<ul>
+<li>经济效益最大</li>
+<li>运行成本最小</li>
+<li>弃电弃负荷的惩罚成本最小</li>
+<li>环境成本最小</li>
+</ul>
+<p>常用的约束条件：  </p>
+<ul>
+<li>功率平衡约束</li>
+<li>机组出力约束</li>
+<li>机组爬坡率约束</li>
+<li>储能设备充放电约束</li>
+<li>传输功率约束</li>
+</ul>
+<h3 id="含VPP的电网优化调度"><a href="#含VPP的电网优化调度" class="headerlink" title="含VPP的电网优化调度"></a>含VPP的电网优化调度</h3><p>从电网的角度出发，将虚拟电厂看成一个传统电厂，根据电网的实际运行环境进行优化，确定虚拟电厂的处理。  </p>
+<p>常用的目标函数：  </p>
+<ul>
+<li>系统效益最大</li>
+<li>系统成本最小</li>
+<li>网络损耗最小</li>
+</ul>
+<p>常用的约束条件：  </p>
+<ul>
+<li>系统潮流约束</li>
+<li>系统电压约束</li>
+<li>虚拟电厂处理约束</li>
+<li>传输功率约束</li>
+</ul>
+<h3 id="不确定性处理"><a href="#不确定性处理" class="headerlink" title="不确定性处理"></a>不确定性处理</h3><p>存在不确定因素：风、光等不可控电源处理的不确定性、负荷的不确定性、机组随机故障、电价不确定性等。  </p>
+<p>处理方法：模糊规划、随机规划、鲁棒优化等  </p>
+<h3 id="能源互联网下虚拟电厂的多层优化调度"><a href="#能源互联网下虚拟电厂的多层优化调度" class="headerlink" title="能源互联网下虚拟电厂的多层优化调度"></a>能源互联网下虚拟电厂的多层优化调度</h3><ul>
+<li>虚拟电厂的多时间尺度优化调度，电力市场分日间市场、日内市场、实时市场。</li>
+<li>虚拟电厂的多层级优化调度</li>
+</ul>
+<h3 id="基于多代理系统的虚拟电厂运行与控制"><a href="#基于多代理系统的虚拟电厂运行与控制" class="headerlink" title="基于多代理系统的虚拟电厂运行与控制"></a>基于多代理系统的虚拟电厂运行与控制</h3><ul>
+<li>多代理系统是由多个相互独立、可以双向互通通信的智能代理组合形成的，这些代理在逻辑与物理上是分离的。各个代理具有自主性和独立性</li>
+<li>基于多代理系统的模拟电厂控制框架</li>
+</ul>
+<h2 id="能源互联网下虚拟电厂的市场竞价"><a href="#能源互联网下虚拟电厂的市场竞价" class="headerlink" title="能源互联网下虚拟电厂的市场竞价"></a>能源互联网下虚拟电厂的市场竞价</h2><h3 id="虚拟电厂市场竞价问题"><a href="#虚拟电厂市场竞价问题" class="headerlink" title="虚拟电厂市场竞价问题"></a>虚拟电厂市场竞价问题</h3><ul>
+<li>按功能，可参与的市场模式：能量市场、辅助服务市场等<ul>
+<li>能量市场：考虑电网安全约束，目标为经济效益最优</li>
+<li>辅助服务市场：考虑备用容量约束、调峰容量约束等，目标为社会支付服务成本最小</li>
+</ul>
+</li>
+<li>按时间尺度：中长期合约市场、日前市场、日内市场和实时市场<ul>
+<li>日前市场<ul>
+<li>目标函数：运行成本最小或经济效益最大</li>
+<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束；传统机组启停时间约束</li>
+</ul>
+</li>
+<li>日内市场<ul>
+<li>目标函数：运行成本最小或经济效益最大</li>
+<li>约束条件：系统功率平衡约束；机组出力约束；机组爬坡约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
+</ul>
+</li>
+<li>实时市场<ul>
+<li>目标函数：最小调整成本</li>
+<li>约束条件：系统功率平衡约束；出力调整量约束；系统旋转备用约束；弃风量、弃光亮约束；网络潮流约束；网络节点电压约束</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于多代理系统的虚拟电厂市场竞价问题"><a href="#基于多代理系统的虚拟电厂市场竞价问题" class="headerlink" title="基于多代理系统的虚拟电厂市场竞价问题"></a>基于多代理系统的虚拟电厂市场竞价问题</h3><ul>
+<li>电力市场代理</li>
+<li>传统电厂代理及虚拟电厂代理</li>
+<li>分布式能源代理</li>
+</ul>
+<h3 id="多市场模式下虚拟电厂市场竞价问题"><a href="#多市场模式下虚拟电厂市场竞价问题" class="headerlink" title="多市场模式下虚拟电厂市场竞价问题"></a>多市场模式下虚拟电厂市场竞价问题</h3><p>关键在于如何制定多市场模式下的参与规则、如何确定多市场之间的耦合关系，以及如何解决多市场模式下的多目标优化问题，是的虚拟电厂具有更好的适应性。  </p>
+<h2 id="能源互联网下虚拟电厂的发展与展望"><a href="#能源互联网下虚拟电厂的发展与展望" class="headerlink" title="能源互联网下虚拟电厂的发展与展望"></a>能源互联网下虚拟电厂的发展与展望</h2><h3 id="虚拟电厂在能源互联网中的作用与地位"><a href="#虚拟电厂在能源互联网中的作用与地位" class="headerlink" title="虚拟电厂在能源互联网中的作用与地位"></a>虚拟电厂在能源互联网中的作用与地位</h3><p>构建能源互联网的重点在于智能发电、智能配电、智能用电和用户侧服务。  </p>
+<p>在能源互联网中，虚拟电厂可以利用能源互联网的先进技术实现对资深的运行优化与能量管理。  </p>
+<p>虚拟电厂在能源互联网中的作用：  </p>
+<ul>
+<li>虚拟电厂是高效利用新能源发电的有效形式</li>
+<li>是推动能源互联网建设的重要环节</li>
+<li>对于完善中国电力市场体制具有重要的促进作用和指导意义</li>
+</ul>
+<h3 id="能源互联网下虚拟电厂的前进展望"><a href="#能源互联网下虚拟电厂的前进展望" class="headerlink" title="能源互联网下虚拟电厂的前进展望"></a>能源互联网下虚拟电厂的前进展望</h3><ul>
+<li>广域合作</li>
+<li>广域消纳</li>
+<li>广域优化</li>
+<li>广域通信</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「笔记」- 读书</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>能源</tag>
+        <tag>VPP</tag>
       </tags>
   </entry>
   <entry>
@@ -1435,7 +1435,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>Game</category>
+        <category>「Game」</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -1574,215 +1574,11 @@
 <p>上面的意思是，解析可执行文件server，将其中的 operate 包的 Login 方法转成汇编代码。  </p>
 ]]></content>
       <categories>
-        <category>Go</category>
+        <category>「语言」- Go</category>
       </categories>
       <tags>
         <tag>Go</tag>
         <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Golang in Action Notes</title>
-    <url>/2019/03/19/Go-Action-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Go 语言应用 tips</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="ok-模式"><a href="#ok-模式" class="headerlink" title=",ok 模式"></a><code>,ok</code> 模式</h2><p>（1）在函数返回时检测错误  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">value, err := pack1.Func1(param1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(“Error %s in pack1.Func1 with parameter %v”, err.Error(), param1)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数Func1没有错误:</span></span><br><span class="line">Process(value)</span><br><span class="line"></span><br><span class="line">e.g.: os.Open(file) strconv.Atoi(str)</span><br></pre></td></tr></table></figure>
-
-<p>这种模式也常用于通过<code>defer</code>使程序从<code>panic</code>中恢复执行。  </p>
-<p>要实现简洁的错误检测代码，更好的方式是使用闭包，参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/16.10.md" target="_blank" rel="noopener">第16.10.2小节</a></p>
-<p>（2）检测映射中是否存在一个键值：key1在映射map1中是否有值？<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/08.2.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := map1[key1]; ok &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// key1不存在</span></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
-
-<p>（3）检测一个接口类型变量<code>varI</code>是否包含了类型<code>T</code>：类型断言 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := varI.(T); ok &#123;</span><br><span class="line">    Process(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口类型varI没有包含类型T</span></span><br></pre></td></tr></table></figure>
-
-<p>(4)检测一个通道 <code>ch</code> 是否关闭 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/14.3.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> input := <span class="keyword">range</span> ch &#123;</span><br><span class="line">     Process(input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或者：</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">input</span>, <span class="keyword">open</span> := &lt;-ch; !<span class="keyword">open</span> &#123;</span><br><span class="line">        <span class="keyword">break</span> <span class="comment">// 通道是关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">     Process(<span class="keyword">input</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="出于性能考虑的使用代码片段"><a href="#出于性能考虑的使用代码片段" class="headerlink" title="出于性能考虑的使用代码片段"></a>出于性能考虑的使用代码片段</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>（1）如何修改字符串中的一个字符：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str:=<span class="string">"hello"</span></span><br><span class="line">c:=[]<span class="keyword">byte</span>(str)</span><br><span class="line">c[<span class="number">0</span>]=<span class="string">'c'</span></span><br><span class="line">s2:= <span class="keyword">string</span>(c) <span class="comment">// s2 == "cello"</span></span><br></pre></td></tr></table></figure>
-
-<p>（2）如何获取字符串的子串：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">substr := str[n:m]</span><br></pre></td></tr></table></figure>
-
-<p>（3）如何使用<code>for</code>或者<code>for-range</code>遍历一个字符串：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gives only the bytes:</span></span><br><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">… = str[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// gives the Unicode characters:</span></span><br><span class="line"><span class="keyword">for</span> ix, ch := <span class="keyword">range</span> str &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（4）如何获取一个字符串的字节数：<code>len(str)</code>  </p>
-<p> 如何获取一个字符串的字符数：  </p>
-<p> 最快速：<code>utf8.RuneCountInString(str)</code>   </p>
-<p> <code>len([]rune(str))</code>   </p>
-<p>（5）如何连接字符串：  </p>
-<p> 最快速：<br><code>with a bytes.Buffer</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md" target="_blank" rel="noopener">章节7.2</a>）</p>
-<p><code>Strings.Join()</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md" target="_blank" rel="noopener">章节4.7</a>）</p>
-<p>使用<code>+=</code>：  </p>
- <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str1 := <span class="string">"Hello "</span> </span><br><span class="line">str2 := <span class="string">"World!"</span></span><br><span class="line">str1 += str2 <span class="comment">//str1 == "Hello World!"</span></span><br></pre></td></tr></table></figure>
-
-<p>（6）如何解析命令行参数：使用<code>os</code>或者<code>flag</code>包</p>
-<p>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_12/fileinput.go" target="_blank" rel="noopener">例12.4</a>）  </p>
-<h3 id="数组-切片"><a href="#数组-切片" class="headerlink" title="数组 切片"></a>数组 切片</h3><p>创建：  </p>
-<p><code>arr1 := new([len]type)</code>  </p>
-<p><code>slice1 := make([]type, len)</code>  </p>
-<p>初始化：  </p>
-<p><code>arr1 := [...]type{i1, i2, i3, i4, i5}</code>  </p>
-<p><code>arrKeyValue := [len]type{i1: val1, i2: val2}</code>  </p>
-<p><code>var slice1 []type = arr1[start:end]</code>  </p>
-<p>（1）如何截断数组或者切片的最后一个元素：  </p>
-<p><code>line = line[:len(line)-1]</code>  </p>
-<p>（2）如何使用<code>for</code>或者<code>for-range</code>遍历一个数组（或者切片）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(arr); i++ &#123;</span><br><span class="line">… = arr[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> ix, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（3）如何在一个二维数组或者切片<code>arr2Dim</code>中查找一个指定值<code>V</code>：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">found := <span class="literal">false</span></span><br><span class="line">Found: <span class="keyword">for</span> row := <span class="keyword">range</span> arr2Dim &#123;</span><br><span class="line">    <span class="keyword">for</span> column := <span class="keyword">range</span> arr2Dim[row] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr2Dim[row][column] == V&#123;</span><br><span class="line">            found = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">break</span> Found</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>创建：    <code>map1 := make(map[keytype]valuetype)</code>  </p>
-<p>初始化：   <code>map1 := map[string]int{&quot;one&quot;: 1, &quot;two&quot;: 2}</code>  </p>
-<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个映射：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> map1 &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何在一个映射中检测键<code>key1</code>是否存在：<code>val1, isPresent = map1[key1]</code>  </p>
-<p>返回值：键<code>key1</code>对应的值或者<code>0</code>, <code>true</code>或者<code>false</code>  </p>
-<p>（3）如何在映射中删除一个键：<code>delete(map1, key1)</code>  </p>
-<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>创建：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> struct1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    field1 type1</span><br><span class="line">    field2 type2</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">ms := <span class="built_in">new</span>(struct1)</span><br></pre></td></tr></table></figure>
-
-<p>初始化：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := &amp;struct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当结构体的命名以大写字母开头时，该结构体在包外可见。<br>通常情况下，为每个结构体定义一个构建函数，并推荐使用构建函数初始化结构体（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_10/person.go" target="_blank" rel="noopener">例10.2</a>）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := Newstruct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Newstruct1</span><span class="params">(n <span class="keyword">int</span>, f <span class="keyword">float32</span>, name <span class="keyword">string</span>)</span> *<span class="title">struct1</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;struct1&#123;n, f, name&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>（1）如何检测一个值<code>v</code>是否实现了接口<code>Stringer</code>：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> v, ok := v.(Stringer); ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"implements String(): %s\n"</span>, v.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何使用接口实现一个类型分类函数：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">classifier</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i, x := <span class="keyword">range</span> items &#123;</span><br><span class="line">        <span class="keyword">switch</span> x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a bool\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a float64\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is an int\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">nil</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is nil\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a string\n"</span>, i)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d’s type is unknown\n"</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>如何使用内建函数<code>recover</code>终止<code>panic</code>过程（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md" target="_blank" rel="noopener">章节13.3</a>）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">protect</span><span class="params">(g <span class="keyword">func</span>()</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        log.Println(<span class="string">"done"</span>)</span><br><span class="line">        <span class="comment">// Println executes normally even if there is a panic</span></span><br><span class="line">        <span class="keyword">if</span> x := <span class="built_in">recover</span>(); x != <span class="literal">nil</span> &#123;</span><br><span class="line">            log.Printf(<span class="string">"run time panic: %v"</span>, x)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    log.Println(<span class="string">"start"</span>)</span><br><span class="line">    g()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>（1）如何打开一个文件并读取：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">file, err := os.Open(<span class="string">"input.dat"</span>)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"An error occurred on opening the inputfile\n"</span> +</span><br><span class="line">      <span class="string">"Does the file exist?\n"</span> +</span><br><span class="line">      <span class="string">"Have you got acces to it?\n"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> file.Close()</span><br><span class="line">  iReader := bufio.NewReader(file)</span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    str, err := iReader.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="comment">// error or EOF</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"The input was: %s"</span>, str)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何通过切片读写文件：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">cat</span><span class="params">(f *file.File)</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> NBUF = <span class="number">512</span></span><br><span class="line">  <span class="keyword">var</span> buf [NBUF]<span class="keyword">byte</span></span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> nr, er := f.Read(buf[:]); <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> nr &lt; <span class="number">0</span>:</span><br><span class="line">      fmt.Fprintf(os.Stderr, <span class="string">"cat: error reading from %s: %s\n"</span>,</span><br><span class="line">        f.String(), er.String())</span><br><span class="line">      os.Exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">case</span> nr == <span class="number">0</span>: <span class="comment">// EOF</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> nr &gt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">if</span> nw, ew := file.Stdout.Write(buf[<span class="number">0</span>:nr]); nw != nr &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"cat: error writing from %s: %s\n"</span>,</span><br><span class="line">          f.String(), ew.String())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="协程（goroutine）与通道（channel）"><a href="#协程（goroutine）与通道（channel）" class="headerlink" title="协程（goroutine）与通道（channel）"></a>协程（goroutine）与通道（channel）</h3><p>出于性能考虑的建议：</p>
-<p>实践经验表明，如果你使用并行运算获得高于串行运算的效率：在协程内部已经完成的大部分工作，其开销比创建协程和协程间通信还高。</p>
-<p>1 出于性能考虑建议使用带缓存的通道：</p>
-<p>使用带缓存的通道可以很轻易成倍提高它的吞吐量，某些场景其性能可以提高至10倍甚至更多。通过调整通道的容量，甚至可以尝试着更进一步的优化其性能。</p>
-<p>2 限制一个通道的数据数量并将它们封装成一个数组：</p>
-<p>如果使用通道传递大量单独的数据，那么通道将变成性能瓶颈。然而，将数据块打包封装成数组，在接收端解压数据时，性能可以提高至10倍。</p>
-<p>创建：<code>ch := make(chan type,buf)</code></p>
-<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个通道：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> v := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    <span class="comment">// do something with v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何检测一个通道<code>ch</code>是否关闭：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//read channel until it closes or error-condition</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input, open := &lt;-ch; !open &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"%s"</span>, input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者使用（1）自动检测。  </p>
-<p>（3）如何通过一个通道让主程序等待直到协程完成：  </p>
-<p>（信号量模式）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) <span class="comment">// Allocate a channel.</span></span><br><span class="line"><span class="comment">// Start something in a goroutine; when it completes, signal on the channel.</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// doSomething</span></span><br><span class="line">    ch &lt;- <span class="number">1</span> <span class="comment">// Send a signal; value does not matter.</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingElseForAWhile()</span><br><span class="line">&lt;-ch <span class="comment">// Wait for goroutine to finish; discard sent value.</span></span><br></pre></td></tr></table></figure>
-
-<p>如果希望程序一直阻塞，在匿名函数中省略 <code>ch &lt;- 1</code>即可。  </p>
-<p>（4）通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pump</span><span class="params">()</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; ; i++ &#123;</span><br><span class="line">            ch &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> ch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（5）通道迭代器模板：  </p>
-<p>（6）如何限制并发处理请求的数量：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.11.md" target="_blank" rel="noopener">章节14.11</a> </p>
-<p>（7）如何在多核CPU上实现并行计算：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.13.md" target="_blank" rel="noopener">章节14.13</a>  </p>
-<p>（8）如何终止一个协程：<code>runtime.Goexit()</code>  </p>
-<p>（9）简单的超时模板：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">timeout := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    time.Sleep(<span class="number">1e9</span>) <span class="comment">// one second  </span></span><br><span class="line">    timeout &lt;- <span class="literal">true</span></span><br><span class="line">&#125;()</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;-ch:</span><br><span class="line">    <span class="comment">// a read from ch has occurred</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-timeout:</span><br><span class="line">    <span class="comment">// the read from ch has timed out</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（10）如何使用输入通道和输出通道代替锁：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Worker</span><span class="params">(in, out <span class="keyword">chan</span> *Task)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        t := &lt;-in</span><br><span class="line">        process(t)</span><br><span class="line">        out &lt;- t</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（11）如何在同步调用运行时间过长时将之丢弃：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a> 第二个变体  </p>
-<p>（12）如何在通道中使用计时器和定时器：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a>  </p>
-<p>（13）典型的服务器后端模型：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.4.md" target="_blank" rel="noopener">章节14.4</a>  </p>
-<h3 id="网络和网页应用"><a href="#网络和网页应用" class="headerlink" title="网络和网页应用"></a>网络和网页应用</h3><p><strong>模板：</strong>  </p>
-<p>制作、解析并使模板生效：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strTempl = template.Must(template.New(<span class="string">"TName"</span>).Parse(strTemplateHTML))</span><br></pre></td></tr></table></figure>
-
-<p>在网页应用中使用HTML过滤器过滤HTML特殊字符：  </p>
-<p><code>{ {html .} }</code> 或者通过一个字段 <code>FieldName { { .FieldName |html } }</code>  </p>
-<p>使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）  </p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何在程序出错时终止程序：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">   fmt.Printf(<span class="string">"Program stopping with error %v"</span>, err)</span><br><span class="line">   os.Exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; </span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">"ERROR occurred: "</span> + err.Error())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="出于性能考虑的最佳实践和建议"><a href="#出于性能考虑的最佳实践和建议" class="headerlink" title="出于性能考虑的最佳实践和建议"></a>出于性能考虑的最佳实践和建议</h3><p>（1）尽可能的使用<code>:=</code>去初始化声明一个变量（在函数内部）；  </p>
-<p>（2）尽可能的使用字符代替字符串；  </p>
-<p>（3）尽可能的使用切片代替数组；  </p>
-<p>（4）尽可能的使用数组和切片代替映射（详见参考文献15）；  </p>
-<p>（5）如果只想获取切片中某项值，不需要值的索引，尽可能的使用<code>for range</code>去遍历切片，这比必须查询切片中的每个元素要快一些；  </p>
-<p>（6）当数组元素是稀疏的（例如有很多<code>0</code>值或者空值<code>nil</code>），使用映射会降低内存消耗；  </p>
-<p>（7）初始化映射时指定其容量；  </p>
-<p>（8）当定义一个方法时，使用指针类型作为方法的接收者；  </p>
-<p>（9）在代码中使用常量或者标志提取常量的值； </p>
-<p>（10）尽可能在需要分配大量内存时使用缓存；  </p>
-<p>（11）使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）。  </p>
-<h2 id="方法的接收者对照表"><a href="#方法的接收者对照表" class="headerlink" title="方法的接收者对照表"></a>方法的接收者对照表</h2><p>方法集：定义了一组关联到给定类型的值或者指针的方法。  </p>
-<h3 id="从传递的值的角度看方法集"><a href="#从传递的值的角度看方法集" class="headerlink" title="从传递的值的角度看方法集"></a>从传递的值的角度看方法集</h3><table>
-<thead>
-<tr>
-<th align="center">传递的值</th>
-<th align="center">方法声明的接收者</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">T</td>
-<td align="center">(t T)</td>
-</tr>
-<tr>
-<td align="center">*T</td>
-<td align="center">(t T) 和 (t *T)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>T 类型的值的方法集只包含了值接收者声明的方法</li>
-<li>而指向 T 类型的指针的方法集既包含值接收者声明的方法，也包含指针接收者声明的方法</li>
-</ul>
-<h3 id="从接收者类型的角度来看方法集"><a href="#从接收者类型的角度来看方法集" class="headerlink" title="从接收者类型的角度来看方法集"></a>从接收者类型的角度来看方法集</h3><table>
-<thead>
-<tr>
-<th align="center">方法声明的接收者</th>
-<th align="center">传递的值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">(t T)</td>
-<td align="center">T 和 *T</td>
-</tr>
-<tr>
-<td align="center">(t *T)</td>
-<td align="center">*T</td>
-</tr>
-</tbody></table>
-<ul>
-<li>如果使用指针接收者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口</li>
-<li>如果使用值接收者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口</li>
-</ul>
-<hr>
-<p><em><code>to be continued...</code></em>  </p>
-]]></content>
-      <categories>
-        <category>Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -2039,11 +1835,215 @@
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    done := <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        done = <span class="literal">true</span></span><br><span class="line">    &#125;()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> !done &#123;</span><br><span class="line">        runtime.Gosched()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">println</span>(<span class="string">"done !"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Go</category>
+        <category>「语言」- Go</category>
       </categories>
       <tags>
         <tag>Go</tag>
         <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang in Action Notes</title>
+    <url>/2019/03/19/Go-Action-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Go 语言应用 tips</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="ok-模式"><a href="#ok-模式" class="headerlink" title=",ok 模式"></a><code>,ok</code> 模式</h2><p>（1）在函数返回时检测错误  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">value, err := pack1.Func1(param1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(“Error %s in pack1.Func1 with parameter %v”, err.Error(), param1)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数Func1没有错误:</span></span><br><span class="line">Process(value)</span><br><span class="line"></span><br><span class="line">e.g.: os.Open(file) strconv.Atoi(str)</span><br></pre></td></tr></table></figure>
+
+<p>这种模式也常用于通过<code>defer</code>使程序从<code>panic</code>中恢复执行。  </p>
+<p>要实现简洁的错误检测代码，更好的方式是使用闭包，参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/16.10.md" target="_blank" rel="noopener">第16.10.2小节</a></p>
+<p>（2）检测映射中是否存在一个键值：key1在映射map1中是否有值？<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/08.2.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := map1[key1]; ok &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// key1不存在</span></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
+
+<p>（3）检测一个接口类型变量<code>varI</code>是否包含了类型<code>T</code>：类型断言 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := varI.(T); ok &#123;</span><br><span class="line">    Process(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口类型varI没有包含类型T</span></span><br></pre></td></tr></table></figure>
+
+<p>(4)检测一个通道 <code>ch</code> 是否关闭 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/14.3.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> input := <span class="keyword">range</span> ch &#123;</span><br><span class="line">     Process(input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">input</span>, <span class="keyword">open</span> := &lt;-ch; !<span class="keyword">open</span> &#123;</span><br><span class="line">        <span class="keyword">break</span> <span class="comment">// 通道是关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">     Process(<span class="keyword">input</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="出于性能考虑的使用代码片段"><a href="#出于性能考虑的使用代码片段" class="headerlink" title="出于性能考虑的使用代码片段"></a>出于性能考虑的使用代码片段</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>（1）如何修改字符串中的一个字符：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str:=<span class="string">"hello"</span></span><br><span class="line">c:=[]<span class="keyword">byte</span>(str)</span><br><span class="line">c[<span class="number">0</span>]=<span class="string">'c'</span></span><br><span class="line">s2:= <span class="keyword">string</span>(c) <span class="comment">// s2 == "cello"</span></span><br></pre></td></tr></table></figure>
+
+<p>（2）如何获取字符串的子串：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">substr := str[n:m]</span><br></pre></td></tr></table></figure>
+
+<p>（3）如何使用<code>for</code>或者<code>for-range</code>遍历一个字符串：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gives only the bytes:</span></span><br><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">… = str[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// gives the Unicode characters:</span></span><br><span class="line"><span class="keyword">for</span> ix, ch := <span class="keyword">range</span> str &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）如何获取一个字符串的字节数：<code>len(str)</code>  </p>
+<p> 如何获取一个字符串的字符数：  </p>
+<p> 最快速：<code>utf8.RuneCountInString(str)</code>   </p>
+<p> <code>len([]rune(str))</code>   </p>
+<p>（5）如何连接字符串：  </p>
+<p> 最快速：<br><code>with a bytes.Buffer</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md" target="_blank" rel="noopener">章节7.2</a>）</p>
+<p><code>Strings.Join()</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md" target="_blank" rel="noopener">章节4.7</a>）</p>
+<p>使用<code>+=</code>：  </p>
+ <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str1 := <span class="string">"Hello "</span> </span><br><span class="line">str2 := <span class="string">"World!"</span></span><br><span class="line">str1 += str2 <span class="comment">//str1 == "Hello World!"</span></span><br></pre></td></tr></table></figure>
+
+<p>（6）如何解析命令行参数：使用<code>os</code>或者<code>flag</code>包</p>
+<p>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_12/fileinput.go" target="_blank" rel="noopener">例12.4</a>）  </p>
+<h3 id="数组-切片"><a href="#数组-切片" class="headerlink" title="数组 切片"></a>数组 切片</h3><p>创建：  </p>
+<p><code>arr1 := new([len]type)</code>  </p>
+<p><code>slice1 := make([]type, len)</code>  </p>
+<p>初始化：  </p>
+<p><code>arr1 := [...]type{i1, i2, i3, i4, i5}</code>  </p>
+<p><code>arrKeyValue := [len]type{i1: val1, i2: val2}</code>  </p>
+<p><code>var slice1 []type = arr1[start:end]</code>  </p>
+<p>（1）如何截断数组或者切片的最后一个元素：  </p>
+<p><code>line = line[:len(line)-1]</code>  </p>
+<p>（2）如何使用<code>for</code>或者<code>for-range</code>遍历一个数组（或者切片）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(arr); i++ &#123;</span><br><span class="line">… = arr[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> ix, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（3）如何在一个二维数组或者切片<code>arr2Dim</code>中查找一个指定值<code>V</code>：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">found := <span class="literal">false</span></span><br><span class="line">Found: <span class="keyword">for</span> row := <span class="keyword">range</span> arr2Dim &#123;</span><br><span class="line">    <span class="keyword">for</span> column := <span class="keyword">range</span> arr2Dim[row] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr2Dim[row][column] == V&#123;</span><br><span class="line">            found = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">break</span> Found</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>创建：    <code>map1 := make(map[keytype]valuetype)</code>  </p>
+<p>初始化：   <code>map1 := map[string]int{&quot;one&quot;: 1, &quot;two&quot;: 2}</code>  </p>
+<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个映射：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> map1 &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何在一个映射中检测键<code>key1</code>是否存在：<code>val1, isPresent = map1[key1]</code>  </p>
+<p>返回值：键<code>key1</code>对应的值或者<code>0</code>, <code>true</code>或者<code>false</code>  </p>
+<p>（3）如何在映射中删除一个键：<code>delete(map1, key1)</code>  </p>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>创建：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> struct1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    field1 type1</span><br><span class="line">    field2 type2</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">ms := <span class="built_in">new</span>(struct1)</span><br></pre></td></tr></table></figure>
+
+<p>初始化：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := &amp;struct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当结构体的命名以大写字母开头时，该结构体在包外可见。<br>通常情况下，为每个结构体定义一个构建函数，并推荐使用构建函数初始化结构体（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_10/person.go" target="_blank" rel="noopener">例10.2</a>）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := Newstruct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Newstruct1</span><span class="params">(n <span class="keyword">int</span>, f <span class="keyword">float32</span>, name <span class="keyword">string</span>)</span> *<span class="title">struct1</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;struct1&#123;n, f, name&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>（1）如何检测一个值<code>v</code>是否实现了接口<code>Stringer</code>：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> v, ok := v.(Stringer); ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"implements String(): %s\n"</span>, v.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何使用接口实现一个类型分类函数：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">classifier</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i, x := <span class="keyword">range</span> items &#123;</span><br><span class="line">        <span class="keyword">switch</span> x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a bool\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a float64\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is an int\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">nil</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is nil\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a string\n"</span>, i)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d’s type is unknown\n"</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>如何使用内建函数<code>recover</code>终止<code>panic</code>过程（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md" target="_blank" rel="noopener">章节13.3</a>）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">protect</span><span class="params">(g <span class="keyword">func</span>()</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        log.Println(<span class="string">"done"</span>)</span><br><span class="line">        <span class="comment">// Println executes normally even if there is a panic</span></span><br><span class="line">        <span class="keyword">if</span> x := <span class="built_in">recover</span>(); x != <span class="literal">nil</span> &#123;</span><br><span class="line">            log.Printf(<span class="string">"run time panic: %v"</span>, x)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    log.Println(<span class="string">"start"</span>)</span><br><span class="line">    g()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>（1）如何打开一个文件并读取：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">file, err := os.Open(<span class="string">"input.dat"</span>)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"An error occurred on opening the inputfile\n"</span> +</span><br><span class="line">      <span class="string">"Does the file exist?\n"</span> +</span><br><span class="line">      <span class="string">"Have you got acces to it?\n"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> file.Close()</span><br><span class="line">  iReader := bufio.NewReader(file)</span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    str, err := iReader.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="comment">// error or EOF</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"The input was: %s"</span>, str)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何通过切片读写文件：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">cat</span><span class="params">(f *file.File)</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> NBUF = <span class="number">512</span></span><br><span class="line">  <span class="keyword">var</span> buf [NBUF]<span class="keyword">byte</span></span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> nr, er := f.Read(buf[:]); <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> nr &lt; <span class="number">0</span>:</span><br><span class="line">      fmt.Fprintf(os.Stderr, <span class="string">"cat: error reading from %s: %s\n"</span>,</span><br><span class="line">        f.String(), er.String())</span><br><span class="line">      os.Exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">case</span> nr == <span class="number">0</span>: <span class="comment">// EOF</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> nr &gt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">if</span> nw, ew := file.Stdout.Write(buf[<span class="number">0</span>:nr]); nw != nr &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"cat: error writing from %s: %s\n"</span>,</span><br><span class="line">          f.String(), ew.String())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="协程（goroutine）与通道（channel）"><a href="#协程（goroutine）与通道（channel）" class="headerlink" title="协程（goroutine）与通道（channel）"></a>协程（goroutine）与通道（channel）</h3><p>出于性能考虑的建议：</p>
+<p>实践经验表明，如果你使用并行运算获得高于串行运算的效率：在协程内部已经完成的大部分工作，其开销比创建协程和协程间通信还高。</p>
+<p>1 出于性能考虑建议使用带缓存的通道：</p>
+<p>使用带缓存的通道可以很轻易成倍提高它的吞吐量，某些场景其性能可以提高至10倍甚至更多。通过调整通道的容量，甚至可以尝试着更进一步的优化其性能。</p>
+<p>2 限制一个通道的数据数量并将它们封装成一个数组：</p>
+<p>如果使用通道传递大量单独的数据，那么通道将变成性能瓶颈。然而，将数据块打包封装成数组，在接收端解压数据时，性能可以提高至10倍。</p>
+<p>创建：<code>ch := make(chan type,buf)</code></p>
+<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个通道：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> v := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    <span class="comment">// do something with v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何检测一个通道<code>ch</code>是否关闭：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//read channel until it closes or error-condition</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input, open := &lt;-ch; !open &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"%s"</span>, input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者使用（1）自动检测。  </p>
+<p>（3）如何通过一个通道让主程序等待直到协程完成：  </p>
+<p>（信号量模式）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) <span class="comment">// Allocate a channel.</span></span><br><span class="line"><span class="comment">// Start something in a goroutine; when it completes, signal on the channel.</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// doSomething</span></span><br><span class="line">    ch &lt;- <span class="number">1</span> <span class="comment">// Send a signal; value does not matter.</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingElseForAWhile()</span><br><span class="line">&lt;-ch <span class="comment">// Wait for goroutine to finish; discard sent value.</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望程序一直阻塞，在匿名函数中省略 <code>ch &lt;- 1</code>即可。  </p>
+<p>（4）通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pump</span><span class="params">()</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; ; i++ &#123;</span><br><span class="line">            ch &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> ch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（5）通道迭代器模板：  </p>
+<p>（6）如何限制并发处理请求的数量：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.11.md" target="_blank" rel="noopener">章节14.11</a> </p>
+<p>（7）如何在多核CPU上实现并行计算：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.13.md" target="_blank" rel="noopener">章节14.13</a>  </p>
+<p>（8）如何终止一个协程：<code>runtime.Goexit()</code>  </p>
+<p>（9）简单的超时模板：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">timeout := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    time.Sleep(<span class="number">1e9</span>) <span class="comment">// one second  </span></span><br><span class="line">    timeout &lt;- <span class="literal">true</span></span><br><span class="line">&#125;()</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;-ch:</span><br><span class="line">    <span class="comment">// a read from ch has occurred</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-timeout:</span><br><span class="line">    <span class="comment">// the read from ch has timed out</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（10）如何使用输入通道和输出通道代替锁：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Worker</span><span class="params">(in, out <span class="keyword">chan</span> *Task)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        t := &lt;-in</span><br><span class="line">        process(t)</span><br><span class="line">        out &lt;- t</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（11）如何在同步调用运行时间过长时将之丢弃：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a> 第二个变体  </p>
+<p>（12）如何在通道中使用计时器和定时器：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a>  </p>
+<p>（13）典型的服务器后端模型：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.4.md" target="_blank" rel="noopener">章节14.4</a>  </p>
+<h3 id="网络和网页应用"><a href="#网络和网页应用" class="headerlink" title="网络和网页应用"></a>网络和网页应用</h3><p><strong>模板：</strong>  </p>
+<p>制作、解析并使模板生效：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strTempl = template.Must(template.New(<span class="string">"TName"</span>).Parse(strTemplateHTML))</span><br></pre></td></tr></table></figure>
+
+<p>在网页应用中使用HTML过滤器过滤HTML特殊字符：  </p>
+<p><code>{ {html .} }</code> 或者通过一个字段 <code>FieldName { { .FieldName |html } }</code>  </p>
+<p>使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）  </p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何在程序出错时终止程序：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">   fmt.Printf(<span class="string">"Program stopping with error %v"</span>, err)</span><br><span class="line">   os.Exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; </span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">"ERROR occurred: "</span> + err.Error())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="出于性能考虑的最佳实践和建议"><a href="#出于性能考虑的最佳实践和建议" class="headerlink" title="出于性能考虑的最佳实践和建议"></a>出于性能考虑的最佳实践和建议</h3><p>（1）尽可能的使用<code>:=</code>去初始化声明一个变量（在函数内部）；  </p>
+<p>（2）尽可能的使用字符代替字符串；  </p>
+<p>（3）尽可能的使用切片代替数组；  </p>
+<p>（4）尽可能的使用数组和切片代替映射（详见参考文献15）；  </p>
+<p>（5）如果只想获取切片中某项值，不需要值的索引，尽可能的使用<code>for range</code>去遍历切片，这比必须查询切片中的每个元素要快一些；  </p>
+<p>（6）当数组元素是稀疏的（例如有很多<code>0</code>值或者空值<code>nil</code>），使用映射会降低内存消耗；  </p>
+<p>（7）初始化映射时指定其容量；  </p>
+<p>（8）当定义一个方法时，使用指针类型作为方法的接收者；  </p>
+<p>（9）在代码中使用常量或者标志提取常量的值； </p>
+<p>（10）尽可能在需要分配大量内存时使用缓存；  </p>
+<p>（11）使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）。  </p>
+<h2 id="方法的接收者对照表"><a href="#方法的接收者对照表" class="headerlink" title="方法的接收者对照表"></a>方法的接收者对照表</h2><p>方法集：定义了一组关联到给定类型的值或者指针的方法。  </p>
+<h3 id="从传递的值的角度看方法集"><a href="#从传递的值的角度看方法集" class="headerlink" title="从传递的值的角度看方法集"></a>从传递的值的角度看方法集</h3><table>
+<thead>
+<tr>
+<th align="center">传递的值</th>
+<th align="center">方法声明的接收者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="center">(t T)</td>
+</tr>
+<tr>
+<td align="center">*T</td>
+<td align="center">(t T) 和 (t *T)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>T 类型的值的方法集只包含了值接收者声明的方法</li>
+<li>而指向 T 类型的指针的方法集既包含值接收者声明的方法，也包含指针接收者声明的方法</li>
+</ul>
+<h3 id="从接收者类型的角度来看方法集"><a href="#从接收者类型的角度来看方法集" class="headerlink" title="从接收者类型的角度来看方法集"></a>从接收者类型的角度来看方法集</h3><table>
+<thead>
+<tr>
+<th align="center">方法声明的接收者</th>
+<th align="center">传递的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(t T)</td>
+<td align="center">T 和 *T</td>
+</tr>
+<tr>
+<td align="center">(t *T)</td>
+<td align="center">*T</td>
+</tr>
+</tbody></table>
+<ul>
+<li>如果使用指针接收者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口</li>
+<li>如果使用值接收者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口</li>
+</ul>
+<hr>
+<p><em><code>to be continued...</code></em>  </p>
+]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -2109,7 +2109,7 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-symbols-<span class="keyword">count</span>-<span class="built_in">time</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>备忘</category>
+        <category>「备忘」- Hexo配置</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -2264,7 +2264,7 @@
 <p>Windows系统的话，可以卸载<code>node.js</code>，然后去<a href="https://nodejs.org/zh-cn/download/releases/" target="_blank" rel="noopener">下载历史版本的node.js</a>,比如<code>v12.14</code>。  </p>
 ]]></content>
       <categories>
-        <category>备忘</category>
+        <category>「备忘」- Hexo配置</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -2305,7 +2305,7 @@
 <p>剩下的就慢慢调配置吧……</p>
 ]]></content>
       <categories>
-        <category>备忘</category>
+        <category>「备忘」- Hexo配置</category>
       </categories>
       <tags>
         <tag>Hexo</tag>
@@ -2999,7 +2999,7 @@
 <h2 id="星期"><a href="#星期" class="headerlink" title="星期"></a>星期</h2><p>月曜日（げつようび，Ge tsu you bi）= 星期一<br>火曜日（かようび，Ka you bi）= 星期二<br>水曜日（すいようび，Su i you bi）= 星期三<br>木曜日（もくようび，Mo ku you bi）= 星期四<br>金曜日（きんようび，Kinn you bi）= 星期五<br>土曜日（どようび，Do you bi）= 星期六<br>日曜日（にちようび，Ni chi you bi）= 星期日  </p>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「语言」- 日语</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -3570,7 +3570,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「笔记」- 读书</category>
       </categories>
       <tags>
         <tag>经济学</tag>
@@ -3762,7 +3762,7 @@
 </tbody></table>
 ]]></content>
       <categories>
-        <category>存档</category>
+        <category>「备忘」</category>
       </categories>
       <tags>
         <tag>网站</tag>
@@ -4279,7 +4279,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「笔记」- 读书</category>
       </categories>
       <tags>
         <tag>经济学</tag>
@@ -4442,7 +4442,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>快门</category>
+        <category>「快门」</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -4450,206 +4450,22 @@
       </tags>
   </entry>
   <entry>
-    <title>Photography Learn Notes</title>
-    <url>/2019/10/15/Photography-Notes/</url>
+    <title>Photoshop Skill Notes</title>
+    <url>/2020/03/10/Ps-Skill-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>主要是后期风格</em></strong></p>
-<p></font> </center></p>
+<p><strong><em>Ps拼接合成</em></strong></p>
+<p></font></center></p>
 <a id="more"></a>
 
 <hr>
-<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
-<li>低饱和，又不是纯黑白</li>
-<li>分离色调：给整张图罩上冷色调<ul>
-<li>阴影+蓝色</li>
-</ul>
-</li>
-<li>HSL：<ul>
-<li>明亮度：蓝色↓↓，天空变深邃</li>
-<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
-</ul>
-</li>
-<li>基本面板中：阴影看情况↑</li>
-<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
-<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
-<li>特点：<ul>
-<li>肌肤极致干净</li>
-<li>空气通透</li>
-</ul>
-</li>
-<li>HSL调肤色，注意不要出现洋红</li>
-<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
-<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
-<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
-</ul>
-<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
-<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
-<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
-<li>HSL：<ul>
-<li>色相：紫色0，蓝色右 呈湖蓝</li>
-<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
-<li>饱和度：皮肤↓，其他视情况</li>
-</ul>
-</li>
-<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
-<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
-<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
-<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
-<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
-<li>相机校准：蓝原色左滑→湖蓝色</li>
-<li>HSL：<ul>
-<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
-</ul>
-</li>
-<li>可不做锐化</li>
-<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
-<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
-<li>蓝色时间：日出前、日落后</li>
-<li>特点：街灯、车灯刚亮</li>
-<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
-<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
-<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
-<li>特点：<ul>
-<li>引人共鸣</li>
-<li>元素处在动态</li>
-<li>画面质量高</li>
-</ul>
-</li>
-<li>高光↓，阴影↑</li>
-<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
-<li>红色曲线：（下拉→青）阴影稍微下拉</li>
-<li>蓝色曲线：阴影稍微上拉</li>
-<li>绿色曲线：调氛围，只要一点点调整</li>
-<li>RGB通道：暗部抬一点，提亮</li>
-</ul>
-</li>
-<li>清晰度↑，鲜艳度↓一点点</li>
-<li>裁剪：16:9、2.35:1</li>
-<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
-<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
-<li>色调分离：高光-红紫色，阴影-蓝色</li>
-<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
-<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
-<li>矫正，阴影↑，饱和度↑</li>
-<li>HSL：<ul>
-<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
-<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
-</ul>
-</li>
-<li>色调分离/曲线：暗部增加蓝青色</li>
-<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
-<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>色温↓，色调看喜好</li>
-<li>清晰度↑</li>
-<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
-<li>渐变滤镜压暗前景曝光、饱和度</li>
-<li>鲜艳度↑</li>
-</ul>
-<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
-<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
-<li>照片特点：<ul>
-<li>白（曝光↑）</li>
-<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
-<li>背景选择：深色，突出雪花</li>
-</ul>
-</li>
-<li>后期<ul>
-<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
-<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
-<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
-<li>色温↑，黄昏感觉</li>
-<li>HSL：<ul>
-<li>绿色饱和度↓，变得黄一些</li>
-<li>橙色、黄色饱和度↑明亮度↑<ul>
-<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
-<li>小S曲线，对比度↑</li>
-</ul>
-</li>
-<li>进PS加光晕<ul>
-<li>可搭配插件：Alien Skin Exposure</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
-<li>特征：<ul>
-<li>金属光感：渐变塑光影</li>
-<li>拉丝效果：模糊塑动感</li>
-<li>流动天空：模糊仿流动</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<hr>
-<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
-<li>插件：DR4、Skinfiner</li>
-<li>图章工具：去明显瑕疵</li>
-<li>中性灰：去痘印、调光影结构</li>
-<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
-<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
-</ul>
-<hr>
-<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>时间选择：<ul>
-<li>月相查询：月亮小的时候拍摄</li>
-<li>月出、月落时间：月落后拍摄</li>
-</ul>
-</li>
-<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
-<li>银河方位：starwalk、星图</li>
-<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
-<li>参数选择：<ul>
-<li>对焦：无限远</li>
-<li>光圈：最大</li>
-<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
-<li>感光度：被动决定</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
-<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
-<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
-<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
-</ul>
-<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
 ]]></content>
       <categories>
-        <category>快门</category>
+        <category>「快门」</category>
       </categories>
       <tags>
         <tag>Note</tag>
-        <tag>Photography</tag>
+        <tag>Photoshop</tag>
       </tags>
   </entry>
   <entry>
@@ -4778,7 +4594,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>快门</category>
+        <category>「快门」</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -5279,45 +5095,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>快门</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Photoshop Skill Notes</title>
-    <url>/2020/03/10/Ps-Skill-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Ps拼接合成</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-]]></content>
-      <categories>
-        <category>快门</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Photoshop Skin Notes</title>
-    <url>/2020/03/10/Ps-Skin-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Ps人像修饰</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-]]></content>
-      <categories>
-        <category>快门</category>
+        <category>「快门」</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -5752,11 +5530,30 @@
 </ul>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「语言」</category>
       </categories>
       <tags>
         <tag>Note</tag>
         <tag>R语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Photoshop Skin Notes</title>
+    <url>/2020/03/10/Ps-Skin-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Ps人像修饰</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photoshop</tag>
       </tags>
   </entry>
   <entry>
@@ -5815,7 +5612,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「笔记」- 读书</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -6030,7 +5827,7 @@
 <h2 id="3-一元线性回归实例解析"><a href="#3-一元线性回归实例解析" class="headerlink" title="3.一元线性回归实例解析"></a>3.一元线性回归实例解析</h2><p>【分析】-【回归】-【线性】</p>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「笔记」- 软件</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -6079,7 +5876,7 @@
 <p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Go</category>
+        <category>「语言」- Go</category>
       </categories>
       <tags>
         <tag>Go</tag>
@@ -7199,7 +6996,7 @@
 </ul>
 ]]></content>
       <categories>
-        <category>笔记</category>
+        <category>「笔记」- 读书</category>
       </categories>
       <tags>
         <tag>Note</tag>
@@ -7231,8 +7028,211 @@
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
       <categories>
-        <category>存档</category>
+        <category>「备忘」- Hexo配置</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Photography Learn Notes</title>
+    <url>/2019/10/15/Photography-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>主要是后期风格</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
+<li>低饱和，又不是纯黑白</li>
+<li>分离色调：给整张图罩上冷色调<ul>
+<li>阴影+蓝色</li>
+</ul>
+</li>
+<li>HSL：<ul>
+<li>明亮度：蓝色↓↓，天空变深邃</li>
+<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
+</ul>
+</li>
+<li>基本面板中：阴影看情况↑</li>
+<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
+<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
+<li>特点：<ul>
+<li>肌肤极致干净</li>
+<li>空气通透</li>
+</ul>
+</li>
+<li>HSL调肤色，注意不要出现洋红</li>
+<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
+<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
+<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
+</ul>
+<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
+<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
+<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
+<li>HSL：<ul>
+<li>色相：紫色0，蓝色右 呈湖蓝</li>
+<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
+<li>饱和度：皮肤↓，其他视情况</li>
+</ul>
+</li>
+<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
+<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
+<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
+<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
+<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
+<li>相机校准：蓝原色左滑→湖蓝色</li>
+<li>HSL：<ul>
+<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
+</ul>
+</li>
+<li>可不做锐化</li>
+<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
+<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
+<li>蓝色时间：日出前、日落后</li>
+<li>特点：街灯、车灯刚亮</li>
+<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
+<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
+<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
+<li>特点：<ul>
+<li>引人共鸣</li>
+<li>元素处在动态</li>
+<li>画面质量高</li>
+</ul>
+</li>
+<li>高光↓，阴影↑</li>
+<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
+<li>红色曲线：（下拉→青）阴影稍微下拉</li>
+<li>蓝色曲线：阴影稍微上拉</li>
+<li>绿色曲线：调氛围，只要一点点调整</li>
+<li>RGB通道：暗部抬一点，提亮</li>
+</ul>
+</li>
+<li>清晰度↑，鲜艳度↓一点点</li>
+<li>裁剪：16:9、2.35:1</li>
+<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
+<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
+<li>色调分离：高光-红紫色，阴影-蓝色</li>
+<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
+<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
+<li>矫正，阴影↑，饱和度↑</li>
+<li>HSL：<ul>
+<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
+<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
+</ul>
+</li>
+<li>色调分离/曲线：暗部增加蓝青色</li>
+<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
+<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>色温↓，色调看喜好</li>
+<li>清晰度↑</li>
+<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
+<li>渐变滤镜压暗前景曝光、饱和度</li>
+<li>鲜艳度↑</li>
+</ul>
+<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
+<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
+<li>照片特点：<ul>
+<li>白（曝光↑）</li>
+<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
+<li>背景选择：深色，突出雪花</li>
+</ul>
+</li>
+<li>后期<ul>
+<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
+<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
+<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
+<li>色温↑，黄昏感觉</li>
+<li>HSL：<ul>
+<li>绿色饱和度↓，变得黄一些</li>
+<li>橙色、黄色饱和度↑明亮度↑<ul>
+<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
+<li>小S曲线，对比度↑</li>
+</ul>
+</li>
+<li>进PS加光晕<ul>
+<li>可搭配插件：Alien Skin Exposure</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
+<li>特征：<ul>
+<li>金属光感：渐变塑光影</li>
+<li>拉丝效果：模糊塑动感</li>
+<li>流动天空：模糊仿流动</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<hr>
+<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
+<li>插件：DR4、Skinfiner</li>
+<li>图章工具：去明显瑕疵</li>
+<li>中性灰：去痘印、调光影结构</li>
+<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
+<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
+</ul>
+<hr>
+<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>时间选择：<ul>
+<li>月相查询：月亮小的时候拍摄</li>
+<li>月出、月落时间：月落后拍摄</li>
+</ul>
+</li>
+<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
+<li>银河方位：starwalk、星图</li>
+<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
+<li>参数选择：<ul>
+<li>对焦：无限远</li>
+<li>光圈：最大</li>
+<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
+<li>感光度：被动决定</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
+<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
+<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
+<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
+</ul>
+<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photography</tag>
+      </tags>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
@@ -8191,7 +8191,7 @@
 <p><em><code>to be continued...</code></em>  </p>
 ]]></content>
       <categories>
-        <category>Go</category>
+        <category>「语言」- Go</category>
       </categories>
       <tags>
         <tag>Go</tag>
@@ -9498,7 +9498,7 @@ http.StatusInternalServerError  = 500</code></pre><p>你可以使用<code>w.head
 <h2 id="文件读写参数"><a href="#文件读写参数" class="headerlink" title="文件读写参数"></a>文件读写参数</h2><figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">OpenFile</span><span class="params">(name <span class="keyword">string</span>, flag <span class="keyword">int</span>, perm FileMode)</span> <span class="params">(*File, error)</span></span></span><br><span class="line"></span><br><span class="line">第二个参数</span><br><span class="line">O_RDONLY    打开只读文件</span><br><span class="line">O_WRONLY    打开只写文件</span><br><span class="line">O_RDWR  打开既可以读取又可以写入文件</span><br><span class="line">O_APPEND    写入文件时将数据追加到文件尾部</span><br><span class="line">O_CREATE    如果文件不存在，则创建一个新的文件</span><br><span class="line">O_EXCL  文件必须不存在，然后会创建一个新的文件</span><br><span class="line">O_SYNC  打开同步I/<span class="number">0</span></span><br><span class="line">O_TRUNC 文件打开时可以截断</span><br><span class="line"></span><br><span class="line">第三个参数就是权限模式</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Go</category>
+        <category>「语言」- Go</category>
       </categories>
       <tags>
         <tag>Go</tag>
