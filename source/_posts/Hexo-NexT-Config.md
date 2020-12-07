@@ -568,8 +568,33 @@ ps. 看了下其他人的 NexT v5.x 的配置文件，这一项默认是空着�
 
 把镜像网站替换成淘宝的。  
 
-```js
+```go
 $ npm get registry  //显示当前的镜像网站
 $ npm config set registry http://registry.npm.taobao.org    //更改镜像网站
 ```
 
+## `hexo d`部署失败
+
+```go
+$ hexo d -g
+(node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:3908) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'lineno' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'column' of module exports inside circular dependency
+(node:3908) Warning: Accessing non-existent property 'filename' of module exports inside circular dependency
+INFO  Start processing
+INFO  Files loaded in 94 ms
+INFO  0 files generated in 22 ms
+INFO  Deploying: git
+INFO  Clearing .deploy_git folder...
+INFO  Copying files from public folder...
+FATAL Something's wrong. Maybe you can find the solution here: https://hexo.io/docs/troubleshooting.html
+TypeError [ERR_INVALID_ARG_TYPE]: The "mode" argument must be integer. Received an instance of Object
+    at copyFile (fs.js:1890:10)
+```
+
+原因：`node.js`版本是`v14.15.1`的，过高，要降级。  
+
+Windows系统的话，可以卸载`node.js`，然后去[下载历史版本的node.js](https://nodejs.org/zh-cn/download/releases/),比如`v12.14`。  
