@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://reitake.github.io/2020/03/10/Photography-Basis-Notes/</loc>
+    <loc>https://reitake.github.io/2019/03/27/Hexo-NexT-Config/</loc>
     
     <lastmod>2020-12-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://reitake.github.io/2019/03/27/Hexo-NexT-Config/</loc>
+    <loc>https://reitake.github.io/2020/03/10/Photography-Basis-Notes/</loc>
     
     <lastmod>2020-12-07</lastmod>
     
@@ -277,13 +277,6 @@
   </url>
   
   <url>
-    <loc>https://reitake.github.io/tags/Game/</loc>
-    <lastmod>2020-12-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://reitake.github.io/tags/%E8%83%BD%E6%BA%90/</loc>
     <lastmod>2020-12-07</lastmod>
     <changefreq>daily</changefreq>
@@ -292,6 +285,13 @@
   
   <url>
     <loc>https://reitake.github.io/tags/VPP/</loc>
+    <lastmod>2020-12-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://reitake.github.io/tags/Game/</loc>
     <lastmod>2020-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
