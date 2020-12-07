@@ -1,7 +1,7 @@
 ---
 title: Game Notes
 tags: [Game, Note]
-categories: Game
+categories: 「Game」
 permalink: Game-Notes
 date: 2019-10-29 14:15:39
 ---

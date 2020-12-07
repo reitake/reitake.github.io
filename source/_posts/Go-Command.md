@@ -1,7 +1,7 @@
 ---
 title: Go の Command
 tags: [Go, Note]
-categories: Go
+categories: 「语言」- Go
 permalink: Go-Command
 date: 2019-04-21 22:28:25
 ---

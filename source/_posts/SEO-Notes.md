@@ -1,7 +1,7 @@
 ---
 title: SEO 学习笔记
 tags: [SEO,Note]
-categories: [笔记]
+categories: 「笔记」- 读书
 permalink: SEO-Notes
 date: 2019-04-01 20:48:28
 ---

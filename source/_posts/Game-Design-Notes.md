@@ -2,7 +2,7 @@
 title: Game Design Notes
 date: 2019-03-19 14:40:15
 tags: [Game]
-categories: Game
+categories: 「Game」
 permalink: Game-Design-Notes
 ---
 <center> <font color="#bababa">

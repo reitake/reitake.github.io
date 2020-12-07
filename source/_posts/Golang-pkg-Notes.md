@@ -2,7 +2,7 @@
 title: Golang pkg Notes
 date: 2019-03-20 22:16:19
 tags: Go
-categories: Go
+categories: 「语言」- Go
 permalink: Golang-pkg
 ---
 <center> <font color="#bababa">

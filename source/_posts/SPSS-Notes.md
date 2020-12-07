@@ -1,7 +1,7 @@
 ---
 title: SPSS 学习笔记
 tags: [SPSS,Note]
-categories: 笔记
+categories: 「笔记」- 软件
 permalink: SPSS-Notes
 date: 2019-04-01 23:54:20
 ---

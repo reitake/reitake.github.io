@@ -1,7 +1,7 @@
 ---
 title: Axure Learn
 tags: [Axure, Note]
-categories: 笔记
+categories: 「笔记」- 软件
 permalink: Axure-Notes
 date: 2019-11-25 22:49:38
 ---

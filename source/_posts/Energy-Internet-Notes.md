@@ -1,7 +1,7 @@
 ---
 title: 《能源互联网》笔记
 tags: [能源, VPP, Note]
-categories: [笔记]
+categories: 「笔记」- 读书
 permalink: Energy-Internet-Notes
 date: 2020-06-26 12:50:30
 ---

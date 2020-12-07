@@ -2,7 +2,7 @@
 title: Hexo + NexT(v7.0.1) 博客配置备忘
 date: 2019-03-27 18:59:38
 tags: [Hexo, NexT]
-categories: [备忘]
+categories: 「备忘」- Hexo配置
 permalink: Hexo-NexT-Config
 ---
 <center> <font color="#bababa">

@@ -3,7 +3,7 @@ title: Photoshop Basis Notes
 tags:
   - Photoshop
   - Note
-categories: 快门
+categories: 「快门」
 permalink: Ps-Basis-Notes
 date: 2020-03-10 23:37:50
 ---

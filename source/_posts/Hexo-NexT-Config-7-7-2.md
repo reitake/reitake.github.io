@@ -3,7 +3,7 @@ title: Hexo + NexT(v7.7.2) 博客配置备忘
 tags:
   - Hexo
   - NexT
-categories: 备忘
+categories: 「备忘」- Hexo配置
 permalink: Hexo-NexT-Config-7-7-2
 date: 2020-03-04 18:20:40
 ---

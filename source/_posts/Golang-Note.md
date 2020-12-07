@@ -3,7 +3,7 @@ title: Go 语言学习笔记
 permalink: Golang-Notes
 date: 2019-03-07 12:26:44
 tags: [Go]
-categories: Go
+categories: 「语言」- Go
 ---
 <center> <font color="#bababa">
 

@@ -2,7 +2,7 @@
 title: Go 中常见错误
 date: 2019-03-11 21:15:27
 tags: [Go, Note]
-categories: Go
+categories: 「语言」- Go
 permalink: Go-Common-Mistakes
 ---
 <center> <font color="#bababa">

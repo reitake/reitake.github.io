@@ -1,7 +1,7 @@
 ---
 title: Hello World
 permalink: Hello-World
-categories: 存档
+categories: 「备忘」- Hexo配置
 date: 2019-03-07 10:00:00
 ---
 

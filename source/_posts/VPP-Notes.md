@@ -1,7 +1,7 @@
 ---
 title: 《虚拟电厂——能源互联网的终极组态》笔记
 tags: [能源, Note]
-categories: [笔记]
+categories: 「笔记」- 读书
 permalink: VPP-Notes
 date: 2020-06-26 12:50:39
 ---

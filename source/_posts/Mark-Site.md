@@ -1,7 +1,7 @@
 ---
 title: 网站收藏
 tags: [网站, 工具]
-categories: [存档]
+categories: 「备忘」
 permalink: Site-Bookmark
 date: 2019-09-26 10:13:55
 ---

@@ -3,7 +3,7 @@ title: Adobe Camera Raw Notes
 tags:
   - Photoshop
   - Note
-categories: 快门
+categories: 「快门」
 permalink: Ps-ACR-Notes
 date: 2020-03-10 23:42:06
 ---

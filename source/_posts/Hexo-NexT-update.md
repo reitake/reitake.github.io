@@ -3,7 +3,7 @@ title: 升级Hexo+NexT版本
 tags:
   - Hexo
   - NexT
-categories: 备忘
+categories: 「备忘」- Hexo配置
 permalink: Hexo-NexT-update
 date: 2020-03-04 16:01:33
 ---

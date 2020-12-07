@@ -2,7 +2,7 @@
 title: Golang in Action Notes
 date: 2019-03-19 16:01:21
 tags: Go
-categories: Go
+categories: 「语言」- Go
 permalink: Go-Action-Notes
 ---
 <center> <font color="#bababa">

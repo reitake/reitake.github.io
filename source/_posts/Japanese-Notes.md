@@ -1,7 +1,7 @@
 ---
 title: 日本語 Learn Notes
 tags: [Japanese, Note]
-categories: 笔记
+categories: 「语言」- 日语
 permalink: Japanese-Notes
 date: 2019-10-13 20:27:59
 ---

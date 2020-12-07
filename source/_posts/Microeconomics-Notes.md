@@ -1,7 +1,7 @@
 ---
 title: 《经济学原理》笔记（微观经济学）
 tags: [经济学]
-categories: [笔记]
+categories: 「笔记」- 读书
 permalink: Microeconomics-Notes
 date: 2019-04-01 23:10:11
 ---

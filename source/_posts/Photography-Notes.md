@@ -1,7 +1,7 @@
 ---
 title: Photography Learn Notes
 tags: [Photography, Note]
-categories: 快门
+categories: 「快门」
 permalink: Photography-Notes
 date: 2019-10-15 22:16:59
 ---

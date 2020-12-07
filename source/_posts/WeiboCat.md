@@ -1,7 +1,7 @@
 ---
 title: WeiboCat With Golang
 tags: [Go, Go项目]
-categories: [Go]
+categories: 「语言」- Go
 permalink: WeiboCat
 date: 2019-04-15 09:52:23
 ---
