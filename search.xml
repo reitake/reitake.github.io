@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Axure Learn</title>
+    <url>/2019/11/25/Axure-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>重要的是用工具的人，也就是工具人</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h3><ul>
+<li>矩形框、圆形：图形，可写字</li>
+<li>图片、占位符</li>
+<li>按钮、主要按钮、链接按钮</li>
+<li>标题、标签、段落：写字，仅样式不同</li>
+<li>水平线、垂直线：线段，固定宽度1</li>
+<li>热区：制作不可见但想要交互的区域</li>
+<li>动态面板：强大</li>
+<li>内联框架：在页面内嵌套其他页面或者URL的内容</li>
+<li>重复器：制作重复内容，功能强大</li>
+</ul>
+<h3 id="表单元件"><a href="#表单元件" class="headerlink" title="表单元件"></a>表单元件</h3><ul>
+<li>文本框、文本域、下拉列表、列表框、复选框、单选按钮</li>
+</ul>
+<h3 id="菜单-表格"><a href="#菜单-表格" class="headerlink" title="菜单|表格"></a>菜单|表格</h3><ul>
+<li>树状菜单（可折叠）、表格、水平菜单、垂直菜单</li>
+</ul>
+<h3 id="标记元件"><a href="#标记元件" class="headerlink" title="标记元件"></a>标记元件</h3><ul>
+<li>快照</li>
+<li>水平箭头、垂直箭头</li>
+<li>便签</li>
+<li>圆形标记、水滴标记</li>
+</ul>
+<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><ul>
+<li>事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击<ul>
+<li>时间起名习俗：on+对象名+时间，如onHideBotmClick</li>
+</ul>
+</li>
+<li>动作（Action）：对事件的响应，如跳转页面、显示弹出层<ul>
+<li>多个动作按次序执行，除了动画</li>
+</ul>
+</li>
+<li>情况（Case）：根据不同条件作出不同响应</li>
+</ul>
+<h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><ul>
+<li>动作只能操作当前容器内的元件。</li>
+<li>可以给母版内动作跑出事件，在具体页面中根据时间来执行动作。</li>
+</ul>
+<h3 id="动态面板"><a href="#动态面板" class="headerlink" title="动态面板"></a>动态面板</h3><ul>
+<li>页面内部分页面变换，通常用动态面板实现，例如用户名登录/手机号登录</li>
+<li>切换按钮的动作：set panel state</li>
+</ul>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
+<li><code>方向键</code>单个像素调整，再按住<code>Shift</code>键，10个像素调整。</li>
+<li>按住<code>Shift</code>等比例调整大小。</li>
+<li>双击：<ul>
+<li>普通组件：添加文字</li>
+<li>类型组件：编辑</li>
+</ul>
+</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>预览：<code>F5</code></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
+]]></content>
+      <categories>
+        <category>「笔记」- 软件</category>
+      </categories>
+      <tags>
+        <tag>Axure</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Algorithm 笔记</title>
     <url>/2019/03/14/Alg-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -110,83 +184,9 @@
         <category>「算法」</category>
       </categories>
       <tags>
+        <tag>Note</tag>
         <tag>算法</tag>
         <tag>Go</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Axure Learn</title>
-    <url>/2019/11/25/Axure-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>重要的是用工具的人，也就是工具人</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h3><ul>
-<li>矩形框、圆形：图形，可写字</li>
-<li>图片、占位符</li>
-<li>按钮、主要按钮、链接按钮</li>
-<li>标题、标签、段落：写字，仅样式不同</li>
-<li>水平线、垂直线：线段，固定宽度1</li>
-<li>热区：制作不可见但想要交互的区域</li>
-<li>动态面板：强大</li>
-<li>内联框架：在页面内嵌套其他页面或者URL的内容</li>
-<li>重复器：制作重复内容，功能强大</li>
-</ul>
-<h3 id="表单元件"><a href="#表单元件" class="headerlink" title="表单元件"></a>表单元件</h3><ul>
-<li>文本框、文本域、下拉列表、列表框、复选框、单选按钮</li>
-</ul>
-<h3 id="菜单-表格"><a href="#菜单-表格" class="headerlink" title="菜单|表格"></a>菜单|表格</h3><ul>
-<li>树状菜单（可折叠）、表格、水平菜单、垂直菜单</li>
-</ul>
-<h3 id="标记元件"><a href="#标记元件" class="headerlink" title="标记元件"></a>标记元件</h3><ul>
-<li>快照</li>
-<li>水平箭头、垂直箭头</li>
-<li>便签</li>
-<li>圆形标记、水滴标记</li>
-</ul>
-<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><ul>
-<li>事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击<ul>
-<li>时间起名习俗：on+对象名+时间，如onHideBotmClick</li>
-</ul>
-</li>
-<li>动作（Action）：对事件的响应，如跳转页面、显示弹出层<ul>
-<li>多个动作按次序执行，除了动画</li>
-</ul>
-</li>
-<li>情况（Case）：根据不同条件作出不同响应</li>
-</ul>
-<h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><ul>
-<li>动作只能操作当前容器内的元件。</li>
-<li>可以给母版内动作跑出事件，在具体页面中根据时间来执行动作。</li>
-</ul>
-<h3 id="动态面板"><a href="#动态面板" class="headerlink" title="动态面板"></a>动态面板</h3><ul>
-<li>页面内部分页面变换，通常用动态面板实现，例如用户名登录/手机号登录</li>
-<li>切换按钮的动作：set panel state</li>
-</ul>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
-<li><code>方向键</code>单个像素调整，再按住<code>Shift</code>键，10个像素调整。</li>
-<li>按住<code>Shift</code>等比例调整大小。</li>
-<li>双击：<ul>
-<li>普通组件：添加文字</li>
-<li>类型组件：编辑</li>
-</ul>
-</li>
-</ul>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
-<li>预览：<code>F5</code></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
-]]></content>
-      <categories>
-        <category>「笔记」- 软件</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Axure</tag>
       </tags>
   </entry>
   <entry>
@@ -412,316 +412,6 @@
         <tag>Note</tag>
         <tag>能源</tag>
         <tag>VPP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Game Design Notes</title>
-    <url>/2019/03/19/Game-Design-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>游戏设计相关笔记</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="箴言（雾"><a href="#箴言（雾" class="headerlink" title="箴言（雾"></a>箴言（雾</h1><blockquote>
-<p>策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。<br><em>——黄J  2019.3.19</em>  </p>
-</blockquote>
-<hr>
-<h1 id="按游戏类型分类"><a href="#按游戏类型分类" class="headerlink" title="按游戏类型分类"></a>按游戏类型分类</h1><h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><h3 id="3种FPS地图布局流程技巧"><a href="#3种FPS地图布局流程技巧" class="headerlink" title="3种FPS地图布局流程技巧"></a>3种FPS地图布局流程技巧</h3><p>以 <code>CS:GO</code> 为例  </p>
-<blockquote>
-<p>前置教程参考：<br>CS:GO 6 Principles of Choke Point Level Design<br>CS:GO How to Design Gameplay Map Layouts (Complete In-Depth Guide)</p>
-</blockquote>
-<p><strong>做地图的通常步骤：</strong></p>
-<ul>
-<li>第一步：Layout布局阶段<br>把地图的玩法可视化，规划好地图中可行走的路线、备选路线、连接通路、阻塞点、目标、障碍物、地图边界。  </li>
-<li>再进BSP填充地图，迭代更新。  <ul>
-<li>（注：BSP其实是使用二叉空间分割方法Binary space partitioning生成的多边形，简单来说就是各种多边形体。Source引擎、Unreal4都提供了这种方法来快速创建关卡原型，优点是调整多边形非常方便，直接在场景内就可见，而且面数奇低）  </li>
-</ul>
-</li>
-</ul>
-<p><strong>地图布局方法：</strong><br>路线图就是从整个布局图中提取的精华，这样你就对双方如何处理地图目标有了清晰的概念。  </p>
-<ul>
-<li><strong>方法一：先画路径（通路），再画场景布局的边缘</strong><ul>
-<li>适用情况：当你对你地图玩起来是啥样子有了概念，并且你已经考虑过布局情况，但是对细节不是很清楚的时候。  </li>
-<li>开始先画简单的线条来定义地图的路径  </li>
-<li>绝对的精简，别设计任何边界，只专注考虑两队玩家的通路</li>
-<li>标记：CT、T出生点；包点、人质点；阻塞点（关键）</li>
-<li>再画地图布局，一直画到你能确定剩下的所有结构：地图的边界，视野，双方复生点，包点和人质点，阻塞点，连接通路，还有其他通路。</li>
-</ul>
-</li>
-<li><strong>方法二：一次只关注一个区域，然后组合起来</strong>  <ul>
-<li>适用情况：当你不知道你的地图布局最终是什么样子，你举步维艰无法弄清楚每个区域怎么去做的时候</li>
-<li>先挑一个区域开始：A点、B点、CT或T出生点、中路、任一阻塞点</li>
-<li>选一个区域设计，再画出区域的布局，专注该区域</li>
-<li>选其他区域，再来一遍</li>
-<li>整合到一个布局图里</li>
-<li>从布局简化出路径图</li>
-</ul>
-</li>
-<li><strong>方法三：直接完成全部布局，再简化通路</strong><ul>
-<li>适用情况：当你已经对整体布局有过深思熟虑并且确切的知道最终的样子。或许你已经画过这个布局许多次了，并且你打算重新设计它。</li>
-<li>从一个具体的区域开始然后逐渐展开直到整体布局画完。如果你在某个区域没有进展了，那就再接着画别的区域。记住一次画完。</li>
-<li>然后另画出地图简化通路</li>
-<li>新手慎用</li>
-</ul>
-</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/6euKxO_D4IzwPPgCD8GSww" target="_blank" rel="noopener">原文:3种设计FPS游戏地图布局的流程技巧</a></em>  </p>
-<h3 id="FPS地图阻塞点设计6原则"><a href="#FPS地图阻塞点设计6原则" class="headerlink" title="FPS地图阻塞点设计6原则"></a>FPS地图阻塞点设计6原则</h3><blockquote>
-<p>控制了阻塞点，就控制了整张地图。  </p>
-</blockquote>
-<p>阻塞点是地图上进攻方到达目标之前，遭遇防守方抵抗的区域。阻塞点也叫做控制点（Control Point）或者堵塞区（Bottleneck）。<br>进攻方（爆破模式中的匪徒或营救模式中的警察）必须从阻塞点干过去，才能到达目标区域。否则就必须撤退或者更换策略换条路线进攻。  </p>
-<p>阻塞点的设计目的：<strong>增强游戏性</strong>，利用阻塞点可以控制地图内的玩家流向，节奏，和平衡。</p>
-<ul>
-<li><strong>原则1：增强和促进游戏性（Gameplay）</strong>  <ul>
-<li>通过整体结构的设计将可见的入口降低到1-2个，来缩紧玩家的流向</li>
-<li>常见结构如：走廊，门口，隧道或是巷道登，是双方相遇、激战的阻塞点 </li>
-</ul>
-</li>
-<li><strong>原则2：阻塞点放置</strong><ul>
-<li>一定要部署在攻击方到达地图目标点之前</li>
-</ul>
-</li>
-<li><strong>原则3：时机</strong><ul>
-<li>需要让双方几乎在相同的时间到达阻塞点。防守方可以稍微早几秒到达站好位置。但最重要的是攻击方永远都不能在防守方刚刚到达的时候就已经冲过阻塞点。</li>
-<li>到达阻塞点的时间在地图的BSP搭建阶段就应该确定：直接方法-计时器、亲自跑</li>
-<li>时机也可能取决于地图，如dust2地图中防守方ct到A平台非常近</li>
-</ul>
-</li>
-<li><strong>原则4：入口、出口数量</strong><ul>
-<li>限制出入口的选择，将阻塞点通路数量<strong>控制在1到2个</strong>。这样攻击方不会太轻易地占领目标。许多CS地图的阻塞点都只有一个通路（通向目标点）</li>
-<li>两条通路入口的阻塞点给进攻方提供了选择和策略，<strong>增加策略性</strong>，但也可能把阻塞点搞无聊</li>
-<li>增加同一个阻塞点的通路数量，破快了局部的战斗节奏，<strong>可能让阻塞点变得无法控制</strong>，需要慎重把握</li>
-<li>如果要为阻塞点增加2条通路入口，应确保防守方在同一个视角可以清晰看到两个入口</li>
-</ul>
-</li>
-<li><strong>原则5：战斗方式</strong><ul>
-<li>阻塞点都应该支持多种战斗方式：狙击战、近距离的卡点战斗、暗中推进（猥琐推进）。</li>
-<li>支持的方式越多，越能迎合多类型玩家喜好。需要为策略性和玩家技巧来进行设计。</li>
-<li>使用<strong>距离</strong>和<strong>掩体</strong>作为布局元素<ul>
-<li>距离维度：长、短、宽、窄、高度</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>原则6：动态阻塞点</strong><ul>
-<li>营救人质地图中的阻塞点都是动态的。在设计人质地图的阻塞点时，你需要考虑防守方（T）是如何进行的。</li>
-<li>最主要的是需要把到达营救位置的通路数量控制在2到3条。</li>
-</ul>
-</li>
-</ul>
-<p>关于<strong>区域阻塞点</strong>：  </p>
-<ul>
-<li>它们是在特定区域，带有多种选择和掩体的开放式阻塞点</li>
-<li>一个地图1个足以，复杂的掩体和多样的选择都大大增加了设计的难度，要有取舍。</li>
-</ul>
-<p><em><a href="https://www.gameres.com/789358.html" target="_blank" rel="noopener">原文：FPS地图阻塞点的六种设计原则</a></em>  </p>
-<h3 id="FPS地图设计心得tips"><a href="#FPS地图设计心得tips" class="headerlink" title="FPS地图设计心得tips"></a>FPS地图设计心得tips</h3><ul>
-<li><strong>第一步：区域划分和规划</strong>：地图的尺寸、交战距离（和玩家的移动属性）；敌我双方/多方的出生点，冲突点都会在这个阶段设计完成，可以说是完成整个图的大结构设定——根据玩法设计目标和游戏定位来确认。</li>
-<li><strong>第二步：动线规划</strong>：动线就是“运动轨迹”：即设计连接区域的路径、区域内的运动路线、主路与支路、汇合点与展开点。并不是有路的地方就有动线，动线是代表关卡中最高效的战术运动轨迹。</li>
-<li><strong>第三步：关键点设计</strong>：关键点就是我们常说的兵家必争之地，比如集中的通路，近道，视野宽阔的优势阵地等。往往也是双方动线天然的汇合点，必经之路，或是可以扼守目标点的阵地。</li>
-<li><strong>局部战术</strong>：确定不同区域的优势和风险，引导玩家在不同阵地选择不同的武器和战术，或选择与队友配合（狙击、投掷、冲锋、埋伏、绕后等），进行一定程度的策略对抗。</li>
-<li><strong>第五步：指引性设计</strong>：为了防止玩家在地图中迷路，需要加入明显的地标指示物，帮助玩家明确判断自己的位置。</li>
-<li><strong>第六步：平衡</strong>：在结构和美术设计上，通常会从结构对称（镜像平衡）、优势对等（各有优势区域，相对对等）的方向考虑，以在地图中维持双方的竞技公平。</li>
-</ul>
-<p><em><a href="https://www.taptap.com/topic/4512299" target="_blank" rel="noopener">原文:一些FPS游戏地图设计心得</a></em> </p>
-<h3 id="FPS类大型超多人战场地图设计的8个tips"><a href="#FPS类大型超多人战场地图设计的8个tips" class="headerlink" title="FPS类大型超多人战场地图设计的8个tips"></a>FPS类大型超多人战场地图设计的8个tips</h3><p>PUBG相对于OW、CSGO的成功说明超大地图、超多人PVP的魅力。  </p>
-<ul>
-<li><strong>1.谨慎设定场景尺寸</strong><ul>
-<li>因素：核心玩法（GamePlay Mode）；参与人数；移动数值与移动方式；预期交战密度；次级关卡的规模与数量；游戏单局时长；项目的技术瓶颈；研发工作量限制等等</li>
-</ul>
-</li>
-<li><strong>2.明确游戏的核心体验方向</strong><ul>
-<li>如<strong>PUBG</strong>的精准倍镜和武器弹道，把远距离战斗作为重要的游戏体验，所以的建筑、掩体、草木的分布都服从于此；<strong>堡垒之夜</strong>建造自由度是游戏的中药体验，所以关卡设计上留了很多空闲的区域，给玩家脑洞；<strong>Apex英雄</strong>偏向中近程作战，战斗节奏中角色快速立体移动，故提供了更狭窄受控的对战空间，大部分掩体可自由登顶。</li>
-<li>因素：交战距离、交战频率、战斗风格、游戏目标、预期移动节奏、玩家行动方式、角色特性、武器技能道具、资源分布情况。</li>
-</ul>
-</li>
-<li><strong>3.设立严格的标准，用规则创造世界</strong><ul>
-<li>场景建筑、物件的标准：<ul>
-<li>建筑的核心参数：墙体厚度、门高宽、窗高宽、层高、窗户距地高度、门窗分类情况、房间最小尺寸、楼梯宽度角度长度、建筑内结构约束、室内物件约束等等</li>
-<li>建筑的外围参数：房屋与房屋间距、城镇街道与房屋间距、房屋与围栏间距、房屋高度范围、房屋可攀爬约束等等</li>
-<li>物件的参数：物件种类尺寸、物件距离房屋安全距离、是否作为掩体、碰撞规范约束、贴图新旧程度等等</li>
-</ul>
-</li>
-<li>PGC生成内容的标准：<ul>
-<li>地形：最大高度、海平面高度、平原山体河流峡谷森林所有区域的确切分布、区域地表贴图设定、最大行走角度等</li>
-<li>植被系统：地表植物的高度、遮蔽情况，树木生成的总量、密度、间隔、直径、树冠特征，草和树木与地表自然贴图的限定关系、植被的生成规则等</li>
-<li>其他系统：路网分布、道路的类型与宽度、石头总量与密度、水体的特性：深度、可否游泳、水中能否使用载具、能否与火焰交互等等</li>
-</ul>
-</li>
-<li>角色相关的标准；整体地图的分布标准<ul>
-<li>角色Pawn的各项属性：体型Hitbox、移动速度（行走、持枪、奔跑、蹲伏等）、跳跃高度、距离、掉落伤害、攀爬高度距离、可行走角度、特殊移动方式（如滑索、载具）等等，都会影响具体场景的制作</li>
-<li>子场景的分布标准：规定了子场景的分级（重要程度，例如PUBG中机场就是一个分级为重要的子场景）、每类子场景的建筑数量与规模、不同子场景之间的间距（如两个核心资源点的最小距离）、局内资源的分布情况、资源的总量与密度等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>4.用局部设计为关卡注入灵魂</strong><ul>
-<li>为区域添加LandMark</li>
-<li>局部场景植被的变化</li>
-<li>利用好地形，进行二次创造</li>
-<li>布局Layout的艺术</li>
-<li>设定特殊主题</li>
-</ul>
-</li>
-<li><strong>5.在设计上留白</strong></li>
-<li><strong>6.建立完善的工具与制作流程</strong><ul>
-<li>PGC内容的编辑工具（引擎内）：树木地表道路篱笆等</li>
-<li>关卡管理工具：关卡拆分与多人协同编辑支持</li>
-<li>关卡预览工具：大世界的实时调整与预览工具</li>
-<li>大世界的批量测试工具：异常碰撞检测、地表贴合检测等</li>
-<li>美术资源的工具：批量处理资源、自动烘焙流程等</li>
-<li>其他一切提升LD/LA战斗力的引擎工具：比如扩展Unity糟糕的关卡编辑器</li>
-</ul>
-</li>
-<li><strong>7.用数据监测Review关卡的设计</strong><ul>
-<li>通用规则：死亡分布、各阶段时长、胜率等</li>
-<li>资源投放情况：物资产出、分布、物资获取评估等</li>
-<li>武器数据：KD、TTK、ADR（AVERAGE DAMAGE per ROUND）、配件出场率等</li>
-<li>道具/技能数据：道具消耗量、存量、使用率、有效率等</li>
-<li>载具使用情况：生成、获取评估、使用率、移动情况、损坏率、载具ADR等</li>
-<li>热力图数据：选点情况、出生跳伞、击杀死亡、区域活跃时间、决赛位置等</li>
-</ul>
-</li>
-<li><strong>8.让技术主导玩法，打破规则</strong><ul>
-<li>曾经我们认为关卡必须是<strong>CS</strong>一样的固态结构，<strong>Rainbow Six</strong>通过破碎系统的突破性尝试让我们看到了墙体破坏的战斗魅力；曾经我们以为手机上只能做2<em>2的小场景马赛克吃鸡，*</em>PUBG Mobile<strong>做到了64平方千米准端游画质并且不卡的世界！曾经我们以为大逃杀BR就是一条命苟到底飙车跑毒圈的ChickenDinner，但是</strong>APEX**用滑铲复活飞檐走壁华丽地技能钢枪告诉我们它也是一个Legend</li>
-</ul>
-</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/2j0U6BWyi9MLVOXBM0GWsg" target="_blank" rel="noopener">原文:FPS大世界关卡设计的8个锦囊</a></em>  </p>
-<h2 id="经营策略类"><a href="#经营策略类" class="headerlink" title="经营策略类"></a>经营策略类</h2><h3 id="3个玩法要素与3个乐趣的来源"><a href="#3个玩法要素与3个乐趣的来源" class="headerlink" title="3个玩法要素与3个乐趣的来源"></a>3个玩法要素与3个乐趣的来源</h3><ul>
-<li>要素：可选择的橙装路径、资源、胜利条件</li>
-<li><strong>思考和推理的乐趣</strong>：给玩家以不同选择的取舍；使用随机性、外部条件来应对玩家的攻略</li>
-<li><strong>博弈的乐趣</strong>：多个参与者时发生争夺、博弈</li>
-<li><strong>意想的乐趣</strong>：把游戏中的内容具象化，结合生活概念，有助于玩家理解</li>
-<li>总结：策略经营类的本质是逐步展开选择路径，玩家根据现有的消息，猜测将来可能出现的情况，来选择在一条最优路径获得“数值成果”。经历若干个阶段后，来结算成功。  </li>
-</ul>
-<p><em><a href="https://www.gameres.com/840787.html" target="_blank" rel="noopener">参考：经营策略游戏设计要点：3个玩法要素与3个乐趣的来源</a></em>  </p>
-<hr>
-<h1 id="关卡类"><a href="#关卡类" class="headerlink" title="关卡类"></a>关卡类</h1><h2 id="设计可重复挑战关卡？"><a href="#设计可重复挑战关卡？" class="headerlink" title="设计可重复挑战关卡？"></a>设计可重复挑战关卡？</h2><ul>
-<li><strong>目标结论</strong>：<ul>
-<li>随机性</li>
-<li>可操作性</li>
-</ul>
-</li>
-<li><strong>关卡规则构建</strong>：主要从目的和手段两个角度入手，用同样的资源去打造不同的关卡</li>
-<li><strong>关卡元素</strong>：如何站在基本型和关卡元素组合的思路去制作关卡元素，让它们有足够的差异性和复用价值</li>
-<li>语境重构，利用语境重构来复用关卡元素，并增加其代入感。其实每一个关卡元素都是一个很值得塑造的元素，每一个角色在进行复用的时候，都可以看作是他一次重新上场的机会，并推翻之前观众对他的印象</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/U_GsdgAwVrfEUoa6dodYYQ" target="_blank" rel="noopener">原文:在资源有限时，如何设计出可重复挑战的游戏关卡？</a></em>  </p>
-<h2 id="打破PVP玩法最优解"><a href="#打破PVP玩法最优解" class="headerlink" title="打破PVP玩法最优解"></a>打破PVP玩法最优解</h2><ul>
-<li><strong>非单一相克</strong>：石头剪刀布</li>
-<li><strong>可控约束性</strong>：玩家可以利用游戏规则，和自己的技巧来约束对方，从而使一些不透明的信息变得透明</li>
-<li><strong>“使绊子”</strong>：致使玩家并不那么容易达到最优解的一些方式，主要包括“操作难度”和“不可控因素”两点</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/uPGrfLwlzHhmIfOkMq8-Yg" target="_blank" rel="noopener">原文：打破PvP玩法的“最优解”</a></em></p>
-<hr>
-<h1 id="游戏架构类"><a href="#游戏架构类" class="headerlink" title="游戏架构类"></a>游戏架构类</h1><h2 id="开放世界不让玩家路痴"><a href="#开放世界不让玩家路痴" class="headerlink" title="开放世界不让玩家路痴"></a>开放世界不让玩家路痴</h2><p>游戏内的自动导航是与“对于现实世界的拟真”所相违背。<br>提升玩家寻路体验tips：  </p>
-<ul>
-<li><strong>缩小世界规模</strong>：简单粗暴，但如果引入了快速交通工具，玩家的体验会大打折扣。</li>
-<li><strong>炮制宏达景观</strong>：多设立大型地标，形成记忆锚点，但美术资源可能有限</li>
-<li><strong>为世界命名</strong>：对游戏中的区块和道路进行命名</li>
-<li><strong>减少素材重复利用</strong>：不要大粒度的方式重复利用</li>
-<li><strong>主线路径的重复利用</strong>：主线任务尽可能让玩家多重复在同一条路径上，加深记忆</li>
-</ul>
-<p><em><a href="https://www.gameres.com/840600.html" target="_blank" rel="noopener">原文：什么样的开放世界游戏才会让玩家不路痴？</a></em>  </p>
-<h2 id="潜行游戏的AI设计"><a href="#潜行游戏的AI设计" class="headerlink" title="潜行游戏的AI设计"></a>潜行游戏的AI设计</h2><p>潜行游戏的核心——暗杀  </p>
-<p>潜行AI需要增加视觉、听觉模拟器，以视觉为例：  </p>
-<p>AI的视觉模拟器：  </p>
-<ul>
-<li>AI看到什么会引起警觉<ul>
-<li>敌人</li>
-<li>同伴尸体</li>
-<li>同伴小时</li>
-<li>物品状态改变（如关着的门开了）</li>
-</ul>
-</li>
-<li>引起警觉之后，如何行动<ul>
-<li>查看异常（一般是单人行动）</li>
-<li>搜索敌人（一般是和周围同伴一起群体行动）</li>
-<li>触发警报（整个区域开始寻找敌人）</li>
-<li>呼叫增援（在增加区域内敌人数量）</li>
-</ul>
-</li>
-<li>行动后的变化<ul>
-<li>回归初始状态</li>
-<li>继续保持警戒状态</li>
-<li>保持搜索敌人状态</li>
-<li>保持战斗状态</li>
-</ul>
-</li>
-</ul>
-<p>潜行游戏的其他要素：变装、引诱、、隐蔽点、阴影、陷阱、移动尸体、藏匿尸体、离间、审问、墙体透视……</p>
-<hr>
-<h1 id="交互类"><a href="#交互类" class="headerlink" title="交互类"></a>交互类</h1><h2 id="交互设计入门原则和规范"><a href="#交互设计入门原则和规范" class="headerlink" title="交互设计入门原则和规范"></a>交互设计入门原则和规范</h2><ul>
-<li><strong>一致性原则</strong>：界面的视觉风格、布局、功能、用语、操作应在所有页面中保持一致。</li>
-<li><strong>有效性原则</strong>：难以点击的问题一定要彻底解决</li>
-<li><strong>易读性原则</strong>：尽管某些游戏的字号你拿着细看也是完全可以看清楚的，甚至还觉得挺精致。但基于手机的实际应用情景（拥挤的地铁、公交、步行时），字号还是建议略为调大一点，使用户即便在户外依然能够轻松地读取到画面中的文字信息。<ul>
-<li>提高文字与底图之间的对比度。</li>
-<li>承载文字的底图尽可能不设置透明度或较低透明度。</li>
-<li>多运用界面留白，包括设置较大的文字的行距，都能有助提升易读性。</li>
-</ul>
-</li>
-<li><strong>3次点击原则</strong>：用户经常会关心到的内容，务必在3次点击之内让他们找到。</li>
-<li><strong>防错原则</strong>：通过对信息的强调，或者二次确认，或增加上锁\解锁功能，或确认按钮位置的改变来防止用户在操作过程中发生失误。</li>
-<li><strong>字体规范</strong>：强化字阶差异，减少字号种类；统一“韵律”，简化字阶递增规律；以灰度、固定色彩体系强化文字性质；</li>
-<li><strong>控件规范</strong>：复用性要高，尽量控制相同样式不同尺寸的控件数量；确保视觉输出的控件，设备上看，边缘是锐利清晰的； 确保视觉输出的控件，配色方案不会对用户构成交互体验上的干扰；</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A" target="_blank" rel="noopener">原文：交互设计入门引导：5点原则两条规范</a></em>  </p>
-<h2 id="游戏交互设计5要素"><a href="#游戏交互设计5要素" class="headerlink" title="游戏交互设计5要素"></a>游戏交互设计5要素</h2><ul>
-<li>感受用户体验要素<ul>
-<li>表现层：呈献给用户的第一印象内容，看个大概基调</li>
-<li>框架层：整个系统的框架，图标等</li>
-<li>结构层：规划整个界面，较抽象</li>
-<li>范围层：可以看到这个页面提供什么、不提供什么</li>
-<li>战略层：这个界面的目的</li>
-<li>用户感受是从上到下，产品设计是从下到上</li>
-<li>框架层和结构层是交互设计师的主要负责区</li>
-</ul>
-</li>
-<li>用户体验要素与游戏交互设计<ul>
-<li>产品目标和用户目标-战略层：<ul>
-<li>研究用户是谁：定性研究（玩家对Demo试玩的意见）、定量研究（问卷调查），来了解用户特征，尝试对用户细分</li>
-<li>用户画像：基本信息（年龄、性别、单生？等）、何时游戏？游戏经验？技术水平？等</li>
-<li>二次元游戏用户画像4种：IP教徒典型画像、游戏宅典型画像、游戏向二次元人典型画像、跟风宅典型画像</li>
-</ul>
-</li>
-<li>功能规格和内容需求-范围层：<ul>
-<li>梳理系统蓝图：核心系统内容、系统常规玩法等……</li>
-<li>时间规划：每个版本节点中游戏的完成度、复杂度，来确定哪些交互规则必须优先搭建</li>
-<li>策划案：阐明三点，系统的设计目的、系统的主要/次要流程、系统各功能的优先级（最关注项）</li>
-</ul>
-</li>
-<li>.交互流程和信息构架-结构层：<ul>
-<li>交互流程和信息架构（操作的流程，围绕（玩家）角色、任务、场景三要素）</li>
-</ul>
-</li>
-<li>从抽象到具体-框架层：<ul>
-<li>布局遵从习惯</li>
-<li>覆盖尽可能多的场景和状态：有和无、最少和最多、80%和20%</li>
-<li>选择合适的方式，而不一定是“最酷”的方式</li>
-<li>优化交互输出，保证框架层实现度</li>
-</ul>
-</li>
-<li>感知设计-表现层：<ul>
-<li>目的是让框架层变得可以感知，交互设计师要让设计被视觉设计师“正确的感知”</li>
-<li>围绕目的进行沟通</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>梳理紧急性、重要性</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/7t_WHdJljuOAu4YA6SnMtA" target="_blank" rel="noopener">原文：想要提升用户体验？ 先了解游戏交互设计这5个要素（含实例）</a></em>  </p>
-<hr>
-<p><em><code>to be continued...</code></em>  </p>
-]]></content>
-      <categories>
-        <category>「Game」</category>
-      </categories>
-      <tags>
-        <tag>Game</tag>
       </tags>
   </entry>
   <entry>
@@ -1443,6 +1133,316 @@
       </tags>
   </entry>
   <entry>
+    <title>Game Design Notes</title>
+    <url>/2019/03/19/Game-Design-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>游戏设计相关笔记</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="箴言（雾"><a href="#箴言（雾" class="headerlink" title="箴言（雾"></a>箴言（雾</h1><blockquote>
+<p>策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。<br><em>——黄J  2019.3.19</em>  </p>
+</blockquote>
+<hr>
+<h1 id="按游戏类型分类"><a href="#按游戏类型分类" class="headerlink" title="按游戏类型分类"></a>按游戏类型分类</h1><h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><h3 id="3种FPS地图布局流程技巧"><a href="#3种FPS地图布局流程技巧" class="headerlink" title="3种FPS地图布局流程技巧"></a>3种FPS地图布局流程技巧</h3><p>以 <code>CS:GO</code> 为例  </p>
+<blockquote>
+<p>前置教程参考：<br>CS:GO 6 Principles of Choke Point Level Design<br>CS:GO How to Design Gameplay Map Layouts (Complete In-Depth Guide)</p>
+</blockquote>
+<p><strong>做地图的通常步骤：</strong></p>
+<ul>
+<li>第一步：Layout布局阶段<br>把地图的玩法可视化，规划好地图中可行走的路线、备选路线、连接通路、阻塞点、目标、障碍物、地图边界。  </li>
+<li>再进BSP填充地图，迭代更新。  <ul>
+<li>（注：BSP其实是使用二叉空间分割方法Binary space partitioning生成的多边形，简单来说就是各种多边形体。Source引擎、Unreal4都提供了这种方法来快速创建关卡原型，优点是调整多边形非常方便，直接在场景内就可见，而且面数奇低）  </li>
+</ul>
+</li>
+</ul>
+<p><strong>地图布局方法：</strong><br>路线图就是从整个布局图中提取的精华，这样你就对双方如何处理地图目标有了清晰的概念。  </p>
+<ul>
+<li><strong>方法一：先画路径（通路），再画场景布局的边缘</strong><ul>
+<li>适用情况：当你对你地图玩起来是啥样子有了概念，并且你已经考虑过布局情况，但是对细节不是很清楚的时候。  </li>
+<li>开始先画简单的线条来定义地图的路径  </li>
+<li>绝对的精简，别设计任何边界，只专注考虑两队玩家的通路</li>
+<li>标记：CT、T出生点；包点、人质点；阻塞点（关键）</li>
+<li>再画地图布局，一直画到你能确定剩下的所有结构：地图的边界，视野，双方复生点，包点和人质点，阻塞点，连接通路，还有其他通路。</li>
+</ul>
+</li>
+<li><strong>方法二：一次只关注一个区域，然后组合起来</strong>  <ul>
+<li>适用情况：当你不知道你的地图布局最终是什么样子，你举步维艰无法弄清楚每个区域怎么去做的时候</li>
+<li>先挑一个区域开始：A点、B点、CT或T出生点、中路、任一阻塞点</li>
+<li>选一个区域设计，再画出区域的布局，专注该区域</li>
+<li>选其他区域，再来一遍</li>
+<li>整合到一个布局图里</li>
+<li>从布局简化出路径图</li>
+</ul>
+</li>
+<li><strong>方法三：直接完成全部布局，再简化通路</strong><ul>
+<li>适用情况：当你已经对整体布局有过深思熟虑并且确切的知道最终的样子。或许你已经画过这个布局许多次了，并且你打算重新设计它。</li>
+<li>从一个具体的区域开始然后逐渐展开直到整体布局画完。如果你在某个区域没有进展了，那就再接着画别的区域。记住一次画完。</li>
+<li>然后另画出地图简化通路</li>
+<li>新手慎用</li>
+</ul>
+</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/6euKxO_D4IzwPPgCD8GSww" target="_blank" rel="noopener">原文:3种设计FPS游戏地图布局的流程技巧</a></em>  </p>
+<h3 id="FPS地图阻塞点设计6原则"><a href="#FPS地图阻塞点设计6原则" class="headerlink" title="FPS地图阻塞点设计6原则"></a>FPS地图阻塞点设计6原则</h3><blockquote>
+<p>控制了阻塞点，就控制了整张地图。  </p>
+</blockquote>
+<p>阻塞点是地图上进攻方到达目标之前，遭遇防守方抵抗的区域。阻塞点也叫做控制点（Control Point）或者堵塞区（Bottleneck）。<br>进攻方（爆破模式中的匪徒或营救模式中的警察）必须从阻塞点干过去，才能到达目标区域。否则就必须撤退或者更换策略换条路线进攻。  </p>
+<p>阻塞点的设计目的：<strong>增强游戏性</strong>，利用阻塞点可以控制地图内的玩家流向，节奏，和平衡。</p>
+<ul>
+<li><strong>原则1：增强和促进游戏性（Gameplay）</strong>  <ul>
+<li>通过整体结构的设计将可见的入口降低到1-2个，来缩紧玩家的流向</li>
+<li>常见结构如：走廊，门口，隧道或是巷道登，是双方相遇、激战的阻塞点 </li>
+</ul>
+</li>
+<li><strong>原则2：阻塞点放置</strong><ul>
+<li>一定要部署在攻击方到达地图目标点之前</li>
+</ul>
+</li>
+<li><strong>原则3：时机</strong><ul>
+<li>需要让双方几乎在相同的时间到达阻塞点。防守方可以稍微早几秒到达站好位置。但最重要的是攻击方永远都不能在防守方刚刚到达的时候就已经冲过阻塞点。</li>
+<li>到达阻塞点的时间在地图的BSP搭建阶段就应该确定：直接方法-计时器、亲自跑</li>
+<li>时机也可能取决于地图，如dust2地图中防守方ct到A平台非常近</li>
+</ul>
+</li>
+<li><strong>原则4：入口、出口数量</strong><ul>
+<li>限制出入口的选择，将阻塞点通路数量<strong>控制在1到2个</strong>。这样攻击方不会太轻易地占领目标。许多CS地图的阻塞点都只有一个通路（通向目标点）</li>
+<li>两条通路入口的阻塞点给进攻方提供了选择和策略，<strong>增加策略性</strong>，但也可能把阻塞点搞无聊</li>
+<li>增加同一个阻塞点的通路数量，破快了局部的战斗节奏，<strong>可能让阻塞点变得无法控制</strong>，需要慎重把握</li>
+<li>如果要为阻塞点增加2条通路入口，应确保防守方在同一个视角可以清晰看到两个入口</li>
+</ul>
+</li>
+<li><strong>原则5：战斗方式</strong><ul>
+<li>阻塞点都应该支持多种战斗方式：狙击战、近距离的卡点战斗、暗中推进（猥琐推进）。</li>
+<li>支持的方式越多，越能迎合多类型玩家喜好。需要为策略性和玩家技巧来进行设计。</li>
+<li>使用<strong>距离</strong>和<strong>掩体</strong>作为布局元素<ul>
+<li>距离维度：长、短、宽、窄、高度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>原则6：动态阻塞点</strong><ul>
+<li>营救人质地图中的阻塞点都是动态的。在设计人质地图的阻塞点时，你需要考虑防守方（T）是如何进行的。</li>
+<li>最主要的是需要把到达营救位置的通路数量控制在2到3条。</li>
+</ul>
+</li>
+</ul>
+<p>关于<strong>区域阻塞点</strong>：  </p>
+<ul>
+<li>它们是在特定区域，带有多种选择和掩体的开放式阻塞点</li>
+<li>一个地图1个足以，复杂的掩体和多样的选择都大大增加了设计的难度，要有取舍。</li>
+</ul>
+<p><em><a href="https://www.gameres.com/789358.html" target="_blank" rel="noopener">原文：FPS地图阻塞点的六种设计原则</a></em>  </p>
+<h3 id="FPS地图设计心得tips"><a href="#FPS地图设计心得tips" class="headerlink" title="FPS地图设计心得tips"></a>FPS地图设计心得tips</h3><ul>
+<li><strong>第一步：区域划分和规划</strong>：地图的尺寸、交战距离（和玩家的移动属性）；敌我双方/多方的出生点，冲突点都会在这个阶段设计完成，可以说是完成整个图的大结构设定——根据玩法设计目标和游戏定位来确认。</li>
+<li><strong>第二步：动线规划</strong>：动线就是“运动轨迹”：即设计连接区域的路径、区域内的运动路线、主路与支路、汇合点与展开点。并不是有路的地方就有动线，动线是代表关卡中最高效的战术运动轨迹。</li>
+<li><strong>第三步：关键点设计</strong>：关键点就是我们常说的兵家必争之地，比如集中的通路，近道，视野宽阔的优势阵地等。往往也是双方动线天然的汇合点，必经之路，或是可以扼守目标点的阵地。</li>
+<li><strong>局部战术</strong>：确定不同区域的优势和风险，引导玩家在不同阵地选择不同的武器和战术，或选择与队友配合（狙击、投掷、冲锋、埋伏、绕后等），进行一定程度的策略对抗。</li>
+<li><strong>第五步：指引性设计</strong>：为了防止玩家在地图中迷路，需要加入明显的地标指示物，帮助玩家明确判断自己的位置。</li>
+<li><strong>第六步：平衡</strong>：在结构和美术设计上，通常会从结构对称（镜像平衡）、优势对等（各有优势区域，相对对等）的方向考虑，以在地图中维持双方的竞技公平。</li>
+</ul>
+<p><em><a href="https://www.taptap.com/topic/4512299" target="_blank" rel="noopener">原文:一些FPS游戏地图设计心得</a></em> </p>
+<h3 id="FPS类大型超多人战场地图设计的8个tips"><a href="#FPS类大型超多人战场地图设计的8个tips" class="headerlink" title="FPS类大型超多人战场地图设计的8个tips"></a>FPS类大型超多人战场地图设计的8个tips</h3><p>PUBG相对于OW、CSGO的成功说明超大地图、超多人PVP的魅力。  </p>
+<ul>
+<li><strong>1.谨慎设定场景尺寸</strong><ul>
+<li>因素：核心玩法（GamePlay Mode）；参与人数；移动数值与移动方式；预期交战密度；次级关卡的规模与数量；游戏单局时长；项目的技术瓶颈；研发工作量限制等等</li>
+</ul>
+</li>
+<li><strong>2.明确游戏的核心体验方向</strong><ul>
+<li>如<strong>PUBG</strong>的精准倍镜和武器弹道，把远距离战斗作为重要的游戏体验，所以的建筑、掩体、草木的分布都服从于此；<strong>堡垒之夜</strong>建造自由度是游戏的中药体验，所以关卡设计上留了很多空闲的区域，给玩家脑洞；<strong>Apex英雄</strong>偏向中近程作战，战斗节奏中角色快速立体移动，故提供了更狭窄受控的对战空间，大部分掩体可自由登顶。</li>
+<li>因素：交战距离、交战频率、战斗风格、游戏目标、预期移动节奏、玩家行动方式、角色特性、武器技能道具、资源分布情况。</li>
+</ul>
+</li>
+<li><strong>3.设立严格的标准，用规则创造世界</strong><ul>
+<li>场景建筑、物件的标准：<ul>
+<li>建筑的核心参数：墙体厚度、门高宽、窗高宽、层高、窗户距地高度、门窗分类情况、房间最小尺寸、楼梯宽度角度长度、建筑内结构约束、室内物件约束等等</li>
+<li>建筑的外围参数：房屋与房屋间距、城镇街道与房屋间距、房屋与围栏间距、房屋高度范围、房屋可攀爬约束等等</li>
+<li>物件的参数：物件种类尺寸、物件距离房屋安全距离、是否作为掩体、碰撞规范约束、贴图新旧程度等等</li>
+</ul>
+</li>
+<li>PGC生成内容的标准：<ul>
+<li>地形：最大高度、海平面高度、平原山体河流峡谷森林所有区域的确切分布、区域地表贴图设定、最大行走角度等</li>
+<li>植被系统：地表植物的高度、遮蔽情况，树木生成的总量、密度、间隔、直径、树冠特征，草和树木与地表自然贴图的限定关系、植被的生成规则等</li>
+<li>其他系统：路网分布、道路的类型与宽度、石头总量与密度、水体的特性：深度、可否游泳、水中能否使用载具、能否与火焰交互等等</li>
+</ul>
+</li>
+<li>角色相关的标准；整体地图的分布标准<ul>
+<li>角色Pawn的各项属性：体型Hitbox、移动速度（行走、持枪、奔跑、蹲伏等）、跳跃高度、距离、掉落伤害、攀爬高度距离、可行走角度、特殊移动方式（如滑索、载具）等等，都会影响具体场景的制作</li>
+<li>子场景的分布标准：规定了子场景的分级（重要程度，例如PUBG中机场就是一个分级为重要的子场景）、每类子场景的建筑数量与规模、不同子场景之间的间距（如两个核心资源点的最小距离）、局内资源的分布情况、资源的总量与密度等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>4.用局部设计为关卡注入灵魂</strong><ul>
+<li>为区域添加LandMark</li>
+<li>局部场景植被的变化</li>
+<li>利用好地形，进行二次创造</li>
+<li>布局Layout的艺术</li>
+<li>设定特殊主题</li>
+</ul>
+</li>
+<li><strong>5.在设计上留白</strong></li>
+<li><strong>6.建立完善的工具与制作流程</strong><ul>
+<li>PGC内容的编辑工具（引擎内）：树木地表道路篱笆等</li>
+<li>关卡管理工具：关卡拆分与多人协同编辑支持</li>
+<li>关卡预览工具：大世界的实时调整与预览工具</li>
+<li>大世界的批量测试工具：异常碰撞检测、地表贴合检测等</li>
+<li>美术资源的工具：批量处理资源、自动烘焙流程等</li>
+<li>其他一切提升LD/LA战斗力的引擎工具：比如扩展Unity糟糕的关卡编辑器</li>
+</ul>
+</li>
+<li><strong>7.用数据监测Review关卡的设计</strong><ul>
+<li>通用规则：死亡分布、各阶段时长、胜率等</li>
+<li>资源投放情况：物资产出、分布、物资获取评估等</li>
+<li>武器数据：KD、TTK、ADR（AVERAGE DAMAGE per ROUND）、配件出场率等</li>
+<li>道具/技能数据：道具消耗量、存量、使用率、有效率等</li>
+<li>载具使用情况：生成、获取评估、使用率、移动情况、损坏率、载具ADR等</li>
+<li>热力图数据：选点情况、出生跳伞、击杀死亡、区域活跃时间、决赛位置等</li>
+</ul>
+</li>
+<li><strong>8.让技术主导玩法，打破规则</strong><ul>
+<li>曾经我们认为关卡必须是<strong>CS</strong>一样的固态结构，<strong>Rainbow Six</strong>通过破碎系统的突破性尝试让我们看到了墙体破坏的战斗魅力；曾经我们以为手机上只能做2<em>2的小场景马赛克吃鸡，*</em>PUBG Mobile<strong>做到了64平方千米准端游画质并且不卡的世界！曾经我们以为大逃杀BR就是一条命苟到底飙车跑毒圈的ChickenDinner，但是</strong>APEX**用滑铲复活飞檐走壁华丽地技能钢枪告诉我们它也是一个Legend</li>
+</ul>
+</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/2j0U6BWyi9MLVOXBM0GWsg" target="_blank" rel="noopener">原文:FPS大世界关卡设计的8个锦囊</a></em>  </p>
+<h2 id="经营策略类"><a href="#经营策略类" class="headerlink" title="经营策略类"></a>经营策略类</h2><h3 id="3个玩法要素与3个乐趣的来源"><a href="#3个玩法要素与3个乐趣的来源" class="headerlink" title="3个玩法要素与3个乐趣的来源"></a>3个玩法要素与3个乐趣的来源</h3><ul>
+<li>要素：可选择的橙装路径、资源、胜利条件</li>
+<li><strong>思考和推理的乐趣</strong>：给玩家以不同选择的取舍；使用随机性、外部条件来应对玩家的攻略</li>
+<li><strong>博弈的乐趣</strong>：多个参与者时发生争夺、博弈</li>
+<li><strong>意想的乐趣</strong>：把游戏中的内容具象化，结合生活概念，有助于玩家理解</li>
+<li>总结：策略经营类的本质是逐步展开选择路径，玩家根据现有的消息，猜测将来可能出现的情况，来选择在一条最优路径获得“数值成果”。经历若干个阶段后，来结算成功。  </li>
+</ul>
+<p><em><a href="https://www.gameres.com/840787.html" target="_blank" rel="noopener">参考：经营策略游戏设计要点：3个玩法要素与3个乐趣的来源</a></em>  </p>
+<hr>
+<h1 id="关卡类"><a href="#关卡类" class="headerlink" title="关卡类"></a>关卡类</h1><h2 id="设计可重复挑战关卡？"><a href="#设计可重复挑战关卡？" class="headerlink" title="设计可重复挑战关卡？"></a>设计可重复挑战关卡？</h2><ul>
+<li><strong>目标结论</strong>：<ul>
+<li>随机性</li>
+<li>可操作性</li>
+</ul>
+</li>
+<li><strong>关卡规则构建</strong>：主要从目的和手段两个角度入手，用同样的资源去打造不同的关卡</li>
+<li><strong>关卡元素</strong>：如何站在基本型和关卡元素组合的思路去制作关卡元素，让它们有足够的差异性和复用价值</li>
+<li>语境重构，利用语境重构来复用关卡元素，并增加其代入感。其实每一个关卡元素都是一个很值得塑造的元素，每一个角色在进行复用的时候，都可以看作是他一次重新上场的机会，并推翻之前观众对他的印象</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/U_GsdgAwVrfEUoa6dodYYQ" target="_blank" rel="noopener">原文:在资源有限时，如何设计出可重复挑战的游戏关卡？</a></em>  </p>
+<h2 id="打破PVP玩法最优解"><a href="#打破PVP玩法最优解" class="headerlink" title="打破PVP玩法最优解"></a>打破PVP玩法最优解</h2><ul>
+<li><strong>非单一相克</strong>：石头剪刀布</li>
+<li><strong>可控约束性</strong>：玩家可以利用游戏规则，和自己的技巧来约束对方，从而使一些不透明的信息变得透明</li>
+<li><strong>“使绊子”</strong>：致使玩家并不那么容易达到最优解的一些方式，主要包括“操作难度”和“不可控因素”两点</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/uPGrfLwlzHhmIfOkMq8-Yg" target="_blank" rel="noopener">原文：打破PvP玩法的“最优解”</a></em></p>
+<hr>
+<h1 id="游戏架构类"><a href="#游戏架构类" class="headerlink" title="游戏架构类"></a>游戏架构类</h1><h2 id="开放世界不让玩家路痴"><a href="#开放世界不让玩家路痴" class="headerlink" title="开放世界不让玩家路痴"></a>开放世界不让玩家路痴</h2><p>游戏内的自动导航是与“对于现实世界的拟真”所相违背。<br>提升玩家寻路体验tips：  </p>
+<ul>
+<li><strong>缩小世界规模</strong>：简单粗暴，但如果引入了快速交通工具，玩家的体验会大打折扣。</li>
+<li><strong>炮制宏达景观</strong>：多设立大型地标，形成记忆锚点，但美术资源可能有限</li>
+<li><strong>为世界命名</strong>：对游戏中的区块和道路进行命名</li>
+<li><strong>减少素材重复利用</strong>：不要大粒度的方式重复利用</li>
+<li><strong>主线路径的重复利用</strong>：主线任务尽可能让玩家多重复在同一条路径上，加深记忆</li>
+</ul>
+<p><em><a href="https://www.gameres.com/840600.html" target="_blank" rel="noopener">原文：什么样的开放世界游戏才会让玩家不路痴？</a></em>  </p>
+<h2 id="潜行游戏的AI设计"><a href="#潜行游戏的AI设计" class="headerlink" title="潜行游戏的AI设计"></a>潜行游戏的AI设计</h2><p>潜行游戏的核心——暗杀  </p>
+<p>潜行AI需要增加视觉、听觉模拟器，以视觉为例：  </p>
+<p>AI的视觉模拟器：  </p>
+<ul>
+<li>AI看到什么会引起警觉<ul>
+<li>敌人</li>
+<li>同伴尸体</li>
+<li>同伴小时</li>
+<li>物品状态改变（如关着的门开了）</li>
+</ul>
+</li>
+<li>引起警觉之后，如何行动<ul>
+<li>查看异常（一般是单人行动）</li>
+<li>搜索敌人（一般是和周围同伴一起群体行动）</li>
+<li>触发警报（整个区域开始寻找敌人）</li>
+<li>呼叫增援（在增加区域内敌人数量）</li>
+</ul>
+</li>
+<li>行动后的变化<ul>
+<li>回归初始状态</li>
+<li>继续保持警戒状态</li>
+<li>保持搜索敌人状态</li>
+<li>保持战斗状态</li>
+</ul>
+</li>
+</ul>
+<p>潜行游戏的其他要素：变装、引诱、、隐蔽点、阴影、陷阱、移动尸体、藏匿尸体、离间、审问、墙体透视……</p>
+<hr>
+<h1 id="交互类"><a href="#交互类" class="headerlink" title="交互类"></a>交互类</h1><h2 id="交互设计入门原则和规范"><a href="#交互设计入门原则和规范" class="headerlink" title="交互设计入门原则和规范"></a>交互设计入门原则和规范</h2><ul>
+<li><strong>一致性原则</strong>：界面的视觉风格、布局、功能、用语、操作应在所有页面中保持一致。</li>
+<li><strong>有效性原则</strong>：难以点击的问题一定要彻底解决</li>
+<li><strong>易读性原则</strong>：尽管某些游戏的字号你拿着细看也是完全可以看清楚的，甚至还觉得挺精致。但基于手机的实际应用情景（拥挤的地铁、公交、步行时），字号还是建议略为调大一点，使用户即便在户外依然能够轻松地读取到画面中的文字信息。<ul>
+<li>提高文字与底图之间的对比度。</li>
+<li>承载文字的底图尽可能不设置透明度或较低透明度。</li>
+<li>多运用界面留白，包括设置较大的文字的行距，都能有助提升易读性。</li>
+</ul>
+</li>
+<li><strong>3次点击原则</strong>：用户经常会关心到的内容，务必在3次点击之内让他们找到。</li>
+<li><strong>防错原则</strong>：通过对信息的强调，或者二次确认，或增加上锁\解锁功能，或确认按钮位置的改变来防止用户在操作过程中发生失误。</li>
+<li><strong>字体规范</strong>：强化字阶差异，减少字号种类；统一“韵律”，简化字阶递增规律；以灰度、固定色彩体系强化文字性质；</li>
+<li><strong>控件规范</strong>：复用性要高，尽量控制相同样式不同尺寸的控件数量；确保视觉输出的控件，设备上看，边缘是锐利清晰的； 确保视觉输出的控件，配色方案不会对用户构成交互体验上的干扰；</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A" target="_blank" rel="noopener">原文：交互设计入门引导：5点原则两条规范</a></em>  </p>
+<h2 id="游戏交互设计5要素"><a href="#游戏交互设计5要素" class="headerlink" title="游戏交互设计5要素"></a>游戏交互设计5要素</h2><ul>
+<li>感受用户体验要素<ul>
+<li>表现层：呈献给用户的第一印象内容，看个大概基调</li>
+<li>框架层：整个系统的框架，图标等</li>
+<li>结构层：规划整个界面，较抽象</li>
+<li>范围层：可以看到这个页面提供什么、不提供什么</li>
+<li>战略层：这个界面的目的</li>
+<li>用户感受是从上到下，产品设计是从下到上</li>
+<li>框架层和结构层是交互设计师的主要负责区</li>
+</ul>
+</li>
+<li>用户体验要素与游戏交互设计<ul>
+<li>产品目标和用户目标-战略层：<ul>
+<li>研究用户是谁：定性研究（玩家对Demo试玩的意见）、定量研究（问卷调查），来了解用户特征，尝试对用户细分</li>
+<li>用户画像：基本信息（年龄、性别、单生？等）、何时游戏？游戏经验？技术水平？等</li>
+<li>二次元游戏用户画像4种：IP教徒典型画像、游戏宅典型画像、游戏向二次元人典型画像、跟风宅典型画像</li>
+</ul>
+</li>
+<li>功能规格和内容需求-范围层：<ul>
+<li>梳理系统蓝图：核心系统内容、系统常规玩法等……</li>
+<li>时间规划：每个版本节点中游戏的完成度、复杂度，来确定哪些交互规则必须优先搭建</li>
+<li>策划案：阐明三点，系统的设计目的、系统的主要/次要流程、系统各功能的优先级（最关注项）</li>
+</ul>
+</li>
+<li>.交互流程和信息构架-结构层：<ul>
+<li>交互流程和信息架构（操作的流程，围绕（玩家）角色、任务、场景三要素）</li>
+</ul>
+</li>
+<li>从抽象到具体-框架层：<ul>
+<li>布局遵从习惯</li>
+<li>覆盖尽可能多的场景和状态：有和无、最少和最多、80%和20%</li>
+<li>选择合适的方式，而不一定是“最酷”的方式</li>
+<li>优化交互输出，保证框架层实现度</li>
+</ul>
+</li>
+<li>感知设计-表现层：<ul>
+<li>目的是让框架层变得可以感知，交互设计师要让设计被视觉设计师“正确的感知”</li>
+<li>围绕目的进行沟通</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>梳理紧急性、重要性</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/7t_WHdJljuOAu4YA6SnMtA" target="_blank" rel="noopener">原文：想要提升用户体验？ 先了解游戏交互设计这5个要素（含实例）</a></em>  </p>
+<hr>
+<p><em><code>to be continued...</code></em>  </p>
+]]></content>
+      <categories>
+        <category>「Game」</category>
+      </categories>
+      <tags>
+        <tag>Game</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Go の Command</title>
     <url>/2019/04/21/Go-Command/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -1577,8 +1577,8 @@
         <category>「语言」- Go</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -1838,8 +1838,8 @@
         <category>「语言」- Go</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -2117,6 +2117,47 @@
       </tags>
   </entry>
   <entry>
+    <title>升级Hexo+NexT版本</title>
+    <url>/2020/03/04/Hexo-NexT-update/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>为什么要手痒升级呢？</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Update-Log"><a href="#Update-Log" class="headerlink" title="Update Log"></a>Update Log</h1><ul>
+<li>升级时间：2020年3月<ul>
+<li><code>Hexo</code>版本：v3.8.0 → v4.2.0</li>
+<li><code>NexT</code>版本：v7.0.1 → v7.7.2</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><h2 id="升级思路"><a href="#升级思路" class="headerlink" title="升级思路"></a>升级思路</h2><p>因为目前对于本Blog的管理是：网页托管于<code>github</code>仓库，部署在<code>master</code>分支，Hexo和NexT的网站后台操作内容放在同一个仓库的<code>Hexo.source</code>分支。</p>
+<p>计划先在本地升级Hexo和NexT，做好source搬迁、config配置等工作；然后在仓库中新建一个空的分支，把本地的后台文件复制进去，然后提交这个分支，今后维护新的后台分支就可以了。</p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="本地升级Hexo"><a href="#本地升级Hexo" class="headerlink" title="本地升级Hexo"></a>本地升级Hexo</h3><p>Hexo版本升级可以通过npm实现，相关命令如下：  </p>
+<p>先全局升级<code>hexo-cli</code>：-g表示全局升级。<code>hexo</code>本身是一个静态博客生成工具，具备编译Markdown、拼接主题模板、生成 HTML、上传 Git 等基本功能。<code>hexo-cli</code>能够将这些功能封装为命令，提供给用户通过<code>hexo server / hexo deploy</code>等命令调用的模块。<code>CLI = Command Line Interface</code>命令行界面。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-cli -g</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建空分支"><a href="#创建空分支" class="headerlink" title="创建空分支"></a>创建空分支</h3><p>现在Github上创建分支是基于其他分支的，没法直接创建空的。</p>
+<p>需要在创建的分支后，  </p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git rm -rf .</span><br></pre></td></tr></table></figure>
+
+<p>不要漏了<code>.</code></p>
+<p>然后考进来，commit。</p>
+<h3 id="更新NexT"><a href="#更新NexT" class="headerlink" title="更新NexT"></a>更新NexT</h3><p>去<a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">Github-NexT</a>下载个新版，然后解压到<code>/theme/</code>下。</p>
+<p>剩下的就慢慢调配置吧……</p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo + NexT(v7.0.1) 博客配置备忘</title>
     <url>/2019/03/27/Hexo-NexT-Config/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -2262,47 +2303,6 @@
 
 <p>原因：<code>node.js</code>版本是<code>v14.15.1</code>的，过高，要降级。  </p>
 <p>Windows系统的话，可以卸载<code>node.js</code>，然后去<a href="https://nodejs.org/zh-cn/download/releases/" target="_blank" rel="noopener">下载历史版本的node.js</a>,比如<code>v12.14</code>。  </p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>升级Hexo+NexT版本</title>
-    <url>/2020/03/04/Hexo-NexT-update/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>为什么要手痒升级呢？</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Update-Log"><a href="#Update-Log" class="headerlink" title="Update Log"></a>Update Log</h1><ul>
-<li>升级时间：2020年3月<ul>
-<li><code>Hexo</code>版本：v3.8.0 → v4.2.0</li>
-<li><code>NexT</code>版本：v7.0.1 → v7.7.2</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><h2 id="升级思路"><a href="#升级思路" class="headerlink" title="升级思路"></a>升级思路</h2><p>因为目前对于本Blog的管理是：网页托管于<code>github</code>仓库，部署在<code>master</code>分支，Hexo和NexT的网站后台操作内容放在同一个仓库的<code>Hexo.source</code>分支。</p>
-<p>计划先在本地升级Hexo和NexT，做好source搬迁、config配置等工作；然后在仓库中新建一个空的分支，把本地的后台文件复制进去，然后提交这个分支，今后维护新的后台分支就可以了。</p>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="本地升级Hexo"><a href="#本地升级Hexo" class="headerlink" title="本地升级Hexo"></a>本地升级Hexo</h3><p>Hexo版本升级可以通过npm实现，相关命令如下：  </p>
-<p>先全局升级<code>hexo-cli</code>：-g表示全局升级。<code>hexo</code>本身是一个静态博客生成工具，具备编译Markdown、拼接主题模板、生成 HTML、上传 Git 等基本功能。<code>hexo-cli</code>能够将这些功能封装为命令，提供给用户通过<code>hexo server / hexo deploy</code>等命令调用的模块。<code>CLI = Command Line Interface</code>命令行界面。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-cli -g</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建空分支"><a href="#创建空分支" class="headerlink" title="创建空分支"></a>创建空分支</h3><p>现在Github上创建分支是基于其他分支的，没法直接创建空的。</p>
-<p>需要在创建的分支后，  </p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git rm -rf .</span><br></pre></td></tr></table></figure>
-
-<p>不要漏了<code>.</code></p>
-<p>然后考进来，commit。</p>
-<h3 id="更新NexT"><a href="#更新NexT" class="headerlink" title="更新NexT"></a>更新NexT</h3><p>去<a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">Github-NexT</a>下载个新版，然后解压到<code>/theme/</code>下。</p>
-<p>剩下的就慢慢调配置吧……</p>
 ]]></content>
       <categories>
         <category>「备忘」- Hexo配置</category>
@@ -4786,11 +4786,11 @@
       </tags>
   </entry>
   <entry>
-    <title>Photoshop Skill Notes</title>
-    <url>/2020/03/10/Ps-Skill-Notes/</url>
+    <title>Photoshop Skin Notes</title>
+    <url>/2020/03/10/Ps-Skin-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>Ps拼接合成</em></strong></p>
+<p><strong><em>Ps人像修饰</em></strong></p>
 <p></font></center></p>
 <a id="more"></a>
 
@@ -5306,11 +5306,11 @@
       </tags>
   </entry>
   <entry>
-    <title>Photoshop Skin Notes</title>
-    <url>/2020/03/10/Ps-Skin-Notes/</url>
+    <title>Photoshop Skill Notes</title>
+    <url>/2020/03/10/Ps-Skill-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>Ps人像修饰</em></strong></p>
+<p><strong><em>Ps拼接合成</em></strong></p>
 <p></font></center></p>
 <a id="more"></a>
 
@@ -6036,6 +6036,34 @@
         <tag>Note</tag>
         <tag>SPSS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/03/07/Hello-World/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong>Hexo 的初始文档</strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
   </entry>
   <entry>
     <title>WeiboCat With Golang</title>
@@ -7197,6 +7225,116 @@
 <h3 id="双层博弈模型求解"><a href="#双层博弈模型求解" class="headerlink" title="双层博弈模型求解"></a>双层博弈模型求解</h3><ul>
 <li>对于上述建立的基于Stackelberg博弈的两个阶段的虚拟电厂竞标模型，其均衡解存在且唯一，可通过逆推归纳法进行求解。</li>
 </ul>
+<h2 id="不同虚拟电厂之间的互动博弈"><a href="#不同虚拟电厂之间的互动博弈" class="headerlink" title="不同虚拟电厂之间的互动博弈"></a>不同虚拟电厂之间的互动博弈</h2><p>提出一种虚拟电厂双层优化博弈模型，不仅强调上层虚拟电厂之间的博弈，下层分布式电源之间的博弈，也强调上下两层的均衡。  </p>
+<h3 id="博弈框架的建立"><a href="#博弈框架的建立" class="headerlink" title="博弈框架的建立"></a>博弈框架的建立</h3><p>鉴于风光发电随机性，需要可控发电/用能代理（智能体）配合才能提高消纳水平，因此下层参与者可以组成一个虚拟电厂，采用“内部协同，外部协调竞争”的运行原则，内部智能体组成合作联盟，实现能源互补，提高总收益。上层为多虚拟电厂博弈竞价模型，根据需求和攻击的具体数值，制定多虚拟电厂直接交易策略。下层为虚拟电厂内部分布式能源之间的合作模型，以总成本最低为目标得到最优响应功率。</p>
+<h3 id="虚拟电厂下层优化模型"><a href="#虚拟电厂下层优化模型" class="headerlink" title="虚拟电厂下层优化模型"></a>虚拟电厂下层优化模型</h3><h3 id="多虚拟电厂上层博弈交易模型"><a href="#多虚拟电厂上层博弈交易模型" class="headerlink" title="多虚拟电厂上层博弈交易模型"></a>多虚拟电厂上层博弈交易模型</h3><h2 id="虚拟电厂内部结算机制"><a href="#虚拟电厂内部结算机制" class="headerlink" title="虚拟电厂内部结算机制"></a>虚拟电厂内部结算机制</h2><h3 id="联盟博弈理论"><a href="#联盟博弈理论" class="headerlink" title="联盟博弈理论"></a>联盟博弈理论</h3><p>由于虚拟电厂内部的分布式电源以互补合作的方式运行，可以将其等效为一个合作博弈。  </p>
+<h3 id="Shapley值方法的改进"><a href="#Shapley值方法的改进" class="headerlink" title="Shapley值方法的改进"></a>Shapley值方法的改进</h3><h3 id="评分机制"><a href="#评分机制" class="headerlink" title="评分机制"></a>评分机制</h3><h3 id="内部成员对结算机制的满意度"><a href="#内部成员对结算机制的满意度" class="headerlink" title="内部成员对结算机制的满意度"></a>内部成员对结算机制的满意度</h3><hr>
+<h1 id="第9章-交易平台与商业模式"><a href="#第9章-交易平台与商业模式" class="headerlink" title="第9章 交易平台与商业模式"></a>第9章 交易平台与商业模式</h1><h2 id="能源市场交易平台"><a href="#能源市场交易平台" class="headerlink" title="能源市场交易平台"></a>能源市场交易平台</h2><ul>
+<li>现阶段，国内外有不少能源市场交易中心和一些能源云平台的应用。随着国内电力市场改革的推进，已有国家级和各省级电力交易中心组织开展电力市场化交易业务。此外，不少企业和高校研发的能源云平台将用于远程采集监控、节能管理、运算分析等能源服务。</li>
+<li>能源市场交易平台包括电力的批发、零售，以及天然气和冷热的销售与供应、虚拟电厂和电动汽车的购售电等。</li>
+<li>将能源市场交易和能源云结合的综合能源市场交易平台，将在能源数据监测分析基础上完成各类能源信息服务产品的市场交易与结算。</li>
+</ul>
+<h3 id="数据资源层"><a href="#数据资源层" class="headerlink" title="数据资源层"></a>数据资源层</h3><ul>
+<li>信息通信<ul>
+<li>信息源包括能源资源信息、环境气象信息、能量生产实时信息、能量输配实时信息、负荷及需求实时信息、业务交易实时信息、相关方行为实时信息等</li>
+</ul>
+</li>
+<li>数据中心</li>
+</ul>
+<h3 id="任务协调层"><a href="#任务协调层" class="headerlink" title="任务协调层"></a>任务协调层</h3><ul>
+<li>成员管理<ul>
+<li>参与能源市场：能源的生产者、服务者、消费者</li>
+<li>能源市场交易平台：一般浏览者、注册用户、系统管理员</li>
+</ul>
+</li>
+<li>交易管理<ul>
+<li>负责能源交易的开展、计算和发布工作</li>
+<li>交易申报模块为多个市场主体提供数据申报与报价递送功能，包括能源供应企业和能源用户或零售商报价</li>
+<li>以电力市场交易为例，交易流程可分为双边协调交易和集中竞价交易</li>
+</ul>
+</li>
+<li>合同管理<ul>
+<li>合同管理模块负责制定、执行及评估能源市场交易相关的各类合同和协议，为其提供全过程的技术支持</li>
+</ul>
+</li>
+</ul>
+<h3 id="分析决策层"><a href="#分析决策层" class="headerlink" title="分析决策层"></a>分析决策层</h3><ul>
+<li>规则与算法库<ul>
+<li>能源市场交易平台的核心业务是交易，完整规范的规则与算法库是保证交易顺利开展的基础</li>
+</ul>
+</li>
+<li>在线动态分析</li>
+<li>安全校核</li>
+</ul>
+<h2 id="能源需求侧管理平台"><a href="#能源需求侧管理平台" class="headerlink" title="能源需求侧管理平台"></a>能源需求侧管理平台</h2><p>指政府通过采取有效的激励和引导措施使能源供需双方在事宜的运作方式下共同对用能市场进行管理，已达到改变用能方式、提高能效和功能可靠性的目的。  </p>
+<h3 id="感知与通信层"><a href="#感知与通信层" class="headerlink" title="感知与通信层"></a>感知与通信层</h3><ul>
+<li>测控层</li>
+<li>数据传输与共享</li>
+<li>客户终端</li>
+</ul>
+<h3 id="数据域算法库"><a href="#数据域算法库" class="headerlink" title="数据域算法库"></a>数据域算法库</h3><ul>
+<li>用能基础信息<ul>
+<li>负荷分析</li>
+<li>负荷率分析</li>
+<li>电量分析</li>
+<li>三相平衡度分析</li>
+</ul>
+</li>
+<li>用能异常情况分析</li>
+<li>电能质量数据分析</li>
+<li>线损与变损数据</li>
+<li>综合碳排放数据</li>
+</ul>
+<h3 id="用户服务层"><a href="#用户服务层" class="headerlink" title="用户服务层"></a>用户服务层</h3><ul>
+<li>能源管控<ul>
+<li>在线监测、负荷管理、分布式电源控制</li>
+</ul>
+</li>
+<li>节能争端</li>
+<li>委托管理</li>
+</ul>
+<h2 id="能源云技术"><a href="#能源云技术" class="headerlink" title="能源云技术"></a>能源云技术</h2><h3 id="多微机集群模式"><a href="#多微机集群模式" class="headerlink" title="多微机集群模式"></a>多微机集群模式</h3><ul>
+<li>集群概念<ul>
+<li>微型计算机集群，建成集群，是一种计算机系统，它通过一组松散集成的计算机软件或硬件片接起来高度紧密地协作完成计算工作</li>
+</ul>
+</li>
+<li>多微机集群在虚拟电厂平台中的应用</li>
+</ul>
+<h3 id="组件技术"><a href="#组件技术" class="headerlink" title="组件技术"></a>组件技术</h3><ul>
+<li>组件技术及其特点<ul>
+<li>组件技术是一种软件开发技术，是指将复杂的应用软件拆分成一系列软件单元，及组件，这些组件具有可行性实现，易于开发、理解和调整等特点</li>
+</ul>
+</li>
+<li>组建平台架构</li>
+</ul>
+<h3 id="多智能代理技术"><a href="#多智能代理技术" class="headerlink" title="多智能代理技术"></a>多智能代理技术</h3><ul>
+<li>多代理技术及其应用场景</li>
+<li>虚拟电厂典型场景下的代理分类</li>
+</ul>
+<h3 id="三维可视化人机界面"><a href="#三维可视化人机界面" class="headerlink" title="三维可视化人机界面"></a>三维可视化人机界面</h3><ul>
+<li>三维可视化技术</li>
+<li>虚拟电厂平台的三维可视化需求</li>
+</ul>
+<h2 id="商业模式与案例分析"><a href="#商业模式与案例分析" class="headerlink" title="商业模式与案例分析"></a>商业模式与案例分析</h2><h3 id="虚拟电厂商业模式"><a href="#虚拟电厂商业模式" class="headerlink" title="虚拟电厂商业模式"></a>虚拟电厂商业模式</h3><ul>
+<li>虚拟电厂作为售电主体</li>
+<li>虚拟电厂作为虚拟电源商</li>
+<li>虚拟电厂作为辅助服务提供者</li>
+<li>虚拟电厂作为电动汽车聚合商</li>
+</ul>
+<h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><ul>
+<li>Next Kraftwerke公司<ul>
+<li>德国大型虚拟电厂运营商</li>
+</ul>
+</li>
+<li>AGL能源公司<ul>
+<li>澳大利亚最大的综合能源服务商</li>
+</ul>
+</li>
+<li>Stem公司<ul>
+<li>美国</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>「笔记」- 读书</category>
@@ -7205,34 +7343,6 @@
         <tag>Note</tag>
         <tag>能源</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/03/07/Hello-World/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong>Hexo 的初始文档</strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
