@@ -31,7 +31,55 @@ date: 2020-03-10 23:43:58
     + 环境：通过色彩环境判断（大脑对入射光的假设可能会有错觉）
     + 时间：视觉暂留，跟上一时刻看到的颜色有关
     + 同色对比识别：历史经验有关
-- [范例视频](https://www.youtube.com/watch?v=k1rB1Y4isHs&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4)
+- [讲解视频](https://www.youtube.com/watch?v=k1rB1Y4isHs&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4)
+
+
+
+## 色彩模型
+
+- 如何描述颜色？
+  - 色温法：建立在绝对黑体的概念上。
+    - 低温：红色、黄色
+    - 高温：蓝色、白色
+    - 但仅能描述蓝色到黄色的变化，绿色到洋红的光线难以描述
+    - 色调：描述绿色到洋红
+    - 色温+色调对颜色的描述还是不足够准确，因此仅用于描述白平衡
+- `HSB`模型
+  - `H`：色相
+  - `S`：饱和度，颜色的纯度
+  - `B`：亮度
+  - 优点：与生活中的日常经验比较一致，容易理解
+  - 缺点：无法用于工程制造，难以找到某种材料精准控制这几种属性
+- `RGB`色彩模型
+  - Red、Green、Blue
+  - 用于：发光体制造、相机
+  - 优点：工程制造中只要控制三种颜色的亮度即可
+  - 缺点：仅能用于发光体
+- `CMYK`色彩模型
+  - 青色`Cyan`、洋红`Magenta`、黄色`Yellow`
+  - 用于：照片冲印、油墨印刷、打印机
+  - `RGB`、`CMYK`模型的局限：难以保证不同设备、不同厂商之间的颜色一致性；都是材料相关的
+- `Lab`色彩模型
+  - 原意：试图摆脱颜色原材料对模型的影响，是纯数学的概念
+  - 横剖面：绿色↔红色、蓝色↔黄色
+  - 纵轴：亮度
+  - 不能用于制造，仅用于数学描述颜色，可用于不同模型之间转换的中介
+
+
+
+## `CMYK`色彩模型
+
+- 含义
+    + `C`：青色，Cyan；只吸收红色
+    + `M`：洋红，Magenta；只吸收绿色
+    + `Y`：黄色，Yellow；只吸收蓝色
+    + `K`：黑色，Black
+- `GRB`是针对发光体的
+- `CMYK`是针对反光的，反光体会吸收显色的所有颜色。
+- 量加的越多，亮度越低
+- `CMYK`通道下，颜色越深，代表墨水用的越多
+- 用`黑色`墨水是从成本角度考虑，黑色很常用，不需要总是用CMY混合来做（对精度要求也高）
+- [讲解视频](https://www.youtube.com/watch?v=uVboug-wGGs)
 
 ---
 
@@ -41,7 +89,7 @@ date: 2020-03-10 23:43:58
 
 - 离开画面光看直方图都是耍流氓
 - Raw格式宽容度比JPG高很多，拍摄时候不用过分在意临时预览时的高光警告
-- [范例视频](https://www.youtube.com/watch?v=nUPxQLde8nc&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=5)
+- [讲解视频](https://www.youtube.com/watch?v=nUPxQLde8nc&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=5)
 
 ## 光圈和快门
 
@@ -57,7 +105,7 @@ date: 2020-03-10 23:43:58
 
 - 快门结构：机械快门、电子快门
 
-[范例视频](https://www.youtube.com/watch?v=7bftNbx-E0k&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=7)
+[讲解视频](https://www.youtube.com/watch?v=7bftNbx-E0k&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=7)
 
 ---
 
@@ -83,9 +131,9 @@ date: 2020-03-10 23:43:58
     + 重复：利用重复突出不重复的内容
     + 延时（长曝光）
     + 临态：捕捉临时状态
-- [范例视频](https://www.youtube.com/watch?v=YqhSoriv6-c)
+- [讲解视频](https://www.youtube.com/watch?v=YqhSoriv6-c)
 
-## 后期批判标准
+## 后期评判标准
 
 - 获得足够多的画面`细节`
     + `细节`：落入`可见`范围内的对比度
@@ -95,7 +143,7 @@ date: 2020-03-10 23:43:58
     + `“层次”`：对比度分辨率
     + `“油润”`：对比度的致密变化
 - 保持`自然`的光影结构与颜色
-- [范例视频](https://www.youtube.com/watch?v=uZQCa7pVsp0&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=9)
+- [讲解视频](https://www.youtube.com/watch?v=uZQCa7pVsp0&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=9)
 
 ## 建立后期思路
 
@@ -114,19 +162,7 @@ date: 2020-03-10 23:43:58
     + 色调
     + 影调
 - 尽量还原人眼看到的真实
-- [范例视频1](https://www.youtube.com/watch?v=yHlasyGerbg&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=10)、[范例视频2](https://www.youtube.com/watch?v=4CPRwtzkFnU&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=11)
-
-## 向右曝光（vs宁欠勿曝）
-
-- 同时满足三个条件：
-    + RAW格式拍摄
-    + 拍照时尽量曝光增加
-    + 后期时蒋其调整回期望的亮度（压暗噪点）
-- 好处：提高画面信噪比，减少噪点
-- 拍摄：
-    + 参考1：评价曝光+1.3ev，白加黑减
-    + 参考2：点测最亮点测光增加10倍曝光（3.7ev）
-- [范例视频1](https://www.youtube.com/watch?v=uKDXQJR0WPY)、[范例视频2](https://www.youtube.com/watch?v=ln-JDN1mF3I)、[范例视频3](https://www.youtube.com/watch?v=syPdVOhuLak)
+- [讲解视频1](https://www.youtube.com/watch?v=yHlasyGerbg&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=10)、[讲解视频2](https://www.youtube.com/watch?v=4CPRwtzkFnU&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=11)
 
 ---
 
@@ -152,4 +188,5 @@ date: 2020-03-10 23:43:58
     + `平衡机`：主流相机
     + `像素机`：高像素，ISO微小下降
     + `视频机`：Sony A7S M2为代表的，1000w像素
-- [范例视频](https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6)
+- [讲解视频](https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6)
+

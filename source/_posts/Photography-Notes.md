@@ -163,6 +163,18 @@ date: 2019-10-15 22:16:59
 
 # 前期  
 
+## 向右曝光（vs宁欠勿曝）
+
+- 同时满足三个条件：
+    + RAW格式拍摄
+    + 拍照时尽量曝光增加
+    + 后期时蒋其调整回期望的亮度（压暗噪点）
+- 好处：提高画面信噪比，减少噪点
+- 拍摄：
+    + 参考1：评价曝光+1.3ev，白加黑减
+    + 参考2：点测最亮点测光增加10倍曝光（3.7ev）
+- [范例视频1](https://www.youtube.com/watch?v=uKDXQJR0WPY)、[范例视频2](https://www.youtube.com/watch?v=ln-JDN1mF3I)、[范例视频3](https://www.youtube.com/watch?v=syPdVOhuLak)
+
 ## 星空  
 
 - 时间选择：
