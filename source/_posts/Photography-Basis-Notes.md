@@ -191,3 +191,17 @@ date: 2020-03-10 23:43:58
     + `视频机`：Sony A7S M2为代表的，1000w像素
 - [讲解视频](https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6)
 
+## 镜头MTF曲线
+
+MTF曲线 = 调制传递函数，Modular Transfer Function。广泛用于描述镜头成像素质。  
+
+- 横轴：距画面中心的距离，mm
+- 纵轴：对比度的百分比，%
+- 不同颜色曲线：对应不同线对（1mm内出现的黑白相间的条纹）
+  - 实线：径向值，线对线的方向与就镜像方向相同
+  - 虚线：纵向值，线对线的方向与就镜像方向垂直
+  - 线对提高了，MTF曲线会下移
+- MTF越高（上限100%），成像效果越好，反之则反
+
+[讲解视频](https://www.youtube.com/watch?v=fWFN7pIruQk)
+
