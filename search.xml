@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Axure Learn</title>
+    <url>/2019/11/25/Axure-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>重要的是用工具的人，也就是工具人</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h3><ul>
+<li>矩形框、圆形：图形，可写字</li>
+<li>图片、占位符</li>
+<li>按钮、主要按钮、链接按钮</li>
+<li>标题、标签、段落：写字，仅样式不同</li>
+<li>水平线、垂直线：线段，固定宽度1</li>
+<li>热区：制作不可见但想要交互的区域</li>
+<li>动态面板：强大</li>
+<li>内联框架：在页面内嵌套其他页面或者URL的内容</li>
+<li>重复器：制作重复内容，功能强大</li>
+</ul>
+<h3 id="表单元件"><a href="#表单元件" class="headerlink" title="表单元件"></a>表单元件</h3><ul>
+<li>文本框、文本域、下拉列表、列表框、复选框、单选按钮</li>
+</ul>
+<h3 id="菜单-表格"><a href="#菜单-表格" class="headerlink" title="菜单|表格"></a>菜单|表格</h3><ul>
+<li>树状菜单（可折叠）、表格、水平菜单、垂直菜单</li>
+</ul>
+<h3 id="标记元件"><a href="#标记元件" class="headerlink" title="标记元件"></a>标记元件</h3><ul>
+<li>快照</li>
+<li>水平箭头、垂直箭头</li>
+<li>便签</li>
+<li>圆形标记、水滴标记</li>
+</ul>
+<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><ul>
+<li>事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击<ul>
+<li>时间起名习俗：on+对象名+时间，如onHideBotmClick</li>
+</ul>
+</li>
+<li>动作（Action）：对事件的响应，如跳转页面、显示弹出层<ul>
+<li>多个动作按次序执行，除了动画</li>
+</ul>
+</li>
+<li>情况（Case）：根据不同条件作出不同响应</li>
+</ul>
+<h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><ul>
+<li>动作只能操作当前容器内的元件。</li>
+<li>可以给母版内动作跑出事件，在具体页面中根据时间来执行动作。</li>
+</ul>
+<h3 id="动态面板"><a href="#动态面板" class="headerlink" title="动态面板"></a>动态面板</h3><ul>
+<li>页面内部分页面变换，通常用动态面板实现，例如用户名登录/手机号登录</li>
+<li>切换按钮的动作：set panel state</li>
+</ul>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
+<li><code>方向键</code>单个像素调整，再按住<code>Shift</code>键，10个像素调整。</li>
+<li>按住<code>Shift</code>等比例调整大小。</li>
+<li>双击：<ul>
+<li>普通组件：添加文字</li>
+<li>类型组件：编辑</li>
+</ul>
+</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>预览：<code>F5</code></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
+]]></content>
+      <categories>
+        <category>「笔记」- 软件</category>
+      </categories>
+      <tags>
+        <tag>Axure</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Algorithm 笔记</title>
     <url>/2019/03/14/Alg-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -110,540 +184,9 @@
         <category>「算法」</category>
       </categories>
       <tags>
+        <tag>Note</tag>
         <tag>算法</tag>
         <tag>Go</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Axure Learn</title>
-    <url>/2019/11/25/Axure-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>重要的是用工具的人，也就是工具人</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h3><ul>
-<li>矩形框、圆形：图形，可写字</li>
-<li>图片、占位符</li>
-<li>按钮、主要按钮、链接按钮</li>
-<li>标题、标签、段落：写字，仅样式不同</li>
-<li>水平线、垂直线：线段，固定宽度1</li>
-<li>热区：制作不可见但想要交互的区域</li>
-<li>动态面板：强大</li>
-<li>内联框架：在页面内嵌套其他页面或者URL的内容</li>
-<li>重复器：制作重复内容，功能强大</li>
-</ul>
-<h3 id="表单元件"><a href="#表单元件" class="headerlink" title="表单元件"></a>表单元件</h3><ul>
-<li>文本框、文本域、下拉列表、列表框、复选框、单选按钮</li>
-</ul>
-<h3 id="菜单-表格"><a href="#菜单-表格" class="headerlink" title="菜单|表格"></a>菜单|表格</h3><ul>
-<li>树状菜单（可折叠）、表格、水平菜单、垂直菜单</li>
-</ul>
-<h3 id="标记元件"><a href="#标记元件" class="headerlink" title="标记元件"></a>标记元件</h3><ul>
-<li>快照</li>
-<li>水平箭头、垂直箭头</li>
-<li>便签</li>
-<li>圆形标记、水滴标记</li>
-</ul>
-<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><ul>
-<li>事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击<ul>
-<li>时间起名习俗：on+对象名+时间，如onHideBotmClick</li>
-</ul>
-</li>
-<li>动作（Action）：对事件的响应，如跳转页面、显示弹出层<ul>
-<li>多个动作按次序执行，除了动画</li>
-</ul>
-</li>
-<li>情况（Case）：根据不同条件作出不同响应</li>
-</ul>
-<h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><ul>
-<li>动作只能操作当前容器内的元件。</li>
-<li>可以给母版内动作跑出事件，在具体页面中根据时间来执行动作。</li>
-</ul>
-<h3 id="动态面板"><a href="#动态面板" class="headerlink" title="动态面板"></a>动态面板</h3><ul>
-<li>页面内部分页面变换，通常用动态面板实现，例如用户名登录/手机号登录</li>
-<li>切换按钮的动作：set panel state</li>
-</ul>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
-<li><code>方向键</code>单个像素调整，再按住<code>Shift</code>键，10个像素调整。</li>
-<li>按住<code>Shift</code>等比例调整大小。</li>
-<li>双击：<ul>
-<li>普通组件：添加文字</li>
-<li>类型组件：编辑</li>
-</ul>
-</li>
-</ul>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
-<li>预览：<code>F5</code></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
-]]></content>
-      <categories>
-        <category>「笔记」- 软件</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Axure</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Excel VBA Notes</title>
-    <url>/2020/12/15/Excel-VBA/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-***提高工作效率吧打工人***
-
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="入门方法"><a href="#入门方法" class="headerlink" title="入门方法"></a>入门方法</h2><h3 id="录制宏"><a href="#录制宏" class="headerlink" title="录制宏"></a>录制宏</h3><p><code>视图</code>→<code>宏</code>→<code>录制宏</code>  / <code>开发工具</code>  </p>
-<p><code>Alt+F11</code>查看录制内容  </p>
-<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a href="https://www.lanrenexcel.com/excel-vba-tutorial/" target="_blank" rel="noopener">懒人Excel - VBA教程</a></p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="VBE编辑器-Visual-Basic-Editor"><a href="#VBE编辑器-Visual-Basic-Editor" class="headerlink" title="VBE编辑器 Visual Basic Editor"></a>VBE编辑器 Visual Basic Editor</h3><p><code>Alt+F11</code>进入编辑器</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>以英文单引号<code>‘</code>开头 。  </p>
-<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><p>可运行的VBA代码块。  </p>
-<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>对象是一个物，它可以是一个事、一个物体、一个概念、一个名词。对象包含描述静态信息的<strong>属性</strong>和对对象可以操作的<strong>方法</strong>。  </p>
-<p>以生活中的对象为例子，汽车是一个对象。汽车的车牌号、油量、里程等是汽车的属性；开车、加油、换车牌等是汽车的方法。  </p>
-<p><strong>常用Excel对象</strong>  </p>
-<ul>
-<li><code>Application 对象</code>，表示 Excel 应用程序。</li>
-<li><code>Workbook 对象</code>，表示工作簿对象。</li>
-<li><code>Worksheet 对象</code>，表示工作表对象</li>
-<li><code>Range 对象</code>，表示单元格区域对象。</li>
-</ul>
-<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>模块是包含一个或多个过程或函数的内部组件。一个工作簿内包含的模块数量没有限制，一个模块内包含的过程或函数数量也没有限制。<u>模块用来作为保存过程或函数的容器</u>，这些过程和函数通常应用于整个工作簿。  </p>
-<p>通过把多个过程和函数，合理的放置在不同的模块，可以使整个 VBA 代码逻辑更清晰、更易于阅读和理解。  </p>
-<h3 id="用户窗体"><a href="#用户窗体" class="headerlink" title="用户窗体"></a>用户窗体</h3><p>VBA和用户交互的界面，最基本的窗体控件包括：  </p>
-<ul>
-<li>文本控件</li>
-<li>按钮控件</li>
-<li>列表控件</li>
-<li>输入控件</li>
-</ul>
-<h3 id="「开发工具」选项卡"><a href="#「开发工具」选项卡" class="headerlink" title="「开发工具」选项卡"></a>「开发工具」选项卡</h3><p>功能区中右键→「自定义功能区」→√「开发工具」  </p>
-<h2 id="Excel-VBA设置宏安全性"><a href="#Excel-VBA设置宏安全性" class="headerlink" title="Excel VBA设置宏安全性"></a>Excel VBA设置宏安全性</h2><p>默认情况下，为防止来源不明的工作簿自带宏自动运行，Excel 会禁用宏的运行。  </p>
-<h3 id="宏安全性"><a href="#宏安全性" class="headerlink" title="宏安全性"></a>宏安全性</h3><p>「开发工具」选项卡→「宏安全性」→打开信任中心：  </p>
-<ul>
-<li><strong>禁用所有宏，并且不通知</strong>：无法运行打开的工作簿内的 VBA 代码，Excel 也不会提示工作簿包含代码。</li>
-<li><strong>禁用所有宏，并发出通知</strong>：默认状态下，无法运行 VBA 代码。但是 Excel 在打开包含 VBA 代码的工作簿时，在编辑栏上方，显示安全警告，并且可以选择启用代码运行或不启用。如果选择启用，下次打开相同的工作簿，不会出现警告。</li>
-<li><strong>禁用无数字签署的所有宏</strong>：宏将被禁用，但如果存在宏，则会显示安全警告。但是，如果受信任发布者对宏进行了数字签名，并且您已经信任该发布者，则可运行该宏。如果您尚未信任该发布者，则会通知您启用签署的宏并信任该发布者。</li>
-<li><strong>启用所有宏(不推荐；可能会运行有潜在危险的代码)</strong>：可以运行所有宏。一般不推荐选择此选项。</li>
-</ul>
-<p>安全起见，可以采取：</p>
-<ul>
-<li>禁用所有宏，并发出通知。</li>
-<li>在电脑上创建一个用于存放信任的包含代码的工作簿的文件夹，将此工作簿添加到受信任为位置。<ul>
-<li>把一个文件夹添加到 Excel 受信任的位置后，该文件夹下的包含 VBA 代码的工作簿打开时，不会提示安全警告，也无需每次手动开启代码。</li>
-<li>在开发工具选项卡，点击「宏安全性」按钮，弹出信任中心窗口，在左侧列表中，选择「受信任位置」。点击下方的「添加新位置」按钮，添加自己信任的一个文件夹。</li>
-</ul>
-</li>
-</ul>
-<h2 id="Excel-保存包含-VBA-代码的工作簿"><a href="#Excel-保存包含-VBA-代码的工作簿" class="headerlink" title="Excel 保存包含 VBA 代码的工作簿"></a>Excel 保存包含 VBA 代码的工作簿</h2><p>2003 及之前的版本中，在 <code>xls</code>类型工作簿可以任意编写并保存 VBA 代码。  </p>
-<p>2007 版本开始，第一次保存包含 VBA 代码的工作簿时，Excel 会提示“无法保存工作簿”。  </p>
-<p>含 VBA 代码的工作簿，必须保存成启用宏的工作簿类型。Excel 为此提供了<code>xlsm</code>类型的工作簿，称之为「<strong>启用宏的工作簿</strong>」。</p>
-<h2 id="使用VBA-编辑器进行-Excel-VBA-开发"><a href="#使用VBA-编辑器进行-Excel-VBA-开发" class="headerlink" title="使用VBA 编辑器进行 Excel VBA 开发"></a>使用VBA 编辑器进行 Excel VBA 开发</h2><h3 id="打开方法"><a href="#打开方法" class="headerlink" title="打开方法"></a>打开方法</h3><ul>
-<li>方法一：「开发工具」选项卡→<code>Visual Basic</code></li>
-<li>方法二：工作表右键菜单→<code>查看代码(V)</code></li>
-<li>方法三：快捷键<code>Alt + F11</code></li>
-</ul>
-<h3 id="编辑器模块"><a href="#编辑器模块" class="headerlink" title="编辑器模块"></a>编辑器模块</h3><ul>
-<li><strong>工具栏</strong>：编辑器命令栏，与 Excel 功能区域类似，包含 Excel VBA 开发相关的命令。</li>
-<li><strong>VBA 工程</strong>：显示当前 VBA 工程包含的所有对象。通常，一个工作簿就是一个 VBA 工程，其中包括 Excel 对象、工作表对象、模块等。</li>
-<li><strong>属性窗口</strong>：查看和设置选中对象的属性的窗口。</li>
-<li><strong>代码编辑窗口</strong>：实际编写代码的位置。编写、修改、保存代码，都在这里进行。</li>
-<li><strong>立即窗口</strong>：代码运行过程中，打印出的内容，在立即窗口中显示。一般用于调试代码</li>
-</ul>
-<h3 id="运行VBA代码"><a href="#运行VBA代码" class="headerlink" title="运行VBA代码"></a>运行VBA代码</h3><ul>
-<li>方法一：VBA编辑器工具栏「运行」→「运行子过程」</li>
-<li>方法二：VBA编辑器快捷工具栏的播放图标</li>
-<li>方法三：快捷键<code>F5</code></li>
-<li>方法四：给<code>图形</code>或者<code>按钮</code>指定宏，点击运行</li>
-</ul>
-<h1 id="VBA-变量、类型、运算符"><a href="#VBA-变量、类型、运算符" class="headerlink" title="VBA 变量、类型、运算符"></a>VBA 变量、类型、运算符</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>VBA变量时一个存储数据的VBA代码接口，可存储、改变、参与计算  </p>
-<ul>
-<li><strong>变量名</strong>：代表变量的名称</li>
-<li><strong>变量类型</strong>：变量存储的数据的类型，例如数字、文本、逻辑值等</li>
-</ul>
-<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> [变量名] <span class="keyword">As</span> [数据类型]</span><br></pre></td></tr></table></figure>
-
-<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3><ul>
-<li>首字母必须以字母开头。</li>
-<li>不能包含空格、.(英文句号)、!(感叹号)、@、&amp;、$、# 等字符。</li>
-<li>长度不能超过 255 个字符。</li>
-<li>不能使用 VBA 中保存的关键词作为变量名。</li>
-</ul>
-<blockquote>
-<p>驼峰命名法：当变量名或函数名是由一个或多个单词连结在一起，而构成的唯一识别字时<strong>，第一个单词以小写字母开始；从第二个单词开始以后的每个单词的首字母都采用大写字母。</strong></p>
-<p>例如：myFirstName、myLastName，这样的变量名看上去就像骆驼峰一样此起彼伏，故得名。</p>
-</blockquote>
-<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>三大类数据类型：数字类型、非数字类型、通用类型。  </p>
-<p><strong>数字类型</strong>： </p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>数据范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Byte</td>
-<td>字节</td>
-<td>0 至 255</td>
-</tr>
-<tr>
-<td>Integer</td>
-<td>整数</td>
-<td>-32,768 至 32,767</td>
-</tr>
-<tr>
-<td>Long</td>
-<td>长整数</td>
-<td>-2,147,483,648 至 2,147,483,648</td>
-</tr>
-<tr>
-<td>Single</td>
-<td>单精度浮点数</td>
-<td>在表示负数时： -3.402823E38 ~ -1.401298E-45 在表示正数时： 1.401298E-45 ~ 3.402823E38</td>
-</tr>
-<tr>
-<td>Double</td>
-<td>双精度浮点数</td>
-<td>在表示负数时： -1.79769313486231E308 ~ -4.94065645841247E-324 在表示正数时： 4.94065645841247E-324 ~ 1.79769313486231E308</td>
-</tr>
-<tr>
-<td>Currency</td>
-<td>货币</td>
-<td>-922,337,203,685,477.5808 至 922,337,203,685,477.5807</td>
-</tr>
-<tr>
-<td>Decimal</td>
-<td>定点数</td>
-<td>未放置定点数： +/- 79,228,162,514,264,337,593,543,950,335 放置定点数： +/- 7.9228162514264337593543950335</td>
-</tr>
-</tbody></table>
-<p><strong>非数字类型</strong>：  </p>
-<p>非数字变量通常不能直接参与算术运算。  </p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>数据范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String</td>
-<td>文本类型</td>
-<td>0 至 20亿字符</td>
-</tr>
-<tr>
-<td>Boolean</td>
-<td>逻辑值</td>
-<td>True 或 False</td>
-</tr>
-<tr>
-<td>Date</td>
-<td>日期和时间</td>
-<td>时间：00:00:00 至 23:59:59 日期： 100-1-1 至 9999-12-31</td>
-</tr>
-<tr>
-<td>Object</td>
-<td>对象</td>
-<td>VBA 和 Excel 对象</td>
-</tr>
-</tbody></table>
-<p><strong>通用类型</strong>：  </p>
-<p>可存储任何类型的数据。在程序运行过程，VBA 可以自动识别数据类型，参与计算。  </p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>数据范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Variant</td>
-<td>任意类型</td>
-<td>不限</td>
-</tr>
-</tbody></table>
-<p>Variant 类型虽然灵活，但是它会占用更多内存空间，执行效率也会受影响。因此建议，在明确知道数据是何种类型时，指定数据类型；如果数据类型是可变的或不明确，使用 Variant 类型。</p>
-<h3 id="给变量赋值"><a href="#给变量赋值" class="headerlink" title="给变量赋值"></a>给变量赋值</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">[变量名] = [数据]</span><br></pre></td></tr></table></figure>
-
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>在声明时就要指定值。  </p>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Const</span> [常量名] <span class="keyword">As</span> [数据类型] = [值]</span><br></pre></td></tr></table></figure>
-
-<h3 id="常量类型"><a href="#常量类型" class="headerlink" title="常量类型"></a>常量类型</h3><p>与变量相同。  </p>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>=</td>
-<td>给变量赋值</td>
-<td>name = “Zhang San”</td>
-</tr>
-</tbody></table>
-<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>假设 <code>a = 10</code>，<code>b = 3</code>，<code>-&gt;</code> 表示结果。  </p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>+</td>
-<td>两数相加</td>
-<td>a + b -&gt; 13</td>
-</tr>
-<tr>
-<td>–</td>
-<td>两数相减</td>
-<td>a – b -&gt; 7</td>
-</tr>
-<tr>
-<td>*</td>
-<td>两数相乘</td>
-<td>a * b -&gt; 30</td>
-</tr>
-<tr>
-<td>/</td>
-<td>两数相除</td>
-<td>a / b -&gt; 2.5</td>
-</tr>
-<tr>
-<td>\</td>
-<td>两数相除，取整数部分</td>
-<td>a \ b -&gt; 3</td>
-</tr>
-<tr>
-<td>Mod</td>
-<td>两数相除，取余数</td>
-<td>a Mod b -&gt; 1</td>
-</tr>
-<tr>
-<td>^</td>
-<td>幂运算</td>
-<td>a ^ b -&gt; 1000</td>
-</tr>
-<tr>
-<td>-（取负）</td>
-<td>对数字取负</td>
-<td>-a -&gt; -10</td>
-</tr>
-</tbody></table>
-<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>假设 <code>a = 10</code>，<code>b = 3</code>，<code>-&gt;</code> 表示结果。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>=</td>
-<td>比较两个值是否相等</td>
-<td>a = b -&gt; False</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于</td>
-<td>a &gt; b -&gt; True</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>大于等于</td>
-<td>a &gt;= b =&gt; False</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于</td>
-<td>a &lt; b -&gt; False</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>小于等于</td>
-<td>a &lt;= b -&gt; False</td>
-</tr>
-<tr>
-<td>&lt;&gt;</td>
-<td>不等于</td>
-<td>a &lt;&gt; b -&gt; True</td>
-</tr>
-</tbody></table>
-<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>逻辑运算符对逻辑值，即 True 和 False，进行逻辑运算，返回运算结果，运算结果也是逻辑值。</p>
-<p>假设 <code>a = True</code>，<code>b = False</code>，<code>-&gt;</code> 表示结果。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>And</td>
-<td>逻辑与，两个表达式都是真，返回 True。</td>
-<td>a And b -&gt; False</td>
-</tr>
-<tr>
-<td>Or</td>
-<td>逻辑或，两个表达式至少有一个为真，返回 True。</td>
-<td>a Or b -&gt; True</td>
-</tr>
-<tr>
-<td>Not</td>
-<td>逻辑否，对逻辑表达式取否</td>
-<td>Not a -&gt; False</td>
-</tr>
-<tr>
-<td>Xor</td>
-<td>逻辑异或，如果两个表达式不相同，返回 True</td>
-<td>a Xor b -&gt; True</td>
-</tr>
-</tbody></table>
-<h3 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h3><p>VBA 中的连接运算符用于连接 2 个或多个文本。其用法与 Excel 公式中的 &amp; 符号相同。</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&amp;</td>
-<td>连接两个文本</td>
-<td>“Zhang” &amp; ” ” &amp; “San” -&gt; “Zhang San”</td>
-</tr>
-</tbody></table>
-<h3 id="其他操作符"><a href="#其他操作符" class="headerlink" title="其他操作符"></a>其他操作符</h3><h2 id="其他操作符-1"><a href="#其他操作符-1" class="headerlink" title="其他操作符"></a>其他操作符</h2><table>
-<thead>
-<tr>
-<th>运算符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>_ (下划线)</td>
-<td>将一行代码分解成两行</td>
-</tr>
-<tr>
-<td>: ( 英文冒号)</td>
-<td>将两行代码放置在一行</td>
-</tr>
-</tbody></table>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="文本类型"><a href="#文本类型" class="headerlink" title="文本类型"></a>文本类型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>数据范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>String</td>
-<td>文本类型</td>
-<td>0 至 20亿字符</td>
-</tr>
-</tbody></table>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">name = <span class="string">"Zhang San"</span></span><br><span class="line">name = <span class="string">"101"</span></span><br><span class="line">name = Range(<span class="string">"A1"</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h3><p>选择合适的数字类型：如果小数字使用大范围数字类型存储，会浪费计算机内存；如果大数字使用小范围的数字类型存储，VBA 会自动转换成对应小范围数字，导致数字丢失精度。  </p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>数据范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Byte</td>
-<td>比特</td>
-<td>0 至 255</td>
-</tr>
-<tr>
-<td>Integer</td>
-<td>整数</td>
-<td>-32,768 至 32,767</td>
-</tr>
-<tr>
-<td>Long</td>
-<td>长整数</td>
-<td>-2,147,483,648 至 2,147,483,648</td>
-</tr>
-<tr>
-<td>Single</td>
-<td>单精度浮点数</td>
-<td>在表示负数时： -3.402823E38 ~ -1.401298E-45 在表示正数时： 1.401298E-45 ~ 3.402823E38</td>
-</tr>
-<tr>
-<td>Double</td>
-<td>双精度浮点数</td>
-<td>在表示负数时： -1.79769313486231E308 ~ -4.94065645841247E-324 在表示正数时： 4.94065645841247E-324 ~ 1.79769313486231E308</td>
-</tr>
-<tr>
-<td>Currency</td>
-<td>货币</td>
-<td>-922,337,203,685,477.5808 至 922,337,203,685,477.5807</td>
-</tr>
-<tr>
-<td>Decimal</td>
-<td>定点数</td>
-<td>未放置定点数： +/- 79,228,162,514,264,337,593,543,950,335 放置定点数： +/- 7.9228162514264337593543950335</td>
-</tr>
-</tbody></table>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> age <span class="keyword">as</span> <span class="built_in">Integer</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="逻辑类型"><a href="#逻辑类型" class="headerlink" title="逻辑类型"></a>逻辑类型</h3><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>说明</th>
-<th>数据范围</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Boolean</td>
-<td>逻辑值</td>
-<td>True 或 False</td>
-</tr>
-</tbody></table>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> isPass <span class="keyword">As</span> <span class="built_in">Boolean</span></span><br><span class="line">isPass = <span class="literal">False</span></span><br><span class="line">isPass = <span class="number">70</span> &gt;= <span class="number">60</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p>VBA 中的日期和时间使用数字表示，整数部分代表日期，小数部分代表时间。  </p>
-<ul>
-<li>日期从 100-1-1 开始到 9999-12-31。</li>
-<li>时间从 00:00:00 到 23:59:59。</li>
-</ul>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> birthday <span class="keyword">As</span> <span class="built_in">Date</span></span><br><span class="line"><span class="keyword">Dim</span> time <span class="keyword">As</span> <span class="built_in">Date</span></span><br></pre></td></tr></table></figure>
-
-<p>给日期变量赋值时，可以直接把日期放置在两个 # 之间赋值，也可以使用数字，还可以把日期作为文本赋值：  </p>
-<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">birthday = <span class="meta">#2018-1-1#</span></span><br><span class="line">birthday = <span class="number">43101</span></span><br><span class="line">birthday = <span class="string">"2018-1-1"</span></span><br><span class="line"></span><br><span class="line">time = <span class="meta">#12:00:00#</span></span><br><span class="line">time = <span class="number">0.5</span></span><br><span class="line">time = <span class="string">"12:00:00"</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Variant-类型"><a href="#Variant-类型" class="headerlink" title="Variant 类型"></a>Variant 类型</h3><p>Variant 类型是一种通用类型，可以表示任何一种类型的数据。它也是声明变量未指定数据类型时的默认类型。  </p>
-<p>虽然 Variant 类型方便，但是相应的，占用更大的内存空间，也会影响程序运行效率。因此建议，在明确知道数据时何种类型时，指定数据类型；如果数据类型是可变的或不明确，使用 Variant 类型。  </p>
-]]></content>
-      <categories>
-        <category>「语言」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Excel</tag>
-        <tag>VBA</tag>
       </tags>
   </entry>
   <entry>
@@ -1179,6 +722,855 @@
       </categories>
       <tags>
         <tag>Game</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Excel VBA Notes</title>
+    <url>/2020/12/15/Excel-VBA/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>提高工作效率吧打工人</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="入门方法"><a href="#入门方法" class="headerlink" title="入门方法"></a>入门方法</h2><h3 id="录制宏"><a href="#录制宏" class="headerlink" title="录制宏"></a>录制宏</h3><p><code>视图</code>→<code>宏</code>→<code>录制宏</code>  / <code>开发工具</code>  </p>
+<p><code>Alt+F11</code>查看录制内容  </p>
+<h2 id="参考教程"><a href="#参考教程" class="headerlink" title="参考教程"></a>参考教程</h2><p><a href="https://www.lanrenexcel.com/excel-vba-tutorial/" target="_blank" rel="noopener">懒人Excel - VBA教程</a></p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="VBE编辑器-Visual-Basic-Editor"><a href="#VBE编辑器-Visual-Basic-Editor" class="headerlink" title="VBE编辑器 Visual Basic Editor"></a>VBE编辑器 Visual Basic Editor</h3><p><code>Alt+F11</code>进入编辑器</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>以英文单引号<code>‘</code>开头 。  </p>
+<p>用途：  </p>
+<ul>
+<li>提供过程或函数的基本信息、用途</li>
+<li>说明变量的用途</li>
+<li>解释为什么使用当前的方法</li>
+<li>区分开不同代码块</li>
+<li>在开发调试过程中，临时注释一段代码，使其不被执行，检查代码其余部分是否有错误</li>
+</ul>
+<h3 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h3><p>可运行的VBA代码块。  </p>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>对象是一个物，它可以是一个事、一个物体、一个概念、一个名词。对象包含描述静态信息的<strong>属性</strong>和对对象可以操作的<strong>方法</strong>。  </p>
+<p>以生活中的对象为例子，汽车是一个对象。汽车的车牌号、油量、里程等是汽车的属性；开车、加油、换车牌等是汽车的方法。  </p>
+<p><strong>常用Excel对象</strong>  </p>
+<ul>
+<li><code>Application 对象</code>，表示 Excel 应用程序。</li>
+<li><code>Workbook 对象</code>，表示工作簿对象。</li>
+<li><code>Worksheet 对象</code>，表示工作表对象</li>
+<li><code>Range 对象</code>，表示单元格区域对象。</li>
+</ul>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>模块是包含一个或多个过程或函数的内部组件。一个工作簿内包含的模块数量没有限制，一个模块内包含的过程或函数数量也没有限制。<u>模块用来作为保存过程或函数的容器</u>，这些过程和函数通常应用于整个工作簿。  </p>
+<p>通过把多个过程和函数，合理的放置在不同的模块，可以使整个 VBA 代码逻辑更清晰、更易于阅读和理解。  </p>
+<h3 id="用户窗体"><a href="#用户窗体" class="headerlink" title="用户窗体"></a>用户窗体</h3><p>VBA和用户交互的界面，最基本的窗体控件包括：  </p>
+<ul>
+<li>文本控件</li>
+<li>按钮控件</li>
+<li>列表控件</li>
+<li>输入控件</li>
+</ul>
+<h3 id="「开发工具」选项卡"><a href="#「开发工具」选项卡" class="headerlink" title="「开发工具」选项卡"></a>「开发工具」选项卡</h3><p>功能区中右键→「自定义功能区」→√「开发工具」  </p>
+<h2 id="Excel-VBA设置宏安全性"><a href="#Excel-VBA设置宏安全性" class="headerlink" title="Excel VBA设置宏安全性"></a>Excel VBA设置宏安全性</h2><p>默认情况下，为防止来源不明的工作簿自带宏自动运行，Excel 会禁用宏的运行。  </p>
+<h3 id="宏安全性"><a href="#宏安全性" class="headerlink" title="宏安全性"></a>宏安全性</h3><p>「开发工具」选项卡→「宏安全性」→打开信任中心：  </p>
+<ul>
+<li><strong>禁用所有宏，并且不通知</strong>：无法运行打开的工作簿内的 VBA 代码，Excel 也不会提示工作簿包含代码。</li>
+<li><strong>禁用所有宏，并发出通知</strong>：默认状态下，无法运行 VBA 代码。但是 Excel 在打开包含 VBA 代码的工作簿时，在编辑栏上方，显示安全警告，并且可以选择启用代码运行或不启用。如果选择启用，下次打开相同的工作簿，不会出现警告。</li>
+<li><strong>禁用无数字签署的所有宏</strong>：宏将被禁用，但如果存在宏，则会显示安全警告。但是，如果受信任发布者对宏进行了数字签名，并且您已经信任该发布者，则可运行该宏。如果您尚未信任该发布者，则会通知您启用签署的宏并信任该发布者。</li>
+<li><strong>启用所有宏(不推荐；可能会运行有潜在危险的代码)</strong>：可以运行所有宏。一般不推荐选择此选项。</li>
+</ul>
+<p>安全起见，可以采取：</p>
+<ul>
+<li>禁用所有宏，并发出通知。</li>
+<li>在电脑上创建一个用于存放信任的包含代码的工作簿的文件夹，将此工作簿添加到受信任为位置。<ul>
+<li>把一个文件夹添加到 Excel 受信任的位置后，该文件夹下的包含 VBA 代码的工作簿打开时，不会提示安全警告，也无需每次手动开启代码。</li>
+<li>在开发工具选项卡，点击「宏安全性」按钮，弹出信任中心窗口，在左侧列表中，选择「受信任位置」。点击下方的「添加新位置」按钮，添加自己信任的一个文件夹。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Excel-保存包含-VBA-代码的工作簿"><a href="#Excel-保存包含-VBA-代码的工作簿" class="headerlink" title="Excel 保存包含 VBA 代码的工作簿"></a>Excel 保存包含 VBA 代码的工作簿</h2><p>2003 及之前的版本中，在 <code>xls</code>类型工作簿可以任意编写并保存 VBA 代码。  </p>
+<p>2007 版本开始，第一次保存包含 VBA 代码的工作簿时，Excel 会提示“无法保存工作簿”。  </p>
+<p>含 VBA 代码的工作簿，必须保存成启用宏的工作簿类型。Excel 为此提供了<code>xlsm</code>类型的工作簿，称之为「<strong>启用宏的工作簿</strong>」。</p>
+<h2 id="使用VBA-编辑器进行-Excel-VBA-开发"><a href="#使用VBA-编辑器进行-Excel-VBA-开发" class="headerlink" title="使用VBA 编辑器进行 Excel VBA 开发"></a>使用VBA 编辑器进行 Excel VBA 开发</h2><h3 id="打开方法"><a href="#打开方法" class="headerlink" title="打开方法"></a>打开方法</h3><ul>
+<li>方法一：「开发工具」选项卡→<code>Visual Basic</code></li>
+<li>方法二：工作表右键菜单→<code>查看代码(V)</code></li>
+<li>方法三：快捷键<code>Alt + F11</code></li>
+</ul>
+<h3 id="编辑器模块"><a href="#编辑器模块" class="headerlink" title="编辑器模块"></a>编辑器模块</h3><ul>
+<li><strong>工具栏</strong>：编辑器命令栏，与 Excel 功能区域类似，包含 Excel VBA 开发相关的命令。</li>
+<li><strong>VBA 工程</strong>：显示当前 VBA 工程包含的所有对象。通常，一个工作簿就是一个 VBA 工程，其中包括 Excel 对象、工作表对象、模块等。</li>
+<li><strong>属性窗口</strong>：查看和设置选中对象的属性的窗口。</li>
+<li><strong>代码编辑窗口</strong>：实际编写代码的位置。编写、修改、保存代码，都在这里进行。</li>
+<li><strong>立即窗口</strong>：代码运行过程中，打印出的内容，在立即窗口中显示。一般用于调试代码</li>
+</ul>
+<h3 id="运行VBA代码"><a href="#运行VBA代码" class="headerlink" title="运行VBA代码"></a>运行VBA代码</h3><ul>
+<li>方法一：VBA编辑器工具栏「运行」→「运行子过程」</li>
+<li>方法二：VBA编辑器快捷工具栏的播放图标</li>
+<li>方法三：快捷键<code>F5</code></li>
+<li>方法四：给<code>图形</code>或者<code>按钮</code>指定宏，点击运行</li>
+</ul>
+<h1 id="VBA-变量、类型、运算符"><a href="#VBA-变量、类型、运算符" class="headerlink" title="VBA 变量、类型、运算符"></a>VBA 变量、类型、运算符</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>VBA变量时一个存储数据的VBA代码接口，可存储、改变、参与计算  </p>
+<ul>
+<li><strong>变量名</strong>：代表变量的名称</li>
+<li><strong>变量类型</strong>：变量存储的数据的类型，例如数字、文本、逻辑值等</li>
+</ul>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> [变量名] <span class="keyword">As</span> [数据类型]</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3><ul>
+<li>首字母必须以字母开头。</li>
+<li>不能包含空格、.(英文句号)、!(感叹号)、@、&amp;、$、# 等字符。</li>
+<li>长度不能超过 255 个字符。</li>
+<li>不能使用 VBA 中保存的关键词作为变量名。</li>
+</ul>
+<blockquote>
+<p>驼峰命名法：当变量名或函数名是由一个或多个单词连结在一起，而构成的唯一识别字时<strong>，第一个单词以小写字母开始；从第二个单词开始以后的每个单词的首字母都采用大写字母。</strong></p>
+<p>例如：myFirstName、myLastName，这样的变量名看上去就像骆驼峰一样此起彼伏，故得名。</p>
+</blockquote>
+<h3 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h3><p>三大类数据类型：数字类型、非数字类型、通用类型。  </p>
+<p><strong>数字类型</strong>： </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Byte</td>
+<td>字节</td>
+<td>0 至 255</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>整数</td>
+<td>-32,768 至 32,767</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>长整数</td>
+<td>-2,147,483,648 至 2,147,483,648</td>
+</tr>
+<tr>
+<td>Single</td>
+<td>单精度浮点数</td>
+<td>在表示负数时： -3.402823E38 ~ -1.401298E-45 在表示正数时： 1.401298E-45 ~ 3.402823E38</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>双精度浮点数</td>
+<td>在表示负数时： -1.79769313486231E308 ~ -4.94065645841247E-324 在表示正数时： 4.94065645841247E-324 ~ 1.79769313486231E308</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>货币</td>
+<td>-922,337,203,685,477.5808 至 922,337,203,685,477.5807</td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td>定点数</td>
+<td>未放置定点数： +/- 79,228,162,514,264,337,593,543,950,335 放置定点数： +/- 7.9228162514264337593543950335</td>
+</tr>
+</tbody></table>
+<p><strong>非数字类型</strong>：  </p>
+<p>非数字变量通常不能直接参与算术运算。  </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String</td>
+<td>文本类型</td>
+<td>0 至 20亿字符</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>逻辑值</td>
+<td>True 或 False</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>日期和时间</td>
+<td>时间：00:00:00 至 23:59:59 日期： 100-1-1 至 9999-12-31</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>对象</td>
+<td>VBA 和 Excel 对象</td>
+</tr>
+</tbody></table>
+<p><strong>通用类型</strong>：  </p>
+<p>可存储任何类型的数据。在程序运行过程，VBA 可以自动识别数据类型，参与计算。  </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Variant</td>
+<td>任意类型</td>
+<td>不限</td>
+</tr>
+</tbody></table>
+<p>Variant 类型虽然灵活，但是它会占用更多内存空间，执行效率也会受影响。因此建议，在明确知道数据是何种类型时，指定数据类型；如果数据类型是可变的或不明确，使用 Variant 类型。</p>
+<h3 id="给变量赋值"><a href="#给变量赋值" class="headerlink" title="给变量赋值"></a>给变量赋值</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">[变量名] = [数据]</span><br></pre></td></tr></table></figure>
+
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>在声明时就要指定值。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Const</span> [常量名] <span class="keyword">As</span> [数据类型] = [值]</span><br></pre></td></tr></table></figure>
+
+<h3 id="常量类型"><a href="#常量类型" class="headerlink" title="常量类型"></a>常量类型</h3><p>与变量相同。  </p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>给变量赋值</td>
+<td>name = “Zhang San”</td>
+</tr>
+</tbody></table>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><p>假设 <code>a = 10</code>，<code>b = 3</code>，<code>-&gt;</code> 表示结果。  </p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>两数相加</td>
+<td>a + b -&gt; 13</td>
+</tr>
+<tr>
+<td>–</td>
+<td>两数相减</td>
+<td>a – b -&gt; 7</td>
+</tr>
+<tr>
+<td>*</td>
+<td>两数相乘</td>
+<td>a * b -&gt; 30</td>
+</tr>
+<tr>
+<td>/</td>
+<td>两数相除</td>
+<td>a / b -&gt; 2.5</td>
+</tr>
+<tr>
+<td>\</td>
+<td>两数相除，取整数部分</td>
+<td>a \ b -&gt; 3</td>
+</tr>
+<tr>
+<td>Mod</td>
+<td>两数相除，取余数</td>
+<td>a Mod b -&gt; 1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>幂运算</td>
+<td>a ^ b -&gt; 1000</td>
+</tr>
+<tr>
+<td>-（取负）</td>
+<td>对数字取负</td>
+<td>-a -&gt; -10</td>
+</tr>
+</tbody></table>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>假设 <code>a = 10</code>，<code>b = 3</code>，<code>-&gt;</code> 表示结果。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>比较两个值是否相等</td>
+<td>a = b -&gt; False</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+<td>a &gt; b -&gt; True</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+<td>a &gt;= b =&gt; False</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+<td>a &lt; b -&gt; False</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+<td>a &lt;= b -&gt; False</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>不等于</td>
+<td>a &lt;&gt; b -&gt; True</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>逻辑运算符对逻辑值，即 True 和 False，进行逻辑运算，返回运算结果，运算结果也是逻辑值。</p>
+<p>假设 <code>a = True</code>，<code>b = False</code>，<code>-&gt;</code> 表示结果。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>And</td>
+<td>逻辑与，两个表达式都是真，返回 True。</td>
+<td>a And b -&gt; False</td>
+</tr>
+<tr>
+<td>Or</td>
+<td>逻辑或，两个表达式至少有一个为真，返回 True。</td>
+<td>a Or b -&gt; True</td>
+</tr>
+<tr>
+<td>Not</td>
+<td>逻辑否，对逻辑表达式取否</td>
+<td>Not a -&gt; False</td>
+</tr>
+<tr>
+<td>Xor</td>
+<td>逻辑异或，如果两个表达式不相同，返回 True</td>
+<td>a Xor b -&gt; True</td>
+</tr>
+</tbody></table>
+<h3 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h3><p>VBA 中的连接运算符用于连接 2 个或多个文本。其用法与 Excel 公式中的 &amp; 符号相同。</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;</td>
+<td>连接两个文本</td>
+<td>“Zhang” &amp; ” ” &amp; “San” -&gt; “Zhang San”</td>
+</tr>
+</tbody></table>
+<h3 id="其他操作符"><a href="#其他操作符" class="headerlink" title="其他操作符"></a>其他操作符</h3><h2 id="其他操作符-1"><a href="#其他操作符-1" class="headerlink" title="其他操作符"></a>其他操作符</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>_ (下划线)</td>
+<td>将一行代码分解成两行</td>
+</tr>
+<tr>
+<td>: ( 英文冒号)</td>
+<td>将两行代码放置在一行</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="文本类型"><a href="#文本类型" class="headerlink" title="文本类型"></a>文本类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String</td>
+<td>文本类型</td>
+<td>0 至 20亿字符</td>
+</tr>
+</tbody></table>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">name = <span class="string">"Zhang San"</span></span><br><span class="line">name = <span class="string">"101"</span></span><br><span class="line">name = Range(<span class="string">"A1"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h3><p>选择合适的数字类型：如果小数字使用大范围数字类型存储，会浪费计算机内存；如果大数字使用小范围的数字类型存储，VBA 会自动转换成对应小范围数字，导致数字丢失精度。  </p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Byte</td>
+<td>比特</td>
+<td>0 至 255</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>整数</td>
+<td>-32,768 至 32,767</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>长整数</td>
+<td>-2,147,483,648 至 2,147,483,648</td>
+</tr>
+<tr>
+<td>Single</td>
+<td>单精度浮点数</td>
+<td>在表示负数时： -3.402823E38 ~ -1.401298E-45 在表示正数时： 1.401298E-45 ~ 3.402823E38</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>双精度浮点数</td>
+<td>在表示负数时： -1.79769313486231E308 ~ -4.94065645841247E-324 在表示正数时： 4.94065645841247E-324 ~ 1.79769313486231E308</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>货币</td>
+<td>-922,337,203,685,477.5808 至 922,337,203,685,477.5807</td>
+</tr>
+<tr>
+<td>Decimal</td>
+<td>定点数</td>
+<td>未放置定点数： +/- 79,228,162,514,264,337,593,543,950,335 放置定点数： +/- 7.9228162514264337593543950335</td>
+</tr>
+</tbody></table>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> age <span class="keyword">as</span> <span class="built_in">Integer</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="逻辑类型"><a href="#逻辑类型" class="headerlink" title="逻辑类型"></a>逻辑类型</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+<th>数据范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Boolean</td>
+<td>逻辑值</td>
+<td>True 或 False</td>
+</tr>
+</tbody></table>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> isPass <span class="keyword">As</span> <span class="built_in">Boolean</span></span><br><span class="line">isPass = <span class="literal">False</span></span><br><span class="line">isPass = <span class="number">70</span> &gt;= <span class="number">60</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p>VBA 中的日期和时间使用数字表示，整数部分代表日期，小数部分代表时间。  </p>
+<ul>
+<li>日期从 100-1-1 开始到 9999-12-31。</li>
+<li>时间从 00:00:00 到 23:59:59。</li>
+</ul>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> birthday <span class="keyword">As</span> <span class="built_in">Date</span></span><br><span class="line"><span class="keyword">Dim</span> time <span class="keyword">As</span> <span class="built_in">Date</span></span><br></pre></td></tr></table></figure>
+
+<p>给日期变量赋值时，可以直接把日期放置在两个 # 之间赋值，也可以使用数字，还可以把日期作为文本赋值：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">birthday = <span class="meta">#2018-1-1#</span></span><br><span class="line">birthday = <span class="number">43101</span></span><br><span class="line">birthday = <span class="string">"2018-1-1"</span></span><br><span class="line"></span><br><span class="line">time = <span class="meta">#12:00:00#</span></span><br><span class="line">time = <span class="number">0.5</span></span><br><span class="line">time = <span class="string">"12:00:00"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Variant-类型"><a href="#Variant-类型" class="headerlink" title="Variant 类型"></a>Variant 类型</h3><p>Variant 类型是一种通用类型，可以表示任何一种类型的数据。它也是声明变量未指定数据类型时的默认类型。  </p>
+<p>虽然 Variant 类型方便，但是相应的，占用更大的内存空间，也会影响程序运行效率。因此建议，在明确知道数据时何种类型时，指定数据类型；如果数据类型是可变的或不明确，使用 Variant 类型。  </p>
+<h1 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h1><h2 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>过程是 VBA 中，程序实际运行的最小结构。单独的一行或多行代码无法运行，必须把它们放置在一个过程里，才能运行。  </p>
+<p>在示例中，<code>Sub 过程名()</code> 开头，<code>End Sub</code> 为结尾部分是一个过程的主题，其余代码需要放置在两者之间。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> 过程名()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="程序语句"><a href="#程序语句" class="headerlink" title="程序语句"></a>程序语句</h3><p>语句，是表示一个完整意思的一行代码。  </p>
+<ul>
+<li><strong>声明式语句</strong>，也就是声明变量、常量、过程或者函数。</li>
+<li><strong>执行式语句</strong>，执行指定动作。动作可以包括执行一个过程、开始一个循环、判断表达式等。</li>
+<li><strong>赋值语句</strong>，给变量赋值，是执行式语句的特殊形式。</li>
+</ul>
+<h3 id="VBA对象"><a href="#VBA对象" class="headerlink" title="VBA对象"></a>VBA对象</h3><h3 id="程序运行结构"><a href="#程序运行结构" class="headerlink" title="程序运行结构"></a>程序运行结构</h3><ul>
+<li>顺序结构</li>
+<li>循环结构</li>
+<li>判断结构</li>
+</ul>
+<h2 id="声明和赋值"><a href="#声明和赋值" class="headerlink" title="声明和赋值"></a>声明和赋值</h2><p>声明变量，就是告诉 VBA，变量的名字和它所存储的值的数据类型。  </p>
+<p>有4种变量：  </p>
+<ul>
+<li><p><strong>基本类型变量</strong>。基本类型变量是那些存储单个数据的变量，例如数字、文本、日期等。</p>
+<ul>
+<li><pre><code class="vb"><span class="comment">'语法</span>
+<span class="keyword">Dim</span> [变量名] <span class="keyword">As</span> [数据类型]
+
+<span class="comment">'实例</span>
+<span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span>
+<span class="keyword">Dim</span> age <span class="keyword">As</span> <span class="built_in">Integer</span>
+<span class="keyword">Dim</span> height <span class="keyword">As</span> <span class="built_in">Double</span>
+<span class="keyword">Dim</span> birthday <span class="keyword">As</span> <span class="built_in">Date</span>
+&lt;!--￼<span class="number">9</span>--&gt;</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>数组</strong>。数组包含多个变量的集合。</p>
+<ul>
+<li><pre><code class="vb"><span class="comment">'语法</span>
+<span class="comment">'固定长度数组声明</span>
+<span class="keyword">Dim</span> [变量名](开始序号 <span class="keyword">to</span> 结束序号) <span class="keyword">As</span> [数据类型]
+<span class="comment">'动态数组声明</span>
+<span class="keyword">Dim</span> [变量名]() <span class="keyword">As</span> [数据类型]
+
+<span class="comment">'实例</span>
+<span class="comment">'声明包含10个文本类型元素的数组</span>
+<span class="keyword">Dim</span> names(<span class="number">1</span> <span class="keyword">to</span> <span class="number">10</span>) <span class="keyword">As</span> <span class="built_in">String</span>
+<span class="comment">'声明长度未知的文本类型数组</span>
+<span class="keyword">Dim</span> names() <span class="keyword">As</span> <span class="built_in">String</span>
+&lt;!--￼<span class="number">10</span>--&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>声明变量的语句，必须写在使用它的语句前。  </p>
+<h3 id="声明多个同类型变量"><a href="#声明多个同类型变量" class="headerlink" title="声明多个同类型变量"></a>声明多个同类型变量</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'第一种，按两行写</span></span><br><span class="line"><span class="keyword">Dim</span> i <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line"><span class="keyword">Dim</span> j <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'第二种，使用 : 符号，在一行写</span></span><br><span class="line"><span class="keyword">Dim</span> i <span class="keyword">As</span> <span class="built_in">Integer</span> : <span class="keyword">Dim</span> j <span class="keyword">As</span> <span class="built_in">Integer</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="不声明变量就使用"><a href="#不声明变量就使用" class="headerlink" title="不声明变量就使用"></a>不声明变量就使用</h3><p>也可以，但非常不推荐，弊端：  </p>
+<ul>
+<li>数据类型自动设置为 Variant 类型，效率低。</li>
+<li>变量名写错，不会提示错误。</li>
+<li>无法使用 VBA 代码自动补全。</li>
+<li>数据类型不匹配时，不会提示错误。</li>
+</ul>
+<p><strong>强制声明变量</strong>：在模块头部写上：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Option</span> <span class="keyword">Explicit</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="基本类型变量的赋值"><a href="#基本类型变量的赋值" class="headerlink" title="基本类型变量的赋值"></a>基本类型变量的赋值</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'语法，两种写法相同</span></span><br><span class="line"><span class="keyword">Let</span> [变量名] = [数据]</span><br><span class="line">[变量名] = [数据]</span><br><span class="line"></span><br><span class="line"><span class="comment">'实例</span></span><br><span class="line"><span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Let</span> name = <span class="string">"Zhang San"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> age <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line"><span class="keyword">Let</span> age = <span class="number">30</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> birthday <span class="keyword">As</span> <span class="built_in">Date</span></span><br><span class="line"><span class="keyword">Let</span> birthday = <span class="meta">#2000-1-1#</span></span><br></pre></td></tr></table></figure>
+
+<p>在实际开发中，给基本类型变量赋值时，<code>Let</code>关键词可以忽略不写，直接以变量开头写赋值语句。  </p>
+<h3 id="数组类型变量赋值"><a href="#数组类型变量赋值" class="headerlink" title="数组类型变量赋值"></a>数组类型变量赋值</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'语法</span></span><br><span class="line">[数组名](元素序号) = [数据]</span><br><span class="line"></span><br><span class="line"><span class="comment">'声明数组</span></span><br><span class="line"><span class="keyword">Dim</span> arr(<span class="number">1</span> <span class="keyword">to</span> <span class="number">5</span>) <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="comment">'数组赋值</span></span><br><span class="line">arr(<span class="number">1</span>) = <span class="string">"Zhang San"</span></span><br><span class="line">arr(<span class="number">2</span>) = <span class="string">"Li Si"</span></span><br><span class="line">arr(<span class="number">3</span>) = <span class="string">"Wang Wu"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="对象类型变量的赋值"><a href="#对象类型变量的赋值" class="headerlink" title="对象类型变量的赋值"></a>对象类型变量的赋值</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'语法</span></span><br><span class="line"><span class="keyword">Set</span> [变量名] = [对象类型数据]</span><br><span class="line">    </span><br><span class="line"><span class="comment">'声明工作表类型的对象</span></span><br><span class="line"><span class="keyword">Dim</span> sheet <span class="keyword">As</span> Worksheet</span><br><span class="line"><span class="comment">'将名称为“绩效表”的工作表，赋到 sheet 变量</span></span><br><span class="line"><span class="keyword">Set</span> sheet = Worksheets(<span class="string">"绩效表"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象使用 <code>Set</code> 关键词，并且<code>Set</code>关键词不能省略。</strong>  </p>
+<p>由于对象可以包含多个属性，因此 VBA 提供一种同时给多个属性赋值的简单方法。具体方法是对象多个属性赋值语句，放置在 <code>With</code>+<code>对象</code>和<code>End With</code>关键词中间。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sheet <span class="keyword">As</span> Worksheet</span><br><span class="line"><span class="keyword">Set</span> sheet = Worksheets(<span class="string">"绩效表"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> sheet</span><br><span class="line">    .Name = <span class="string">"旧绩效"</span></span><br><span class="line">    .Visible = <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h2><h3 id="If-Then-结构"><a href="#If-Then-结构" class="headerlink" title="If Then 结构"></a>If Then 结构</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">If</span> 条件表达式 <span class="keyword">Then</span></span><br><span class="line">    <span class="comment">'表达式为真时，执行的代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="If-Else-结构"><a href="#If-Else-结构" class="headerlink" title="If Else 结构"></a>If Else 结构</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">If</span> 条件表达式 <span class="keyword">Then</span></span><br><span class="line">    <span class="comment">'真时执行的代码</span></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line">    <span class="comment">'假时执行的代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="If-ElseIf-Else-结构"><a href="#If-ElseIf-Else-结构" class="headerlink" title="If ElseIf Else 结构"></a>If ElseIf Else 结构</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">If</span> 条件表达式<span class="number">1</span> <span class="keyword">Then</span></span><br><span class="line">    <span class="comment">'表达式1真时，执行的代码</span></span><br><span class="line"><span class="keyword">ElseIf</span> 条件表达式<span class="number">2</span> <span class="keyword">Then</span></span><br><span class="line">    <span class="comment">'表达式2真时，执行的代码</span></span><br><span class="line"><span class="keyword">ElseIf</span> 条件表达式<span class="number">3</span> <span class="keyword">Then</span></span><br><span class="line">    <span class="comment">'表达式3真时，执行的代码</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">ElseIf</span> 条件表达式n <span class="keyword">Then</span></span><br><span class="line">    <span class="comment">'表达式n真时，执行的代码</span></span><br><span class="line"><span class="keyword">Else</span></span><br><span class="line">    <span class="comment">'以上表达式都不为真时，执行的代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：  </p>
+<ul>
+<li>条件表达式是从第一个开始判断。</li>
+<li>判断过程中，只要有一个表达式结果为真，那么执行对应的代码块，然后退出选择结构，不再继续判断剩下的表达式。</li>
+<li>当所有的表达式都不为真时，执行 <code>Else</code>后的代码块。</li>
+</ul>
+<h3 id="Select-Case-结构"><a href="#Select-Case-结构" class="headerlink" title="Select Case 结构"></a>Select Case 结构</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">Case</span> 变量</span><br><span class="line">	<span class="keyword">Case</span> 判断条件 <span class="number">1</span></span><br><span class="line">    	<span class="comment">'条件 1 真时，执行的代码</span></span><br><span class="line">	<span class="keyword">Case</span> 判断条件 <span class="number">2</span></span><br><span class="line">    	<span class="comment">'条件 2 真时，执行的代码</span></span><br><span class="line">	<span class="keyword">Case</span> 判断条件 <span class="number">3</span></span><br><span class="line">    	<span class="comment">'条件 3 真时，执行的代码</span></span><br><span class="line">    <span class="keyword">Case</span> <span class="keyword">Else</span></span><br><span class="line">    	<span class="comment">'之前的所有条件都不为真时，执行的代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Select</span></span><br></pre></td></tr></table></figure>
+
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> MyCode()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> i <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">For</span> i = <span class="number">2</span> <span class="keyword">To</span> <span class="number">10</span></span><br><span class="line">    </span><br><span class="line">        <span class="keyword">Select</span> <span class="keyword">Case</span> Cells(i, <span class="string">"B"</span>).Value</span><br><span class="line">            <span class="keyword">Case</span> <span class="keyword">Is</span> &gt;= <span class="number">85</span></span><br><span class="line">                Cells(i, <span class="string">"D"</span>) = <span class="string">"优"</span></span><br><span class="line">            <span class="keyword">Case</span> <span class="keyword">Is</span> &gt;= <span class="number">75</span></span><br><span class="line">                Cells(i, <span class="string">"D"</span>) = <span class="string">"良"</span></span><br><span class="line">            <span class="keyword">Case</span> <span class="keyword">Is</span> &gt;= <span class="number">60</span></span><br><span class="line">                Cells(i, <span class="string">"D"</span>) = <span class="string">"及格"</span></span><br><span class="line">            <span class="keyword">Case</span> <span class="keyword">Else</span></span><br><span class="line">                Cells(i, <span class="string">"D"</span>) = <span class="string">"不及格"</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">Select</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">Next</span> i</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="For-循环"><a href="#For-循环" class="headerlink" title="For 循环"></a>For 循环</h3><ul>
+<li><p><strong>For … Next 循环</strong></p>
+<ul>
+<li><pre><code class="vb"><span class="keyword">For</span> [变量] = [初始值] <span class="keyword">To</span> [结束值] <span class="keyword">Step</span> [步长]
+    <span class="comment">'这里是循环执行的语句</span>
+<span class="keyword">Next</span>
+&lt;!--￼<span class="number">22</span>--&gt;</code></pre>
+</li>
+<li><p><code>[元素]</code> 是与集合中的元素相同类型的变量，该变量可在循环代码中使用。</p>
+</li>
+<li><p><code>[元素集合]</code>是包括多个元素的集合。</p>
+</li>
+<li><p>不需要数字变量</p>
+</li>
+<li><p>用于遍历</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Exit For 语句</strong></p>
+<ul>
+<li>用于跳出循环</li>
+</ul>
+</li>
+</ul>
+<h3 id="Do-While-循环"><a href="#Do-While-循环" class="headerlink" title="Do While 循环"></a>Do While 循环</h3><ul>
+<li><p><strong>Do While … Loop 循环</strong></p>
+<ul>
+<li><pre><code class="vb"><span class="keyword">Do</span> <span class="keyword">While</span> [条件表达式]
+    <span class="comment">'循环执行的代码</span>
+<span class="keyword">Loop</span>
+&lt;!--￼<span class="number">23</span>--&gt;</code></pre>
+</li>
+<li><p><code>Do ... Loop While</code>循环至少循环执行代码一次后，再判断条件表达式的值</p>
+</li>
+<li><p>While 和条件表达式写在 Loop 关键词后</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Exit Do 语句</strong></p>
+<ul>
+<li>用于跳出 <code>Do While</code> 循环</li>
+</ul>
+</li>
+</ul>
+<h3 id="Do-Until-循环"><a href="#Do-Until-循环" class="headerlink" title="Do Until 循环"></a>Do Until 循环</h3><ul>
+<li><p><code>Do Until</code> 在条件表达式为真时，停止执行循环</p>
+</li>
+<li><p>Do Until … Loop 循环</p>
+<ul>
+<li><pre><code class="vb"><span class="keyword">Do</span> <span class="keyword">Until</span> [条件表达式]
+    <span class="comment">'循环执行的代码</span>
+<span class="keyword">Loop</span>
+&lt;!--￼<span class="number">24</span>--&gt;</code></pre>
+</li>
+<li><p>先运行一次，再判断 <code>Until</code> 后条件表达式的值，如果是真，停止循环；如果是假，继续执行循环</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="循环小结"><a href="#循环小结" class="headerlink" title="循环小结"></a>循环小结</h3><table>
+<thead>
+<tr>
+<th>循环结构</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>For … Next 循环</td>
+<td>按指定次数循环执行</td>
+</tr>
+<tr>
+<td>For Each 循环</td>
+<td>逐一遍历数据集合中的每一个元素</td>
+</tr>
+<tr>
+<td>Do While … Loop 循环</td>
+<td>当条件为真时，循环执行</td>
+</tr>
+<tr>
+<td>Do … Loop While 循环</td>
+<td>当条件为真时，循环执行。无论条件真假，至少运行一次</td>
+</tr>
+<tr>
+<td>Do Until … Loop 循环</td>
+<td>直到条件为真时，停止执行</td>
+</tr>
+<tr>
+<td>Do … Loop Until 循环</td>
+<td>直到条件为真时，停止执行。无论条件真假，至少运行一次</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>跳出语句</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Exit For</td>
+<td>跳出 For 循环</td>
+</tr>
+<tr>
+<td>Exit Do</td>
+<td>跳出 Do While/Until 循环</td>
+</tr>
+</tbody></table>
+<h2 id="With-结构"><a href="#With-结构" class="headerlink" title="With 结构"></a>With 结构</h2><p>With 结构可以将同一个对象的多个属性和方法组合起来，避免重复写对象名。此外，With 结构还能嵌套使用，进一步提高编程效率和程序运行效率。  </p>
+<p><code>With</code> 结构由 <code>With</code> 和 <code>End With</code> 两个语句构成，对象的属性和方法都写在两者之间。基本语法如下：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">With</span> [对象]</span><br><span class="line">    .[属性] = [数据]</span><br><span class="line">    .[方法]</span><br><span class="line">    <span class="comment">'其他属性和方法</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br></pre></td></tr></table></figure>
+
+<p><code>With</code> 结构里，对象的属性和方法均有<code>点 (.)</code>符号开始，后接对象的属性名和方法名。  </p>
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> MyCode()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">With</span> Worksheets(<span class="string">"Sheet1"</span>)</span><br><span class="line">        .Name = <span class="string">"新名称"</span></span><br><span class="line">        .Tab.ThemeColor = xlThemeColorLight1</span><br><span class="line">        .Visible = xlSheetHidden</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套-with-结构"><a href="#嵌套-with-结构" class="headerlink" title="嵌套 with 结构"></a>嵌套 with 结构</h3><p>如果父对象的属性是另一个对象，则针对这个子对象，继续使用 With 结构。  </p>
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> MyCode()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">With</span> Worksheets(<span class="string">"Sheet1"</span>)</span><br><span class="line">        .Name = <span class="string">"新名称"</span></span><br><span class="line">        .Tab.ThemeColor = xlThemeColorLight1</span><br><span class="line">        .Visible = xlSheetHidden</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">With</span> .Range(<span class="string">"A1:A10"</span>)</span><br><span class="line">            .Interior.ThemeColor = xlThemeColorAccent1</span><br><span class="line">            .Font.Size = <span class="number">12</span></span><br><span class="line">            .Font.Name = <span class="string">"等线"</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="GoTo-结构"><a href="#GoTo-结构" class="headerlink" title="GoTo 结构"></a>GoTo 结构</h2><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GoTo</span> [标签]</span><br><span class="line"><span class="comment">'被跳过的代码</span></span><br><span class="line">...</span><br><span class="line">[标签]:</span><br><span class="line"><span class="comment">'被执行的代码</span></span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，跳转处的标签，后接冒号 ( : ) 。  </p>
+<h1 id="过程和函数（Sub-Function）"><a href="#过程和函数（Sub-Function）" class="headerlink" title="过程和函数（Sub | Function）"></a>过程和函数（Sub | Function）</h1><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><p>通常一个过程，建议只完成一个特定的小目标。因此，我们的程序往往会包含多个过程。这就是 VBA 中过程概念存在的一个原因。  </p>
+<h3 id="过程基本语法"><a href="#过程基本语法" class="headerlink" title="过程基本语法"></a>过程基本语法</h3><p>VBA 过程以 <code>Sub</code> 语句开始，以 <code>End Sub</code> 语句结束，包含一个或多个语句，完成一个特定的目标。  </p>
+<p><strong>无参数过程</strong>：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> [过程名]()</span><br><span class="line">    语句<span class="number">1</span></span><br><span class="line">    语句<span class="number">2</span></span><br><span class="line">    ...</span><br><span class="line">    语句n</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>有参数过程</strong>：  </p>
+<p>过程还可以接受一个或多个参数，参数可以是常量、变量、表达式，并且每个参数指定其名称。在过程的语句中，接受的参数，以名称指定方式被使用。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> [过程名]([变量名<span class="number">1</span>] <span class="keyword">As</span> [数据类型<span class="number">1</span>],...[变量名n] <span class="keyword">As</span> [数据类型n])</span><br><span class="line">    语句<span class="number">1</span></span><br><span class="line">    语句<span class="number">2</span></span><br><span class="line">    ...</span><br><span class="line">    语句<span class="number">3</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'声明一个过程</span></span><br><span class="line"><span class="keyword">Sub</span> SayHello(name <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line">    Msgbox <span class="string">"Hello"</span> &amp; name</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'在另一个过程，调用上述过程，调用时，提供一个实际的 name 参数</span></span><br><span class="line"><span class="keyword">Sub</span> MyCode()</span><br><span class="line">    SayHello <span class="string">"World 2"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调用子过程（Sub）"><a href="#调用子过程（Sub）" class="headerlink" title="调用子过程（Sub）"></a>调用子过程（Sub）</h3><p>在程序开发中，把代码拆分成多个子过程和函数，可以使项目更容易管理、测试和运行，VBA 中也不例外。  </p>
+<p>实际开发中，项目通常具备一个主入口过程，或称为父过程。父过程通过调用多个子过程和函数，完成一系列复杂的操作。其中子过程和函数一般只负责一个操作或动作。  </p>
+<p><strong>直接调用</strong>：  </p>
+<p>直接写过程名，即可调用过程。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    MySub</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> MySub()</span><br><span class="line">    <span class="comment">'代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    MySub <span class="number">2019</span>,<span class="string">"年"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> MySub(val1 <span class="keyword">As</span> <span class="built_in">Integer</span>, val2 <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line">    <span class="comment">'代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>使用关键词Call调用</strong>：  </p>
+<p>Call 后接过程名。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    <span class="keyword">Call</span> MySub</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> MySub()</span><br><span class="line">    <span class="comment">'代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>如果子过程需要输入参数，则<strong>需要将参数放在括号内</strong>。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    <span class="keyword">Call</span> MySub(<span class="number">2019</span>,<span class="string">"年"</span>)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> MySub(val1 <span class="keyword">As</span> <span class="built_in">Integer</span>, val2 <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line">    <span class="comment">'代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提前退出过程"><a href="#提前退出过程" class="headerlink" title="提前退出过程"></a>提前退出过程</h3><p><strong>Exit Sub 语句</strong>：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    <span class="keyword">Call</span> MySub</span><br><span class="line">    Msgbox <span class="string">"父过程"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> MySub()</span><br><span class="line">    <span class="keyword">Exit</span> <span class="keyword">Sub</span></span><br><span class="line">    Msgbox <span class="string">"子过程"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'运行 Main 过程，返回结果：</span></span><br><span class="line">=&gt; <span class="string">"父过程"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>这里需要注意的是，<code>Exit Sub</code> 语句只作用于当前过程，不影响调用它的父过程。</strong>  </p>
+<p><strong>End 语句</strong>：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    <span class="keyword">Call</span> MySub</span><br><span class="line">    Msgbox <span class="string">"父过程"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> MySub()</span><br><span class="line">	<span class="keyword">End</span></span><br><span class="line">    Msgbox <span class="string">"子过程"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'运行 Main 过程，返回结果：</span></span><br><span class="line">=&gt; 无返回结果</span><br></pre></td></tr></table></figure>
+
+<p>在实际开发中，应谨慎使用 <code>End</code> 结束语句。<code>End</code> 语句的效果类似于电脑的强制关机命令，立即结束所有程序，不会保存任何值，于 VBA 有以下效果：  </p>
+<ul>
+<li>程序中对象的各类事件不会被触发；</li>
+<li>任何在运行的 VBA 程序都会停止；</li>
+<li>对象引用都会失效；</li>
+<li>任何打开的窗体都被关闭。</li>
+</ul>
+<h2 id="函数（Function）"><a href="#函数（Function）" class="headerlink" title="函数（Function）"></a>函数（Function）</h2><p>函数与过程很相似，除了使用的关键词外，主要区别是，<strong>函数可以返回值</strong>。  </p>
+<h3 id="函数基础语法"><a href="#函数基础语法" class="headerlink" title="函数基础语法"></a>函数基础语法</h3><p><strong>无参数函数</strong>：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Function</span> [函数名]() <span class="keyword">As</span> [返回值类型]</span><br><span class="line">    语句<span class="number">1</span></span><br><span class="line">    语句<span class="number">2</span></span><br><span class="line">    ...</span><br><span class="line">    语句n</span><br><span class="line">    [函数名] = [返回值]</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
+<p>相比过程，可以看到多一个 <code>[函数名] = [返回值]</code> 语句，这是函数的返回值语句。函数名后制定该函数返回值的类型，语法与声明变量类似。  </p>
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'声明函数，该函数随机返回 true 或 false。函数需指定返回值类型。</span></span><br><span class="line"><span class="keyword">Function</span> RandomLogic() <span class="keyword">As</span> <span class="built_in">Boolean</span></span><br><span class="line">    RandomLogic = Rnd() &gt; <span class="number">0.5</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>有参数函数</strong>：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Function</span> [函数名]([变量名<span class="number">1</span>] <span class="keyword">As</span> [数据类型<span class="number">1</span>],...[变量名n] <span class="keyword">As</span> [数据类型n]) <span class="keyword">As</span> [返回值类型]</span><br><span class="line">    语句<span class="number">1</span></span><br><span class="line">    语句<span class="number">2</span></span><br><span class="line">    ...</span><br><span class="line">    语句<span class="number">3</span></span><br><span class="line">    [函数名] = [返回值]</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Function</span> Add2Number(num1 <span class="keyword">As</span> <span class="built_in">Double</span>, num2 <span class="keyword">As</span> <span class="built_in">Double</span>) <span class="keyword">As</span> <span class="built_in">Double</span></span><br><span class="line">    Add2Number = num1 + num2</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><p>如果一个函数不返回值，它与子过程并无区别，其中调用方式与子过程相同。  </p>
+<p>调用有返回值的函数时，一般有两种情形：  </p>
+<ul>
+<li>一是，使用一个变量存储函数返回的值</li>
+<li>二是，函数返回的值参与其他计算</li>
+</ul>
+<p>举例：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    <span class="comment">'使用变量存储函数返回的值</span></span><br><span class="line">    <span class="keyword">Dim</span> result <span class="keyword">As</span> <span class="built_in">Double</span></span><br><span class="line">    result = Add(<span class="number">12</span>, <span class="number">345</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">'函数返回值继续参与计算</span></span><br><span class="line">    <span class="keyword">Dim</span> result <span class="keyword">As</span> <span class="built_in">Double</span></span><br><span class="line">    result = RandNum + Add(<span class="number">12</span>, <span class="number">345</span>)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'函数：返回一个随机值</span></span><br><span class="line"><span class="keyword">Function</span> RandNum()</span><br><span class="line">    RandNum = Rnd * <span class="number">100</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br><span class="line"><span class="comment">'函数：返回两数的和</span></span><br><span class="line"><span class="keyword">Function</span> Add(num1 <span class="keyword">As</span> <span class="built_in">Double</span>, num2 <span class="keyword">As</span> <span class="built_in">Double</span>) <span class="keyword">As</span> <span class="built_in">Double</span></span><br><span class="line">    Add = num1 + num2</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="提前退出函数"><a href="#提前退出函数" class="headerlink" title="提前退出函数"></a>提前退出函数</h3><p><strong>Exit Function 语句</strong>：  </p>
+<p>在一个函数中，当程序运行到 <code>Exit Function</code> 语句时，立即结束<strong>当前函数</strong>，提前退出。  </p>
+<p><strong>这里需要注意的是，<code>Exit Function</code> 语句只作用于当前过程，不影响调用它的父过程或函数。</strong>  </p>
+<p><strong>End 语句</strong>：  </p>
+<p>在一个函数，当程序运行到 <code>End</code> 语句时，立即<strong>结束当前运行的所有 VBA 过程和函数</strong>。  </p>
+<p>在实际开发中，应谨慎使用 <code>End</code> 结束语句。<code>End</code> 语句的效果类似于电脑的强制关机命令，立即结束所有程序，不会保存任何值，于 VBA 有以下效果：  </p>
+<ul>
+<li>程序中对象的各类事件不会被触发；</li>
+<li>任何在运行的 VBA 程序都会停止；</li>
+<li>对象引用都会失效；</li>
+<li>任何打开的窗体都被关闭。</li>
+</ul>
+<h2 id="函数与过程的6个不同点"><a href="#函数与过程的6个不同点" class="headerlink" title="函数与过程的6个不同点"></a>函数与过程的6个不同点</h2><h3 id="声明语句不同"><a href="#声明语句不同" class="headerlink" title="声明语句不同"></a>声明语句不同</h3><p>函数的声明语句是 <code>Function</code> 和 <code>End Function</code>，而过程的声明语句是 <code>Sub</code> 和 <code>End Sub</code>。  </p>
+<h3 id="函数可以返回值"><a href="#函数可以返回值" class="headerlink" title="函数可以返回值"></a>函数可以返回值</h3><p>函数相对子过程最大的不同点是，函数可以返回指定的值。调用函数时，使用一个变量存储函数返回的值，可以在后续的代码中使用。  </p>
+<p>这里需要指出的是，函数可以不返回值，这种情况其作用与子过程相同。因此建议，不需要返回值时，直接使用子过程代替函数。  </p>
+<h3 id="函数需指定返回值类型"><a href="#函数需指定返回值类型" class="headerlink" title="函数需指定返回值类型"></a>函数需指定返回值类型</h3><p>VBA 中数据有多种类型，准确使用数据类型可以是程序效率更高。  </p>
+<p>同样，函数声明时也需要指定其返回值的类型。其语法与变量声明类似，在函数名后指定数据类型。  </p>
+<h3 id="函数主体代码中，返回值赋值到函数自己"><a href="#函数主体代码中，返回值赋值到函数自己" class="headerlink" title="函数主体代码中，返回值赋值到函数自己"></a>函数主体代码中，返回值赋值到函数自己</h3><p>函数返回一个值，是通过在函数主体代码中，将返回的值赋值到函数自己的方法来实现。  </p>
+<h3 id="调用函数时，使用类型与函数返回值类型相同的变量获得返回值"><a href="#调用函数时，使用类型与函数返回值类型相同的变量获得返回值" class="headerlink" title="调用函数时，使用类型与函数返回值类型相同的变量获得返回值"></a>调用函数时，使用类型与函数返回值类型相同的变量获得返回值</h3><p>当主程序中调用函数获取其值时，需要使用类型与函数返回值类型相同的变量，否则程序会出错。  </p>
+<h3 id="函数可在单元格内公式中使用"><a href="#函数可在单元格内公式中使用" class="headerlink" title="函数可在单元格内公式中使用"></a>函数可在单元格内公式中使用</h3><p>与 Excel 内置的函数一样，用户自定义编写的函数可在公式中直接使用，其用法与内置函数一样。  </p>
+<h2 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h2><h3 id="带参数的子过程定义方法"><a href="#带参数的子过程定义方法" class="headerlink" title="带参数的子过程定义方法"></a>带参数的子过程定义方法</h3><p>子过程可以接受一个或多个参数，参数可以是常量、变量、表达式，并且每个参数指定其名称和数据类型。  </p>
+<p>看实际的例子，以下代码定义了带两个参数的一个过程，过程名是 <code>CustomLog</code> ，参数分别是 <code>num</code> 和 <code>base</code>。此过程的用途是计算任意底数的对数，<code>num</code> 是计算对数的值，<code>base</code> 是底数。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'声明一个带参数的子过程</span></span><br><span class="line"><span class="keyword">Sub</span> CustomLog(num <span class="keyword">As</span> <span class="built_in">Double</span>, base <span class="keyword">As</span> <span class="built_in">Integer</span>)</span><br><span class="line">    Debug.Print Log(num) / Log(base)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>子过程按照这种方法定义后，调用时，VBA 会提示需要提供什么参数以及参数类型。  </p>
+<h3 id="调用带参数的子过程"><a href="#调用带参数的子过程" class="headerlink" title="调用带参数的子过程"></a>调用带参数的子过程</h3><p>调用带参数的过程，只需将参数<strong>按定义顺序</strong>书写即可，多个参数使用逗号分开。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'主入口</span></span><br><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    CustomLog <span class="number">100</span>, <span class="number">10</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>除了按顺序书写参数外，也可以按任意顺序书写参数，但是这时需要<strong>给出参数名</strong>。带参数名的传递参数语法如下：  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">[参数名]:=[实际参数值]</span><br></pre></td></tr></table></figure>
+
+<p>参数名后写冒号等号(:=)，再写需传递的参数值。看实际的例子，以下三种方式是等效的。</p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'主入口</span></span><br><span class="line"><span class="keyword">Sub</span> Main()</span><br><span class="line">    CustomLog <span class="number">100</span>, <span class="number">10</span> <span class="comment">'方式一</span></span><br><span class="line">    CustomLog num:=<span class="number">100</span>, base:=<span class="number">10</span> <span class="comment">'方式二</span></span><br><span class="line">    CustomLog base:=<span class="number">10</span>, num:=<span class="number">100</span> <span class="comment">'方式三</span></span><br><span class="line"><span class="keyword">End</span> Subxxxxxxxxxx <span class="comment">'主入口'主入口Sub Main()    CustomLog 100, 10 '方式一    CustomLog num:=100, base:=10 '方式二    CustomLog base:=10, num:=100 '方式三End Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="可选参数的用法"><a href="#可选参数的用法" class="headerlink" title="可选参数的用法"></a>可选参数的用法</h3><p>实际开发中，有时子过程的参数可能不是必须的，我们希望根据参数有无情况，执行不同的操作。针对这种情况，VBA 提供了可选参数机制。  </p>
+<p><strong>可选参数语法</strong>：  </p>
+<p>可选参数在定义子过程时需要指定，方法是在参数名前添加 <code>Optional</code> 关键词。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Optional</span> [参数名] <span class="keyword">As</span> [数据类型]</span><br></pre></td></tr></table></figure>
+
+<p>还是以 <code>CustomLog</code> 子过程为例，我们把底数 <code>base</code> 设为可选参数。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'声明一个带可选参数的子过程</span></span><br><span class="line"><span class="keyword">Sub</span> CustomLog(num <span class="keyword">As</span> <span class="built_in">Double</span>, <span class="keyword">Optional</span> base <span class="keyword">As</span> <span class="built_in">Integer</span>)</span><br><span class="line">    <span class="comment">'子过程代码</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>调用时，VBA 会提示可选参数，参数放置在中括号中。  </p>
+<p><strong>设置可选参数的默认值</strong>：  </p>
+<p>可选参数定以后，如果在子过程中使用，需要判断参数有无提供。否则未提供而直接使用时，程序会出错。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Optional</span> [参数名] <span class="keyword">As</span> [数据类型] = [默认值]</span><br></pre></td></tr></table></figure>
+
+<p>还是以 <code>CustomLog</code> 子过程为例，我们把底数 <code>base</code> 设为可选参数，并且默认值设为 10。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'声明一个带可选参数的子过程</span></span><br><span class="line"><span class="keyword">Sub</span> CustomLog(num <span class="keyword">As</span> <span class="built_in">Double</span>, <span class="keyword">Optional</span> base <span class="keyword">As</span> <span class="built_in">Integer</span> = <span class="number">10</span>)</span><br><span class="line">    Debug.Print Log(num) / Log(base)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>可选参数的位置</strong>：  </p>
+<p>当子过程有多个参数时，其中的<strong>可选参数需写在参数列表的末尾</strong>，否则 VBA 提示错误。  </p>
+<h2 id="传参类型：ByVal-和-ByRef-的基础用法和区别"><a href="#传参类型：ByVal-和-ByRef-的基础用法和区别" class="headerlink" title="传参类型：ByVal 和 ByRef 的基础用法和区别"></a>传参类型：ByVal 和 ByRef 的基础用法和区别</h2><p>VBA 中定义过程或函数时，如果需要传递变量，需指定参数的传递类型，包括以下 2 类：  </p>
+<ul>
+<li><strong>ByVal</strong>：传递参数的值</li>
+<li><strong>ByRef</strong>：传递参数的引用</li>
+</ul>
+<h3 id="基础-1"><a href="#基础-1" class="headerlink" title="基础"></a>基础</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'ByVal 传递类型</span></span><br><span class="line"><span class="keyword">Sub</span> TestSub1(<span class="keyword">ByVal</span> msg <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'ByRef 传递类型</span></span><br><span class="line"><span class="keyword">Sub</span> TestSub2(<span class="keyword">ByRef</span> msg <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>针对基础数据类型，例如数字、文本等，两种传递类型的说明和区别如下：  </p>
+<ul>
+<li><strong>ByVal</strong>：传递变量时，复制一份该变量，传入过程或函数。在过程和函数内部对该变量进行修改，只对该副本有效，对上一级过程（父过程）的变量没有影响。</li>
+<li><strong>ByRef</strong>：传递变量时，将该变量的引用地址传入过程或函数。传入引用地址意味着，在过程或函数内部对其修改时，也会影响上一级过程（父过程）中的变量的值。</li>
+</ul>
+<h3 id="ByVal实例"><a href="#ByVal实例" class="headerlink" title="ByVal实例"></a>ByVal实例</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> msg <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    msg = <span class="string">"main"</span></span><br><span class="line">    </span><br><span class="line">    TestSub1 msg</span><br><span class="line">    </span><br><span class="line">    Msgbox msg</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'ByVal 传递类型</span></span><br><span class="line"><span class="keyword">Sub</span> TestSub1(<span class="keyword">ByVal</span> msg <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line">    msg = <span class="string">"val"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>首先定义一个 <code>msg</code> 变量，赋值 <code>main</code>，然后调用 <code>TestSub1</code> 过程，传入 <code>msg</code> 变量，在过程内部对 <code>msg</code> 重新赋值 <code>val</code>。最后返回上一个过程，显示 <code>msg</code> 变量。结果如下，<code>msg</code> 变量的值没有改变。  </p>
+<h3 id="ByRef实例"><a href="#ByRef实例" class="headerlink" title="ByRef实例"></a>ByRef实例</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> msg <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    msg = <span class="string">"main"</span></span><br><span class="line">    </span><br><span class="line">    TestSub2 msg</span><br><span class="line">    </span><br><span class="line">    MsgBox msg</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'ByRef 传递类型</span></span><br><span class="line"><span class="keyword">Sub</span> TestSub2(<span class="keyword">ByRef</span> msg <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line">    msg = <span class="string">"ref"</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>首先定义一个 <code>msg</code> 变量，赋值 <code>main</code>，然后调用 <code>TestSub2</code> 过程，传入 <code>msg</code> 变量，在过程内部对 <code>msg</code> 重新赋值 <code>ref</code>。最后返回上一个过程，显示 <code>msg</code> 变量。结果如下，<code>msg</code> 变量的值已改变。  </p>
+<h3 id="省略传递类型：默认ByVal"><a href="#省略传递类型：默认ByVal" class="headerlink" title="省略传递类型：默认ByVal"></a>省略传递类型：默认ByVal</h3><p>默认情况下，当省略传递类型时，默认值是 <code>ByVal</code>，因此以下两种写法是等效的。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="comment">'指定 ByVal 传递类型</span></span><br><span class="line"><span class="keyword">Sub</span> TestSub1(<span class="keyword">ByVal</span> msg <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="comment">'省略传递类型</span></span><br><span class="line"><span class="keyword">Sub</span> TestSub1(msg <span class="keyword">As</span> <span class="built_in">String</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-ByVal-和-ByRef-传递对象"><a href="#使用-ByVal-和-ByRef-传递对象" class="headerlink" title="使用 ByVal 和 ByRef 传递对象"></a>使用 ByVal 和 ByRef 传递对象</h3><p>以上机制适用于传递基础类型变量，例如数字、文本、逻辑值等。  </p>
+<p>使用 ByVal 和 ByRef 传递对象时，情况有些不同。  </p>
+<h3 id="使用-ByVal-和-ByRef-传递数组"><a href="#使用-ByVal-和-ByRef-传递数组" class="headerlink" title="使用 ByVal 和 ByRef 传递数组"></a>使用 ByVal 和 ByRef 传递数组</h3><p>过程或函数传递数组时，<strong>只能以引用形式传递</strong>，即以 <code>ByRef</code> 形式。如果尝试用 ByVal 传递数组，VBA 会提示错误。  </p>
+<h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><h3 id="过程作用域"><a href="#过程作用域" class="headerlink" title="过程作用域"></a>过程作用域</h3><p>在过程或函数内部声明的变量，只有在当前过程或函数内被使用。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">Dim</span> age <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line">    </span><br><span class="line">    name = <span class="string">"张三"</span></span><br><span class="line">    age = <span class="number">35</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码中，变量 <code>name</code> 和 <code>age</code> 在 <code>Test</code> 过程声明，因此它们只能在该过程中内使用，包括赋值和读取。如果尝试在外部和其他过程中直接使用它们，VBA 会提示<strong>变量未定义错误</strong>。  </p>
+<h3 id="模块作用域"><a href="#模块作用域" class="headerlink" title="模块作用域"></a>模块作用域</h3><p>一个模块中，在任何一个过程和函数外面，使用关键词 <code>Private</code> 或 <code>Dim</code> 声明的变量，称之为<strong>模块变量</strong>，其作用域是当前模块。例如，  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> guest <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> message <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    </span><br><span class="line">    guest = <span class="string">"张三"</span></span><br><span class="line">    message = <span class="string">"你好"</span></span><br><span class="line">    </span><br><span class="line">    MsgBox message &amp; <span class="string">"！ "</span> &amp; guest</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>以上代码中，变量 <code>guest</code> 是在过程 <code>Test</code> 外面，使用 <code>Dim</code> 关键词声明的，称之为模块变量。模块变量的作用域是当前模块，<strong>在模块里面任何过程和函数内均可以使用</strong>。  </p>
+<p>如前文所述，使用关键词 <code>Private</code> 或 <code>Dim</code> 声明的变量，都是模块变量，因此以下两种声明方式是等效的。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Dim</span> guest <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Private</span> guest <span class="keyword">As</span> <span class="built_in">String</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="工程作用域"><a href="#工程作用域" class="headerlink" title="工程作用域"></a>工程作用域</h3><p>一个 Excel 工作簿是一个 VBA 工程。与之对应，工程作用域表示变量在当前工程中的模块、Excel 对象、用户窗体、类模块中均可以被使用。  </p>
+<p>工程级别变量，在所在模块顶部声明 <code>Option Private Module</code> 修饰语句前提下，在过程或函数外面，使用关键词 <code>Public</code> 声明的变量，其作用域是当前工程。例如，  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Option</span> <span class="keyword">Private</span> <span class="keyword">Module</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Public</span> guest <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> message <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    </span><br><span class="line">    guest = <span class="string">"张三"</span></span><br><span class="line">    message = <span class="string">"你好"</span></span><br><span class="line">    </span><br><span class="line">    MsgBox message &amp; <span class="string">"！ "</span> &amp; guest</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>以上例子中，变量 <code>guest</code> 是使用 <code>Public</code> 关键词声明，是工程级别变量。它在当前工程中其他的模块中也能被使用。  </p>
+<h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>全局作用域表示，全局变量在打开的任何一个工作簿都可以被使用。全局变量的声明方式与工程变量相似，不同点是<strong>不使用模块顶部的 <code>Option Private Module</code> 修饰语句</strong>。  </p>
+<h3 id="作用域冲突"><a href="#作用域冲突" class="headerlink" title="作用域冲突"></a>作用域冲突</h3><p>当相同名称的变量，多次以不同的作用域声明时，出现作用域冲突。这种情况，VBA 会自动以<strong>就近原则</strong>使用变量，即优先使用最近定义的变量。例如，  </p>
+<h2 id="过程或函数作用域"><a href="#过程或函数作用域" class="headerlink" title="过程或函数作用域"></a>过程或函数作用域</h2><h3 id="模块作用域-1"><a href="#模块作用域-1" class="headerlink" title="模块作用域"></a>模块作用域</h3><p>在模块中，使用 <strong>Private</strong> 关键词声明的过程或函数，具备模块作用域，只能在当前模块中使用。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="工程作用域-1"><a href="#工程作用域-1" class="headerlink" title="工程作用域"></a>工程作用域</h3><p>在模块中，顶部声明 <code>Option Private Module</code> 修饰语句，并且直接声明或使用 Public 关键词声明的过程或函数，具备工程作用域，在当前工程的所有模块中使用。  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Option</span> <span class="keyword">Private</span> <span class="keyword">Module</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Sub</span> Test1()</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Sub</span> Test2()</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>以上例子中，Test1 过程和 Test2 过程均具备工程作用域。由于直接声明和使用关键词 <code>Public</code> 是等效的，因此可以省略 <code>Public</code> 关键词。  </p>
+<h3 id="全局作用域-1"><a href="#全局作用域-1" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>在模块中，直接声明或使用 Public 关键词声明的过程或函数，具备全局作用域。例如，  </p>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Test1()</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Sub</span> Test2()</span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<p>以上例子中，Test1 过程和 Test2 过程均具备全局作用域，可以在打开的任何一个工作簿中使用。  </p>
+<p>此外，它们还能直接在工作簿宏列表中执行。  </p>
+]]></content>
+      <categories>
+        <category>「语言」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Excel</tag>
+        <tag>VBA</tag>
       </tags>
   </entry>
   <entry>
@@ -2034,8 +2426,8 @@
         <category>「语言」- Go</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -2295,8 +2687,8 @@
         <category>「语言」- Go</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
+        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -4743,6 +5135,224 @@
       </tags>
   </entry>
   <entry>
+    <title>Photography Learn Notes</title>
+    <url>/2019/10/15/Photography-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>主要是后期风格</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
+<li>低饱和，又不是纯黑白</li>
+<li>分离色调：给整张图罩上冷色调<ul>
+<li>阴影+蓝色</li>
+</ul>
+</li>
+<li>HSL：<ul>
+<li>明亮度：蓝色↓↓，天空变深邃</li>
+<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
+</ul>
+</li>
+<li>基本面板中：阴影看情况↑</li>
+<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
+<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
+<li>特点：<ul>
+<li>肌肤极致干净</li>
+<li>空气通透</li>
+</ul>
+</li>
+<li>HSL调肤色，注意不要出现洋红</li>
+<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
+<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
+<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
+</ul>
+<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
+<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
+<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
+<li>HSL：<ul>
+<li>色相：紫色0，蓝色右 呈湖蓝</li>
+<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
+<li>饱和度：皮肤↓，其他视情况</li>
+</ul>
+</li>
+<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
+<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
+<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
+<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
+<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
+<li>相机校准：蓝原色左滑→湖蓝色</li>
+<li>HSL：<ul>
+<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
+</ul>
+</li>
+<li>可不做锐化</li>
+<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
+<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
+<li>蓝色时间：日出前、日落后</li>
+<li>特点：街灯、车灯刚亮</li>
+<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
+<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
+<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
+<li>特点：<ul>
+<li>引人共鸣</li>
+<li>元素处在动态</li>
+<li>画面质量高</li>
+</ul>
+</li>
+<li>高光↓，阴影↑</li>
+<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
+<li>红色曲线：（下拉→青）阴影稍微下拉</li>
+<li>蓝色曲线：阴影稍微上拉</li>
+<li>绿色曲线：调氛围，只要一点点调整</li>
+<li>RGB通道：暗部抬一点，提亮</li>
+</ul>
+</li>
+<li>清晰度↑，鲜艳度↓一点点</li>
+<li>裁剪：16:9、2.35:1</li>
+<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
+<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
+<li>色调分离：高光-红紫色，阴影-蓝色</li>
+<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
+<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
+<li>矫正，阴影↑，饱和度↑</li>
+<li>HSL：<ul>
+<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
+<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
+</ul>
+</li>
+<li>色调分离/曲线：暗部增加蓝青色</li>
+<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
+<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>色温↓，色调看喜好</li>
+<li>清晰度↑</li>
+<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
+<li>渐变滤镜压暗前景曝光、饱和度</li>
+<li>鲜艳度↑</li>
+</ul>
+<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
+<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
+<li>照片特点：<ul>
+<li>白（曝光↑）</li>
+<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
+<li>背景选择：深色，突出雪花</li>
+</ul>
+</li>
+<li>后期<ul>
+<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
+<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
+<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
+<li>色温↑，黄昏感觉</li>
+<li>HSL：<ul>
+<li>绿色饱和度↓，变得黄一些</li>
+<li>橙色、黄色饱和度↑明亮度↑<ul>
+<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
+<li>小S曲线，对比度↑</li>
+</ul>
+</li>
+<li>进PS加光晕<ul>
+<li>可搭配插件：Alien Skin Exposure</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
+<li>特征：<ul>
+<li>金属光感：渐变塑光影</li>
+<li>拉丝效果：模糊塑动感</li>
+<li>流动天空：模糊仿流动</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<hr>
+<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
+<li>插件：DR4、Skinfiner</li>
+<li>图章工具：去明显瑕疵</li>
+<li>中性灰：去痘印、调光影结构</li>
+<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
+<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
+</ul>
+<hr>
+<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
+<li>同时满足三个条件：<ul>
+<li>RAW格式拍摄</li>
+<li>拍照时尽量曝光增加</li>
+<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
+</ul>
+</li>
+<li>好处：提高画面信噪比，减少噪点</li>
+<li>拍摄：<ul>
+<li>参考1：评价曝光+1.3ev，白加黑减</li>
+<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
+</ul>
+<h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>时间选择：<ul>
+<li>月相查询：月亮小的时候拍摄</li>
+<li>月出、月落时间：月落后拍摄</li>
+</ul>
+</li>
+<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
+<li>银河方位：starwalk、星图</li>
+<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
+<li>参数选择：<ul>
+<li>对焦：无限远</li>
+<li>光圈：最大</li>
+<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
+<li>感光度：被动决定</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
+<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
+<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
+<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
+</ul>
+<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photography</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Photography Basis Notes</title>
     <url>/2020/03/10/Photography-Basis-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -4980,224 +5590,6 @@
 <li>MTF越高（上限100%），成像效果越好，反之则反</li>
 </ul>
 <p><a href="https://www.youtube.com/watch?v=fWFN7pIruQk" target="_blank" rel="noopener">讲解视频</a></p>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photography</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Photography Learn Notes</title>
-    <url>/2019/10/15/Photography-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>主要是后期风格</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
-<li>低饱和，又不是纯黑白</li>
-<li>分离色调：给整张图罩上冷色调<ul>
-<li>阴影+蓝色</li>
-</ul>
-</li>
-<li>HSL：<ul>
-<li>明亮度：蓝色↓↓，天空变深邃</li>
-<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
-</ul>
-</li>
-<li>基本面板中：阴影看情况↑</li>
-<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
-<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
-<li>特点：<ul>
-<li>肌肤极致干净</li>
-<li>空气通透</li>
-</ul>
-</li>
-<li>HSL调肤色，注意不要出现洋红</li>
-<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
-<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
-<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
-</ul>
-<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
-<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
-<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
-<li>HSL：<ul>
-<li>色相：紫色0，蓝色右 呈湖蓝</li>
-<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
-<li>饱和度：皮肤↓，其他视情况</li>
-</ul>
-</li>
-<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
-<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
-<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
-<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
-<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
-<li>相机校准：蓝原色左滑→湖蓝色</li>
-<li>HSL：<ul>
-<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
-</ul>
-</li>
-<li>可不做锐化</li>
-<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
-<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
-<li>蓝色时间：日出前、日落后</li>
-<li>特点：街灯、车灯刚亮</li>
-<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
-<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
-<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
-<li>特点：<ul>
-<li>引人共鸣</li>
-<li>元素处在动态</li>
-<li>画面质量高</li>
-</ul>
-</li>
-<li>高光↓，阴影↑</li>
-<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
-<li>红色曲线：（下拉→青）阴影稍微下拉</li>
-<li>蓝色曲线：阴影稍微上拉</li>
-<li>绿色曲线：调氛围，只要一点点调整</li>
-<li>RGB通道：暗部抬一点，提亮</li>
-</ul>
-</li>
-<li>清晰度↑，鲜艳度↓一点点</li>
-<li>裁剪：16:9、2.35:1</li>
-<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
-<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
-<li>色调分离：高光-红紫色，阴影-蓝色</li>
-<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
-<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
-<li>矫正，阴影↑，饱和度↑</li>
-<li>HSL：<ul>
-<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
-<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
-</ul>
-</li>
-<li>色调分离/曲线：暗部增加蓝青色</li>
-<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
-<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>色温↓，色调看喜好</li>
-<li>清晰度↑</li>
-<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
-<li>渐变滤镜压暗前景曝光、饱和度</li>
-<li>鲜艳度↑</li>
-</ul>
-<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
-<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
-<li>照片特点：<ul>
-<li>白（曝光↑）</li>
-<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
-<li>背景选择：深色，突出雪花</li>
-</ul>
-</li>
-<li>后期<ul>
-<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
-<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
-<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
-<li>色温↑，黄昏感觉</li>
-<li>HSL：<ul>
-<li>绿色饱和度↓，变得黄一些</li>
-<li>橙色、黄色饱和度↑明亮度↑<ul>
-<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
-<li>小S曲线，对比度↑</li>
-</ul>
-</li>
-<li>进PS加光晕<ul>
-<li>可搭配插件：Alien Skin Exposure</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
-<li>特征：<ul>
-<li>金属光感：渐变塑光影</li>
-<li>拉丝效果：模糊塑动感</li>
-<li>流动天空：模糊仿流动</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<hr>
-<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
-<li>插件：DR4、Skinfiner</li>
-<li>图章工具：去明显瑕疵</li>
-<li>中性灰：去痘印、调光影结构</li>
-<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
-<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
-</ul>
-<hr>
-<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
-<li>同时满足三个条件：<ul>
-<li>RAW格式拍摄</li>
-<li>拍照时尽量曝光增加</li>
-<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
-</ul>
-</li>
-<li>好处：提高画面信噪比，减少噪点</li>
-<li>拍摄：<ul>
-<li>参考1：评价曝光+1.3ev，白加黑减</li>
-<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
-</ul>
-<h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>时间选择：<ul>
-<li>月相查询：月亮小的时候拍摄</li>
-<li>月出、月落时间：月落后拍摄</li>
-</ul>
-</li>
-<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
-<li>银河方位：starwalk、星图</li>
-<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
-<li>参数选择：<ul>
-<li>对焦：无限远</li>
-<li>光圈：最大</li>
-<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
-<li>感光度：被动决定</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
-<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
-<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
-<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
-</ul>
-<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -6593,6 +6985,83 @@
       </tags>
   </entry>
   <entry>
+    <title>WeiboCat With Golang</title>
+    <url>/2019/04/15/WeiboCat/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Jacky &amp; Jason</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
+<li>项目名：<code>WeiboCat</code></li>
+<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
+<li>启动日期：2019年4月</li>
+<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
+</ul>
+<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
+<li><input disabled="" type="checkbox"> 微博登录  </li>
+<li><input disabled="" type="checkbox"> 微博发post</li>
+<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
+<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
+<li><input disabled="" type="checkbox"> 用.json作为config</li>
+</ul>
+<hr>
+<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
+<li>SDK for Golang 的使用？</li>
+<li>写自己的SDK？</li>
+<li>OAuth2.0认证什么鬼啊？</li>
+</ul>
+<hr>
+<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
+<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
+<p>正确的：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>错误的：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
+<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>Go项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/03/07/Hello-World/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong>Hexo 的初始文档</strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《虚拟电厂——能源互联网的终极组态》笔记</title>
     <url>/2020/06/26/VPP-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -7821,83 +8290,6 @@
         <tag>Note</tag>
         <tag>能源</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>WeiboCat With Golang</title>
-    <url>/2019/04/15/WeiboCat/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Jacky &amp; Jason</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
-<li>项目名：<code>WeiboCat</code></li>
-<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
-<li>启动日期：2019年4月</li>
-<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
-</ul>
-<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
-<li><input disabled="" type="checkbox"> 微博登录  </li>
-<li><input disabled="" type="checkbox"> 微博发post</li>
-<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
-<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
-<li><input disabled="" type="checkbox"> 用.json作为config</li>
-</ul>
-<hr>
-<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
-<li>SDK for Golang 的使用？</li>
-<li>写自己的SDK？</li>
-<li>OAuth2.0认证什么鬼啊？</li>
-</ul>
-<hr>
-<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
-<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
-<p>正确的：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>错误的：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
-<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>「语言」- Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-        <tag>Go项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/03/07/Hello-World/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong>Hexo 的初始文档</strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
