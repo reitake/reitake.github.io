@@ -805,6 +805,7 @@
 <li>方法三：快捷键<code>F5</code></li>
 <li>方法四：给<code>图形</code>或者<code>按钮</code>指定宏，点击运行</li>
 </ul>
+<hr>
 <h1 id="VBA-变量、类型、运算符"><a href="#VBA-变量、类型、运算符" class="headerlink" title="VBA 变量、类型、运算符"></a>VBA 变量、类型、运算符</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>VBA变量时一个存储数据的VBA代码接口，可存储、改变、参与计算  </p>
 <ul>
 <li><strong>变量名</strong>：代表变量的名称</li>
@@ -1179,6 +1180,7 @@
 
 <h3 id="Variant-类型"><a href="#Variant-类型" class="headerlink" title="Variant 类型"></a>Variant 类型</h3><p>Variant 类型是一种通用类型，可以表示任何一种类型的数据。它也是声明变量未指定数据类型时的默认类型。  </p>
 <p>虽然 Variant 类型方便，但是相应的，占用更大的内存空间，也会影响程序运行效率。因此建议，在明确知道数据时何种类型时，指定数据类型；如果数据类型是可变的或不明确，使用 Variant 类型。  </p>
+<hr>
 <h1 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h1><h2 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>过程是 VBA 中，程序实际运行的最小结构。单独的一行或多行代码无法运行，必须把它们放置在一个过程里，才能运行。  </p>
 <p>在示例中，<code>Sub 过程名()</code> 开头，<code>End Sub</code> 为结尾部分是一个过程的主题，其余代码需要放置在两者之间。  </p>
 <figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> 过程名()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
@@ -1393,6 +1395,7 @@
 <h2 id="GoTo-结构"><a href="#GoTo-结构" class="headerlink" title="GoTo 结构"></a>GoTo 结构</h2><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GoTo</span> [标签]</span><br><span class="line"><span class="comment">'被跳过的代码</span></span><br><span class="line">...</span><br><span class="line">[标签]:</span><br><span class="line"><span class="comment">'被执行的代码</span></span><br></pre></td></tr></table></figure>
 
 <p>需要注意的是，跳转处的标签，后接冒号 ( : ) 。  </p>
+<hr>
 <h1 id="过程和函数（Sub-Function）"><a href="#过程和函数（Sub-Function）" class="headerlink" title="过程和函数（Sub | Function）"></a>过程和函数（Sub | Function）</h1><h2 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h2><p>通常一个过程，建议只完成一个特定的小目标。因此，我们的程序往往会包含多个过程。这就是 VBA 中过程概念存在的一个原因。  </p>
 <h3 id="过程基本语法"><a href="#过程基本语法" class="headerlink" title="过程基本语法"></a>过程基本语法</h3><p>VBA 过程以 <code>Sub</code> 语句开始，以 <code>End Sub</code> 语句结束，包含一个或多个语句，完成一个特定的目标。  </p>
 <p><strong>无参数过程</strong>：  </p>
@@ -1533,6 +1536,7 @@
 <h3 id="使用-ByVal-和-ByRef-传递对象"><a href="#使用-ByVal-和-ByRef-传递对象" class="headerlink" title="使用 ByVal 和 ByRef 传递对象"></a>使用 ByVal 和 ByRef 传递对象</h3><p>以上机制适用于传递基础类型变量，例如数字、文本、逻辑值等。  </p>
 <p>使用 ByVal 和 ByRef 传递对象时，情况有些不同。  </p>
 <h3 id="使用-ByVal-和-ByRef-传递数组"><a href="#使用-ByVal-和-ByRef-传递数组" class="headerlink" title="使用 ByVal 和 ByRef 传递数组"></a>使用 ByVal 和 ByRef 传递数组</h3><p>过程或函数传递数组时，<strong>只能以引用形式传递</strong>，即以 <code>ByRef</code> 形式。如果尝试用 ByVal 传递数组，VBA 会提示错误。  </p>
+<hr>
 <h1 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h1><h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><h3 id="过程作用域"><a href="#过程作用域" class="headerlink" title="过程作用域"></a>过程作用域</h3><p>在过程或函数内部声明的变量，只有在当前过程或函数内被使用。  </p>
 <figure class="highlight vb"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Test()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">    <span class="keyword">Dim</span> age <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line">    </span><br><span class="line">    name = <span class="string">"张三"</span></span><br><span class="line">    age = <span class="number">35</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
 
