@@ -38,6 +38,14 @@ date: 2020-12-15 16:00:00
 
 以英文单引号`‘`开头 。  
 
+用途：  
+
+- 提供过程或函数的基本信息、用途
+- 说明变量的用途
+- 解释为什么使用当前的方法
+- 区分开不同代码块
+- 在开发调试过程中，临时注释一段代码，使其不被执行，检查代码其余部分是否有错误
+
 ### 宏
 
 可运行的VBA代码块。  
@@ -718,3 +726,665 @@ End Sub
 | -------- | ------------------------ |
 | Exit For | 跳出 For 循环            |
 | Exit Do  | 跳出 Do While/Until 循环 |
+
+## With 结构
+
+With 结构可以将同一个对象的多个属性和方法组合起来，避免重复写对象名。此外，With 结构还能嵌套使用，进一步提高编程效率和程序运行效率。  
+
+`With` 结构由 `With` 和 `End With` 两个语句构成，对象的属性和方法都写在两者之间。基本语法如下：  
+
+```vb
+With [对象]
+    .[属性] = [数据]
+    .[方法]
+    '其他属性和方法
+End With
+```
+
+`With` 结构里，对象的属性和方法均有`点 (.)`符号开始，后接对象的属性名和方法名。  
+
+举例：  
+
+```vb
+Sub MyCode()
+
+    With Worksheets("Sheet1")
+        .Name = "新名称"
+        .Tab.ThemeColor = xlThemeColorLight1
+        .Visible = xlSheetHidden
+    End With
+    
+End Sub
+```
+
+### 嵌套 with 结构
+
+如果父对象的属性是另一个对象，则针对这个子对象，继续使用 With 结构。  
+
+举例：  
+
+```vb
+Sub MyCode()
+
+    With Worksheets("Sheet1")
+        .Name = "新名称"
+        .Tab.ThemeColor = xlThemeColorLight1
+        .Visible = xlSheetHidden
+        
+        With .Range("A1:A10")
+            .Interior.ThemeColor = xlThemeColorAccent1
+            .Font.Size = 12
+            .Font.Name = "等线"
+        End With
+        
+    End With
+    
+End Sub
+```
+
+## GoTo 结构
+
+```vb
+GoTo [标签]
+'被跳过的代码
+...
+[标签]:
+'被执行的代码
+```
+
+需要注意的是，跳转处的标签，后接冒号 ( : ) 。  
+
+# 过程和函数（Sub | Function）
+
+## 过程
+
+通常一个过程，建议只完成一个特定的小目标。因此，我们的程序往往会包含多个过程。这就是 VBA 中过程概念存在的一个原因。  
+
+### 过程基本语法
+
+VBA 过程以 `Sub` 语句开始，以 `End Sub` 语句结束，包含一个或多个语句，完成一个特定的目标。  
+
+**无参数过程**：  
+
+```vb
+Sub [过程名]()
+    语句1
+    语句2
+    ...
+    语句n
+End Sub
+```
+
+**有参数过程**：  
+
+过程还可以接受一个或多个参数，参数可以是常量、变量、表达式，并且每个参数指定其名称。在过程的语句中，接受的参数，以名称指定方式被使用。  
+
+```vb
+Sub [过程名]([变量名1] As [数据类型1],...[变量名n] As [数据类型n])
+    语句1
+    语句2
+    ...
+    语句3
+End Sub
+```
+
+举例：  
+
+```vb
+'声明一个过程
+Sub SayHello(name As String)
+    Msgbox "Hello" & name
+End Sub
+
+'在另一个过程，调用上述过程，调用时，提供一个实际的 name 参数
+Sub MyCode()
+    SayHello "World 2"
+End Sub
+```
+
+### 调用子过程（Sub）
+
+在程序开发中，把代码拆分成多个子过程和函数，可以使项目更容易管理、测试和运行，VBA 中也不例外。  
+
+实际开发中，项目通常具备一个主入口过程，或称为父过程。父过程通过调用多个子过程和函数，完成一系列复杂的操作。其中子过程和函数一般只负责一个操作或动作。  
+
+**直接调用**：  
+
+直接写过程名，即可调用过程。  
+
+```vb
+Sub Main()
+    MySub
+End Sub
+
+Sub MySub()
+    '代码
+End Sub
+```
+
+```vb
+Sub Main()
+    MySub 2019,"年"
+End Sub
+
+Sub MySub(val1 As Integer, val2 As String)
+    '代码
+End Sub
+```
+
+**使用关键词Call调用**：  
+
+Call 后接过程名。  
+
+```vb
+Sub Main()
+    Call MySub
+End Sub
+
+Sub MySub()
+    '代码
+End Sub
+```
+
+如果子过程需要输入参数，则**需要将参数放在括号内**。  
+
+```vb
+Sub Main()
+    Call MySub(2019,"年")
+End Sub
+
+Sub MySub(val1 As Integer, val2 As String)
+    '代码
+End Sub
+```
+
+### 提前退出过程
+
+**Exit Sub 语句**：  
+
+```vb
+Sub Main()
+    Call MySub
+    Msgbox "父过程"
+End Sub
+
+Sub MySub()
+    Exit Sub
+    Msgbox "子过程"
+End Sub
+
+'运行 Main 过程，返回结果：
+=> "父过程"
+```
+
+**这里需要注意的是，`Exit Sub` 语句只作用于当前过程，不影响调用它的父过程。**  
+
+**End 语句**：  
+
+```vb
+Sub Main()
+    Call MySub
+    Msgbox "父过程"
+End Sub
+
+Sub MySub()
+	End
+    Msgbox "子过程"
+End Sub
+
+'运行 Main 过程，返回结果：
+=> 无返回结果
+```
+
+在实际开发中，应谨慎使用 `End` 结束语句。`End` 语句的效果类似于电脑的强制关机命令，立即结束所有程序，不会保存任何值，于 VBA 有以下效果：  
+
+- 程序中对象的各类事件不会被触发；
+- 任何在运行的 VBA 程序都会停止；
+- 对象引用都会失效；
+- 任何打开的窗体都被关闭。
+
+## 函数（Function）
+
+函数与过程很相似，除了使用的关键词外，主要区别是，**函数可以返回值**。  
+
+### 函数基础语法
+
+**无参数函数**：  
+
+```vb
+Function [函数名]() As [返回值类型]
+    语句1
+    语句2
+    ...
+    语句n
+    [函数名] = [返回值]
+End Function
+```
+
+相比过程，可以看到多一个 `[函数名] = [返回值]` 语句，这是函数的返回值语句。函数名后制定该函数返回值的类型，语法与声明变量类似。  
+
+举例：  
+
+```vb
+'声明函数，该函数随机返回 true 或 false。函数需指定返回值类型。
+Function RandomLogic() As Boolean
+    RandomLogic = Rnd() > 0.5
+End Function
+```
+
+**有参数函数**：  
+
+```vb
+Function [函数名]([变量名1] As [数据类型1],...[变量名n] As [数据类型n]) As [返回值类型]
+    语句1
+    语句2
+    ...
+    语句3
+    [函数名] = [返回值]
+End Function
+```
+
+举例：  
+
+```vb
+Function Add2Number(num1 As Double, num2 As Double) As Double
+    Add2Number = num1 + num2
+End Function
+```
+
+### 调用函数
+
+如果一个函数不返回值，它与子过程并无区别，其中调用方式与子过程相同。  
+
+调用有返回值的函数时，一般有两种情形：  
+
+- 一是，使用一个变量存储函数返回的值
+- 二是，函数返回的值参与其他计算
+
+举例：  
+
+```vb
+Sub Main()
+    '使用变量存储函数返回的值
+    Dim result As Double
+    result = Add(12, 345)
+    
+    '函数返回值继续参与计算
+    Dim result As Double
+    result = RandNum + Add(12, 345)
+End Sub
+
+'函数：返回一个随机值
+Function RandNum()
+    RandNum = Rnd * 100
+End Function
+'函数：返回两数的和
+Function Add(num1 As Double, num2 As Double) As Double
+    Add = num1 + num2
+End Function
+```
+
+### 提前退出函数
+
+**Exit Function 语句**：  
+
+在一个函数中，当程序运行到 `Exit Function` 语句时，立即结束**当前函数**，提前退出。  
+
+**这里需要注意的是，`Exit Function` 语句只作用于当前过程，不影响调用它的父过程或函数。**  
+
+**End 语句**：  
+
+在一个函数，当程序运行到 `End` 语句时，立即**结束当前运行的所有 VBA 过程和函数**。  
+
+在实际开发中，应谨慎使用 `End` 结束语句。`End` 语句的效果类似于电脑的强制关机命令，立即结束所有程序，不会保存任何值，于 VBA 有以下效果：  
+
+- 程序中对象的各类事件不会被触发；
+- 任何在运行的 VBA 程序都会停止；
+- 对象引用都会失效；
+- 任何打开的窗体都被关闭。
+
+## 函数与过程的6个不同点
+
+### 声明语句不同
+
+函数的声明语句是 `Function` 和 `End Function`，而过程的声明语句是 `Sub` 和 `End Sub`。  
+
+### 函数可以返回值
+
+函数相对子过程最大的不同点是，函数可以返回指定的值。调用函数时，使用一个变量存储函数返回的值，可以在后续的代码中使用。  
+
+这里需要指出的是，函数可以不返回值，这种情况其作用与子过程相同。因此建议，不需要返回值时，直接使用子过程代替函数。  
+
+### 函数需指定返回值类型
+
+VBA 中数据有多种类型，准确使用数据类型可以是程序效率更高。  
+
+同样，函数声明时也需要指定其返回值的类型。其语法与变量声明类似，在函数名后指定数据类型。  
+
+### 函数主体代码中，返回值赋值到函数自己
+
+函数返回一个值，是通过在函数主体代码中，将返回的值赋值到函数自己的方法来实现。  
+
+### 调用函数时，使用类型与函数返回值类型相同的变量获得返回值
+
+当主程序中调用函数获取其值时，需要使用类型与函数返回值类型相同的变量，否则程序会出错。  
+
+### 函数可在单元格内公式中使用
+
+与 Excel 内置的函数一样，用户自定义编写的函数可在公式中直接使用，其用法与内置函数一样。  
+
+## 传递参数
+
+### 带参数的子过程定义方法
+
+子过程可以接受一个或多个参数，参数可以是常量、变量、表达式，并且每个参数指定其名称和数据类型。  
+
+看实际的例子，以下代码定义了带两个参数的一个过程，过程名是 `CustomLog` ，参数分别是 `num` 和 `base`。此过程的用途是计算任意底数的对数，`num` 是计算对数的值，`base` 是底数。  
+
+```vb
+'声明一个带参数的子过程
+Sub CustomLog(num As Double, base As Integer)
+    Debug.Print Log(num) / Log(base)
+End Sub
+```
+
+子过程按照这种方法定义后，调用时，VBA 会提示需要提供什么参数以及参数类型。  
+
+### 调用带参数的子过程
+
+调用带参数的过程，只需将参数**按定义顺序**书写即可，多个参数使用逗号分开。  
+
+```vb
+'主入口
+Sub Main()
+    CustomLog 100, 10
+End Sub
+```
+
+除了按顺序书写参数外，也可以按任意顺序书写参数，但是这时需要**给出参数名**。带参数名的传递参数语法如下：  
+
+```vb
+[参数名]:=[实际参数值]
+```
+
+参数名后写冒号等号(:=)，再写需传递的参数值。看实际的例子，以下三种方式是等效的。
+
+```vb
+'主入口
+Sub Main()
+    CustomLog 100, 10 '方式一
+    CustomLog num:=100, base:=10 '方式二
+    CustomLog base:=10, num:=100 '方式三
+End Subxxxxxxxxxx '主入口'主入口Sub Main()    CustomLog 100, 10 '方式一    CustomLog num:=100, base:=10 '方式二    CustomLog base:=10, num:=100 '方式三End Sub
+```
+
+### 可选参数的用法
+
+实际开发中，有时子过程的参数可能不是必须的，我们希望根据参数有无情况，执行不同的操作。针对这种情况，VBA 提供了可选参数机制。  
+
+**可选参数语法**：  
+
+可选参数在定义子过程时需要指定，方法是在参数名前添加 `Optional` 关键词。  
+
+```vb
+Optional [参数名] As [数据类型]
+```
+
+还是以 `CustomLog` 子过程为例，我们把底数 `base` 设为可选参数。  
+
+```vb
+'声明一个带可选参数的子过程
+Sub CustomLog(num As Double, Optional base As Integer)
+    '子过程代码
+End Sub
+```
+
+调用时，VBA 会提示可选参数，参数放置在中括号中。  
+
+**设置可选参数的默认值**：  
+
+可选参数定以后，如果在子过程中使用，需要判断参数有无提供。否则未提供而直接使用时，程序会出错。  
+
+```vb
+Optional [参数名] As [数据类型] = [默认值]
+```
+
+还是以 `CustomLog` 子过程为例，我们把底数 `base` 设为可选参数，并且默认值设为 10。  
+
+```vb
+'声明一个带可选参数的子过程
+Sub CustomLog(num As Double, Optional base As Integer = 10)
+    Debug.Print Log(num) / Log(base)
+End Sub
+```
+
+**可选参数的位置**：  
+
+当子过程有多个参数时，其中的**可选参数需写在参数列表的末尾**，否则 VBA 提示错误。  
+
+##  传参类型：ByVal 和 ByRef 的基础用法和区别
+
+VBA 中定义过程或函数时，如果需要传递变量，需指定参数的传递类型，包括以下 2 类：  
+
+- **ByVal**：传递参数的值
+- **ByRef**：传递参数的引用
+
+### 基础
+
+```vb
+'ByVal 传递类型
+Sub TestSub1(ByVal msg As String)
+
+End Sub
+
+'ByRef 传递类型
+Sub TestSub2(ByRef msg As String)
+
+End Sub
+```
+
+针对基础数据类型，例如数字、文本等，两种传递类型的说明和区别如下：  
+
+- **ByVal**：传递变量时，复制一份该变量，传入过程或函数。在过程和函数内部对该变量进行修改，只对该副本有效，对上一级过程（父过程）的变量没有影响。
+- **ByRef**：传递变量时，将该变量的引用地址传入过程或函数。传入引用地址意味着，在过程或函数内部对其修改时，也会影响上一级过程（父过程）中的变量的值。
+
+### ByVal实例
+
+```vb
+Sub Test()
+
+    Dim msg As String
+    msg = "main"
+    
+    TestSub1 msg
+    
+    Msgbox msg
+
+End Sub
+
+'ByVal 传递类型
+Sub TestSub1(ByVal msg As String)
+    msg = "val"
+End Sub
+```
+
+首先定义一个 `msg` 变量，赋值 `main`，然后调用 `TestSub1` 过程，传入 `msg` 变量，在过程内部对 `msg` 重新赋值 `val`。最后返回上一个过程，显示 `msg` 变量。结果如下，`msg` 变量的值没有改变。  
+
+### ByRef实例
+
+```vb
+Sub Test()
+
+    Dim msg As String
+    msg = "main"
+    
+    TestSub2 msg
+    
+    MsgBox msg
+
+End Sub
+
+'ByRef 传递类型
+Sub TestSub2(ByRef msg As String)
+    msg = "ref"
+End Sub
+```
+
+首先定义一个 `msg` 变量，赋值 `main`，然后调用 `TestSub2` 过程，传入 `msg` 变量，在过程内部对 `msg` 重新赋值 `ref`。最后返回上一个过程，显示 `msg` 变量。结果如下，`msg` 变量的值已改变。  
+
+### 省略传递类型：默认ByVal
+
+默认情况下，当省略传递类型时，默认值是 `ByVal`，因此以下两种写法是等效的。  
+
+```vb
+'指定 ByVal 传递类型
+Sub TestSub1(ByVal msg As String)
+
+End Sub
+
+'省略传递类型
+Sub TestSub1(msg As String)
+
+End Sub
+```
+
+### 使用 ByVal 和 ByRef 传递对象
+
+以上机制适用于传递基础类型变量，例如数字、文本、逻辑值等。  
+
+使用 ByVal 和 ByRef 传递对象时，情况有些不同。  
+
+### 使用 ByVal 和 ByRef 传递数组
+
+过程或函数传递数组时，**只能以引用形式传递**，即以 `ByRef` 形式。如果尝试用 ByVal 传递数组，VBA 会提示错误。  
+
+# 作用域
+
+## 变量作用域
+
+### 过程作用域
+
+在过程或函数内部声明的变量，只有在当前过程或函数内被使用。  
+
+```vb
+Sub Test()
+
+    Dim name As String
+    Dim age As Integer
+    
+    name = "张三"
+    age = 35
+
+End Sub
+```
+
+以上代码中，变量 `name` 和 `age` 在 `Test` 过程声明，因此它们只能在该过程中内使用，包括赋值和读取。如果尝试在外部和其他过程中直接使用它们，VBA 会提示**变量未定义错误**。  
+
+### 模块作用域
+
+一个模块中，在任何一个过程和函数外面，使用关键词 `Private` 或 `Dim` 声明的变量，称之为**模块变量**，其作用域是当前模块。例如，  
+
+```vb
+Dim guest As String
+
+Sub Test()
+
+    Dim message As String
+    
+    guest = "张三"
+    message = "你好"
+    
+    MsgBox message & "！ " & guest
+
+End Sub
+```
+
+以上代码中，变量 `guest` 是在过程 `Test` 外面，使用 `Dim` 关键词声明的，称之为模块变量。模块变量的作用域是当前模块，**在模块里面任何过程和函数内均可以使用**。  
+
+如前文所述，使用关键词 `Private` 或 `Dim` 声明的变量，都是模块变量，因此以下两种声明方式是等效的。  
+
+```vb
+Dim guest As String
+Private guest As String
+```
+
+### 工程作用域
+
+一个 Excel 工作簿是一个 VBA 工程。与之对应，工程作用域表示变量在当前工程中的模块、Excel 对象、用户窗体、类模块中均可以被使用。  
+
+工程级别变量，在所在模块顶部声明 `Option Private Module` 修饰语句前提下，在过程或函数外面，使用关键词 `Public` 声明的变量，其作用域是当前工程。例如，  
+
+```vb
+Option Private Module
+
+Public guest As String
+
+Sub Test()
+
+    Dim message As String
+    
+    guest = "张三"
+    message = "你好"
+    
+    MsgBox message & "！ " & guest
+
+End Sub
+```
+
+以上例子中，变量 `guest` 是使用 `Public` 关键词声明，是工程级别变量。它在当前工程中其他的模块中也能被使用。  
+
+### 全局作用域
+
+全局作用域表示，全局变量在打开的任何一个工作簿都可以被使用。全局变量的声明方式与工程变量相似，不同点是**不使用模块顶部的 `Option Private Module` 修饰语句**。  
+
+### 作用域冲突
+
+当相同名称的变量，多次以不同的作用域声明时，出现作用域冲突。这种情况，VBA 会自动以**就近原则**使用变量，即优先使用最近定义的变量。例如，  
+
+## 过程或函数作用域
+
+### 模块作用域
+
+在模块中，使用 **Private** 关键词声明的过程或函数，具备模块作用域，只能在当前模块中使用。  
+
+```vb
+Private Sub Test()
+
+End Sub
+```
+
+### 工程作用域
+
+在模块中，顶部声明 `Option Private Module` 修饰语句，并且直接声明或使用 Public 关键词声明的过程或函数，具备工程作用域，在当前工程的所有模块中使用。  
+
+```vb
+Option Private Module
+
+Sub Test1()
+
+End Sub
+
+Public Sub Test2()
+
+End Sub
+```
+
+以上例子中，Test1 过程和 Test2 过程均具备工程作用域。由于直接声明和使用关键词 `Public` 是等效的，因此可以省略 `Public` 关键词。  
+
+### 全局作用域
+
+在模块中，直接声明或使用 Public 关键词声明的过程或函数，具备全局作用域。例如，  
+
+```vb
+Sub Test1()
+
+End Sub
+
+Public Sub Test2()
+
+End Sub
+```
+
+以上例子中，Test1 过程和 Test2 过程均具备全局作用域，可以在打开的任何一个工作簿中使用。  
+
+此外，它们还能直接在工作簿宏列表中执行。  
