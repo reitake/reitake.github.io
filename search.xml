@@ -415,316 +415,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Game Design Notes</title>
-    <url>/2019/03/19/Game-Design-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>游戏设计相关笔记</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="箴言（雾"><a href="#箴言（雾" class="headerlink" title="箴言（雾"></a>箴言（雾</h1><blockquote>
-<p>策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。<br><em>——黄J  2019.3.19</em>  </p>
-</blockquote>
-<hr>
-<h1 id="按游戏类型分类"><a href="#按游戏类型分类" class="headerlink" title="按游戏类型分类"></a>按游戏类型分类</h1><h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><h3 id="3种FPS地图布局流程技巧"><a href="#3种FPS地图布局流程技巧" class="headerlink" title="3种FPS地图布局流程技巧"></a>3种FPS地图布局流程技巧</h3><p>以 <code>CS:GO</code> 为例  </p>
-<blockquote>
-<p>前置教程参考：<br>CS:GO 6 Principles of Choke Point Level Design<br>CS:GO How to Design Gameplay Map Layouts (Complete In-Depth Guide)</p>
-</blockquote>
-<p><strong>做地图的通常步骤：</strong></p>
-<ul>
-<li>第一步：Layout布局阶段<br>把地图的玩法可视化，规划好地图中可行走的路线、备选路线、连接通路、阻塞点、目标、障碍物、地图边界。  </li>
-<li>再进BSP填充地图，迭代更新。  <ul>
-<li>（注：BSP其实是使用二叉空间分割方法Binary space partitioning生成的多边形，简单来说就是各种多边形体。Source引擎、Unreal4都提供了这种方法来快速创建关卡原型，优点是调整多边形非常方便，直接在场景内就可见，而且面数奇低）  </li>
-</ul>
-</li>
-</ul>
-<p><strong>地图布局方法：</strong><br>路线图就是从整个布局图中提取的精华，这样你就对双方如何处理地图目标有了清晰的概念。  </p>
-<ul>
-<li><strong>方法一：先画路径（通路），再画场景布局的边缘</strong><ul>
-<li>适用情况：当你对你地图玩起来是啥样子有了概念，并且你已经考虑过布局情况，但是对细节不是很清楚的时候。  </li>
-<li>开始先画简单的线条来定义地图的路径  </li>
-<li>绝对的精简，别设计任何边界，只专注考虑两队玩家的通路</li>
-<li>标记：CT、T出生点；包点、人质点；阻塞点（关键）</li>
-<li>再画地图布局，一直画到你能确定剩下的所有结构：地图的边界，视野，双方复生点，包点和人质点，阻塞点，连接通路，还有其他通路。</li>
-</ul>
-</li>
-<li><strong>方法二：一次只关注一个区域，然后组合起来</strong>  <ul>
-<li>适用情况：当你不知道你的地图布局最终是什么样子，你举步维艰无法弄清楚每个区域怎么去做的时候</li>
-<li>先挑一个区域开始：A点、B点、CT或T出生点、中路、任一阻塞点</li>
-<li>选一个区域设计，再画出区域的布局，专注该区域</li>
-<li>选其他区域，再来一遍</li>
-<li>整合到一个布局图里</li>
-<li>从布局简化出路径图</li>
-</ul>
-</li>
-<li><strong>方法三：直接完成全部布局，再简化通路</strong><ul>
-<li>适用情况：当你已经对整体布局有过深思熟虑并且确切的知道最终的样子。或许你已经画过这个布局许多次了，并且你打算重新设计它。</li>
-<li>从一个具体的区域开始然后逐渐展开直到整体布局画完。如果你在某个区域没有进展了，那就再接着画别的区域。记住一次画完。</li>
-<li>然后另画出地图简化通路</li>
-<li>新手慎用</li>
-</ul>
-</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/6euKxO_D4IzwPPgCD8GSww" target="_blank" rel="noopener">原文:3种设计FPS游戏地图布局的流程技巧</a></em>  </p>
-<h3 id="FPS地图阻塞点设计6原则"><a href="#FPS地图阻塞点设计6原则" class="headerlink" title="FPS地图阻塞点设计6原则"></a>FPS地图阻塞点设计6原则</h3><blockquote>
-<p>控制了阻塞点，就控制了整张地图。  </p>
-</blockquote>
-<p>阻塞点是地图上进攻方到达目标之前，遭遇防守方抵抗的区域。阻塞点也叫做控制点（Control Point）或者堵塞区（Bottleneck）。<br>进攻方（爆破模式中的匪徒或营救模式中的警察）必须从阻塞点干过去，才能到达目标区域。否则就必须撤退或者更换策略换条路线进攻。  </p>
-<p>阻塞点的设计目的：<strong>增强游戏性</strong>，利用阻塞点可以控制地图内的玩家流向，节奏，和平衡。</p>
-<ul>
-<li><strong>原则1：增强和促进游戏性（Gameplay）</strong>  <ul>
-<li>通过整体结构的设计将可见的入口降低到1-2个，来缩紧玩家的流向</li>
-<li>常见结构如：走廊，门口，隧道或是巷道登，是双方相遇、激战的阻塞点 </li>
-</ul>
-</li>
-<li><strong>原则2：阻塞点放置</strong><ul>
-<li>一定要部署在攻击方到达地图目标点之前</li>
-</ul>
-</li>
-<li><strong>原则3：时机</strong><ul>
-<li>需要让双方几乎在相同的时间到达阻塞点。防守方可以稍微早几秒到达站好位置。但最重要的是攻击方永远都不能在防守方刚刚到达的时候就已经冲过阻塞点。</li>
-<li>到达阻塞点的时间在地图的BSP搭建阶段就应该确定：直接方法-计时器、亲自跑</li>
-<li>时机也可能取决于地图，如dust2地图中防守方ct到A平台非常近</li>
-</ul>
-</li>
-<li><strong>原则4：入口、出口数量</strong><ul>
-<li>限制出入口的选择，将阻塞点通路数量<strong>控制在1到2个</strong>。这样攻击方不会太轻易地占领目标。许多CS地图的阻塞点都只有一个通路（通向目标点）</li>
-<li>两条通路入口的阻塞点给进攻方提供了选择和策略，<strong>增加策略性</strong>，但也可能把阻塞点搞无聊</li>
-<li>增加同一个阻塞点的通路数量，破快了局部的战斗节奏，<strong>可能让阻塞点变得无法控制</strong>，需要慎重把握</li>
-<li>如果要为阻塞点增加2条通路入口，应确保防守方在同一个视角可以清晰看到两个入口</li>
-</ul>
-</li>
-<li><strong>原则5：战斗方式</strong><ul>
-<li>阻塞点都应该支持多种战斗方式：狙击战、近距离的卡点战斗、暗中推进（猥琐推进）。</li>
-<li>支持的方式越多，越能迎合多类型玩家喜好。需要为策略性和玩家技巧来进行设计。</li>
-<li>使用<strong>距离</strong>和<strong>掩体</strong>作为布局元素<ul>
-<li>距离维度：长、短、宽、窄、高度</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>原则6：动态阻塞点</strong><ul>
-<li>营救人质地图中的阻塞点都是动态的。在设计人质地图的阻塞点时，你需要考虑防守方（T）是如何进行的。</li>
-<li>最主要的是需要把到达营救位置的通路数量控制在2到3条。</li>
-</ul>
-</li>
-</ul>
-<p>关于<strong>区域阻塞点</strong>：  </p>
-<ul>
-<li>它们是在特定区域，带有多种选择和掩体的开放式阻塞点</li>
-<li>一个地图1个足以，复杂的掩体和多样的选择都大大增加了设计的难度，要有取舍。</li>
-</ul>
-<p><em><a href="https://www.gameres.com/789358.html" target="_blank" rel="noopener">原文：FPS地图阻塞点的六种设计原则</a></em>  </p>
-<h3 id="FPS地图设计心得tips"><a href="#FPS地图设计心得tips" class="headerlink" title="FPS地图设计心得tips"></a>FPS地图设计心得tips</h3><ul>
-<li><strong>第一步：区域划分和规划</strong>：地图的尺寸、交战距离（和玩家的移动属性）；敌我双方/多方的出生点，冲突点都会在这个阶段设计完成，可以说是完成整个图的大结构设定——根据玩法设计目标和游戏定位来确认。</li>
-<li><strong>第二步：动线规划</strong>：动线就是“运动轨迹”：即设计连接区域的路径、区域内的运动路线、主路与支路、汇合点与展开点。并不是有路的地方就有动线，动线是代表关卡中最高效的战术运动轨迹。</li>
-<li><strong>第三步：关键点设计</strong>：关键点就是我们常说的兵家必争之地，比如集中的通路，近道，视野宽阔的优势阵地等。往往也是双方动线天然的汇合点，必经之路，或是可以扼守目标点的阵地。</li>
-<li><strong>局部战术</strong>：确定不同区域的优势和风险，引导玩家在不同阵地选择不同的武器和战术，或选择与队友配合（狙击、投掷、冲锋、埋伏、绕后等），进行一定程度的策略对抗。</li>
-<li><strong>第五步：指引性设计</strong>：为了防止玩家在地图中迷路，需要加入明显的地标指示物，帮助玩家明确判断自己的位置。</li>
-<li><strong>第六步：平衡</strong>：在结构和美术设计上，通常会从结构对称（镜像平衡）、优势对等（各有优势区域，相对对等）的方向考虑，以在地图中维持双方的竞技公平。</li>
-</ul>
-<p><em><a href="https://www.taptap.com/topic/4512299" target="_blank" rel="noopener">原文:一些FPS游戏地图设计心得</a></em> </p>
-<h3 id="FPS类大型超多人战场地图设计的8个tips"><a href="#FPS类大型超多人战场地图设计的8个tips" class="headerlink" title="FPS类大型超多人战场地图设计的8个tips"></a>FPS类大型超多人战场地图设计的8个tips</h3><p>PUBG相对于OW、CSGO的成功说明超大地图、超多人PVP的魅力。  </p>
-<ul>
-<li><strong>1.谨慎设定场景尺寸</strong><ul>
-<li>因素：核心玩法（GamePlay Mode）；参与人数；移动数值与移动方式；预期交战密度；次级关卡的规模与数量；游戏单局时长；项目的技术瓶颈；研发工作量限制等等</li>
-</ul>
-</li>
-<li><strong>2.明确游戏的核心体验方向</strong><ul>
-<li>如<strong>PUBG</strong>的精准倍镜和武器弹道，把远距离战斗作为重要的游戏体验，所以的建筑、掩体、草木的分布都服从于此；<strong>堡垒之夜</strong>建造自由度是游戏的中药体验，所以关卡设计上留了很多空闲的区域，给玩家脑洞；<strong>Apex英雄</strong>偏向中近程作战，战斗节奏中角色快速立体移动，故提供了更狭窄受控的对战空间，大部分掩体可自由登顶。</li>
-<li>因素：交战距离、交战频率、战斗风格、游戏目标、预期移动节奏、玩家行动方式、角色特性、武器技能道具、资源分布情况。</li>
-</ul>
-</li>
-<li><strong>3.设立严格的标准，用规则创造世界</strong><ul>
-<li>场景建筑、物件的标准：<ul>
-<li>建筑的核心参数：墙体厚度、门高宽、窗高宽、层高、窗户距地高度、门窗分类情况、房间最小尺寸、楼梯宽度角度长度、建筑内结构约束、室内物件约束等等</li>
-<li>建筑的外围参数：房屋与房屋间距、城镇街道与房屋间距、房屋与围栏间距、房屋高度范围、房屋可攀爬约束等等</li>
-<li>物件的参数：物件种类尺寸、物件距离房屋安全距离、是否作为掩体、碰撞规范约束、贴图新旧程度等等</li>
-</ul>
-</li>
-<li>PGC生成内容的标准：<ul>
-<li>地形：最大高度、海平面高度、平原山体河流峡谷森林所有区域的确切分布、区域地表贴图设定、最大行走角度等</li>
-<li>植被系统：地表植物的高度、遮蔽情况，树木生成的总量、密度、间隔、直径、树冠特征，草和树木与地表自然贴图的限定关系、植被的生成规则等</li>
-<li>其他系统：路网分布、道路的类型与宽度、石头总量与密度、水体的特性：深度、可否游泳、水中能否使用载具、能否与火焰交互等等</li>
-</ul>
-</li>
-<li>角色相关的标准；整体地图的分布标准<ul>
-<li>角色Pawn的各项属性：体型Hitbox、移动速度（行走、持枪、奔跑、蹲伏等）、跳跃高度、距离、掉落伤害、攀爬高度距离、可行走角度、特殊移动方式（如滑索、载具）等等，都会影响具体场景的制作</li>
-<li>子场景的分布标准：规定了子场景的分级（重要程度，例如PUBG中机场就是一个分级为重要的子场景）、每类子场景的建筑数量与规模、不同子场景之间的间距（如两个核心资源点的最小距离）、局内资源的分布情况、资源的总量与密度等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>4.用局部设计为关卡注入灵魂</strong><ul>
-<li>为区域添加LandMark</li>
-<li>局部场景植被的变化</li>
-<li>利用好地形，进行二次创造</li>
-<li>布局Layout的艺术</li>
-<li>设定特殊主题</li>
-</ul>
-</li>
-<li><strong>5.在设计上留白</strong></li>
-<li><strong>6.建立完善的工具与制作流程</strong><ul>
-<li>PGC内容的编辑工具（引擎内）：树木地表道路篱笆等</li>
-<li>关卡管理工具：关卡拆分与多人协同编辑支持</li>
-<li>关卡预览工具：大世界的实时调整与预览工具</li>
-<li>大世界的批量测试工具：异常碰撞检测、地表贴合检测等</li>
-<li>美术资源的工具：批量处理资源、自动烘焙流程等</li>
-<li>其他一切提升LD/LA战斗力的引擎工具：比如扩展Unity糟糕的关卡编辑器</li>
-</ul>
-</li>
-<li><strong>7.用数据监测Review关卡的设计</strong><ul>
-<li>通用规则：死亡分布、各阶段时长、胜率等</li>
-<li>资源投放情况：物资产出、分布、物资获取评估等</li>
-<li>武器数据：KD、TTK、ADR（AVERAGE DAMAGE per ROUND）、配件出场率等</li>
-<li>道具/技能数据：道具消耗量、存量、使用率、有效率等</li>
-<li>载具使用情况：生成、获取评估、使用率、移动情况、损坏率、载具ADR等</li>
-<li>热力图数据：选点情况、出生跳伞、击杀死亡、区域活跃时间、决赛位置等</li>
-</ul>
-</li>
-<li><strong>8.让技术主导玩法，打破规则</strong><ul>
-<li>曾经我们认为关卡必须是<strong>CS</strong>一样的固态结构，<strong>Rainbow Six</strong>通过破碎系统的突破性尝试让我们看到了墙体破坏的战斗魅力；曾经我们以为手机上只能做2<em>2的小场景马赛克吃鸡，*</em>PUBG Mobile<strong>做到了64平方千米准端游画质并且不卡的世界！曾经我们以为大逃杀BR就是一条命苟到底飙车跑毒圈的ChickenDinner，但是</strong>APEX**用滑铲复活飞檐走壁华丽地技能钢枪告诉我们它也是一个Legend</li>
-</ul>
-</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/2j0U6BWyi9MLVOXBM0GWsg" target="_blank" rel="noopener">原文:FPS大世界关卡设计的8个锦囊</a></em>  </p>
-<h2 id="经营策略类"><a href="#经营策略类" class="headerlink" title="经营策略类"></a>经营策略类</h2><h3 id="3个玩法要素与3个乐趣的来源"><a href="#3个玩法要素与3个乐趣的来源" class="headerlink" title="3个玩法要素与3个乐趣的来源"></a>3个玩法要素与3个乐趣的来源</h3><ul>
-<li>要素：可选择的橙装路径、资源、胜利条件</li>
-<li><strong>思考和推理的乐趣</strong>：给玩家以不同选择的取舍；使用随机性、外部条件来应对玩家的攻略</li>
-<li><strong>博弈的乐趣</strong>：多个参与者时发生争夺、博弈</li>
-<li><strong>意想的乐趣</strong>：把游戏中的内容具象化，结合生活概念，有助于玩家理解</li>
-<li>总结：策略经营类的本质是逐步展开选择路径，玩家根据现有的消息，猜测将来可能出现的情况，来选择在一条最优路径获得“数值成果”。经历若干个阶段后，来结算成功。  </li>
-</ul>
-<p><em><a href="https://www.gameres.com/840787.html" target="_blank" rel="noopener">参考：经营策略游戏设计要点：3个玩法要素与3个乐趣的来源</a></em>  </p>
-<hr>
-<h1 id="关卡类"><a href="#关卡类" class="headerlink" title="关卡类"></a>关卡类</h1><h2 id="设计可重复挑战关卡？"><a href="#设计可重复挑战关卡？" class="headerlink" title="设计可重复挑战关卡？"></a>设计可重复挑战关卡？</h2><ul>
-<li><strong>目标结论</strong>：<ul>
-<li>随机性</li>
-<li>可操作性</li>
-</ul>
-</li>
-<li><strong>关卡规则构建</strong>：主要从目的和手段两个角度入手，用同样的资源去打造不同的关卡</li>
-<li><strong>关卡元素</strong>：如何站在基本型和关卡元素组合的思路去制作关卡元素，让它们有足够的差异性和复用价值</li>
-<li>语境重构，利用语境重构来复用关卡元素，并增加其代入感。其实每一个关卡元素都是一个很值得塑造的元素，每一个角色在进行复用的时候，都可以看作是他一次重新上场的机会，并推翻之前观众对他的印象</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/U_GsdgAwVrfEUoa6dodYYQ" target="_blank" rel="noopener">原文:在资源有限时，如何设计出可重复挑战的游戏关卡？</a></em>  </p>
-<h2 id="打破PVP玩法最优解"><a href="#打破PVP玩法最优解" class="headerlink" title="打破PVP玩法最优解"></a>打破PVP玩法最优解</h2><ul>
-<li><strong>非单一相克</strong>：石头剪刀布</li>
-<li><strong>可控约束性</strong>：玩家可以利用游戏规则，和自己的技巧来约束对方，从而使一些不透明的信息变得透明</li>
-<li><strong>“使绊子”</strong>：致使玩家并不那么容易达到最优解的一些方式，主要包括“操作难度”和“不可控因素”两点</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/uPGrfLwlzHhmIfOkMq8-Yg" target="_blank" rel="noopener">原文：打破PvP玩法的“最优解”</a></em></p>
-<hr>
-<h1 id="游戏架构类"><a href="#游戏架构类" class="headerlink" title="游戏架构类"></a>游戏架构类</h1><h2 id="开放世界不让玩家路痴"><a href="#开放世界不让玩家路痴" class="headerlink" title="开放世界不让玩家路痴"></a>开放世界不让玩家路痴</h2><p>游戏内的自动导航是与“对于现实世界的拟真”所相违背。<br>提升玩家寻路体验tips：  </p>
-<ul>
-<li><strong>缩小世界规模</strong>：简单粗暴，但如果引入了快速交通工具，玩家的体验会大打折扣。</li>
-<li><strong>炮制宏达景观</strong>：多设立大型地标，形成记忆锚点，但美术资源可能有限</li>
-<li><strong>为世界命名</strong>：对游戏中的区块和道路进行命名</li>
-<li><strong>减少素材重复利用</strong>：不要大粒度的方式重复利用</li>
-<li><strong>主线路径的重复利用</strong>：主线任务尽可能让玩家多重复在同一条路径上，加深记忆</li>
-</ul>
-<p><em><a href="https://www.gameres.com/840600.html" target="_blank" rel="noopener">原文：什么样的开放世界游戏才会让玩家不路痴？</a></em>  </p>
-<h2 id="潜行游戏的AI设计"><a href="#潜行游戏的AI设计" class="headerlink" title="潜行游戏的AI设计"></a>潜行游戏的AI设计</h2><p>潜行游戏的核心——暗杀  </p>
-<p>潜行AI需要增加视觉、听觉模拟器，以视觉为例：  </p>
-<p>AI的视觉模拟器：  </p>
-<ul>
-<li>AI看到什么会引起警觉<ul>
-<li>敌人</li>
-<li>同伴尸体</li>
-<li>同伴小时</li>
-<li>物品状态改变（如关着的门开了）</li>
-</ul>
-</li>
-<li>引起警觉之后，如何行动<ul>
-<li>查看异常（一般是单人行动）</li>
-<li>搜索敌人（一般是和周围同伴一起群体行动）</li>
-<li>触发警报（整个区域开始寻找敌人）</li>
-<li>呼叫增援（在增加区域内敌人数量）</li>
-</ul>
-</li>
-<li>行动后的变化<ul>
-<li>回归初始状态</li>
-<li>继续保持警戒状态</li>
-<li>保持搜索敌人状态</li>
-<li>保持战斗状态</li>
-</ul>
-</li>
-</ul>
-<p>潜行游戏的其他要素：变装、引诱、、隐蔽点、阴影、陷阱、移动尸体、藏匿尸体、离间、审问、墙体透视……</p>
-<hr>
-<h1 id="交互类"><a href="#交互类" class="headerlink" title="交互类"></a>交互类</h1><h2 id="交互设计入门原则和规范"><a href="#交互设计入门原则和规范" class="headerlink" title="交互设计入门原则和规范"></a>交互设计入门原则和规范</h2><ul>
-<li><strong>一致性原则</strong>：界面的视觉风格、布局、功能、用语、操作应在所有页面中保持一致。</li>
-<li><strong>有效性原则</strong>：难以点击的问题一定要彻底解决</li>
-<li><strong>易读性原则</strong>：尽管某些游戏的字号你拿着细看也是完全可以看清楚的，甚至还觉得挺精致。但基于手机的实际应用情景（拥挤的地铁、公交、步行时），字号还是建议略为调大一点，使用户即便在户外依然能够轻松地读取到画面中的文字信息。<ul>
-<li>提高文字与底图之间的对比度。</li>
-<li>承载文字的底图尽可能不设置透明度或较低透明度。</li>
-<li>多运用界面留白，包括设置较大的文字的行距，都能有助提升易读性。</li>
-</ul>
-</li>
-<li><strong>3次点击原则</strong>：用户经常会关心到的内容，务必在3次点击之内让他们找到。</li>
-<li><strong>防错原则</strong>：通过对信息的强调，或者二次确认，或增加上锁\解锁功能，或确认按钮位置的改变来防止用户在操作过程中发生失误。</li>
-<li><strong>字体规范</strong>：强化字阶差异，减少字号种类；统一“韵律”，简化字阶递增规律；以灰度、固定色彩体系强化文字性质；</li>
-<li><strong>控件规范</strong>：复用性要高，尽量控制相同样式不同尺寸的控件数量；确保视觉输出的控件，设备上看，边缘是锐利清晰的； 确保视觉输出的控件，配色方案不会对用户构成交互体验上的干扰；</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A" target="_blank" rel="noopener">原文：交互设计入门引导：5点原则两条规范</a></em>  </p>
-<h2 id="游戏交互设计5要素"><a href="#游戏交互设计5要素" class="headerlink" title="游戏交互设计5要素"></a>游戏交互设计5要素</h2><ul>
-<li>感受用户体验要素<ul>
-<li>表现层：呈献给用户的第一印象内容，看个大概基调</li>
-<li>框架层：整个系统的框架，图标等</li>
-<li>结构层：规划整个界面，较抽象</li>
-<li>范围层：可以看到这个页面提供什么、不提供什么</li>
-<li>战略层：这个界面的目的</li>
-<li>用户感受是从上到下，产品设计是从下到上</li>
-<li>框架层和结构层是交互设计师的主要负责区</li>
-</ul>
-</li>
-<li>用户体验要素与游戏交互设计<ul>
-<li>产品目标和用户目标-战略层：<ul>
-<li>研究用户是谁：定性研究（玩家对Demo试玩的意见）、定量研究（问卷调查），来了解用户特征，尝试对用户细分</li>
-<li>用户画像：基本信息（年龄、性别、单生？等）、何时游戏？游戏经验？技术水平？等</li>
-<li>二次元游戏用户画像4种：IP教徒典型画像、游戏宅典型画像、游戏向二次元人典型画像、跟风宅典型画像</li>
-</ul>
-</li>
-<li>功能规格和内容需求-范围层：<ul>
-<li>梳理系统蓝图：核心系统内容、系统常规玩法等……</li>
-<li>时间规划：每个版本节点中游戏的完成度、复杂度，来确定哪些交互规则必须优先搭建</li>
-<li>策划案：阐明三点，系统的设计目的、系统的主要/次要流程、系统各功能的优先级（最关注项）</li>
-</ul>
-</li>
-<li>.交互流程和信息构架-结构层：<ul>
-<li>交互流程和信息架构（操作的流程，围绕（玩家）角色、任务、场景三要素）</li>
-</ul>
-</li>
-<li>从抽象到具体-框架层：<ul>
-<li>布局遵从习惯</li>
-<li>覆盖尽可能多的场景和状态：有和无、最少和最多、80%和20%</li>
-<li>选择合适的方式，而不一定是“最酷”的方式</li>
-<li>优化交互输出，保证框架层实现度</li>
-</ul>
-</li>
-<li>感知设计-表现层：<ul>
-<li>目的是让框架层变得可以感知，交互设计师要让设计被视觉设计师“正确的感知”</li>
-<li>围绕目的进行沟通</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>梳理紧急性、重要性</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/7t_WHdJljuOAu4YA6SnMtA" target="_blank" rel="noopener">原文：想要提升用户体验？ 先了解游戏交互设计这5个要素（含实例）</a></em>  </p>
-<hr>
-<p><em><code>to be continued...</code></em>  </p>
-]]></content>
-      <categories>
-        <category>「Game」</category>
-      </categories>
-      <tags>
-        <tag>Game</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Excel VBA Notes</title>
     <url>/2020/12/15/Excel-VBA/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -1575,6 +1265,381 @@
         <tag>Note</tag>
         <tag>Excel</tag>
         <tag>VBA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>吃肉使人快乐</title>
+    <url>/2020/12/22/Food/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+***为什么好吃的都是热量高的***
+
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="聚餐"><a href="#聚餐" class="headerlink" title="聚餐"></a>聚餐</h1><h2 id="烤肉"><a href="#烤肉" class="headerlink" title="烤肉"></a>烤肉</h2><h3 id="鞑子烤羊腿"><a href="#鞑子烤羊腿" class="headerlink" title="鞑子烤羊腿"></a>鞑子烤羊腿</h3><ul>
+<li>位置：华星路</li>
+<li>时间：2020年夏、秋</li>
+<li>同伴：一次超j，一次zcm、lqm、zsx</li>
+<li>评价：可以满足大口吃羊肉的欲望，整块的羊排/羊腿，烤的滋油；其他烧烤小食没怎么吃</li>
+<li>人均：100</li>
+</ul>
+<h3 id="日料"><a href="#日料" class="headerlink" title="日料"></a>日料</h3><h3 id="米潜"><a href="#米潜" class="headerlink" title="米潜"></a>米潜</h3><ul>
+<li>位置：华星路</li>
+<li>时间：2020年10月</li>
+<li>同伴：xsx徐工</li>
+<li>评价：<ul>
+<li>必点玉子烧</li>
+<li>徐工推荐的鹅肝手握很阔以</li>
+<li>炒饭没上次去的好吃</li>
+<li>菜单跟浅草屋一模一样</li>
+</ul>
+</li>
+<li>人均：100</li>
+</ul>
+<h2 id="火锅"><a href="#火锅" class="headerlink" title="火锅"></a>火锅</h2><h3 id="海底捞"><a href="#海底捞" class="headerlink" title="海底捞"></a>海底捞</h3><ul>
+<li>位置：铂澜·大象城</li>
+<li>时间：2020年12月</li>
+<li>同伴：信爷</li>
+<li>评价：还行，没有那么让人尴尬的热情；菜品没多少感触，感觉火锅都差不多</li>
+<li>人均：220</li>
+</ul>
+<h3 id="捞王"><a href="#捞王" class="headerlink" title="捞王"></a>捞王</h3><ul>
+<li>位置：铂澜·大象城</li>
+<li>时间：2020年12月</li>
+<li>同伴：信爷</li>
+<li>评价：信爷喜欢捞王的汤底，比较奶的感觉</li>
+<li>人均：150+</li>
+</ul>
+<hr>
+<h1 id="个人餐"><a href="#个人餐" class="headerlink" title="个人餐"></a>个人餐</h1><h2 id="饭"><a href="#饭" class="headerlink" title="饭"></a>饭</h2><h3 id="食其家-すき家"><a href="#食其家-すき家" class="headerlink" title="食其家 すき家"></a>食其家 すき家</h3><ul>
+<li>位置：文三路华星科技大厦、星光城</li>
+<li>评价：<ul>
+<li>招牌牛丼可以，现在的饭量中碗感觉都有点多</li>
+<li>大阪烧牛丼味道甚佳，小贵</li>
+<li>番茄牛丼太甜，总体味道没有惊喜，感觉有点对不起价格</li>
+<li>拉面的辅材感觉偏少</li>
+<li>关东煮性价比不如便利店</li>
+</ul>
+</li>
+<li>人均：20-40</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Game Design Notes</title>
+    <url>/2019/03/19/Game-Design-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>游戏设计相关笔记</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="箴言（雾"><a href="#箴言（雾" class="headerlink" title="箴言（雾"></a>箴言（雾</h1><blockquote>
+<p>策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。<br><em>——黄J  2019.3.19</em>  </p>
+</blockquote>
+<hr>
+<h1 id="按游戏类型分类"><a href="#按游戏类型分类" class="headerlink" title="按游戏类型分类"></a>按游戏类型分类</h1><h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><h3 id="3种FPS地图布局流程技巧"><a href="#3种FPS地图布局流程技巧" class="headerlink" title="3种FPS地图布局流程技巧"></a>3种FPS地图布局流程技巧</h3><p>以 <code>CS:GO</code> 为例  </p>
+<blockquote>
+<p>前置教程参考：<br>CS:GO 6 Principles of Choke Point Level Design<br>CS:GO How to Design Gameplay Map Layouts (Complete In-Depth Guide)</p>
+</blockquote>
+<p><strong>做地图的通常步骤：</strong></p>
+<ul>
+<li>第一步：Layout布局阶段<br>把地图的玩法可视化，规划好地图中可行走的路线、备选路线、连接通路、阻塞点、目标、障碍物、地图边界。  </li>
+<li>再进BSP填充地图，迭代更新。  <ul>
+<li>（注：BSP其实是使用二叉空间分割方法Binary space partitioning生成的多边形，简单来说就是各种多边形体。Source引擎、Unreal4都提供了这种方法来快速创建关卡原型，优点是调整多边形非常方便，直接在场景内就可见，而且面数奇低）  </li>
+</ul>
+</li>
+</ul>
+<p><strong>地图布局方法：</strong><br>路线图就是从整个布局图中提取的精华，这样你就对双方如何处理地图目标有了清晰的概念。  </p>
+<ul>
+<li><strong>方法一：先画路径（通路），再画场景布局的边缘</strong><ul>
+<li>适用情况：当你对你地图玩起来是啥样子有了概念，并且你已经考虑过布局情况，但是对细节不是很清楚的时候。  </li>
+<li>开始先画简单的线条来定义地图的路径  </li>
+<li>绝对的精简，别设计任何边界，只专注考虑两队玩家的通路</li>
+<li>标记：CT、T出生点；包点、人质点；阻塞点（关键）</li>
+<li>再画地图布局，一直画到你能确定剩下的所有结构：地图的边界，视野，双方复生点，包点和人质点，阻塞点，连接通路，还有其他通路。</li>
+</ul>
+</li>
+<li><strong>方法二：一次只关注一个区域，然后组合起来</strong>  <ul>
+<li>适用情况：当你不知道你的地图布局最终是什么样子，你举步维艰无法弄清楚每个区域怎么去做的时候</li>
+<li>先挑一个区域开始：A点、B点、CT或T出生点、中路、任一阻塞点</li>
+<li>选一个区域设计，再画出区域的布局，专注该区域</li>
+<li>选其他区域，再来一遍</li>
+<li>整合到一个布局图里</li>
+<li>从布局简化出路径图</li>
+</ul>
+</li>
+<li><strong>方法三：直接完成全部布局，再简化通路</strong><ul>
+<li>适用情况：当你已经对整体布局有过深思熟虑并且确切的知道最终的样子。或许你已经画过这个布局许多次了，并且你打算重新设计它。</li>
+<li>从一个具体的区域开始然后逐渐展开直到整体布局画完。如果你在某个区域没有进展了，那就再接着画别的区域。记住一次画完。</li>
+<li>然后另画出地图简化通路</li>
+<li>新手慎用</li>
+</ul>
+</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/6euKxO_D4IzwPPgCD8GSww" target="_blank" rel="noopener">原文:3种设计FPS游戏地图布局的流程技巧</a></em>  </p>
+<h3 id="FPS地图阻塞点设计6原则"><a href="#FPS地图阻塞点设计6原则" class="headerlink" title="FPS地图阻塞点设计6原则"></a>FPS地图阻塞点设计6原则</h3><blockquote>
+<p>控制了阻塞点，就控制了整张地图。  </p>
+</blockquote>
+<p>阻塞点是地图上进攻方到达目标之前，遭遇防守方抵抗的区域。阻塞点也叫做控制点（Control Point）或者堵塞区（Bottleneck）。<br>进攻方（爆破模式中的匪徒或营救模式中的警察）必须从阻塞点干过去，才能到达目标区域。否则就必须撤退或者更换策略换条路线进攻。  </p>
+<p>阻塞点的设计目的：<strong>增强游戏性</strong>，利用阻塞点可以控制地图内的玩家流向，节奏，和平衡。</p>
+<ul>
+<li><strong>原则1：增强和促进游戏性（Gameplay）</strong>  <ul>
+<li>通过整体结构的设计将可见的入口降低到1-2个，来缩紧玩家的流向</li>
+<li>常见结构如：走廊，门口，隧道或是巷道登，是双方相遇、激战的阻塞点 </li>
+</ul>
+</li>
+<li><strong>原则2：阻塞点放置</strong><ul>
+<li>一定要部署在攻击方到达地图目标点之前</li>
+</ul>
+</li>
+<li><strong>原则3：时机</strong><ul>
+<li>需要让双方几乎在相同的时间到达阻塞点。防守方可以稍微早几秒到达站好位置。但最重要的是攻击方永远都不能在防守方刚刚到达的时候就已经冲过阻塞点。</li>
+<li>到达阻塞点的时间在地图的BSP搭建阶段就应该确定：直接方法-计时器、亲自跑</li>
+<li>时机也可能取决于地图，如dust2地图中防守方ct到A平台非常近</li>
+</ul>
+</li>
+<li><strong>原则4：入口、出口数量</strong><ul>
+<li>限制出入口的选择，将阻塞点通路数量<strong>控制在1到2个</strong>。这样攻击方不会太轻易地占领目标。许多CS地图的阻塞点都只有一个通路（通向目标点）</li>
+<li>两条通路入口的阻塞点给进攻方提供了选择和策略，<strong>增加策略性</strong>，但也可能把阻塞点搞无聊</li>
+<li>增加同一个阻塞点的通路数量，破快了局部的战斗节奏，<strong>可能让阻塞点变得无法控制</strong>，需要慎重把握</li>
+<li>如果要为阻塞点增加2条通路入口，应确保防守方在同一个视角可以清晰看到两个入口</li>
+</ul>
+</li>
+<li><strong>原则5：战斗方式</strong><ul>
+<li>阻塞点都应该支持多种战斗方式：狙击战、近距离的卡点战斗、暗中推进（猥琐推进）。</li>
+<li>支持的方式越多，越能迎合多类型玩家喜好。需要为策略性和玩家技巧来进行设计。</li>
+<li>使用<strong>距离</strong>和<strong>掩体</strong>作为布局元素<ul>
+<li>距离维度：长、短、宽、窄、高度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>原则6：动态阻塞点</strong><ul>
+<li>营救人质地图中的阻塞点都是动态的。在设计人质地图的阻塞点时，你需要考虑防守方（T）是如何进行的。</li>
+<li>最主要的是需要把到达营救位置的通路数量控制在2到3条。</li>
+</ul>
+</li>
+</ul>
+<p>关于<strong>区域阻塞点</strong>：  </p>
+<ul>
+<li>它们是在特定区域，带有多种选择和掩体的开放式阻塞点</li>
+<li>一个地图1个足以，复杂的掩体和多样的选择都大大增加了设计的难度，要有取舍。</li>
+</ul>
+<p><em><a href="https://www.gameres.com/789358.html" target="_blank" rel="noopener">原文：FPS地图阻塞点的六种设计原则</a></em>  </p>
+<h3 id="FPS地图设计心得tips"><a href="#FPS地图设计心得tips" class="headerlink" title="FPS地图设计心得tips"></a>FPS地图设计心得tips</h3><ul>
+<li><strong>第一步：区域划分和规划</strong>：地图的尺寸、交战距离（和玩家的移动属性）；敌我双方/多方的出生点，冲突点都会在这个阶段设计完成，可以说是完成整个图的大结构设定——根据玩法设计目标和游戏定位来确认。</li>
+<li><strong>第二步：动线规划</strong>：动线就是“运动轨迹”：即设计连接区域的路径、区域内的运动路线、主路与支路、汇合点与展开点。并不是有路的地方就有动线，动线是代表关卡中最高效的战术运动轨迹。</li>
+<li><strong>第三步：关键点设计</strong>：关键点就是我们常说的兵家必争之地，比如集中的通路，近道，视野宽阔的优势阵地等。往往也是双方动线天然的汇合点，必经之路，或是可以扼守目标点的阵地。</li>
+<li><strong>局部战术</strong>：确定不同区域的优势和风险，引导玩家在不同阵地选择不同的武器和战术，或选择与队友配合（狙击、投掷、冲锋、埋伏、绕后等），进行一定程度的策略对抗。</li>
+<li><strong>第五步：指引性设计</strong>：为了防止玩家在地图中迷路，需要加入明显的地标指示物，帮助玩家明确判断自己的位置。</li>
+<li><strong>第六步：平衡</strong>：在结构和美术设计上，通常会从结构对称（镜像平衡）、优势对等（各有优势区域，相对对等）的方向考虑，以在地图中维持双方的竞技公平。</li>
+</ul>
+<p><em><a href="https://www.taptap.com/topic/4512299" target="_blank" rel="noopener">原文:一些FPS游戏地图设计心得</a></em> </p>
+<h3 id="FPS类大型超多人战场地图设计的8个tips"><a href="#FPS类大型超多人战场地图设计的8个tips" class="headerlink" title="FPS类大型超多人战场地图设计的8个tips"></a>FPS类大型超多人战场地图设计的8个tips</h3><p>PUBG相对于OW、CSGO的成功说明超大地图、超多人PVP的魅力。  </p>
+<ul>
+<li><strong>1.谨慎设定场景尺寸</strong><ul>
+<li>因素：核心玩法（GamePlay Mode）；参与人数；移动数值与移动方式；预期交战密度；次级关卡的规模与数量；游戏单局时长；项目的技术瓶颈；研发工作量限制等等</li>
+</ul>
+</li>
+<li><strong>2.明确游戏的核心体验方向</strong><ul>
+<li>如<strong>PUBG</strong>的精准倍镜和武器弹道，把远距离战斗作为重要的游戏体验，所以的建筑、掩体、草木的分布都服从于此；<strong>堡垒之夜</strong>建造自由度是游戏的中药体验，所以关卡设计上留了很多空闲的区域，给玩家脑洞；<strong>Apex英雄</strong>偏向中近程作战，战斗节奏中角色快速立体移动，故提供了更狭窄受控的对战空间，大部分掩体可自由登顶。</li>
+<li>因素：交战距离、交战频率、战斗风格、游戏目标、预期移动节奏、玩家行动方式、角色特性、武器技能道具、资源分布情况。</li>
+</ul>
+</li>
+<li><strong>3.设立严格的标准，用规则创造世界</strong><ul>
+<li>场景建筑、物件的标准：<ul>
+<li>建筑的核心参数：墙体厚度、门高宽、窗高宽、层高、窗户距地高度、门窗分类情况、房间最小尺寸、楼梯宽度角度长度、建筑内结构约束、室内物件约束等等</li>
+<li>建筑的外围参数：房屋与房屋间距、城镇街道与房屋间距、房屋与围栏间距、房屋高度范围、房屋可攀爬约束等等</li>
+<li>物件的参数：物件种类尺寸、物件距离房屋安全距离、是否作为掩体、碰撞规范约束、贴图新旧程度等等</li>
+</ul>
+</li>
+<li>PGC生成内容的标准：<ul>
+<li>地形：最大高度、海平面高度、平原山体河流峡谷森林所有区域的确切分布、区域地表贴图设定、最大行走角度等</li>
+<li>植被系统：地表植物的高度、遮蔽情况，树木生成的总量、密度、间隔、直径、树冠特征，草和树木与地表自然贴图的限定关系、植被的生成规则等</li>
+<li>其他系统：路网分布、道路的类型与宽度、石头总量与密度、水体的特性：深度、可否游泳、水中能否使用载具、能否与火焰交互等等</li>
+</ul>
+</li>
+<li>角色相关的标准；整体地图的分布标准<ul>
+<li>角色Pawn的各项属性：体型Hitbox、移动速度（行走、持枪、奔跑、蹲伏等）、跳跃高度、距离、掉落伤害、攀爬高度距离、可行走角度、特殊移动方式（如滑索、载具）等等，都会影响具体场景的制作</li>
+<li>子场景的分布标准：规定了子场景的分级（重要程度，例如PUBG中机场就是一个分级为重要的子场景）、每类子场景的建筑数量与规模、不同子场景之间的间距（如两个核心资源点的最小距离）、局内资源的分布情况、资源的总量与密度等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>4.用局部设计为关卡注入灵魂</strong><ul>
+<li>为区域添加LandMark</li>
+<li>局部场景植被的变化</li>
+<li>利用好地形，进行二次创造</li>
+<li>布局Layout的艺术</li>
+<li>设定特殊主题</li>
+</ul>
+</li>
+<li><strong>5.在设计上留白</strong></li>
+<li><strong>6.建立完善的工具与制作流程</strong><ul>
+<li>PGC内容的编辑工具（引擎内）：树木地表道路篱笆等</li>
+<li>关卡管理工具：关卡拆分与多人协同编辑支持</li>
+<li>关卡预览工具：大世界的实时调整与预览工具</li>
+<li>大世界的批量测试工具：异常碰撞检测、地表贴合检测等</li>
+<li>美术资源的工具：批量处理资源、自动烘焙流程等</li>
+<li>其他一切提升LD/LA战斗力的引擎工具：比如扩展Unity糟糕的关卡编辑器</li>
+</ul>
+</li>
+<li><strong>7.用数据监测Review关卡的设计</strong><ul>
+<li>通用规则：死亡分布、各阶段时长、胜率等</li>
+<li>资源投放情况：物资产出、分布、物资获取评估等</li>
+<li>武器数据：KD、TTK、ADR（AVERAGE DAMAGE per ROUND）、配件出场率等</li>
+<li>道具/技能数据：道具消耗量、存量、使用率、有效率等</li>
+<li>载具使用情况：生成、获取评估、使用率、移动情况、损坏率、载具ADR等</li>
+<li>热力图数据：选点情况、出生跳伞、击杀死亡、区域活跃时间、决赛位置等</li>
+</ul>
+</li>
+<li><strong>8.让技术主导玩法，打破规则</strong><ul>
+<li>曾经我们认为关卡必须是<strong>CS</strong>一样的固态结构，<strong>Rainbow Six</strong>通过破碎系统的突破性尝试让我们看到了墙体破坏的战斗魅力；曾经我们以为手机上只能做2<em>2的小场景马赛克吃鸡，*</em>PUBG Mobile<strong>做到了64平方千米准端游画质并且不卡的世界！曾经我们以为大逃杀BR就是一条命苟到底飙车跑毒圈的ChickenDinner，但是</strong>APEX**用滑铲复活飞檐走壁华丽地技能钢枪告诉我们它也是一个Legend</li>
+</ul>
+</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/2j0U6BWyi9MLVOXBM0GWsg" target="_blank" rel="noopener">原文:FPS大世界关卡设计的8个锦囊</a></em>  </p>
+<h2 id="经营策略类"><a href="#经营策略类" class="headerlink" title="经营策略类"></a>经营策略类</h2><h3 id="3个玩法要素与3个乐趣的来源"><a href="#3个玩法要素与3个乐趣的来源" class="headerlink" title="3个玩法要素与3个乐趣的来源"></a>3个玩法要素与3个乐趣的来源</h3><ul>
+<li>要素：可选择的橙装路径、资源、胜利条件</li>
+<li><strong>思考和推理的乐趣</strong>：给玩家以不同选择的取舍；使用随机性、外部条件来应对玩家的攻略</li>
+<li><strong>博弈的乐趣</strong>：多个参与者时发生争夺、博弈</li>
+<li><strong>意想的乐趣</strong>：把游戏中的内容具象化，结合生活概念，有助于玩家理解</li>
+<li>总结：策略经营类的本质是逐步展开选择路径，玩家根据现有的消息，猜测将来可能出现的情况，来选择在一条最优路径获得“数值成果”。经历若干个阶段后，来结算成功。  </li>
+</ul>
+<p><em><a href="https://www.gameres.com/840787.html" target="_blank" rel="noopener">参考：经营策略游戏设计要点：3个玩法要素与3个乐趣的来源</a></em>  </p>
+<hr>
+<h1 id="关卡类"><a href="#关卡类" class="headerlink" title="关卡类"></a>关卡类</h1><h2 id="设计可重复挑战关卡？"><a href="#设计可重复挑战关卡？" class="headerlink" title="设计可重复挑战关卡？"></a>设计可重复挑战关卡？</h2><ul>
+<li><strong>目标结论</strong>：<ul>
+<li>随机性</li>
+<li>可操作性</li>
+</ul>
+</li>
+<li><strong>关卡规则构建</strong>：主要从目的和手段两个角度入手，用同样的资源去打造不同的关卡</li>
+<li><strong>关卡元素</strong>：如何站在基本型和关卡元素组合的思路去制作关卡元素，让它们有足够的差异性和复用价值</li>
+<li>语境重构，利用语境重构来复用关卡元素，并增加其代入感。其实每一个关卡元素都是一个很值得塑造的元素，每一个角色在进行复用的时候，都可以看作是他一次重新上场的机会，并推翻之前观众对他的印象</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/U_GsdgAwVrfEUoa6dodYYQ" target="_blank" rel="noopener">原文:在资源有限时，如何设计出可重复挑战的游戏关卡？</a></em>  </p>
+<h2 id="打破PVP玩法最优解"><a href="#打破PVP玩法最优解" class="headerlink" title="打破PVP玩法最优解"></a>打破PVP玩法最优解</h2><ul>
+<li><strong>非单一相克</strong>：石头剪刀布</li>
+<li><strong>可控约束性</strong>：玩家可以利用游戏规则，和自己的技巧来约束对方，从而使一些不透明的信息变得透明</li>
+<li><strong>“使绊子”</strong>：致使玩家并不那么容易达到最优解的一些方式，主要包括“操作难度”和“不可控因素”两点</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/uPGrfLwlzHhmIfOkMq8-Yg" target="_blank" rel="noopener">原文：打破PvP玩法的“最优解”</a></em></p>
+<hr>
+<h1 id="游戏架构类"><a href="#游戏架构类" class="headerlink" title="游戏架构类"></a>游戏架构类</h1><h2 id="开放世界不让玩家路痴"><a href="#开放世界不让玩家路痴" class="headerlink" title="开放世界不让玩家路痴"></a>开放世界不让玩家路痴</h2><p>游戏内的自动导航是与“对于现实世界的拟真”所相违背。<br>提升玩家寻路体验tips：  </p>
+<ul>
+<li><strong>缩小世界规模</strong>：简单粗暴，但如果引入了快速交通工具，玩家的体验会大打折扣。</li>
+<li><strong>炮制宏达景观</strong>：多设立大型地标，形成记忆锚点，但美术资源可能有限</li>
+<li><strong>为世界命名</strong>：对游戏中的区块和道路进行命名</li>
+<li><strong>减少素材重复利用</strong>：不要大粒度的方式重复利用</li>
+<li><strong>主线路径的重复利用</strong>：主线任务尽可能让玩家多重复在同一条路径上，加深记忆</li>
+</ul>
+<p><em><a href="https://www.gameres.com/840600.html" target="_blank" rel="noopener">原文：什么样的开放世界游戏才会让玩家不路痴？</a></em>  </p>
+<h2 id="潜行游戏的AI设计"><a href="#潜行游戏的AI设计" class="headerlink" title="潜行游戏的AI设计"></a>潜行游戏的AI设计</h2><p>潜行游戏的核心——暗杀  </p>
+<p>潜行AI需要增加视觉、听觉模拟器，以视觉为例：  </p>
+<p>AI的视觉模拟器：  </p>
+<ul>
+<li>AI看到什么会引起警觉<ul>
+<li>敌人</li>
+<li>同伴尸体</li>
+<li>同伴小时</li>
+<li>物品状态改变（如关着的门开了）</li>
+</ul>
+</li>
+<li>引起警觉之后，如何行动<ul>
+<li>查看异常（一般是单人行动）</li>
+<li>搜索敌人（一般是和周围同伴一起群体行动）</li>
+<li>触发警报（整个区域开始寻找敌人）</li>
+<li>呼叫增援（在增加区域内敌人数量）</li>
+</ul>
+</li>
+<li>行动后的变化<ul>
+<li>回归初始状态</li>
+<li>继续保持警戒状态</li>
+<li>保持搜索敌人状态</li>
+<li>保持战斗状态</li>
+</ul>
+</li>
+</ul>
+<p>潜行游戏的其他要素：变装、引诱、、隐蔽点、阴影、陷阱、移动尸体、藏匿尸体、离间、审问、墙体透视……</p>
+<hr>
+<h1 id="交互类"><a href="#交互类" class="headerlink" title="交互类"></a>交互类</h1><h2 id="交互设计入门原则和规范"><a href="#交互设计入门原则和规范" class="headerlink" title="交互设计入门原则和规范"></a>交互设计入门原则和规范</h2><ul>
+<li><strong>一致性原则</strong>：界面的视觉风格、布局、功能、用语、操作应在所有页面中保持一致。</li>
+<li><strong>有效性原则</strong>：难以点击的问题一定要彻底解决</li>
+<li><strong>易读性原则</strong>：尽管某些游戏的字号你拿着细看也是完全可以看清楚的，甚至还觉得挺精致。但基于手机的实际应用情景（拥挤的地铁、公交、步行时），字号还是建议略为调大一点，使用户即便在户外依然能够轻松地读取到画面中的文字信息。<ul>
+<li>提高文字与底图之间的对比度。</li>
+<li>承载文字的底图尽可能不设置透明度或较低透明度。</li>
+<li>多运用界面留白，包括设置较大的文字的行距，都能有助提升易读性。</li>
+</ul>
+</li>
+<li><strong>3次点击原则</strong>：用户经常会关心到的内容，务必在3次点击之内让他们找到。</li>
+<li><strong>防错原则</strong>：通过对信息的强调，或者二次确认，或增加上锁\解锁功能，或确认按钮位置的改变来防止用户在操作过程中发生失误。</li>
+<li><strong>字体规范</strong>：强化字阶差异，减少字号种类；统一“韵律”，简化字阶递增规律；以灰度、固定色彩体系强化文字性质；</li>
+<li><strong>控件规范</strong>：复用性要高，尽量控制相同样式不同尺寸的控件数量；确保视觉输出的控件，设备上看，边缘是锐利清晰的； 确保视觉输出的控件，配色方案不会对用户构成交互体验上的干扰；</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A" target="_blank" rel="noopener">原文：交互设计入门引导：5点原则两条规范</a></em>  </p>
+<h2 id="游戏交互设计5要素"><a href="#游戏交互设计5要素" class="headerlink" title="游戏交互设计5要素"></a>游戏交互设计5要素</h2><ul>
+<li>感受用户体验要素<ul>
+<li>表现层：呈献给用户的第一印象内容，看个大概基调</li>
+<li>框架层：整个系统的框架，图标等</li>
+<li>结构层：规划整个界面，较抽象</li>
+<li>范围层：可以看到这个页面提供什么、不提供什么</li>
+<li>战略层：这个界面的目的</li>
+<li>用户感受是从上到下，产品设计是从下到上</li>
+<li>框架层和结构层是交互设计师的主要负责区</li>
+</ul>
+</li>
+<li>用户体验要素与游戏交互设计<ul>
+<li>产品目标和用户目标-战略层：<ul>
+<li>研究用户是谁：定性研究（玩家对Demo试玩的意见）、定量研究（问卷调查），来了解用户特征，尝试对用户细分</li>
+<li>用户画像：基本信息（年龄、性别、单生？等）、何时游戏？游戏经验？技术水平？等</li>
+<li>二次元游戏用户画像4种：IP教徒典型画像、游戏宅典型画像、游戏向二次元人典型画像、跟风宅典型画像</li>
+</ul>
+</li>
+<li>功能规格和内容需求-范围层：<ul>
+<li>梳理系统蓝图：核心系统内容、系统常规玩法等……</li>
+<li>时间规划：每个版本节点中游戏的完成度、复杂度，来确定哪些交互规则必须优先搭建</li>
+<li>策划案：阐明三点，系统的设计目的、系统的主要/次要流程、系统各功能的优先级（最关注项）</li>
+</ul>
+</li>
+<li>.交互流程和信息构架-结构层：<ul>
+<li>交互流程和信息架构（操作的流程，围绕（玩家）角色、任务、场景三要素）</li>
+</ul>
+</li>
+<li>从抽象到具体-框架层：<ul>
+<li>布局遵从习惯</li>
+<li>覆盖尽可能多的场景和状态：有和无、最少和最多、80%和20%</li>
+<li>选择合适的方式，而不一定是“最酷”的方式</li>
+<li>优化交互输出，保证框架层实现度</li>
+</ul>
+</li>
+<li>感知设计-表现层：<ul>
+<li>目的是让框架层变得可以感知，交互设计师要让设计被视觉设计师“正确的感知”</li>
+<li>围绕目的进行沟通</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>梳理紧急性、重要性</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/7t_WHdJljuOAu4YA6SnMtA" target="_blank" rel="noopener">原文：想要提升用户体验？ 先了解游戏交互设计这5个要素（含实例）</a></em>  </p>
+<hr>
+<p><em><code>to be continued...</code></em>  </p>
+]]></content>
+      <categories>
+        <category>「Game」</category>
+      </categories>
+      <tags>
+        <tag>Game</tag>
       </tags>
   </entry>
   <entry>
@@ -3964,6 +4029,199 @@
       </tags>
   </entry>
   <entry>
+    <title>网站收藏</title>
+    <url>/2019/09/26/Site-Bookmark/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>BOOKMARK</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
+<td>在线编辑</td>
+</tr>
+<tr>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
+<td>最好的…是什么？</td>
+</tr>
+<tr>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
+<td>截图识别字体</td>
+</tr>
+<tr>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
+<td>正版软件&amp;免费&amp;优惠</td>
+</tr>
+<tr>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
+<td>在线编辑pdf</td>
+</tr>
+<tr>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
+<td>免费&amp;多语言翻译</td>
+</tr>
+<tr>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
+<td>PDF在线工具&amp;转换</td>
+</tr>
+<tr>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
+<td>在线工具</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
+<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
+<td>每日新闻图卦</td>
+</tr>
+<tr>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
+<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
+<td>热点资讯聚合</td>
+</tr>
+<tr>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
+<td>资讯、排行榜聚合</td>
+</tr>
+<tr>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
+<td>短视频了解疾病</td>
+</tr>
+<tr>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
+<td>互联网新闻</td>
+</tr>
+<tr>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
+<td>大数据X图表</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
+<td>学各种小技巧</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
+<td>Ingress任务浏览</td>
+</tr>
+<tr>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
+<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
+<td>白噪音</td>
+</tr>
+<tr>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
+<td>假装去旅游</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《经济学原理》笔记（宏观经济学）</title>
     <url>/2019/04/02/Macroeconomics-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -4430,196 +4688,250 @@
       </tags>
   </entry>
   <entry>
-    <title>网站收藏</title>
-    <url>/2019/09/26/Site-Bookmark/</url>
+    <title>Photography Basis Notes</title>
+    <url>/2020/03/10/Photography-Basis-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>BOOKMARK</em></strong></p>
-<p></font> </center></p>
+<p><strong><em>基础知识：查漏补缺总没错</em></strong></p>
+<p></font></center></p>
 <a id="more"></a>
 
 <hr>
-<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
-<td>在线编辑</td>
-</tr>
-<tr>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
-<td>最好的…是什么？</td>
-</tr>
-<tr>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
-<td>截图识别字体</td>
-</tr>
-<tr>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
-<td>正版软件&amp;免费&amp;优惠</td>
-</tr>
-<tr>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
-<td>在线编辑pdf</td>
-</tr>
-<tr>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
-<td>免费&amp;多语言翻译</td>
-</tr>
-<tr>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
-<td>免费</td>
-</tr>
-<tr>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
-<td>PDF在线工具&amp;转换</td>
-</tr>
-<tr>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
-<td>在线工具</td>
-</tr>
-</tbody></table>
+<h1 id="色彩知识"><a href="#色彩知识" class="headerlink" title="色彩知识"></a>色彩知识</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><ul>
+<li><code>光</code>的一种特性<ul>
+<li>电磁波中的可见光波段</li>
+<li>不同颜色的本质是频率不同</li>
+</ul>
+</li>
+<li><code>物质</code>的一种特性<ul>
+<li>只反色自己颜色的光线，吸收其他颜色的光线</li>
+<li>前提是入射光包含它自己的颜色</li>
+</ul>
+</li>
+<li><code>人</code>的一种感觉<ul>
+<li>环境：通过色彩环境判断（大脑对入射光的假设可能会有错觉）</li>
+<li>时间：视觉暂留，跟上一时刻看到的颜色有关</li>
+<li>同色对比识别：历史经验有关</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=k1rB1Y4isHs&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="色彩模型"><a href="#色彩模型" class="headerlink" title="色彩模型"></a>色彩模型</h2><ul>
+<li>如何描述颜色？<ul>
+<li>色温法：建立在绝对黑体的概念上。<ul>
+<li>低温：红色、黄色</li>
+<li>高温：蓝色、白色</li>
+<li>但仅能描述蓝色到黄色的变化，绿色到洋红的光线难以描述</li>
+<li>色调：描述绿色到洋红</li>
+<li>色温+色调对颜色的描述还是不足够准确，因此仅用于描述白平衡</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>HSB</code>模型<ul>
+<li><code>H</code>：色相</li>
+<li><code>S</code>：饱和度，颜色的纯度</li>
+<li><code>B</code>：亮度</li>
+<li>优点：与生活中的日常经验比较一致，容易理解</li>
+<li>缺点：无法用于工程制造，难以找到某种材料精准控制这几种属性</li>
+</ul>
+</li>
+<li><code>RGB</code>色彩模型<ul>
+<li>Red、Green、Blue</li>
+<li>用于：发光体制造、相机</li>
+<li>优点：工程制造中只要控制三种颜色的亮度即可</li>
+<li>缺点：仅能用于发光体</li>
+</ul>
+</li>
+<li><code>CMYK</code>色彩模型<ul>
+<li>青色<code>Cyan</code>、洋红<code>Magenta</code>、黄色<code>Yellow</code></li>
+<li>用于：照片冲印、油墨印刷、打印机</li>
+<li><code>RGB</code>、<code>CMYK</code>模型的局限：难以保证不同设备、不同厂商之间的颜色一致性；都是材料相关的</li>
+</ul>
+</li>
+<li><code>Lab</code>色彩模型<ul>
+<li>原意：试图摆脱颜色原材料对模型的影响，是纯数学的概念</li>
+<li>横剖面：a绿色↔红色、b蓝色↔黄色</li>
+<li>纵轴：L亮度</li>
+<li>不能用于制造，仅用于数学描述颜色，可用于不同模型之间转换的中介</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=nBAXgf7NZIw" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="CMYK色彩模型"><a href="#CMYK色彩模型" class="headerlink" title="CMYK色彩模型"></a><code>CMYK</code>色彩模型</h2><ul>
+<li>含义<ul>
+<li><code>C</code>：青色，Cyan；只吸收红色</li>
+<li><code>M</code>：洋红，Magenta；只吸收绿色</li>
+<li><code>Y</code>：黄色，Yellow；只吸收蓝色</li>
+<li><code>K</code>：黑色，Black</li>
+</ul>
+</li>
+<li><code>GRB</code>是针对发光体的</li>
+<li><code>CMYK</code>是针对反光的，反光体会吸收显色的所有颜色。</li>
+<li>量加的越多，亮度越低</li>
+<li><code>CMYK</code>通道下，颜色越深，代表墨水用的越多</li>
+<li>用<code>黑色</code>墨水是从成本角度考虑，黑色很常用，不需要总是用CMY混合来做（对精度要求也高）</li>
+<li><a href="https://www.youtube.com/watch?v=uVboug-wGGs" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="亮度矫正的Gamma"><a href="#亮度矫正的Gamma" class="headerlink" title="亮度矫正的Gamma"></a>亮度矫正的Gamma</h2><ul>
+<li>Gamma：一种非线性的亮度信号的采集、非线性的亮度信号的还原</li>
+<li>人眼：<ul>
+<li>对亮度（灰阶）的感知曲线不是线性的</li>
+<li>人眼感知到的50%的正灰色，一般对应18%的灰卡</li>
+</ul>
+</li>
+<li>仪器：<ul>
+<li>按照原始光强度采集→人眼看到的暗部点数少，人眼不敏感的亮部，采集点又过多</li>
+</ul>
+</li>
+<li>解决方法：<ul>
+<li>（1）等间距采样，提高采样点密度→raw格式图片<ul>
+<li>给图片存储、处理带来大的挑战，不经济</li>
+</ul>
+</li>
+<li>（2）非线性采样，人眼感受到等间距的灰阶→Gamma采样，jpeg图片</li>
+</ul>
+</li>
+<li>而文件存储的是一个亮度序列，相应的，显示器也要非线性的显示该亮度序列，（反向的幂函数曲线）忠实得还原采集到的景象</li>
+<li>Gamma即幂函数的角标，两条相反的幂函数曲线（采样+还原），实现线性的亮度采集和展示</li>
+<li>常见Gamma如：<ul>
+<li>办公环境：0.45/2.2</li>
+<li>电源荧幕：0.38/1.8</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=Cbov0nhMDbY" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
 <hr>
-<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
-<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
-<td>每日新闻图卦</td>
-</tr>
-<tr>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
-<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
-<td>热点资讯聚合</td>
-</tr>
-<tr>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
-<td>资讯、排行榜聚合</td>
-</tr>
-<tr>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
-<td>短视频了解疾病</td>
-</tr>
-<tr>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
-<td>互联网新闻</td>
-</tr>
-<tr>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
-<td>大数据X图表</td>
-</tr>
-</tbody></table>
+<h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><ul>
+<li>离开画面光看直方图都是耍流氓</li>
+<li>Raw格式宽容度比JPG高很多，拍摄时候不用过分在意临时预览时的高光警告</li>
+<li><a href="https://www.youtube.com/watch?v=nUPxQLde8nc&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=5" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="光圈和快门"><a href="#光圈和快门" class="headerlink" title="光圈和快门"></a>光圈和快门</h2><p>光圈和景深：</p>
+<ul>
+<li><code>光圈</code>：光通量；光圈的平方和进光量成反比</li>
+<li>光圈越大，景深越小；产生的原因是人眼的弥散半径</li>
+<li>拍摄距离越短，景深越小</li>
+<li>焦距越长，景深越小</li>
+<li>所以只有使用大光圈镜头，才能在不影响构图的情况下获得浅景深</li>
+</ul>
+<p>快门与曝光时间：</p>
+<ul>
+<li>快门结构：机械快门、电子快门</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=7bftNbx-E0k&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=7" target="_blank" rel="noopener">讲解视频</a></p>
 <hr>
-<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
-<td>学各种小技巧</td>
-</tr>
-<tr>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
-<td></td>
-</tr>
-</tbody></table>
+<h1 id="构图相关"><a href="#构图相关" class="headerlink" title="构图相关"></a>构图相关</h1><h2 id="减法构图"><a href="#减法构图" class="headerlink" title="减法构图"></a>减法构图</h2><ul>
+<li>目的：<ul>
+<li>要有一个鲜明的主体</li>
+<li>要把注意力引向主体</li>
+<li>画面足够干净简洁</li>
+</ul>
+</li>
+<li>拍照时三问吾身：<ul>
+<li>这张照片主体是什么</li>
+<li>如何把注意力集中到主体上</li>
+<li>画面中还能减去什么</li>
+</ul>
+</li>
+<li>突出主体的方法（构图）：<ul>
+<li>布局：三分法、不同的视角（如仰拍）、引入不稳定因素……</li>
+<li>大小：通过画面内元素大小的比较来突出主体</li>
+<li>搭框：二次构图</li>
+<li>光线：如逆光</li>
+<li>汇聚：用线引道</li>
+<li>焦点（景深）</li>
+<li>重复：利用重复突出不重复的内容</li>
+<li>延时（长曝光）</li>
+<li>临态：捕捉临时状态</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=YqhSoriv6-c" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="后期评判标准"><a href="#后期评判标准" class="headerlink" title="后期评判标准"></a>后期评判标准</h2><ul>
+<li>获得足够多的画面<code>细节</code><ul>
+<li><code>细节</code>：落入<code>可见</code>范围内的对比度</li>
+<li><code>亮度</code>：人对光强度的感受；弱光时，人眼对光强度变化的感知更敏感</li>
+<li><code>对比度</code>：画面的亮度差</li>
+<li><code>宽容度</code>：最大的对比度</li>
+<li><code>“层次”</code>：对比度分辨率</li>
+<li><code>“油润”</code>：对比度的致密变化</li>
+</ul>
+</li>
+<li>保持<code>自然</code>的光影结构与颜色</li>
+<li><a href="https://www.youtube.com/watch?v=uZQCa7pVsp0&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=9" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="建立后期思路"><a href="#建立后期思路" class="headerlink" title="建立后期思路"></a>建立后期思路</h2><ul>
+<li>问自己：怎样强化主体？</li>
+<li>修正错误<ul>
+<li>裁剪、拼接</li>
+<li>去除噪声</li>
+<li>调整曝光</li>
+<li>纠正色偏</li>
+<li>锐化</li>
+</ul>
+</li>
+<li>突出主题<ul>
+<li>恢复/隐藏细节</li>
+<li>亮度重新分配</li>
+<li>颜色重新分配</li>
+</ul>
+</li>
+<li>个人风格<ul>
+<li>色调</li>
+<li>影调</li>
+</ul>
+</li>
+<li>尽量还原人眼看到的真实</li>
+<li><a href="https://www.youtube.com/watch?v=yHlasyGerbg&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=10" target="_blank" rel="noopener">讲解视频1</a>、<a href="https://www.youtube.com/watch?v=4CPRwtzkFnU&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=11" target="_blank" rel="noopener">讲解视频2</a></li>
+</ul>
 <hr>
-<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
-<td>Ingress任务浏览</td>
-</tr>
-<tr>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
-<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
-<td>白噪音</td>
-</tr>
-<tr>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
-<td>假装去旅游</td>
-</tr>
-</tbody></table>
+<h1 id="器材相关"><a href="#器材相关" class="headerlink" title="器材相关"></a>器材相关</h1><h2 id="相机选择"><a href="#相机选择" class="headerlink" title="相机选择"></a>相机选择</h2><p>相机种类：</p>
+<ul>
+<li>按<code>光通路</code>来分：<ul>
+<li><code>单反</code>：单一光路、所见即所得、成熟、省电、体积大</li>
+<li><code>无反</code>（微单）：机身厚度小、耗电、现在可能画幅和镜头族规模不如微单，但应该是未来的主流</li>
+<li><code>旁轴</code>：省电、存在视差、体积小、情怀</li>
+</ul>
+</li>
+<li>按<code>传感器面积</code>来分：<ul>
+<li><code>全画幅</code>：36x24 mm，画质更好，镜头焦距不需要折算，成本高</li>
+<li><code>APS-C</code>：23.3x14.9（CANON），成本低，画质低，需要焦距折算</li>
+<li>4/3英寸：17.3x13（Olympus）</li>
+<li>1英寸：13.4x8.8（Sony Rx100）</li>
+<li>1/2.3英寸：6.17x4.55（数码卡片机）</li>
+<li>1/3英寸：6.17x4.55（iphone）</li>
+<li><code>镜头焦距等效换算</code>：x1.6</li>
+</ul>
+</li>
+<li>按<code>市场定位</code>来分：<ul>
+<li><code>平衡机</code>：主流相机</li>
+<li><code>像素机</code>：高像素，ISO微小下降</li>
+<li><code>视频机</code>：Sony A7S M2为代表的，1000w像素</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="镜头MTF曲线"><a href="#镜头MTF曲线" class="headerlink" title="镜头MTF曲线"></a>镜头MTF曲线</h2><p>MTF曲线 = 调制传递函数，Modular Transfer Function。广泛用于描述镜头成像素质。  </p>
+<ul>
+<li>横轴：距画面中心的距离，mm</li>
+<li>纵轴：对比度的百分比，%</li>
+<li>不同颜色曲线：对应不同线对（1mm内出现的黑白相间的条纹）<ul>
+<li>实线：径向值，线对线的方向与就镜像方向相同</li>
+<li>虚线：纵向值，线对线的方向与就镜像方向垂直</li>
+<li>线对提高了，MTF曲线会下移</li>
+</ul>
+</li>
+<li>MTF越高（上限100%），成像效果越好，反之则反</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=fWFN7pIruQk" target="_blank" rel="noopener">讲解视频</a></p>
 ]]></content>
       <categories>
-        <category>「备忘」</category>
+        <category>「快门」</category>
       </categories>
       <tags>
-        <tag>网站</tag>
-        <tag>工具</tag>
+        <tag>Note</tag>
+        <tag>Photography</tag>
       </tags>
   </entry>
   <entry>
@@ -5357,253 +5669,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Photography Basis Notes</title>
-    <url>/2020/03/10/Photography-Basis-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>基础知识：查漏补缺总没错</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="色彩知识"><a href="#色彩知识" class="headerlink" title="色彩知识"></a>色彩知识</h1><h2 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h2><ul>
-<li><code>光</code>的一种特性<ul>
-<li>电磁波中的可见光波段</li>
-<li>不同颜色的本质是频率不同</li>
-</ul>
-</li>
-<li><code>物质</code>的一种特性<ul>
-<li>只反色自己颜色的光线，吸收其他颜色的光线</li>
-<li>前提是入射光包含它自己的颜色</li>
-</ul>
-</li>
-<li><code>人</code>的一种感觉<ul>
-<li>环境：通过色彩环境判断（大脑对入射光的假设可能会有错觉）</li>
-<li>时间：视觉暂留，跟上一时刻看到的颜色有关</li>
-<li>同色对比识别：历史经验有关</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=k1rB1Y4isHs&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="色彩模型"><a href="#色彩模型" class="headerlink" title="色彩模型"></a>色彩模型</h2><ul>
-<li>如何描述颜色？<ul>
-<li>色温法：建立在绝对黑体的概念上。<ul>
-<li>低温：红色、黄色</li>
-<li>高温：蓝色、白色</li>
-<li>但仅能描述蓝色到黄色的变化，绿色到洋红的光线难以描述</li>
-<li>色调：描述绿色到洋红</li>
-<li>色温+色调对颜色的描述还是不足够准确，因此仅用于描述白平衡</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>HSB</code>模型<ul>
-<li><code>H</code>：色相</li>
-<li><code>S</code>：饱和度，颜色的纯度</li>
-<li><code>B</code>：亮度</li>
-<li>优点：与生活中的日常经验比较一致，容易理解</li>
-<li>缺点：无法用于工程制造，难以找到某种材料精准控制这几种属性</li>
-</ul>
-</li>
-<li><code>RGB</code>色彩模型<ul>
-<li>Red、Green、Blue</li>
-<li>用于：发光体制造、相机</li>
-<li>优点：工程制造中只要控制三种颜色的亮度即可</li>
-<li>缺点：仅能用于发光体</li>
-</ul>
-</li>
-<li><code>CMYK</code>色彩模型<ul>
-<li>青色<code>Cyan</code>、洋红<code>Magenta</code>、黄色<code>Yellow</code></li>
-<li>用于：照片冲印、油墨印刷、打印机</li>
-<li><code>RGB</code>、<code>CMYK</code>模型的局限：难以保证不同设备、不同厂商之间的颜色一致性；都是材料相关的</li>
-</ul>
-</li>
-<li><code>Lab</code>色彩模型<ul>
-<li>原意：试图摆脱颜色原材料对模型的影响，是纯数学的概念</li>
-<li>横剖面：a绿色↔红色、b蓝色↔黄色</li>
-<li>纵轴：L亮度</li>
-<li>不能用于制造，仅用于数学描述颜色，可用于不同模型之间转换的中介</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=nBAXgf7NZIw" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="CMYK色彩模型"><a href="#CMYK色彩模型" class="headerlink" title="CMYK色彩模型"></a><code>CMYK</code>色彩模型</h2><ul>
-<li>含义<ul>
-<li><code>C</code>：青色，Cyan；只吸收红色</li>
-<li><code>M</code>：洋红，Magenta；只吸收绿色</li>
-<li><code>Y</code>：黄色，Yellow；只吸收蓝色</li>
-<li><code>K</code>：黑色，Black</li>
-</ul>
-</li>
-<li><code>GRB</code>是针对发光体的</li>
-<li><code>CMYK</code>是针对反光的，反光体会吸收显色的所有颜色。</li>
-<li>量加的越多，亮度越低</li>
-<li><code>CMYK</code>通道下，颜色越深，代表墨水用的越多</li>
-<li>用<code>黑色</code>墨水是从成本角度考虑，黑色很常用，不需要总是用CMY混合来做（对精度要求也高）</li>
-<li><a href="https://www.youtube.com/watch?v=uVboug-wGGs" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="亮度矫正的Gamma"><a href="#亮度矫正的Gamma" class="headerlink" title="亮度矫正的Gamma"></a>亮度矫正的Gamma</h2><ul>
-<li>Gamma：一种非线性的亮度信号的采集、非线性的亮度信号的还原</li>
-<li>人眼：<ul>
-<li>对亮度（灰阶）的感知曲线不是线性的</li>
-<li>人眼感知到的50%的正灰色，一般对应18%的灰卡</li>
-</ul>
-</li>
-<li>仪器：<ul>
-<li>按照原始光强度采集→人眼看到的暗部点数少，人眼不敏感的亮部，采集点又过多</li>
-</ul>
-</li>
-<li>解决方法：<ul>
-<li>（1）等间距采样，提高采样点密度→raw格式图片<ul>
-<li>给图片存储、处理带来大的挑战，不经济</li>
-</ul>
-</li>
-<li>（2）非线性采样，人眼感受到等间距的灰阶→Gamma采样，jpeg图片</li>
-</ul>
-</li>
-<li>而文件存储的是一个亮度序列，相应的，显示器也要非线性的显示该亮度序列，（反向的幂函数曲线）忠实得还原采集到的景象</li>
-<li>Gamma即幂函数的角标，两条相反的幂函数曲线（采样+还原），实现线性的亮度采集和展示</li>
-<li>常见Gamma如：<ul>
-<li>办公环境：0.45/2.2</li>
-<li>电源荧幕：0.38/1.8</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=Cbov0nhMDbY" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<hr>
-<h1 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h1><h2 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h2><ul>
-<li>离开画面光看直方图都是耍流氓</li>
-<li>Raw格式宽容度比JPG高很多，拍摄时候不用过分在意临时预览时的高光警告</li>
-<li><a href="https://www.youtube.com/watch?v=nUPxQLde8nc&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=5" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="光圈和快门"><a href="#光圈和快门" class="headerlink" title="光圈和快门"></a>光圈和快门</h2><p>光圈和景深：</p>
-<ul>
-<li><code>光圈</code>：光通量；光圈的平方和进光量成反比</li>
-<li>光圈越大，景深越小；产生的原因是人眼的弥散半径</li>
-<li>拍摄距离越短，景深越小</li>
-<li>焦距越长，景深越小</li>
-<li>所以只有使用大光圈镜头，才能在不影响构图的情况下获得浅景深</li>
-</ul>
-<p>快门与曝光时间：</p>
-<ul>
-<li>快门结构：机械快门、电子快门</li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=7bftNbx-E0k&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=7" target="_blank" rel="noopener">讲解视频</a></p>
-<hr>
-<h1 id="构图相关"><a href="#构图相关" class="headerlink" title="构图相关"></a>构图相关</h1><h2 id="减法构图"><a href="#减法构图" class="headerlink" title="减法构图"></a>减法构图</h2><ul>
-<li>目的：<ul>
-<li>要有一个鲜明的主体</li>
-<li>要把注意力引向主体</li>
-<li>画面足够干净简洁</li>
-</ul>
-</li>
-<li>拍照时三问吾身：<ul>
-<li>这张照片主体是什么</li>
-<li>如何把注意力集中到主体上</li>
-<li>画面中还能减去什么</li>
-</ul>
-</li>
-<li>突出主体的方法（构图）：<ul>
-<li>布局：三分法、不同的视角（如仰拍）、引入不稳定因素……</li>
-<li>大小：通过画面内元素大小的比较来突出主体</li>
-<li>搭框：二次构图</li>
-<li>光线：如逆光</li>
-<li>汇聚：用线引道</li>
-<li>焦点（景深）</li>
-<li>重复：利用重复突出不重复的内容</li>
-<li>延时（长曝光）</li>
-<li>临态：捕捉临时状态</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=YqhSoriv6-c" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="后期评判标准"><a href="#后期评判标准" class="headerlink" title="后期评判标准"></a>后期评判标准</h2><ul>
-<li>获得足够多的画面<code>细节</code><ul>
-<li><code>细节</code>：落入<code>可见</code>范围内的对比度</li>
-<li><code>亮度</code>：人对光强度的感受；弱光时，人眼对光强度变化的感知更敏感</li>
-<li><code>对比度</code>：画面的亮度差</li>
-<li><code>宽容度</code>：最大的对比度</li>
-<li><code>“层次”</code>：对比度分辨率</li>
-<li><code>“油润”</code>：对比度的致密变化</li>
-</ul>
-</li>
-<li>保持<code>自然</code>的光影结构与颜色</li>
-<li><a href="https://www.youtube.com/watch?v=uZQCa7pVsp0&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=9" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="建立后期思路"><a href="#建立后期思路" class="headerlink" title="建立后期思路"></a>建立后期思路</h2><ul>
-<li>问自己：怎样强化主体？</li>
-<li>修正错误<ul>
-<li>裁剪、拼接</li>
-<li>去除噪声</li>
-<li>调整曝光</li>
-<li>纠正色偏</li>
-<li>锐化</li>
-</ul>
-</li>
-<li>突出主题<ul>
-<li>恢复/隐藏细节</li>
-<li>亮度重新分配</li>
-<li>颜色重新分配</li>
-</ul>
-</li>
-<li>个人风格<ul>
-<li>色调</li>
-<li>影调</li>
-</ul>
-</li>
-<li>尽量还原人眼看到的真实</li>
-<li><a href="https://www.youtube.com/watch?v=yHlasyGerbg&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=10" target="_blank" rel="noopener">讲解视频1</a>、<a href="https://www.youtube.com/watch?v=4CPRwtzkFnU&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=11" target="_blank" rel="noopener">讲解视频2</a></li>
-</ul>
-<hr>
-<h1 id="器材相关"><a href="#器材相关" class="headerlink" title="器材相关"></a>器材相关</h1><h2 id="相机选择"><a href="#相机选择" class="headerlink" title="相机选择"></a>相机选择</h2><p>相机种类：</p>
-<ul>
-<li>按<code>光通路</code>来分：<ul>
-<li><code>单反</code>：单一光路、所见即所得、成熟、省电、体积大</li>
-<li><code>无反</code>（微单）：机身厚度小、耗电、现在可能画幅和镜头族规模不如微单，但应该是未来的主流</li>
-<li><code>旁轴</code>：省电、存在视差、体积小、情怀</li>
-</ul>
-</li>
-<li>按<code>传感器面积</code>来分：<ul>
-<li><code>全画幅</code>：36x24 mm，画质更好，镜头焦距不需要折算，成本高</li>
-<li><code>APS-C</code>：23.3x14.9（CANON），成本低，画质低，需要焦距折算</li>
-<li>4/3英寸：17.3x13（Olympus）</li>
-<li>1英寸：13.4x8.8（Sony Rx100）</li>
-<li>1/2.3英寸：6.17x4.55（数码卡片机）</li>
-<li>1/3英寸：6.17x4.55（iphone）</li>
-<li><code>镜头焦距等效换算</code>：x1.6</li>
-</ul>
-</li>
-<li>按<code>市场定位</code>来分：<ul>
-<li><code>平衡机</code>：主流相机</li>
-<li><code>像素机</code>：高像素，ISO微小下降</li>
-<li><code>视频机</code>：Sony A7S M2为代表的，1000w像素</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=RqIRZ28zOfw&list=PLhnwj_CftHvhwO8P0mytRNZzlgbtOvgf4&index=6" target="_blank" rel="noopener">讲解视频</a></li>
-</ul>
-<h2 id="镜头MTF曲线"><a href="#镜头MTF曲线" class="headerlink" title="镜头MTF曲线"></a>镜头MTF曲线</h2><p>MTF曲线 = 调制传递函数，Modular Transfer Function。广泛用于描述镜头成像素质。  </p>
-<ul>
-<li>横轴：距画面中心的距离，mm</li>
-<li>纵轴：对比度的百分比，%</li>
-<li>不同颜色曲线：对应不同线对（1mm内出现的黑白相间的条纹）<ul>
-<li>实线：径向值，线对线的方向与就镜像方向相同</li>
-<li>虚线：纵向值，线对线的方向与就镜像方向垂直</li>
-<li>线对提高了，MTF曲线会下移</li>
-</ul>
-</li>
-<li>MTF越高（上限100%），成像效果越好，反之则反</li>
-</ul>
-<p><a href="https://www.youtube.com/watch?v=fWFN7pIruQk" target="_blank" rel="noopener">讲解视频</a></p>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photography</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Adobe Camera Raw Notes</title>
     <url>/2020/03/10/Ps-ACR-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -5727,6 +5792,25 @@
 <li>无损调节：配置存放于<code>.xmp</code>文件中</li>
 <li><a href="https://www.youtube.com/watch?v=H5SBJcz2bVM&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=2" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photoshop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Photoshop Skill Notes</title>
+    <url>/2020/03/10/Ps-Skill-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Ps拼接合成</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -6238,25 +6322,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Photoshop Skill Notes</title>
-    <url>/2020/03/10/Ps-Skill-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Ps拼接合成</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Photoshop Skin Notes</title>
     <url>/2020/03/10/Ps-Skin-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -6273,6 +6338,69 @@
       <tags>
         <tag>Note</tag>
         <tag>Photoshop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SEO 学习笔记</title>
+    <url>/2019/04/01/SEO-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>搜索引擎优化</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li><p>书名：《SEO实战密码》（第3版）</p>
+</li>
+<li><p>作者：昝辉 Zac</p>
+</li>
+<li><p>出版社：电子工业出版社</p>
+</li>
+</ul>
+<hr>
+<h1 id="1-SEO：Search-Engine-Optimization"><a href="#1-SEO：Search-Engine-Optimization" class="headerlink" title="1.SEO：Search Engine Optimization"></a>1.SEO：Search Engine Optimization</h1><ul>
+<li>从自然搜索结果获得网站流量的技术和过程</li>
+</ul>
+<h1 id="2-优化："><a href="#2-优化：" class="headerlink" title="2.优化："></a>2.优化：</h1><ul>
+<li>站内优化：网站结构，页面HTML代码等</li>
+<li>站外优化：外部链接，参与互动等</li>
+</ul>
+<h1 id="3-搜索引擎工作原理"><a href="#3-搜索引擎工作原理" class="headerlink" title="3.搜索引擎工作原理"></a>3.搜索引擎工作原理</h1><p>爬行（→地址库）→抓取→预处理（索引）：提取文字；中文分词；去停止词；消除噪声；去重；正向/倒排索引；链接关系计算；特殊文件处理；质量判断→排名：搜索词处理；文件匹配；初始子集选择；相关性计算；过滤&amp;调整；排名显示；搜索缓存；查询&amp;点击日志</p>
+<ul>
+<li>高级搜索指令：“ ”；-；*；inurl:；inanchor:；intitle:；allintitle:；allinurl:；filetype:；site:；link:；related:</li>
+</ul>
+<h1 id="4-关键词选择核心原则："><a href="#4-关键词选择核心原则：" class="headerlink" title="4.关键词选择核心原则："></a>4.关键词选择核心原则：</h1><ul>
+<li>搜索次数多</li>
+<li>竞争程度小</li>
+</ul>
+<h1 id="5-核心关键词→拓展关键词"><a href="#5-核心关键词→拓展关键词" class="headerlink" title="5.核心关键词→拓展关键词"></a>5.核心关键词→拓展关键词</h1><h1 id="6-长尾关键词：较长，较具体，次数低"><a href="#6-长尾关键词：较长，较具体，次数低" class="headerlink" title="6.长尾关键词：较长，较具体，次数低"></a>6.长尾关键词：较长，较具体，次数低</h1><h1 id="7-竞争对手研究"><a href="#7-竞争对手研究" class="headerlink" title="7.竞争对手研究"></a>7.竞争对手研究</h1><ul>
+<li>域名权重相关数据</li>
+<li>网站优化情况</li>
+<li>网站流量</li>
+</ul>
+<h1 id="8-网站结构优化"><a href="#8-网站结构优化" class="headerlink" title="8.网站结构优化"></a>8.网站结构优化</h1><ul>
+<li>避免蜘蛛陷阱（Flash，Session ID，跳转，框架Frame，动态url，js链接等）</li>
+</ul>
+<h1 id="9-SEO过程："><a href="#9-SEO过程：" class="headerlink" title="9.SEO过程："></a>9.SEO过程：</h1><p>竞争对手究→SEO计划（诊断）→网站优化→外链建设→效果检测及流量分析→策略修改</p>
+<h1 id="10-Google："><a href="#10-Google：" class="headerlink" title="10.Google："></a>10.Google：</h1><ul>
+<li>熊猫算法：针对低质量内容</li>
+<li>企鹅算法：针对垃圾和作弊网站</li>
+</ul>
+<h1 id="11-百度："><a href="#11-百度：" class="headerlink" title="11.百度："></a>11.百度：</h1><ul>
+<li>绿萝算法：买卖链接、软文形式的垃圾链接</li>
+<li>石榴算法：低质量页面、妨碍用户体验的</li>
+</ul>
+<h1 id="11-搜索引擎历史趋势：相关性→权威性→实用性"><a href="#11-搜索引擎历史趋势：相关性→权威性→实用性" class="headerlink" title="11.搜索引擎历史趋势：相关性→权威性→实用性"></a>11.搜索引擎历史趋势：相关性→权威性→实用性</h1><ul>
+<li>内容为王</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「笔记」- 读书</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>SEO</tag>
       </tags>
   </entry>
   <entry>
@@ -6711,69 +6839,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SEO 学习笔记</title>
-    <url>/2019/04/01/SEO-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>搜索引擎优化</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<ul>
-<li><p>书名：《SEO实战密码》（第3版）</p>
-</li>
-<li><p>作者：昝辉 Zac</p>
-</li>
-<li><p>出版社：电子工业出版社</p>
-</li>
-</ul>
-<hr>
-<h1 id="1-SEO：Search-Engine-Optimization"><a href="#1-SEO：Search-Engine-Optimization" class="headerlink" title="1.SEO：Search Engine Optimization"></a>1.SEO：Search Engine Optimization</h1><ul>
-<li>从自然搜索结果获得网站流量的技术和过程</li>
-</ul>
-<h1 id="2-优化："><a href="#2-优化：" class="headerlink" title="2.优化："></a>2.优化：</h1><ul>
-<li>站内优化：网站结构，页面HTML代码等</li>
-<li>站外优化：外部链接，参与互动等</li>
-</ul>
-<h1 id="3-搜索引擎工作原理"><a href="#3-搜索引擎工作原理" class="headerlink" title="3.搜索引擎工作原理"></a>3.搜索引擎工作原理</h1><p>爬行（→地址库）→抓取→预处理（索引）：提取文字；中文分词；去停止词；消除噪声；去重；正向/倒排索引；链接关系计算；特殊文件处理；质量判断→排名：搜索词处理；文件匹配；初始子集选择；相关性计算；过滤&amp;调整；排名显示；搜索缓存；查询&amp;点击日志</p>
-<ul>
-<li>高级搜索指令：“ ”；-；*；inurl:；inanchor:；intitle:；allintitle:；allinurl:；filetype:；site:；link:；related:</li>
-</ul>
-<h1 id="4-关键词选择核心原则："><a href="#4-关键词选择核心原则：" class="headerlink" title="4.关键词选择核心原则："></a>4.关键词选择核心原则：</h1><ul>
-<li>搜索次数多</li>
-<li>竞争程度小</li>
-</ul>
-<h1 id="5-核心关键词→拓展关键词"><a href="#5-核心关键词→拓展关键词" class="headerlink" title="5.核心关键词→拓展关键词"></a>5.核心关键词→拓展关键词</h1><h1 id="6-长尾关键词：较长，较具体，次数低"><a href="#6-长尾关键词：较长，较具体，次数低" class="headerlink" title="6.长尾关键词：较长，较具体，次数低"></a>6.长尾关键词：较长，较具体，次数低</h1><h1 id="7-竞争对手研究"><a href="#7-竞争对手研究" class="headerlink" title="7.竞争对手研究"></a>7.竞争对手研究</h1><ul>
-<li>域名权重相关数据</li>
-<li>网站优化情况</li>
-<li>网站流量</li>
-</ul>
-<h1 id="8-网站结构优化"><a href="#8-网站结构优化" class="headerlink" title="8.网站结构优化"></a>8.网站结构优化</h1><ul>
-<li>避免蜘蛛陷阱（Flash，Session ID，跳转，框架Frame，动态url，js链接等）</li>
-</ul>
-<h1 id="9-SEO过程："><a href="#9-SEO过程：" class="headerlink" title="9.SEO过程："></a>9.SEO过程：</h1><p>竞争对手究→SEO计划（诊断）→网站优化→外链建设→效果检测及流量分析→策略修改</p>
-<h1 id="10-Google："><a href="#10-Google：" class="headerlink" title="10.Google："></a>10.Google：</h1><ul>
-<li>熊猫算法：针对低质量内容</li>
-<li>企鹅算法：针对垃圾和作弊网站</li>
-</ul>
-<h1 id="11-百度："><a href="#11-百度：" class="headerlink" title="11.百度："></a>11.百度：</h1><ul>
-<li>绿萝算法：买卖链接、软文形式的垃圾链接</li>
-<li>石榴算法：低质量页面、妨碍用户体验的</li>
-</ul>
-<h1 id="11-搜索引擎历史趋势：相关性→权威性→实用性"><a href="#11-搜索引擎历史趋势：相关性→权威性→实用性" class="headerlink" title="11.搜索引擎历史趋势：相关性→权威性→实用性"></a>11.搜索引擎历史趋势：相关性→权威性→实用性</h1><ul>
-<li>内容为王</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「笔记」- 读书</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>SEO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SPSS 学习笔记</title>
     <url>/2019/04/01/SPSS-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -6986,6 +7051,54 @@
       <tags>
         <tag>Note</tag>
         <tag>SPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拍照地小记</title>
+    <url>/2020/12/22/Scenery/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>逛吃逛吃逛吃</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="杭州"><a href="#杭州" class="headerlink" title="杭州"></a>杭州</h1><h2 id="自然风景"><a href="#自然风景" class="headerlink" title="自然风景"></a>自然风景</h2><h3 id="茶叶博物馆"><a href="#茶叶博物馆" class="headerlink" title="茶叶博物馆"></a>茶叶博物馆</h3><ul>
+<li>位置：西湖区龙井路</li>
+<li>造访时间：2020年12月</li>
+<li>小记：大片的茶叶植株，有起伏的小山坡</li>
+<li>适合：古风、日系清新</li>
+</ul>
+<h2 id="人文"><a href="#人文" class="headerlink" title="人文"></a>人文</h2><h3 id="馒头山社区"><a href="#馒头山社区" class="headerlink" title="馒头山社区"></a>馒头山社区</h3><ul>
+<li>位置：上城区梵天寺路</li>
+<li>造访时间：2019年6月</li>
+<li>同行：潘刀</li>
+<li>适合：80年代复古风、夏日清新</li>
+</ul>
+<h3 id="小河直街"><a href="#小河直街" class="headerlink" title="小河直街"></a>小河直街</h3><ul>
+<li>位置：拱墅区小河直街历史文化街区</li>
+<li>造访时间：2019年7月、2020年12月</li>
+<li>小记：小河、小巷、小铺、铜像</li>
+<li>适合：古装、日常</li>
+</ul>
+<h3 id="白塔公园"><a href="#白塔公园" class="headerlink" title="白塔公园"></a>白塔公园</h3><ul>
+<li>位置：上城区老复兴街</li>
+<li>造访时间：2020年12月</li>
+<li>小记：两三条火车轨道，火车餐车，老火车站台牌，银杏，会动的观光火车</li>
+<li>适合：80年代风、日系清新、电商风</li>
+</ul>
+<h3 id="江墅铁路遗址公园"><a href="#江墅铁路遗址公园" class="headerlink" title="江墅铁路遗址公园"></a>江墅铁路遗址公园</h3><ul>
+<li>位置：拱墅区登云路</li>
+<li>造访时间：2019年7月</li>
+<li>小记：很小很小的公园，很短很短的铁轨，就一个火车头在那，背景高楼容易入境</li>
+<li>适合：电商风</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
