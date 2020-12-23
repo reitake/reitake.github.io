@@ -2508,6 +2508,210 @@
       </tags>
   </entry>
   <entry>
+    <title>Golang in Action Notes</title>
+    <url>/2019/03/19/Go-Action-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Go 语言应用 tips</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="ok-模式"><a href="#ok-模式" class="headerlink" title=",ok 模式"></a><code>,ok</code> 模式</h2><p>（1）在函数返回时检测错误  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">value, err := pack1.Func1(param1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(“Error %s in pack1.Func1 with parameter %v”, err.Error(), param1)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数Func1没有错误:</span></span><br><span class="line">Process(value)</span><br><span class="line"></span><br><span class="line">e.g.: os.Open(file) strconv.Atoi(str)</span><br></pre></td></tr></table></figure>
+
+<p>这种模式也常用于通过<code>defer</code>使程序从<code>panic</code>中恢复执行。  </p>
+<p>要实现简洁的错误检测代码，更好的方式是使用闭包，参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/16.10.md" target="_blank" rel="noopener">第16.10.2小节</a></p>
+<p>（2）检测映射中是否存在一个键值：key1在映射map1中是否有值？<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/08.2.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := map1[key1]; ok &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// key1不存在</span></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
+
+<p>（3）检测一个接口类型变量<code>varI</code>是否包含了类型<code>T</code>：类型断言 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := varI.(T); ok &#123;</span><br><span class="line">    Process(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口类型varI没有包含类型T</span></span><br></pre></td></tr></table></figure>
+
+<p>(4)检测一个通道 <code>ch</code> 是否关闭 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/14.3.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> input := <span class="keyword">range</span> ch &#123;</span><br><span class="line">     Process(input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">input</span>, <span class="keyword">open</span> := &lt;-ch; !<span class="keyword">open</span> &#123;</span><br><span class="line">        <span class="keyword">break</span> <span class="comment">// 通道是关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">     Process(<span class="keyword">input</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="出于性能考虑的使用代码片段"><a href="#出于性能考虑的使用代码片段" class="headerlink" title="出于性能考虑的使用代码片段"></a>出于性能考虑的使用代码片段</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>（1）如何修改字符串中的一个字符：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str:=<span class="string">"hello"</span></span><br><span class="line">c:=[]<span class="keyword">byte</span>(str)</span><br><span class="line">c[<span class="number">0</span>]=<span class="string">'c'</span></span><br><span class="line">s2:= <span class="keyword">string</span>(c) <span class="comment">// s2 == "cello"</span></span><br></pre></td></tr></table></figure>
+
+<p>（2）如何获取字符串的子串：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">substr := str[n:m]</span><br></pre></td></tr></table></figure>
+
+<p>（3）如何使用<code>for</code>或者<code>for-range</code>遍历一个字符串：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gives only the bytes:</span></span><br><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">… = str[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// gives the Unicode characters:</span></span><br><span class="line"><span class="keyword">for</span> ix, ch := <span class="keyword">range</span> str &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）如何获取一个字符串的字节数：<code>len(str)</code>  </p>
+<p> 如何获取一个字符串的字符数：  </p>
+<p> 最快速：<code>utf8.RuneCountInString(str)</code>   </p>
+<p> <code>len([]rune(str))</code>   </p>
+<p>（5）如何连接字符串：  </p>
+<p> 最快速：<br><code>with a bytes.Buffer</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md" target="_blank" rel="noopener">章节7.2</a>）</p>
+<p><code>Strings.Join()</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md" target="_blank" rel="noopener">章节4.7</a>）</p>
+<p>使用<code>+=</code>：  </p>
+ <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str1 := <span class="string">"Hello "</span> </span><br><span class="line">str2 := <span class="string">"World!"</span></span><br><span class="line">str1 += str2 <span class="comment">//str1 == "Hello World!"</span></span><br></pre></td></tr></table></figure>
+
+<p>（6）如何解析命令行参数：使用<code>os</code>或者<code>flag</code>包</p>
+<p>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_12/fileinput.go" target="_blank" rel="noopener">例12.4</a>）  </p>
+<h3 id="数组-切片"><a href="#数组-切片" class="headerlink" title="数组 切片"></a>数组 切片</h3><p>创建：  </p>
+<p><code>arr1 := new([len]type)</code>  </p>
+<p><code>slice1 := make([]type, len)</code>  </p>
+<p>初始化：  </p>
+<p><code>arr1 := [...]type{i1, i2, i3, i4, i5}</code>  </p>
+<p><code>arrKeyValue := [len]type{i1: val1, i2: val2}</code>  </p>
+<p><code>var slice1 []type = arr1[start:end]</code>  </p>
+<p>（1）如何截断数组或者切片的最后一个元素：  </p>
+<p><code>line = line[:len(line)-1]</code>  </p>
+<p>（2）如何使用<code>for</code>或者<code>for-range</code>遍历一个数组（或者切片）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(arr); i++ &#123;</span><br><span class="line">… = arr[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> ix, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（3）如何在一个二维数组或者切片<code>arr2Dim</code>中查找一个指定值<code>V</code>：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">found := <span class="literal">false</span></span><br><span class="line">Found: <span class="keyword">for</span> row := <span class="keyword">range</span> arr2Dim &#123;</span><br><span class="line">    <span class="keyword">for</span> column := <span class="keyword">range</span> arr2Dim[row] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr2Dim[row][column] == V&#123;</span><br><span class="line">            found = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">break</span> Found</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>创建：    <code>map1 := make(map[keytype]valuetype)</code>  </p>
+<p>初始化：   <code>map1 := map[string]int{&quot;one&quot;: 1, &quot;two&quot;: 2}</code>  </p>
+<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个映射：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> map1 &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何在一个映射中检测键<code>key1</code>是否存在：<code>val1, isPresent = map1[key1]</code>  </p>
+<p>返回值：键<code>key1</code>对应的值或者<code>0</code>, <code>true</code>或者<code>false</code>  </p>
+<p>（3）如何在映射中删除一个键：<code>delete(map1, key1)</code>  </p>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>创建：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> struct1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    field1 type1</span><br><span class="line">    field2 type2</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">ms := <span class="built_in">new</span>(struct1)</span><br></pre></td></tr></table></figure>
+
+<p>初始化：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := &amp;struct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当结构体的命名以大写字母开头时，该结构体在包外可见。<br>通常情况下，为每个结构体定义一个构建函数，并推荐使用构建函数初始化结构体（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_10/person.go" target="_blank" rel="noopener">例10.2</a>）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := Newstruct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Newstruct1</span><span class="params">(n <span class="keyword">int</span>, f <span class="keyword">float32</span>, name <span class="keyword">string</span>)</span> *<span class="title">struct1</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;struct1&#123;n, f, name&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>（1）如何检测一个值<code>v</code>是否实现了接口<code>Stringer</code>：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> v, ok := v.(Stringer); ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"implements String(): %s\n"</span>, v.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何使用接口实现一个类型分类函数：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">classifier</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i, x := <span class="keyword">range</span> items &#123;</span><br><span class="line">        <span class="keyword">switch</span> x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a bool\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a float64\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is an int\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">nil</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is nil\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a string\n"</span>, i)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d’s type is unknown\n"</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>如何使用内建函数<code>recover</code>终止<code>panic</code>过程（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md" target="_blank" rel="noopener">章节13.3</a>）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">protect</span><span class="params">(g <span class="keyword">func</span>()</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        log.Println(<span class="string">"done"</span>)</span><br><span class="line">        <span class="comment">// Println executes normally even if there is a panic</span></span><br><span class="line">        <span class="keyword">if</span> x := <span class="built_in">recover</span>(); x != <span class="literal">nil</span> &#123;</span><br><span class="line">            log.Printf(<span class="string">"run time panic: %v"</span>, x)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    log.Println(<span class="string">"start"</span>)</span><br><span class="line">    g()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>（1）如何打开一个文件并读取：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">file, err := os.Open(<span class="string">"input.dat"</span>)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"An error occurred on opening the inputfile\n"</span> +</span><br><span class="line">      <span class="string">"Does the file exist?\n"</span> +</span><br><span class="line">      <span class="string">"Have you got acces to it?\n"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> file.Close()</span><br><span class="line">  iReader := bufio.NewReader(file)</span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    str, err := iReader.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="comment">// error or EOF</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"The input was: %s"</span>, str)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何通过切片读写文件：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">cat</span><span class="params">(f *file.File)</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> NBUF = <span class="number">512</span></span><br><span class="line">  <span class="keyword">var</span> buf [NBUF]<span class="keyword">byte</span></span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> nr, er := f.Read(buf[:]); <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> nr &lt; <span class="number">0</span>:</span><br><span class="line">      fmt.Fprintf(os.Stderr, <span class="string">"cat: error reading from %s: %s\n"</span>,</span><br><span class="line">        f.String(), er.String())</span><br><span class="line">      os.Exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">case</span> nr == <span class="number">0</span>: <span class="comment">// EOF</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> nr &gt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">if</span> nw, ew := file.Stdout.Write(buf[<span class="number">0</span>:nr]); nw != nr &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"cat: error writing from %s: %s\n"</span>,</span><br><span class="line">          f.String(), ew.String())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="协程（goroutine）与通道（channel）"><a href="#协程（goroutine）与通道（channel）" class="headerlink" title="协程（goroutine）与通道（channel）"></a>协程（goroutine）与通道（channel）</h3><p>出于性能考虑的建议：</p>
+<p>实践经验表明，如果你使用并行运算获得高于串行运算的效率：在协程内部已经完成的大部分工作，其开销比创建协程和协程间通信还高。</p>
+<p>1 出于性能考虑建议使用带缓存的通道：</p>
+<p>使用带缓存的通道可以很轻易成倍提高它的吞吐量，某些场景其性能可以提高至10倍甚至更多。通过调整通道的容量，甚至可以尝试着更进一步的优化其性能。</p>
+<p>2 限制一个通道的数据数量并将它们封装成一个数组：</p>
+<p>如果使用通道传递大量单独的数据，那么通道将变成性能瓶颈。然而，将数据块打包封装成数组，在接收端解压数据时，性能可以提高至10倍。</p>
+<p>创建：<code>ch := make(chan type,buf)</code></p>
+<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个通道：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> v := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    <span class="comment">// do something with v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何检测一个通道<code>ch</code>是否关闭：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//read channel until it closes or error-condition</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input, open := &lt;-ch; !open &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"%s"</span>, input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者使用（1）自动检测。  </p>
+<p>（3）如何通过一个通道让主程序等待直到协程完成：  </p>
+<p>（信号量模式）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) <span class="comment">// Allocate a channel.</span></span><br><span class="line"><span class="comment">// Start something in a goroutine; when it completes, signal on the channel.</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// doSomething</span></span><br><span class="line">    ch &lt;- <span class="number">1</span> <span class="comment">// Send a signal; value does not matter.</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingElseForAWhile()</span><br><span class="line">&lt;-ch <span class="comment">// Wait for goroutine to finish; discard sent value.</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望程序一直阻塞，在匿名函数中省略 <code>ch &lt;- 1</code>即可。  </p>
+<p>（4）通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pump</span><span class="params">()</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; ; i++ &#123;</span><br><span class="line">            ch &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> ch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（5）通道迭代器模板：  </p>
+<p>（6）如何限制并发处理请求的数量：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.11.md" target="_blank" rel="noopener">章节14.11</a> </p>
+<p>（7）如何在多核CPU上实现并行计算：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.13.md" target="_blank" rel="noopener">章节14.13</a>  </p>
+<p>（8）如何终止一个协程：<code>runtime.Goexit()</code>  </p>
+<p>（9）简单的超时模板：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">timeout := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    time.Sleep(<span class="number">1e9</span>) <span class="comment">// one second  </span></span><br><span class="line">    timeout &lt;- <span class="literal">true</span></span><br><span class="line">&#125;()</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;-ch:</span><br><span class="line">    <span class="comment">// a read from ch has occurred</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-timeout:</span><br><span class="line">    <span class="comment">// the read from ch has timed out</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（10）如何使用输入通道和输出通道代替锁：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Worker</span><span class="params">(in, out <span class="keyword">chan</span> *Task)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        t := &lt;-in</span><br><span class="line">        process(t)</span><br><span class="line">        out &lt;- t</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（11）如何在同步调用运行时间过长时将之丢弃：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a> 第二个变体  </p>
+<p>（12）如何在通道中使用计时器和定时器：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a>  </p>
+<p>（13）典型的服务器后端模型：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.4.md" target="_blank" rel="noopener">章节14.4</a>  </p>
+<h3 id="网络和网页应用"><a href="#网络和网页应用" class="headerlink" title="网络和网页应用"></a>网络和网页应用</h3><p><strong>模板：</strong>  </p>
+<p>制作、解析并使模板生效：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strTempl = template.Must(template.New(<span class="string">"TName"</span>).Parse(strTemplateHTML))</span><br></pre></td></tr></table></figure>
+
+<p>在网页应用中使用HTML过滤器过滤HTML特殊字符：  </p>
+<p><code>{ {html .} }</code> 或者通过一个字段 <code>FieldName { { .FieldName |html } }</code>  </p>
+<p>使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）  </p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何在程序出错时终止程序：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">   fmt.Printf(<span class="string">"Program stopping with error %v"</span>, err)</span><br><span class="line">   os.Exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; </span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">"ERROR occurred: "</span> + err.Error())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="出于性能考虑的最佳实践和建议"><a href="#出于性能考虑的最佳实践和建议" class="headerlink" title="出于性能考虑的最佳实践和建议"></a>出于性能考虑的最佳实践和建议</h3><p>（1）尽可能的使用<code>:=</code>去初始化声明一个变量（在函数内部）；  </p>
+<p>（2）尽可能的使用字符代替字符串；  </p>
+<p>（3）尽可能的使用切片代替数组；  </p>
+<p>（4）尽可能的使用数组和切片代替映射（详见参考文献15）；  </p>
+<p>（5）如果只想获取切片中某项值，不需要值的索引，尽可能的使用<code>for range</code>去遍历切片，这比必须查询切片中的每个元素要快一些；  </p>
+<p>（6）当数组元素是稀疏的（例如有很多<code>0</code>值或者空值<code>nil</code>），使用映射会降低内存消耗；  </p>
+<p>（7）初始化映射时指定其容量；  </p>
+<p>（8）当定义一个方法时，使用指针类型作为方法的接收者；  </p>
+<p>（9）在代码中使用常量或者标志提取常量的值； </p>
+<p>（10）尽可能在需要分配大量内存时使用缓存；  </p>
+<p>（11）使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）。  </p>
+<h2 id="方法的接收者对照表"><a href="#方法的接收者对照表" class="headerlink" title="方法的接收者对照表"></a>方法的接收者对照表</h2><p>方法集：定义了一组关联到给定类型的值或者指针的方法。  </p>
+<h3 id="从传递的值的角度看方法集"><a href="#从传递的值的角度看方法集" class="headerlink" title="从传递的值的角度看方法集"></a>从传递的值的角度看方法集</h3><table>
+<thead>
+<tr>
+<th align="center">传递的值</th>
+<th align="center">方法声明的接收者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="center">(t T)</td>
+</tr>
+<tr>
+<td align="center">*T</td>
+<td align="center">(t T) 和 (t *T)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>T 类型的值的方法集只包含了值接收者声明的方法</li>
+<li>而指向 T 类型的指针的方法集既包含值接收者声明的方法，也包含指针接收者声明的方法</li>
+</ul>
+<h3 id="从接收者类型的角度来看方法集"><a href="#从接收者类型的角度来看方法集" class="headerlink" title="从接收者类型的角度来看方法集"></a>从接收者类型的角度来看方法集</h3><table>
+<thead>
+<tr>
+<th align="center">方法声明的接收者</th>
+<th align="center">传递的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(t T)</td>
+<td align="center">T 和 *T</td>
+</tr>
+<tr>
+<td align="center">(t *T)</td>
+<td align="center">*T</td>
+</tr>
+</tbody></table>
+<ul>
+<li>如果使用指针接收者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口</li>
+<li>如果使用值接收者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口</li>
+</ul>
+<hr>
+<p><em><code>to be continued...</code></em>  </p>
+]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Go 中常见错误</title>
     <url>/2019/03/11/Go-Common-Mistakes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -2836,210 +3040,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Golang in Action Notes</title>
-    <url>/2019/03/19/Go-Action-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Go 语言应用 tips</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="ok-模式"><a href="#ok-模式" class="headerlink" title=",ok 模式"></a><code>,ok</code> 模式</h2><p>（1）在函数返回时检测错误  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">value, err := pack1.Func1(param1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(“Error %s in pack1.Func1 with parameter %v”, err.Error(), param1)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数Func1没有错误:</span></span><br><span class="line">Process(value)</span><br><span class="line"></span><br><span class="line">e.g.: os.Open(file) strconv.Atoi(str)</span><br></pre></td></tr></table></figure>
-
-<p>这种模式也常用于通过<code>defer</code>使程序从<code>panic</code>中恢复执行。  </p>
-<p>要实现简洁的错误检测代码，更好的方式是使用闭包，参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/16.10.md" target="_blank" rel="noopener">第16.10.2小节</a></p>
-<p>（2）检测映射中是否存在一个键值：key1在映射map1中是否有值？<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/08.2.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := map1[key1]; ok &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// key1不存在</span></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
-
-<p>（3）检测一个接口类型变量<code>varI</code>是否包含了类型<code>T</code>：类型断言 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := varI.(T); ok &#123;</span><br><span class="line">    Process(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口类型varI没有包含类型T</span></span><br></pre></td></tr></table></figure>
-
-<p>(4)检测一个通道 <code>ch</code> 是否关闭 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/14.3.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> input := <span class="keyword">range</span> ch &#123;</span><br><span class="line">     Process(input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或者：</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">input</span>, <span class="keyword">open</span> := &lt;-ch; !<span class="keyword">open</span> &#123;</span><br><span class="line">        <span class="keyword">break</span> <span class="comment">// 通道是关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">     Process(<span class="keyword">input</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="出于性能考虑的使用代码片段"><a href="#出于性能考虑的使用代码片段" class="headerlink" title="出于性能考虑的使用代码片段"></a>出于性能考虑的使用代码片段</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>（1）如何修改字符串中的一个字符：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str:=<span class="string">"hello"</span></span><br><span class="line">c:=[]<span class="keyword">byte</span>(str)</span><br><span class="line">c[<span class="number">0</span>]=<span class="string">'c'</span></span><br><span class="line">s2:= <span class="keyword">string</span>(c) <span class="comment">// s2 == "cello"</span></span><br></pre></td></tr></table></figure>
-
-<p>（2）如何获取字符串的子串：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">substr := str[n:m]</span><br></pre></td></tr></table></figure>
-
-<p>（3）如何使用<code>for</code>或者<code>for-range</code>遍历一个字符串：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gives only the bytes:</span></span><br><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">… = str[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// gives the Unicode characters:</span></span><br><span class="line"><span class="keyword">for</span> ix, ch := <span class="keyword">range</span> str &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（4）如何获取一个字符串的字节数：<code>len(str)</code>  </p>
-<p> 如何获取一个字符串的字符数：  </p>
-<p> 最快速：<code>utf8.RuneCountInString(str)</code>   </p>
-<p> <code>len([]rune(str))</code>   </p>
-<p>（5）如何连接字符串：  </p>
-<p> 最快速：<br><code>with a bytes.Buffer</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md" target="_blank" rel="noopener">章节7.2</a>）</p>
-<p><code>Strings.Join()</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md" target="_blank" rel="noopener">章节4.7</a>）</p>
-<p>使用<code>+=</code>：  </p>
- <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str1 := <span class="string">"Hello "</span> </span><br><span class="line">str2 := <span class="string">"World!"</span></span><br><span class="line">str1 += str2 <span class="comment">//str1 == "Hello World!"</span></span><br></pre></td></tr></table></figure>
-
-<p>（6）如何解析命令行参数：使用<code>os</code>或者<code>flag</code>包</p>
-<p>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_12/fileinput.go" target="_blank" rel="noopener">例12.4</a>）  </p>
-<h3 id="数组-切片"><a href="#数组-切片" class="headerlink" title="数组 切片"></a>数组 切片</h3><p>创建：  </p>
-<p><code>arr1 := new([len]type)</code>  </p>
-<p><code>slice1 := make([]type, len)</code>  </p>
-<p>初始化：  </p>
-<p><code>arr1 := [...]type{i1, i2, i3, i4, i5}</code>  </p>
-<p><code>arrKeyValue := [len]type{i1: val1, i2: val2}</code>  </p>
-<p><code>var slice1 []type = arr1[start:end]</code>  </p>
-<p>（1）如何截断数组或者切片的最后一个元素：  </p>
-<p><code>line = line[:len(line)-1]</code>  </p>
-<p>（2）如何使用<code>for</code>或者<code>for-range</code>遍历一个数组（或者切片）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(arr); i++ &#123;</span><br><span class="line">… = arr[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> ix, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（3）如何在一个二维数组或者切片<code>arr2Dim</code>中查找一个指定值<code>V</code>：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">found := <span class="literal">false</span></span><br><span class="line">Found: <span class="keyword">for</span> row := <span class="keyword">range</span> arr2Dim &#123;</span><br><span class="line">    <span class="keyword">for</span> column := <span class="keyword">range</span> arr2Dim[row] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr2Dim[row][column] == V&#123;</span><br><span class="line">            found = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">break</span> Found</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>创建：    <code>map1 := make(map[keytype]valuetype)</code>  </p>
-<p>初始化：   <code>map1 := map[string]int{&quot;one&quot;: 1, &quot;two&quot;: 2}</code>  </p>
-<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个映射：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> map1 &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何在一个映射中检测键<code>key1</code>是否存在：<code>val1, isPresent = map1[key1]</code>  </p>
-<p>返回值：键<code>key1</code>对应的值或者<code>0</code>, <code>true</code>或者<code>false</code>  </p>
-<p>（3）如何在映射中删除一个键：<code>delete(map1, key1)</code>  </p>
-<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>创建：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> struct1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    field1 type1</span><br><span class="line">    field2 type2</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">ms := <span class="built_in">new</span>(struct1)</span><br></pre></td></tr></table></figure>
-
-<p>初始化：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := &amp;struct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当结构体的命名以大写字母开头时，该结构体在包外可见。<br>通常情况下，为每个结构体定义一个构建函数，并推荐使用构建函数初始化结构体（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_10/person.go" target="_blank" rel="noopener">例10.2</a>）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := Newstruct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Newstruct1</span><span class="params">(n <span class="keyword">int</span>, f <span class="keyword">float32</span>, name <span class="keyword">string</span>)</span> *<span class="title">struct1</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;struct1&#123;n, f, name&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>（1）如何检测一个值<code>v</code>是否实现了接口<code>Stringer</code>：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> v, ok := v.(Stringer); ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"implements String(): %s\n"</span>, v.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何使用接口实现一个类型分类函数：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">classifier</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i, x := <span class="keyword">range</span> items &#123;</span><br><span class="line">        <span class="keyword">switch</span> x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a bool\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a float64\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is an int\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">nil</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is nil\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a string\n"</span>, i)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d’s type is unknown\n"</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>如何使用内建函数<code>recover</code>终止<code>panic</code>过程（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md" target="_blank" rel="noopener">章节13.3</a>）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">protect</span><span class="params">(g <span class="keyword">func</span>()</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        log.Println(<span class="string">"done"</span>)</span><br><span class="line">        <span class="comment">// Println executes normally even if there is a panic</span></span><br><span class="line">        <span class="keyword">if</span> x := <span class="built_in">recover</span>(); x != <span class="literal">nil</span> &#123;</span><br><span class="line">            log.Printf(<span class="string">"run time panic: %v"</span>, x)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    log.Println(<span class="string">"start"</span>)</span><br><span class="line">    g()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>（1）如何打开一个文件并读取：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">file, err := os.Open(<span class="string">"input.dat"</span>)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"An error occurred on opening the inputfile\n"</span> +</span><br><span class="line">      <span class="string">"Does the file exist?\n"</span> +</span><br><span class="line">      <span class="string">"Have you got acces to it?\n"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> file.Close()</span><br><span class="line">  iReader := bufio.NewReader(file)</span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    str, err := iReader.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="comment">// error or EOF</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"The input was: %s"</span>, str)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何通过切片读写文件：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">cat</span><span class="params">(f *file.File)</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> NBUF = <span class="number">512</span></span><br><span class="line">  <span class="keyword">var</span> buf [NBUF]<span class="keyword">byte</span></span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> nr, er := f.Read(buf[:]); <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> nr &lt; <span class="number">0</span>:</span><br><span class="line">      fmt.Fprintf(os.Stderr, <span class="string">"cat: error reading from %s: %s\n"</span>,</span><br><span class="line">        f.String(), er.String())</span><br><span class="line">      os.Exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">case</span> nr == <span class="number">0</span>: <span class="comment">// EOF</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> nr &gt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">if</span> nw, ew := file.Stdout.Write(buf[<span class="number">0</span>:nr]); nw != nr &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"cat: error writing from %s: %s\n"</span>,</span><br><span class="line">          f.String(), ew.String())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="协程（goroutine）与通道（channel）"><a href="#协程（goroutine）与通道（channel）" class="headerlink" title="协程（goroutine）与通道（channel）"></a>协程（goroutine）与通道（channel）</h3><p>出于性能考虑的建议：</p>
-<p>实践经验表明，如果你使用并行运算获得高于串行运算的效率：在协程内部已经完成的大部分工作，其开销比创建协程和协程间通信还高。</p>
-<p>1 出于性能考虑建议使用带缓存的通道：</p>
-<p>使用带缓存的通道可以很轻易成倍提高它的吞吐量，某些场景其性能可以提高至10倍甚至更多。通过调整通道的容量，甚至可以尝试着更进一步的优化其性能。</p>
-<p>2 限制一个通道的数据数量并将它们封装成一个数组：</p>
-<p>如果使用通道传递大量单独的数据，那么通道将变成性能瓶颈。然而，将数据块打包封装成数组，在接收端解压数据时，性能可以提高至10倍。</p>
-<p>创建：<code>ch := make(chan type,buf)</code></p>
-<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个通道：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> v := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    <span class="comment">// do something with v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何检测一个通道<code>ch</code>是否关闭：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//read channel until it closes or error-condition</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input, open := &lt;-ch; !open &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"%s"</span>, input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者使用（1）自动检测。  </p>
-<p>（3）如何通过一个通道让主程序等待直到协程完成：  </p>
-<p>（信号量模式）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) <span class="comment">// Allocate a channel.</span></span><br><span class="line"><span class="comment">// Start something in a goroutine; when it completes, signal on the channel.</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// doSomething</span></span><br><span class="line">    ch &lt;- <span class="number">1</span> <span class="comment">// Send a signal; value does not matter.</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingElseForAWhile()</span><br><span class="line">&lt;-ch <span class="comment">// Wait for goroutine to finish; discard sent value.</span></span><br></pre></td></tr></table></figure>
-
-<p>如果希望程序一直阻塞，在匿名函数中省略 <code>ch &lt;- 1</code>即可。  </p>
-<p>（4）通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pump</span><span class="params">()</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; ; i++ &#123;</span><br><span class="line">            ch &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> ch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（5）通道迭代器模板：  </p>
-<p>（6）如何限制并发处理请求的数量：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.11.md" target="_blank" rel="noopener">章节14.11</a> </p>
-<p>（7）如何在多核CPU上实现并行计算：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.13.md" target="_blank" rel="noopener">章节14.13</a>  </p>
-<p>（8）如何终止一个协程：<code>runtime.Goexit()</code>  </p>
-<p>（9）简单的超时模板：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">timeout := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    time.Sleep(<span class="number">1e9</span>) <span class="comment">// one second  </span></span><br><span class="line">    timeout &lt;- <span class="literal">true</span></span><br><span class="line">&#125;()</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;-ch:</span><br><span class="line">    <span class="comment">// a read from ch has occurred</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-timeout:</span><br><span class="line">    <span class="comment">// the read from ch has timed out</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（10）如何使用输入通道和输出通道代替锁：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Worker</span><span class="params">(in, out <span class="keyword">chan</span> *Task)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        t := &lt;-in</span><br><span class="line">        process(t)</span><br><span class="line">        out &lt;- t</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（11）如何在同步调用运行时间过长时将之丢弃：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a> 第二个变体  </p>
-<p>（12）如何在通道中使用计时器和定时器：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a>  </p>
-<p>（13）典型的服务器后端模型：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.4.md" target="_blank" rel="noopener">章节14.4</a>  </p>
-<h3 id="网络和网页应用"><a href="#网络和网页应用" class="headerlink" title="网络和网页应用"></a>网络和网页应用</h3><p><strong>模板：</strong>  </p>
-<p>制作、解析并使模板生效：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strTempl = template.Must(template.New(<span class="string">"TName"</span>).Parse(strTemplateHTML))</span><br></pre></td></tr></table></figure>
-
-<p>在网页应用中使用HTML过滤器过滤HTML特殊字符：  </p>
-<p><code>{ {html .} }</code> 或者通过一个字段 <code>FieldName { { .FieldName |html } }</code>  </p>
-<p>使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）  </p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何在程序出错时终止程序：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">   fmt.Printf(<span class="string">"Program stopping with error %v"</span>, err)</span><br><span class="line">   os.Exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; </span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">"ERROR occurred: "</span> + err.Error())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="出于性能考虑的最佳实践和建议"><a href="#出于性能考虑的最佳实践和建议" class="headerlink" title="出于性能考虑的最佳实践和建议"></a>出于性能考虑的最佳实践和建议</h3><p>（1）尽可能的使用<code>:=</code>去初始化声明一个变量（在函数内部）；  </p>
-<p>（2）尽可能的使用字符代替字符串；  </p>
-<p>（3）尽可能的使用切片代替数组；  </p>
-<p>（4）尽可能的使用数组和切片代替映射（详见参考文献15）；  </p>
-<p>（5）如果只想获取切片中某项值，不需要值的索引，尽可能的使用<code>for range</code>去遍历切片，这比必须查询切片中的每个元素要快一些；  </p>
-<p>（6）当数组元素是稀疏的（例如有很多<code>0</code>值或者空值<code>nil</code>），使用映射会降低内存消耗；  </p>
-<p>（7）初始化映射时指定其容量；  </p>
-<p>（8）当定义一个方法时，使用指针类型作为方法的接收者；  </p>
-<p>（9）在代码中使用常量或者标志提取常量的值； </p>
-<p>（10）尽可能在需要分配大量内存时使用缓存；  </p>
-<p>（11）使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）。  </p>
-<h2 id="方法的接收者对照表"><a href="#方法的接收者对照表" class="headerlink" title="方法的接收者对照表"></a>方法的接收者对照表</h2><p>方法集：定义了一组关联到给定类型的值或者指针的方法。  </p>
-<h3 id="从传递的值的角度看方法集"><a href="#从传递的值的角度看方法集" class="headerlink" title="从传递的值的角度看方法集"></a>从传递的值的角度看方法集</h3><table>
-<thead>
-<tr>
-<th align="center">传递的值</th>
-<th align="center">方法声明的接收者</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">T</td>
-<td align="center">(t T)</td>
-</tr>
-<tr>
-<td align="center">*T</td>
-<td align="center">(t T) 和 (t *T)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>T 类型的值的方法集只包含了值接收者声明的方法</li>
-<li>而指向 T 类型的指针的方法集既包含值接收者声明的方法，也包含指针接收者声明的方法</li>
-</ul>
-<h3 id="从接收者类型的角度来看方法集"><a href="#从接收者类型的角度来看方法集" class="headerlink" title="从接收者类型的角度来看方法集"></a>从接收者类型的角度来看方法集</h3><table>
-<thead>
-<tr>
-<th align="center">方法声明的接收者</th>
-<th align="center">传递的值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">(t T)</td>
-<td align="center">T 和 *T</td>
-</tr>
-<tr>
-<td align="center">(t *T)</td>
-<td align="center">*T</td>
-</tr>
-</tbody></table>
-<ul>
-<li>如果使用指针接收者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口</li>
-<li>如果使用值接收者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口</li>
-</ul>
-<hr>
-<p><em><code>to be continued...</code></em>  </p>
-]]></content>
-      <categories>
-        <category>「语言」- Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
       </tags>
   </entry>
   <entry>
@@ -4037,6 +4037,199 @@
       </tags>
   </entry>
   <entry>
+    <title>网站收藏</title>
+    <url>/2019/09/26/Site-Bookmark/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>BOOKMARK</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
+<td>在线编辑</td>
+</tr>
+<tr>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
+<td>最好的…是什么？</td>
+</tr>
+<tr>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
+<td>截图识别字体</td>
+</tr>
+<tr>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
+<td>正版软件&amp;免费&amp;优惠</td>
+</tr>
+<tr>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
+<td>在线编辑pdf</td>
+</tr>
+<tr>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
+<td>免费&amp;多语言翻译</td>
+</tr>
+<tr>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
+<td>PDF在线工具&amp;转换</td>
+</tr>
+<tr>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
+<td>在线工具</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
+<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
+<td>每日新闻图卦</td>
+</tr>
+<tr>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
+<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
+<td>热点资讯聚合</td>
+</tr>
+<tr>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
+<td>资讯、排行榜聚合</td>
+</tr>
+<tr>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
+<td>短视频了解疾病</td>
+</tr>
+<tr>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
+<td>互联网新闻</td>
+</tr>
+<tr>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
+<td>大数据X图表</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
+<td>学各种小技巧</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
+<td>Ingress任务浏览</td>
+</tr>
+<tr>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
+<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
+<td>白噪音</td>
+</tr>
+<tr>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
+<td>假装去旅游</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《经济学原理》笔记（宏观经济学）</title>
     <url>/2019/04/02/Macroeconomics-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -4500,199 +4693,6 @@
       </categories>
       <tags>
         <tag>经济学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站收藏</title>
-    <url>/2019/09/26/Site-Bookmark/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>BOOKMARK</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
-<td>在线编辑</td>
-</tr>
-<tr>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
-<td>最好的…是什么？</td>
-</tr>
-<tr>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
-<td>截图识别字体</td>
-</tr>
-<tr>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
-<td>正版软件&amp;免费&amp;优惠</td>
-</tr>
-<tr>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
-<td>在线编辑pdf</td>
-</tr>
-<tr>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
-<td>免费&amp;多语言翻译</td>
-</tr>
-<tr>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
-<td>免费</td>
-</tr>
-<tr>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
-<td>PDF在线工具&amp;转换</td>
-</tr>
-<tr>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
-<td>在线工具</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
-<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
-<td>每日新闻图卦</td>
-</tr>
-<tr>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
-<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
-<td>热点资讯聚合</td>
-</tr>
-<tr>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
-<td>资讯、排行榜聚合</td>
-</tr>
-<tr>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
-<td>短视频了解疾病</td>
-</tr>
-<tr>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
-<td>互联网新闻</td>
-</tr>
-<tr>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
-<td>大数据X图表</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
-<td>学各种小技巧</td>
-</tr>
-<tr>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
-<td></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
-<td>Ingress任务浏览</td>
-</tr>
-<tr>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
-<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
-<td>白噪音</td>
-</tr>
-<tr>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
-<td>假装去旅游</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>「备忘」</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -5459,6 +5459,139 @@
       </tags>
   </entry>
   <entry>
+    <title>Adobe Camera Raw Notes</title>
+    <url>/2020/03/10/Ps-ACR-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>思路跟 Lr 一样的</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="调整"><a href="#调整" class="headerlink" title="调整"></a>调整</h1><h2 id="获得通透的画面"><a href="#获得通透的画面" class="headerlink" title="获得通透的画面"></a>获得通透的画面</h2><ul>
+<li><code>通透</code>：增加细节</li>
+<li>途径：亮度再分配</li>
+<li>关键：把画面中的大部分细节调整到人眼可见的亮度范围内</li>
+<li>tips：调亮主影调、阴影的时候还可以尝试增加黑场（压低黑色）</li>
+<li><a href="https://www.youtube.com/watch?v=sYj8cMlecJE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=3" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="精确白平衡"><a href="#精确白平衡" class="headerlink" title="精确白平衡"></a>精确白平衡</h2><ul>
+<li>色温和色调可以确定一个点的颜色，相当于一对坐标</li>
+<li><code>色温</code>：蓝色 ↔ 黄色</li>
+<li><code>色调</code>：绿色 ↔ 洋红色</li>
+<li>白平衡工具：<ul>
+<li>吸取画面中原本应该是白色（中性灰：纯白-纯黑之间都可以）的点</li>
+<li>原理：补色的原理。如果画面中的白色准了，那认为其他颜色也准了。</li>
+<li>tips：尽量不要选白纸（有荧光粉）、眼睛（亚洲人、动物偏黄）</li>
+</ul>
+</li>
+<li>JPG格式的白平衡调整色彩不可逆</li>
+<li><a href="https://www.youtube.com/watch?v=5oEbQ6m2O5w&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=4" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="精确调色"><a href="#精确调色" class="headerlink" title="精确调色"></a>精确调色</h2><ul>
+<li><code>饱和度</code>：<ul>
+<li><code>自然饱和度</code>：用得多，更智能，会识别图中内容</li>
+<li><code>饱和度</code>：全部调，不建议</li>
+</ul>
+</li>
+<li><code>色调分离</code>：<ul>
+<li>大部分电影：高光偏黄，阴影偏蓝 </li>
+</ul>
+</li>
+<li><code>HSL</code>：调节不同颜色的色相、饱和度、明亮度<ul>
+<li><code>灰度混合</code>：调整不同颜色会黑白照片亮度贡献的大小</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=2fde25zgXb8&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=5" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="渐变滤镜"><a href="#渐变滤镜" class="headerlink" title="渐变滤镜"></a>渐变滤镜</h2><ul>
+<li>硬件：是一种灰度过度滤镜，用于控制天空</li>
+<li>可适用于大光比的照片</li>
+<li>可以渐变得使亮度再分配</li>
+<li>eg：<ul>
+<li>天空压暗、降低色温</li>
+<li>地面提亮、暖色调、通透</li>
+</ul>
+</li>
+<li>渐变滤镜的蒙版<code>（范围遮罩）</code>：<ul>
+<li>颜色</li>
+<li>明亮度</li>
+<li>按住<code>Alt</code>可以看到蒙版作用范围：越亮→作用越强；越暗→作用越弱</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=l365G5c65kE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=6" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=OdlCFo5bNBU&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=9" target="_blank" rel="noopener">范例视频2</a></li>
+</ul>
+<h2 id="综合应用"><a href="#综合应用" class="headerlink" title="综合应用"></a>综合应用</h2><ul>
+<li>去除紫边<ul>
+<li><code>镜头校正</code>-<code>去边</code>-去除紫边或者绿边</li>
+</ul>
+</li>
+<li>渐变滤镜</li>
+<li>径向滤镜<ul>
+<li>内部/外部</li>
+</ul>
+</li>
+<li>亮度再分配</li>
+<li>色彩快速调节</li>
+<li>透视畸变矫正</li>
+<li>ACR二次调用</li>
+<li><a href="https://www.youtube.com/watch?v=_b6KALfwJyE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=7" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="用亮度蒙版和ACR恢复天空细节"><a href="#用亮度蒙版和ACR恢复天空细节" class="headerlink" title="用亮度蒙版和ACR恢复天空细节"></a>用亮度蒙版和ACR恢复天空细节</h2><ul>
+<li>目的：压暗天空，减少对近景的副作用，过度更自然</li>
+<li><code>亮度蒙版</code>：借助画面原有的亮度信息来产生蒙版，通常由通道产生</li>
+<li>选择主体、背景差别大的通道</li>
+<li><code>亮度蒙版</code>操作：<ul>
+<li>按住<code>Ctrl</code>并点击通道，创建亮度选区</li>
+<li>蚁行线：亮度高于50%的选中</li>
+<li>点回RGB通道，回到图层原始画面</li>
+<li>保持选区不变，<code>调整</code>-<code>曲线</code>，此时曲线的蒙版就是刚选中的亮度蒙版</li>
+<li>若有的近景受到了影响（如饱和度降低），可以双击蒙版，调整蒙版的羽化值，模糊蒙版</li>
+</ul>
+</li>
+<li>ACR<code>去除薄雾</code>滑块：<ul>
+<li>最有效的恢复天空细节的工具</li>
+<li>还可以搭配滤镜加强调整</li>
+<li>其他地方可以用亮度蒙版遮挡，不用担心对前景的影响</li>
+<li>副作用：可能改变天空的颜色，需要调整<code>（自然）饱和度</code></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=7N7A0H7y4es&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=10" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<hr>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="RAW-格式"><a href="#RAW-格式" class="headerlink" title="RAW 格式"></a>RAW 格式</h2><ul>
+<li>RAW：未经处理的原始数据</li>
+<li>丰富的层次：16-bit</li>
+<li>宽容度牛逼</li>
+<li>私有色彩空间</li>
+<li>没有设定黑白场</li>
+<li>若操作<code>.jpg</code>，可以<code>图像</code>-<code>模式</code>-<code>16位通道</code></li>
+<li><a href="https://www.youtube.com/watch?v=yZEp7wWqswA&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=1" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="ACR-简介"><a href="#ACR-简介" class="headerlink" title="ACR 简介"></a>ACR 简介</h2><ul>
+<li>调用方式<ul>
+<li>直接打开RAW文件</li>
+<li><code>滤镜</code>-<code>Camera Raw滤镜</code></li>
+</ul>
+</li>
+<li>重要设置<ul>
+<li>最下放的链接：<code>色彩深度</code>设定成16位</li>
+<li>色彩空间：需要由是否全链路色彩管理决定</li>
+</ul>
+</li>
+<li>无损调节：配置存放于<code>.xmp</code>文件中</li>
+<li><a href="https://www.youtube.com/watch?v=H5SBJcz2bVM&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=2" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photoshop</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Photography Learn Notes</title>
     <url>/2019/10/15/Photography-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -5674,139 +5807,6 @@
       <tags>
         <tag>Note</tag>
         <tag>Photography</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Adobe Camera Raw Notes</title>
-    <url>/2020/03/10/Ps-ACR-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>思路跟 Lr 一样的</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="调整"><a href="#调整" class="headerlink" title="调整"></a>调整</h1><h2 id="获得通透的画面"><a href="#获得通透的画面" class="headerlink" title="获得通透的画面"></a>获得通透的画面</h2><ul>
-<li><code>通透</code>：增加细节</li>
-<li>途径：亮度再分配</li>
-<li>关键：把画面中的大部分细节调整到人眼可见的亮度范围内</li>
-<li>tips：调亮主影调、阴影的时候还可以尝试增加黑场（压低黑色）</li>
-<li><a href="https://www.youtube.com/watch?v=sYj8cMlecJE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=3" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="精确白平衡"><a href="#精确白平衡" class="headerlink" title="精确白平衡"></a>精确白平衡</h2><ul>
-<li>色温和色调可以确定一个点的颜色，相当于一对坐标</li>
-<li><code>色温</code>：蓝色 ↔ 黄色</li>
-<li><code>色调</code>：绿色 ↔ 洋红色</li>
-<li>白平衡工具：<ul>
-<li>吸取画面中原本应该是白色（中性灰：纯白-纯黑之间都可以）的点</li>
-<li>原理：补色的原理。如果画面中的白色准了，那认为其他颜色也准了。</li>
-<li>tips：尽量不要选白纸（有荧光粉）、眼睛（亚洲人、动物偏黄）</li>
-</ul>
-</li>
-<li>JPG格式的白平衡调整色彩不可逆</li>
-<li><a href="https://www.youtube.com/watch?v=5oEbQ6m2O5w&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=4" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="精确调色"><a href="#精确调色" class="headerlink" title="精确调色"></a>精确调色</h2><ul>
-<li><code>饱和度</code>：<ul>
-<li><code>自然饱和度</code>：用得多，更智能，会识别图中内容</li>
-<li><code>饱和度</code>：全部调，不建议</li>
-</ul>
-</li>
-<li><code>色调分离</code>：<ul>
-<li>大部分电影：高光偏黄，阴影偏蓝 </li>
-</ul>
-</li>
-<li><code>HSL</code>：调节不同颜色的色相、饱和度、明亮度<ul>
-<li><code>灰度混合</code>：调整不同颜色会黑白照片亮度贡献的大小</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=2fde25zgXb8&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=5" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="渐变滤镜"><a href="#渐变滤镜" class="headerlink" title="渐变滤镜"></a>渐变滤镜</h2><ul>
-<li>硬件：是一种灰度过度滤镜，用于控制天空</li>
-<li>可适用于大光比的照片</li>
-<li>可以渐变得使亮度再分配</li>
-<li>eg：<ul>
-<li>天空压暗、降低色温</li>
-<li>地面提亮、暖色调、通透</li>
-</ul>
-</li>
-<li>渐变滤镜的蒙版<code>（范围遮罩）</code>：<ul>
-<li>颜色</li>
-<li>明亮度</li>
-<li>按住<code>Alt</code>可以看到蒙版作用范围：越亮→作用越强；越暗→作用越弱</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=l365G5c65kE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=6" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=OdlCFo5bNBU&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=9" target="_blank" rel="noopener">范例视频2</a></li>
-</ul>
-<h2 id="综合应用"><a href="#综合应用" class="headerlink" title="综合应用"></a>综合应用</h2><ul>
-<li>去除紫边<ul>
-<li><code>镜头校正</code>-<code>去边</code>-去除紫边或者绿边</li>
-</ul>
-</li>
-<li>渐变滤镜</li>
-<li>径向滤镜<ul>
-<li>内部/外部</li>
-</ul>
-</li>
-<li>亮度再分配</li>
-<li>色彩快速调节</li>
-<li>透视畸变矫正</li>
-<li>ACR二次调用</li>
-<li><a href="https://www.youtube.com/watch?v=_b6KALfwJyE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=7" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="用亮度蒙版和ACR恢复天空细节"><a href="#用亮度蒙版和ACR恢复天空细节" class="headerlink" title="用亮度蒙版和ACR恢复天空细节"></a>用亮度蒙版和ACR恢复天空细节</h2><ul>
-<li>目的：压暗天空，减少对近景的副作用，过度更自然</li>
-<li><code>亮度蒙版</code>：借助画面原有的亮度信息来产生蒙版，通常由通道产生</li>
-<li>选择主体、背景差别大的通道</li>
-<li><code>亮度蒙版</code>操作：<ul>
-<li>按住<code>Ctrl</code>并点击通道，创建亮度选区</li>
-<li>蚁行线：亮度高于50%的选中</li>
-<li>点回RGB通道，回到图层原始画面</li>
-<li>保持选区不变，<code>调整</code>-<code>曲线</code>，此时曲线的蒙版就是刚选中的亮度蒙版</li>
-<li>若有的近景受到了影响（如饱和度降低），可以双击蒙版，调整蒙版的羽化值，模糊蒙版</li>
-</ul>
-</li>
-<li>ACR<code>去除薄雾</code>滑块：<ul>
-<li>最有效的恢复天空细节的工具</li>
-<li>还可以搭配滤镜加强调整</li>
-<li>其他地方可以用亮度蒙版遮挡，不用担心对前景的影响</li>
-<li>副作用：可能改变天空的颜色，需要调整<code>（自然）饱和度</code></li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=7N7A0H7y4es&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=10" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<hr>
-<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="RAW-格式"><a href="#RAW-格式" class="headerlink" title="RAW 格式"></a>RAW 格式</h2><ul>
-<li>RAW：未经处理的原始数据</li>
-<li>丰富的层次：16-bit</li>
-<li>宽容度牛逼</li>
-<li>私有色彩空间</li>
-<li>没有设定黑白场</li>
-<li>若操作<code>.jpg</code>，可以<code>图像</code>-<code>模式</code>-<code>16位通道</code></li>
-<li><a href="https://www.youtube.com/watch?v=yZEp7wWqswA&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=1" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="ACR-简介"><a href="#ACR-简介" class="headerlink" title="ACR 简介"></a>ACR 简介</h2><ul>
-<li>调用方式<ul>
-<li>直接打开RAW文件</li>
-<li><code>滤镜</code>-<code>Camera Raw滤镜</code></li>
-</ul>
-</li>
-<li>重要设置<ul>
-<li>最下放的链接：<code>色彩深度</code>设定成16位</li>
-<li>色彩空间：需要由是否全链路色彩管理决定</li>
-</ul>
-</li>
-<li>无损调节：配置存放于<code>.xmp</code>文件中</li>
-<li><a href="https://www.youtube.com/watch?v=H5SBJcz2bVM&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=2" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
       </tags>
   </entry>
   <entry>
@@ -6412,6 +6412,221 @@
       </tags>
   </entry>
   <entry>
+    <title>SPSS 学习笔记</title>
+    <url>/2019/04/01/SPSS-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>统计产品与服务解决方案</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><h2 id="1-数据分析职位介绍"><a href="#1-数据分析职位介绍" class="headerlink" title="1.数据分析职位介绍"></a>1.数据分析职位介绍</h2><ul>
+<li>职位设置区别<ul>
+<li>数据分析师（偏向宏观，决策依据）</li>
+<li>数据挖掘工程师（偏向个体，偏技术）</li>
+</ul>
+</li>
+<li>知识体系区别<ul>
+<li>数据库：SQL</li>
+<li>统计学：侧重描述统计、参数估计和统计推断</li>
+<li>数据挖掘统计：数据总结、分类和回归、聚类分析、关联分析</li>
+</ul>
+</li>
+<li>工具区别<ul>
+<li>工具类：SQL、SPSS、STATS、Excel、Matleb、SAS</li>
+<li>语言类：R、Python</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-SPSS软件基础"><a href="#2-SPSS软件基础" class="headerlink" title="2.SPSS软件基础"></a>2.SPSS软件基础</h2><ul>
+<li>SPSS软件概述：斯坦福三个研究生写的，后成立同名公司<ul>
+<li>Statistical Package for the Social Science，社会科学统计软件包</li>
+<li>2000年改名为Statistical Product and Service Solutions，同级产品和服务解决方案</li>
+<li>SPSS是世界三大同级分析软件之一，2009年IBM以12亿美金收购SPSS公司</li>
+</ul>
+</li>
+<li>和其他软件比较</li>
+</ul>
+<h1 id="数据的组织和管理"><a href="#数据的组织和管理" class="headerlink" title="数据的组织和管理"></a>数据的组织和管理</h1><h2 id="1-数据分类"><a href="#1-数据分类" class="headerlink" title="1.数据分类"></a>1.数据分类</h2><ul>
+<li>按照数据存储格式<ul>
+<li>数字</li>
+<li>字符串</li>
+<li>日期时间</li>
+</ul>
+</li>
+<li>按代表的事物特征<ul>
+<li>数值型</li>
+<li>名义型</li>
+<li>定序型</li>
+</ul>
+</li>
+<li>按照数据角色<ul>
+<li>输入</li>
+<li>输出<h2 id="2-定义数据结构"><a href="#2-定义数据结构" class="headerlink" title="2.定义数据结构"></a>2.定义数据结构</h2></li>
+</ul>
+</li>
+<li>变量名</li>
+<li>变量类型、列宽、小数点</li>
+<li>变量名标签</li>
+<li>变量值表情</li>
+<li>缺失数据</li>
+<li>计量尺度</li>
+<li>变量角色</li>
+</ul>
+<h2 id="3-数据的导入和编辑"><a href="#3-数据的导入和编辑" class="headerlink" title="3.数据的导入和编辑"></a>3.数据的导入和编辑</h2><ul>
+<li>术语：个案和变量</li>
+<li>从文件导入数据</li>
+<li>录入数据</li>
+<li>修改数据</li>
+</ul>
+<p>4.数据合并</p>
+<ul>
+<li>横向合并</li>
+<li>纵向合并</li>
+</ul>
+<h1 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h1><h2 id="1-假设检验概述"><a href="#1-假设检验概述" class="headerlink" title="1.假设检验概述"></a>1.假设检验概述</h2><ul>
+<li>什么是假设检验</li>
+<li>假设检验的目的</li>
+<li>两种误差：系统误差，随机误差</li>
+<li>假设检验执行步骤<ul>
+<li>简历要检验的假设，确定检验水准</li>
+<li>选择并计算适宜的统计量</li>
+<li>确定P值，做出推断</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-t分布和t检验"><a href="#2-t分布和t检验" class="headerlink" title="2.t分布和t检验"></a>2.t分布和t检验</h2><ul>
+<li>t分布的特点<ul>
+<li>单峰，以0为中心，左右对称</li>
+<li>分布形态和样本数量n有关</li>
+<li>n -&gt; ∞时，逼近标准正态曲线</li>
+<li>t曲线不是一条曲线，而是一簇曲线</li>
+</ul>
+</li>
+<li>t检验是基于t分布的比较平均数的检验方法</li>
+</ul>
+<h2 id="3-单样本t检验实例解析"><a href="#3-单样本t检验实例解析" class="headerlink" title="3.单样本t检验实例解析"></a>3.单样本t检验实例解析</h2><p>【分析】-【比较平均值】-【单样本T检验】  </p>
+<h2 id="4-两独立样本t检验实例解析"><a href="#4-两独立样本t检验实例解析" class="headerlink" title="4.两独立样本t检验实例解析"></a>4.两独立样本t检验实例解析</h2><p>【分析】-【比较平均值】-【独立样本T检验】  </p>
+<h2 id="5-配对样本t检验实例解析"><a href="#5-配对样本t检验实例解析" class="headerlink" title="5.配对样本t检验实例解析"></a>5.配对样本t检验实例解析</h2><p>【分析】-【比较平均值】-【配对样本T检验】  </p>
+<h1 id="数据的基本统计分析"><a href="#数据的基本统计分析" class="headerlink" title="数据的基本统计分析"></a>数据的基本统计分析</h1><h2 id="1-数据的集中趋势"><a href="#1-数据的集中趋势" class="headerlink" title="1.数据的集中趋势"></a>1.数据的集中趋势</h2><ul>
+<li>均值</li>
+<li>中位数</li>
+<li>分位数</li>
+<li>众数</li>
+</ul>
+<h2 id="2-数据的离散趋势"><a href="#2-数据的离散趋势" class="headerlink" title="2.数据的离散趋势"></a>2.数据的离散趋势</h2><ul>
+<li>极差</li>
+<li>四分位距</li>
+<li>方差和标准差</li>
+<li>标准分数（Z分数）<ul>
+<li>Z=(X-X平均)/s</li>
+<li>大于等于3则说明异常</li>
+</ul>
+</li>
+<li>变异系数=标准差/均值</li>
+</ul>
+<h2 id="3-数据的分布形态"><a href="#3-数据的分布形态" class="headerlink" title="3.数据的分布形态"></a>3.数据的分布形态</h2><ul>
+<li>偏态系数（左偏分布&lt;0，对称分布=0，右偏分布&gt;0，看尾巴）</li>
+<li>峰态系数（正态分布=0，尖顶峰&gt;0，平顶峰&lt;0）</li>
+</ul>
+<h2 id="4-频数分析和描述统计实例解析"><a href="#4-频数分析和描述统计实例解析" class="headerlink" title="4. 频数分析和描述统计实例解析"></a>4. 频数分析和描述统计实例解析</h2><ul>
+<li>数据的分布表<ul>
+<li>频数</li>
+<li>百分比</li>
+<li>有效百分比（去掉缺失值）</li>
+<li>累积百分比</li>
+</ul>
+</li>
+<li>绘制统计图<ul>
+<li>柱状图，饼图，直方图</li>
+</ul>
+</li>
+<li>各种统计量</li>
+</ul>
+<p>【分析】-【描述统计】-【频率】/【描述】  </p>
+<p>【数据】-【拆分文件】  #分组统计  </p>
+<h2 id="5-交叉步（列联表）分析实例解析"><a href="#5-交叉步（列联表）分析实例解析" class="headerlink" title="5.交叉步（列联表）分析实例解析"></a>5.交叉步（列联表）分析实例解析</h2><ul>
+<li>交叉表中的各项指标</li>
+<li>交叉表分析的思想和结果解读</li>
+</ul>
+<p>【分析】-【描述统计】-【交叉表格】  </p>
+<p>【数据】-【加权个案】 #加权拓展  </p>
+<p>卡方检验  </p>
+<h1 id="相关性分析概述"><a href="#相关性分析概述" class="headerlink" title="相关性分析概述"></a>相关性分析概述</h1><p>##1.相关性分析概述</p>
+<ul>
+<li>函数关系——对于的确定关系</li>
+<li>统计关系：线性和非线性关系</li>
+<li>线性关系：正线性关系、负线性关系</li>
+<li>相关关系不是因果关系</li>
+<li>相关关系的可视化</li>
+</ul>
+<p>2.线性关系的量化指标</p>
+<ul>
+<li>Pearson相关系数：两个数值变量间的相关性<ul>
+<li>相关系数=X和Y的协方差/（X的方差·Y的方差）^1/2</li>
+<li>X的样本方差=求和（x-x平均）^2/（n-1）</li>
+<li>协方差=求和（x-x平均）（y-y平均）/（n-1）</li>
+</ul>
+</li>
+<li>相关系数特点<ul>
+<li>取值在[-1,1]，|相关系数r|越趋近于1则相关性越强</li>
+<li>对称性，x和y、y和x相等</li>
+<li>r值与x和y尺度无关</li>
+<li>线性关系不是因果关系</li>
+</ul>
+</li>
+<li>相关性强弱<ul>
+<li>|r|&gt;0.8 高度相关</li>
+<li>0.5&gt;|r|&gt;0.8 中度相关</li>
+<li>0.3&gt;|r|&gt;0.5 低度相关</li>
+<li>|r|&lt;0.3 相关程度极弱，可视为不相关</li>
+</ul>
+</li>
+<li>相关系数的检验</li>
+</ul>
+<h2 id="3-相关性分析实例解析"><a href="#3-相关性分析实例解析" class="headerlink" title="3.相关性分析实例解析"></a>3.相关性分析实例解析</h2><p>【分析】-【相关】-【双相关】</p>
+<h1 id="数据方差分析"><a href="#数据方差分析" class="headerlink" title="数据方差分析"></a>数据方差分析</h1><p>1.方差分析概述</p>
+<ul>
+<li>方差分析的基本思想<br>  把数据的全部变异——总变异分解成两个或多个组成部分，再做分析</li>
+<li>方差分析的术语<br>  观测变量、控制变量、控制变量的水平</li>
+<li>方差分析的应用<br>  两组或两组以上均数是否相等<br>  两个或多个元素的交互作用<br>  回归方程的线性假设检验</li>
+</ul>
+<h2 id="2-方差分析原理"><a href="#2-方差分析原理" class="headerlink" title="2.方差分析原理"></a>2.方差分析原理</h2><ul>
+<li>总方差：反应全部个体的变异情况<br>  SS总=求和i求和j（Xij-X平均）^2<br>  v总=N-1  （自由度）</li>
+<li>组内方差<br>  各组组内个体之间的变异<br>  属于随机误差</li>
+<li>组间方差<br>  各组均数和总均数的差异<br>  除了随机误差，还可能有系统误差</li>
+<li>F值</li>
+</ul>
+<h2 id="3-单因素方差分析实例解析"><a href="#3-单因素方差分析实例解析" class="headerlink" title="3.单因素方差分析实例解析"></a>3.单因素方差分析实例解析</h2><p>【分析】-【比较均值】-【单因素方差分析】</p>
+<h1 id="一元线性回归概述"><a href="#一元线性回归概述" class="headerlink" title="一元线性回归概述"></a>一元线性回归概述</h1><h2 id="1-一元线性回归概述"><a href="#1-一元线性回归概述" class="headerlink" title="1.一元线性回归概述"></a>1.一元线性回归概述</h2><ul>
+<li>概念介绍：只涉及到一个变量的回归，自变量和因变量之间是线性关系<br>  自变量、因变量</li>
+<li>回归模型</li>
+<li>回归系数的含义</li>
+<li>回归系数的检验</li>
+<li>回归方程的检验</li>
+</ul>
+<p>2.一元线性回归的原理</p>
+<ul>
+<li>最小二乘法<br>  因变量的变化来自于两个方面：自变量取值变化，自身因素（随机误差）</li>
+<li>回归系数的检验<br>  T检验</li>
+<li>回归方程的检验<br>  方差分析<br>  SST总平方和=SSR回归平方和+SSR残差平方和</li>
+<li><ul>
+<li>决定系数<br>反应模型的解释能力<br>反应回归直线的拟合程度<br>决定系数平方根等于相关系数<br>R^2=SSR/SST</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-一元线性回归实例解析"><a href="#3-一元线性回归实例解析" class="headerlink" title="3.一元线性回归实例解析"></a>3.一元线性回归实例解析</h2><p>【分析】-【回归】-【线性】</p>
+]]></content>
+      <categories>
+        <category>「笔记」- 软件</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>SPSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>R语言基础の笔记</title>
     <url>/2019/04/01/R-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -6847,221 +7062,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SPSS 学习笔记</title>
-    <url>/2019/04/01/SPSS-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>统计产品与服务解决方案</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><h2 id="1-数据分析职位介绍"><a href="#1-数据分析职位介绍" class="headerlink" title="1.数据分析职位介绍"></a>1.数据分析职位介绍</h2><ul>
-<li>职位设置区别<ul>
-<li>数据分析师（偏向宏观，决策依据）</li>
-<li>数据挖掘工程师（偏向个体，偏技术）</li>
-</ul>
-</li>
-<li>知识体系区别<ul>
-<li>数据库：SQL</li>
-<li>统计学：侧重描述统计、参数估计和统计推断</li>
-<li>数据挖掘统计：数据总结、分类和回归、聚类分析、关联分析</li>
-</ul>
-</li>
-<li>工具区别<ul>
-<li>工具类：SQL、SPSS、STATS、Excel、Matleb、SAS</li>
-<li>语言类：R、Python</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-SPSS软件基础"><a href="#2-SPSS软件基础" class="headerlink" title="2.SPSS软件基础"></a>2.SPSS软件基础</h2><ul>
-<li>SPSS软件概述：斯坦福三个研究生写的，后成立同名公司<ul>
-<li>Statistical Package for the Social Science，社会科学统计软件包</li>
-<li>2000年改名为Statistical Product and Service Solutions，同级产品和服务解决方案</li>
-<li>SPSS是世界三大同级分析软件之一，2009年IBM以12亿美金收购SPSS公司</li>
-</ul>
-</li>
-<li>和其他软件比较</li>
-</ul>
-<h1 id="数据的组织和管理"><a href="#数据的组织和管理" class="headerlink" title="数据的组织和管理"></a>数据的组织和管理</h1><h2 id="1-数据分类"><a href="#1-数据分类" class="headerlink" title="1.数据分类"></a>1.数据分类</h2><ul>
-<li>按照数据存储格式<ul>
-<li>数字</li>
-<li>字符串</li>
-<li>日期时间</li>
-</ul>
-</li>
-<li>按代表的事物特征<ul>
-<li>数值型</li>
-<li>名义型</li>
-<li>定序型</li>
-</ul>
-</li>
-<li>按照数据角色<ul>
-<li>输入</li>
-<li>输出<h2 id="2-定义数据结构"><a href="#2-定义数据结构" class="headerlink" title="2.定义数据结构"></a>2.定义数据结构</h2></li>
-</ul>
-</li>
-<li>变量名</li>
-<li>变量类型、列宽、小数点</li>
-<li>变量名标签</li>
-<li>变量值表情</li>
-<li>缺失数据</li>
-<li>计量尺度</li>
-<li>变量角色</li>
-</ul>
-<h2 id="3-数据的导入和编辑"><a href="#3-数据的导入和编辑" class="headerlink" title="3.数据的导入和编辑"></a>3.数据的导入和编辑</h2><ul>
-<li>术语：个案和变量</li>
-<li>从文件导入数据</li>
-<li>录入数据</li>
-<li>修改数据</li>
-</ul>
-<p>4.数据合并</p>
-<ul>
-<li>横向合并</li>
-<li>纵向合并</li>
-</ul>
-<h1 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h1><h2 id="1-假设检验概述"><a href="#1-假设检验概述" class="headerlink" title="1.假设检验概述"></a>1.假设检验概述</h2><ul>
-<li>什么是假设检验</li>
-<li>假设检验的目的</li>
-<li>两种误差：系统误差，随机误差</li>
-<li>假设检验执行步骤<ul>
-<li>简历要检验的假设，确定检验水准</li>
-<li>选择并计算适宜的统计量</li>
-<li>确定P值，做出推断</li>
-</ul>
-</li>
-</ul>
-<h2 id="2-t分布和t检验"><a href="#2-t分布和t检验" class="headerlink" title="2.t分布和t检验"></a>2.t分布和t检验</h2><ul>
-<li>t分布的特点<ul>
-<li>单峰，以0为中心，左右对称</li>
-<li>分布形态和样本数量n有关</li>
-<li>n -&gt; ∞时，逼近标准正态曲线</li>
-<li>t曲线不是一条曲线，而是一簇曲线</li>
-</ul>
-</li>
-<li>t检验是基于t分布的比较平均数的检验方法</li>
-</ul>
-<h2 id="3-单样本t检验实例解析"><a href="#3-单样本t检验实例解析" class="headerlink" title="3.单样本t检验实例解析"></a>3.单样本t检验实例解析</h2><p>【分析】-【比较平均值】-【单样本T检验】  </p>
-<h2 id="4-两独立样本t检验实例解析"><a href="#4-两独立样本t检验实例解析" class="headerlink" title="4.两独立样本t检验实例解析"></a>4.两独立样本t检验实例解析</h2><p>【分析】-【比较平均值】-【独立样本T检验】  </p>
-<h2 id="5-配对样本t检验实例解析"><a href="#5-配对样本t检验实例解析" class="headerlink" title="5.配对样本t检验实例解析"></a>5.配对样本t检验实例解析</h2><p>【分析】-【比较平均值】-【配对样本T检验】  </p>
-<h1 id="数据的基本统计分析"><a href="#数据的基本统计分析" class="headerlink" title="数据的基本统计分析"></a>数据的基本统计分析</h1><h2 id="1-数据的集中趋势"><a href="#1-数据的集中趋势" class="headerlink" title="1.数据的集中趋势"></a>1.数据的集中趋势</h2><ul>
-<li>均值</li>
-<li>中位数</li>
-<li>分位数</li>
-<li>众数</li>
-</ul>
-<h2 id="2-数据的离散趋势"><a href="#2-数据的离散趋势" class="headerlink" title="2.数据的离散趋势"></a>2.数据的离散趋势</h2><ul>
-<li>极差</li>
-<li>四分位距</li>
-<li>方差和标准差</li>
-<li>标准分数（Z分数）<ul>
-<li>Z=(X-X平均)/s</li>
-<li>大于等于3则说明异常</li>
-</ul>
-</li>
-<li>变异系数=标准差/均值</li>
-</ul>
-<h2 id="3-数据的分布形态"><a href="#3-数据的分布形态" class="headerlink" title="3.数据的分布形态"></a>3.数据的分布形态</h2><ul>
-<li>偏态系数（左偏分布&lt;0，对称分布=0，右偏分布&gt;0，看尾巴）</li>
-<li>峰态系数（正态分布=0，尖顶峰&gt;0，平顶峰&lt;0）</li>
-</ul>
-<h2 id="4-频数分析和描述统计实例解析"><a href="#4-频数分析和描述统计实例解析" class="headerlink" title="4. 频数分析和描述统计实例解析"></a>4. 频数分析和描述统计实例解析</h2><ul>
-<li>数据的分布表<ul>
-<li>频数</li>
-<li>百分比</li>
-<li>有效百分比（去掉缺失值）</li>
-<li>累积百分比</li>
-</ul>
-</li>
-<li>绘制统计图<ul>
-<li>柱状图，饼图，直方图</li>
-</ul>
-</li>
-<li>各种统计量</li>
-</ul>
-<p>【分析】-【描述统计】-【频率】/【描述】  </p>
-<p>【数据】-【拆分文件】  #分组统计  </p>
-<h2 id="5-交叉步（列联表）分析实例解析"><a href="#5-交叉步（列联表）分析实例解析" class="headerlink" title="5.交叉步（列联表）分析实例解析"></a>5.交叉步（列联表）分析实例解析</h2><ul>
-<li>交叉表中的各项指标</li>
-<li>交叉表分析的思想和结果解读</li>
-</ul>
-<p>【分析】-【描述统计】-【交叉表格】  </p>
-<p>【数据】-【加权个案】 #加权拓展  </p>
-<p>卡方检验  </p>
-<h1 id="相关性分析概述"><a href="#相关性分析概述" class="headerlink" title="相关性分析概述"></a>相关性分析概述</h1><p>##1.相关性分析概述</p>
-<ul>
-<li>函数关系——对于的确定关系</li>
-<li>统计关系：线性和非线性关系</li>
-<li>线性关系：正线性关系、负线性关系</li>
-<li>相关关系不是因果关系</li>
-<li>相关关系的可视化</li>
-</ul>
-<p>2.线性关系的量化指标</p>
-<ul>
-<li>Pearson相关系数：两个数值变量间的相关性<ul>
-<li>相关系数=X和Y的协方差/（X的方差·Y的方差）^1/2</li>
-<li>X的样本方差=求和（x-x平均）^2/（n-1）</li>
-<li>协方差=求和（x-x平均）（y-y平均）/（n-1）</li>
-</ul>
-</li>
-<li>相关系数特点<ul>
-<li>取值在[-1,1]，|相关系数r|越趋近于1则相关性越强</li>
-<li>对称性，x和y、y和x相等</li>
-<li>r值与x和y尺度无关</li>
-<li>线性关系不是因果关系</li>
-</ul>
-</li>
-<li>相关性强弱<ul>
-<li>|r|&gt;0.8 高度相关</li>
-<li>0.5&gt;|r|&gt;0.8 中度相关</li>
-<li>0.3&gt;|r|&gt;0.5 低度相关</li>
-<li>|r|&lt;0.3 相关程度极弱，可视为不相关</li>
-</ul>
-</li>
-<li>相关系数的检验</li>
-</ul>
-<h2 id="3-相关性分析实例解析"><a href="#3-相关性分析实例解析" class="headerlink" title="3.相关性分析实例解析"></a>3.相关性分析实例解析</h2><p>【分析】-【相关】-【双相关】</p>
-<h1 id="数据方差分析"><a href="#数据方差分析" class="headerlink" title="数据方差分析"></a>数据方差分析</h1><p>1.方差分析概述</p>
-<ul>
-<li>方差分析的基本思想<br>  把数据的全部变异——总变异分解成两个或多个组成部分，再做分析</li>
-<li>方差分析的术语<br>  观测变量、控制变量、控制变量的水平</li>
-<li>方差分析的应用<br>  两组或两组以上均数是否相等<br>  两个或多个元素的交互作用<br>  回归方程的线性假设检验</li>
-</ul>
-<h2 id="2-方差分析原理"><a href="#2-方差分析原理" class="headerlink" title="2.方差分析原理"></a>2.方差分析原理</h2><ul>
-<li>总方差：反应全部个体的变异情况<br>  SS总=求和i求和j（Xij-X平均）^2<br>  v总=N-1  （自由度）</li>
-<li>组内方差<br>  各组组内个体之间的变异<br>  属于随机误差</li>
-<li>组间方差<br>  各组均数和总均数的差异<br>  除了随机误差，还可能有系统误差</li>
-<li>F值</li>
-</ul>
-<h2 id="3-单因素方差分析实例解析"><a href="#3-单因素方差分析实例解析" class="headerlink" title="3.单因素方差分析实例解析"></a>3.单因素方差分析实例解析</h2><p>【分析】-【比较均值】-【单因素方差分析】</p>
-<h1 id="一元线性回归概述"><a href="#一元线性回归概述" class="headerlink" title="一元线性回归概述"></a>一元线性回归概述</h1><h2 id="1-一元线性回归概述"><a href="#1-一元线性回归概述" class="headerlink" title="1.一元线性回归概述"></a>1.一元线性回归概述</h2><ul>
-<li>概念介绍：只涉及到一个变量的回归，自变量和因变量之间是线性关系<br>  自变量、因变量</li>
-<li>回归模型</li>
-<li>回归系数的含义</li>
-<li>回归系数的检验</li>
-<li>回归方程的检验</li>
-</ul>
-<p>2.一元线性回归的原理</p>
-<ul>
-<li>最小二乘法<br>  因变量的变化来自于两个方面：自变量取值变化，自身因素（随机误差）</li>
-<li>回归系数的检验<br>  T检验</li>
-<li>回归方程的检验<br>  方差分析<br>  SST总平方和=SSR回归平方和+SSR残差平方和</li>
-<li><ul>
-<li>决定系数<br>反应模型的解释能力<br>反应回归直线的拟合程度<br>决定系数平方根等于相关系数<br>R^2=SSR/SST</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-一元线性回归实例解析"><a href="#3-一元线性回归实例解析" class="headerlink" title="3.一元线性回归实例解析"></a>3.一元线性回归实例解析</h2><p>【分析】-【回归】-【线性】</p>
-]]></content>
-      <categories>
-        <category>「笔记」- 软件</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>SPSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>拍照地小记</title>
     <url>/2020/12/22/Scenery/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -7108,83 +7108,6 @@
       <tags>
         <tag>生活</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>WeiboCat With Golang</title>
-    <url>/2019/04/15/WeiboCat/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Jacky &amp; Jason</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
-<li>项目名：<code>WeiboCat</code></li>
-<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
-<li>启动日期：2019年4月</li>
-<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
-</ul>
-<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
-<li><input disabled="" type="checkbox"> 微博登录  </li>
-<li><input disabled="" type="checkbox"> 微博发post</li>
-<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
-<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
-<li><input disabled="" type="checkbox"> 用.json作为config</li>
-</ul>
-<hr>
-<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
-<li>SDK for Golang 的使用？</li>
-<li>写自己的SDK？</li>
-<li>OAuth2.0认证什么鬼啊？</li>
-</ul>
-<hr>
-<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
-<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
-<p>正确的：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>错误的：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
-<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>「语言」- Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-        <tag>Go项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/03/07/Hello-World/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong>Hexo 的初始文档</strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
   </entry>
   <entry>
     <title>《虚拟电厂——能源互联网的终极组态》笔记</title>
@@ -8415,6 +8338,83 @@
         <tag>Note</tag>
         <tag>能源</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>WeiboCat With Golang</title>
+    <url>/2019/04/15/WeiboCat/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Jacky &amp; Jason</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
+<li>项目名：<code>WeiboCat</code></li>
+<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
+<li>启动日期：2019年4月</li>
+<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
+</ul>
+<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
+<li><input disabled="" type="checkbox"> 微博登录  </li>
+<li><input disabled="" type="checkbox"> 微博发post</li>
+<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
+<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
+<li><input disabled="" type="checkbox"> 用.json作为config</li>
+</ul>
+<hr>
+<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
+<li>SDK for Golang 的使用？</li>
+<li>写自己的SDK？</li>
+<li>OAuth2.0认证什么鬼啊？</li>
+</ul>
+<hr>
+<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
+<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
+<p>正确的：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>错误的：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
+<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>Go项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/03/07/Hello-World/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong>Hexo 的初始文档</strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
