@@ -415,388 +415,6 @@
       </tags>
   </entry>
   <entry>
-    <title>吃肉使人快乐</title>
-    <url>/2020/12/22/Food/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-***为什么好吃的都是热量高的***
-
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="聚餐"><a href="#聚餐" class="headerlink" title="聚餐"></a>聚餐</h1><h2 id="烤肉"><a href="#烤肉" class="headerlink" title="烤肉"></a>烤肉</h2><h3 id="鞑子烤羊腿"><a href="#鞑子烤羊腿" class="headerlink" title="鞑子烤羊腿"></a>鞑子烤羊腿</h3><ul>
-<li>位置：华星路</li>
-<li>时间：2020年夏、秋</li>
-<li>同伴：一次超j，一次zcm、lqm、zsx</li>
-<li>评价：可以满足大口吃羊肉的欲望，整块的羊排/羊腿，烤的滋油；其他烧烤小食没怎么吃</li>
-<li>人均：100</li>
-</ul>
-<h3 id="日料"><a href="#日料" class="headerlink" title="日料"></a>日料</h3><h3 id="米浅"><a href="#米浅" class="headerlink" title="米浅"></a>米浅</h3><ul>
-<li>位置：华星路</li>
-<li>时间：2020年10月</li>
-<li>同伴：xsx徐工</li>
-<li>评价：<ul>
-<li>必点玉子烧</li>
-<li>徐工推荐的鹅肝手握很阔以</li>
-<li>炒饭没上次去的好吃</li>
-<li>菜单跟浅草屋一模一样</li>
-</ul>
-</li>
-<li>人均：100</li>
-</ul>
-<h2 id="火锅"><a href="#火锅" class="headerlink" title="火锅"></a>火锅</h2><h3 id="海底捞"><a href="#海底捞" class="headerlink" title="海底捞"></a>海底捞</h3><ul>
-<li>位置：铂澜·大象城</li>
-<li>时间：2020年12月</li>
-<li>同伴：信爷</li>
-<li>评价：还行，没有那么让人尴尬的热情；菜品没多少感触，感觉火锅都差不多</li>
-<li>人均：220</li>
-</ul>
-<h3 id="捞王"><a href="#捞王" class="headerlink" title="捞王"></a>捞王</h3><ul>
-<li>位置：铂澜·大象城</li>
-<li>时间：2020年12月</li>
-<li>同伴：信爷</li>
-<li>评价：信爷喜欢捞王的汤底，比较奶的感觉</li>
-<li>人均：150+</li>
-</ul>
-<h2 id="烤鱼"><a href="#烤鱼" class="headerlink" title="烤鱼"></a>烤鱼</h2><h3 id="葫炉鱼"><a href="#葫炉鱼" class="headerlink" title="葫炉鱼"></a>葫炉鱼</h3><ul>
-<li>位置：文二路万塘路口，大华国际对面</li>
-<li>时间：2020年12月</li>
-<li>同伴：超j，猴子</li>
-<li>评价：新店活动鱼3.8折，烤鱼没自带小料有点套路，各种烤鱼区分特色不能，其实3个人光光三条鱼的话，性价比非常高</li>
-<li>人均：50-（活动价）</li>
-</ul>
-<hr>
-<h1 id="个人餐"><a href="#个人餐" class="headerlink" title="个人餐"></a>个人餐</h1><h2 id="饭"><a href="#饭" class="headerlink" title="饭"></a>饭</h2><h3 id="食其家-すき家"><a href="#食其家-すき家" class="headerlink" title="食其家 すき家"></a>食其家 すき家</h3><ul>
-<li>位置：文三路华星科技大厦、星光城</li>
-<li>评价：<ul>
-<li>招牌牛丼可以，现在的饭量中碗感觉都有点多</li>
-<li>大阪烧牛丼味道甚佳，小贵</li>
-<li>番茄牛丼太甜，总体味道没有惊喜，感觉有点对不起价格</li>
-<li>拉面的辅材感觉偏少</li>
-<li>关东煮性价比不如便利店</li>
-</ul>
-</li>
-<li>人均：20-40</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「备忘」</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Game Design Notes</title>
-    <url>/2019/03/19/Game-Design-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>游戏设计相关笔记</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="箴言（雾"><a href="#箴言（雾" class="headerlink" title="箴言（雾"></a>箴言（雾</h1><blockquote>
-<p>策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。<br><em>——黄J  2019.3.19</em>  </p>
-</blockquote>
-<hr>
-<h1 id="按游戏类型分类"><a href="#按游戏类型分类" class="headerlink" title="按游戏类型分类"></a>按游戏类型分类</h1><h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><h3 id="3种FPS地图布局流程技巧"><a href="#3种FPS地图布局流程技巧" class="headerlink" title="3种FPS地图布局流程技巧"></a>3种FPS地图布局流程技巧</h3><p>以 <code>CS:GO</code> 为例  </p>
-<blockquote>
-<p>前置教程参考：<br>CS:GO 6 Principles of Choke Point Level Design<br>CS:GO How to Design Gameplay Map Layouts (Complete In-Depth Guide)</p>
-</blockquote>
-<p><strong>做地图的通常步骤：</strong></p>
-<ul>
-<li>第一步：Layout布局阶段<br>把地图的玩法可视化，规划好地图中可行走的路线、备选路线、连接通路、阻塞点、目标、障碍物、地图边界。  </li>
-<li>再进BSP填充地图，迭代更新。  <ul>
-<li>（注：BSP其实是使用二叉空间分割方法Binary space partitioning生成的多边形，简单来说就是各种多边形体。Source引擎、Unreal4都提供了这种方法来快速创建关卡原型，优点是调整多边形非常方便，直接在场景内就可见，而且面数奇低）  </li>
-</ul>
-</li>
-</ul>
-<p><strong>地图布局方法：</strong><br>路线图就是从整个布局图中提取的精华，这样你就对双方如何处理地图目标有了清晰的概念。  </p>
-<ul>
-<li><strong>方法一：先画路径（通路），再画场景布局的边缘</strong><ul>
-<li>适用情况：当你对你地图玩起来是啥样子有了概念，并且你已经考虑过布局情况，但是对细节不是很清楚的时候。  </li>
-<li>开始先画简单的线条来定义地图的路径  </li>
-<li>绝对的精简，别设计任何边界，只专注考虑两队玩家的通路</li>
-<li>标记：CT、T出生点；包点、人质点；阻塞点（关键）</li>
-<li>再画地图布局，一直画到你能确定剩下的所有结构：地图的边界，视野，双方复生点，包点和人质点，阻塞点，连接通路，还有其他通路。</li>
-</ul>
-</li>
-<li><strong>方法二：一次只关注一个区域，然后组合起来</strong>  <ul>
-<li>适用情况：当你不知道你的地图布局最终是什么样子，你举步维艰无法弄清楚每个区域怎么去做的时候</li>
-<li>先挑一个区域开始：A点、B点、CT或T出生点、中路、任一阻塞点</li>
-<li>选一个区域设计，再画出区域的布局，专注该区域</li>
-<li>选其他区域，再来一遍</li>
-<li>整合到一个布局图里</li>
-<li>从布局简化出路径图</li>
-</ul>
-</li>
-<li><strong>方法三：直接完成全部布局，再简化通路</strong><ul>
-<li>适用情况：当你已经对整体布局有过深思熟虑并且确切的知道最终的样子。或许你已经画过这个布局许多次了，并且你打算重新设计它。</li>
-<li>从一个具体的区域开始然后逐渐展开直到整体布局画完。如果你在某个区域没有进展了，那就再接着画别的区域。记住一次画完。</li>
-<li>然后另画出地图简化通路</li>
-<li>新手慎用</li>
-</ul>
-</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/6euKxO_D4IzwPPgCD8GSww" target="_blank" rel="noopener">原文:3种设计FPS游戏地图布局的流程技巧</a></em>  </p>
-<h3 id="FPS地图阻塞点设计6原则"><a href="#FPS地图阻塞点设计6原则" class="headerlink" title="FPS地图阻塞点设计6原则"></a>FPS地图阻塞点设计6原则</h3><blockquote>
-<p>控制了阻塞点，就控制了整张地图。  </p>
-</blockquote>
-<p>阻塞点是地图上进攻方到达目标之前，遭遇防守方抵抗的区域。阻塞点也叫做控制点（Control Point）或者堵塞区（Bottleneck）。<br>进攻方（爆破模式中的匪徒或营救模式中的警察）必须从阻塞点干过去，才能到达目标区域。否则就必须撤退或者更换策略换条路线进攻。  </p>
-<p>阻塞点的设计目的：<strong>增强游戏性</strong>，利用阻塞点可以控制地图内的玩家流向，节奏，和平衡。</p>
-<ul>
-<li><strong>原则1：增强和促进游戏性（Gameplay）</strong>  <ul>
-<li>通过整体结构的设计将可见的入口降低到1-2个，来缩紧玩家的流向</li>
-<li>常见结构如：走廊，门口，隧道或是巷道登，是双方相遇、激战的阻塞点 </li>
-</ul>
-</li>
-<li><strong>原则2：阻塞点放置</strong><ul>
-<li>一定要部署在攻击方到达地图目标点之前</li>
-</ul>
-</li>
-<li><strong>原则3：时机</strong><ul>
-<li>需要让双方几乎在相同的时间到达阻塞点。防守方可以稍微早几秒到达站好位置。但最重要的是攻击方永远都不能在防守方刚刚到达的时候就已经冲过阻塞点。</li>
-<li>到达阻塞点的时间在地图的BSP搭建阶段就应该确定：直接方法-计时器、亲自跑</li>
-<li>时机也可能取决于地图，如dust2地图中防守方ct到A平台非常近</li>
-</ul>
-</li>
-<li><strong>原则4：入口、出口数量</strong><ul>
-<li>限制出入口的选择，将阻塞点通路数量<strong>控制在1到2个</strong>。这样攻击方不会太轻易地占领目标。许多CS地图的阻塞点都只有一个通路（通向目标点）</li>
-<li>两条通路入口的阻塞点给进攻方提供了选择和策略，<strong>增加策略性</strong>，但也可能把阻塞点搞无聊</li>
-<li>增加同一个阻塞点的通路数量，破快了局部的战斗节奏，<strong>可能让阻塞点变得无法控制</strong>，需要慎重把握</li>
-<li>如果要为阻塞点增加2条通路入口，应确保防守方在同一个视角可以清晰看到两个入口</li>
-</ul>
-</li>
-<li><strong>原则5：战斗方式</strong><ul>
-<li>阻塞点都应该支持多种战斗方式：狙击战、近距离的卡点战斗、暗中推进（猥琐推进）。</li>
-<li>支持的方式越多，越能迎合多类型玩家喜好。需要为策略性和玩家技巧来进行设计。</li>
-<li>使用<strong>距离</strong>和<strong>掩体</strong>作为布局元素<ul>
-<li>距离维度：长、短、宽、窄、高度</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>原则6：动态阻塞点</strong><ul>
-<li>营救人质地图中的阻塞点都是动态的。在设计人质地图的阻塞点时，你需要考虑防守方（T）是如何进行的。</li>
-<li>最主要的是需要把到达营救位置的通路数量控制在2到3条。</li>
-</ul>
-</li>
-</ul>
-<p>关于<strong>区域阻塞点</strong>：  </p>
-<ul>
-<li>它们是在特定区域，带有多种选择和掩体的开放式阻塞点</li>
-<li>一个地图1个足以，复杂的掩体和多样的选择都大大增加了设计的难度，要有取舍。</li>
-</ul>
-<p><em><a href="https://www.gameres.com/789358.html" target="_blank" rel="noopener">原文：FPS地图阻塞点的六种设计原则</a></em>  </p>
-<h3 id="FPS地图设计心得tips"><a href="#FPS地图设计心得tips" class="headerlink" title="FPS地图设计心得tips"></a>FPS地图设计心得tips</h3><ul>
-<li><strong>第一步：区域划分和规划</strong>：地图的尺寸、交战距离（和玩家的移动属性）；敌我双方/多方的出生点，冲突点都会在这个阶段设计完成，可以说是完成整个图的大结构设定——根据玩法设计目标和游戏定位来确认。</li>
-<li><strong>第二步：动线规划</strong>：动线就是“运动轨迹”：即设计连接区域的路径、区域内的运动路线、主路与支路、汇合点与展开点。并不是有路的地方就有动线，动线是代表关卡中最高效的战术运动轨迹。</li>
-<li><strong>第三步：关键点设计</strong>：关键点就是我们常说的兵家必争之地，比如集中的通路，近道，视野宽阔的优势阵地等。往往也是双方动线天然的汇合点，必经之路，或是可以扼守目标点的阵地。</li>
-<li><strong>局部战术</strong>：确定不同区域的优势和风险，引导玩家在不同阵地选择不同的武器和战术，或选择与队友配合（狙击、投掷、冲锋、埋伏、绕后等），进行一定程度的策略对抗。</li>
-<li><strong>第五步：指引性设计</strong>：为了防止玩家在地图中迷路，需要加入明显的地标指示物，帮助玩家明确判断自己的位置。</li>
-<li><strong>第六步：平衡</strong>：在结构和美术设计上，通常会从结构对称（镜像平衡）、优势对等（各有优势区域，相对对等）的方向考虑，以在地图中维持双方的竞技公平。</li>
-</ul>
-<p><em><a href="https://www.taptap.com/topic/4512299" target="_blank" rel="noopener">原文:一些FPS游戏地图设计心得</a></em> </p>
-<h3 id="FPS类大型超多人战场地图设计的8个tips"><a href="#FPS类大型超多人战场地图设计的8个tips" class="headerlink" title="FPS类大型超多人战场地图设计的8个tips"></a>FPS类大型超多人战场地图设计的8个tips</h3><p>PUBG相对于OW、CSGO的成功说明超大地图、超多人PVP的魅力。  </p>
-<ul>
-<li><strong>1.谨慎设定场景尺寸</strong><ul>
-<li>因素：核心玩法（GamePlay Mode）；参与人数；移动数值与移动方式；预期交战密度；次级关卡的规模与数量；游戏单局时长；项目的技术瓶颈；研发工作量限制等等</li>
-</ul>
-</li>
-<li><strong>2.明确游戏的核心体验方向</strong><ul>
-<li>如<strong>PUBG</strong>的精准倍镜和武器弹道，把远距离战斗作为重要的游戏体验，所以的建筑、掩体、草木的分布都服从于此；<strong>堡垒之夜</strong>建造自由度是游戏的中药体验，所以关卡设计上留了很多空闲的区域，给玩家脑洞；<strong>Apex英雄</strong>偏向中近程作战，战斗节奏中角色快速立体移动，故提供了更狭窄受控的对战空间，大部分掩体可自由登顶。</li>
-<li>因素：交战距离、交战频率、战斗风格、游戏目标、预期移动节奏、玩家行动方式、角色特性、武器技能道具、资源分布情况。</li>
-</ul>
-</li>
-<li><strong>3.设立严格的标准，用规则创造世界</strong><ul>
-<li>场景建筑、物件的标准：<ul>
-<li>建筑的核心参数：墙体厚度、门高宽、窗高宽、层高、窗户距地高度、门窗分类情况、房间最小尺寸、楼梯宽度角度长度、建筑内结构约束、室内物件约束等等</li>
-<li>建筑的外围参数：房屋与房屋间距、城镇街道与房屋间距、房屋与围栏间距、房屋高度范围、房屋可攀爬约束等等</li>
-<li>物件的参数：物件种类尺寸、物件距离房屋安全距离、是否作为掩体、碰撞规范约束、贴图新旧程度等等</li>
-</ul>
-</li>
-<li>PGC生成内容的标准：<ul>
-<li>地形：最大高度、海平面高度、平原山体河流峡谷森林所有区域的确切分布、区域地表贴图设定、最大行走角度等</li>
-<li>植被系统：地表植物的高度、遮蔽情况，树木生成的总量、密度、间隔、直径、树冠特征，草和树木与地表自然贴图的限定关系、植被的生成规则等</li>
-<li>其他系统：路网分布、道路的类型与宽度、石头总量与密度、水体的特性：深度、可否游泳、水中能否使用载具、能否与火焰交互等等</li>
-</ul>
-</li>
-<li>角色相关的标准；整体地图的分布标准<ul>
-<li>角色Pawn的各项属性：体型Hitbox、移动速度（行走、持枪、奔跑、蹲伏等）、跳跃高度、距离、掉落伤害、攀爬高度距离、可行走角度、特殊移动方式（如滑索、载具）等等，都会影响具体场景的制作</li>
-<li>子场景的分布标准：规定了子场景的分级（重要程度，例如PUBG中机场就是一个分级为重要的子场景）、每类子场景的建筑数量与规模、不同子场景之间的间距（如两个核心资源点的最小距离）、局内资源的分布情况、资源的总量与密度等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>4.用局部设计为关卡注入灵魂</strong><ul>
-<li>为区域添加LandMark</li>
-<li>局部场景植被的变化</li>
-<li>利用好地形，进行二次创造</li>
-<li>布局Layout的艺术</li>
-<li>设定特殊主题</li>
-</ul>
-</li>
-<li><strong>5.在设计上留白</strong></li>
-<li><strong>6.建立完善的工具与制作流程</strong><ul>
-<li>PGC内容的编辑工具（引擎内）：树木地表道路篱笆等</li>
-<li>关卡管理工具：关卡拆分与多人协同编辑支持</li>
-<li>关卡预览工具：大世界的实时调整与预览工具</li>
-<li>大世界的批量测试工具：异常碰撞检测、地表贴合检测等</li>
-<li>美术资源的工具：批量处理资源、自动烘焙流程等</li>
-<li>其他一切提升LD/LA战斗力的引擎工具：比如扩展Unity糟糕的关卡编辑器</li>
-</ul>
-</li>
-<li><strong>7.用数据监测Review关卡的设计</strong><ul>
-<li>通用规则：死亡分布、各阶段时长、胜率等</li>
-<li>资源投放情况：物资产出、分布、物资获取评估等</li>
-<li>武器数据：KD、TTK、ADR（AVERAGE DAMAGE per ROUND）、配件出场率等</li>
-<li>道具/技能数据：道具消耗量、存量、使用率、有效率等</li>
-<li>载具使用情况：生成、获取评估、使用率、移动情况、损坏率、载具ADR等</li>
-<li>热力图数据：选点情况、出生跳伞、击杀死亡、区域活跃时间、决赛位置等</li>
-</ul>
-</li>
-<li><strong>8.让技术主导玩法，打破规则</strong><ul>
-<li>曾经我们认为关卡必须是<strong>CS</strong>一样的固态结构，<strong>Rainbow Six</strong>通过破碎系统的突破性尝试让我们看到了墙体破坏的战斗魅力；曾经我们以为手机上只能做2<em>2的小场景马赛克吃鸡，*</em>PUBG Mobile<strong>做到了64平方千米准端游画质并且不卡的世界！曾经我们以为大逃杀BR就是一条命苟到底飙车跑毒圈的ChickenDinner，但是</strong>APEX**用滑铲复活飞檐走壁华丽地技能钢枪告诉我们它也是一个Legend</li>
-</ul>
-</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/2j0U6BWyi9MLVOXBM0GWsg" target="_blank" rel="noopener">原文:FPS大世界关卡设计的8个锦囊</a></em>  </p>
-<h2 id="经营策略类"><a href="#经营策略类" class="headerlink" title="经营策略类"></a>经营策略类</h2><h3 id="3个玩法要素与3个乐趣的来源"><a href="#3个玩法要素与3个乐趣的来源" class="headerlink" title="3个玩法要素与3个乐趣的来源"></a>3个玩法要素与3个乐趣的来源</h3><ul>
-<li>要素：可选择的橙装路径、资源、胜利条件</li>
-<li><strong>思考和推理的乐趣</strong>：给玩家以不同选择的取舍；使用随机性、外部条件来应对玩家的攻略</li>
-<li><strong>博弈的乐趣</strong>：多个参与者时发生争夺、博弈</li>
-<li><strong>意想的乐趣</strong>：把游戏中的内容具象化，结合生活概念，有助于玩家理解</li>
-<li>总结：策略经营类的本质是逐步展开选择路径，玩家根据现有的消息，猜测将来可能出现的情况，来选择在一条最优路径获得“数值成果”。经历若干个阶段后，来结算成功。  </li>
-</ul>
-<p><em><a href="https://www.gameres.com/840787.html" target="_blank" rel="noopener">参考：经营策略游戏设计要点：3个玩法要素与3个乐趣的来源</a></em>  </p>
-<hr>
-<h1 id="关卡类"><a href="#关卡类" class="headerlink" title="关卡类"></a>关卡类</h1><h2 id="设计可重复挑战关卡？"><a href="#设计可重复挑战关卡？" class="headerlink" title="设计可重复挑战关卡？"></a>设计可重复挑战关卡？</h2><ul>
-<li><strong>目标结论</strong>：<ul>
-<li>随机性</li>
-<li>可操作性</li>
-</ul>
-</li>
-<li><strong>关卡规则构建</strong>：主要从目的和手段两个角度入手，用同样的资源去打造不同的关卡</li>
-<li><strong>关卡元素</strong>：如何站在基本型和关卡元素组合的思路去制作关卡元素，让它们有足够的差异性和复用价值</li>
-<li>语境重构，利用语境重构来复用关卡元素，并增加其代入感。其实每一个关卡元素都是一个很值得塑造的元素，每一个角色在进行复用的时候，都可以看作是他一次重新上场的机会，并推翻之前观众对他的印象</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/U_GsdgAwVrfEUoa6dodYYQ" target="_blank" rel="noopener">原文:在资源有限时，如何设计出可重复挑战的游戏关卡？</a></em>  </p>
-<h2 id="打破PVP玩法最优解"><a href="#打破PVP玩法最优解" class="headerlink" title="打破PVP玩法最优解"></a>打破PVP玩法最优解</h2><ul>
-<li><strong>非单一相克</strong>：石头剪刀布</li>
-<li><strong>可控约束性</strong>：玩家可以利用游戏规则，和自己的技巧来约束对方，从而使一些不透明的信息变得透明</li>
-<li><strong>“使绊子”</strong>：致使玩家并不那么容易达到最优解的一些方式，主要包括“操作难度”和“不可控因素”两点</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/uPGrfLwlzHhmIfOkMq8-Yg" target="_blank" rel="noopener">原文：打破PvP玩法的“最优解”</a></em></p>
-<hr>
-<h1 id="游戏架构类"><a href="#游戏架构类" class="headerlink" title="游戏架构类"></a>游戏架构类</h1><h2 id="开放世界不让玩家路痴"><a href="#开放世界不让玩家路痴" class="headerlink" title="开放世界不让玩家路痴"></a>开放世界不让玩家路痴</h2><p>游戏内的自动导航是与“对于现实世界的拟真”所相违背。<br>提升玩家寻路体验tips：  </p>
-<ul>
-<li><strong>缩小世界规模</strong>：简单粗暴，但如果引入了快速交通工具，玩家的体验会大打折扣。</li>
-<li><strong>炮制宏达景观</strong>：多设立大型地标，形成记忆锚点，但美术资源可能有限</li>
-<li><strong>为世界命名</strong>：对游戏中的区块和道路进行命名</li>
-<li><strong>减少素材重复利用</strong>：不要大粒度的方式重复利用</li>
-<li><strong>主线路径的重复利用</strong>：主线任务尽可能让玩家多重复在同一条路径上，加深记忆</li>
-</ul>
-<p><em><a href="https://www.gameres.com/840600.html" target="_blank" rel="noopener">原文：什么样的开放世界游戏才会让玩家不路痴？</a></em>  </p>
-<h2 id="潜行游戏的AI设计"><a href="#潜行游戏的AI设计" class="headerlink" title="潜行游戏的AI设计"></a>潜行游戏的AI设计</h2><p>潜行游戏的核心——暗杀  </p>
-<p>潜行AI需要增加视觉、听觉模拟器，以视觉为例：  </p>
-<p>AI的视觉模拟器：  </p>
-<ul>
-<li>AI看到什么会引起警觉<ul>
-<li>敌人</li>
-<li>同伴尸体</li>
-<li>同伴小时</li>
-<li>物品状态改变（如关着的门开了）</li>
-</ul>
-</li>
-<li>引起警觉之后，如何行动<ul>
-<li>查看异常（一般是单人行动）</li>
-<li>搜索敌人（一般是和周围同伴一起群体行动）</li>
-<li>触发警报（整个区域开始寻找敌人）</li>
-<li>呼叫增援（在增加区域内敌人数量）</li>
-</ul>
-</li>
-<li>行动后的变化<ul>
-<li>回归初始状态</li>
-<li>继续保持警戒状态</li>
-<li>保持搜索敌人状态</li>
-<li>保持战斗状态</li>
-</ul>
-</li>
-</ul>
-<p>潜行游戏的其他要素：变装、引诱、、隐蔽点、阴影、陷阱、移动尸体、藏匿尸体、离间、审问、墙体透视……</p>
-<hr>
-<h1 id="交互类"><a href="#交互类" class="headerlink" title="交互类"></a>交互类</h1><h2 id="交互设计入门原则和规范"><a href="#交互设计入门原则和规范" class="headerlink" title="交互设计入门原则和规范"></a>交互设计入门原则和规范</h2><ul>
-<li><strong>一致性原则</strong>：界面的视觉风格、布局、功能、用语、操作应在所有页面中保持一致。</li>
-<li><strong>有效性原则</strong>：难以点击的问题一定要彻底解决</li>
-<li><strong>易读性原则</strong>：尽管某些游戏的字号你拿着细看也是完全可以看清楚的，甚至还觉得挺精致。但基于手机的实际应用情景（拥挤的地铁、公交、步行时），字号还是建议略为调大一点，使用户即便在户外依然能够轻松地读取到画面中的文字信息。<ul>
-<li>提高文字与底图之间的对比度。</li>
-<li>承载文字的底图尽可能不设置透明度或较低透明度。</li>
-<li>多运用界面留白，包括设置较大的文字的行距，都能有助提升易读性。</li>
-</ul>
-</li>
-<li><strong>3次点击原则</strong>：用户经常会关心到的内容，务必在3次点击之内让他们找到。</li>
-<li><strong>防错原则</strong>：通过对信息的强调，或者二次确认，或增加上锁\解锁功能，或确认按钮位置的改变来防止用户在操作过程中发生失误。</li>
-<li><strong>字体规范</strong>：强化字阶差异，减少字号种类；统一“韵律”，简化字阶递增规律；以灰度、固定色彩体系强化文字性质；</li>
-<li><strong>控件规范</strong>：复用性要高，尽量控制相同样式不同尺寸的控件数量；确保视觉输出的控件，设备上看，边缘是锐利清晰的； 确保视觉输出的控件，配色方案不会对用户构成交互体验上的干扰；</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A" target="_blank" rel="noopener">原文：交互设计入门引导：5点原则两条规范</a></em>  </p>
-<h2 id="游戏交互设计5要素"><a href="#游戏交互设计5要素" class="headerlink" title="游戏交互设计5要素"></a>游戏交互设计5要素</h2><ul>
-<li>感受用户体验要素<ul>
-<li>表现层：呈献给用户的第一印象内容，看个大概基调</li>
-<li>框架层：整个系统的框架，图标等</li>
-<li>结构层：规划整个界面，较抽象</li>
-<li>范围层：可以看到这个页面提供什么、不提供什么</li>
-<li>战略层：这个界面的目的</li>
-<li>用户感受是从上到下，产品设计是从下到上</li>
-<li>框架层和结构层是交互设计师的主要负责区</li>
-</ul>
-</li>
-<li>用户体验要素与游戏交互设计<ul>
-<li>产品目标和用户目标-战略层：<ul>
-<li>研究用户是谁：定性研究（玩家对Demo试玩的意见）、定量研究（问卷调查），来了解用户特征，尝试对用户细分</li>
-<li>用户画像：基本信息（年龄、性别、单生？等）、何时游戏？游戏经验？技术水平？等</li>
-<li>二次元游戏用户画像4种：IP教徒典型画像、游戏宅典型画像、游戏向二次元人典型画像、跟风宅典型画像</li>
-</ul>
-</li>
-<li>功能规格和内容需求-范围层：<ul>
-<li>梳理系统蓝图：核心系统内容、系统常规玩法等……</li>
-<li>时间规划：每个版本节点中游戏的完成度、复杂度，来确定哪些交互规则必须优先搭建</li>
-<li>策划案：阐明三点，系统的设计目的、系统的主要/次要流程、系统各功能的优先级（最关注项）</li>
-</ul>
-</li>
-<li>.交互流程和信息构架-结构层：<ul>
-<li>交互流程和信息架构（操作的流程，围绕（玩家）角色、任务、场景三要素）</li>
-</ul>
-</li>
-<li>从抽象到具体-框架层：<ul>
-<li>布局遵从习惯</li>
-<li>覆盖尽可能多的场景和状态：有和无、最少和最多、80%和20%</li>
-<li>选择合适的方式，而不一定是“最酷”的方式</li>
-<li>优化交互输出，保证框架层实现度</li>
-</ul>
-</li>
-<li>感知设计-表现层：<ul>
-<li>目的是让框架层变得可以感知，交互设计师要让设计被视觉设计师“正确的感知”</li>
-<li>围绕目的进行沟通</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>梳理紧急性、重要性</li>
-</ul>
-<p><em><a href="https://mp.weixin.qq.com/s/7t_WHdJljuOAu4YA6SnMtA" target="_blank" rel="noopener">原文：想要提升用户体验？ 先了解游戏交互设计这5个要素（含实例）</a></em>  </p>
-<hr>
-<p><em><code>to be continued...</code></em>  </p>
-]]></content>
-      <categories>
-        <category>「Game」</category>
-      </categories>
-      <tags>
-        <tag>Game</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Excel VBA Notes</title>
     <url>/2020/12/15/Excel-VBA/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -1650,6 +1268,388 @@
       </tags>
   </entry>
   <entry>
+    <title>吃肉使人快乐</title>
+    <url>/2020/12/22/Food/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+***为什么好吃的都是热量高的***
+
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="聚餐"><a href="#聚餐" class="headerlink" title="聚餐"></a>聚餐</h1><h2 id="烤肉"><a href="#烤肉" class="headerlink" title="烤肉"></a>烤肉</h2><h3 id="鞑子烤羊腿"><a href="#鞑子烤羊腿" class="headerlink" title="鞑子烤羊腿"></a>鞑子烤羊腿</h3><ul>
+<li>位置：华星路</li>
+<li>时间：2020年夏、秋</li>
+<li>同伴：一次超j，一次zcm、lqm、zsx</li>
+<li>评价：可以满足大口吃羊肉的欲望，整块的羊排/羊腿，烤的滋油；其他烧烤小食没怎么吃</li>
+<li>人均：100</li>
+</ul>
+<h3 id="日料"><a href="#日料" class="headerlink" title="日料"></a>日料</h3><h3 id="米浅"><a href="#米浅" class="headerlink" title="米浅"></a>米浅</h3><ul>
+<li>位置：华星路</li>
+<li>时间：2020年10月</li>
+<li>同伴：xsx徐工</li>
+<li>评价：<ul>
+<li>必点玉子烧</li>
+<li>徐工推荐的鹅肝手握很阔以</li>
+<li>炒饭没上次去的好吃</li>
+<li>菜单跟浅草屋一模一样</li>
+</ul>
+</li>
+<li>人均：100</li>
+</ul>
+<h2 id="火锅"><a href="#火锅" class="headerlink" title="火锅"></a>火锅</h2><h3 id="海底捞"><a href="#海底捞" class="headerlink" title="海底捞"></a>海底捞</h3><ul>
+<li>位置：铂澜·大象城</li>
+<li>时间：2020年12月</li>
+<li>同伴：信爷</li>
+<li>评价：还行，没有那么让人尴尬的热情；菜品没多少感触，感觉火锅都差不多</li>
+<li>人均：220</li>
+</ul>
+<h3 id="捞王"><a href="#捞王" class="headerlink" title="捞王"></a>捞王</h3><ul>
+<li>位置：铂澜·大象城</li>
+<li>时间：2020年12月</li>
+<li>同伴：信爷</li>
+<li>评价：信爷喜欢捞王的汤底，比较奶的感觉</li>
+<li>人均：150+</li>
+</ul>
+<h2 id="烤鱼"><a href="#烤鱼" class="headerlink" title="烤鱼"></a>烤鱼</h2><h3 id="葫炉鱼"><a href="#葫炉鱼" class="headerlink" title="葫炉鱼"></a>葫炉鱼</h3><ul>
+<li>位置：文二路万塘路口，大华国际对面</li>
+<li>时间：2020年12月</li>
+<li>同伴：超j，猴子</li>
+<li>评价：新店活动鱼3.8折，烤鱼没自带小料有点套路，各种烤鱼区分特色不能，其实3个人光光三条鱼的话，性价比非常高</li>
+<li>人均：50-（活动价）</li>
+</ul>
+<hr>
+<h1 id="个人餐"><a href="#个人餐" class="headerlink" title="个人餐"></a>个人餐</h1><h2 id="饭"><a href="#饭" class="headerlink" title="饭"></a>饭</h2><h3 id="食其家-すき家"><a href="#食其家-すき家" class="headerlink" title="食其家 すき家"></a>食其家 すき家</h3><ul>
+<li>位置：文三路华星科技大厦、星光城</li>
+<li>评价：<ul>
+<li>招牌牛丼可以，现在的饭量中碗感觉都有点多</li>
+<li>大阪烧牛丼味道甚佳，小贵</li>
+<li>番茄牛丼太甜，总体味道没有惊喜，感觉有点对不起价格</li>
+<li>拉面的辅材感觉偏少</li>
+<li>关东煮性价比不如便利店</li>
+</ul>
+</li>
+<li>人均：20-40</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Game Design Notes</title>
+    <url>/2019/03/19/Game-Design-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>游戏设计相关笔记</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="箴言（雾"><a href="#箴言（雾" class="headerlink" title="箴言（雾"></a>箴言（雾</h1><blockquote>
+<p>策划是一个游戏的灵魂，抄来的灵魂至少靠谱，原创的灵魂可能短命。<br><em>——黄J  2019.3.19</em>  </p>
+</blockquote>
+<hr>
+<h1 id="按游戏类型分类"><a href="#按游戏类型分类" class="headerlink" title="按游戏类型分类"></a>按游戏类型分类</h1><h2 id="FPS"><a href="#FPS" class="headerlink" title="FPS"></a>FPS</h2><h3 id="3种FPS地图布局流程技巧"><a href="#3种FPS地图布局流程技巧" class="headerlink" title="3种FPS地图布局流程技巧"></a>3种FPS地图布局流程技巧</h3><p>以 <code>CS:GO</code> 为例  </p>
+<blockquote>
+<p>前置教程参考：<br>CS:GO 6 Principles of Choke Point Level Design<br>CS:GO How to Design Gameplay Map Layouts (Complete In-Depth Guide)</p>
+</blockquote>
+<p><strong>做地图的通常步骤：</strong></p>
+<ul>
+<li>第一步：Layout布局阶段<br>把地图的玩法可视化，规划好地图中可行走的路线、备选路线、连接通路、阻塞点、目标、障碍物、地图边界。  </li>
+<li>再进BSP填充地图，迭代更新。  <ul>
+<li>（注：BSP其实是使用二叉空间分割方法Binary space partitioning生成的多边形，简单来说就是各种多边形体。Source引擎、Unreal4都提供了这种方法来快速创建关卡原型，优点是调整多边形非常方便，直接在场景内就可见，而且面数奇低）  </li>
+</ul>
+</li>
+</ul>
+<p><strong>地图布局方法：</strong><br>路线图就是从整个布局图中提取的精华，这样你就对双方如何处理地图目标有了清晰的概念。  </p>
+<ul>
+<li><strong>方法一：先画路径（通路），再画场景布局的边缘</strong><ul>
+<li>适用情况：当你对你地图玩起来是啥样子有了概念，并且你已经考虑过布局情况，但是对细节不是很清楚的时候。  </li>
+<li>开始先画简单的线条来定义地图的路径  </li>
+<li>绝对的精简，别设计任何边界，只专注考虑两队玩家的通路</li>
+<li>标记：CT、T出生点；包点、人质点；阻塞点（关键）</li>
+<li>再画地图布局，一直画到你能确定剩下的所有结构：地图的边界，视野，双方复生点，包点和人质点，阻塞点，连接通路，还有其他通路。</li>
+</ul>
+</li>
+<li><strong>方法二：一次只关注一个区域，然后组合起来</strong>  <ul>
+<li>适用情况：当你不知道你的地图布局最终是什么样子，你举步维艰无法弄清楚每个区域怎么去做的时候</li>
+<li>先挑一个区域开始：A点、B点、CT或T出生点、中路、任一阻塞点</li>
+<li>选一个区域设计，再画出区域的布局，专注该区域</li>
+<li>选其他区域，再来一遍</li>
+<li>整合到一个布局图里</li>
+<li>从布局简化出路径图</li>
+</ul>
+</li>
+<li><strong>方法三：直接完成全部布局，再简化通路</strong><ul>
+<li>适用情况：当你已经对整体布局有过深思熟虑并且确切的知道最终的样子。或许你已经画过这个布局许多次了，并且你打算重新设计它。</li>
+<li>从一个具体的区域开始然后逐渐展开直到整体布局画完。如果你在某个区域没有进展了，那就再接着画别的区域。记住一次画完。</li>
+<li>然后另画出地图简化通路</li>
+<li>新手慎用</li>
+</ul>
+</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/6euKxO_D4IzwPPgCD8GSww" target="_blank" rel="noopener">原文:3种设计FPS游戏地图布局的流程技巧</a></em>  </p>
+<h3 id="FPS地图阻塞点设计6原则"><a href="#FPS地图阻塞点设计6原则" class="headerlink" title="FPS地图阻塞点设计6原则"></a>FPS地图阻塞点设计6原则</h3><blockquote>
+<p>控制了阻塞点，就控制了整张地图。  </p>
+</blockquote>
+<p>阻塞点是地图上进攻方到达目标之前，遭遇防守方抵抗的区域。阻塞点也叫做控制点（Control Point）或者堵塞区（Bottleneck）。<br>进攻方（爆破模式中的匪徒或营救模式中的警察）必须从阻塞点干过去，才能到达目标区域。否则就必须撤退或者更换策略换条路线进攻。  </p>
+<p>阻塞点的设计目的：<strong>增强游戏性</strong>，利用阻塞点可以控制地图内的玩家流向，节奏，和平衡。</p>
+<ul>
+<li><strong>原则1：增强和促进游戏性（Gameplay）</strong>  <ul>
+<li>通过整体结构的设计将可见的入口降低到1-2个，来缩紧玩家的流向</li>
+<li>常见结构如：走廊，门口，隧道或是巷道登，是双方相遇、激战的阻塞点 </li>
+</ul>
+</li>
+<li><strong>原则2：阻塞点放置</strong><ul>
+<li>一定要部署在攻击方到达地图目标点之前</li>
+</ul>
+</li>
+<li><strong>原则3：时机</strong><ul>
+<li>需要让双方几乎在相同的时间到达阻塞点。防守方可以稍微早几秒到达站好位置。但最重要的是攻击方永远都不能在防守方刚刚到达的时候就已经冲过阻塞点。</li>
+<li>到达阻塞点的时间在地图的BSP搭建阶段就应该确定：直接方法-计时器、亲自跑</li>
+<li>时机也可能取决于地图，如dust2地图中防守方ct到A平台非常近</li>
+</ul>
+</li>
+<li><strong>原则4：入口、出口数量</strong><ul>
+<li>限制出入口的选择，将阻塞点通路数量<strong>控制在1到2个</strong>。这样攻击方不会太轻易地占领目标。许多CS地图的阻塞点都只有一个通路（通向目标点）</li>
+<li>两条通路入口的阻塞点给进攻方提供了选择和策略，<strong>增加策略性</strong>，但也可能把阻塞点搞无聊</li>
+<li>增加同一个阻塞点的通路数量，破快了局部的战斗节奏，<strong>可能让阻塞点变得无法控制</strong>，需要慎重把握</li>
+<li>如果要为阻塞点增加2条通路入口，应确保防守方在同一个视角可以清晰看到两个入口</li>
+</ul>
+</li>
+<li><strong>原则5：战斗方式</strong><ul>
+<li>阻塞点都应该支持多种战斗方式：狙击战、近距离的卡点战斗、暗中推进（猥琐推进）。</li>
+<li>支持的方式越多，越能迎合多类型玩家喜好。需要为策略性和玩家技巧来进行设计。</li>
+<li>使用<strong>距离</strong>和<strong>掩体</strong>作为布局元素<ul>
+<li>距离维度：长、短、宽、窄、高度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>原则6：动态阻塞点</strong><ul>
+<li>营救人质地图中的阻塞点都是动态的。在设计人质地图的阻塞点时，你需要考虑防守方（T）是如何进行的。</li>
+<li>最主要的是需要把到达营救位置的通路数量控制在2到3条。</li>
+</ul>
+</li>
+</ul>
+<p>关于<strong>区域阻塞点</strong>：  </p>
+<ul>
+<li>它们是在特定区域，带有多种选择和掩体的开放式阻塞点</li>
+<li>一个地图1个足以，复杂的掩体和多样的选择都大大增加了设计的难度，要有取舍。</li>
+</ul>
+<p><em><a href="https://www.gameres.com/789358.html" target="_blank" rel="noopener">原文：FPS地图阻塞点的六种设计原则</a></em>  </p>
+<h3 id="FPS地图设计心得tips"><a href="#FPS地图设计心得tips" class="headerlink" title="FPS地图设计心得tips"></a>FPS地图设计心得tips</h3><ul>
+<li><strong>第一步：区域划分和规划</strong>：地图的尺寸、交战距离（和玩家的移动属性）；敌我双方/多方的出生点，冲突点都会在这个阶段设计完成，可以说是完成整个图的大结构设定——根据玩法设计目标和游戏定位来确认。</li>
+<li><strong>第二步：动线规划</strong>：动线就是“运动轨迹”：即设计连接区域的路径、区域内的运动路线、主路与支路、汇合点与展开点。并不是有路的地方就有动线，动线是代表关卡中最高效的战术运动轨迹。</li>
+<li><strong>第三步：关键点设计</strong>：关键点就是我们常说的兵家必争之地，比如集中的通路，近道，视野宽阔的优势阵地等。往往也是双方动线天然的汇合点，必经之路，或是可以扼守目标点的阵地。</li>
+<li><strong>局部战术</strong>：确定不同区域的优势和风险，引导玩家在不同阵地选择不同的武器和战术，或选择与队友配合（狙击、投掷、冲锋、埋伏、绕后等），进行一定程度的策略对抗。</li>
+<li><strong>第五步：指引性设计</strong>：为了防止玩家在地图中迷路，需要加入明显的地标指示物，帮助玩家明确判断自己的位置。</li>
+<li><strong>第六步：平衡</strong>：在结构和美术设计上，通常会从结构对称（镜像平衡）、优势对等（各有优势区域，相对对等）的方向考虑，以在地图中维持双方的竞技公平。</li>
+</ul>
+<p><em><a href="https://www.taptap.com/topic/4512299" target="_blank" rel="noopener">原文:一些FPS游戏地图设计心得</a></em> </p>
+<h3 id="FPS类大型超多人战场地图设计的8个tips"><a href="#FPS类大型超多人战场地图设计的8个tips" class="headerlink" title="FPS类大型超多人战场地图设计的8个tips"></a>FPS类大型超多人战场地图设计的8个tips</h3><p>PUBG相对于OW、CSGO的成功说明超大地图、超多人PVP的魅力。  </p>
+<ul>
+<li><strong>1.谨慎设定场景尺寸</strong><ul>
+<li>因素：核心玩法（GamePlay Mode）；参与人数；移动数值与移动方式；预期交战密度；次级关卡的规模与数量；游戏单局时长；项目的技术瓶颈；研发工作量限制等等</li>
+</ul>
+</li>
+<li><strong>2.明确游戏的核心体验方向</strong><ul>
+<li>如<strong>PUBG</strong>的精准倍镜和武器弹道，把远距离战斗作为重要的游戏体验，所以的建筑、掩体、草木的分布都服从于此；<strong>堡垒之夜</strong>建造自由度是游戏的中药体验，所以关卡设计上留了很多空闲的区域，给玩家脑洞；<strong>Apex英雄</strong>偏向中近程作战，战斗节奏中角色快速立体移动，故提供了更狭窄受控的对战空间，大部分掩体可自由登顶。</li>
+<li>因素：交战距离、交战频率、战斗风格、游戏目标、预期移动节奏、玩家行动方式、角色特性、武器技能道具、资源分布情况。</li>
+</ul>
+</li>
+<li><strong>3.设立严格的标准，用规则创造世界</strong><ul>
+<li>场景建筑、物件的标准：<ul>
+<li>建筑的核心参数：墙体厚度、门高宽、窗高宽、层高、窗户距地高度、门窗分类情况、房间最小尺寸、楼梯宽度角度长度、建筑内结构约束、室内物件约束等等</li>
+<li>建筑的外围参数：房屋与房屋间距、城镇街道与房屋间距、房屋与围栏间距、房屋高度范围、房屋可攀爬约束等等</li>
+<li>物件的参数：物件种类尺寸、物件距离房屋安全距离、是否作为掩体、碰撞规范约束、贴图新旧程度等等</li>
+</ul>
+</li>
+<li>PGC生成内容的标准：<ul>
+<li>地形：最大高度、海平面高度、平原山体河流峡谷森林所有区域的确切分布、区域地表贴图设定、最大行走角度等</li>
+<li>植被系统：地表植物的高度、遮蔽情况，树木生成的总量、密度、间隔、直径、树冠特征，草和树木与地表自然贴图的限定关系、植被的生成规则等</li>
+<li>其他系统：路网分布、道路的类型与宽度、石头总量与密度、水体的特性：深度、可否游泳、水中能否使用载具、能否与火焰交互等等</li>
+</ul>
+</li>
+<li>角色相关的标准；整体地图的分布标准<ul>
+<li>角色Pawn的各项属性：体型Hitbox、移动速度（行走、持枪、奔跑、蹲伏等）、跳跃高度、距离、掉落伤害、攀爬高度距离、可行走角度、特殊移动方式（如滑索、载具）等等，都会影响具体场景的制作</li>
+<li>子场景的分布标准：规定了子场景的分级（重要程度，例如PUBG中机场就是一个分级为重要的子场景）、每类子场景的建筑数量与规模、不同子场景之间的间距（如两个核心资源点的最小距离）、局内资源的分布情况、资源的总量与密度等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>4.用局部设计为关卡注入灵魂</strong><ul>
+<li>为区域添加LandMark</li>
+<li>局部场景植被的变化</li>
+<li>利用好地形，进行二次创造</li>
+<li>布局Layout的艺术</li>
+<li>设定特殊主题</li>
+</ul>
+</li>
+<li><strong>5.在设计上留白</strong></li>
+<li><strong>6.建立完善的工具与制作流程</strong><ul>
+<li>PGC内容的编辑工具（引擎内）：树木地表道路篱笆等</li>
+<li>关卡管理工具：关卡拆分与多人协同编辑支持</li>
+<li>关卡预览工具：大世界的实时调整与预览工具</li>
+<li>大世界的批量测试工具：异常碰撞检测、地表贴合检测等</li>
+<li>美术资源的工具：批量处理资源、自动烘焙流程等</li>
+<li>其他一切提升LD/LA战斗力的引擎工具：比如扩展Unity糟糕的关卡编辑器</li>
+</ul>
+</li>
+<li><strong>7.用数据监测Review关卡的设计</strong><ul>
+<li>通用规则：死亡分布、各阶段时长、胜率等</li>
+<li>资源投放情况：物资产出、分布、物资获取评估等</li>
+<li>武器数据：KD、TTK、ADR（AVERAGE DAMAGE per ROUND）、配件出场率等</li>
+<li>道具/技能数据：道具消耗量、存量、使用率、有效率等</li>
+<li>载具使用情况：生成、获取评估、使用率、移动情况、损坏率、载具ADR等</li>
+<li>热力图数据：选点情况、出生跳伞、击杀死亡、区域活跃时间、决赛位置等</li>
+</ul>
+</li>
+<li><strong>8.让技术主导玩法，打破规则</strong><ul>
+<li>曾经我们认为关卡必须是<strong>CS</strong>一样的固态结构，<strong>Rainbow Six</strong>通过破碎系统的突破性尝试让我们看到了墙体破坏的战斗魅力；曾经我们以为手机上只能做2<em>2的小场景马赛克吃鸡，*</em>PUBG Mobile<strong>做到了64平方千米准端游画质并且不卡的世界！曾经我们以为大逃杀BR就是一条命苟到底飙车跑毒圈的ChickenDinner，但是</strong>APEX**用滑铲复活飞檐走壁华丽地技能钢枪告诉我们它也是一个Legend</li>
+</ul>
+</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/2j0U6BWyi9MLVOXBM0GWsg" target="_blank" rel="noopener">原文:FPS大世界关卡设计的8个锦囊</a></em>  </p>
+<h2 id="经营策略类"><a href="#经营策略类" class="headerlink" title="经营策略类"></a>经营策略类</h2><h3 id="3个玩法要素与3个乐趣的来源"><a href="#3个玩法要素与3个乐趣的来源" class="headerlink" title="3个玩法要素与3个乐趣的来源"></a>3个玩法要素与3个乐趣的来源</h3><ul>
+<li>要素：可选择的橙装路径、资源、胜利条件</li>
+<li><strong>思考和推理的乐趣</strong>：给玩家以不同选择的取舍；使用随机性、外部条件来应对玩家的攻略</li>
+<li><strong>博弈的乐趣</strong>：多个参与者时发生争夺、博弈</li>
+<li><strong>意想的乐趣</strong>：把游戏中的内容具象化，结合生活概念，有助于玩家理解</li>
+<li>总结：策略经营类的本质是逐步展开选择路径，玩家根据现有的消息，猜测将来可能出现的情况，来选择在一条最优路径获得“数值成果”。经历若干个阶段后，来结算成功。  </li>
+</ul>
+<p><em><a href="https://www.gameres.com/840787.html" target="_blank" rel="noopener">参考：经营策略游戏设计要点：3个玩法要素与3个乐趣的来源</a></em>  </p>
+<hr>
+<h1 id="关卡类"><a href="#关卡类" class="headerlink" title="关卡类"></a>关卡类</h1><h2 id="设计可重复挑战关卡？"><a href="#设计可重复挑战关卡？" class="headerlink" title="设计可重复挑战关卡？"></a>设计可重复挑战关卡？</h2><ul>
+<li><strong>目标结论</strong>：<ul>
+<li>随机性</li>
+<li>可操作性</li>
+</ul>
+</li>
+<li><strong>关卡规则构建</strong>：主要从目的和手段两个角度入手，用同样的资源去打造不同的关卡</li>
+<li><strong>关卡元素</strong>：如何站在基本型和关卡元素组合的思路去制作关卡元素，让它们有足够的差异性和复用价值</li>
+<li>语境重构，利用语境重构来复用关卡元素，并增加其代入感。其实每一个关卡元素都是一个很值得塑造的元素，每一个角色在进行复用的时候，都可以看作是他一次重新上场的机会，并推翻之前观众对他的印象</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/U_GsdgAwVrfEUoa6dodYYQ" target="_blank" rel="noopener">原文:在资源有限时，如何设计出可重复挑战的游戏关卡？</a></em>  </p>
+<h2 id="打破PVP玩法最优解"><a href="#打破PVP玩法最优解" class="headerlink" title="打破PVP玩法最优解"></a>打破PVP玩法最优解</h2><ul>
+<li><strong>非单一相克</strong>：石头剪刀布</li>
+<li><strong>可控约束性</strong>：玩家可以利用游戏规则，和自己的技巧来约束对方，从而使一些不透明的信息变得透明</li>
+<li><strong>“使绊子”</strong>：致使玩家并不那么容易达到最优解的一些方式，主要包括“操作难度”和“不可控因素”两点</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/uPGrfLwlzHhmIfOkMq8-Yg" target="_blank" rel="noopener">原文：打破PvP玩法的“最优解”</a></em></p>
+<hr>
+<h1 id="游戏架构类"><a href="#游戏架构类" class="headerlink" title="游戏架构类"></a>游戏架构类</h1><h2 id="开放世界不让玩家路痴"><a href="#开放世界不让玩家路痴" class="headerlink" title="开放世界不让玩家路痴"></a>开放世界不让玩家路痴</h2><p>游戏内的自动导航是与“对于现实世界的拟真”所相违背。<br>提升玩家寻路体验tips：  </p>
+<ul>
+<li><strong>缩小世界规模</strong>：简单粗暴，但如果引入了快速交通工具，玩家的体验会大打折扣。</li>
+<li><strong>炮制宏达景观</strong>：多设立大型地标，形成记忆锚点，但美术资源可能有限</li>
+<li><strong>为世界命名</strong>：对游戏中的区块和道路进行命名</li>
+<li><strong>减少素材重复利用</strong>：不要大粒度的方式重复利用</li>
+<li><strong>主线路径的重复利用</strong>：主线任务尽可能让玩家多重复在同一条路径上，加深记忆</li>
+</ul>
+<p><em><a href="https://www.gameres.com/840600.html" target="_blank" rel="noopener">原文：什么样的开放世界游戏才会让玩家不路痴？</a></em>  </p>
+<h2 id="潜行游戏的AI设计"><a href="#潜行游戏的AI设计" class="headerlink" title="潜行游戏的AI设计"></a>潜行游戏的AI设计</h2><p>潜行游戏的核心——暗杀  </p>
+<p>潜行AI需要增加视觉、听觉模拟器，以视觉为例：  </p>
+<p>AI的视觉模拟器：  </p>
+<ul>
+<li>AI看到什么会引起警觉<ul>
+<li>敌人</li>
+<li>同伴尸体</li>
+<li>同伴小时</li>
+<li>物品状态改变（如关着的门开了）</li>
+</ul>
+</li>
+<li>引起警觉之后，如何行动<ul>
+<li>查看异常（一般是单人行动）</li>
+<li>搜索敌人（一般是和周围同伴一起群体行动）</li>
+<li>触发警报（整个区域开始寻找敌人）</li>
+<li>呼叫增援（在增加区域内敌人数量）</li>
+</ul>
+</li>
+<li>行动后的变化<ul>
+<li>回归初始状态</li>
+<li>继续保持警戒状态</li>
+<li>保持搜索敌人状态</li>
+<li>保持战斗状态</li>
+</ul>
+</li>
+</ul>
+<p>潜行游戏的其他要素：变装、引诱、、隐蔽点、阴影、陷阱、移动尸体、藏匿尸体、离间、审问、墙体透视……</p>
+<hr>
+<h1 id="交互类"><a href="#交互类" class="headerlink" title="交互类"></a>交互类</h1><h2 id="交互设计入门原则和规范"><a href="#交互设计入门原则和规范" class="headerlink" title="交互设计入门原则和规范"></a>交互设计入门原则和规范</h2><ul>
+<li><strong>一致性原则</strong>：界面的视觉风格、布局、功能、用语、操作应在所有页面中保持一致。</li>
+<li><strong>有效性原则</strong>：难以点击的问题一定要彻底解决</li>
+<li><strong>易读性原则</strong>：尽管某些游戏的字号你拿着细看也是完全可以看清楚的，甚至还觉得挺精致。但基于手机的实际应用情景（拥挤的地铁、公交、步行时），字号还是建议略为调大一点，使用户即便在户外依然能够轻松地读取到画面中的文字信息。<ul>
+<li>提高文字与底图之间的对比度。</li>
+<li>承载文字的底图尽可能不设置透明度或较低透明度。</li>
+<li>多运用界面留白，包括设置较大的文字的行距，都能有助提升易读性。</li>
+</ul>
+</li>
+<li><strong>3次点击原则</strong>：用户经常会关心到的内容，务必在3次点击之内让他们找到。</li>
+<li><strong>防错原则</strong>：通过对信息的强调，或者二次确认，或增加上锁\解锁功能，或确认按钮位置的改变来防止用户在操作过程中发生失误。</li>
+<li><strong>字体规范</strong>：强化字阶差异，减少字号种类；统一“韵律”，简化字阶递增规律；以灰度、固定色彩体系强化文字性质；</li>
+<li><strong>控件规范</strong>：复用性要高，尽量控制相同样式不同尺寸的控件数量；确保视觉输出的控件，设备上看，边缘是锐利清晰的； 确保视觉输出的控件，配色方案不会对用户构成交互体验上的干扰；</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/euhqs07p1-AefQrCHqzA5A" target="_blank" rel="noopener">原文：交互设计入门引导：5点原则两条规范</a></em>  </p>
+<h2 id="游戏交互设计5要素"><a href="#游戏交互设计5要素" class="headerlink" title="游戏交互设计5要素"></a>游戏交互设计5要素</h2><ul>
+<li>感受用户体验要素<ul>
+<li>表现层：呈献给用户的第一印象内容，看个大概基调</li>
+<li>框架层：整个系统的框架，图标等</li>
+<li>结构层：规划整个界面，较抽象</li>
+<li>范围层：可以看到这个页面提供什么、不提供什么</li>
+<li>战略层：这个界面的目的</li>
+<li>用户感受是从上到下，产品设计是从下到上</li>
+<li>框架层和结构层是交互设计师的主要负责区</li>
+</ul>
+</li>
+<li>用户体验要素与游戏交互设计<ul>
+<li>产品目标和用户目标-战略层：<ul>
+<li>研究用户是谁：定性研究（玩家对Demo试玩的意见）、定量研究（问卷调查），来了解用户特征，尝试对用户细分</li>
+<li>用户画像：基本信息（年龄、性别、单生？等）、何时游戏？游戏经验？技术水平？等</li>
+<li>二次元游戏用户画像4种：IP教徒典型画像、游戏宅典型画像、游戏向二次元人典型画像、跟风宅典型画像</li>
+</ul>
+</li>
+<li>功能规格和内容需求-范围层：<ul>
+<li>梳理系统蓝图：核心系统内容、系统常规玩法等……</li>
+<li>时间规划：每个版本节点中游戏的完成度、复杂度，来确定哪些交互规则必须优先搭建</li>
+<li>策划案：阐明三点，系统的设计目的、系统的主要/次要流程、系统各功能的优先级（最关注项）</li>
+</ul>
+</li>
+<li>.交互流程和信息构架-结构层：<ul>
+<li>交互流程和信息架构（操作的流程，围绕（玩家）角色、任务、场景三要素）</li>
+</ul>
+</li>
+<li>从抽象到具体-框架层：<ul>
+<li>布局遵从习惯</li>
+<li>覆盖尽可能多的场景和状态：有和无、最少和最多、80%和20%</li>
+<li>选择合适的方式，而不一定是“最酷”的方式</li>
+<li>优化交互输出，保证框架层实现度</li>
+</ul>
+</li>
+<li>感知设计-表现层：<ul>
+<li>目的是让框架层变得可以感知，交互设计师要让设计被视觉设计师“正确的感知”</li>
+<li>围绕目的进行沟通</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>梳理紧急性、重要性</li>
+</ul>
+<p><em><a href="https://mp.weixin.qq.com/s/7t_WHdJljuOAu4YA6SnMtA" target="_blank" rel="noopener">原文：想要提升用户体验？ 先了解游戏交互设计这5个要素（含实例）</a></em>  </p>
+<hr>
+<p><em><code>to be continued...</code></em>  </p>
+]]></content>
+      <categories>
+        <category>「Game」</category>
+      </categories>
+      <tags>
+        <tag>Game</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Game Notes</title>
     <url>/2019/10/29/Game-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -2368,210 +2368,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Golang in Action Notes</title>
-    <url>/2019/03/19/Go-Action-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Go 语言应用 tips</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="ok-模式"><a href="#ok-模式" class="headerlink" title=",ok 模式"></a><code>,ok</code> 模式</h2><p>（1）在函数返回时检测错误  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">value, err := pack1.Func1(param1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(“Error %s in pack1.Func1 with parameter %v”, err.Error(), param1)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数Func1没有错误:</span></span><br><span class="line">Process(value)</span><br><span class="line"></span><br><span class="line">e.g.: os.Open(file) strconv.Atoi(str)</span><br></pre></td></tr></table></figure>
-
-<p>这种模式也常用于通过<code>defer</code>使程序从<code>panic</code>中恢复执行。  </p>
-<p>要实现简洁的错误检测代码，更好的方式是使用闭包，参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/16.10.md" target="_blank" rel="noopener">第16.10.2小节</a></p>
-<p>（2）检测映射中是否存在一个键值：key1在映射map1中是否有值？<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/08.2.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := map1[key1]; ok &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// key1不存在</span></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
-
-<p>（3）检测一个接口类型变量<code>varI</code>是否包含了类型<code>T</code>：类型断言 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := varI.(T); ok &#123;</span><br><span class="line">    Process(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口类型varI没有包含类型T</span></span><br></pre></td></tr></table></figure>
-
-<p>(4)检测一个通道 <code>ch</code> 是否关闭 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/14.3.md" target="_blank" rel="noopener">参考</a>  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> input := <span class="keyword">range</span> ch &#123;</span><br><span class="line">     Process(input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>或者：</p>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">input</span>, <span class="keyword">open</span> := &lt;-ch; !<span class="keyword">open</span> &#123;</span><br><span class="line">        <span class="keyword">break</span> <span class="comment">// 通道是关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">     Process(<span class="keyword">input</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="出于性能考虑的使用代码片段"><a href="#出于性能考虑的使用代码片段" class="headerlink" title="出于性能考虑的使用代码片段"></a>出于性能考虑的使用代码片段</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>（1）如何修改字符串中的一个字符：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str:=<span class="string">"hello"</span></span><br><span class="line">c:=[]<span class="keyword">byte</span>(str)</span><br><span class="line">c[<span class="number">0</span>]=<span class="string">'c'</span></span><br><span class="line">s2:= <span class="keyword">string</span>(c) <span class="comment">// s2 == "cello"</span></span><br></pre></td></tr></table></figure>
-
-<p>（2）如何获取字符串的子串：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">substr := str[n:m]</span><br></pre></td></tr></table></figure>
-
-<p>（3）如何使用<code>for</code>或者<code>for-range</code>遍历一个字符串：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gives only the bytes:</span></span><br><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">… = str[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// gives the Unicode characters:</span></span><br><span class="line"><span class="keyword">for</span> ix, ch := <span class="keyword">range</span> str &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（4）如何获取一个字符串的字节数：<code>len(str)</code>  </p>
-<p> 如何获取一个字符串的字符数：  </p>
-<p> 最快速：<code>utf8.RuneCountInString(str)</code>   </p>
-<p> <code>len([]rune(str))</code>   </p>
-<p>（5）如何连接字符串：  </p>
-<p> 最快速：<br><code>with a bytes.Buffer</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md" target="_blank" rel="noopener">章节7.2</a>）</p>
-<p><code>Strings.Join()</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md" target="_blank" rel="noopener">章节4.7</a>）</p>
-<p>使用<code>+=</code>：  </p>
- <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str1 := <span class="string">"Hello "</span> </span><br><span class="line">str2 := <span class="string">"World!"</span></span><br><span class="line">str1 += str2 <span class="comment">//str1 == "Hello World!"</span></span><br></pre></td></tr></table></figure>
-
-<p>（6）如何解析命令行参数：使用<code>os</code>或者<code>flag</code>包</p>
-<p>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_12/fileinput.go" target="_blank" rel="noopener">例12.4</a>）  </p>
-<h3 id="数组-切片"><a href="#数组-切片" class="headerlink" title="数组 切片"></a>数组 切片</h3><p>创建：  </p>
-<p><code>arr1 := new([len]type)</code>  </p>
-<p><code>slice1 := make([]type, len)</code>  </p>
-<p>初始化：  </p>
-<p><code>arr1 := [...]type{i1, i2, i3, i4, i5}</code>  </p>
-<p><code>arrKeyValue := [len]type{i1: val1, i2: val2}</code>  </p>
-<p><code>var slice1 []type = arr1[start:end]</code>  </p>
-<p>（1）如何截断数组或者切片的最后一个元素：  </p>
-<p><code>line = line[:len(line)-1]</code>  </p>
-<p>（2）如何使用<code>for</code>或者<code>for-range</code>遍历一个数组（或者切片）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(arr); i++ &#123;</span><br><span class="line">… = arr[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> ix, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（3）如何在一个二维数组或者切片<code>arr2Dim</code>中查找一个指定值<code>V</code>：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">found := <span class="literal">false</span></span><br><span class="line">Found: <span class="keyword">for</span> row := <span class="keyword">range</span> arr2Dim &#123;</span><br><span class="line">    <span class="keyword">for</span> column := <span class="keyword">range</span> arr2Dim[row] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr2Dim[row][column] == V&#123;</span><br><span class="line">            found = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">break</span> Found</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>创建：    <code>map1 := make(map[keytype]valuetype)</code>  </p>
-<p>初始化：   <code>map1 := map[string]int{&quot;one&quot;: 1, &quot;two&quot;: 2}</code>  </p>
-<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个映射：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> map1 &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何在一个映射中检测键<code>key1</code>是否存在：<code>val1, isPresent = map1[key1]</code>  </p>
-<p>返回值：键<code>key1</code>对应的值或者<code>0</code>, <code>true</code>或者<code>false</code>  </p>
-<p>（3）如何在映射中删除一个键：<code>delete(map1, key1)</code>  </p>
-<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>创建：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> struct1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    field1 type1</span><br><span class="line">    field2 type2</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">ms := <span class="built_in">new</span>(struct1)</span><br></pre></td></tr></table></figure>
-
-<p>初始化：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := &amp;struct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当结构体的命名以大写字母开头时，该结构体在包外可见。<br>通常情况下，为每个结构体定义一个构建函数，并推荐使用构建函数初始化结构体（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_10/person.go" target="_blank" rel="noopener">例10.2</a>）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := Newstruct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Newstruct1</span><span class="params">(n <span class="keyword">int</span>, f <span class="keyword">float32</span>, name <span class="keyword">string</span>)</span> *<span class="title">struct1</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;struct1&#123;n, f, name&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>（1）如何检测一个值<code>v</code>是否实现了接口<code>Stringer</code>：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> v, ok := v.(Stringer); ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"implements String(): %s\n"</span>, v.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何使用接口实现一个类型分类函数：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">classifier</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i, x := <span class="keyword">range</span> items &#123;</span><br><span class="line">        <span class="keyword">switch</span> x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a bool\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a float64\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is an int\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">nil</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is nil\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a string\n"</span>, i)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d’s type is unknown\n"</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>如何使用内建函数<code>recover</code>终止<code>panic</code>过程（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md" target="_blank" rel="noopener">章节13.3</a>）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">protect</span><span class="params">(g <span class="keyword">func</span>()</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        log.Println(<span class="string">"done"</span>)</span><br><span class="line">        <span class="comment">// Println executes normally even if there is a panic</span></span><br><span class="line">        <span class="keyword">if</span> x := <span class="built_in">recover</span>(); x != <span class="literal">nil</span> &#123;</span><br><span class="line">            log.Printf(<span class="string">"run time panic: %v"</span>, x)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    log.Println(<span class="string">"start"</span>)</span><br><span class="line">    g()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>（1）如何打开一个文件并读取：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">file, err := os.Open(<span class="string">"input.dat"</span>)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"An error occurred on opening the inputfile\n"</span> +</span><br><span class="line">      <span class="string">"Does the file exist?\n"</span> +</span><br><span class="line">      <span class="string">"Have you got acces to it?\n"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> file.Close()</span><br><span class="line">  iReader := bufio.NewReader(file)</span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    str, err := iReader.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="comment">// error or EOF</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"The input was: %s"</span>, str)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何通过切片读写文件：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">cat</span><span class="params">(f *file.File)</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> NBUF = <span class="number">512</span></span><br><span class="line">  <span class="keyword">var</span> buf [NBUF]<span class="keyword">byte</span></span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> nr, er := f.Read(buf[:]); <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> nr &lt; <span class="number">0</span>:</span><br><span class="line">      fmt.Fprintf(os.Stderr, <span class="string">"cat: error reading from %s: %s\n"</span>,</span><br><span class="line">        f.String(), er.String())</span><br><span class="line">      os.Exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">case</span> nr == <span class="number">0</span>: <span class="comment">// EOF</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> nr &gt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">if</span> nw, ew := file.Stdout.Write(buf[<span class="number">0</span>:nr]); nw != nr &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"cat: error writing from %s: %s\n"</span>,</span><br><span class="line">          f.String(), ew.String())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="协程（goroutine）与通道（channel）"><a href="#协程（goroutine）与通道（channel）" class="headerlink" title="协程（goroutine）与通道（channel）"></a>协程（goroutine）与通道（channel）</h3><p>出于性能考虑的建议：</p>
-<p>实践经验表明，如果你使用并行运算获得高于串行运算的效率：在协程内部已经完成的大部分工作，其开销比创建协程和协程间通信还高。</p>
-<p>1 出于性能考虑建议使用带缓存的通道：</p>
-<p>使用带缓存的通道可以很轻易成倍提高它的吞吐量，某些场景其性能可以提高至10倍甚至更多。通过调整通道的容量，甚至可以尝试着更进一步的优化其性能。</p>
-<p>2 限制一个通道的数据数量并将它们封装成一个数组：</p>
-<p>如果使用通道传递大量单独的数据，那么通道将变成性能瓶颈。然而，将数据块打包封装成数组，在接收端解压数据时，性能可以提高至10倍。</p>
-<p>创建：<code>ch := make(chan type,buf)</code></p>
-<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个通道：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> v := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    <span class="comment">// do something with v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（2）如何检测一个通道<code>ch</code>是否关闭：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//read channel until it closes or error-condition</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input, open := &lt;-ch; !open &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"%s"</span>, input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者使用（1）自动检测。  </p>
-<p>（3）如何通过一个通道让主程序等待直到协程完成：  </p>
-<p>（信号量模式）：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) <span class="comment">// Allocate a channel.</span></span><br><span class="line"><span class="comment">// Start something in a goroutine; when it completes, signal on the channel.</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// doSomething</span></span><br><span class="line">    ch &lt;- <span class="number">1</span> <span class="comment">// Send a signal; value does not matter.</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingElseForAWhile()</span><br><span class="line">&lt;-ch <span class="comment">// Wait for goroutine to finish; discard sent value.</span></span><br></pre></td></tr></table></figure>
-
-<p>如果希望程序一直阻塞，在匿名函数中省略 <code>ch &lt;- 1</code>即可。  </p>
-<p>（4）通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pump</span><span class="params">()</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; ; i++ &#123;</span><br><span class="line">            ch &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> ch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（5）通道迭代器模板：  </p>
-<p>（6）如何限制并发处理请求的数量：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.11.md" target="_blank" rel="noopener">章节14.11</a> </p>
-<p>（7）如何在多核CPU上实现并行计算：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.13.md" target="_blank" rel="noopener">章节14.13</a>  </p>
-<p>（8）如何终止一个协程：<code>runtime.Goexit()</code>  </p>
-<p>（9）简单的超时模板：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">timeout := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    time.Sleep(<span class="number">1e9</span>) <span class="comment">// one second  </span></span><br><span class="line">    timeout &lt;- <span class="literal">true</span></span><br><span class="line">&#125;()</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;-ch:</span><br><span class="line">    <span class="comment">// a read from ch has occurred</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-timeout:</span><br><span class="line">    <span class="comment">// the read from ch has timed out</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（10）如何使用输入通道和输出通道代替锁：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Worker</span><span class="params">(in, out <span class="keyword">chan</span> *Task)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        t := &lt;-in</span><br><span class="line">        process(t)</span><br><span class="line">        out &lt;- t</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（11）如何在同步调用运行时间过长时将之丢弃：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a> 第二个变体  </p>
-<p>（12）如何在通道中使用计时器和定时器：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a>  </p>
-<p>（13）典型的服务器后端模型：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.4.md" target="_blank" rel="noopener">章节14.4</a>  </p>
-<h3 id="网络和网页应用"><a href="#网络和网页应用" class="headerlink" title="网络和网页应用"></a>网络和网页应用</h3><p><strong>模板：</strong>  </p>
-<p>制作、解析并使模板生效：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strTempl = template.Must(template.New(<span class="string">"TName"</span>).Parse(strTemplateHTML))</span><br></pre></td></tr></table></figure>
-
-<p>在网页应用中使用HTML过滤器过滤HTML特殊字符：  </p>
-<p><code>{ {html .} }</code> 或者通过一个字段 <code>FieldName { { .FieldName |html } }</code>  </p>
-<p>使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）  </p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何在程序出错时终止程序：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">   fmt.Printf(<span class="string">"Program stopping with error %v"</span>, err)</span><br><span class="line">   os.Exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>或者：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; </span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">"ERROR occurred: "</span> + err.Error())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="出于性能考虑的最佳实践和建议"><a href="#出于性能考虑的最佳实践和建议" class="headerlink" title="出于性能考虑的最佳实践和建议"></a>出于性能考虑的最佳实践和建议</h3><p>（1）尽可能的使用<code>:=</code>去初始化声明一个变量（在函数内部）；  </p>
-<p>（2）尽可能的使用字符代替字符串；  </p>
-<p>（3）尽可能的使用切片代替数组；  </p>
-<p>（4）尽可能的使用数组和切片代替映射（详见参考文献15）；  </p>
-<p>（5）如果只想获取切片中某项值，不需要值的索引，尽可能的使用<code>for range</code>去遍历切片，这比必须查询切片中的每个元素要快一些；  </p>
-<p>（6）当数组元素是稀疏的（例如有很多<code>0</code>值或者空值<code>nil</code>），使用映射会降低内存消耗；  </p>
-<p>（7）初始化映射时指定其容量；  </p>
-<p>（8）当定义一个方法时，使用指针类型作为方法的接收者；  </p>
-<p>（9）在代码中使用常量或者标志提取常量的值； </p>
-<p>（10）尽可能在需要分配大量内存时使用缓存；  </p>
-<p>（11）使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）。  </p>
-<h2 id="方法的接收者对照表"><a href="#方法的接收者对照表" class="headerlink" title="方法的接收者对照表"></a>方法的接收者对照表</h2><p>方法集：定义了一组关联到给定类型的值或者指针的方法。  </p>
-<h3 id="从传递的值的角度看方法集"><a href="#从传递的值的角度看方法集" class="headerlink" title="从传递的值的角度看方法集"></a>从传递的值的角度看方法集</h3><table>
-<thead>
-<tr>
-<th align="center">传递的值</th>
-<th align="center">方法声明的接收者</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">T</td>
-<td align="center">(t T)</td>
-</tr>
-<tr>
-<td align="center">*T</td>
-<td align="center">(t T) 和 (t *T)</td>
-</tr>
-</tbody></table>
-<ul>
-<li>T 类型的值的方法集只包含了值接收者声明的方法</li>
-<li>而指向 T 类型的指针的方法集既包含值接收者声明的方法，也包含指针接收者声明的方法</li>
-</ul>
-<h3 id="从接收者类型的角度来看方法集"><a href="#从接收者类型的角度来看方法集" class="headerlink" title="从接收者类型的角度来看方法集"></a>从接收者类型的角度来看方法集</h3><table>
-<thead>
-<tr>
-<th align="center">方法声明的接收者</th>
-<th align="center">传递的值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">(t T)</td>
-<td align="center">T 和 *T</td>
-</tr>
-<tr>
-<td align="center">(t *T)</td>
-<td align="center">*T</td>
-</tr>
-</tbody></table>
-<ul>
-<li>如果使用指针接收者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口</li>
-<li>如果使用值接收者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口</li>
-</ul>
-<hr>
-<p><em><code>to be continued...</code></em>  </p>
-]]></content>
-      <categories>
-        <category>「语言」- Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Go の Command</title>
     <url>/2019/04/21/Go-Command/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -2708,76 +2504,6 @@
       <tags>
         <tag>Go</tag>
         <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo + NexT(v7.7.2) 博客配置备忘</title>
-    <url>/2020/03/04/Hexo-NexT-Config-7-7-2/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>好好的为何要折腾自己？</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="配置历史"><a href="#配置历史" class="headerlink" title="配置历史"></a>配置历史</h1><ul>
-<li><a href="../../../../2019/03/27/Hexo-NexT-Config/">Hexo + NexT(v7.1.0) 博客配置备忘</a></li>
-</ul>
-<hr>
-<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>建站驱动：<code>Hexo</code> v4.2.0  </p>
-<p>主题： <code>NexT</code>.<code>Pisces</code> v7.7.2  </p>
-<p>站点配置文件：<code>/_config.yml</code>  </p>
-<p>主题配置文件：<code>/themes/next7.7.2/_config.yml</code>  </p>
-<hr>
-<h1 id="与之前配置的方法有变动的"><a href="#与之前配置的方法有变动的" class="headerlink" title="与之前配置的方法有变动的"></a>与之前配置的方法有变动的</h1><h2 id="不显示文章信息中“评论数”三个字"><a href="#不显示文章信息中“评论数”三个字" class="headerlink" title="不显示文章信息中“评论数”三个字"></a>不显示文章信息中“评论数”三个字</h2><p>现在版本显示的是<code>Valine：</code>，改了下<code>/themes/next/layout/_macro/post.swig</code>也暂时没找到删去的办法，先放着罢。</p>
-<h2 id="增加页脚显示网站运营时间功能"><a href="#增加页脚显示网站运营时间功能" class="headerlink" title="增加页脚显示网站运营时间功能"></a>增加页脚显示网站运营时间功能</h2><p>现在不需要去在<code>/themes/next/layout/_parrials/footer.swig</code>末尾新增内容了，现在NexT支持自定义风格。  </p>
-<p>在<code>主题配置文件</code>中，开启自定义功能：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory <span class="string">`source/_data`</span> and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: source/_data/head.swig</span><br><span class="line">  #header: source/_data/header.swig</span><br><span class="line">  #sidebar: source/_data/sidebar.swig</span><br><span class="line">  #postMeta: source/_data/post-meta.swig</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">  footer: source/_data/footer.swig</span><br><span class="line">  #bodyEnd: source/_data/body-end.swig</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
-
-<p>然后去网站根目录的<code>/source/</code>下新建文件夹<code>_data</code>和文件<code>footer.swig</code>，在里面加入自定义的代码：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-clock-o"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"sitetime"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">siteTime</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.setTimeout(<span class="string">"siteTime()"</span>, <span class="number">1000</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> seconds = <span class="number">1000</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> minutes = seconds * <span class="number">60</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> hours = minutes * <span class="number">60</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> days = hours * <span class="number">24</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> years = days * <span class="number">365</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayYear = today.getFullYear();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayMonth = today.getMonth()+<span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayDate = today.getDate();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayHour = today.getHours();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayMinute = today.getMinutes();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todaySecond = today.getSeconds();</span></span><br><span class="line">    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)</span><br><span class="line">    year - 作为date对象的年份，为4位年份值</span><br><span class="line">    month - 0-11之间的整数，做为date对象的月份</span><br><span class="line">    day - 1-31之间的整数，做为date对象的天数</span><br><span class="line">    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数</span><br><span class="line">    minutes - 0-59之间的整数，做为date对象的分钟数</span><br><span class="line">    seconds - 0-59之间的整数，做为date对象的秒数</span><br><span class="line">    microseconds - 0-999之间的整数，做为date对象的毫秒数 */</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> t1 = <span class="built_in">Date</span>.UTC(<span class="number">2019</span>,<span class="number">03</span>,<span class="number">07</span>,<span class="number">10</span>,<span class="number">00</span>,<span class="number">00</span>); <span class="comment">//建站时间</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> t2 = <span class="built_in">Date</span>.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> diff = t2-t1;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffYears = <span class="built_in">Math</span>.floor(diff/years);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffDays = <span class="built_in">Math</span>.floor((diff/days)-diffYears*<span class="number">365</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffHours = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days)/hours);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffMinutes = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days-diffHours*hours)/minutes);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffSeconds = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"sitetime"</span>).innerHTML=<span class="string">" 已运行"</span>+diffYears+<span class="string">" 年 "</span>+diffDays+<span class="string">" 天 "</span>+diffHours+<span class="string">" 小时 "</span>+diffMinutes+<span class="string">" 分钟 "</span>+diffSeconds+<span class="string">" 秒 ~喵~"</span>;</span></span><br><span class="line"><span class="actionscript">  &#125;<span class="comment">/*建站不到1年，不想显示“0”年可以把year部分注释掉*/</span></span></span><br><span class="line">  siteTime();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="增加文章边框阴影"><a href="#增加文章边框阴影" class="headerlink" title="增加文章边框阴影"></a>增加文章边框阴影</h2><p>与上面类似，在<code>站点配置文件中</code>开启:  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
-
-<p>然后在根目录下建立<code>/source/_data/styles.styl</code>：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">// 主页文章添加阴影效果</span><br><span class="line"><span class="selector-class">.post-block</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">24px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">35px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">24px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">203</span>, .<span class="number">5</span>);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">204</span>, .<span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改新建文章模板"><a href="#修改新建文章模板" class="headerlink" title="修改新建文章模板"></a>修改新建文章模板</h2><p><code>/scaffolds/post.md</code>中修改内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[tag1,</span> <span class="string">tag2]</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">分类名</span></span><br><span class="line"><span class="attr">permalink:</span>      <span class="string">//</span> <span class="string">文章自定义链接</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="string">&lt;center&gt;</span> <span class="string">&lt;font</span> <span class="string">color="#bababa"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="string">***首页展示的字***</span></span><br><span class="line"></span><br><span class="line"><span class="string">&lt;/font&gt;&lt;/center&gt;</span></span><br><span class="line"><span class="string">&lt;!--more--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-
-<p>（写markdown的时候多加几个回车能避免很多问题……）</p>
-<h2 id="修改文章末尾-tags-的符号（-改成图标）"><a href="#修改文章末尾-tags-的符号（-改成图标）" class="headerlink" title="修改文章末尾 tags 的符号（#改成图标）"></a>修改文章末尾 tags 的符号（<code>#</code>改成图标）</h2><p>不用去改<code>/themes/next/layout/_macro/post.swig</code>了，新版NexT意见在<code>主题配置文件</code>中集成了这个配置：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"># Use icon instead of the symbol # to indicate the tag at the bottom of the post</span><br><span class="line">tag_icon: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h2 id="调整网站字体大小"><a href="#调整网站字体大小" class="headerlink" title="调整网站字体大小"></a>调整网站字体大小</h2><p>新版的字体偏大，可以去<code>站点配置文件</code>中<code>enable</code>字体功能：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  # Uri of fonts host, e.g. https:<span class="comment">//fonts.googleapis.com (Default).</span></span><br><span class="line">  host:</span><br><span class="line"></span><br><span class="line">  # Font options:</span><br><span class="line">  # <span class="string">`external: true`</span> will load this font family from <span class="string">`host`</span> above.</span><br><span class="line">  # <span class="string">`family: Times New Roman`</span>. Without any quotes.</span><br><span class="line">  # <span class="string">`size: x.x`</span>. Use <span class="string">`em`</span> as unit. Default: <span class="number">1</span> (<span class="number">16</span>px)</span><br><span class="line"></span><br><span class="line">  # Global font settings used <span class="keyword">for</span> all elements inside &lt;body&gt;.</span><br><span class="line">  global:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family: Lato</span><br><span class="line">    size: <span class="number">0.875</span></span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> site title (.site-title).</span><br><span class="line">  title:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br><span class="line">    size:</span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> headlines (&lt;h1&gt; to &lt;h6&gt;).</span><br><span class="line">  headings:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br><span class="line">    size:</span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> posts (.post-body).</span><br><span class="line">  posts:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> &lt;code&gt; and code blocks.</span><br><span class="line">  codes:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br></pre></td></tr></table></figure>
-
-<h2 id="返回顶部按钮放到右侧"><a href="#返回顶部按钮放到右侧" class="headerlink" title="返回顶部按钮放到右侧"></a>返回顶部按钮放到右侧</h2><p>暂时没在新版的<code>主题配置文件</code>中发现设置，目前的处理办法是在<code>\themes\next-7.7.2\source\css\_common\components\back-to-top.styl</code>中，将：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">.back-to-top &#123;</span><br><span class="line">...</span><br><span class="line">  left: $b2t-position-right;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>改为：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">.back-to-top &#123;</span><br><span class="line">...</span><br><span class="line">  right: $b2t-position-right;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>站点地图：  </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br><span class="line">$ npm <span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save     //可选</span></span><br></pre></td></tr></table></figure>
-
-<p>站内搜索（Local Search）：  </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-<span class="keyword">search</span></span><br><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-
-
-<p>部署工具：  </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-
-<p>字数统计、文章阅读时间（如果需要，现在没装）：  </p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-symbols-<span class="keyword">count</span>-<span class="built_in">time</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -3039,6 +2765,280 @@
       <tags>
         <tag>Go</tag>
         <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Golang in Action Notes</title>
+    <url>/2019/03/19/Go-Action-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Go 语言应用 tips</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><h2 id="ok-模式"><a href="#ok-模式" class="headerlink" title=",ok 模式"></a><code>,ok</code> 模式</h2><p>（1）在函数返回时检测错误  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">value, err := pack1.Func1(param1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(“Error %s in pack1.Func1 with parameter %v”, err.Error(), param1)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数Func1没有错误:</span></span><br><span class="line">Process(value)</span><br><span class="line"></span><br><span class="line">e.g.: os.Open(file) strconv.Atoi(str)</span><br></pre></td></tr></table></figure>
+
+<p>这种模式也常用于通过<code>defer</code>使程序从<code>panic</code>中恢复执行。  </p>
+<p>要实现简洁的错误检测代码，更好的方式是使用闭包，参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/16.10.md" target="_blank" rel="noopener">第16.10.2小节</a></p>
+<p>（2）检测映射中是否存在一个键值：key1在映射map1中是否有值？<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/08.2.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := map1[key1]; ok &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// key1不存在</span></span><br><span class="line">…</span><br></pre></td></tr></table></figure>
+
+<p>（3）检测一个接口类型变量<code>varI</code>是否包含了类型<code>T</code>：类型断言 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> value, ok := varI.(T); ok &#123;</span><br><span class="line">    Process(value)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 接口类型varI没有包含类型T</span></span><br></pre></td></tr></table></figure>
+
+<p>(4)检测一个通道 <code>ch</code> 是否关闭 <a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/14.3.md" target="_blank" rel="noopener">参考</a>  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> input := <span class="keyword">range</span> ch &#123;</span><br><span class="line">     Process(input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">input</span>, <span class="keyword">open</span> := &lt;-ch; !<span class="keyword">open</span> &#123;</span><br><span class="line">        <span class="keyword">break</span> <span class="comment">// 通道是关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">     Process(<span class="keyword">input</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="出于性能考虑的使用代码片段"><a href="#出于性能考虑的使用代码片段" class="headerlink" title="出于性能考虑的使用代码片段"></a>出于性能考虑的使用代码片段</h2><h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>（1）如何修改字符串中的一个字符：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str:=<span class="string">"hello"</span></span><br><span class="line">c:=[]<span class="keyword">byte</span>(str)</span><br><span class="line">c[<span class="number">0</span>]=<span class="string">'c'</span></span><br><span class="line">s2:= <span class="keyword">string</span>(c) <span class="comment">// s2 == "cello"</span></span><br></pre></td></tr></table></figure>
+
+<p>（2）如何获取字符串的子串：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">substr := str[n:m]</span><br></pre></td></tr></table></figure>
+
+<p>（3）如何使用<code>for</code>或者<code>for-range</code>遍历一个字符串：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">// gives only the bytes:</span></span><br><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(str); i++ &#123;</span><br><span class="line">… = str[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// gives the Unicode characters:</span></span><br><span class="line"><span class="keyword">for</span> ix, ch := <span class="keyword">range</span> str &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（4）如何获取一个字符串的字节数：<code>len(str)</code>  </p>
+<p> 如何获取一个字符串的字符数：  </p>
+<p> 最快速：<code>utf8.RuneCountInString(str)</code>   </p>
+<p> <code>len([]rune(str))</code>   </p>
+<p>（5）如何连接字符串：  </p>
+<p> 最快速：<br><code>with a bytes.Buffer</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/07.2.md" target="_blank" rel="noopener">章节7.2</a>）</p>
+<p><code>Strings.Join()</code>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/04.7.md" target="_blank" rel="noopener">章节4.7</a>）</p>
+<p>使用<code>+=</code>：  </p>
+ <figure class="highlight go"><table><tr><td class="code"><pre><span class="line">str1 := <span class="string">"Hello "</span> </span><br><span class="line">str2 := <span class="string">"World!"</span></span><br><span class="line">str1 += str2 <span class="comment">//str1 == "Hello World!"</span></span><br></pre></td></tr></table></figure>
+
+<p>（6）如何解析命令行参数：使用<code>os</code>或者<code>flag</code>包</p>
+<p>（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_12/fileinput.go" target="_blank" rel="noopener">例12.4</a>）  </p>
+<h3 id="数组-切片"><a href="#数组-切片" class="headerlink" title="数组 切片"></a>数组 切片</h3><p>创建：  </p>
+<p><code>arr1 := new([len]type)</code>  </p>
+<p><code>slice1 := make([]type, len)</code>  </p>
+<p>初始化：  </p>
+<p><code>arr1 := [...]type{i1, i2, i3, i4, i5}</code>  </p>
+<p><code>arrKeyValue := [len]type{i1: val1, i2: val2}</code>  </p>
+<p><code>var slice1 []type = arr1[start:end]</code>  </p>
+<p>（1）如何截断数组或者切片的最后一个元素：  </p>
+<p><code>line = line[:len(line)-1]</code>  </p>
+<p>（2）如何使用<code>for</code>或者<code>for-range</code>遍历一个数组（或者切片）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> i:=<span class="number">0</span>; i &lt; <span class="built_in">len</span>(arr); i++ &#123;</span><br><span class="line">… = arr[i]</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> ix, value := <span class="keyword">range</span> arr &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（3）如何在一个二维数组或者切片<code>arr2Dim</code>中查找一个指定值<code>V</code>：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">found := <span class="literal">false</span></span><br><span class="line">Found: <span class="keyword">for</span> row := <span class="keyword">range</span> arr2Dim &#123;</span><br><span class="line">    <span class="keyword">for</span> column := <span class="keyword">range</span> arr2Dim[row] &#123;</span><br><span class="line">        <span class="keyword">if</span> arr2Dim[row][column] == V&#123;</span><br><span class="line">            found = <span class="literal">true</span></span><br><span class="line">            <span class="keyword">break</span> Found</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>创建：    <code>map1 := make(map[keytype]valuetype)</code>  </p>
+<p>初始化：   <code>map1 := map[string]int{&quot;one&quot;: 1, &quot;two&quot;: 2}</code>  </p>
+<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个映射：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value := <span class="keyword">range</span> map1 &#123;</span><br><span class="line">…</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何在一个映射中检测键<code>key1</code>是否存在：<code>val1, isPresent = map1[key1]</code>  </p>
+<p>返回值：键<code>key1</code>对应的值或者<code>0</code>, <code>true</code>或者<code>false</code>  </p>
+<p>（3）如何在映射中删除一个键：<code>delete(map1, key1)</code>  </p>
+<h3 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h3><p>创建：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> struct1 <span class="keyword">struct</span> &#123;</span><br><span class="line">    field1 type1</span><br><span class="line">    field2 type2</span><br><span class="line">    …</span><br><span class="line">&#125;</span><br><span class="line">ms := <span class="built_in">new</span>(struct1)</span><br></pre></td></tr></table></figure>
+
+<p>初始化：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := &amp;struct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当结构体的命名以大写字母开头时，该结构体在包外可见。<br>通常情况下，为每个结构体定义一个构建函数，并推荐使用构建函数初始化结构体（参考<a href="https://github.com/reitake/the-way-to-go_ZH_CN/blob/master/eBook/examples/chapter_10/person.go" target="_blank" rel="noopener">例10.2</a>）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ms := Newstruct1&#123;<span class="number">10</span>, <span class="number">15.5</span>, <span class="string">"Chris"</span>&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Newstruct1</span><span class="params">(n <span class="keyword">int</span>, f <span class="keyword">float32</span>, name <span class="keyword">string</span>)</span> *<span class="title">struct1</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &amp;struct1&#123;n, f, name&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>（1）如何检测一个值<code>v</code>是否实现了接口<code>Stringer</code>：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> v, ok := v.(Stringer); ok &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"implements String(): %s\n"</span>, v.String())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何使用接口实现一个类型分类函数：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">classifier</span><span class="params">(items ...<span class="keyword">interface</span>&#123;&#125;)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> i, x := <span class="keyword">range</span> items &#123;</span><br><span class="line">        <span class="keyword">switch</span> x.(<span class="keyword">type</span>) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">bool</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a bool\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">float64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a float64\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">int</span>, <span class="keyword">int64</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is an int\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="literal">nil</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is nil\n"</span>, i)</span><br><span class="line">        <span class="keyword">case</span> <span class="keyword">string</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d is a string\n"</span>, i)</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            fmt.Printf(<span class="string">"param #%d’s type is unknown\n"</span>, i)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>如何使用内建函数<code>recover</code>终止<code>panic</code>过程（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/13.3.md" target="_blank" rel="noopener">章节13.3</a>）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">protect</span><span class="params">(g <span class="keyword">func</span>()</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        log.Println(<span class="string">"done"</span>)</span><br><span class="line">        <span class="comment">// Println executes normally even if there is a panic</span></span><br><span class="line">        <span class="keyword">if</span> x := <span class="built_in">recover</span>(); x != <span class="literal">nil</span> &#123;</span><br><span class="line">            log.Printf(<span class="string">"run time panic: %v"</span>, x)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    log.Println(<span class="string">"start"</span>)</span><br><span class="line">    g()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>（1）如何打开一个文件并读取：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">file, err := os.Open(<span class="string">"input.dat"</span>)</span><br><span class="line">  <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"An error occurred on opening the inputfile\n"</span> +</span><br><span class="line">      <span class="string">"Does the file exist?\n"</span> +</span><br><span class="line">      <span class="string">"Have you got acces to it?\n"</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">defer</span> file.Close()</span><br><span class="line">  iReader := bufio.NewReader(file)</span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    str, err := iReader.ReadString(<span class="string">'\n'</span>)</span><br><span class="line">    <span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="comment">// error or EOF</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"The input was: %s"</span>, str)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何通过切片读写文件：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">cat</span><span class="params">(f *file.File)</span></span> &#123;</span><br><span class="line">  <span class="keyword">const</span> NBUF = <span class="number">512</span></span><br><span class="line">  <span class="keyword">var</span> buf [NBUF]<span class="keyword">byte</span></span><br><span class="line">  <span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">switch</span> nr, er := f.Read(buf[:]); <span class="literal">true</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> nr &lt; <span class="number">0</span>:</span><br><span class="line">      fmt.Fprintf(os.Stderr, <span class="string">"cat: error reading from %s: %s\n"</span>,</span><br><span class="line">        f.String(), er.String())</span><br><span class="line">      os.Exit(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">case</span> nr == <span class="number">0</span>: <span class="comment">// EOF</span></span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">case</span> nr &gt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">if</span> nw, ew := file.Stdout.Write(buf[<span class="number">0</span>:nr]); nw != nr &#123;</span><br><span class="line">        fmt.Fprintf(os.Stderr, <span class="string">"cat: error writing from %s: %s\n"</span>,</span><br><span class="line">          f.String(), ew.String())</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="协程（goroutine）与通道（channel）"><a href="#协程（goroutine）与通道（channel）" class="headerlink" title="协程（goroutine）与通道（channel）"></a>协程（goroutine）与通道（channel）</h3><p>出于性能考虑的建议：</p>
+<p>实践经验表明，如果你使用并行运算获得高于串行运算的效率：在协程内部已经完成的大部分工作，其开销比创建协程和协程间通信还高。</p>
+<p>1 出于性能考虑建议使用带缓存的通道：</p>
+<p>使用带缓存的通道可以很轻易成倍提高它的吞吐量，某些场景其性能可以提高至10倍甚至更多。通过调整通道的容量，甚至可以尝试着更进一步的优化其性能。</p>
+<p>2 限制一个通道的数据数量并将它们封装成一个数组：</p>
+<p>如果使用通道传递大量单独的数据，那么通道将变成性能瓶颈。然而，将数据块打包封装成数组，在接收端解压数据时，性能可以提高至10倍。</p>
+<p>创建：<code>ch := make(chan type,buf)</code></p>
+<p>（1）如何使用<code>for</code>或者<code>for-range</code>遍历一个通道：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> v := <span class="keyword">range</span> ch &#123;</span><br><span class="line">    <span class="comment">// do something with v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（2）如何检测一个通道<code>ch</code>是否关闭：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="comment">//read channel until it closes or error-condition</span></span><br><span class="line"><span class="keyword">for</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> input, open := &lt;-ch; !open &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Printf(<span class="string">"%s"</span>, input)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者使用（1）自动检测。  </p>
+<p>（3）如何通过一个通道让主程序等待直到协程完成：  </p>
+<p>（信号量模式）：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>) <span class="comment">// Allocate a channel.</span></span><br><span class="line"><span class="comment">// Start something in a goroutine; when it completes, signal on the channel.</span></span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// doSomething</span></span><br><span class="line">    ch &lt;- <span class="number">1</span> <span class="comment">// Send a signal; value does not matter.</span></span><br><span class="line">&#125;()</span><br><span class="line">doSomethingElseForAWhile()</span><br><span class="line">&lt;-ch <span class="comment">// Wait for goroutine to finish; discard sent value.</span></span><br></pre></td></tr></table></figure>
+
+<p>如果希望程序一直阻塞，在匿名函数中省略 <code>ch &lt;- 1</code>即可。  </p>
+<p>（4）通道的工厂模板：以下函数是一个通道工厂，启动一个匿名函数作为协程以生产通道：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">pump</span><span class="params">()</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">    ch := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">    <span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">for</span> i := <span class="number">0</span>; ; i++ &#123;</span><br><span class="line">            ch &lt;- i</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;()</span><br><span class="line">    <span class="keyword">return</span> ch</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（5）通道迭代器模板：  </p>
+<p>（6）如何限制并发处理请求的数量：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.11.md" target="_blank" rel="noopener">章节14.11</a> </p>
+<p>（7）如何在多核CPU上实现并行计算：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.13.md" target="_blank" rel="noopener">章节14.13</a>  </p>
+<p>（8）如何终止一个协程：<code>runtime.Goexit()</code>  </p>
+<p>（9）简单的超时模板：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">timeout := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">bool</span>, <span class="number">1</span>)</span><br><span class="line"><span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    time.Sleep(<span class="number">1e9</span>) <span class="comment">// one second  </span></span><br><span class="line">    timeout &lt;- <span class="literal">true</span></span><br><span class="line">&#125;()</span><br><span class="line"><span class="keyword">select</span> &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;-ch:</span><br><span class="line">    <span class="comment">// a read from ch has occurred</span></span><br><span class="line">    <span class="keyword">case</span> &lt;-timeout:</span><br><span class="line">    <span class="comment">// the read from ch has timed out</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（10）如何使用输入通道和输出通道代替锁：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Worker</span><span class="params">(in, out <span class="keyword">chan</span> *Task)</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> &#123;</span><br><span class="line">        t := &lt;-in</span><br><span class="line">        process(t)</span><br><span class="line">        out &lt;- t</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（11）如何在同步调用运行时间过长时将之丢弃：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a> 第二个变体  </p>
+<p>（12）如何在通道中使用计时器和定时器：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.5.md" target="_blank" rel="noopener">章节14.5</a>  </p>
+<p>（13）典型的服务器后端模型：参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/14.4.md" target="_blank" rel="noopener">章节14.4</a>  </p>
+<h3 id="网络和网页应用"><a href="#网络和网页应用" class="headerlink" title="网络和网页应用"></a>网络和网页应用</h3><p><strong>模板：</strong>  </p>
+<p>制作、解析并使模板生效：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> strTempl = template.Must(template.New(<span class="string">"TName"</span>).Parse(strTemplateHTML))</span><br></pre></td></tr></table></figure>
+
+<p>在网页应用中使用HTML过滤器过滤HTML特殊字符：  </p>
+<p><code>{ {html .} }</code> 或者通过一个字段 <code>FieldName { { .FieldName |html } }</code>  </p>
+<p>使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）  </p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如何在程序出错时终止程序：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">   fmt.Printf(<span class="string">"Program stopping with error %v"</span>, err)</span><br><span class="line">   os.Exit(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123; </span><br><span class="line">    <span class="built_in">panic</span>(<span class="string">"ERROR occurred: "</span> + err.Error())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="出于性能考虑的最佳实践和建议"><a href="#出于性能考虑的最佳实践和建议" class="headerlink" title="出于性能考虑的最佳实践和建议"></a>出于性能考虑的最佳实践和建议</h3><p>（1）尽可能的使用<code>:=</code>去初始化声明一个变量（在函数内部）；  </p>
+<p>（2）尽可能的使用字符代替字符串；  </p>
+<p>（3）尽可能的使用切片代替数组；  </p>
+<p>（4）尽可能的使用数组和切片代替映射（详见参考文献15）；  </p>
+<p>（5）如果只想获取切片中某项值，不需要值的索引，尽可能的使用<code>for range</code>去遍历切片，这比必须查询切片中的每个元素要快一些；  </p>
+<p>（6）当数组元素是稀疏的（例如有很多<code>0</code>值或者空值<code>nil</code>），使用映射会降低内存消耗；  </p>
+<p>（7）初始化映射时指定其容量；  </p>
+<p>（8）当定义一个方法时，使用指针类型作为方法的接收者；  </p>
+<p>（9）在代码中使用常量或者标志提取常量的值； </p>
+<p>（10）尽可能在需要分配大量内存时使用缓存；  </p>
+<p>（11）使用缓存模板（参考<a href="https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/15.7.md" target="_blank" rel="noopener">章节15.7</a>）。  </p>
+<h2 id="方法的接收者对照表"><a href="#方法的接收者对照表" class="headerlink" title="方法的接收者对照表"></a>方法的接收者对照表</h2><p>方法集：定义了一组关联到给定类型的值或者指针的方法。  </p>
+<h3 id="从传递的值的角度看方法集"><a href="#从传递的值的角度看方法集" class="headerlink" title="从传递的值的角度看方法集"></a>从传递的值的角度看方法集</h3><table>
+<thead>
+<tr>
+<th align="center">传递的值</th>
+<th align="center">方法声明的接收者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">T</td>
+<td align="center">(t T)</td>
+</tr>
+<tr>
+<td align="center">*T</td>
+<td align="center">(t T) 和 (t *T)</td>
+</tr>
+</tbody></table>
+<ul>
+<li>T 类型的值的方法集只包含了值接收者声明的方法</li>
+<li>而指向 T 类型的指针的方法集既包含值接收者声明的方法，也包含指针接收者声明的方法</li>
+</ul>
+<h3 id="从接收者类型的角度来看方法集"><a href="#从接收者类型的角度来看方法集" class="headerlink" title="从接收者类型的角度来看方法集"></a>从接收者类型的角度来看方法集</h3><table>
+<thead>
+<tr>
+<th align="center">方法声明的接收者</th>
+<th align="center">传递的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(t T)</td>
+<td align="center">T 和 *T</td>
+</tr>
+<tr>
+<td align="center">(t *T)</td>
+<td align="center">*T</td>
+</tr>
+</tbody></table>
+<ul>
+<li>如果使用指针接收者来实现一个接口，那么只有指向那个类型的指针才能够实现对应的接口</li>
+<li>如果使用值接收者来实现一个接口，那么那个类型的值和指针都能够实现对应的接口</li>
+</ul>
+<hr>
+<p><em><code>to be continued...</code></em>  </p>
+]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo + NexT(v7.7.2) 博客配置备忘</title>
+    <url>/2020/03/04/Hexo-NexT-Config-7-7-2/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>好好的为何要折腾自己？</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="配置历史"><a href="#配置历史" class="headerlink" title="配置历史"></a>配置历史</h1><ul>
+<li><a href="../../../../2019/03/27/Hexo-NexT-Config/">Hexo + NexT(v7.1.0) 博客配置备忘</a></li>
+</ul>
+<hr>
+<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><p>建站驱动：<code>Hexo</code> v4.2.0  </p>
+<p>主题： <code>NexT</code>.<code>Pisces</code> v7.7.2  </p>
+<p>站点配置文件：<code>/_config.yml</code>  </p>
+<p>主题配置文件：<code>/themes/next7.7.2/_config.yml</code>  </p>
+<hr>
+<h1 id="与之前配置的方法有变动的"><a href="#与之前配置的方法有变动的" class="headerlink" title="与之前配置的方法有变动的"></a>与之前配置的方法有变动的</h1><h2 id="不显示文章信息中“评论数”三个字"><a href="#不显示文章信息中“评论数”三个字" class="headerlink" title="不显示文章信息中“评论数”三个字"></a>不显示文章信息中“评论数”三个字</h2><p>现在版本显示的是<code>Valine：</code>，改了下<code>/themes/next/layout/_macro/post.swig</code>也暂时没找到删去的办法，先放着罢。</p>
+<h2 id="增加页脚显示网站运营时间功能"><a href="#增加页脚显示网站运营时间功能" class="headerlink" title="增加页脚显示网站运营时间功能"></a>增加页脚显示网站运营时间功能</h2><p>现在不需要去在<code>/themes/next/layout/_parrials/footer.swig</code>末尾新增内容了，现在NexT支持自定义风格。  </p>
+<p>在<code>主题配置文件</code>中，开启自定义功能：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory <span class="string">`source/_data`</span> and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: source/_data/head.swig</span><br><span class="line">  #header: source/_data/header.swig</span><br><span class="line">  #sidebar: source/_data/sidebar.swig</span><br><span class="line">  #postMeta: source/_data/post-meta.swig</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">  footer: source/_data/footer.swig</span><br><span class="line">  #bodyEnd: source/_data/body-end.swig</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
+
+<p>然后去网站根目录的<code>/source/</code>下新建文件夹<code>_data</code>和文件<code>footer.swig</code>，在里面加入自定义的代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-item-icon"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-clock-o"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"sitetime"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">language</span>=<span class="string">"javascript"</span>&gt;</span></span><br><span class="line"><span class="actionscript">  <span class="function"><span class="keyword">function</span> <span class="title">siteTime</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.setTimeout(<span class="string">"siteTime()"</span>, <span class="number">1000</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> seconds = <span class="number">1000</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> minutes = seconds * <span class="number">60</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> hours = minutes * <span class="number">60</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> days = hours * <span class="number">24</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> years = days * <span class="number">365</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayYear = today.getFullYear();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayMonth = today.getMonth()+<span class="number">1</span>;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayDate = today.getDate();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayHour = today.getHours();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todayMinute = today.getMinutes();</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> todaySecond = today.getSeconds();</span></span><br><span class="line">    /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)</span><br><span class="line">    year - 作为date对象的年份，为4位年份值</span><br><span class="line">    month - 0-11之间的整数，做为date对象的月份</span><br><span class="line">    day - 1-31之间的整数，做为date对象的天数</span><br><span class="line">    hours - 0(午夜24点)-23之间的整数，做为date对象的小时数</span><br><span class="line">    minutes - 0-59之间的整数，做为date对象的分钟数</span><br><span class="line">    seconds - 0-59之间的整数，做为date对象的秒数</span><br><span class="line">    microseconds - 0-999之间的整数，做为date对象的毫秒数 */</span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> t1 = <span class="built_in">Date</span>.UTC(<span class="number">2019</span>,<span class="number">03</span>,<span class="number">07</span>,<span class="number">10</span>,<span class="number">00</span>,<span class="number">00</span>); <span class="comment">//建站时间</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> t2 = <span class="built_in">Date</span>.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> diff = t2-t1;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffYears = <span class="built_in">Math</span>.floor(diff/years);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffDays = <span class="built_in">Math</span>.floor((diff/days)-diffYears*<span class="number">365</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffHours = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days)/hours);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffMinutes = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days-diffHours*hours)/minutes);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> diffSeconds = <span class="built_in">Math</span>.floor((diff-(diffYears*<span class="number">365</span>+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);</span></span><br><span class="line"><span class="javascript">    <span class="built_in">document</span>.getElementById(<span class="string">"sitetime"</span>).innerHTML=<span class="string">" 已运行"</span>+diffYears+<span class="string">" 年 "</span>+diffDays+<span class="string">" 天 "</span>+diffHours+<span class="string">" 小时 "</span>+diffMinutes+<span class="string">" 分钟 "</span>+diffSeconds+<span class="string">" 秒 ~喵~"</span>;</span></span><br><span class="line"><span class="actionscript">  &#125;<span class="comment">/*建站不到1年，不想显示“0”年可以把year部分注释掉*/</span></span></span><br><span class="line">  siteTime();</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增加文章边框阴影"><a href="#增加文章边框阴影" class="headerlink" title="增加文章边框阴影"></a>增加文章边框阴影</h2><p>与上面类似，在<code>站点配置文件中</code>开启:  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
+
+<p>然后在根目录下建立<code>/source/_data/styles.styl</code>：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">// 主页文章添加阴影效果</span><br><span class="line"><span class="selector-class">.post-block</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">24px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">35px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">24px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">203</span>, .<span class="number">5</span>);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(<span class="number">202</span>, <span class="number">203</span>, <span class="number">204</span>, .<span class="number">5</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改新建文章模板"><a href="#修改新建文章模板" class="headerlink" title="修改新建文章模板"></a>修改新建文章模板</h2><p><code>/scaffolds/post.md</code>中修改内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&#123;&#123;</span> <span class="string">title</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">date:</span> <span class="string">&#123;&#123;</span> <span class="string">date</span> <span class="string">&#125;&#125;</span></span><br><span class="line"><span class="attr">tags:</span> <span class="string">[tag1,</span> <span class="string">tag2]</span></span><br><span class="line"><span class="attr">categories:</span> <span class="string">分类名</span></span><br><span class="line"><span class="attr">permalink:</span>      <span class="string">//</span> <span class="string">文章自定义链接</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="string">&lt;center&gt;</span> <span class="string">&lt;font</span> <span class="string">color="#bababa"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="string">***首页展示的字***</span></span><br><span class="line"></span><br><span class="line"><span class="string">&lt;/font&gt;&lt;/center&gt;</span></span><br><span class="line"><span class="string">&lt;!--more--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>（写markdown的时候多加几个回车能避免很多问题……）</p>
+<h2 id="修改文章末尾-tags-的符号（-改成图标）"><a href="#修改文章末尾-tags-的符号（-改成图标）" class="headerlink" title="修改文章末尾 tags 的符号（#改成图标）"></a>修改文章末尾 tags 的符号（<code>#</code>改成图标）</h2><p>不用去改<code>/themes/next/layout/_macro/post.swig</code>了，新版NexT意见在<code>主题配置文件</code>中集成了这个配置：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"># Use icon instead of the symbol # to indicate the tag at the bottom of the post</span><br><span class="line">tag_icon: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="调整网站字体大小"><a href="#调整网站字体大小" class="headerlink" title="调整网站字体大小"></a>调整网站字体大小</h2><p>新版的字体偏大，可以去<code>站点配置文件</code>中<code>enable</code>字体功能：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  # Uri of fonts host, e.g. https:<span class="comment">//fonts.googleapis.com (Default).</span></span><br><span class="line">  host:</span><br><span class="line"></span><br><span class="line">  # Font options:</span><br><span class="line">  # <span class="string">`external: true`</span> will load this font family from <span class="string">`host`</span> above.</span><br><span class="line">  # <span class="string">`family: Times New Roman`</span>. Without any quotes.</span><br><span class="line">  # <span class="string">`size: x.x`</span>. Use <span class="string">`em`</span> as unit. Default: <span class="number">1</span> (<span class="number">16</span>px)</span><br><span class="line"></span><br><span class="line">  # Global font settings used <span class="keyword">for</span> all elements inside &lt;body&gt;.</span><br><span class="line">  global:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family: Lato</span><br><span class="line">    size: <span class="number">0.875</span></span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> site title (.site-title).</span><br><span class="line">  title:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br><span class="line">    size:</span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> headlines (&lt;h1&gt; to &lt;h6&gt;).</span><br><span class="line">  headings:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br><span class="line">    size:</span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> posts (.post-body).</span><br><span class="line">  posts:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br><span class="line"></span><br><span class="line">  # Font settings <span class="keyword">for</span> &lt;code&gt; and code blocks.</span><br><span class="line">  codes:</span><br><span class="line">    external: <span class="literal">true</span></span><br><span class="line">    family:</span><br></pre></td></tr></table></figure>
+
+<h2 id="返回顶部按钮放到右侧"><a href="#返回顶部按钮放到右侧" class="headerlink" title="返回顶部按钮放到右侧"></a>返回顶部按钮放到右侧</h2><p>暂时没在新版的<code>主题配置文件</code>中发现设置，目前的处理办法是在<code>\themes\next-7.7.2\source\css\_common\components\back-to-top.styl</code>中，将：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">.back-to-top &#123;</span><br><span class="line">...</span><br><span class="line">  left: $b2t-position-right;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>改为：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">.back-to-top &#123;</span><br><span class="line">...</span><br><span class="line">  right: $b2t-position-right;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>站点地图：  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br><span class="line">$ npm <span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save     //可选</span></span><br></pre></td></tr></table></figure>
+
+<p>站内搜索（Local Search）：  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-generator-<span class="keyword">search</span></span><br><span class="line">$ npm <span class="keyword">install</span> hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+
+<p>部署工具：  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+
+<p>字数统计、文章阅读时间（如果需要，现在没装）：  </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> hexo-symbols-<span class="keyword">count</span>-<span class="built_in">time</span> <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
       </tags>
   </entry>
   <entry>
@@ -3932,303 +3932,6 @@
       </tags>
   </entry>
   <entry>
-    <title>网站收藏</title>
-    <url>/2019/09/26/Site-Bookmark/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>BOOKMARK</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
-<td>在线编辑</td>
-</tr>
-<tr>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
-<td>最好的…是什么？</td>
-</tr>
-<tr>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
-<td>截图识别字体</td>
-</tr>
-<tr>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
-<td>正版软件&amp;免费&amp;优惠</td>
-</tr>
-<tr>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
-<td>在线编辑pdf</td>
-</tr>
-<tr>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
-<td>免费&amp;多语言翻译</td>
-</tr>
-<tr>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
-<td>免费</td>
-</tr>
-<tr>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
-<td>PDF在线工具&amp;转换</td>
-</tr>
-<tr>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
-<td>在线工具</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
-<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
-<td>每日新闻图卦</td>
-</tr>
-<tr>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
-<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
-<td>热点资讯聚合</td>
-</tr>
-<tr>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
-<td>资讯、排行榜聚合</td>
-</tr>
-<tr>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
-<td>短视频了解疾病</td>
-</tr>
-<tr>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
-<td>互联网新闻</td>
-</tr>
-<tr>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
-<td>大数据X图表</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
-<td>学各种小技巧</td>
-</tr>
-<tr>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
-<td></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
-<td>Ingress任务浏览</td>
-</tr>
-<tr>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
-<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
-<td>白噪音</td>
-</tr>
-<tr>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
-<td>假装去旅游</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>「备忘」</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Lightroom Learn Notes</title>
-    <url>/2020/02/26/Lr-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>算是查漏补缺罢</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="照片管理、筛选和批量处理"><a href="#照片管理、筛选和批量处理" class="headerlink" title="照片管理、筛选和批量处理"></a>照片管理、筛选和批量处理</h1><h2 id="Ps与Lr调用文件机制的区别"><a href="#Ps与Lr调用文件机制的区别" class="headerlink" title="Ps与Lr调用文件机制的区别"></a>Ps与Lr调用文件机制的区别</h2><ul>
-<li>Ps直接吃进照片进行处理</li>
-<li>Lr建立索引</li>
-<li>Lr的优势<ul>
-<li>方便组图的甄选</li>
-<li>快速统一风格</li>
-<li>可分时段修图</li>
-<li>可批量处理</li>
-</ul>
-</li>
-</ul>
-<h2 id="照片管理"><a href="#照片管理" class="headerlink" title="照片管理"></a>照片管理</h2><ul>
-<li><code>文件夹</code>：对应电脑系统的文件夹</li>
-<li><code>收藏夹</code>：虚拟的文件夹</li>
-<li><code>筛选</code>：右键-设置色标-颜色，或者 选照片-按键盘上的数字键。然后用过滤器筛选。标星级同理。</li>
-<li><code>色标</code>-<code>筛选</code>-<code>收藏</code>-<code>取消色标</code>，方便归类</li>
-<li>导入照片时的选项：<ul>
-<li><code>添加</code>：只建立索引</li>
-<li><code>移动</code>：移动到右侧目标文件夹</li>
-<li><code>复制</code>：复制到右侧目标文件夹</li>
-</ul>
-</li>
-</ul>
-<h2 id="照片的批量处理"><a href="#照片的批量处理" class="headerlink" title="照片的批量处理"></a>照片的批量处理</h2><ul>
-<li><code>图库</code>界面，右侧<code>快速修改照片</code>，可多选照片</li>
-</ul>
-<hr>
-<h1 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h1><p>关于亮度的统计标高，<code>横坐标</code>：0-255的亮度级别；<code>纵坐标</code>：像素数量。</p>
-<hr>
-<h1 id="曲线"><a href="#曲线" class="headerlink" title="曲线"></a>曲线</h1><p>整体调色。  </p>
-<ul>
-<li>常见曲线<ul>
-<li>压暗、提亮、加强对比度（S型）</li>
-</ul>
-</li>
-<li>胶片灰<ul>
-<li>最暗点提亮，最亮点压暗（阴影、高光的细节丢失）</li>
-<li>可以加个小S</li>
-</ul>
-</li>
-<li>调色案例<ul>
-<li>日系小清新<ul>
-<li>GRB提亮</li>
-<li>绿色阴影部分提亮</li>
-<li>蓝色阴影部分提亮</li>
-<li>红色给一点点青色 压暗</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="色调分离"><a href="#色调分离" class="headerlink" title="色调分离"></a>色调分离</h1><h2 id="色温色调"><a href="#色温色调" class="headerlink" title="色温色调"></a>色温色调</h2><ul>
-<li>夜间照片<ul>
-<li>色温↓</li>
-<li>色调↓</li>
-<li>提亮阴影</li>
-<li>二次构图</li>
-</ul>
-</li>
-<li>缺点：调色过于整体</li>
-</ul>
-<h2 id="分离色调"><a href="#分离色调" class="headerlink" title="分离色调"></a>分离色调</h2><p>针对不同亮度区域调色。  </p>
-<ul>
-<li>常见：高光青（190<del>220）、阴影黄绿（50</del>70）</li>
-</ul>
-<hr>
-<h1 id="HSL"><a href="#HSL" class="headerlink" title="HSL"></a>HSL</h1><ul>
-<li>针对颜色进行局部调色</li>
-</ul>
-<hr>
-<h1 id="降噪"><a href="#降噪" class="headerlink" title="降噪"></a>降噪</h1><ul>
-<li>亮度噪点、色彩噪点</li>
-<li>去紫边</li>
-</ul>
-<hr>
-<h1 id="视频参考"><a href="#视频参考" class="headerlink" title="视频参考"></a>视频参考</h1><h2 id="入门级"><a href="#入门级" class="headerlink" title="入门级"></a>入门级</h2><ul>
-<li><a href="https://www.bilibili.com/video/av91781253" target="_blank" rel="noopener">照片管理、筛选与批量处理 | 泰罗</a></li>
-<li><a href="https://www.bilibili.com/video/av93534402" target="_blank" rel="noopener">直方图与曝光调整 | 泰罗</a></li>
-<li><a href="https://www.bilibili.com/video/BV1PE411T7im" target="_blank" rel="noopener">曲线入门 | 泰罗</a></li>
-<li><a href="https://www.bilibili.com/video/BV1AQ4y1M7Xi" target="_blank" rel="noopener">色温色调、分离色调 | 泰罗</a></li>
-<li><a href="https://www.bilibili.com/video/BV1ti4y1t7ss" target="_blank" rel="noopener">HSL入门 | 泰罗</a></li>
-<li><a href="https://www.bilibili.com/video/BV1354y1R7md" target="_blank" rel="noopener">锐化、清晰度 | 泰罗</a></li>
-<li><a href="https://www.bilibili.com/video/BV13541147rf" target="_blank" rel="noopener">LR其他 | 泰罗</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Lightroom</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《经济学原理》笔记（宏观经济学）</title>
     <url>/2019/04/02/Macroeconomics-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -4692,6 +4395,303 @@
       </categories>
       <tags>
         <tag>经济学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Lightroom Learn Notes</title>
+    <url>/2020/02/26/Lr-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>算是查漏补缺罢</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="照片管理、筛选和批量处理"><a href="#照片管理、筛选和批量处理" class="headerlink" title="照片管理、筛选和批量处理"></a>照片管理、筛选和批量处理</h1><h2 id="Ps与Lr调用文件机制的区别"><a href="#Ps与Lr调用文件机制的区别" class="headerlink" title="Ps与Lr调用文件机制的区别"></a>Ps与Lr调用文件机制的区别</h2><ul>
+<li>Ps直接吃进照片进行处理</li>
+<li>Lr建立索引</li>
+<li>Lr的优势<ul>
+<li>方便组图的甄选</li>
+<li>快速统一风格</li>
+<li>可分时段修图</li>
+<li>可批量处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="照片管理"><a href="#照片管理" class="headerlink" title="照片管理"></a>照片管理</h2><ul>
+<li><code>文件夹</code>：对应电脑系统的文件夹</li>
+<li><code>收藏夹</code>：虚拟的文件夹</li>
+<li><code>筛选</code>：右键-设置色标-颜色，或者 选照片-按键盘上的数字键。然后用过滤器筛选。标星级同理。</li>
+<li><code>色标</code>-<code>筛选</code>-<code>收藏</code>-<code>取消色标</code>，方便归类</li>
+<li>导入照片时的选项：<ul>
+<li><code>添加</code>：只建立索引</li>
+<li><code>移动</code>：移动到右侧目标文件夹</li>
+<li><code>复制</code>：复制到右侧目标文件夹</li>
+</ul>
+</li>
+</ul>
+<h2 id="照片的批量处理"><a href="#照片的批量处理" class="headerlink" title="照片的批量处理"></a>照片的批量处理</h2><ul>
+<li><code>图库</code>界面，右侧<code>快速修改照片</code>，可多选照片</li>
+</ul>
+<hr>
+<h1 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h1><p>关于亮度的统计标高，<code>横坐标</code>：0-255的亮度级别；<code>纵坐标</code>：像素数量。</p>
+<hr>
+<h1 id="曲线"><a href="#曲线" class="headerlink" title="曲线"></a>曲线</h1><p>整体调色。  </p>
+<ul>
+<li>常见曲线<ul>
+<li>压暗、提亮、加强对比度（S型）</li>
+</ul>
+</li>
+<li>胶片灰<ul>
+<li>最暗点提亮，最亮点压暗（阴影、高光的细节丢失）</li>
+<li>可以加个小S</li>
+</ul>
+</li>
+<li>调色案例<ul>
+<li>日系小清新<ul>
+<li>GRB提亮</li>
+<li>绿色阴影部分提亮</li>
+<li>蓝色阴影部分提亮</li>
+<li>红色给一点点青色 压暗</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="色调分离"><a href="#色调分离" class="headerlink" title="色调分离"></a>色调分离</h1><h2 id="色温色调"><a href="#色温色调" class="headerlink" title="色温色调"></a>色温色调</h2><ul>
+<li>夜间照片<ul>
+<li>色温↓</li>
+<li>色调↓</li>
+<li>提亮阴影</li>
+<li>二次构图</li>
+</ul>
+</li>
+<li>缺点：调色过于整体</li>
+</ul>
+<h2 id="分离色调"><a href="#分离色调" class="headerlink" title="分离色调"></a>分离色调</h2><p>针对不同亮度区域调色。  </p>
+<ul>
+<li>常见：高光青（190<del>220）、阴影黄绿（50</del>70）</li>
+</ul>
+<hr>
+<h1 id="HSL"><a href="#HSL" class="headerlink" title="HSL"></a>HSL</h1><ul>
+<li>针对颜色进行局部调色</li>
+</ul>
+<hr>
+<h1 id="降噪"><a href="#降噪" class="headerlink" title="降噪"></a>降噪</h1><ul>
+<li>亮度噪点、色彩噪点</li>
+<li>去紫边</li>
+</ul>
+<hr>
+<h1 id="视频参考"><a href="#视频参考" class="headerlink" title="视频参考"></a>视频参考</h1><h2 id="入门级"><a href="#入门级" class="headerlink" title="入门级"></a>入门级</h2><ul>
+<li><a href="https://www.bilibili.com/video/av91781253" target="_blank" rel="noopener">照片管理、筛选与批量处理 | 泰罗</a></li>
+<li><a href="https://www.bilibili.com/video/av93534402" target="_blank" rel="noopener">直方图与曝光调整 | 泰罗</a></li>
+<li><a href="https://www.bilibili.com/video/BV1PE411T7im" target="_blank" rel="noopener">曲线入门 | 泰罗</a></li>
+<li><a href="https://www.bilibili.com/video/BV1AQ4y1M7Xi" target="_blank" rel="noopener">色温色调、分离色调 | 泰罗</a></li>
+<li><a href="https://www.bilibili.com/video/BV1ti4y1t7ss" target="_blank" rel="noopener">HSL入门 | 泰罗</a></li>
+<li><a href="https://www.bilibili.com/video/BV1354y1R7md" target="_blank" rel="noopener">锐化、清晰度 | 泰罗</a></li>
+<li><a href="https://www.bilibili.com/video/BV13541147rf" target="_blank" rel="noopener">LR其他 | 泰罗</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Lightroom</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网站收藏</title>
+    <url>/2019/09/26/Site-Bookmark/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>BOOKMARK</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
+<td>在线编辑</td>
+</tr>
+<tr>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
+<td>最好的…是什么？</td>
+</tr>
+<tr>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
+<td>截图识别字体</td>
+</tr>
+<tr>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
+<td>正版软件&amp;免费&amp;优惠</td>
+</tr>
+<tr>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
+<td>在线编辑pdf</td>
+</tr>
+<tr>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
+<td>免费&amp;多语言翻译</td>
+</tr>
+<tr>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
+<td>PDF在线工具&amp;转换</td>
+</tr>
+<tr>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
+<td>在线工具</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
+<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
+<td>每日新闻图卦</td>
+</tr>
+<tr>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
+<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
+<td>热点资讯聚合</td>
+</tr>
+<tr>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
+<td>资讯、排行榜聚合</td>
+</tr>
+<tr>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
+<td>短视频了解疾病</td>
+</tr>
+<tr>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
+<td>互联网新闻</td>
+</tr>
+<tr>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
+<td>大数据X图表</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
+<td>学各种小技巧</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
+<td>Ingress任务浏览</td>
+</tr>
+<tr>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
+<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
+<td>白噪音</td>
+</tr>
+<tr>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
+<td>假装去旅游</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -5211,6 +5211,224 @@
       </tags>
   </entry>
   <entry>
+    <title>Photography Learn Notes</title>
+    <url>/2019/10/15/Photography-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>主要是后期风格</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
+<li>低饱和，又不是纯黑白</li>
+<li>分离色调：给整张图罩上冷色调<ul>
+<li>阴影+蓝色</li>
+</ul>
+</li>
+<li>HSL：<ul>
+<li>明亮度：蓝色↓↓，天空变深邃</li>
+<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
+</ul>
+</li>
+<li>基本面板中：阴影看情况↑</li>
+<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
+<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
+<li>特点：<ul>
+<li>肌肤极致干净</li>
+<li>空气通透</li>
+</ul>
+</li>
+<li>HSL调肤色，注意不要出现洋红</li>
+<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
+<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
+<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
+</ul>
+<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
+<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
+<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
+<li>HSL：<ul>
+<li>色相：紫色0，蓝色右 呈湖蓝</li>
+<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
+<li>饱和度：皮肤↓，其他视情况</li>
+</ul>
+</li>
+<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
+<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
+<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
+<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
+<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
+<li>相机校准：蓝原色左滑→湖蓝色</li>
+<li>HSL：<ul>
+<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
+</ul>
+</li>
+<li>可不做锐化</li>
+<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
+<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
+<li>蓝色时间：日出前、日落后</li>
+<li>特点：街灯、车灯刚亮</li>
+<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
+<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
+<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
+<li>特点：<ul>
+<li>引人共鸣</li>
+<li>元素处在动态</li>
+<li>画面质量高</li>
+</ul>
+</li>
+<li>高光↓，阴影↑</li>
+<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
+<li>红色曲线：（下拉→青）阴影稍微下拉</li>
+<li>蓝色曲线：阴影稍微上拉</li>
+<li>绿色曲线：调氛围，只要一点点调整</li>
+<li>RGB通道：暗部抬一点，提亮</li>
+</ul>
+</li>
+<li>清晰度↑，鲜艳度↓一点点</li>
+<li>裁剪：16:9、2.35:1</li>
+<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
+<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
+<li>色调分离：高光-红紫色，阴影-蓝色</li>
+<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
+<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
+<li>矫正，阴影↑，饱和度↑</li>
+<li>HSL：<ul>
+<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
+<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
+</ul>
+</li>
+<li>色调分离/曲线：暗部增加蓝青色</li>
+<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
+<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>色温↓，色调看喜好</li>
+<li>清晰度↑</li>
+<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
+<li>渐变滤镜压暗前景曝光、饱和度</li>
+<li>鲜艳度↑</li>
+</ul>
+<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
+<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
+<li>照片特点：<ul>
+<li>白（曝光↑）</li>
+<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
+<li>背景选择：深色，突出雪花</li>
+</ul>
+</li>
+<li>后期<ul>
+<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
+<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
+<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
+<li>色温↑，黄昏感觉</li>
+<li>HSL：<ul>
+<li>绿色饱和度↓，变得黄一些</li>
+<li>橙色、黄色饱和度↑明亮度↑<ul>
+<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
+<li>小S曲线，对比度↑</li>
+</ul>
+</li>
+<li>进PS加光晕<ul>
+<li>可搭配插件：Alien Skin Exposure</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
+<li>特征：<ul>
+<li>金属光感：渐变塑光影</li>
+<li>拉丝效果：模糊塑动感</li>
+<li>流动天空：模糊仿流动</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<hr>
+<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
+<li>插件：DR4、Skinfiner</li>
+<li>图章工具：去明显瑕疵</li>
+<li>中性灰：去痘印、调光影结构</li>
+<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
+<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
+</ul>
+<hr>
+<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
+<li>同时满足三个条件：<ul>
+<li>RAW格式拍摄</li>
+<li>拍照时尽量曝光增加</li>
+<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
+</ul>
+</li>
+<li>好处：提高画面信噪比，减少噪点</li>
+<li>拍摄：<ul>
+<li>参考1：评价曝光+1.3ev，白加黑减</li>
+<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
+</ul>
+<h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>时间选择：<ul>
+<li>月相查询：月亮小的时候拍摄</li>
+<li>月出、月落时间：月落后拍摄</li>
+</ul>
+</li>
+<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
+<li>银河方位：starwalk、星图</li>
+<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
+<li>参数选择：<ul>
+<li>对焦：无限远</li>
+<li>光圈：最大</li>
+<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
+<li>感光度：被动决定</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
+<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
+<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
+<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
+</ul>
+<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photography</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Photography Basis Notes</title>
     <url>/2020/03/10/Photography-Basis-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -5448,224 +5666,6 @@
 <li>MTF越高（上限100%），成像效果越好，反之则反</li>
 </ul>
 <p><a href="https://www.youtube.com/watch?v=fWFN7pIruQk" target="_blank" rel="noopener">讲解视频</a></p>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photography</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Photography Learn Notes</title>
-    <url>/2019/10/15/Photography-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>主要是后期风格</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
-<li>低饱和，又不是纯黑白</li>
-<li>分离色调：给整张图罩上冷色调<ul>
-<li>阴影+蓝色</li>
-</ul>
-</li>
-<li>HSL：<ul>
-<li>明亮度：蓝色↓↓，天空变深邃</li>
-<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
-</ul>
-</li>
-<li>基本面板中：阴影看情况↑</li>
-<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
-<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
-<li>特点：<ul>
-<li>肌肤极致干净</li>
-<li>空气通透</li>
-</ul>
-</li>
-<li>HSL调肤色，注意不要出现洋红</li>
-<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
-<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
-<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
-</ul>
-<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
-<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
-<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
-<li>HSL：<ul>
-<li>色相：紫色0，蓝色右 呈湖蓝</li>
-<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
-<li>饱和度：皮肤↓，其他视情况</li>
-</ul>
-</li>
-<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
-<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
-<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
-<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
-<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
-<li>相机校准：蓝原色左滑→湖蓝色</li>
-<li>HSL：<ul>
-<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
-</ul>
-</li>
-<li>可不做锐化</li>
-<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
-<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
-<li>蓝色时间：日出前、日落后</li>
-<li>特点：街灯、车灯刚亮</li>
-<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
-<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
-<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
-<li>特点：<ul>
-<li>引人共鸣</li>
-<li>元素处在动态</li>
-<li>画面质量高</li>
-</ul>
-</li>
-<li>高光↓，阴影↑</li>
-<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
-<li>红色曲线：（下拉→青）阴影稍微下拉</li>
-<li>蓝色曲线：阴影稍微上拉</li>
-<li>绿色曲线：调氛围，只要一点点调整</li>
-<li>RGB通道：暗部抬一点，提亮</li>
-</ul>
-</li>
-<li>清晰度↑，鲜艳度↓一点点</li>
-<li>裁剪：16:9、2.35:1</li>
-<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
-<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
-<li>色调分离：高光-红紫色，阴影-蓝色</li>
-<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
-<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
-<li>矫正，阴影↑，饱和度↑</li>
-<li>HSL：<ul>
-<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
-<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
-</ul>
-</li>
-<li>色调分离/曲线：暗部增加蓝青色</li>
-<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
-<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>色温↓，色调看喜好</li>
-<li>清晰度↑</li>
-<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
-<li>渐变滤镜压暗前景曝光、饱和度</li>
-<li>鲜艳度↑</li>
-</ul>
-<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
-<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
-<li>照片特点：<ul>
-<li>白（曝光↑）</li>
-<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
-<li>背景选择：深色，突出雪花</li>
-</ul>
-</li>
-<li>后期<ul>
-<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
-<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
-<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
-<li>色温↑，黄昏感觉</li>
-<li>HSL：<ul>
-<li>绿色饱和度↓，变得黄一些</li>
-<li>橙色、黄色饱和度↑明亮度↑<ul>
-<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
-<li>小S曲线，对比度↑</li>
-</ul>
-</li>
-<li>进PS加光晕<ul>
-<li>可搭配插件：Alien Skin Exposure</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
-<li>特征：<ul>
-<li>金属光感：渐变塑光影</li>
-<li>拉丝效果：模糊塑动感</li>
-<li>流动天空：模糊仿流动</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<hr>
-<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
-<li>插件：DR4、Skinfiner</li>
-<li>图章工具：去明显瑕疵</li>
-<li>中性灰：去痘印、调光影结构</li>
-<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
-<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
-</ul>
-<hr>
-<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
-<li>同时满足三个条件：<ul>
-<li>RAW格式拍摄</li>
-<li>拍照时尽量曝光增加</li>
-<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
-</ul>
-</li>
-<li>好处：提高画面信噪比，减少噪点</li>
-<li>拍摄：<ul>
-<li>参考1：评价曝光+1.3ev，白加黑减</li>
-<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
-</ul>
-<h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>时间选择：<ul>
-<li>月相查询：月亮小的时候拍摄</li>
-<li>月出、月落时间：月落后拍摄</li>
-</ul>
-</li>
-<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
-<li>银河方位：starwalk、星图</li>
-<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
-<li>参数选择：<ul>
-<li>对焦：无限远</li>
-<li>光圈：最大</li>
-<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
-<li>感光度：被动决定</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
-<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
-<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
-<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
-</ul>
-<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -6348,6 +6348,69 @@
       </tags>
   </entry>
   <entry>
+    <title>SEO 学习笔记</title>
+    <url>/2019/04/01/SEO-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>搜索引擎优化</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<ul>
+<li><p>书名：《SEO实战密码》（第3版）</p>
+</li>
+<li><p>作者：昝辉 Zac</p>
+</li>
+<li><p>出版社：电子工业出版社</p>
+</li>
+</ul>
+<hr>
+<h1 id="1-SEO：Search-Engine-Optimization"><a href="#1-SEO：Search-Engine-Optimization" class="headerlink" title="1.SEO：Search Engine Optimization"></a>1.SEO：Search Engine Optimization</h1><ul>
+<li>从自然搜索结果获得网站流量的技术和过程</li>
+</ul>
+<h1 id="2-优化："><a href="#2-优化：" class="headerlink" title="2.优化："></a>2.优化：</h1><ul>
+<li>站内优化：网站结构，页面HTML代码等</li>
+<li>站外优化：外部链接，参与互动等</li>
+</ul>
+<h1 id="3-搜索引擎工作原理"><a href="#3-搜索引擎工作原理" class="headerlink" title="3.搜索引擎工作原理"></a>3.搜索引擎工作原理</h1><p>爬行（→地址库）→抓取→预处理（索引）：提取文字；中文分词；去停止词；消除噪声；去重；正向/倒排索引；链接关系计算；特殊文件处理；质量判断→排名：搜索词处理；文件匹配；初始子集选择；相关性计算；过滤&amp;调整；排名显示；搜索缓存；查询&amp;点击日志</p>
+<ul>
+<li>高级搜索指令：“ ”；-；*；inurl:；inanchor:；intitle:；allintitle:；allinurl:；filetype:；site:；link:；related:</li>
+</ul>
+<h1 id="4-关键词选择核心原则："><a href="#4-关键词选择核心原则：" class="headerlink" title="4.关键词选择核心原则："></a>4.关键词选择核心原则：</h1><ul>
+<li>搜索次数多</li>
+<li>竞争程度小</li>
+</ul>
+<h1 id="5-核心关键词→拓展关键词"><a href="#5-核心关键词→拓展关键词" class="headerlink" title="5.核心关键词→拓展关键词"></a>5.核心关键词→拓展关键词</h1><h1 id="6-长尾关键词：较长，较具体，次数低"><a href="#6-长尾关键词：较长，较具体，次数低" class="headerlink" title="6.长尾关键词：较长，较具体，次数低"></a>6.长尾关键词：较长，较具体，次数低</h1><h1 id="7-竞争对手研究"><a href="#7-竞争对手研究" class="headerlink" title="7.竞争对手研究"></a>7.竞争对手研究</h1><ul>
+<li>域名权重相关数据</li>
+<li>网站优化情况</li>
+<li>网站流量</li>
+</ul>
+<h1 id="8-网站结构优化"><a href="#8-网站结构优化" class="headerlink" title="8.网站结构优化"></a>8.网站结构优化</h1><ul>
+<li>避免蜘蛛陷阱（Flash，Session ID，跳转，框架Frame，动态url，js链接等）</li>
+</ul>
+<h1 id="9-SEO过程："><a href="#9-SEO过程：" class="headerlink" title="9.SEO过程："></a>9.SEO过程：</h1><p>竞争对手究→SEO计划（诊断）→网站优化→外链建设→效果检测及流量分析→策略修改</p>
+<h1 id="10-Google："><a href="#10-Google：" class="headerlink" title="10.Google："></a>10.Google：</h1><ul>
+<li>熊猫算法：针对低质量内容</li>
+<li>企鹅算法：针对垃圾和作弊网站</li>
+</ul>
+<h1 id="11-百度："><a href="#11-百度：" class="headerlink" title="11.百度："></a>11.百度：</h1><ul>
+<li>绿萝算法：买卖链接、软文形式的垃圾链接</li>
+<li>石榴算法：低质量页面、妨碍用户体验的</li>
+</ul>
+<h1 id="11-搜索引擎历史趋势：相关性→权威性→实用性"><a href="#11-搜索引擎历史趋势：相关性→权威性→实用性" class="headerlink" title="11.搜索引擎历史趋势：相关性→权威性→实用性"></a>11.搜索引擎历史趋势：相关性→权威性→实用性</h1><ul>
+<li>内容为王</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「笔记」- 读书</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>SEO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>R语言基础の笔记</title>
     <url>/2019/04/01/R-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -6783,69 +6846,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SEO 学习笔记</title>
-    <url>/2019/04/01/SEO-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>搜索引擎优化</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<ul>
-<li><p>书名：《SEO实战密码》（第3版）</p>
-</li>
-<li><p>作者：昝辉 Zac</p>
-</li>
-<li><p>出版社：电子工业出版社</p>
-</li>
-</ul>
-<hr>
-<h1 id="1-SEO：Search-Engine-Optimization"><a href="#1-SEO：Search-Engine-Optimization" class="headerlink" title="1.SEO：Search Engine Optimization"></a>1.SEO：Search Engine Optimization</h1><ul>
-<li>从自然搜索结果获得网站流量的技术和过程</li>
-</ul>
-<h1 id="2-优化："><a href="#2-优化：" class="headerlink" title="2.优化："></a>2.优化：</h1><ul>
-<li>站内优化：网站结构，页面HTML代码等</li>
-<li>站外优化：外部链接，参与互动等</li>
-</ul>
-<h1 id="3-搜索引擎工作原理"><a href="#3-搜索引擎工作原理" class="headerlink" title="3.搜索引擎工作原理"></a>3.搜索引擎工作原理</h1><p>爬行（→地址库）→抓取→预处理（索引）：提取文字；中文分词；去停止词；消除噪声；去重；正向/倒排索引；链接关系计算；特殊文件处理；质量判断→排名：搜索词处理；文件匹配；初始子集选择；相关性计算；过滤&amp;调整；排名显示；搜索缓存；查询&amp;点击日志</p>
-<ul>
-<li>高级搜索指令：“ ”；-；*；inurl:；inanchor:；intitle:；allintitle:；allinurl:；filetype:；site:；link:；related:</li>
-</ul>
-<h1 id="4-关键词选择核心原则："><a href="#4-关键词选择核心原则：" class="headerlink" title="4.关键词选择核心原则："></a>4.关键词选择核心原则：</h1><ul>
-<li>搜索次数多</li>
-<li>竞争程度小</li>
-</ul>
-<h1 id="5-核心关键词→拓展关键词"><a href="#5-核心关键词→拓展关键词" class="headerlink" title="5.核心关键词→拓展关键词"></a>5.核心关键词→拓展关键词</h1><h1 id="6-长尾关键词：较长，较具体，次数低"><a href="#6-长尾关键词：较长，较具体，次数低" class="headerlink" title="6.长尾关键词：较长，较具体，次数低"></a>6.长尾关键词：较长，较具体，次数低</h1><h1 id="7-竞争对手研究"><a href="#7-竞争对手研究" class="headerlink" title="7.竞争对手研究"></a>7.竞争对手研究</h1><ul>
-<li>域名权重相关数据</li>
-<li>网站优化情况</li>
-<li>网站流量</li>
-</ul>
-<h1 id="8-网站结构优化"><a href="#8-网站结构优化" class="headerlink" title="8.网站结构优化"></a>8.网站结构优化</h1><ul>
-<li>避免蜘蛛陷阱（Flash，Session ID，跳转，框架Frame，动态url，js链接等）</li>
-</ul>
-<h1 id="9-SEO过程："><a href="#9-SEO过程：" class="headerlink" title="9.SEO过程："></a>9.SEO过程：</h1><p>竞争对手究→SEO计划（诊断）→网站优化→外链建设→效果检测及流量分析→策略修改</p>
-<h1 id="10-Google："><a href="#10-Google：" class="headerlink" title="10.Google："></a>10.Google：</h1><ul>
-<li>熊猫算法：针对低质量内容</li>
-<li>企鹅算法：针对垃圾和作弊网站</li>
-</ul>
-<h1 id="11-百度："><a href="#11-百度：" class="headerlink" title="11.百度："></a>11.百度：</h1><ul>
-<li>绿萝算法：买卖链接、软文形式的垃圾链接</li>
-<li>石榴算法：低质量页面、妨碍用户体验的</li>
-</ul>
-<h1 id="11-搜索引擎历史趋势：相关性→权威性→实用性"><a href="#11-搜索引擎历史趋势：相关性→权威性→实用性" class="headerlink" title="11.搜索引擎历史趋势：相关性→权威性→实用性"></a>11.搜索引擎历史趋势：相关性→权威性→实用性</h1><ul>
-<li>内容为王</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「笔记」- 读书</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>SEO</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SPSS 学习笔记</title>
     <url>/2019/04/01/SPSS-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -7107,83 +7107,6 @@
       <tags>
         <tag>生活</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>WeiboCat With Golang</title>
-    <url>/2019/04/15/WeiboCat/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>Jacky &amp; Jason</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
-<li>项目名：<code>WeiboCat</code></li>
-<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
-<li>启动日期：2019年4月</li>
-<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
-</ul>
-<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
-<li><input disabled="" type="checkbox"> 微博登录  </li>
-<li><input disabled="" type="checkbox"> 微博发post</li>
-<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
-<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
-<li><input disabled="" type="checkbox"> 用.json作为config</li>
-</ul>
-<hr>
-<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
-<li>SDK for Golang 的使用？</li>
-<li>写自己的SDK？</li>
-<li>OAuth2.0认证什么鬼啊？</li>
-</ul>
-<hr>
-<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
-<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
-<p>正确的：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>错误的：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
-
-<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
-<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>「语言」- Go</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
-        <tag>Go项目</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/03/07/Hello-World/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong>Hexo 的初始文档</strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
   </entry>
   <entry>
     <title>《虚拟电厂——能源互联网的终极组态》笔记</title>
@@ -8414,6 +8337,83 @@
         <tag>Note</tag>
         <tag>能源</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>WeiboCat With Golang</title>
+    <url>/2019/04/15/WeiboCat/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>Jacky &amp; Jason</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><h2 id="项目情况"><a href="#项目情况" class="headerlink" title="项目情况"></a>项目情况</h2><ul>
+<li>项目名：<code>WeiboCat</code></li>
+<li>想要实现的功能：每天定时在微博上发一张家里喵的图片</li>
+<li>启动日期：2019年4月</li>
+<li>项目代码地址：<a href="https://github.com/reitake/GoWeiboCat" target="_blank" rel="noopener">GitHub-GoWeiboCat</a></li>
+</ul>
+<h2 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h2><ul>
+<li><input disabled="" type="checkbox"> 微博登录  </li>
+<li><input disabled="" type="checkbox"> 微博发post</li>
+<li><input checked="" disabled="" type="checkbox"> 本地图片文件夹管理</li>
+<li><input checked="" disabled="" type="checkbox"> “闹钟”功能</li>
+<li><input disabled="" type="checkbox"> 用.json作为config</li>
+</ul>
+<hr>
+<h1 id="待解决的问题"><a href="#待解决的问题" class="headerlink" title="待解决的问题"></a>待解决的问题</h1><ul>
+<li>SDK for Golang 的使用？</li>
+<li>写自己的SDK？</li>
+<li>OAuth2.0认证什么鬼啊？</li>
+</ul>
+<hr>
+<h1 id="版本-Change-Log"><a href="#版本-Change-Log" class="headerlink" title="版本 Change Log"></a>版本 Change Log</h1><hr>
+<h1 id="过程中踩到的坑"><a href="#过程中踩到的坑" class="headerlink" title="过程中踩到的坑"></a>过程中踩到的坑</h1><h2 id="movepic-go"><a href="#movepic-go" class="headerlink" title="movepic.go"></a>movepic.go</h2><h3 id="把图片改名成时间"><a href="#把图片改名成时间" class="headerlink" title="把图片改名成时间"></a>把图片改名成时间</h3><p>文件名不能包含<code>：</code>这个符号，否则用<code>os.Rename</code>改名不成功，提示错误：<code>The filename, directory name, or volume label syntax is incorrect.</code>。同样地，新文件名不能包含<code>*</code>、<code>\</code>、<code>/</code>等字符。  </p>
+<p>正确的：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">renameImage</span><span class="params">(folderPath <span class="keyword">string</span>, imageName <span class="keyword">string</span>)</span></span>&#123;</span><br><span class="line">    oldpath := folderPath + PTHSEP + imageName</span><br><span class="line">    fmt.Println(<span class="string">"oldpath:"</span>, oldpath)</span><br><span class="line">    newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15-04-05"</span>) + <span class="string">".png"</span></span><br><span class="line">    fmt.Println(<span class="string">"newpath:"</span>, newpath)</span><br><span class="line">    err := os.Rename(oldpath, newpath)</span><br><span class="line">    fmt.Println(<span class="string">"err:"</span>, err)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>错误的：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">……</span><br><span class="line">newpath := folderPath + PTHSEP + time.Now().Format(<span class="string">"2006-01-02-15:04:05"</span>) + <span class="string">".png"</span></span><br><span class="line">……</span><br></pre></td></tr></table></figure>
+
+<h3 id="判断文件夹中是否有图片"><a href="#判断文件夹中是否有图片" class="headerlink" title="判断文件夹中是否有图片"></a>判断文件夹中是否有图片</h3><p>先用<code>ioutil.ReadDir(imagesFolderPath)</code>读取目录下文件，再根据拓展名判断是否是规定格式的图片，不是文件的剔除，剔除后，检查时候还存在剩余图片。  </p>
+<p>此时应该用<code>len()</code>判断，而不是判断切片是否为<code>nil</code>。  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">images, err := ioutil.ReadDir(imagesFolderPath)</span><br><span class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(images); &#123;</span><br><span class="line">    <span class="keyword">if</span> strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpg"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".png"</span>) || strings.HasSuffix(strings.ToLower(images[i].Name()), <span class="string">".jpeg"</span>) &#123;</span><br><span class="line">        i++</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        images = <span class="built_in">append</span>(images[:i], images[i+<span class="number">1</span>:]...)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(images) == <span class="number">0</span> &#123;</span><br><span class="line">    fmt.Printf(<span class="string">"\"%s\"文件夹中未找到 .jpg/.png/.jpeg 后缀的图片！\n"</span>, IMAGESFOLDER)</span><br><span class="line">    err = errors.New(<span class="string">"图片库文件夹中未发现图片！"</span>)</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+        <tag>Go项目</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/03/07/Hello-World/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong>Hexo 的初始文档</strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
