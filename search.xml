@@ -1,6 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Axure Learn</title>
+    <url>/2019/11/25/Axure-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>重要的是用工具的人，也就是工具人</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h3><ul>
+<li>矩形框、圆形：图形，可写字</li>
+<li>图片、占位符</li>
+<li>按钮、主要按钮、链接按钮</li>
+<li>标题、标签、段落：写字，仅样式不同</li>
+<li>水平线、垂直线：线段，固定宽度1</li>
+<li>热区：制作不可见但想要交互的区域</li>
+<li>动态面板：强大</li>
+<li>内联框架：在页面内嵌套其他页面或者URL的内容</li>
+<li>重复器：制作重复内容，功能强大</li>
+</ul>
+<h3 id="表单元件"><a href="#表单元件" class="headerlink" title="表单元件"></a>表单元件</h3><ul>
+<li>文本框、文本域、下拉列表、列表框、复选框、单选按钮</li>
+</ul>
+<h3 id="菜单-表格"><a href="#菜单-表格" class="headerlink" title="菜单|表格"></a>菜单|表格</h3><ul>
+<li>树状菜单（可折叠）、表格、水平菜单、垂直菜单</li>
+</ul>
+<h3 id="标记元件"><a href="#标记元件" class="headerlink" title="标记元件"></a>标记元件</h3><ul>
+<li>快照</li>
+<li>水平箭头、垂直箭头</li>
+<li>便签</li>
+<li>圆形标记、水滴标记</li>
+</ul>
+<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><ul>
+<li>事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击<ul>
+<li>时间起名习俗：on+对象名+时间，如onHideBotmClick</li>
+</ul>
+</li>
+<li>动作（Action）：对事件的响应，如跳转页面、显示弹出层<ul>
+<li>多个动作按次序执行，除了动画</li>
+</ul>
+</li>
+<li>情况（Case）：根据不同条件作出不同响应</li>
+</ul>
+<h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><ul>
+<li>动作只能操作当前容器内的元件。</li>
+<li>可以给母版内动作跑出事件，在具体页面中根据时间来执行动作。</li>
+</ul>
+<h3 id="动态面板"><a href="#动态面板" class="headerlink" title="动态面板"></a>动态面板</h3><ul>
+<li>页面内部分页面变换，通常用动态面板实现，例如用户名登录/手机号登录</li>
+<li>切换按钮的动作：set panel state</li>
+</ul>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
+<li><code>方向键</code>单个像素调整，再按住<code>Shift</code>键，10个像素调整。</li>
+<li>按住<code>Shift</code>等比例调整大小。</li>
+<li>双击：<ul>
+<li>普通组件：添加文字</li>
+<li>类型组件：编辑</li>
+</ul>
+</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>预览：<code>F5</code></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
+]]></content>
+      <categories>
+        <category>「笔记」- 软件</category>
+      </categories>
+      <tags>
+        <tag>Axure</tag>
+        <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Algorithm 笔记</title>
     <url>/2019/03/14/Alg-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -110,83 +184,9 @@
         <category>「算法」</category>
       </categories>
       <tags>
+        <tag>Note</tag>
         <tag>算法</tag>
         <tag>Go</tag>
-        <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Axure Learn</title>
-    <url>/2019/11/25/Axure-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>重要的是用工具的人，也就是工具人</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><h3 id="基本元件"><a href="#基本元件" class="headerlink" title="基本元件"></a>基本元件</h3><ul>
-<li>矩形框、圆形：图形，可写字</li>
-<li>图片、占位符</li>
-<li>按钮、主要按钮、链接按钮</li>
-<li>标题、标签、段落：写字，仅样式不同</li>
-<li>水平线、垂直线：线段，固定宽度1</li>
-<li>热区：制作不可见但想要交互的区域</li>
-<li>动态面板：强大</li>
-<li>内联框架：在页面内嵌套其他页面或者URL的内容</li>
-<li>重复器：制作重复内容，功能强大</li>
-</ul>
-<h3 id="表单元件"><a href="#表单元件" class="headerlink" title="表单元件"></a>表单元件</h3><ul>
-<li>文本框、文本域、下拉列表、列表框、复选框、单选按钮</li>
-</ul>
-<h3 id="菜单-表格"><a href="#菜单-表格" class="headerlink" title="菜单|表格"></a>菜单|表格</h3><ul>
-<li>树状菜单（可折叠）、表格、水平菜单、垂直菜单</li>
-</ul>
-<h3 id="标记元件"><a href="#标记元件" class="headerlink" title="标记元件"></a>标记元件</h3><ul>
-<li>快照</li>
-<li>水平箭头、垂直箭头</li>
-<li>便签</li>
-<li>圆形标记、水滴标记</li>
-</ul>
-<h2 id="交互"><a href="#交互" class="headerlink" title="交互"></a>交互</h2><h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><ul>
-<li>事件（Event）：部件状态有变化，如文本框内文字变化、按钮点击<ul>
-<li>时间起名习俗：on+对象名+时间，如onHideBotmClick</li>
-</ul>
-</li>
-<li>动作（Action）：对事件的响应，如跳转页面、显示弹出层<ul>
-<li>多个动作按次序执行，除了动画</li>
-</ul>
-</li>
-<li>情况（Case）：根据不同条件作出不同响应</li>
-</ul>
-<h3 id="母版"><a href="#母版" class="headerlink" title="母版"></a>母版</h3><ul>
-<li>动作只能操作当前容器内的元件。</li>
-<li>可以给母版内动作跑出事件，在具体页面中根据时间来执行动作。</li>
-</ul>
-<h3 id="动态面板"><a href="#动态面板" class="headerlink" title="动态面板"></a>动态面板</h3><ul>
-<li>页面内部分页面变换，通常用动态面板实现，例如用户名登录/手机号登录</li>
-<li>切换按钮的动作：set panel state</li>
-</ul>
-<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ul>
-<li><code>方向键</code>单个像素调整，再按住<code>Shift</code>键，10个像素调整。</li>
-<li>按住<code>Shift</code>等比例调整大小。</li>
-<li>双击：<ul>
-<li>普通组件：添加文字</li>
-<li>类型组件：编辑</li>
-</ul>
-</li>
-</ul>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
-<li>预览：<code>F5</code></li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p><a href="http://www.chanpinban.com/downloads/" target="_blank" rel="noopener">汉化资源</a></p>
-]]></content>
-      <categories>
-        <category>「笔记」- 软件</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Axure</tag>
       </tags>
   </entry>
   <entry>
@@ -412,78 +412,6 @@
         <tag>Note</tag>
         <tag>能源</tag>
         <tag>VPP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>吃肉使人快乐</title>
-    <url>/2020/12/22/Food/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>为什么好吃的都是热量高的</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="聚餐"><a href="#聚餐" class="headerlink" title="聚餐"></a>聚餐</h1><h2 id="烤肉"><a href="#烤肉" class="headerlink" title="烤肉"></a>烤肉</h2><h3 id="鞑子烤羊腿"><a href="#鞑子烤羊腿" class="headerlink" title="鞑子烤羊腿"></a>鞑子烤羊腿</h3><ul>
-<li>位置：华星路</li>
-<li>时间：2020年夏、秋</li>
-<li>同伴：一次超j，一次zcm、lqm、zsx</li>
-<li>评价：可以满足大口吃羊肉的欲望，整块的羊排/羊腿，烤的滋油；其他烧烤小食没怎么吃</li>
-<li>人均：100</li>
-</ul>
-<h3 id="日料"><a href="#日料" class="headerlink" title="日料"></a>日料</h3><h3 id="米浅"><a href="#米浅" class="headerlink" title="米浅"></a>米浅</h3><ul>
-<li>位置：华星路</li>
-<li>时间：2020年10月</li>
-<li>同伴：xsx徐工</li>
-<li>评价：<ul>
-<li>必点玉子烧</li>
-<li>徐工推荐的鹅肝手握很阔以</li>
-<li>炒饭没上次去的好吃</li>
-<li>菜单跟浅草屋一模一样</li>
-</ul>
-</li>
-<li>人均：100</li>
-</ul>
-<h2 id="火锅"><a href="#火锅" class="headerlink" title="火锅"></a>火锅</h2><h3 id="海底捞"><a href="#海底捞" class="headerlink" title="海底捞"></a>海底捞</h3><ul>
-<li>位置：铂澜·大象城</li>
-<li>时间：2020年12月</li>
-<li>同伴：信爷</li>
-<li>评价：还行，没有那么让人尴尬的热情；菜品没多少感触，感觉火锅都差不多</li>
-<li>人均：220</li>
-</ul>
-<h3 id="捞王"><a href="#捞王" class="headerlink" title="捞王"></a>捞王</h3><ul>
-<li>位置：铂澜·大象城</li>
-<li>时间：2020年12月</li>
-<li>同伴：信爷</li>
-<li>评价：信爷喜欢捞王的汤底，比较奶的感觉</li>
-<li>人均：150+</li>
-</ul>
-<h2 id="烤鱼"><a href="#烤鱼" class="headerlink" title="烤鱼"></a>烤鱼</h2><h3 id="葫炉鱼"><a href="#葫炉鱼" class="headerlink" title="葫炉鱼"></a>葫炉鱼</h3><ul>
-<li>位置：文二路万塘路口，大华国际对面</li>
-<li>时间：2020年12月</li>
-<li>同伴：超j，猴子</li>
-<li>评价：新店活动鱼3.8折，烤鱼没自带小料有点套路，各种烤鱼区分特色不能，其实3个人光光三条鱼的话，性价比非常高</li>
-<li>人均：50-（活动价）</li>
-</ul>
-<hr>
-<h1 id="个人餐"><a href="#个人餐" class="headerlink" title="个人餐"></a>个人餐</h1><h2 id="饭"><a href="#饭" class="headerlink" title="饭"></a>饭</h2><h3 id="食其家-すき家"><a href="#食其家-すき家" class="headerlink" title="食其家 すき家"></a>食其家 すき家</h3><ul>
-<li>位置：文三路华星科技大厦、星光城</li>
-<li>评价：<ul>
-<li>招牌牛丼可以，现在的饭量中碗感觉都有点多</li>
-<li>大阪烧牛丼味道甚佳，小贵</li>
-<li>番茄牛丼太甜，总体味道没有惊喜，感觉有点对不起价格</li>
-<li>拉面的辅材感觉偏少</li>
-<li>关东煮性价比不如便利店</li>
-</ul>
-</li>
-<li>人均：20-40</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「备忘」</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -1337,6 +1265,78 @@
         <tag>Note</tag>
         <tag>Excel</tag>
         <tag>VBA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>吃肉使人快乐</title>
+    <url>/2020/12/22/Food/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>为什么好吃的都是热量高的</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="聚餐"><a href="#聚餐" class="headerlink" title="聚餐"></a>聚餐</h1><h2 id="烤肉"><a href="#烤肉" class="headerlink" title="烤肉"></a>烤肉</h2><h3 id="鞑子烤羊腿"><a href="#鞑子烤羊腿" class="headerlink" title="鞑子烤羊腿"></a>鞑子烤羊腿</h3><ul>
+<li>位置：华星路</li>
+<li>时间：2020年夏、秋</li>
+<li>同伴：一次超j，一次zcm、lqm、zsx</li>
+<li>评价：可以满足大口吃羊肉的欲望，整块的羊排/羊腿，烤的滋油；其他烧烤小食没怎么吃</li>
+<li>人均：100</li>
+</ul>
+<h3 id="日料"><a href="#日料" class="headerlink" title="日料"></a>日料</h3><h3 id="米浅"><a href="#米浅" class="headerlink" title="米浅"></a>米浅</h3><ul>
+<li>位置：华星路</li>
+<li>时间：2020年10月</li>
+<li>同伴：xsx徐工</li>
+<li>评价：<ul>
+<li>必点玉子烧</li>
+<li>徐工推荐的鹅肝手握很阔以</li>
+<li>炒饭没上次去的好吃</li>
+<li>菜单跟浅草屋一模一样</li>
+</ul>
+</li>
+<li>人均：100</li>
+</ul>
+<h2 id="火锅"><a href="#火锅" class="headerlink" title="火锅"></a>火锅</h2><h3 id="海底捞"><a href="#海底捞" class="headerlink" title="海底捞"></a>海底捞</h3><ul>
+<li>位置：铂澜·大象城</li>
+<li>时间：2020年12月</li>
+<li>同伴：信爷</li>
+<li>评价：还行，没有那么让人尴尬的热情；菜品没多少感触，感觉火锅都差不多</li>
+<li>人均：220</li>
+</ul>
+<h3 id="捞王"><a href="#捞王" class="headerlink" title="捞王"></a>捞王</h3><ul>
+<li>位置：铂澜·大象城</li>
+<li>时间：2020年12月</li>
+<li>同伴：信爷</li>
+<li>评价：信爷喜欢捞王的汤底，比较奶的感觉</li>
+<li>人均：150+</li>
+</ul>
+<h2 id="烤鱼"><a href="#烤鱼" class="headerlink" title="烤鱼"></a>烤鱼</h2><h3 id="葫炉鱼"><a href="#葫炉鱼" class="headerlink" title="葫炉鱼"></a>葫炉鱼</h3><ul>
+<li>位置：文二路万塘路口，大华国际对面</li>
+<li>时间：2020年12月</li>
+<li>同伴：超j，猴子</li>
+<li>评价：新店活动鱼3.8折，烤鱼没自带小料有点套路，各种烤鱼区分特色不能，其实3个人光光三条鱼的话，性价比非常高</li>
+<li>人均：50-（活动价）</li>
+</ul>
+<hr>
+<h1 id="个人餐"><a href="#个人餐" class="headerlink" title="个人餐"></a>个人餐</h1><h2 id="饭"><a href="#饭" class="headerlink" title="饭"></a>饭</h2><h3 id="食其家-すき家"><a href="#食其家-すき家" class="headerlink" title="食其家 すき家"></a>食其家 すき家</h3><ul>
+<li>位置：文三路华星科技大厦、星光城</li>
+<li>评价：<ul>
+<li>招牌牛丼可以，现在的饭量中碗感觉都有点多</li>
+<li>大阪烧牛丼味道甚佳，小贵</li>
+<li>番茄牛丼太甜，总体味道没有惊喜，感觉有点对不起价格</li>
+<li>拉面的辅材感觉偏少</li>
+<li>关东煮性价比不如便利店</li>
+</ul>
+</li>
+<li>人均：20-40</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
       </tags>
   </entry>
   <entry>
@@ -2368,6 +2368,145 @@
       </tags>
   </entry>
   <entry>
+    <title>Go の Command</title>
+    <url>/2019/04/21/Go-Command/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>GO 命令</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>–&gt; <a href="https://golang.org/cmd/cgo/" target="_blank" rel="noopener">官方的命令文档</a> &lt;–  </p>
+<h2 id="查看可用命令"><a href="#查看可用命令" class="headerlink" title="查看可用命令"></a>查看可用命令</h2><p>直接在终端中输入 <code>go help</code> 即可显示所有的 go 命令以及相应命令功能的简介，主要有：  </p>
+<ul>
+<li>build: 编译包和依赖</li>
+<li>clean: 移除对象文件</li>
+<li>doc: 显示包或者符号的文档</li>
+<li>env: 打印go的环境信息</li>
+<li>bug: 启动错误报告</li>
+<li>fix: 运行go tool fix</li>
+<li>fmt: 运行gofmt进行格式化</li>
+<li>generate: 从processing source生成go文件</li>
+<li>get: 下载并安装包和依赖</li>
+<li>install: 编译并安装包和依赖</li>
+<li>list: 列出包</li>
+<li>run: 编译并运行go程序</li>
+<li>test: 运行测试</li>
+<li>tool: 运行go提供的工具</li>
+<li>version: 显示go的版本</li>
+<li>vet: 运行go tool vet</li>
+</ul>
+<h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><p>命令的使用方式：  <code>go command [args]</code> ，<code>go help &lt;command&gt;</code>  </p>
+<p>在运行<code>go help</code>时，不仅仅打印了这些命令的基本信息，还给出了一些概念的帮助信息（<code>go help &lt;topic&gt;</code>）:  </p>
+<ul>
+<li>c: Go和c的相互调用</li>
+<li>buildmode: 构建模式的描述</li>
+<li>filetype: 文件类型</li>
+<li>gopath: GOPATH环境变量</li>
+<li>environment: 环境变量</li>
+<li>importpath: 导入路径语法</li>
+<li>packages: 包列表的描述</li>
+<li>testflag: 测试符号描述</li>
+<li>testfunc: 测试函数描述</li>
+</ul>
+<hr>
+<h1 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a><code>go build</code></h1><p>类似其他静态，要执行 go 程序，需要先编译成可执行文件。  </p>
+<p><code>go build</code>：用来编译 go 程序生成可执行文件。  </p>
+<ul>
+<li>但不是所有 go 程序都可以编译生成可执行文件，要生成可执行文件，go 程序需要满足两个条件（反之则不会生成任何文件，只是做检查性编译）：<ul>
+<li>该 go 程序需要属于 main 包</li>
+<li>在 main 包中必须还得包含 main() 函数</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run hello.<span class="keyword">go</span>   # 将会生成可执行文件 hello</span><br><span class="line">$ ./hello           # 运行可执行文件</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<p>加一些标记：  </p>
+<ul>
+<li>-v 标记，可以把命令执行过程中构建的包名（包含编译过程中依赖的包）打印出来，如果 go build 的是一个源码文件，则会打印出的包名为 command-line-arguments，这是编译源码文件时生成的虚拟包名，所以看到不用觉得奇怪。</li>
+<li>-x 标记，可以打印编译期间所用到的所有 shell 命令。</li>
+<li>-o 标记，用来指定生成文件的路径和名称。</li>
+<li>-a 标记，强制重新编译。</li>
+<li>-buildmode=shared 标记，这个参数可以指定当前编译生成的结果类型，如静态库和动态库。GO语言默认使用静态编译，好处是部署时非常简单，但使用动态库，可以减少分发包的大小，大家可以根据实际情况选择。注意，目前在windows下尚不支持编译成动态库。</li>
+<li>更多参数，请使用 go build -h 或 go help build 查看。</li>
+</ul>
+<h1 id="go-run"><a href="#go-run" class="headerlink" title="go run"></a><code>go run</code></h1><p><code>go run</code>：编译并运行，但不会产生中间文件</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run hello.<span class="keyword">go</span></span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+<h1 id="go-clean"><a href="#go-clean" class="headerlink" title="go clean"></a><code>go clean</code></h1><p>用于清除产生的可执行程序：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> clean    # 不加参数，可以删除当前目录下的所有可执行文件</span><br><span class="line">$ <span class="keyword">go</span> clean sourcefile.<span class="keyword">go</span>  # 会删除对应的可执行文件</span><br></pre></td></tr></table></figure>
+
+<h1 id="go-fmt"><a href="#go-fmt" class="headerlink" title="go fmt"></a><code>go fmt</code></h1><p>格式化代码。注意不包含代码包中的子代码包。  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> fmt main.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
+
+<p>更多信息，通过 <code>gofmt -h</code> 查看。  </p>
+<h1 id="go-doc-amp-godoc"><a href="#go-doc-amp-godoc" class="headerlink" title="go doc &amp; godoc"></a><code>go doc</code> &amp; <code>godoc</code></h1><p>用于快速查看包文档，<code>go doc package</code> 命令将在中断中打印出指定 package 的文档。  </p>
+<p>另外，<code>godoc</code> 可以启动我们自己的文档服务器：  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ godoc -http=:<span class="number">8080</span></span><br></pre></td></tr></table></figure>
+
+<p>然后我们就可与在浏览器 <code>localhost:8080</code> 中查看go文档了。  </p>
+<h1 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a><code>go get</code></h1><p>用来安装第三方包，格式：<code>go get src</code>，从指定源上面下载或者更新指定的代码和依赖，并对他们进行编译和安装。  </p>
+<p>eg.例如我们像使用 beego 来开发 web 应用，我们就需要获取 beego：</p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get github.com/astaxie/beego</span><br></pre></td></tr></table></figure>
+
+<p>这条命令将会自动下载安装 beego 以及它的依赖，然后我们就可以使用下面的方式使用:  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"github.com/astaxie/beego"</span>   # 这里需要使用 src 下的完整路径</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    beego.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a><code>go install</code></h1><p>用来编译和安装 go 程序。与 build 命令进行对比：  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>install</th>
+<th>build</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>生成的可执行文件路径</td>
+<td>工作目录下的bin目录下</td>
+<td>当前目录下</td>
+</tr>
+<tr>
+<td>可执行文件的名字</td>
+<td>与源码所在目录同名</td>
+<td>默认与源程序同名，可以使用-o选项指定</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>将依赖的保安放到工作目录下的pkg文件夹下</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h1 id="go-test"><a href="#go-test" class="headerlink" title="go test"></a><code>go test</code></h1><p>用来运行测试的命令，这种测试是以包围单位的。需要遵循一定的规则：</p>
+<ul>
+<li>测试源文件是名称以<code>_test.go</code>为后缀的</li>
+<li>测试源文件内包含若干测试函数的源码文件</li>
+<li>测试函数一般是以<code>Test</code>为名称前缀，并有一个类型为<code>testing.T</code>的参数</li>
+</ul>
+<h1 id="go-list"><a href="#go-list" class="headerlink" title="go list"></a><code>go list</code></h1><p>不加任何标记直接使用，是显示指定包的导入路径，如 <code>go list net/http</code> 就显示 <code>net/http</code>。  </p>
+<p>该命令加上 -json 标记可以显示完整信息。  </p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> list -json time</span><br></pre></td></tr></table></figure>
+
+<p>如果只想显示指定信息，可以使用 -f 标记，如 go list -f { {.GoFiles} } net/http 可以显示 net/http 包中的 GO 源码文件列表。（所以可以理解，默认的 go list 相当于 go list -f { {.ImportPath} }）  </p>
+<h1 id="gofix"><a href="#gofix" class="headerlink" title="gofix"></a><code>gofix</code></h1><p>简单的说，这是一个当GO语言版本升级之后，把代码包中旧的语法更新成新版本语法的自动化工具。它是 go tool fix 的简单封装，它作用于代码包。  </p>
+<p>当需要升级自己的项目或者升级下载的第三方代码包，可以使用此方法。（下载并升级代码包可以使用 go get -fix 命令 ）  </p>
+<h1 id="go-vet"><a href="#go-vet" class="headerlink" title="go vet"></a><code>go vet</code></h1><p>静态检查工具，一般项目快完成时候进行优化时需要。  </p>
+<h1 id="go-tool-pprof"><a href="#go-tool-pprof" class="headerlink" title="go tool pprof"></a><code>go tool pprof</code></h1><p>性能检查工具…  </p>
+<h1 id="go-env"><a href="#go-env" class="headerlink" title="go env"></a><code>go env</code></h1><p>用于打印GO语言的环境信息，如 GOPATH 是工作区目录，GOROOT 是GO语言安装目录，GOBIN 是通过 go install 命令生成可执行文件的存放目录（默认是当前工作区的 bin 目录下），GOEXE 为生成可执行文件的后缀。  </p>
+<h1 id="转成汇编代码"><a href="#转成汇编代码" class="headerlink" title="转成汇编代码"></a>转成汇编代码</h1><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> tool objdump -s <span class="string">"operate\.Login"</span> server</span><br></pre></td></tr></table></figure>
+
+<p>上面的意思是，解析可执行文件server，将其中的 operate 包的 Login 方法转成汇编代码。  </p>
+]]></content>
+      <categories>
+        <category>「语言」- Go</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Go 中常见错误</title>
     <url>/2019/03/11/Go-Common-Mistakes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -2624,147 +2763,8 @@
         <category>「语言」- Go</category>
       </categories>
       <tags>
-        <tag>Go</tag>
         <tag>Note</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Go の Command</title>
-    <url>/2019/04/21/Go-Command/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>GO 命令</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>–&gt; <a href="https://golang.org/cmd/cgo/" target="_blank" rel="noopener">官方的命令文档</a> &lt;–  </p>
-<h2 id="查看可用命令"><a href="#查看可用命令" class="headerlink" title="查看可用命令"></a>查看可用命令</h2><p>直接在终端中输入 <code>go help</code> 即可显示所有的 go 命令以及相应命令功能的简介，主要有：  </p>
-<ul>
-<li>build: 编译包和依赖</li>
-<li>clean: 移除对象文件</li>
-<li>doc: 显示包或者符号的文档</li>
-<li>env: 打印go的环境信息</li>
-<li>bug: 启动错误报告</li>
-<li>fix: 运行go tool fix</li>
-<li>fmt: 运行gofmt进行格式化</li>
-<li>generate: 从processing source生成go文件</li>
-<li>get: 下载并安装包和依赖</li>
-<li>install: 编译并安装包和依赖</li>
-<li>list: 列出包</li>
-<li>run: 编译并运行go程序</li>
-<li>test: 运行测试</li>
-<li>tool: 运行go提供的工具</li>
-<li>version: 显示go的版本</li>
-<li>vet: 运行go tool vet</li>
-</ul>
-<h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><p>命令的使用方式：  <code>go command [args]</code> ，<code>go help &lt;command&gt;</code>  </p>
-<p>在运行<code>go help</code>时，不仅仅打印了这些命令的基本信息，还给出了一些概念的帮助信息（<code>go help &lt;topic&gt;</code>）:  </p>
-<ul>
-<li>c: Go和c的相互调用</li>
-<li>buildmode: 构建模式的描述</li>
-<li>filetype: 文件类型</li>
-<li>gopath: GOPATH环境变量</li>
-<li>environment: 环境变量</li>
-<li>importpath: 导入路径语法</li>
-<li>packages: 包列表的描述</li>
-<li>testflag: 测试符号描述</li>
-<li>testfunc: 测试函数描述</li>
-</ul>
-<hr>
-<h1 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a><code>go build</code></h1><p>类似其他静态，要执行 go 程序，需要先编译成可执行文件。  </p>
-<p><code>go build</code>：用来编译 go 程序生成可执行文件。  </p>
-<ul>
-<li>但不是所有 go 程序都可以编译生成可执行文件，要生成可执行文件，go 程序需要满足两个条件（反之则不会生成任何文件，只是做检查性编译）：<ul>
-<li>该 go 程序需要属于 main 包</li>
-<li>在 main 包中必须还得包含 main() 函数</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run hello.<span class="keyword">go</span>   # 将会生成可执行文件 hello</span><br><span class="line">$ ./hello           # 运行可执行文件</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
-
-<p>加一些标记：  </p>
-<ul>
-<li>-v 标记，可以把命令执行过程中构建的包名（包含编译过程中依赖的包）打印出来，如果 go build 的是一个源码文件，则会打印出的包名为 command-line-arguments，这是编译源码文件时生成的虚拟包名，所以看到不用觉得奇怪。</li>
-<li>-x 标记，可以打印编译期间所用到的所有 shell 命令。</li>
-<li>-o 标记，用来指定生成文件的路径和名称。</li>
-<li>-a 标记，强制重新编译。</li>
-<li>-buildmode=shared 标记，这个参数可以指定当前编译生成的结果类型，如静态库和动态库。GO语言默认使用静态编译，好处是部署时非常简单，但使用动态库，可以减少分发包的大小，大家可以根据实际情况选择。注意，目前在windows下尚不支持编译成动态库。</li>
-<li>更多参数，请使用 go build -h 或 go help build 查看。</li>
-</ul>
-<h1 id="go-run"><a href="#go-run" class="headerlink" title="go run"></a><code>go run</code></h1><p><code>go run</code>：编译并运行，但不会产生中间文件</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> run hello.<span class="keyword">go</span></span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
-
-<h1 id="go-clean"><a href="#go-clean" class="headerlink" title="go clean"></a><code>go clean</code></h1><p>用于清除产生的可执行程序：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> clean    # 不加参数，可以删除当前目录下的所有可执行文件</span><br><span class="line">$ <span class="keyword">go</span> clean sourcefile.<span class="keyword">go</span>  # 会删除对应的可执行文件</span><br></pre></td></tr></table></figure>
-
-<h1 id="go-fmt"><a href="#go-fmt" class="headerlink" title="go fmt"></a><code>go fmt</code></h1><p>格式化代码。注意不包含代码包中的子代码包。  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> fmt main.<span class="keyword">go</span></span><br></pre></td></tr></table></figure>
-
-<p>更多信息，通过 <code>gofmt -h</code> 查看。  </p>
-<h1 id="go-doc-amp-godoc"><a href="#go-doc-amp-godoc" class="headerlink" title="go doc &amp; godoc"></a><code>go doc</code> &amp; <code>godoc</code></h1><p>用于快速查看包文档，<code>go doc package</code> 命令将在中断中打印出指定 package 的文档。  </p>
-<p>另外，<code>godoc</code> 可以启动我们自己的文档服务器：  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ godoc -http=:<span class="number">8080</span></span><br></pre></td></tr></table></figure>
-
-<p>然后我们就可与在浏览器 <code>localhost:8080</code> 中查看go文档了。  </p>
-<h1 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a><code>go get</code></h1><p>用来安装第三方包，格式：<code>go get src</code>，从指定源上面下载或者更新指定的代码和依赖，并对他们进行编译和安装。  </p>
-<p>eg.例如我们像使用 beego 来开发 web 应用，我们就需要获取 beego：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> get github.com/astaxie/beego</span><br></pre></td></tr></table></figure>
-
-<p>这条命令将会自动下载安装 beego 以及它的依赖，然后我们就可以使用下面的方式使用:  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"github.com/astaxie/beego"</span>   # 这里需要使用 src 下的完整路径</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    beego.Run()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a><code>go install</code></h1><p>用来编译和安装 go 程序。与 build 命令进行对比：  </p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>install</th>
-<th>build</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>生成的可执行文件路径</td>
-<td>工作目录下的bin目录下</td>
-<td>当前目录下</td>
-</tr>
-<tr>
-<td>可执行文件的名字</td>
-<td>与源码所在目录同名</td>
-<td>默认与源程序同名，可以使用-o选项指定</td>
-</tr>
-<tr>
-<td>依赖</td>
-<td>将依赖的保安放到工作目录下的pkg文件夹下</td>
-<td>-</td>
-</tr>
-</tbody></table>
-<h1 id="go-test"><a href="#go-test" class="headerlink" title="go test"></a><code>go test</code></h1><p>用来运行测试的命令，这种测试是以包围单位的。需要遵循一定的规则：</p>
-<ul>
-<li>测试源文件是名称以<code>_test.go</code>为后缀的</li>
-<li>测试源文件内包含若干测试函数的源码文件</li>
-<li>测试函数一般是以<code>Test</code>为名称前缀，并有一个类型为<code>testing.T</code>的参数</li>
-</ul>
-<h1 id="go-list"><a href="#go-list" class="headerlink" title="go list"></a><code>go list</code></h1><p>不加任何标记直接使用，是显示指定包的导入路径，如 <code>go list net/http</code> 就显示 <code>net/http</code>。  </p>
-<p>该命令加上 -json 标记可以显示完整信息。  </p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> list -json time</span><br></pre></td></tr></table></figure>
-
-<p>如果只想显示指定信息，可以使用 -f 标记，如 go list -f { {.GoFiles} } net/http 可以显示 net/http 包中的 GO 源码文件列表。（所以可以理解，默认的 go list 相当于 go list -f { {.ImportPath} }）  </p>
-<h1 id="gofix"><a href="#gofix" class="headerlink" title="gofix"></a><code>gofix</code></h1><p>简单的说，这是一个当GO语言版本升级之后，把代码包中旧的语法更新成新版本语法的自动化工具。它是 go tool fix 的简单封装，它作用于代码包。  </p>
-<p>当需要升级自己的项目或者升级下载的第三方代码包，可以使用此方法。（下载并升级代码包可以使用 go get -fix 命令 ）  </p>
-<h1 id="go-vet"><a href="#go-vet" class="headerlink" title="go vet"></a><code>go vet</code></h1><p>静态检查工具，一般项目快完成时候进行优化时需要。  </p>
-<h1 id="go-tool-pprof"><a href="#go-tool-pprof" class="headerlink" title="go tool pprof"></a><code>go tool pprof</code></h1><p>性能检查工具…  </p>
-<h1 id="go-env"><a href="#go-env" class="headerlink" title="go env"></a><code>go env</code></h1><p>用于打印GO语言的环境信息，如 GOPATH 是工作区目录，GOROOT 是GO语言安装目录，GOBIN 是通过 go install 命令生成可执行文件的存放目录（默认是当前工作区的 bin 目录下），GOEXE 为生成可执行文件的后缀。  </p>
-<h1 id="转成汇编代码"><a href="#转成汇编代码" class="headerlink" title="转成汇编代码"></a>转成汇编代码</h1><figure class="highlight go"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">go</span> tool objdump -s <span class="string">"operate\.Login"</span> server</span><br></pre></td></tr></table></figure>
-
-<p>上面的意思是，解析可执行文件server，将其中的 operate 包的 Login 方法转成汇编代码。  </p>
-]]></content>
-      <categories>
-        <category>「语言」- Go</category>
-      </categories>
-      <tags>
         <tag>Go</tag>
-        <tag>Note</tag>
       </tags>
   </entry>
   <entry>
@@ -3042,6 +3042,47 @@
       </tags>
   </entry>
   <entry>
+    <title>升级Hexo+NexT版本</title>
+    <url>/2020/03/04/Hexo-NexT-update/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>为什么要手痒升级呢？</em></strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="Update-Log"><a href="#Update-Log" class="headerlink" title="Update Log"></a>Update Log</h1><ul>
+<li>升级时间：2020年3月<ul>
+<li><code>Hexo</code>版本：v3.8.0 → v4.2.0</li>
+<li><code>NexT</code>版本：v7.0.1 → v7.7.2</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><h2 id="升级思路"><a href="#升级思路" class="headerlink" title="升级思路"></a>升级思路</h2><p>因为目前对于本Blog的管理是：网页托管于<code>github</code>仓库，部署在<code>master</code>分支，Hexo和NexT的网站后台操作内容放在同一个仓库的<code>Hexo.source</code>分支。</p>
+<p>计划先在本地升级Hexo和NexT，做好source搬迁、config配置等工作；然后在仓库中新建一个空的分支，把本地的后台文件复制进去，然后提交这个分支，今后维护新的后台分支就可以了。</p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="本地升级Hexo"><a href="#本地升级Hexo" class="headerlink" title="本地升级Hexo"></a>本地升级Hexo</h3><p>Hexo版本升级可以通过npm实现，相关命令如下：  </p>
+<p>先全局升级<code>hexo-cli</code>：-g表示全局升级。<code>hexo</code>本身是一个静态博客生成工具，具备编译Markdown、拼接主题模板、生成 HTML、上传 Git 等基本功能。<code>hexo-cli</code>能够将这些功能封装为命令，提供给用户通过<code>hexo server / hexo deploy</code>等命令调用的模块。<code>CLI = Command Line Interface</code>命令行界面。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-cli -g</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建空分支"><a href="#创建空分支" class="headerlink" title="创建空分支"></a>创建空分支</h3><p>现在Github上创建分支是基于其他分支的，没法直接创建空的。</p>
+<p>需要在创建的分支后，  </p>
+<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git rm -rf .</span><br></pre></td></tr></table></figure>
+
+<p>不要漏了<code>.</code></p>
+<p>然后考进来，commit。</p>
+<h3 id="更新NexT"><a href="#更新NexT" class="headerlink" title="更新NexT"></a>更新NexT</h3><p>去<a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">Github-NexT</a>下载个新版，然后解压到<code>/theme/</code>下。</p>
+<p>剩下的就慢慢调配置吧……</p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo + NexT(v7.0.1) 博客配置备忘</title>
     <url>/2019/03/27/Hexo-NexT-Config/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -3187,47 +3228,6 @@
 
 <p>原因：<code>node.js</code>版本是<code>v14.15.1</code>的，过高，要降级。  </p>
 <p>Windows系统的话，可以卸载<code>node.js</code>，然后去<a href="https://nodejs.org/zh-cn/download/releases/" target="_blank" rel="noopener">下载历史版本的node.js</a>,比如<code>v12.14</code>。  </p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>升级Hexo+NexT版本</title>
-    <url>/2020/03/04/Hexo-NexT-update/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>为什么要手痒升级呢？</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="Update-Log"><a href="#Update-Log" class="headerlink" title="Update Log"></a>Update Log</h1><ul>
-<li>升级时间：2020年3月<ul>
-<li><code>Hexo</code>版本：v3.8.0 → v4.2.0</li>
-<li><code>NexT</code>版本：v7.0.1 → v7.7.2</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="升级操作"><a href="#升级操作" class="headerlink" title="升级操作"></a>升级操作</h1><h2 id="升级思路"><a href="#升级思路" class="headerlink" title="升级思路"></a>升级思路</h2><p>因为目前对于本Blog的管理是：网页托管于<code>github</code>仓库，部署在<code>master</code>分支，Hexo和NexT的网站后台操作内容放在同一个仓库的<code>Hexo.source</code>分支。</p>
-<p>计划先在本地升级Hexo和NexT，做好source搬迁、config配置等工作；然后在仓库中新建一个空的分支，把本地的后台文件复制进去，然后提交这个分支，今后维护新的后台分支就可以了。</p>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="本地升级Hexo"><a href="#本地升级Hexo" class="headerlink" title="本地升级Hexo"></a>本地升级Hexo</h3><p>Hexo版本升级可以通过npm实现，相关命令如下：  </p>
-<p>先全局升级<code>hexo-cli</code>：-g表示全局升级。<code>hexo</code>本身是一个静态博客生成工具，具备编译Markdown、拼接主题模板、生成 HTML、上传 Git 等基本功能。<code>hexo-cli</code>能够将这些功能封装为命令，提供给用户通过<code>hexo server / hexo deploy</code>等命令调用的模块。<code>CLI = Command Line Interface</code>命令行界面。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-cli -g</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> blog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建空分支"><a href="#创建空分支" class="headerlink" title="创建空分支"></a>创建空分支</h3><p>现在Github上创建分支是基于其他分支的，没法直接创建空的。</p>
-<p>需要在创建的分支后，  </p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>git rm -rf .</span><br></pre></td></tr></table></figure>
-
-<p>不要漏了<code>.</code></p>
-<p>然后考进来，commit。</p>
-<h3 id="更新NexT"><a href="#更新NexT" class="headerlink" title="更新NexT"></a>更新NexT</h3><p>去<a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">Github-NexT</a>下载个新版，然后解压到<code>/theme/</code>下。</p>
-<p>剩下的就慢慢调配置吧……</p>
 ]]></content>
       <categories>
         <category>「备忘」- Hexo配置</category>
@@ -4033,199 +4033,6 @@
       <tags>
         <tag>Note</tag>
         <tag>Lightroom</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网站收藏</title>
-    <url>/2019/09/26/Site-Bookmark/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>BOOKMARK</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
-<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
-<td>在线编辑</td>
-</tr>
-<tr>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
-<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
-<td>最好的…是什么？</td>
-</tr>
-<tr>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
-<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
-<td>截图识别字体</td>
-</tr>
-<tr>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
-<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
-<td>正版软件&amp;免费&amp;优惠</td>
-</tr>
-<tr>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
-<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
-<td>在线编辑pdf</td>
-</tr>
-<tr>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
-<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
-<td>免费&amp;多语言翻译</td>
-</tr>
-<tr>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
-<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
-<td>免费</td>
-</tr>
-<tr>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
-<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
-<td>PDF在线工具&amp;转换</td>
-</tr>
-<tr>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
-<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
-<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
-<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
-<td>-</td>
-</tr>
-<tr>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
-<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
-<td>在线工具</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
-<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
-<td>每日新闻图卦</td>
-</tr>
-<tr>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
-<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
-<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
-<td>热点资讯聚合</td>
-</tr>
-<tr>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
-<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
-<td>资讯、排行榜聚合</td>
-</tr>
-<tr>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
-<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
-<td>短视频了解疾病</td>
-</tr>
-<tr>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
-<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
-<td>互联网新闻</td>
-</tr>
-<tr>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
-<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
-<td>大数据X图表</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
-<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
-<td>学各种小技巧</td>
-</tr>
-<tr>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
-<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
-<td></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
-<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
-<td>Ingress任务浏览</td>
-</tr>
-<tr>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
-<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
-<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Website</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
-<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
-<td>白噪音</td>
-</tr>
-<tr>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
-<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
-<td>假装去旅游</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>「备忘」</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -5211,354 +5018,196 @@
       </tags>
   </entry>
   <entry>
-    <title>Photography Learn Notes</title>
-    <url>/2019/10/15/Photography-Notes/</url>
+    <title>网站收藏</title>
+    <url>/2019/09/26/Site-Bookmark/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>主要是后期风格</em></strong></p>
+<p><strong><em>BOOKMARK</em></strong></p>
 <p></font> </center></p>
 <a id="more"></a>
 
 <hr>
-<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
-<li>低饱和，又不是纯黑白</li>
-<li>分离色调：给整张图罩上冷色调<ul>
-<li>阴影+蓝色</li>
-</ul>
-</li>
-<li>HSL：<ul>
-<li>明亮度：蓝色↓↓，天空变深邃</li>
-<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
-</ul>
-</li>
-<li>基本面板中：阴影看情况↑</li>
-<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
-<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
-<li>特点：<ul>
-<li>肌肤极致干净</li>
-<li>空气通透</li>
-</ul>
-</li>
-<li>HSL调肤色，注意不要出现洋红</li>
-<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
-<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
-<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
-</ul>
-<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
-<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
-<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
-<li>HSL：<ul>
-<li>色相：紫色0，蓝色右 呈湖蓝</li>
-<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
-<li>饱和度：皮肤↓，其他视情况</li>
-</ul>
-</li>
-<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
-<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
-<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
-<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
-<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
-<li>相机校准：蓝原色左滑→湖蓝色</li>
-<li>HSL：<ul>
-<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
-</ul>
-</li>
-<li>可不做锐化</li>
-<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
-<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
-<li>蓝色时间：日出前、日落后</li>
-<li>特点：街灯、车灯刚亮</li>
-<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
-<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
-<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
-<li>特点：<ul>
-<li>引人共鸣</li>
-<li>元素处在动态</li>
-<li>画面质量高</li>
-</ul>
-</li>
-<li>高光↓，阴影↑</li>
-<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
-<li>红色曲线：（下拉→青）阴影稍微下拉</li>
-<li>蓝色曲线：阴影稍微上拉</li>
-<li>绿色曲线：调氛围，只要一点点调整</li>
-<li>RGB通道：暗部抬一点，提亮</li>
-</ul>
-</li>
-<li>清晰度↑，鲜艳度↓一点点</li>
-<li>裁剪：16:9、2.35:1</li>
-<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
-<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
-<li>色调分离：高光-红紫色，阴影-蓝色</li>
-<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
-<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
-<li>矫正，阴影↑，饱和度↑</li>
-<li>HSL：<ul>
-<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
-<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
-</ul>
-</li>
-<li>色调分离/曲线：暗部增加蓝青色</li>
-<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
-<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>色温↓，色调看喜好</li>
-<li>清晰度↑</li>
-<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
-<li>渐变滤镜压暗前景曝光、饱和度</li>
-<li>鲜艳度↑</li>
-</ul>
-<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
-<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
-<li>照片特点：<ul>
-<li>白（曝光↑）</li>
-<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
-<li>背景选择：深色，突出雪花</li>
-</ul>
-</li>
-<li>后期<ul>
-<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
-<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
-<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
-<li>色温↑，黄昏感觉</li>
-<li>HSL：<ul>
-<li>绿色饱和度↓，变得黄一些</li>
-<li>橙色、黄色饱和度↑明亮度↑<ul>
-<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>曲线：<ul>
-<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
-<li>小S曲线，对比度↑</li>
-</ul>
-</li>
-<li>进PS加光晕<ul>
-<li>可搭配插件：Alien Skin Exposure</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
-<li>特征：<ul>
-<li>金属光感：渐变塑光影</li>
-<li>拉丝效果：模糊塑动感</li>
-<li>流动天空：模糊仿流动</li>
-</ul>
-</li>
-<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
+<h1 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">LaTeX公式编辑器</a></td>
+<td><a href="https://www.latexlive.com/" target="_blank" rel="noopener">https://www.latexlive.com/</a></td>
+<td>在线编辑</td>
+</tr>
+<tr>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">Slant</a></td>
+<td><a href="https://www.slant.co/" target="_blank" rel="noopener">https://www.slant.co/</a></td>
+<td>最好的…是什么？</td>
+</tr>
+<tr>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">求字体</a></td>
+<td><a href="http://www.qiuziti.com/" target="_blank" rel="noopener">http://www.qiuziti.com/</a></td>
+<td>截图识别字体</td>
+</tr>
+<tr>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">正版中国</a></td>
+<td><a href="https://getitfree.cn/" target="_blank" rel="noopener">https://getitfree.cn/</a></td>
+<td>正版软件&amp;免费&amp;优惠</td>
+</tr>
+<tr>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">福昕云编辑</a></td>
+<td><a href="http://edit.foxitcloud.cn/" target="_blank" rel="noopener">http://edit.foxitcloud.cn/</a></td>
+<td>在线编辑pdf</td>
+</tr>
+<tr>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">在线文档翻译</a></td>
+<td><a href="https://www.onlinedoctranslator.com" target="_blank" rel="noopener">https://www.onlinedoctranslator.com</a></td>
+<td>免费&amp;多语言翻译</td>
+</tr>
+<tr>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">在线文档转换</a></td>
+<td><a href="http://www.alltoall.net/" target="_blank" rel="noopener">http://www.alltoall.net/</a></td>
+<td>免费</td>
+</tr>
+<tr>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">PDF派</a></td>
+<td><a href="https://www.pdfpai.com/" target="_blank" rel="noopener">https://www.pdfpai.com/</a></td>
+<td>PDF在线工具&amp;转换</td>
+</tr>
+<tr>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">10分钟邮箱</a></td>
+<td><a href="https://bccto.me/" target="_blank" rel="noopener">https://bccto.me/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">在线短信接收</a></td>
+<td><a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">在线PS</a></td>
+<td><a href="https://ps.gaoding.com" target="_blank" rel="noopener">https://ps.gaoding.com</a></td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">TOOLFK</a></td>
+<td><a href="https://www.toolfk.com/" target="_blank" rel="noopener">https://www.toolfk.com/</a></td>
+<td>在线工具</td>
+</tr>
+</tbody></table>
 <hr>
-<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮：中性灰、高低频"><a href="#磨皮：中性灰、高低频" class="headerlink" title="磨皮：中性灰、高低频"></a>磨皮：中性灰、高低频</h2><ul>
-<li>插件：DR4、Skinfiner</li>
-<li>图章工具：去明显瑕疵</li>
-<li>中性灰：去痘印、调光影结构</li>
-<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
-<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
-</ul>
+<h1 id="资讯类"><a href="#资讯类" class="headerlink" title="资讯类"></a>资讯类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.dapenti.com/blog/index.asp" target="_blank" rel="noopener">打喷嚏</a></td>
+<td><a href="http://dapenti.com" target="_blank" rel="noopener">http://dapenti.com</a></td>
+<td>每日新闻图卦</td>
+</tr>
+<tr>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">全国电视直播</a></td>
+<td><a href="http://bddn.cn/zb.htm" target="_blank" rel="noopener">http://bddn.cn/zb.htm</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://www.anyknew.com/" target="_blank" rel="noopener">Anyknew</a></td>
+<td><a href="https://anyknew.com/" target="_blank" rel="noopener">https://anyknew.com/</a></td>
+<td>热点资讯聚合</td>
+</tr>
+<tr>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">果汁排行榜</a></td>
+<td><a href="http://guozhivip.com/rank" target="_blank" rel="noopener">http://guozhivip.com/rank</a></td>
+<td>资讯、排行榜聚合</td>
+</tr>
+<tr>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">医学威视</a></td>
+<td><a href="https://www.mvyxws.com/" target="_blank" rel="noopener">https://www.mvyxws.com/</a></td>
+<td>短视频了解疾病</td>
+</tr>
+<tr>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">Realhub</a></td>
+<td><a href="https://readhub.cn" target="_blank" rel="noopener">https://readhub.cn</a></td>
+<td>互联网新闻</td>
+</tr>
+<tr>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">网易数读</a></td>
+<td><a href="http://data.163.com/special/datablog/" target="_blank" rel="noopener">http://data.163.com/special/datablog/</a></td>
+<td>大数据X图表</td>
+</tr>
+</tbody></table>
 <hr>
-<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
-<li>同时满足三个条件：<ul>
-<li>RAW格式拍摄</li>
-<li>拍照时尽量曝光增加</li>
-<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
-</ul>
-</li>
-<li>好处：提高画面信噪比，减少噪点</li>
-<li>拍摄：<ul>
-<li>参考1：评价曝光+1.3ev，白加黑减</li>
-<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
-</ul>
-<h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
-<li>时间选择：<ul>
-<li>月相查询：月亮小的时候拍摄</li>
-<li>月出、月落时间：月落后拍摄</li>
-</ul>
-</li>
-<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
-<li>银河方位：starwalk、星图</li>
-<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
-<li>参数选择：<ul>
-<li>对焦：无限远</li>
-<li>光圈：最大</li>
-<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
-<li>感光度：被动决定</li>
-</ul>
-</li>
-</ul>
+<h1 id="学习类"><a href="#学习类" class="headerlink" title="学习类"></a>学习类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">WikiHow</a></td>
+<td><a href="https://zh.wikihow.com" target="_blank" rel="noopener">https://zh.wikihow.com</a></td>
+<td>学各种小技巧</td>
+</tr>
+<tr>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">Markdown语法</a></td>
+<td><a href="https://github.com/guodongxiaren/README" target="_blank" rel="noopener">https://github.com/guodongxiaren/README</a></td>
+<td></td>
+</tr>
+</tbody></table>
 <hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
-<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
-<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
-<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
-</ul>
-<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
+<h1 id="游戏类"><a href="#游戏类" class="headerlink" title="游戏类"></a>游戏类</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">Ingress Medal Arts @trello</a></td>
+<td><a href="https://trello.com/b/LvwOjrYP/ingress-medal-arts" target="_blank" rel="noopener">https://trello.com/b/LvwOjrYP/ingress-medal-arts</a></td>
+<td>Ingress任务浏览</td>
+</tr>
+<tr>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">Ingress Mission Banner Cropper</a></td>
+<td><a href="https://www.giacintogarcea.com/ingress/tools/missionset/" target="_blank" rel="noopener">https://www.giacintogarcea.com/ingress/tools/missionset/</a></td>
+<td>Inress任务图标切割工具，备用地址：<a href="https://reitake.github.io/tools/ingressmissionset/">https://reitake.github.io/tools/ingressmissionset/</a></td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Website</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">RainMode</a></td>
+<td><a href="https://www.rainymood.com/" target="_blank" rel="noopener">https://www.rainymood.com/</a></td>
+<td>白噪音</td>
+</tr>
+<tr>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">AirPano</a></td>
+<td><a href="https://www.airpano.com/" target="_blank" rel="noopener">https://www.airpano.com/</a></td>
+<td>假装去旅游</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>「快门」</category>
+        <category>「备忘」</category>
       </categories>
       <tags>
-        <tag>Note</tag>
-        <tag>Photography</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Adobe Camera Raw Notes</title>
-    <url>/2020/03/10/Ps-ACR-Notes/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>思路跟 Lr 一样的</em></strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="调整"><a href="#调整" class="headerlink" title="调整"></a>调整</h1><h2 id="获得通透的画面"><a href="#获得通透的画面" class="headerlink" title="获得通透的画面"></a>获得通透的画面</h2><ul>
-<li><code>通透</code>：增加细节</li>
-<li>途径：亮度再分配</li>
-<li>关键：把画面中的大部分细节调整到人眼可见的亮度范围内</li>
-<li>tips：调亮主影调、阴影的时候还可以尝试增加黑场（压低黑色）</li>
-<li><a href="https://www.youtube.com/watch?v=sYj8cMlecJE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=3" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="精确白平衡"><a href="#精确白平衡" class="headerlink" title="精确白平衡"></a>精确白平衡</h2><ul>
-<li>色温和色调可以确定一个点的颜色，相当于一对坐标</li>
-<li><code>色温</code>：蓝色 ↔ 黄色</li>
-<li><code>色调</code>：绿色 ↔ 洋红色</li>
-<li>白平衡工具：<ul>
-<li>吸取画面中原本应该是白色（中性灰：纯白-纯黑之间都可以）的点</li>
-<li>原理：补色的原理。如果画面中的白色准了，那认为其他颜色也准了。</li>
-<li>tips：尽量不要选白纸（有荧光粉）、眼睛（亚洲人、动物偏黄）</li>
-</ul>
-</li>
-<li>JPG格式的白平衡调整色彩不可逆</li>
-<li><a href="https://www.youtube.com/watch?v=5oEbQ6m2O5w&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=4" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="精确调色"><a href="#精确调色" class="headerlink" title="精确调色"></a>精确调色</h2><ul>
-<li><code>饱和度</code>：<ul>
-<li><code>自然饱和度</code>：用得多，更智能，会识别图中内容</li>
-<li><code>饱和度</code>：全部调，不建议</li>
-</ul>
-</li>
-<li><code>色调分离</code>：<ul>
-<li>大部分电影：高光偏黄，阴影偏蓝 </li>
-</ul>
-</li>
-<li><code>HSL</code>：调节不同颜色的色相、饱和度、明亮度<ul>
-<li><code>灰度混合</code>：调整不同颜色会黑白照片亮度贡献的大小</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=2fde25zgXb8&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=5" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="渐变滤镜"><a href="#渐变滤镜" class="headerlink" title="渐变滤镜"></a>渐变滤镜</h2><ul>
-<li>硬件：是一种灰度过度滤镜，用于控制天空</li>
-<li>可适用于大光比的照片</li>
-<li>可以渐变得使亮度再分配</li>
-<li>eg：<ul>
-<li>天空压暗、降低色温</li>
-<li>地面提亮、暖色调、通透</li>
-</ul>
-</li>
-<li>渐变滤镜的蒙版<code>（范围遮罩）</code>：<ul>
-<li>颜色</li>
-<li>明亮度</li>
-<li>按住<code>Alt</code>可以看到蒙版作用范围：越亮→作用越强；越暗→作用越弱</li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=l365G5c65kE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=6" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=OdlCFo5bNBU&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=9" target="_blank" rel="noopener">范例视频2</a></li>
-</ul>
-<h2 id="综合应用"><a href="#综合应用" class="headerlink" title="综合应用"></a>综合应用</h2><ul>
-<li>去除紫边<ul>
-<li><code>镜头校正</code>-<code>去边</code>-去除紫边或者绿边</li>
-</ul>
-</li>
-<li>渐变滤镜</li>
-<li>径向滤镜<ul>
-<li>内部/外部</li>
-</ul>
-</li>
-<li>亮度再分配</li>
-<li>色彩快速调节</li>
-<li>透视畸变矫正</li>
-<li>ACR二次调用</li>
-<li><a href="https://www.youtube.com/watch?v=_b6KALfwJyE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=7" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="用亮度蒙版和ACR恢复天空细节"><a href="#用亮度蒙版和ACR恢复天空细节" class="headerlink" title="用亮度蒙版和ACR恢复天空细节"></a>用亮度蒙版和ACR恢复天空细节</h2><ul>
-<li>目的：压暗天空，减少对近景的副作用，过度更自然</li>
-<li><code>亮度蒙版</code>：借助画面原有的亮度信息来产生蒙版，通常由通道产生</li>
-<li>选择主体、背景差别大的通道</li>
-<li><code>亮度蒙版</code>操作：<ul>
-<li>按住<code>Ctrl</code>并点击通道，创建亮度选区</li>
-<li>蚁行线：亮度高于50%的选中</li>
-<li>点回RGB通道，回到图层原始画面</li>
-<li>保持选区不变，<code>调整</code>-<code>曲线</code>，此时曲线的蒙版就是刚选中的亮度蒙版</li>
-<li>若有的近景受到了影响（如饱和度降低），可以双击蒙版，调整蒙版的羽化值，模糊蒙版</li>
-</ul>
-</li>
-<li>ACR<code>去除薄雾</code>滑块：<ul>
-<li>最有效的恢复天空细节的工具</li>
-<li>还可以搭配滤镜加强调整</li>
-<li>其他地方可以用亮度蒙版遮挡，不用担心对前景的影响</li>
-<li>副作用：可能改变天空的颜色，需要调整<code>（自然）饱和度</code></li>
-</ul>
-</li>
-<li><a href="https://www.youtube.com/watch?v=7N7A0H7y4es&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=10" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<hr>
-<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="RAW-格式"><a href="#RAW-格式" class="headerlink" title="RAW 格式"></a>RAW 格式</h2><ul>
-<li>RAW：未经处理的原始数据</li>
-<li>丰富的层次：16-bit</li>
-<li>宽容度牛逼</li>
-<li>私有色彩空间</li>
-<li>没有设定黑白场</li>
-<li>若操作<code>.jpg</code>，可以<code>图像</code>-<code>模式</code>-<code>16位通道</code></li>
-<li><a href="https://www.youtube.com/watch?v=yZEp7wWqswA&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=1" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-<h2 id="ACR-简介"><a href="#ACR-简介" class="headerlink" title="ACR 简介"></a>ACR 简介</h2><ul>
-<li>调用方式<ul>
-<li>直接打开RAW文件</li>
-<li><code>滤镜</code>-<code>Camera Raw滤镜</code></li>
-</ul>
-</li>
-<li>重要设置<ul>
-<li>最下放的链接：<code>色彩深度</code>设定成16位</li>
-<li>色彩空间：需要由是否全链路色彩管理决定</li>
-</ul>
-</li>
-<li>无损调节：配置存放于<code>.xmp</code>文件中</li>
-<li><a href="https://www.youtube.com/watch?v=H5SBJcz2bVM&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=2" target="_blank" rel="noopener">范例视频</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>「快门」</category>
-      </categories>
-      <tags>
-        <tag>Note</tag>
-        <tag>Photoshop</tag>
+        <tag>网站</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -5809,6 +5458,230 @@
       </tags>
   </entry>
   <entry>
+    <title>Photography Learn Notes</title>
+    <url>/2019/10/15/Photography-Notes/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>主要是后期风格</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="后期风格"><a href="#后期风格" class="headerlink" title="后期风格"></a>后期风格</h1><h2 id="rkrkrk风"><a href="#rkrkrk风" class="headerlink" title="rkrkrk风"></a>rkrkrk风</h2><ul>
+<li>低饱和，又不是纯黑白</li>
+<li>分离色调：给整张图罩上冷色调<ul>
+<li>阴影+蓝色</li>
+</ul>
+</li>
+<li>HSL：<ul>
+<li>明亮度：蓝色↓↓，天空变深邃</li>
+<li>饱和度：杂七杂八的颜色↓，蓝色稍微↓，建筑相关的颜色不要↓太多</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>RGB：暗部稍微抬起来一点，暗部会呈现出灰色的调子</li>
+</ul>
+</li>
+<li>基本面板中：阴影看情况↑</li>
+<li>如果画面偏青色，可以在红色曲线中，稍微抬一点点来中和</li>
+<li><a href="https://www.bilibili.com/video/av82549357" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系"><a href="#日系" class="headerlink" title="日系"></a>日系</h2><ul>
+<li>特点：<ul>
+<li>肌肤极致干净</li>
+<li>空气通透</li>
+</ul>
+</li>
+<li>HSL调肤色，注意不要出现洋红</li>
+<li>试一下把蓝原色色相左拉，偏青色，用来调整天空</li>
+<li>调整环境色时候，可能影响到衣服，可以用蒙版抠掉衣服</li>
+<li><a href="https://www.bilibili.com/video/av63366169" target="_blank" rel="noopener">参考视频1</a></li>
+</ul>
+<h2 id="光效感"><a href="#光效感" class="headerlink" title="光效感"></a>光效感</h2><ul>
+<li>整体调整：曝光↑，白色↑，对比度↓，自然饱和度↑↑</li>
+<li>镜像滤镜圈人物（圈的宽一点）：色温↑，色调↑（看皮肤），曝光↑，阴影↑</li>
+<li>HSL：<ul>
+<li>色相：紫色0，蓝色右 呈湖蓝</li>
+<li>明亮度：对皮肤提亮，蓝色可适当↓</li>
+<li>饱和度：皮肤↓，其他视情况</li>
+</ul>
+</li>
+<li>自发光质感：复制图层，高斯模糊半径30，图层混合模式：柔光，不透明度70%</li>
+<li>统一色调：新建图层，前景色选青蓝色，<code>Alt+Del</code>填充图层，蒙版，渐变调整蒙版（暗部不生效），黑色画笔涂抹人像</li>
+<li>人造光：新建图层，<code>Alt+Del</code>填充黑色到图层，滤镜→灯光工厂，图层混合模式→滤色，<code>Ctrl+T</code>调整光效，不透明度调整</li>
+<li><a href="https://www.bilibili.com/video/av11673847" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="日系街道调色"><a href="#日系街道调色" class="headerlink" title="日系街道调色"></a>日系街道调色</h2><ul>
+<li>阴影↑↑，白色色阶↓，对比度↑（稍微加点层次），色温↓，曝光↑，鲜艳度↑</li>
+<li>相机校准：蓝原色左滑→湖蓝色</li>
+<li>HSL：<ul>
+<li>饱和度：去洋红色、紫色，画面变干净；绿色↓，浅绿色↓，橙色↑一点点试试看。</li>
+</ul>
+</li>
+<li>可不做锐化</li>
+<li>降噪：大面积减少杂色，画面糊一些，会有动漫的感觉</li>
+<li><a href="https://www.bilibili.com/video/av15448962" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝色时间-温柔的蓝色"><a href="#蓝色时间-温柔的蓝色" class="headerlink" title="蓝色时间/温柔的蓝色"></a>蓝色时间/温柔的蓝色</h2><ul>
+<li>蓝色时间：日出前、日落后</li>
+<li>特点：街灯、车灯刚亮</li>
+<li>相机校准：蓝色色相←，向青色调；绿原色色相可以试着→。过蓝的话可以试着用色温拉回来。</li>
+<li>如果降低了整体饱和度，为了突出主题和氛围，可以在HSL中调高红、橙色的饱和度、亮度</li>
+<li><a href="https://www.youtube.com/watch?v=ol2SXzVHjnE" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="电影感雨夜"><a href="#电影感雨夜" class="headerlink" title="电影感雨夜"></a>电影感雨夜</h2><ul>
+<li>特点：<ul>
+<li>引人共鸣</li>
+<li>元素处在动态</li>
+<li>画面质量高</li>
+</ul>
+</li>
+<li>高光↓，阴影↑</li>
+<li>色调曲线（也可色调分离）：高光中青色、暖色，阴影中蓝青色<ul>
+<li>红色曲线：（下拉→青）阴影稍微下拉</li>
+<li>蓝色曲线：阴影稍微上拉</li>
+<li>绿色曲线：调氛围，只要一点点调整</li>
+<li>RGB通道：暗部抬一点，提亮</li>
+</ul>
+</li>
+<li>清晰度↑，鲜艳度↓一点点</li>
+<li>裁剪：16:9、2.35:1</li>
+<li><a href="https://www.bilibili.com/video/av59461978" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="蓝紫调夕阳逆光人像"><a href="#蓝紫调夕阳逆光人像" class="headerlink" title="蓝紫调夕阳逆光人像"></a>蓝紫调夕阳逆光人像</h2><ul>
+<li>阴影↑，高光↓，自然饱和度↑↑。（剪影不这样）</li>
+<li>色调分离：高光-红紫色，阴影-蓝色</li>
+<li><a href="https://www.bilibili.com/video/av47883922" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="黑金风光"><a href="#黑金风光" class="headerlink" title="黑金风光"></a>黑金风光</h2><ul>
+<li>思路：减少色相，只留红黄色，达到突出金光的目的。缺点：要求原片有大面积的灯光，风格千篇一律。</li>
+<li>矫正，阴影↑，饱和度↑</li>
+<li>HSL：<ul>
+<li>饱和度：绿色、浅绿色、蓝色、紫色、洋红→0</li>
+<li>色相：红色右拉，黄色左拉，达到画面统一橙色。（或者相机校准中，蓝原色色相左拉）</li>
+</ul>
+</li>
+<li>色调分离/曲线：暗部增加蓝青色</li>
+<li>提高对比度：渐变滤镜，压按四周，可选用范围遮罩工具</li>
+<li><a href="https://www.bilibili.com/video/av38447794" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="星空"><a href="#星空" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>色温↓，色调看喜好</li>
+<li>清晰度↑</li>
+<li>径向滤镜竖向、横向，圈银河，内部清晰度↑，羽化值↑</li>
+<li>渐变滤镜压暗前景曝光、饱和度</li>
+<li>鲜艳度↑</li>
+</ul>
+<h2 id="雪景"><a href="#雪景" class="headerlink" title="雪景"></a>雪景</h2><ul>
+<li>前期曝光调整：白加黑减，雪可加2/3、1档</li>
+<li>照片特点：<ul>
+<li>白（曝光↑）</li>
+<li>雪花定格（快门速度↑ 1/800、1/1000、1/2000）</li>
+<li>背景选择：深色，突出雪花</li>
+</ul>
+</li>
+<li>后期<ul>
+<li>思路一：曝光↑、色温↓、如果阴影都是背景，可以压暗阴影</li>
+<li>思路二：水墨风，HSL中其他颜色饱和度↓，肤色提亮</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av75601819" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="童话风-油画感"><a href="#童话风-油画感" class="headerlink" title="童话风/油画感"></a>童话风/油画感</h2><ul>
+<li>色彩校准：蓝原色色相↓ 黄色更黄一些，蓝色更青一些。蓝原色饱和度↑</li>
+<li>色温↑，黄昏感觉</li>
+<li>HSL：<ul>
+<li>绿色饱和度↓，变得黄一些</li>
+<li>橙色、黄色饱和度↑明亮度↑<ul>
+<li>如果这步让人像脸部过亮了，用径向滤镜压暗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>曲线：<ul>
+<li>最亮的压暗，最暗的抬亮，让画面亮部和暗部都灰一些</li>
+<li>小S曲线，对比度↑</li>
+</ul>
+</li>
+<li>进PS加光晕<ul>
+<li>可搭配插件：Alien Skin Exposure</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av70528221" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="明度建筑"><a href="#明度建筑" class="headerlink" title="明度建筑"></a>明度建筑</h2><ul>
+<li>特征：<ul>
+<li>金属光感：渐变塑光影</li>
+<li>拉丝效果：模糊塑动感</li>
+<li>流动天空：模糊仿流动</li>
+</ul>
+</li>
+<li><a href="https://www.bilibili.com/video/av21522346" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="好莱坞青橙色调"><a href="#好莱坞青橙色调" class="headerlink" title="好莱坞青橙色调"></a>好莱坞青橙色调</h2><ul>
+<li>步骤一：选肤色。选择人的皮肤，色彩范围，目标是保留肤色不变</li>
+<li>步骤二：背景染色。纯色调整图层+柔光图层混合（蒙版羽化）</li>
+<li>步骤三：阴影饱和度↓。色相饱和度图层，降低阴影部分的饱和度</li>
+<li><a href="https://www.youtube.com/watch?v=EN3p-IzNiDA" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<hr>
+<h1 id="后期技术"><a href="#后期技术" class="headerlink" title="后期技术"></a>后期技术</h1><h2 id="磨皮"><a href="#磨皮" class="headerlink" title="磨皮"></a>磨皮</h2><h3 id="中性灰、高低频"><a href="#中性灰、高低频" class="headerlink" title="中性灰、高低频"></a>中性灰、高低频</h3><ul>
+<li>插件：DR4、Skinfiner</li>
+<li>图章工具：去明显瑕疵</li>
+<li>中性灰：去痘印、调光影结构</li>
+<li>高低频：磨皮，保留高频细节。也可在高低频中去瑕疵</li>
+<li><a href="https://www.bilibili.com/video/av61448879" target="_blank" rel="noopener">范例视频-高低频</a>、<a href="https://www.bilibili.com/video/av55985443" target="_blank" rel="noopener">范例视频-中性灰</a></li>
+</ul>
+<hr>
+<h1 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h1><h2 id="向右曝光（vs宁欠勿曝）"><a href="#向右曝光（vs宁欠勿曝）" class="headerlink" title="向右曝光（vs宁欠勿曝）"></a>向右曝光（vs宁欠勿曝）</h2><ul>
+<li>同时满足三个条件：<ul>
+<li>RAW格式拍摄</li>
+<li>拍照时尽量曝光增加</li>
+<li>后期时蒋其调整回期望的亮度（压暗噪点）</li>
+</ul>
+</li>
+<li>好处：提高画面信噪比，减少噪点</li>
+<li>拍摄：<ul>
+<li>参考1：评价曝光+1.3ev，白加黑减</li>
+<li>参考2：点测最亮点测光增加10倍曝光（3.7ev）</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=uKDXQJR0WPY" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=ln-JDN1mF3I" target="_blank" rel="noopener">范例视频2</a>、<a href="https://www.youtube.com/watch?v=syPdVOhuLak" target="_blank" rel="noopener">范例视频3</a></li>
+</ul>
+<h2 id="星空-1"><a href="#星空-1" class="headerlink" title="星空"></a>星空</h2><ul>
+<li>时间选择：<ul>
+<li>月相查询：月亮小的时候拍摄</li>
+<li>月出、月落时间：月落后拍摄</li>
+</ul>
+</li>
+<li>地点选择：<a href="https://www.lightpollutionmap.info" target="_blank" rel="noopener">光污染地图</a></li>
+<li>银河方位：starwalk、星图</li>
+<li>器材选择：广角、大光圈、三脚架、充电宝、手电筒、棉袄等</li>
+<li>参数选择：<ul>
+<li>对焦：无限远</li>
+<li>光圈：最大</li>
+<li>快门：500/焦距（一般30秒以内）（防星星拖尾）</li>
+<li>感光度：被动决定</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="wechat-朋友圈缩图机制"><a href="#wechat-朋友圈缩图机制" class="headerlink" title="wechat 朋友圈缩图机制"></a>wechat 朋友圈缩图机制</h2><ul>
+<li>提前压缩成<code>短边1080p</code>有助于提升画质</li>
+<li>提前压缩成<code>1 MB大小</code>无助于提升画质</li>
+<li><code>长宽比</code>大于2:1时，能图片长边1080p的限制</li>
+</ul>
+<p>所以可以压像素，不压画质，或者做成类似2.35:1的宽图。</p>
+]]></content>
+      <categories>
+        <category>「快门」</category>
+      </categories>
+      <tags>
+        <tag>Note</tag>
+        <tag>Photography</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Photoshop Basis Notes</title>
     <url>/2020/03/10/Ps-Basis-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
@@ -5948,7 +5821,13 @@
 <li><a href="https://www.youtube.com/watch?v=-ZdgxnUH0DQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=16" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
 <hr>
-<h1 id="曲线相关"><a href="#曲线相关" class="headerlink" title="曲线相关"></a>曲线相关</h1><h2 id="使用曲线调整对比度，同时保留细节"><a href="#使用曲线调整对比度，同时保留细节" class="headerlink" title="使用曲线调整对比度，同时保留细节"></a>使用曲线调整对比度，同时保留细节</h2><ul>
+<h1 id="曲线相关"><a href="#曲线相关" class="headerlink" title="曲线相关"></a>曲线相关</h1><h2 id="曲线和色阶的区别"><a href="#曲线和色阶的区别" class="headerlink" title="曲线和色阶的区别"></a>曲线和色阶的区别</h2><ul>
+<li>色阶是曲线的子集</li>
+<li>曲线调整更灵活</li>
+<li>曲线中有<code>小手</code>工具很好用</li>
+<li><a href="https://www.youtube.com/watch?v=cux1idmOAlA" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<h2 id="使用曲线调整对比度，同时保留细节"><a href="#使用曲线调整对比度，同时保留细节" class="headerlink" title="使用曲线调整对比度，同时保留细节"></a>使用曲线调整对比度，同时保留细节</h2><ul>
 <li>S型曲线：增加对比度<ul>
 <li>代价：高光和阴影部分的对比度被牺牲</li>
 <li>斜率越大，对比度越大</li>
@@ -5965,7 +5844,8 @@
 </li>
 </ul>
 </li>
-<li><a href="https://www.youtube.com/watch?v=8xsdTww52-E" target="_blank" rel="noopener">范例视频</a></li>
+<li><a href="https://www.youtube.com/watch?v=8xsdTww52-E" target="_blank" rel="noopener">范例视频1</a></li>
+<li><a href="https://www.youtube.com/watch?v=XnWqFnqEZQw" target="_blank" rel="noopener">范例视频2</a>：多通道调节对比度</li>
 </ul>
 <h2 id="曲线调色"><a href="#曲线调色" class="headerlink" title="曲线调色"></a>曲线调色</h2><ul>
 <li>RGB的补色：<ul>
@@ -6277,6 +6157,13 @@
 <li>简化画面元素，突出对比度，主要是建筑物的几何形体比较好</li>
 <li><a href="https://www.youtube.com/watch?v=q6ORiya7dpQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=29" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
+<h2 id="逼真的素描"><a href="#逼真的素描" class="headerlink" title="逼真的素描"></a>逼真的素描</h2><ul>
+<li><a href="https://www.youtube.com/watch?v=aN4P2QsSAmw" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="创建光晕"><a href="#创建光晕" class="headerlink" title="创建光晕"></a>创建光晕</h2><ul>
+<li>杂色+模糊+阈值生成随机亮点，变成光晕，给光晕上色</li>
+<li><a href="https://www.youtube.com/watch?v=TKwWRN6lPQs" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
 <hr>
 <h1 id="画笔相关"><a href="#画笔相关" class="headerlink" title="画笔相关"></a>画笔相关</h1><h2 id="流量和透明度的区别"><a href="#流量和透明度的区别" class="headerlink" title="流量和透明度的区别"></a>流量和透明度的区别</h2><ul>
 <li><code>不透明度</code>：<ul>
@@ -6310,15 +6197,129 @@
       </tags>
   </entry>
   <entry>
-    <title>Photoshop Skill Notes</title>
-    <url>/2020/03/10/Ps-Skill-Notes/</url>
+    <title>Adobe Camera Raw Notes</title>
+    <url>/2020/03/10/Ps-ACR-Notes/</url>
     <content><![CDATA[<center> <font color="#bababa">
 
-<p><strong><em>Ps拼接合成</em></strong></p>
+<p><strong><em>思路跟 Lr 一样的</em></strong></p>
 <p></font></center></p>
 <a id="more"></a>
 
 <hr>
+<h1 id="调整"><a href="#调整" class="headerlink" title="调整"></a>调整</h1><h2 id="获得通透的画面"><a href="#获得通透的画面" class="headerlink" title="获得通透的画面"></a>获得通透的画面</h2><ul>
+<li><code>通透</code>：增加细节</li>
+<li>途径：亮度再分配</li>
+<li>关键：把画面中的大部分细节调整到人眼可见的亮度范围内</li>
+<li>tips：调亮主影调、阴影的时候还可以尝试增加黑场（压低黑色）</li>
+<li><a href="https://www.youtube.com/watch?v=sYj8cMlecJE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=3" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="精确白平衡"><a href="#精确白平衡" class="headerlink" title="精确白平衡"></a>精确白平衡</h2><ul>
+<li>色温和色调可以确定一个点的颜色，相当于一对坐标</li>
+<li><code>色温</code>：蓝色 ↔ 黄色</li>
+<li><code>色调</code>：绿色 ↔ 洋红色</li>
+<li>白平衡工具：<ul>
+<li>吸取画面中原本应该是白色（中性灰：纯白-纯黑之间都可以）的点</li>
+<li>原理：补色的原理。如果画面中的白色准了，那认为其他颜色也准了。</li>
+<li>tips：尽量不要选白纸（有荧光粉）、眼睛（亚洲人、动物偏黄）</li>
+</ul>
+</li>
+<li>JPG格式的白平衡调整色彩不可逆</li>
+<li><a href="https://www.youtube.com/watch?v=5oEbQ6m2O5w&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=4" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="精确调色"><a href="#精确调色" class="headerlink" title="精确调色"></a>精确调色</h2><ul>
+<li><code>饱和度</code>：<ul>
+<li><code>自然饱和度</code>：用得多，更智能，会识别图中内容</li>
+<li><code>饱和度</code>：全部调，不建议</li>
+</ul>
+</li>
+<li><code>色调分离</code>：<ul>
+<li>大部分电影：高光偏黄，阴影偏蓝 </li>
+</ul>
+</li>
+<li><code>HSL</code>：调节不同颜色的色相、饱和度、明亮度<ul>
+<li><code>灰度混合</code>：调整不同颜色会黑白照片亮度贡献的大小</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=2fde25zgXb8&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=5" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="渐变滤镜"><a href="#渐变滤镜" class="headerlink" title="渐变滤镜"></a>渐变滤镜</h2><ul>
+<li>硬件：是一种灰度过度滤镜，用于控制天空</li>
+<li>可适用于大光比的照片</li>
+<li>可以渐变得使亮度再分配</li>
+<li>eg：<ul>
+<li>天空压暗、降低色温</li>
+<li>地面提亮、暖色调、通透</li>
+</ul>
+</li>
+<li>渐变滤镜的蒙版<code>（范围遮罩）</code>：<ul>
+<li>颜色</li>
+<li>明亮度</li>
+<li>按住<code>Alt</code>可以看到蒙版作用范围：越亮→作用越强；越暗→作用越弱</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=l365G5c65kE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=6" target="_blank" rel="noopener">范例视频1</a>、<a href="https://www.youtube.com/watch?v=OdlCFo5bNBU&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=9" target="_blank" rel="noopener">范例视频2</a></li>
+</ul>
+<h2 id="综合应用"><a href="#综合应用" class="headerlink" title="综合应用"></a>综合应用</h2><ul>
+<li>去除紫边<ul>
+<li><code>镜头校正</code>-<code>去边</code>-去除紫边或者绿边</li>
+</ul>
+</li>
+<li>渐变滤镜</li>
+<li>径向滤镜<ul>
+<li>内部/外部</li>
+</ul>
+</li>
+<li>亮度再分配</li>
+<li>色彩快速调节</li>
+<li>透视畸变矫正</li>
+<li>ACR二次调用</li>
+<li><a href="https://www.youtube.com/watch?v=_b6KALfwJyE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=7" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="用亮度蒙版和ACR恢复天空细节"><a href="#用亮度蒙版和ACR恢复天空细节" class="headerlink" title="用亮度蒙版和ACR恢复天空细节"></a>用亮度蒙版和ACR恢复天空细节</h2><ul>
+<li>目的：压暗天空，减少对近景的副作用，过度更自然</li>
+<li><code>亮度蒙版</code>：借助画面原有的亮度信息来产生蒙版，通常由通道产生</li>
+<li>选择主体、背景差别大的通道</li>
+<li><code>亮度蒙版</code>操作：<ul>
+<li>按住<code>Ctrl</code>并点击通道，创建亮度选区</li>
+<li>蚁行线：亮度高于50%的选中</li>
+<li>点回RGB通道，回到图层原始画面</li>
+<li>保持选区不变，<code>调整</code>-<code>曲线</code>，此时曲线的蒙版就是刚选中的亮度蒙版</li>
+<li>若有的近景受到了影响（如饱和度降低），可以双击蒙版，调整蒙版的羽化值，模糊蒙版</li>
+</ul>
+</li>
+<li>ACR<code>去除薄雾</code>滑块：<ul>
+<li>最有效的恢复天空细节的工具</li>
+<li>还可以搭配滤镜加强调整</li>
+<li>其他地方可以用亮度蒙版遮挡，不用担心对前景的影响</li>
+<li>副作用：可能改变天空的颜色，需要调整<code>（自然）饱和度</code></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=7N7A0H7y4es&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=10" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<hr>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><h2 id="RAW-格式"><a href="#RAW-格式" class="headerlink" title="RAW 格式"></a>RAW 格式</h2><ul>
+<li>RAW：未经处理的原始数据</li>
+<li>丰富的层次：16-bit</li>
+<li>宽容度牛逼</li>
+<li>私有色彩空间</li>
+<li>没有设定黑白场</li>
+<li>若操作<code>.jpg</code>，可以<code>图像</code>-<code>模式</code>-<code>16位通道</code></li>
+<li><a href="https://www.youtube.com/watch?v=yZEp7wWqswA&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=1" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
+<h2 id="ACR-简介"><a href="#ACR-简介" class="headerlink" title="ACR 简介"></a>ACR 简介</h2><ul>
+<li>调用方式<ul>
+<li>直接打开RAW文件</li>
+<li><code>滤镜</code>-<code>Camera Raw滤镜</code></li>
+</ul>
+</li>
+<li>重要设置<ul>
+<li>最下放的链接：<code>色彩深度</code>设定成16位</li>
+<li>色彩空间：需要由是否全链路色彩管理决定</li>
+</ul>
+</li>
+<li>无损调节：配置存放于<code>.xmp</code>文件中</li>
+<li><a href="https://www.youtube.com/watch?v=H5SBJcz2bVM&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=2" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -6338,6 +6339,44 @@
 <a id="more"></a>
 
 <hr>
+<h1 id="液化"><a href="#液化" class="headerlink" title="液化"></a>液化</h1><h2 id="人脸识别液化"><a href="#人脸识别液化" class="headerlink" title="人脸识别液化"></a>人脸识别液化</h2><p><code>滤镜</code>-<code>液化</code>，左侧倒三<code>脸部工具</code></p>
+<hr>
+<h1 id="眼睛"><a href="#眼睛" class="headerlink" title="眼睛"></a>眼睛</h1><h2 id="增强-突出眼神光"><a href="#增强-突出眼神光" class="headerlink" title="增强/突出眼神光"></a>增强/突出眼神光</h2><p><strong>前期</strong>：人物面向光源。</p>
+<p><strong>后期</strong>：</p>
+<ul>
+<li>思路：<ul>
+<li>增加眼睛的对比度</li>
+<li>曲线在这里并不合适，效果不明显，原因是亚洲人眼珠是深色的，眼神光也处于较暗的部分</li>
+<li><strong>最优方法：锐化</strong></li>
+</ul>
+</li>
+<li>选择眼珠（可配合使用<code>选择并遮住</code>功能）</li>
+<li><code>滤镜</code>→<code>锐化</code>→<code>USM锐化</code><ul>
+<li>关键是找到合适的半径</li>
+</ul>
+</li>
+<li>可再使用不透明度调节强度</li>
+<li><a href="https://www.youtube.com/watch?v=5GY3avbwAnA" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<hr>
+<h1 id="牙齿"><a href="#牙齿" class="headerlink" title="牙齿"></a>牙齿</h1><h2 id="自然地美白牙齿"><a href="#自然地美白牙齿" class="headerlink" title="自然地美白牙齿"></a>自然地美白牙齿</h2><ul>
+<li>先选择出牙齿</li>
+<li>调节色相：<code>色相/饱和度</code>，<code>着色</code>，饱和度不能调为0（因为人牙齿其实是有颜色的）</li>
+<li>提亮牙齿的阴影，<code>曲线</code>，混合颜色带</li>
+<li>给高光填充白色：<code>画笔</code>，混合颜色带</li>
+<li>修整牙齿形状、位置：<code>液化</code></li>
+<li><a href="https://www.youtube.com/watch?v=7cZjEJcYhkE" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
+<hr>
+<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><h2 id="Ps制作自然虚化的景深"><a href="#Ps制作自然虚化的景深" class="headerlink" title="Ps制作自然虚化的景深"></a>Ps制作自然虚化的景深</h2><ul>
+<li>思路：ps的<code>镜头虚化</code>滤镜</li>
+<li>选择人物<ul>
+<li>快速选择+选择并遮住</li>
+</ul>
+</li>
+<li>新建图层，填充人物选区为黑色</li>
+<li>新建图层，填充一个渐变图层</li>
+</ul>
 ]]></content>
       <categories>
         <category>「快门」</category>
@@ -7059,6 +7098,82 @@
         <tag>Note</tag>
         <tag>SPSS</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>拍照地小记</title>
+    <url>/2020/12/22/Scenery/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong><em>逛吃逛吃逛吃</em></strong></p>
+<p></font> </center></p>
+<a id="more"></a>
+
+<hr>
+<h1 id="杭州"><a href="#杭州" class="headerlink" title="杭州"></a>杭州</h1><h2 id="自然风景"><a href="#自然风景" class="headerlink" title="自然风景"></a>自然风景</h2><h3 id="茶叶博物馆"><a href="#茶叶博物馆" class="headerlink" title="茶叶博物馆"></a>茶叶博物馆</h3><ul>
+<li>位置：西湖区龙井路</li>
+<li>造访时间：2020年12月</li>
+<li>小记：大片的茶叶植株，有起伏的小山坡</li>
+<li>适合：古风、日系清新</li>
+</ul>
+<h2 id="人文"><a href="#人文" class="headerlink" title="人文"></a>人文</h2><h3 id="馒头山社区"><a href="#馒头山社区" class="headerlink" title="馒头山社区"></a>馒头山社区</h3><ul>
+<li>位置：上城区梵天寺路</li>
+<li>造访时间：2019年6月</li>
+<li>同行：潘刀</li>
+<li>适合：80年代复古风、夏日清新</li>
+</ul>
+<h3 id="小河直街"><a href="#小河直街" class="headerlink" title="小河直街"></a>小河直街</h3><ul>
+<li>位置：拱墅区小河直街历史文化街区</li>
+<li>造访时间：2019年7月、2020年12月</li>
+<li>小记：小河、小巷、小铺、铜像</li>
+<li>适合：古装、日常</li>
+</ul>
+<h3 id="白塔公园"><a href="#白塔公园" class="headerlink" title="白塔公园"></a>白塔公园</h3><ul>
+<li>位置：上城区老复兴街</li>
+<li>造访时间：2020年12月</li>
+<li>小记：两三条火车轨道，火车餐车，老火车站台牌，银杏，会动的观光火车</li>
+<li>适合：80年代风、日系清新、电商风</li>
+</ul>
+<h3 id="江墅铁路遗址公园"><a href="#江墅铁路遗址公园" class="headerlink" title="江墅铁路遗址公园"></a>江墅铁路遗址公园</h3><ul>
+<li>位置：拱墅区登云路</li>
+<li>造访时间：2019年7月</li>
+<li>小记：很小很小的公园，很短很短的铁轨，就一个火车头在那，背景高楼容易入境</li>
+<li>适合：电商风</li>
+</ul>
+]]></content>
+      <categories>
+        <category>「备忘」</category>
+      </categories>
+      <tags>
+        <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2019/03/07/Hello-World/</url>
+    <content><![CDATA[<center> <font color="#bababa">
+
+<p><strong>Hexo 的初始文档</strong></p>
+<p></font></center></p>
+<a id="more"></a>
+
+<hr>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>「备忘」- Hexo配置</category>
+      </categories>
   </entry>
   <entry>
     <title>WeiboCat With Golang</title>
@@ -8332,82 +8447,6 @@
         <tag>Note</tag>
         <tag>能源</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>拍照地小记</title>
-    <url>/2020/12/22/Scenery/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong><em>逛吃逛吃逛吃</em></strong></p>
-<p></font> </center></p>
-<a id="more"></a>
-
-<hr>
-<h1 id="杭州"><a href="#杭州" class="headerlink" title="杭州"></a>杭州</h1><h2 id="自然风景"><a href="#自然风景" class="headerlink" title="自然风景"></a>自然风景</h2><h3 id="茶叶博物馆"><a href="#茶叶博物馆" class="headerlink" title="茶叶博物馆"></a>茶叶博物馆</h3><ul>
-<li>位置：西湖区龙井路</li>
-<li>造访时间：2020年12月</li>
-<li>小记：大片的茶叶植株，有起伏的小山坡</li>
-<li>适合：古风、日系清新</li>
-</ul>
-<h2 id="人文"><a href="#人文" class="headerlink" title="人文"></a>人文</h2><h3 id="馒头山社区"><a href="#馒头山社区" class="headerlink" title="馒头山社区"></a>馒头山社区</h3><ul>
-<li>位置：上城区梵天寺路</li>
-<li>造访时间：2019年6月</li>
-<li>同行：潘刀</li>
-<li>适合：80年代复古风、夏日清新</li>
-</ul>
-<h3 id="小河直街"><a href="#小河直街" class="headerlink" title="小河直街"></a>小河直街</h3><ul>
-<li>位置：拱墅区小河直街历史文化街区</li>
-<li>造访时间：2019年7月、2020年12月</li>
-<li>小记：小河、小巷、小铺、铜像</li>
-<li>适合：古装、日常</li>
-</ul>
-<h3 id="白塔公园"><a href="#白塔公园" class="headerlink" title="白塔公园"></a>白塔公园</h3><ul>
-<li>位置：上城区老复兴街</li>
-<li>造访时间：2020年12月</li>
-<li>小记：两三条火车轨道，火车餐车，老火车站台牌，银杏，会动的观光火车</li>
-<li>适合：80年代风、日系清新、电商风</li>
-</ul>
-<h3 id="江墅铁路遗址公园"><a href="#江墅铁路遗址公园" class="headerlink" title="江墅铁路遗址公园"></a>江墅铁路遗址公园</h3><ul>
-<li>位置：拱墅区登云路</li>
-<li>造访时间：2019年7月</li>
-<li>小记：很小很小的公园，很短很短的铁轨，就一个火车头在那，背景高楼容易入境</li>
-<li>适合：电商风</li>
-</ul>
-]]></content>
-      <categories>
-        <category>「备忘」</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2019/03/07/Hello-World/</url>
-    <content><![CDATA[<center> <font color="#bababa">
-
-<p><strong>Hexo 的初始文档</strong></p>
-<p></font></center></p>
-<a id="more"></a>
-
-<hr>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line"></span><br><span class="line"><span class="comment"># or:</span></span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line"></span><br><span class="line"><span class="comment"># need to install hexo-deployer-git first:</span></span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>「备忘」- Hexo配置</category>
-      </categories>
   </entry>
   <entry>
     <title>Golang pkg Notes</title>
