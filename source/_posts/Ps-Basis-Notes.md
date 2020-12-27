@@ -120,6 +120,13 @@ date: 2020-03-10 23:37:50
 
 # 曲线相关
 
+## 曲线和色阶的区别
+
+- 色阶是曲线的子集
+- 曲线调整更灵活
+- 曲线中有`小手`工具很好用
+- [讲解视频](https://www.youtube.com/watch?v=cux1idmOAlA)
+
 ## 使用曲线调整对比度，同时保留细节
 
 - S型曲线：增加对比度
@@ -132,7 +139,8 @@ date: 2020-03-10 23:37:50
         * 用曲线吸管时按住`Shift`，在`RGB通道`中标记
         * 曲线的`图层混合模式1`从`正常`改为`明度`，这样只影响亮度
         * 然后分别调至`RGB通道`的曲线对比度。
-- [范例视频](https://www.youtube.com/watch?v=8xsdTww52-E)
+- [范例视频1](https://www.youtube.com/watch?v=8xsdTww52-E)
+- [范例视频2](https://www.youtube.com/watch?v=XnWqFnqEZQw)：多通道调节对比度
 
 ## 曲线调色
 
@@ -412,6 +420,15 @@ date: 2020-03-10 23:37:50
 
 - 简化画面元素，突出对比度，主要是建筑物的几何形体比较好
 - [范例视频](https://www.youtube.com/watch?v=q6ORiya7dpQ&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=29)
+
+## 逼真的素描
+
+- [范例视频](https://www.youtube.com/watch?v=aN4P2QsSAmw)
+
+##  创建光晕
+
+- 杂色+模糊+阈值生成随机亮点，变成光晕，给光晕上色
+- [范例视频](https://www.youtube.com/watch?v=TKwWRN6lPQs)
 
 ---
 
