@@ -31,7 +31,7 @@
 <meta property="og:description" content="Ps基础">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-10T15:37:50.000Z">
-<meta property="article:modified_time" content="2020-12-27T14:24:36.792Z">
+<meta property="article:modified_time" content="2020-12-28T15:24:05.881Z">
 <meta property="article:author" content="rtk">
 <meta property="article:tag" content="Note">
 <meta property="article:tag" content="Photoshop">
@@ -231,7 +231,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-12-27 22:24:36" itemprop="dateModified" datetime="2020-12-27T22:24:36+08:00">2020-12-27</time>
+                <time title="修改时间：2020-12-28 23:24:05" itemprop="dateModified" datetime="2020-12-28T23:24:05+08:00">2020-12-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -584,6 +584,15 @@
 </li>
 <li><a href="https://www.youtube.com/watch?v=1WTDKh08kj8&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=28" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
+<h2 id="用ACR进行局部锐化"><a href="#用ACR进行局部锐化" class="headerlink" title="用ACR进行局部锐化"></a>用ACR进行局部锐化</h2><ul>
+<li><code>数量</code>滑块：调整锐化程度，按住<code>Alt</code>可以把画面变成黑白，避免颜色影响，打到最大</li>
+<li><code>半径</code>滑块：决定锐化的颗粒度，按住<code>Alt</code>画面变成灰色，调节锐化的尺度，要找准半径（希望强调哪些细节？）</li>
+<li><code>细节</code>滑块：对粒度小的颗粒进行锐化</li>
+<li>适当降下锐化数量</li>
+<li>此时背景噪声被加强</li>
+<li>按住<code>Alt</code>键调节<code>蒙版</code>滑块，让背景变黑色（弱锐化），主体变白色（锐化程度高）</li>
+<li><a href="https://www.youtube.com/watch?v=_TwTOHGA6ro" target="_blank" rel="noopener">范例视频</a></li>
+</ul>
 <hr>
 <h1 id="去污相关"><a href="#去污相关" class="headerlink" title="去污相关"></a>去污相关</h1><h2 id="仿制图章"><a href="#仿制图章" class="headerlink" title="仿制图章"></a>仿制图章</h2><ul>
 <li>作用：原封不动仿制</li>
@@ -778,6 +787,58 @@
 </li>
 <li><a href="https://www.youtube.com/watch?v=GeXCT4QAayY" target="_blank" rel="noopener">范例视频</a></li>
 </ul>
+<hr>
+<h1 id="抠图相关"><a href="#抠图相关" class="headerlink" title="抠图相关"></a>抠图相关</h1><h2 id="抠图思路"><a href="#抠图思路" class="headerlink" title="抠图思路"></a>抠图思路</h2><blockquote>
+<p>抠图不是单纯的去描边，不一定要去建立选区。</p>
+<p>首先想清楚你想要的干什么？</p>
+<p>核心是利用画面的差异，灵活的选择工具。</p>
+<p>随着科技的发展，AI工具将发挥更大的作用。</p>
+</blockquote>
+<p>选区、蒙版、黑白图片——是一码事。白——全选中，黑——全不选中，灰——部分选中。</p>
+<ul>
+<li>利用画面的差异：<ul>
+<li>形状：<code>多边形套索</code></li>
+<li>亮度：<ul>
+<li><code>选择</code>-<code>色彩范围...</code>-<code>高光</code></li>
+<li><code>调整曲线</code>+<code>混合颜色带</code></li>
+<li>通道，<code>Ctrl</code>+单击通道，回到图层，新建<code>曲线</code>；通常需要对蒙版进行一定的<code>羽化</code>来屏蔽通道中的一些细节<ul>
+<li>拓展：单击蒙版，<code>Ctrl+L</code>调节蒙版的色阶，即调整蒙版的效果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>颜色：<ul>
+<li><code>选择</code>-<code>色彩范围...</code></li>
+<li><code>色相/饱和度</code>，小手的标记，色相、饱和度打到最大，调节色彩选中的范围。其实并没有新建选区，只是利用了ps的功能调整指定颜色的颜色</li>
+<li>调节某个色彩的亮度：新建<code>黑白</code>调整，混合方式改为<code>明度</code>，调节颜色的滑块</li>
+</ul>
+</li>
+<li>清晰度：<ul>
+<li><code>滤镜</code>-<code>焦点区域...</code>，选择画面中合焦的区域</li>
+</ul>
+</li>
+<li>饱和度：<ul>
+<li>复制图层，<code>滤镜</code>-<code>其它</code>-<code>HSB/HSL...</code>，输入<code>RGB</code>，输出<code>HSB</code>，会把红绿蓝三个通道放成色相、饱和度、亮度。<code>Ctrl</code>+单击绿通道，可以建立关于饱和度的选区</li>
+</ul>
+</li>
+<li>信息复杂程度：<ul>
+<li>ACR中锐化功能的蒙版</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>人工智能选择主体<ul>
+<li><code>快速选择工具</code>-<code>选择主体</code></li>
+<li>高版本ps：<code>对象选择工具</code></li>
+</ul>
+</li>
+<li>类似头发的边缘：<ul>
+<li><code>选择并遮住...</code>-<code>调整边缘画笔</code></li>
+<li><code>剪贴蒙版</code>去白边</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=M78lAZOmvWc" target="_blank" rel="noopener">讲解视频</a></li>
+</ul>
 
     </div>
 
@@ -865,7 +926,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Photoshop小白学习顺序"><span class="nav-number">1.</span> <span class="nav-text">Photoshop小白学习顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图层相关"><span class="nav-number">2.</span> <span class="nav-text">图层相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的图层混合方式"><span class="nav-number">2.1.</span> <span class="nav-text">常用的图层混合方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通道的概念与应用"><span class="nav-number">2.2.</span> <span class="nav-text">通道的概念与应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#蒙版相关"><span class="nav-number">3.</span> <span class="nav-text">蒙版相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#蒙版的概念、应用于生成"><span class="nav-number">3.1.</span> <span class="nav-text">蒙版的概念、应用于生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速蒙版"><span class="nav-number">3.2.</span> <span class="nav-text">快速蒙版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#曲线相关"><span class="nav-number">4.</span> <span class="nav-text">曲线相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#曲线和色阶的区别"><span class="nav-number">4.1.</span> <span class="nav-text">曲线和色阶的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用曲线调整对比度，同时保留细节"><span class="nav-number">4.2.</span> <span class="nav-text">使用曲线调整对比度，同时保留细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曲线调色"><span class="nav-number">4.3.</span> <span class="nav-text">曲线调色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区光影重构"><span class="nav-number">4.4.</span> <span class="nav-text">分区光影重构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#降噪相关"><span class="nav-number">5.</span> <span class="nav-text">降噪相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4种后期降噪方法对比"><span class="nav-number">5.1.</span> <span class="nav-text">4种后期降噪方法对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USM极致锐化"><span class="nav-number">5.2.</span> <span class="nav-text">USM极致锐化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精确控制锐化产生的光晕"><span class="nav-number">5.3.</span> <span class="nav-text">精确控制锐化产生的光晕</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#去污相关"><span class="nav-number">6.</span> <span class="nav-text">去污相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仿制图章"><span class="nav-number">6.1.</span> <span class="nav-text">仿制图章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂边缘物体的选择"><span class="nav-number">6.2.</span> <span class="nav-text">复杂边缘物体的选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#效果相关"><span class="nav-number">7.</span> <span class="nav-text">效果相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可选颜色营造电影感"><span class="nav-number">7.1.</span> <span class="nav-text">可选颜色营造电影感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换天空-变生动"><span class="nav-number">7.2.</span> <span class="nav-text">换天空 变生动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作高对比度黑白图片（如肖像）"><span class="nav-number">7.3.</span> <span class="nav-text">制作高对比度黑白图片（如肖像）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保留细节放大图片"><span class="nav-number">7.4.</span> <span class="nav-text">保留细节放大图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#秒变秋色"><span class="nav-number">7.5.</span> <span class="nav-text">秒变秋色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瞬间增加风格"><span class="nav-number">7.6.</span> <span class="nav-text">瞬间增加风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能拉直照片-amp-内容识别裁剪"><span class="nav-number">7.7.</span> <span class="nav-text">智能拉直照片&amp;内容识别裁剪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生移轴模糊效果"><span class="nav-number">7.8.</span> <span class="nav-text">产生移轴模糊效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变任意颜色"><span class="nav-number">7.9.</span> <span class="nav-text">改变任意颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加任意形状暗角"><span class="nav-number">7.10.</span> <span class="nav-text">添加任意形状暗角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容识别缩放"><span class="nav-number">7.11.</span> <span class="nav-text">内容识别缩放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容识别填充"><span class="nav-number">7.12.</span> <span class="nav-text">内容识别填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转模糊"><span class="nav-number">7.13.</span> <span class="nav-text">旋转模糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加任意滤镜效果"><span class="nav-number">7.14.</span> <span class="nav-text">添加任意滤镜效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级灰建筑图片"><span class="nav-number">7.15.</span> <span class="nav-text">高级灰建筑图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逼真的素描"><span class="nav-number">7.16.</span> <span class="nav-text">逼真的素描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建光晕"><span class="nav-number">7.17.</span> <span class="nav-text">创建光晕</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#画笔相关"><span class="nav-number">8.</span> <span class="nav-text">画笔相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#流量和透明度的区别"><span class="nav-number">8.1.</span> <span class="nav-text">流量和透明度的区别</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Photoshop小白学习顺序"><span class="nav-number">1.</span> <span class="nav-text">Photoshop小白学习顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图层相关"><span class="nav-number">2.</span> <span class="nav-text">图层相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的图层混合方式"><span class="nav-number">2.1.</span> <span class="nav-text">常用的图层混合方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通道的概念与应用"><span class="nav-number">2.2.</span> <span class="nav-text">通道的概念与应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#蒙版相关"><span class="nav-number">3.</span> <span class="nav-text">蒙版相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#蒙版的概念、应用于生成"><span class="nav-number">3.1.</span> <span class="nav-text">蒙版的概念、应用于生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速蒙版"><span class="nav-number">3.2.</span> <span class="nav-text">快速蒙版</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#曲线相关"><span class="nav-number">4.</span> <span class="nav-text">曲线相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#曲线和色阶的区别"><span class="nav-number">4.1.</span> <span class="nav-text">曲线和色阶的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用曲线调整对比度，同时保留细节"><span class="nav-number">4.2.</span> <span class="nav-text">使用曲线调整对比度，同时保留细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#曲线调色"><span class="nav-number">4.3.</span> <span class="nav-text">曲线调色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区光影重构"><span class="nav-number">4.4.</span> <span class="nav-text">分区光影重构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#降噪相关"><span class="nav-number">5.</span> <span class="nav-text">降噪相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4种后期降噪方法对比"><span class="nav-number">5.1.</span> <span class="nav-text">4种后期降噪方法对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USM极致锐化"><span class="nav-number">5.2.</span> <span class="nav-text">USM极致锐化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#精确控制锐化产生的光晕"><span class="nav-number">5.3.</span> <span class="nav-text">精确控制锐化产生的光晕</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用ACR进行局部锐化"><span class="nav-number">5.4.</span> <span class="nav-text">用ACR进行局部锐化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#去污相关"><span class="nav-number">6.</span> <span class="nav-text">去污相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#仿制图章"><span class="nav-number">6.1.</span> <span class="nav-text">仿制图章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂边缘物体的选择"><span class="nav-number">6.2.</span> <span class="nav-text">复杂边缘物体的选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#效果相关"><span class="nav-number">7.</span> <span class="nav-text">效果相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#可选颜色营造电影感"><span class="nav-number">7.1.</span> <span class="nav-text">可选颜色营造电影感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换天空-变生动"><span class="nav-number">7.2.</span> <span class="nav-text">换天空 变生动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制作高对比度黑白图片（如肖像）"><span class="nav-number">7.3.</span> <span class="nav-text">制作高对比度黑白图片（如肖像）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保留细节放大图片"><span class="nav-number">7.4.</span> <span class="nav-text">保留细节放大图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#秒变秋色"><span class="nav-number">7.5.</span> <span class="nav-text">秒变秋色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#瞬间增加风格"><span class="nav-number">7.6.</span> <span class="nav-text">瞬间增加风格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#智能拉直照片-amp-内容识别裁剪"><span class="nav-number">7.7.</span> <span class="nav-text">智能拉直照片&amp;内容识别裁剪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产生移轴模糊效果"><span class="nav-number">7.8.</span> <span class="nav-text">产生移轴模糊效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变任意颜色"><span class="nav-number">7.9.</span> <span class="nav-text">改变任意颜色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加任意形状暗角"><span class="nav-number">7.10.</span> <span class="nav-text">添加任意形状暗角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容识别缩放"><span class="nav-number">7.11.</span> <span class="nav-text">内容识别缩放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容识别填充"><span class="nav-number">7.12.</span> <span class="nav-text">内容识别填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转模糊"><span class="nav-number">7.13.</span> <span class="nav-text">旋转模糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加任意滤镜效果"><span class="nav-number">7.14.</span> <span class="nav-text">添加任意滤镜效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高级灰建筑图片"><span class="nav-number">7.15.</span> <span class="nav-text">高级灰建筑图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逼真的素描"><span class="nav-number">7.16.</span> <span class="nav-text">逼真的素描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建光晕"><span class="nav-number">7.17.</span> <span class="nav-text">创建光晕</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#画笔相关"><span class="nav-number">8.</span> <span class="nav-text">画笔相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#流量和透明度的区别"><span class="nav-number">8.1.</span> <span class="nav-text">流量和透明度的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抠图相关"><span class="nav-number">9.</span> <span class="nav-text">抠图相关</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抠图思路"><span class="nav-number">9.1.</span> <span class="nav-text">抠图思路</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
