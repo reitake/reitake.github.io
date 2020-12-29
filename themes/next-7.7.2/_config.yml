@@ -287,7 +287,7 @@ reward:
 follow_me:
   #Twitter: https://twitter.com/username || twitter
   #Telegram: https://t.me/channel_name || telegram
-  #WeChat: /images/wechat_channel.jpg || wechat
+  WeChat: /images/wechat_channel.jpg || wechat
   #RSS: /atom.xml || rss
 
 # Related popular posts
