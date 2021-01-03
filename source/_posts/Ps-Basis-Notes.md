@@ -440,6 +440,12 @@ date: 2020-03-10 23:37:50
 - 杂色+模糊+阈值生成随机亮点，变成光晕，给光晕上色
 - [范例视频](https://www.youtube.com/watch?v=TKwWRN6lPQs)
 
+## 渐变映射
+
+- 画面最暗、最亮，按亮度映射到其他颜色
+- 通常借助`不透明度`、`柔光`混合
+- [讲解视频](https://www.youtube.com/watch?v=m9xCqORVkwI)
+
 ---
 
 # 画笔相关

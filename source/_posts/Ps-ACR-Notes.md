@@ -27,6 +27,16 @@ date: 2020-03-10 23:42:06
 - tips：调亮主影调、阴影的时候还可以尝试增加黑场（压低黑色）
 - [范例视频](https://www.youtube.com/watch?v=sYj8cMlecJE&list=PLhnwj_CftHvhCdkgMKU8qAL4GlXaXmZ1o&index=3)
 
+## 亮度再分配
+
+- 工具：`ACR`中的基本调整滑块
+- 原则：
+  - 确保画面有正确的黑白场
+  - 提升暗部细节（在确保有黑场的条件下）
+  - 压暗亮部细节（在确保有白场的条件下）
+- 目的：获取可感知的细节，让细节落入人眼的可视范围内
+-  [讲解视频](https://www.youtube.com/watch?v=bcy9MFub09o)
+
 ## 精确白平衡
 
 - 色温和色调可以确定一个点的颜色，相当于一对坐标
