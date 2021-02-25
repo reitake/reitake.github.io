@@ -1,5 +1,5 @@
 ---
-title: Photoshop Basis Notes
+ title: Photoshop Basis Notes
 tags:
   - Photoshop
   - Note
@@ -142,13 +142,30 @@ date: 2020-03-10 23:37:50
 - [范例视频1](https://www.youtube.com/watch?v=8xsdTww52-E)
 - [范例视频2](https://www.youtube.com/watch?v=XnWqFnqEZQw)：多通道调节对比度
 
-## 曲线调色
+## 曲线调色1
 
 - RGB的补色：
     + 红色 - 青色
     + 绿色 - 洋红
     + 蓝色 - 黄色
 - [范例视频](https://www.youtube.com/watch?v=Hol0gBNA2GQ)
+
+## 曲线调色2
+
+- 主通道、RGB通道
+  - 图层混合方式：颜色→只改变颜色，不改变亮度
+- 电影感，肤色不变，背景蓝色
+  - 选择肤色：`选择`-`色彩范围`-`肤色`/取样
+  - 保护肤色，调整其他：`Ctrl+i`反相选区
+  - 红色通道降低
+  - 蓝色通道上调
+  - 增加蒙版的羽化值，让蒙版的过度自然
+  - 暗部不要上色太多（因为人眼对暗部不敏感）
+    - 图层样式，混合带
+- 用曲线纠正白平衡
+  - `窗口`-`信息`
+  - Lab中a和b在±2内可认为白平衡
+- [讲解视频](https://www.youtube.com/watch?v=FELXeyUkc5w)
 
 ## 分区光影重构
 
