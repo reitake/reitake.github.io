@@ -85,6 +85,16 @@ date: 2020-03-10 23:37:50
     + 通道混合产生黑白图片
 - [范例视频](https://www.youtube.com/watch?v=f44KuDU6Jb4&list=PLhnwj_CftHvjpQc6ytB7ynuVSQM6CSyO5&index=11)
 
+## Channel 通道调色
+
+- 通道：同一个像素，对于三种颜色的光强度采样
+- 调色操作举例
+  - 方法一：某个通道拷贝粘贴到一个新图层中，`明度`混合；
+  - 方法二：新空白图层，`图像`-`应用图像`
+- 产生黑白图片：可以用`黑白`调整图层，调节RBG、CMY6个通道
+  - 如果用`明度`混合，那可以调节彩色图片（不同通道）的亮度
+- [讲解视频](https://www.youtube.com/watch?v=ojlRJjya8nM)
+
 ---
 
 # 蒙版相关
